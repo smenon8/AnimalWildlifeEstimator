@@ -1,0 +1,101 @@
+GID,SHARE,NOT SHARE,TOTAL,ANNOTATION_ID,SPECIES,SEX,IMAGE_QUALITY
+803,3,15,18,,,,
+915,16,2,18,15656,zebra_plains,Male,excellent
+864,11,7,18,15868,zebra_plains,UNKNOWN SEX,ok
+3114,15,5,20,12716,zebra_plains,Female,poor
+1522,12,6,18,14752,zebra_plains,Male,good
+3074,11,9,20,,,,
+824,12,6,18,15603,zebra_plains,Male,ok
+1692,15,3,18,,,,
+10,8,6,14,9336,giraffe_masai,Female,ok
+3137,8,12,20,9050,giraffe_masai,Female,excellent
+905,1,17,18,,,,
+3138,15,5,20,8822,giraffe_masai,Female,ok
+1634,13,5,18,15084,zebra_plains,Male,ok
+3132,15,5,20,8902,giraffe_masai,UNKNOWN NAME,ok
+3084,19,1,20,9003,giraffe_masai,Male,ok
+926,18,0,18,9473,giraffe_masai,UNKNOWN NAME,ok
+826,13,5,18,15598,zebra_plains,Male,ok
+624,13,7,20,15969,zebra_plains,Male,good
+636,11,9,20,16118,zebra_plains,UNKNOWN NAME,poor
+3085,11,9,20,9083,giraffe_masai,Male,ok
+619,19,1,20,,,,
+79,11,3,14,13454,zebra_plains,UNKNOWN SEX,ok
+3135,14,6,20,8974,giraffe_masai,UNKNOWN NAME,good
+900,17,1,18,9421,giraffe_masai,Female,good
+85,13,1,14,13430,zebra_plains,UNKNOWN NAME,excellent
+3103,4,16,20,12607,zebra_plains,UNKNOWN SEX,ok
+3110,13,7,20,12573,zebra_plains,Female,ok
+542,18,2,20,16020,zebra_plains,UNKNOWN NAME,ok
+1631,14,4,18,13964,zebra_plains,Male,good
+80,12,2,14,13388,zebra_plains,Female,good
+637,17,3,20,16090,zebra_plains,Male,ok
+50,10,4,14,13427,zebra_plains,UNKNOWN NAME,ok
+3112,18,2,20,,,,
+910,1,17,18,,,,
+845,4,14,18,,,,
+1649,4,14,18,14887,zebra_plains,Female,ok
+3127,8,12,20,12555,zebra_plains,Female,good
+1554,13,5,18,15368,zebra_plains,Female,poor
+19,11,3,14,9335,giraffe_masai,UNKNOWN NAME,good
+821,16,2,18,15642,zebra_plains,Male,ok
+1711,14,4,18,,,,
+24,8,6,14,,,,
+12,10,4,14,9330,giraffe_masai,Female,ok
+1652,9,9,18,14055,zebra_plains,Male,poor
+815,11,7,18,15594,zebra_plains,Female,ok
+513,17,3,20,9342,giraffe_masai,UNKNOWN NAME,poor
+91,11,3,14,,,,
+870,12,6,18,15662,zebra_plains,UNKNOWN SEX,ok
+586,14,6,20,9347,giraffe_masai,UNKNOWN NAME,ok
+1570,12,6,18,14780,zebra_plains,Female,good
+878,15,3,18,15654,zebra_plains,Female,excellent
+1647,8,10,18,15139,zebra_plains,Female,poor
+549,17,3,20,,,,
+1717,16,2,18,,,,
+1712,17,1,18,,,,
+892,17,1,18,9465,giraffe_masai,UNKNOWN NAME,ok
+84,12,2,14,13452,zebra_plains,UNKNOWN NAME,ok
+536,17,3,20,15955,zebra_plains,Male,ok
+34,6,8,14,13429,zebra_plains,UNKNOWN NAME,good
+592,15,5,20,,,,
+833,8,10,18,15649,zebra_plains,UNKNOWN NAME,ok
+8,14,0,14,13390,zebra_plains,Male,excellent
+1480,6,12,18,14806,zebra_plains,Male,excellent
+483,14,6,20,,,,
+474,16,4,20,16058,zebra_plains,UNKNOWN NAME,poor
+612,13,7,20,15419,zebra_plains,UNKNOWN NAME,good
+97,11,3,14,,,,
+1594,16,2,18,15191,zebra_plains,Male,ok
+537,16,4,20,16070,zebra_plains,Female,ok
+37,8,6,14,13405,zebra_plains,UNKNOWN NAME,excellent
+1540,14,4,18,13962,zebra_plains,Female,good
+3107,8,12,20,,,,
+825,15,3,18,15591,zebra_plains,Male,ok
+90,10,4,14,,,,
+1509,9,9,18,,,,
+101,9,5,14,,,,
+904,5,13,18,,,,
+3125,8,12,20,12727,zebra_plains,Male,ok
+3115,7,13,20,12726,zebra_plains,UNKNOWN SEX,ok
+635,7,13,20,16165,zebra_plains,UNKNOWN SEX,ok
+627,13,7,20,,,,
+99,9,5,14,,,,
+3124,17,3,20,9017,giraffe_masai,Female,good
+3089,14,6,20,9010,giraffe_masai,Male,poor
+857,6,12,18,15895,zebra_plains,UNKNOWN NAME,junk
+1497,4,14,18,14854,zebra_plains,Male,ok
+499,20,0,20,9393,giraffe_masai,Male,good
+1508,6,12,18,15000,zebra_plains,Female,poor
+3153,14,6,20,12535,zebra_plains,UNKNOWN SEX,ok
+33,13,1,14,13436,zebra_plains,UNKNOWN NAME,good
+504,17,3,20,,,,
+3068,4,16,20,,,,
+890,13,5,18,9413,giraffe_masai,Female,good
+481,16,4,20,,,,
+69,13,1,14,13403,zebra_plains,UNKNOWN NAME,junk
+1715,12,6,18,,,,
+1519,10,8,18,14763,zebra_plains,Male,poor
+3131,16,4,20,8849,giraffe_masai,Female,good
+597,12,8,20,,,,
+16,3,11,14,9326,giraffe_masai,UNKNOWN NAME,ok
