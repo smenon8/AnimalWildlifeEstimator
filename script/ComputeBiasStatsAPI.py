@@ -22,7 +22,7 @@ def getAnnotID(gid):
         return None
         
 # Argument : Annotation ID , Required Feature String
-# Returns : Returns the feature - tested for species_texts, sex_texts and quality_texts
+# Returns : Returns the feature - tested for species_texts, age_months_est, exemplar_flags, sex_texts, yaw_texts and quality_texts
 def getImageFeature(aid,feature):
     url = "http://pachy.cs.uic.edu:5000/api/annot/" + feature + "/?aid_list=["+str(aid)+"]"
     response = urllib.request.urlopen(url)
@@ -30,4 +30,20 @@ def getImageFeature(aid,feature):
     jsonObj = json.loads(responseData)
 
     return jsonObj['response'][0]
-    
+
+
+def getContributorGID(cid):
+    url = "http://pachy.cs.uic.edu:5000/api/contributor/gids/?contrib_rowid_list=["+str(cid)+"]"
+    response = urllib.request.urlopen(url)
+    responseData = response.read().decode('utf-8')
+    jsonObj = json.loads(responseData)
+
+    return jsonObj['response'][0]
+
+def __main__():
+    print(getContributorGID(1))
+    print(getImageFeature(93,"species_texts"))
+
+if __name__ == "__main__":
+    __main__()
+# http://pachy.cs.uic.edu:5000/api/annot/qualities/?aid_list=[13390]

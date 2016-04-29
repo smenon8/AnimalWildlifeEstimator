@@ -1,0 +1,120 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+  <HTMLContent><![CDATA[
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <script type='text/javascript'>
+				  /**
+				 * Gets a URL parameter from the query string
+				 */
+				function turkGetParam( name, defaultValue ) { 
+				   var regexS = "[\?&]"+name+"=([^&#]*)"; 
+				   var regex = new RegExp( regexS ); 
+				   var tmpURL = window.location.href; 
+				   var results = regex.exec( tmpURL ); 
+				   if( results == null ) { 
+					 return defaultValue; 
+				   } else { 
+					 return results[1];    
+				   } 
+				}
+
+				/**
+				 * URL decode a parameter
+				 */
+				function decode(strToDecode)
+				{
+				  var encoded = strToDecode;
+				  return unescape(encoded.replace(/\+/g,  " "));
+				}
+
+
+				/**
+				 * Returns the Mechanical Turk Site to post the HIT to (sandbox. prod)
+				 */
+				function turkGetSubmitToHost() {
+				  return decode(turkGetParam("turkSubmitTo", "https://www.mturk.com"));
+				}
+
+
+				/**
+				 * Sets the assignment ID in the form. Defaults to use mturk_form and submitButton
+				 */ 
+				function turkSetAssignmentID( form_name, button_name ) {
+
+				  if (form_name == null) {
+					form_name = "mturk_form";
+				  }
+
+				  if (button_name == null) {
+					button_name = "submitButton";
+				  }
+
+				  assignmentID = turkGetParam('assignmentId', "");
+				  document.getElementById('assignmentId').value = assignmentID;
+
+				  if (assignmentID == "ASSIGNMENT_ID_NOT_AVAILABLE") { 
+					// If we're previewing, disable the button and give it a helpful message
+					btn = document.getElementById(button_name);
+					if (btn) {
+					  btn.disabled = true; 
+					  btn.value = "You must ACCEPT the HIT before you can submit the results.";
+					} 
+				  }
+
+				  form = document.getElementById(form_name); 
+				}
+  </script>
+ </head>
+ <body>
+ <h3> Creating a photo album</h3>
+  <p><b>Background:</b></p>
+  <p> We are a research group working on a project to count and track threatened and endangered animals through publicly shared social media photos. </p> 
+  <p>Having accurate information about wildlife populations is critical to protecting them and conserving their habitats.</p>  
+  <p>Gathering accurate information from public social media reports would make it possible to collect up-to-date information about wildlife more broadly than otherwise possible and help conservation efforts.</p>
+  <p>As part of this research, we must understand what kinds of animal photos people are likely to share (and not share) with their friends.</p>
+  
+  <p><b>This HIT:</b></p> 
+  <p>In this HIT, we will show you a number of nature photos a person took while on vacation in Africa.</p> 
+  <p>Please imagine that these are <em>your own photos</em> that you have taken and tell us which of these photos you would share or not share on social media. </p>
+  <p> Thank you for your help</p>
+  
+  <form name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit'>
+  
+  <p><b>How frequently do you share <em>your own photographs</em> on social media?</b> (e.g., Facebook, WhatsApp, Snapchat, Instagram).</p>
+  <input type = 'radio' value = 'never' name = 'q1' id = 'q1,never'> Never
+  <input type = 'radio' value = 'infrequently' name = 'q1' id = 'q1,infrequent'/> Once a month or less
+  <input type = 'radio' value = 'sometimes' name = 'q1' id = 'q1,sometimes'/> About once a week
+  <input type = 'radio' value = 'regularly' name = 'q1' id = 'q1,regularly'/> Most days
+  <input type = 'radio' value = 'everyday' name = 'q1' id = 'q1,everyday'/> Every day
+  <br><br>
+  
+  <p><b>If you were to go on a once-in-a-lifetime vacation and take many photos, how many do you think you would share on social media</b> (either during the trip or afterwards)? </p>
+  <input type = 'radio' value = 'A' name = 'q2' id = 'q2,A'> None
+  <input type = 'radio' value = 'B' name = 'q2' id = 'q2,B'> 1 to 5
+  <input type = 'radio' value = 'C' name = 'q2' id = 'q2,C'> 5 to 10
+  <input type = 'radio' value = 'D' name = 'q2' id = 'q2,D'> 10 to 50
+  <input type = 'radio' value = 'E' name = 'q2' id = 'q2,E'> 50 or more
+  <br><br><table border="1"><tr><td><center><input value="4785" name="4785" type="hidden"><input value="share" name="4785" type="radio">Share<input value="noShare" name="4785" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4785/?resize_pix_w=500"></td><td><center><input value="4535" name="4535" type="hidden"><input value="share" name="4535" type="radio">Share<input value="noShare" name="4535" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4535/?resize_pix_w=500"></td></tr>
+<tr><td><center><input value="4564" name="4564" type="hidden"><input value="share" name="4564" type="radio">Share<input value="noShare" name="4564" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4564/?resize_pix_w=500"></td><td><center><input value="4523" name="4523" type="hidden"><input value="share" name="4523" type="radio">Share<input value="noShare" name="4523" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4523/?resize_pix_w=500"></td></tr>
+<tr><td><center><input value="4489" name="4489" type="hidden"><input value="share" name="4489" type="radio">Share<input value="noShare" name="4489" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4489/?resize_pix_w=500"></td><td><center><input value="4568" name="4568" type="hidden"><input value="share" name="4568" type="radio">Share<input value="noShare" name="4568" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4568/?resize_pix_w=500"></td></tr>
+<tr><td><center><input value="4778" name="4778" type="hidden"><input value="share" name="4778" type="radio">Share<input value="noShare" name="4778" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4778/?resize_pix_w=500"></td><td><center><input value="4763" name="4763" type="hidden"><input value="share" name="4763" type="radio">Share<input value="noShare" name="4763" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4763/?resize_pix_w=500"></td></tr>
+<tr><td><center><input value="4648" name="4648" type="hidden"><input value="share" name="4648" type="radio">Share<input value="noShare" name="4648" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4648/?resize_pix_w=500"></td><td><center><input value="4623" name="4623" type="hidden"><input value="share" name="4623" type="radio">Share<input value="noShare" name="4623" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4623/?resize_pix_w=500"></td></tr>
+<tr><td><center><input value="4507" name="4507" type="hidden"><input value="share" name="4507" type="radio">Share<input value="noShare" name="4507" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4507/?resize_pix_w=500"></td><td><center><input value="4742" name="4742" type="hidden"><input value="share" name="4742" type="radio">Share<input value="noShare" name="4742" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4742/?resize_pix_w=500"></td></tr>
+<tr><td><center><input value="4732" name="4732" type="hidden"><input value="share" name="4732" type="radio">Share<input value="noShare" name="4732" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4732/?resize_pix_w=500"></td><td><center><input value="4432" name="4432" type="hidden"><input value="share" name="4432" type="radio">Share<input value="noShare" name="4432" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4432/?resize_pix_w=500"></td></tr>
+<tr><td><center><input value="4669" name="4669" type="hidden"><input value="share" name="4669" type="radio">Share<input value="noShare" name="4669" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4669/?resize_pix_w=500"></td><td><center><input value="4592" name="4592" type="hidden"><input value="share" name="4592" type="radio">Share<input value="noShare" name="4592" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4592/?resize_pix_w=500"></td></tr>
+<tr><td><center><input value="4745" name="4745" type="hidden"><input value="share" name="4745" type="radio">Share<input value="noShare" name="4745" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4745/?resize_pix_w=500"></td><td><center><input value="4420" name="4420" type="hidden"><input value="share" name="4420" type="radio">Share<input value="noShare" name="4420" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4420/?resize_pix_w=500"></td></tr>
+<tr><td><center><input value="4421" name="4421" type="hidden"><input value="share" name="4421" type="radio">Share<input value="noShare" name="4421" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4421/?resize_pix_w=500"></td><td><center><input value="4647" name="4647" type="hidden"><input value="share" name="4647" type="radio">Share<input value="noShare" name="4647" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/api/image/src/4647/?resize_pix_w=500"></td></tr></table>  <br>
+  <p>Please enter any general comments or feedback on the HIT [optional]</p>
+  <input type ="text" name="generalComments" id=comments>
+  <input type="hidden" name="assignmentId" id= assignmentId> 
+  <p><input type='submit' id='submitButton' name = 'submitButton' value='Submit' /></p></form>
+  
+  <script language='Javascript'>turkSetAssignmentID(mturk_form,submitButton);</script>
+ </body>
+</html>
+]]>
+  </HTMLContent>
+  <FrameHeight>500</FrameHeight>
+</HTMLQuestion>
