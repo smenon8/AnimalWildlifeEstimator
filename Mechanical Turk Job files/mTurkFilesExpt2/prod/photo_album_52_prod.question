@@ -1,0 +1,62 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+  <HTMLContent><![CDATA[
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+ </head>
+ <body>
+ <h3> Creating a photo album</h3>
+  <p><b>Background:</b></p>
+  <p> We are a research group working on a project to count and track threatened and endangered animals through publicly shared social media photos. </p> 
+  <p>Having accurate information about wildlife populations is critical to protecting them and conserving their habitats.</p>  
+  <p>Gathering accurate information from public social media reports would make it possible to collect up-to-date information about wildlife more broadly than otherwise possible and help conservation efforts.</p>
+  <p>As part of this research, we must understand what kinds of animal photos people are likely to share (and not share) with their friends.</p>
+  
+  <p><b>This HIT:</b></p> 
+  <p>In this HIT,we will first ask 2 questions about your photo-sharing habits, and then we will show you a number of nature photos a person took while on vacation in Africa.</p> 
+  
+  <p>Please imagine that these are <em>your own photos</em> that you have taken and tell us which of these photos you would share or not share on social media. </p>
+  
+  <p> Thank you for your help</p>
+  
+  <form name='mturk_form' method='post' id='mturk_form' action='https://www.mturk.com/mturk/externalSubmit'>
+  
+  <p><b>How frequently do you share <em>your own photographs</em> on social media?</b> (e.g., Facebook, WhatsApp, Snapchat, Instagram).</p>
+  <input type = 'radio' value = 'never' name = 'q1' id = 'q1,never' required> Never
+  <input type = 'radio' value = 'infrequently' name = 'q1' id = 'q1,infrequent'/> Once a month or less
+  <input type = 'radio' value = 'sometimes' name = 'q1' id = 'q1,sometimes'/> About once a week
+  <input type = 'radio' value = 'regularly' name = 'q1' id = 'q1,regularly'/> Most days
+  <input type = 'radio' value = 'everyday' name = 'q1' id = 'q1,everyday'/> Every day
+  <br><br>
+  
+  <p><b>If you were to go on a once-in-a-lifetime vacation and take many photos, how many do you think you would share on social media</b> (either during the trip or afterwards)? </p>
+  <input type = 'radio' value = 'A' name = 'q2' id = 'q2,A' required> None
+  <input type = 'radio' value = 'B' name = 'q2' id = 'q2,B'> 1 to 5
+  <input type = 'radio' value = 'C' name = 'q2' id = 'q2,C'> 5 to 10
+  <input type = 'radio' value = 'D' name = 'q2' id = 'q2,D'> 10 to 50
+  <input type = 'radio' value = 'E' name = 'q2' id = 'q2,E'> 50 or more
+  <br><br><table border="1"><tr><td><center><input type="hidden" name="3875" value="3875"><input type="radio" name="3875" value="share">Share<input type="radio" name="3875" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3875.png" alt="Unavailable"></td><td><center><input type="hidden" name="3727" value="3727"><input type="radio" name="3727" value="share">Share<input type="radio" name="3727" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3727.png" alt="Unavailable"></td></tr>
+<tr><td><center><input type="hidden" name="3609" value="3609"><input type="radio" name="3609" value="share">Share<input type="radio" name="3609" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3609.png" alt="Unavailable"></td><td><center><input type="hidden" name="3965" value="3965"><input type="radio" name="3965" value="share">Share<input type="radio" name="3965" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3965.png" alt="Unavailable"></td></tr>
+<tr><td><center><input type="hidden" name="3938" value="3938"><input type="radio" name="3938" value="share">Share<input type="radio" name="3938" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3938.png" alt="Unavailable"></td><td><center><input type="hidden" name="3944" value="3944"><input type="radio" name="3944" value="share">Share<input type="radio" name="3944" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3944.png" alt="Unavailable"></td></tr>
+<tr><td><center><input type="hidden" name="3854" value="3854"><input type="radio" name="3854" value="share">Share<input type="radio" name="3854" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3854.png" alt="Unavailable"></td><td><center><input type="hidden" name="3755" value="3755"><input type="radio" name="3755" value="share">Share<input type="radio" name="3755" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3755.png" alt="Unavailable"></td></tr>
+<tr><td><center><input type="hidden" name="3656" value="3656"><input type="radio" name="3656" value="share">Share<input type="radio" name="3656" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3656.png" alt="Unavailable"></td><td><center><input type="hidden" name="3628" value="3628"><input type="radio" name="3628" value="share">Share<input type="radio" name="3628" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3628.png" alt="Unavailable"></td></tr>
+<tr><td><center><input type="hidden" name="3792" value="3792"><input type="radio" name="3792" value="share">Share<input type="radio" name="3792" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3792.png" alt="Unavailable"></td><td><center><input type="hidden" name="3818" value="3818"><input type="radio" name="3818" value="share">Share<input type="radio" name="3818" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3818.png" alt="Unavailable"></td></tr>
+<tr><td><center><input type="hidden" name="3976" value="3976"><input type="radio" name="3976" value="share">Share<input type="radio" name="3976" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3976.png" alt="Unavailable"></td><td><center><input type="hidden" name="3903" value="3903"><input type="radio" name="3903" value="share">Share<input type="radio" name="3903" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3903.png" alt="Unavailable"></td></tr>
+<tr><td><center><input type="hidden" name="3850" value="3850"><input type="radio" name="3850" value="share">Share<input type="radio" name="3850" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3850.png" alt="Unavailable"></td><td><center><input type="hidden" name="3695" value="3695"><input type="radio" name="3695" value="share">Share<input type="radio" name="3695" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3695.png" alt="Unavailable"></td></tr>
+<tr><td><center><input type="hidden" name="3805" value="3805"><input type="radio" name="3805" value="share">Share<input type="radio" name="3805" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3805.png" alt="Unavailable"></td><td><center><input type="hidden" name="3803" value="3803"><input type="radio" name="3803" value="share">Share<input type="radio" name="3803" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3803.png" alt="Unavailable"></td></tr>
+<tr><td><center><input type="hidden" name="3922" value="3922"><input type="radio" name="3922" value="share">Share<input type="radio" name="3922" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3922.png" alt="Unavailable"></td><td><center><input type="hidden" name="3857" value="3857"><input type="radio" name="3857" value="share">Share<input type="radio" name="3857" value="noShare">Do Not Share</center><img src="http://pachy.cs.uic.edu:5000/static/images/src/3857.png" alt="Unavailable"></td></tr></table>   <br>
+  <p>Please enter any general comments or feedback on the HIT [optional]</p>
+  <input type ="text" name="generalComments" id=comments>
+  <input type="hidden" name="assignmentId" id= assignmentId> 
+  <br>
+  <p><input type='submit' id='submitButton' name = 'submitButton' value='Submit' /></p></form>
+  
+  <script language='Javascript'>turkSetAssignmentID();</script>
+ </body>
+</html>
+]]>
+  </HTMLContent>
+  <FrameHeight>500</FrameHeight>
+</HTMLQuestion>

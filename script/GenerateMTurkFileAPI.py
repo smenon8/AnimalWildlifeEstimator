@@ -2,25 +2,50 @@ import htmltag as HT
 import random
 from htmltag import table, td, tr
 import sys
+import csv
 
 maxImgs = 20
+excepFL = '../data/HumanImagesException.csv'
 
+def genRandomImg(begin,end,oldList):
+    found = False
+    
+    # Human Image selection exception
+    reader = csv.reader(open(excepFL,"r"))
+    humanImgs = []
+    for row in reader:
+        humanImgs.append(int(row[0]))
+    
+    while not found:
+        num = random.randrange(begin,end)
+        if num in oldList or num in humanImgs: continue
 
-def genImageID(begin,stop):
+        found = True
+
+    return num
+
+def genImageList(begin,stop):
     count = 0
     listNum = []
     start= begin
     end = stop
+
+    reader = csv.reader(open(excepFL,"r"))
+    humanImgs = []
+    for row in reader:
+        humanImgs.append(int(row[0]))
+
     while count < maxImgs:
         num = random.randrange(start,end)
-        if num in listNum: continue
+        if num in listNum or num in humanImgs: continue
         listNum.append(num)
         count += 1
     
     return listNum
 
+
 def generateMTurkFile(startGID,endGID,outFile,prodFileWrite = False):
-    imageID = genImageID(startGID,endGID)
+    imageID = genImageList(startGID,endGID)
     links = ["http://pachy.cs.uic.edu:5000/api/image/src/"+str(i)+"/?resize_pix_w=500" for i in imageID[0:maxImgs]]
     imgTags = []
     radioShare = HT.input

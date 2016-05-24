@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# ### Script for creating the m-turk files in bulk
+# Script for creating the m-turk files in bulk
 # 
 # There are 58 unique contributors and each contributor has a contiguous set of image contributions
 # 
@@ -12,19 +12,21 @@
 # http://pachy.cs.uic.edu:5000/api/contributor/valid_rowids/
 
 import csv
-import ComputeBiasStatsAPI as CB
+import GetPropertiesAPI as GP
 import GenerateMTurkFileAPI as GM
 import importlib
 import random
 
 # un-comment if there are any changes made to API
-importlib.reload(CB) 
+importlib.reload(GP) 
 importlib.reload(GM) 
 
 
 contributorImages = {}
 for contributor in range(1,59):
-     contributorImages[contributor] = CB.getContributorGID(contributor)
+    print(contributor)
+    contributorImages[contributor] = GP.getContributorGID(contributor)
+print(1)
 
 contributorImages.pop(52)
 contributorImages.pop(57)
@@ -38,20 +40,20 @@ contributorImages.pop(41)
 contributors = list(contributorImages.keys())
 
 selectedImgContributors = []
-for i in range(100):
+for i in range():
     selectedImgContributors.append(contributors[random.randrange(0,50)])
 
-
+print(2)
 argToAPI = []
 for index in selectedImgContributors:
     imgList = contributorImages[index]
     minGID = min(imgList)
     maxGID = max(imgList)
     argToAPI.append([index,minGID,maxGID])
-
+print(3)
 jobImageMap= {}
 
-for i in range(0,100):
+for i in range(0,1):
     flName = str("photo_album_%d" %(i+1))
     tup = argToAPI[i]
     slctdImgs = GM.generateMTurkFile(tup[1],tup[2],str("/tmp/files/" + flName),True)
