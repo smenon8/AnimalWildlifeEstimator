@@ -1,8 +1,0 @@
-http://pachy.cs.uic.edu:5000/api/image/aids/?gid_list=[1,2,3] - Getting annotation ID's using GID's
-
-http://pachy.cs.uic.edu:5000/api/annot/quality_texts/?aid_list=[13386] - based on quality
-
-http://pachy.cs.uic.edu:5000/api/annot/sex_texts/?aid_list=[9558] - based on sex
-
-http://pachy.cs.uic.edu:5000/api/annot/species/?aid_list=[9558] - based on species
-http://pachy.cs.uic.edu:5000/api/annot/species_texts/?aid_list=[9558]
