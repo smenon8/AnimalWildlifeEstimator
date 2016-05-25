@@ -7,7 +7,7 @@ Created on Sat May 21 07:42:55 2016
 
 import boto.mturk.connection as botoConn
 
-conn = botoConn.MTurkConnection(aws_access_key_id='AKIAJFFU6MAGAWEDYXJA', aws_secret_access_key='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') 
+conn = botoConn.MTurkConnection(aws_access_key_id='xxx', aws_secret_access_key='xxxx') 
 
 listHIT = conn.get_reviewable_hits()
 
