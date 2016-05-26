@@ -29,13 +29,16 @@ def generateUniqueImageListFromMap(mapFlName):
 
 
 
+def __main__():
+	allUniqImgs = generateUniqueImageListFromMap("../data/imageGID_job_map_expt2_corrected.csv")
+	outFL = "../data/all_imgs_expt2.csv"
+	writeFL = open(outFL,"w")
+	writer = csv.writer(writeFL)
 
-allUniqImgs = generateUniqueImageListFromMap("../data/imageGID_job_map_expt2_corrected.csv")
-# outFL = "../data/all_imgs_expt2.csv"
-# writeFL = open(outFL,"w")
-# writer = csv.writer(writeFL)
+	writer.writerow(allUniqImgs)
 
-# writer.writerow(allUniqImgs)
+	writeFL.close()
+	Features.buildFeatureFl(allUniqImgs,"../data/experiment2.csv",False)
 
-# writeFL.close()
-Features.buildFeatureFl(allUniqImgs,"../data/experiment2.csv",False)
+if __name__ == "__main__":
+	__main__()
