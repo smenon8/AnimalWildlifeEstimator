@@ -6,7 +6,7 @@
 ###### Features implemented - to date
 1. Create mechanical turk jobs - only user input needed is number of jobs we need.
 
-2. Create deployment, approval and download scripts. - creating a set of 10 was manual, but the original command file was created using a script.
+2. Create deployment, approval and download scripts for all the mechanical turk jobs.
 
 3. Parse .results file and have a python object/csv/json ready for processing. 
 
