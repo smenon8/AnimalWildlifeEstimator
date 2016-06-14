@@ -32,7 +32,16 @@ import GetPropertiesAPI as GP
 import importlib
 import json
 #importlib.reload(GP) # un-comment if there are any changes made to API
+from time import sleep
+import sys
+import math
 
+def printCompltnPercent(percentComplete):
+	i = int(percentComplete)
+	sys.stdout.write('\r')
+    # the exact output you're looking for:
+	sys.stdout.write("[%-100s] %d%%" % ('='*i, i))
+	sys.stdout.flush()
 
 def writeCsvFromDict(header,inDict,outFL):
 	writeFL = open(outFL,'w')
@@ -48,9 +57,9 @@ def writeCsvFromDict(header,inDict,outFL):
 	
 	writeFL.close()
 
+
 # Logic for reading data from the consolidatedHITResults file - changed
 # The input for the below method will be a csv file/list with all the image GID's for which the features have to be extracted.
-
 def buildFeatureFl(inp,outFL,isInpFl = True):
 	allGID = []
 
@@ -77,6 +86,8 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 
 	# Extracts all feature info based on annotation ID's from IBEIS
 	features = {}
+	aidInd = 0
+	print("Features to be extracted for %d annotation IDs" %len(aidList))
 	for aid in aidList:
 		nid = GP.getImageFeature(aid,"nids")
 		features[aid] = [nid]
@@ -87,14 +98,18 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 		sex_text = GP.getImageFeature(aid,"sex_texts")
 		features[aid].append(sex_text)
 		est_age = GP.getImageFeature(aid,"age_months_est")
-		features[aid].append(est_age)
+		features[aid].append(GP.getAgeFeatureReadableFmt(est_age))
 		exemplar = GP.getImageFeature(aid,"exemplar_flags")
-		features[aid].append(exemplar)
+		features[aid].append(list(map(str,exemplar))) # needed to convert the flags to string
 		qual_text = GP.getImageFeature(aid,"quality_texts")
 		features[aid].append(qual_text)
 		yaw_text = GP.getImageFeature(aid,"yaw_texts")
 		features[aid].append(yaw_text)
-
+		aidInd += 1
+		percentComplete = aidInd * 100 / len(aidList)
+		if math.floor(percentComplete) %5 == 0:
+			printCompltnPercent(percentComplete)
+	print()
 	print("All features extracted.")
 
 	# Build the all combined file
@@ -125,9 +140,17 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 	head = ['GID','ANNOTATION_ID','FEATURES']
 	writeCsvFromDict(head,GidAidFeatures,writeFLGidAidFeatureFl) 
 
+	outFL = open((writeFLTitle + "_gid_aid_map.json"),"w")
+	json.dump(GidAidMap,outFL,indent=4)
+	outFL.close()
 
-	outFL = open("../data/gid_aid_features.json","w")
+	outFL = open((writeFLTitle + "_aid_features.json"),"w")
+	json.dump(features,outFL,indent=4)
+	outFL.close()
+
+	outFL = open((writeFLTitle + "_gid_aid_features.json"),"w")
 	json.dump(GidAidFeatures,outFL,indent=4)
 	outFL.close()
 
 	print("Script completed.")
+

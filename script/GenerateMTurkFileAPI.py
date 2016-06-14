@@ -1,12 +1,27 @@
+# python-3
+'''
+Created on Tue May 24 16:04:40 2016
+
+Author: Sreejith Menon (smenon8@uic.edu)
+
+Description: Contains methods to generate a single mechanical turk photo album. 
+There are multiple methods in the API but the method generateMTurkFile() needs to be called to generate one image album job file.
+ 
+Hardcoded parameter: 
+excepFL – points to the csv file which is a enumeration of all identified human images. 
+This is provided to avoid occurrences of human images in the mechanical turk photo album jobs.
+'''
 import htmltag as HT
 import random
 from htmltag import table, td, tr
 import sys
 import csv
 
-maxImgs = 20
 excepFL = '../data/HumanImagesException.csv'
 
+# Arguments: Start range, End Range and list in the same range
+# Returns: A randomly selected image GID in the range [begin, end] and not in oldList.
+# This method is used when there arises a case when a particular image in the image album have to be replaced with another randomly selected image. 
 def genRandomImg(begin,end,oldList):
     found = False
     
@@ -24,7 +39,11 @@ def genRandomImg(begin,end,oldList):
 
     return num
 
-def genImageList(begin,stop):
+# Arguments: Start range, end range and number of images in photo album
+# Returns: A python list with randomly selected image GID’s that are in the range [begin, stop] and len(list) = maxImgs
+# This method is used to generate a list of random images that will be further used as an input to the method that generates the photo album mechanical turk job. 
+# The list has no duplicates and has exactly maxImgs number of images.
+def genImageList(begin,stop,maxImgs=20):
     count = 0
     listNum = []
     start= begin
@@ -40,13 +59,18 @@ def genImageList(begin,stop):
         if num in listNum or num in humanImgs: continue
         listNum.append(num)
         count += 1
-    
+
     return listNum
 
-
-def generateMTurkFile(startGID,endGID,outFile,prodFileWrite = False):
-    imageID = genImageList(startGID,endGID)
-    links = ["http://pachy.cs.uic.edu:5000/api/image/src/"+str(i)+"/?resize_pix_w=500" for i in imageID[0:maxImgs]]
+# Arguments: Start GID, end GID, name of output file, number of images in photo album, a boolean to generate a m-turk job for production environment
+# Returns: A python list with randomly selected image GID’s that are in the photo album. 
+# The GID’s are in the range [startGID, endGID] and len(list) = maxImgs
+# Most important method of this script. This generates a .question file that is fed to createHIT command. 
+# If prodFileWrite parameter is set to True, then a job with the same image GID’s is generated with the word ‘prod’ appended to the outFile name. 
+# prodFileWrite is defaulted to False, so it will only generate a file for mechanical turk sandbox if this parameter is unspecified.
+def generateMTurkFile(startGID,endGID,outFile,maxImgs=20,prodFileWrite = False):
+    imageIDList = genImageList(startGID,endGID,maxImgs)
+    links = ["https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/"+str(i)+".jpeg" for i in imageIDList[0:maxImgs]]
     imgTags = []
     radioShare = HT.input
     for url in links:
@@ -57,9 +81,9 @@ def generateMTurkFile(startGID,endGID,outFile,prodFileWrite = False):
     notShareRadio = []
     hiddenField = []
     for i in range(maxImgs):
-        hiddenField.append(HT.input(type='hidden',name=imageID[i],value=imageID[i]))
-        shareRadio.append(HT.input(type='radio',value='share',name=imageID[i]) + "Share")
-        notShareRadio.append(HT.input(type='radio',value='noShare',name=imageID[i]) + "Do Not Share")
+        hiddenField.append(HT.input(type='hidden',name=imageIDList[i],value=imageIDList[i]))
+        shareRadio.append(HT.input(type='radio',value='share',name=imageIDList[i]) + "Share")
+        notShareRadio.append(HT.input(type='radio',value='noShare',name=imageIDList[i]) + "Do Not Share")
 
     tdTags = []
     for i in range(maxImgs):
@@ -105,10 +129,10 @@ def generateMTurkFile(startGID,endGID,outFile,prodFileWrite = False):
         tailFile.close()
         outputFile.close()
 
-    return imageID
+    return imageIDList
 
-def __main__(argv):
-    generateMTurkFile(4856,4867,"files/sample.question")
+def __main__():
+    generateMTurkFile(4856,4867,"files/sample.question",6)
 
 if __name__ == "__main__":
-    __main__(sys.argv)
+    __main__()

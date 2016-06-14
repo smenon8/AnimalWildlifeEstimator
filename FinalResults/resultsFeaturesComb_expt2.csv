@@ -1,0 +1,2125 @@
+AID,GID,Album,Shared,Not Shared,Proportion,AGE,EXEMPLAR_FLAG,INDIVIDUAL_NAME,NID,QUALITY,SEX,SPECIES,VIEW_POINT
+16167,546,photo_album_20,10,0,100,infant,0,____,-16167,poor,UNKNOWN NAME,zebra_plains,frontleft
+16168,546,photo_album_20,10,0,100,infant,0,____,-16168,ok,UNKNOWN NAME,zebra_plains,right
+16169,546,photo_album_20,10,0,100,infant,0,____,-16169,poor,UNKNOWN NAME,zebra_plains,right
+16170,546,photo_album_20,10,0,100,infant,0,____,-16170,poor,UNKNOWN NAME,zebra_plains,left
+13822,5666,photo_album_24,10,0,100,infant,1,IBEIS_PZ_1866,2139,ok,UNKNOWN SEX,zebra_plains,left
+9269,5713,photo_album_41,10,0,100,"juvenille, one year old",1,NNP_GIRM_0149,253,ok,Male,giraffe_masai,frontleft
+11554,8838,photo_album_78,10,0,100,adult,1,IBEIS_PZ_0373,646,ok,Female,zebra_plains,frontleft
+9439,1062,photo_album_29,10,0,100,adult,0,NNP_GIRM_0143,234,good,Female,giraffe_masai,left
+9440,1062,photo_album_29,10,0,100,infant,0,____,-9440,poor,UNKNOWN NAME,giraffe_masai,frontleft
+9253,7748,photo_album_27,10,0,100,infant,0,____,-9253,poor,UNKNOWN NAME,giraffe_masai,right
+9432,896,photo_album_50,10,0,100,infant,0,____,-9432,ok,UNKNOWN NAME,giraffe_masai,front
+9433,896,photo_album_50,10,0,100,infant,0,____,-9433,poor,UNKNOWN NAME,giraffe_masai,front
+9516,1060,photo_album_90,10,0,100,infant,0,____,-9516,ok,UNKNOWN NAME,giraffe_masai,front
+9517,1060,photo_album_90,10,0,100,infant,0,____,-9517,poor,UNKNOWN NAME,giraffe_masai,front
+15598,826,photo_album_48,10,0,100,adult,0,IBEIS_PZ_1382,1655,ok,Male,zebra_plains,backleft
+15599,826,photo_album_48,10,0,100,adult,0,IBEIS_PZ_1378,1651,ok,Male,zebra_plains,backleft
+8885,8324,photo_album_67,10,0,100,infant,0,NNP_GIRM_0048,64,poor,UNKNOWN SEX,giraffe_masai,front
+8885,8324,photo_album_11,9,0,100,infant,0,NNP_GIRM_0048,64,poor,UNKNOWN SEX,giraffe_masai,front
+13279,390,photo_album_46,10,0,100,"juvenille, two year old",0,IBEIS_PZ_0711,984,good,Female,zebra_plains,left
+9008,3337,photo_album_84,10,0,100,"juvenille, one year old",1,NNP_GIRM_0088,114,excellent,Male,giraffe_masai,left
+13042,5011,photo_album_4,10,0,100,adult,0,IBEIS_PZ_0182,455,good,Male,zebra_plains,frontleft
+9528,1061,photo_album_29,10,0,100,adult,0,NNP_GIRM_0143,234,good,Female,giraffe_masai,left
+8842,3091,photo_album_61,10,0,100,adult,0,NNP_GIRM_0007,8,ok,Male,giraffe_masai,frontleft
+12693,3260,photo_album_13,10,0,100,adult,1,IBEIS_PZ_0881,1154,good,Female,zebra_plains,left
+12694,3260,photo_album_13,10,0,100,adult,0,IBEIS_PZ_0870,1143,junk,Female,zebra_plains,left
+15974,583,photo_album_36,10,0,100,infant,1,IBEIS_PZ_1565,1838,ok,Female,zebra_plains,left
+15975,583,photo_album_36,10,0,100,infant,0,____,-15975,junk,UNKNOWN NAME,zebra_plains,right
+15976,583,photo_album_36,10,0,100,infant,0,____,-15976,poor,UNKNOWN NAME,zebra_plains,right
+15977,583,photo_album_36,10,0,100,infant,0,____,-15977,ok,UNKNOWN NAME,zebra_plains,right
+15978,583,photo_album_36,10,0,100,infant,0,____,-15978,ok,UNKNOWN NAME,zebra_plains,backright
+17726,6653,photo_album_45,10,0,100,adult,1,IBEIS_PZ_1780,2053,excellent,Male,zebra_plains,left
+9167,351,photo_album_14,10,0,100,infant,0,____,-9167,ok,UNKNOWN NAME,giraffe_masai,right
+9167,351,photo_album_1,10,0,100,infant,0,____,-9167,ok,UNKNOWN NAME,giraffe_masai,right
+10776,8173,photo_album_30,9,0,100,"juvenille, one year old",0,IBEIS_PZ_0106,379,good,Male,zebra_plains,left
+10416,7956,photo_album_16,10,0,100,adult,0,IBEIS_PZ_0037,310,good,Male,zebra_plains,left
+10417,7956,photo_album_16,10,0,100,adult,0,IBEIS_PZ_0200,473,poor,Female,zebra_plains,left
+17503,6430,photo_album_45,10,0,100,adult,1,IBEIS_PZ_1795,2068,ok,Female,zebra_plains,left
+9560,5019,photo_album_86,10,0,100,adult,1,NNP_GIRM_0118,169,ok,Male,giraffe_masai,frontleft
+9560,5019,photo_album_4,10,0,100,adult,1,NNP_GIRM_0118,169,ok,Male,giraffe_masai,frontleft
+10381,7933,photo_album_16,10,0,100,infant,0,IBEIS_PZ_0013,286,ok,UNKNOWN SEX,zebra_plains,right
+14282,1971,photo_album_22,10,0,100,infant,0,IBEIS_PZ_1222,1495,ok,Female,zebra_plains,left
+14283,1971,photo_album_22,10,0,100,adult,0,IBEIS_PZ_1226,1499,ok,Female,zebra_plains,left
+14284,1971,photo_album_22,10,0,100,adult,0,IBEIS_PZ_0592,865,good,Female,zebra_plains,left
+13010,5005,photo_album_91,10,0,100,infant,0,IBEIS_PZ_1471,1744,ok,UNKNOWN SEX,zebra_plains,frontright
+13010,5005,photo_album_4,10,0,100,infant,0,IBEIS_PZ_1471,1744,ok,UNKNOWN SEX,zebra_plains,frontright
+16148,450,photo_album_32,10,0,100,adult,1,IBEIS_PZ_0906,1179,ok,Male,zebra_plains,left
+16149,450,photo_album_32,10,0,100,infant,0,____,-16149,poor,UNKNOWN NAME,zebra_plains,backleft
+17565,6686,photo_album_45,10,0,100,adult,1,IBEIS_PZ_1811,2084,ok,Female,zebra_plains,left
+9271,5712,photo_album_24,10,0,100,infant,0,____,-9271,ok,UNKNOWN NAME,giraffe_masai,right
+17142,2870,photo_album_79,10,0,100,infant,1,IBEIS_PZ_1662,1935,good,Male,zebra_plains,left
+12621,3253,photo_album_18,10,0,100,"juvenille, two year old",1,IBEIS_PZ_0865,1138,ok,UNKNOWN SEX,zebra_plains,left
+12622,3253,photo_album_18,10,0,100,adult,0,IBEIS_PZ_0872,1145,poor,UNKNOWN SEX,zebra_plains,left
+12404,1323,photo_album_15,9,0,100,adult,0,IBEIS_PZ_0722,995,good,Female,zebra_plains,left
+12405,1323,photo_album_15,9,0,100,infant,1,IBEIS_PZ_1102,1375,excellent,Female,zebra_plains,left
+12406,1323,photo_album_15,9,0,100,adult,0,IBEIS_PZ_1905,2178,ok,Male,zebra_plains,left
+12407,1323,photo_album_15,9,0,100,adult,1,IBEIS_PZ_1113,1386,good,Male,zebra_plains,left
+13429,34,photo_album_85,10,0,100,infant,0,____,-13429,good,UNKNOWN NAME,zebra_plains,right
+13429,34,photo_album_8,10,0,100,infant,0,____,-13429,good,UNKNOWN NAME,zebra_plains,right
+12399,1300,photo_album_15,9,0,100,adult,0,IBEIS_PZ_0334,607,ok,Female,zebra_plains,backleft
+12400,1300,photo_album_15,9,0,100,infant,0,IBEIS_PZ_1428,1701,ok,UNKNOWN SEX,zebra_plains,backleft
+12401,1300,photo_album_15,9,0,100,adult,1,IBEIS_PZ_1426,1699,good,Female,zebra_plains,left
+14656,2457,photo_album_9,10,0,100,adult,1,IBEIS_PZ_1227,1500,excellent,Male,zebra_plains,left
+14657,2457,photo_album_9,10,0,100,adult,0,IBEIS_PZ_1267,1540,good,Female,zebra_plains,left
+14658,2457,photo_album_9,10,0,100,adult,0,IBEIS_PZ_1892,2165,ok,Female,zebra_plains,left
+13289,393,photo_album_19,9,0,100,infant,0,____,-13289,excellent,UNKNOWN NAME,zebra_plains,right
+16027,5209,photo_album_64,10,0,100,adult,0,IBEIS_PZ_1825,2098,ok,Female,zebra_plains,left
+16028,5209,photo_album_64,10,0,100,infant,0,____,-16028,junk,UNKNOWN NAME,zebra_plains,left
+12309,1330,photo_album_15,9,0,100,adult,1,IBEIS_PZ_1440,1713,excellent,Male,zebra_plains,left
+12310,1330,photo_album_15,9,0,100,infant,0,____,-12310,poor,UNKNOWN NAME,zebra_plains,left
+9690,1333,photo_album_15,9,0,100,infant,0,____,-9690,ok,UNKNOWN NAME,giraffe_masai,right
+9691,1333,photo_album_15,9,0,100,infant,0,____,-9691,ok,UNKNOWN NAME,giraffe_masai,right
+9692,1333,photo_album_15,9,0,100,infant,0,____,-9692,ok,UNKNOWN NAME,giraffe_masai,right
+12562,3289,photo_album_13,10,0,100,adult,0,IBEIS_PZ_0214,487,ok,Male,zebra_plains,left
+17363,6616,photo_album_66,10,0,100,infant,0,____,-17363,poor,UNKNOWN NAME,zebra_plains,left
+15282,1532,photo_album_12,10,0,100,adult,0,IBEIS_PZ_1275,1548,good,Male,zebra_plains,frontleft
+14582,2151,photo_album_9,10,0,100,adult,0,IBEIS_PZ_0355,628,excellent,Male,zebra_plains,frontleft
+13249,7768,photo_album_71,10,0,100,adult,0,IBEIS_PZ_0519,792,good,Female,zebra_plains,left
+9235,1731,photo_album_25,10,0,100,adult,0,NNP_GIRM_0110,157,ok,Male,giraffe_masai,left
+9236,1731,photo_album_25,10,0,100,infant,0,____,-9236,poor,UNKNOWN NAME,giraffe_masai,right
+9399,616,photo_album_20,10,0,100,infant,0,____,-9399,excellent,UNKNOWN NAME,giraffe_masai,right
+17783,6663,photo_album_66,10,0,100,infant,0,____,-17783,ok,UNKNOWN NAME,zebra_plains,right
+17784,6663,photo_album_66,10,0,100,infant,0,____,-17784,poor,UNKNOWN NAME,zebra_plains,right
+13310,360,photo_album_19,10,0,100,"juvenille, two year old",1,IBEIS_PZ_0996,1269,good,Female,zebra_plains,left
+13961,1869,photo_album_54,10,0,100,"juvenille, one year old",0,IBEIS_PZ_1698,1971,good,Male,zebra_plains,left
+15392,533,photo_album_10,10,0,100,infant,0,____,-15392,poor,UNKNOWN NAME,zebra_plains,left
+14935,2311,photo_album_9,10,0,100,adult,0,IBEIS_PZ_1896,2169,excellent,Female,zebra_plains,left
+17328,2695,photo_album_21,9,0,100,adult,1,IBEIS_PZ_1668,1941,good,Male,zebra_plains,frontleft
+14226,787,photo_album_70,10,0,100,infant,0,IBEIS_PZ_1285,1558,ok,Female,zebra_plains,left
+12683,3274,photo_album_18,10,0,100,adult,1,IBEIS_PZ_0901,1174,ok,Male,zebra_plains,frontleft
+15477,329,photo_album_38,10,0,100,infant,1,IBEIS_PZ_1005,1278,excellent,Male,zebra_plains,left
+16831,2841,photo_album_79,10,0,100,adult,1,IBEIS_PZ_1666,1939,good,Female,zebra_plains,left
+9478,913,photo_album_50,10,0,100,adult,0,NNP_GIRM_0143,234,good,Female,giraffe_masai,left
+9479,913,photo_album_50,10,0,100,infant,0,____,-9479,poor,UNKNOWN NAME,giraffe_masai,frontright
+9520,1732,photo_album_76,10,0,100,adult,1,NNP_GIRM_0110,157,good,Male,giraffe_masai,left
+12499,3261,photo_album_13,10,0,100,adult,0,IBEIS_PZ_0881,1154,ok,Female,zebra_plains,frontleft
+12500,3261,photo_album_13,10,0,100,adult,0,IBEIS_PZ_0870,1143,poor,Female,zebra_plains,left
+12501,3261,photo_album_13,10,0,100,infant,0,IBEIS_PZ_0988,1261,poor,UNKNOWN SEX,zebra_plains,left
+9389,585,photo_album_36,10,0,100,infant,0,____,-9389,junk,UNKNOWN NAME,giraffe_masai,back
+9390,585,photo_album_36,10,0,100,infant,0,____,-9390,ok,UNKNOWN NAME,giraffe_masai,right
+8867,8325,photo_album_55,10,0,100,infant,0,NNP_GIRM_0048,64,poor,UNKNOWN SEX,giraffe_masai,left
+9108,8353,photo_album_42,10,0,100,adult,1,NNP_GIRM_0089,115,ok,Female,giraffe_masai,left
+9341,516,photo_album_10,9,0,100,infant,0,____,-9341,junk,UNKNOWN NAME,giraffe_masai,right
+11806,9019,photo_album_68,10,0,100,adult,0,IBEIS_PZ_0595,868,ok,Male,zebra_plains,left
+9681,1332,photo_album_15,9,0,100,infant,0,____,-9681,good,UNKNOWN NAME,giraffe_masai,right
+9681,1332,photo_album_89,10,0,100,infant,0,____,-9681,good,UNKNOWN NAME,giraffe_masai,right
+9682,1332,photo_album_15,9,0,100,infant,0,____,-9682,ok,UNKNOWN NAME,giraffe_masai,right
+9682,1332,photo_album_89,10,0,100,infant,0,____,-9682,ok,UNKNOWN NAME,giraffe_masai,right
+9683,1332,photo_album_15,9,0,100,infant,0,____,-9683,ok,UNKNOWN NAME,giraffe_masai,right
+9683,1332,photo_album_89,10,0,100,infant,0,____,-9683,ok,UNKNOWN NAME,giraffe_masai,right
+9684,1332,photo_album_15,9,0,100,infant,0,____,-9684,ok,UNKNOWN NAME,giraffe_masai,right
+9684,1332,photo_album_89,10,0,100,infant,0,____,-9684,ok,UNKNOWN NAME,giraffe_masai,right
+12393,1332,photo_album_15,9,0,100,infant,0,____,-12393,junk,UNKNOWN NAME,zebra_plains,right
+12393,1332,photo_album_89,10,0,100,infant,0,____,-12393,junk,UNKNOWN NAME,zebra_plains,right
+12394,1332,photo_album_15,9,0,100,infant,0,____,-12394,good,UNKNOWN NAME,zebra_plains,right
+12394,1332,photo_album_89,10,0,100,infant,0,____,-12394,good,UNKNOWN NAME,zebra_plains,right
+15401,550,photo_album_20,10,0,100,infant,0,____,-15401,ok,UNKNOWN NAME,zebra_plains,right
+11508,8797,photo_album_68,10,0,100,infant,1,IBEIS_PZ_0403,676,good,UNKNOWN SEX,zebra_plains,left
+8926,8322,photo_album_11,9,0,100,"juvenille, two year old",0,NNP_GIRM_0068,90,good,Male,giraffe_masai,left
+13299,388,photo_album_46,10,0,100,infant,1,IBEIS_PZ_1480,1753,good,UNKNOWN SEX,zebra_plains,left
+9353,509,photo_album_28,9,0,100,adult,0,NNP_GIRM_0099,132,ok,Male,giraffe_masai,frontleft
+14395,2491,photo_album_9,9,1,90,"juvenille, two year old",0,IBEIS_PZ_1294,1567,good,Male,zebra_plains,left
+13839,5674,photo_album_41,9,1,90,infant,0,IBEIS_PZ_1725,1998,ok,Female,zebra_plains,left
+15452,273,photo_album_75,9,1,90,adult,0,IBEIS_PZ_0937,1210,ok,Female,zebra_plains,left
+15981,591,photo_album_10,9,1,90,infant,0,____,-15981,good,UNKNOWN NAME,zebra_plains,right
+15982,591,photo_album_10,9,1,90,infant,0,____,-15982,ok,UNKNOWN NAME,zebra_plains,right
+9347,586,photo_album_59,9,1,90,infant,0,____,-9347,ok,UNKNOWN NAME,giraffe_masai,back
+9348,586,photo_album_59,9,1,90,infant,0,____,-9348,good,UNKNOWN NAME,giraffe_masai,backright
+9349,586,photo_album_59,9,1,90,infant,0,____,-9349,junk,UNKNOWN NAME,giraffe_masai,right
+9130,3086,photo_album_6,9,1,90,adult,0,NNP_GIRM_0028,33,poor,Male,giraffe_masai,left
+9269,5713,photo_album_3,9,1,90,"juvenille, one year old",1,NNP_GIRM_0149,253,ok,Male,giraffe_masai,frontleft
+11541,8829,photo_album_78,9,1,90,adult,1,IBEIS_PZ_0384,657,good,Female,zebra_plains,left
+17681,6698,photo_album_45,9,1,90,adult,1,IBEIS_PZ_1742,2015,good,Male,zebra_plains,left
+12722,3151,photo_album_61,9,1,90,infant,1,IBEIS_PZ_0905,1178,good,Female,zebra_plains,left
+12723,3151,photo_album_61,9,1,90,infant,0,IBEIS_PZ_0989,1262,poor,UNKNOWN SEX,zebra_plains,left
+16020,542,photo_album_36,9,1,90,infant,0,____,-16020,ok,UNKNOWN NAME,zebra_plains,right
+16021,542,photo_album_36,9,1,90,infant,0,____,-16021,poor,UNKNOWN NAME,zebra_plains,right
+9694,1281,photo_album_89,9,1,90,adult,0,NNP_GIRM_0151,273,ok,Male,giraffe_masai,frontleft
+13311,405,photo_album_46,9,1,90,infant,0,____,-13311,excellent,UNKNOWN NAME,zebra_plains,right
+9043,8331,photo_album_42,9,1,90,adult,0,NNP_GIRM_0022,27,ok,Female,giraffe_masai,left
+9126,3121,photo_album_6,9,1,90,adult,0,NNP_GIRM_0070,92,ok,Female,giraffe_masai,right
+9127,3121,photo_album_6,9,1,90,adult,0,NNP_GIRM_0031,42,good,Female,giraffe_masai,frontleft
+13303,355,photo_album_46,9,1,90,infant,0,____,-13303,good,UNKNOWN NAME,zebra_plains,right
+9528,1061,photo_album_90,9,1,90,adult,0,NNP_GIRM_0143,234,good,Female,giraffe_masai,left
+13397,82,photo_album_85,9,1,90,infant,0,____,-13397,ok,UNKNOWN NAME,zebra_plains,right
+15564,282,photo_album_97,9,1,90,infant,1,IBEIS_PZ_1556,1829,ok,UNKNOWN SEX,zebra_plains,left
+15565,282,photo_album_97,9,1,90,infant,1,IBEIS_PZ_1560,1833,ok,UNKNOWN SEX,zebra_plains,frontleft
+12544,3451,photo_album_92,9,1,90,infant,0,IBEIS_PZ_0862,1135,good,Male,zebra_plains,right
+12545,3451,photo_album_92,9,1,90,infant,1,IBEIS_PZ_0081,354,ok,Male,zebra_plains,left
+15577,956,photo_album_83,9,1,90,adult,0,IBEIS_PZ_1384,1657,ok,UNKNOWN SEX,zebra_plains,right
+15578,956,photo_album_83,9,1,90,infant,0,____,-15578,good,UNKNOWN NAME,zebra_plains,right
+12652,3226,photo_album_18,9,1,90,adult,0,IBEIS_PZ_0886,1159,poor,Female,zebra_plains,left
+9167,351,photo_album_82,9,1,90,infant,0,____,-9167,ok,UNKNOWN NAME,giraffe_masai,right
+8984,8326,photo_album_67,9,1,90,infant,0,____,-8984,good,UNKNOWN NAME,giraffe_masai,back
+14167,799,photo_album_70,9,1,90,adult,0,IBEIS_PZ_1896,2169,good,Female,zebra_plains,left
+14168,799,photo_album_70,9,1,90,infant,0,____,-14168,junk,UNKNOWN NAME,zebra_plains,left
+14337,1952,photo_album_54,9,1,90,adult,0,IBEIS_PZ_1442,1715,ok,Male,zebra_plains,front
+18667,3875,photo_album_52,9,1,90,"juvenille, two year old",0,IBEIS_PZ_0401,674,good,Female,zebra_plains,left
+12546,3202,photo_album_18,9,1,90,adult,0,IBEIS_PZ_0067,340,ok,Female,zebra_plains,left
+9099,3122,photo_album_98,9,1,90,adult,0,NNP_GIRM_0070,92,good,Female,giraffe_masai,frontright
+9100,3122,photo_album_98,9,1,90,adult,0,NNP_GIRM_0031,42,good,Female,giraffe_masai,frontleft
+18200,4279,photo_album_99,9,1,90,infant,0,____,-18200,ok,UNKNOWN NAME,zebra_plains,backright
+18201,4279,photo_album_99,9,1,90,infant,0,____,-18201,junk,UNKNOWN NAME,zebra_plains,backright
+18202,4279,photo_album_99,9,1,90,infant,0,____,-18202,ok,UNKNOWN NAME,zebra_plains,backright
+8837,3343,photo_album_95,9,1,90,adult,1,NNP_GIRM_0081,105,good,Male,giraffe_masai,left
+9448,1041,photo_album_29,9,1,90,infant,0,____,-9448,junk,UNKNOWN NAME,giraffe_masai,front
+15613,1041,photo_album_29,9,1,90,infant,0,____,-15613,poor,UNKNOWN NAME,zebra_plains,right
+10381,7933,photo_album_88,9,1,90,infant,0,IBEIS_PZ_0013,286,ok,UNKNOWN SEX,zebra_plains,right
+13802,6198,photo_album_94,9,1,90,adult,1,IBEIS_PZ_0445,718,excellent,Female,zebra_plains,left
+13012,4997,photo_album_86,9,1,90,adult,1,IBEIS_PZ_0495,768,excellent,Female,zebra_plains,left
+9307,7282,photo_album_31,9,1,90,infant,0,____,-9307,good,UNKNOWN NAME,giraffe_masai,right
+15606,1000,photo_album_90,9,1,90,infant,0,IBEIS_PZ_1373,1646,ok,UNKNOWN SEX,zebra_plains,right
+15415,551,photo_album_28,9,1,90,infant,0,____,-15415,ok,UNKNOWN NAME,zebra_plains,right
+13293,382,photo_album_82,9,1,90,infant,0,____,-13293,excellent,UNKNOWN NAME,zebra_plains,right
+9665,1315,photo_album_15,9,1,90,adult,0,NNP_GIRM_0101,135,ok,Female,giraffe_masai,left
+9442,897,photo_album_50,9,1,90,adult,0,NNP_GIRM_0143,234,ok,Female,giraffe_masai,frontleft
+12479,4902,photo_album_77,9,1,90,adult,1,IBEIS_PZ_1712,1985,good,Female,zebra_plains,left
+15427,478,photo_album_72,9,1,90,infant,0,____,-15427,poor,UNKNOWN NAME,zebra_plains,left
+13314,363,photo_album_14,9,1,90,infant,0,____,-13314,excellent,UNKNOWN NAME,zebra_plains,right
+13271,353,photo_album_82,9,1,90,infant,0,____,-13271,good,UNKNOWN NAME,zebra_plains,right
+16038,589,photo_album_20,9,1,90,adult,1,IBEIS_PZ_1578,1851,ok,Female,zebra_plains,left
+9344,643,photo_album_72,9,1,90,infant,0,____,-9344,ok,UNKNOWN NAME,giraffe_masai,left
+9101,8316,photo_album_42,9,1,90,adult,1,NNP_GIRM_0089,115,ok,Female,giraffe_masai,frontleft
+13399,4,photo_album_85,9,1,90,infant,0,____,-13399,good,UNKNOWN NAME,zebra_plains,backleft
+15943,461,photo_album_32,9,1,90,infant,0,____,-15943,poor,UNKNOWN NAME,zebra_plains,left
+15944,461,photo_album_32,9,1,90,"juvenille, two year old",0,IBEIS_PZ_0902,1175,ok,Female,zebra_plains,frontleft
+10048,6788,photo_album_66,9,1,90,infant,0,____,-10048,poor,UNKNOWN NAME,giraffe_masai,right
+9218,312,photo_album_38,9,1,90,"juvenille, two year old",0,NNP_GIRM_0038,51,ok,Female,giraffe_masai,frontleft
+13939,1859,photo_album_22,9,1,90,adult,1,IBEIS_PZ_1239,1512,excellent,Female,zebra_plains,left
+13038,5009,photo_album_86,9,1,90,infant,1,IBEIS_PZ_1390,1663,excellent,UNKNOWN SEX,zebra_plains,left
+18608,4062,photo_album_99,9,1,90,infant,0,____,-18608,ok,UNKNOWN NAME,zebra_plains,backleft
+9120,8352,photo_album_42,9,1,90,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+9121,8352,photo_album_42,9,1,90,"juvenille, one year old",1,NNP_GIRM_0047,63,good,Female,giraffe_masai,left
+9576,5239,photo_album_39,9,1,90,adult,0,NNP_GIRM_0095,124,ok,Female,giraffe_masai,frontleft
+16147,607,photo_album_59,9,1,90,infant,1,IBEIS_PZ_1570,1843,good,UNKNOWN SEX,zebra_plains,left
+9325,15,photo_album_85,9,1,90,infant,0,____,-9325,ok,UNKNOWN NAME,giraffe_masai,frontright
+9028,8329,photo_album_67,9,1,90,"juvenille, one year old",0,NNP_GIRM_0035,47,ok,Male,giraffe_masai,right
+9028,8329,photo_album_80,9,1,90,"juvenille, one year old",0,NNP_GIRM_0035,47,ok,Male,giraffe_masai,right
+9028,8329,photo_album_49,9,1,90,"juvenille, one year old",0,NNP_GIRM_0035,47,ok,Male,giraffe_masai,right
+17076,2762,photo_album_79,9,1,90,infant,1,IBEIS_PZ_1716,1989,ok,UNKNOWN SEX,zebra_plains,left
+17077,2762,photo_album_79,9,1,90,infant,0,IBEIS_PZ_1637,1910,ok,Female,zebra_plains,left
+17078,2762,photo_album_79,9,1,90,infant,0,____,-17078,poor,UNKNOWN NAME,zebra_plains,left
+12465,4901,photo_album_51,9,1,90,adult,0,IBEIS_PZ_0858,1131,ok,UNKNOWN SEX,zebra_plains,frontright
+12465,4901,photo_album_58,9,1,90,adult,0,IBEIS_PZ_0858,1131,ok,UNKNOWN SEX,zebra_plains,frontright
+12466,4901,photo_album_51,9,1,90,adult,0,IBEIS_PZ_0848,1121,ok,Female,zebra_plains,left
+12466,4901,photo_album_58,9,1,90,adult,0,IBEIS_PZ_0848,1121,ok,Female,zebra_plains,left
+11002,8403,photo_album_73,9,1,90,adult,0,IBEIS_PZ_0523,796,ok,Male,zebra_plains,frontleft
+13961,1869,photo_album_25,9,1,90,"juvenille, one year old",0,IBEIS_PZ_1698,1971,good,Male,zebra_plains,left
+16078,579,photo_album_10,9,1,90,infant,0,____,-16078,poor,UNKNOWN NAME,zebra_plains,right
+16079,579,photo_album_10,9,1,90,infant,0,____,-16079,good,UNKNOWN NAME,zebra_plains,right
+15392,533,photo_album_72,9,1,90,infant,0,____,-15392,poor,UNKNOWN NAME,zebra_plains,left
+10422,7962,photo_album_88,9,1,90,infant,0,IBEIS_PZ_0021,294,poor,Female,zebra_plains,left
+9421,900,photo_album_48,9,1,90,adult,0,NNP_GIRM_0143,234,good,Female,giraffe_masai,left
+9422,900,photo_album_48,9,1,90,infant,0,____,-9422,junk,UNKNOWN NAME,giraffe_masai,frontleft
+9164,346,photo_album_19,9,1,90,adult,0,NNP_GIRM_0119,172,good,Female,giraffe_masai,left
+9164,346,photo_album_82,9,1,90,adult,0,NNP_GIRM_0119,172,good,Female,giraffe_masai,left
+9164,346,photo_album_46,9,1,90,adult,0,NNP_GIRM_0119,172,good,Female,giraffe_masai,left
+9074,3165,photo_album_6,9,1,90,infant,0,____,-9074,poor,UNKNOWN NAME,giraffe_masai,left
+10295,7867,photo_album_47,9,1,90,infant,0,IBEIS_PZ_0011,284,poor,UNKNOWN SEX,zebra_plains,left
+10296,7867,photo_album_47,9,1,90,adult,0,IBEIS_PZ_0204,477,ok,Female,zebra_plains,back
+15674,889,photo_album_48,9,1,90,adult,1,IBEIS_PZ_1376,1649,ok,UNKNOWN SEX,zebra_plains,left
+15597,877,photo_album_50,9,1,90,adult,0,IBEIS_PZ_1385,1658,good,Female,zebra_plains,right
+9230,223,photo_album_97,9,1,90,infant,0,____,-9230,good,UNKNOWN NAME,giraffe_masai,left
+15832,1899,photo_album_76,9,1,90,infant,1,IBEIS_PZ_0410,683,good,Female,zebra_plains,left
+15833,1899,photo_album_76,9,1,90,adult,0,IBEIS_PZ_1293,1566,ok,Female,zebra_plains,backleft
+16419,7410,photo_album_87,9,1,90,adult,0,IBEIS_PZ_1275,1548,good,Male,zebra_plains,left
+16420,7410,photo_album_87,9,1,90,infant,0,____,-16420,ok,UNKNOWN NAME,zebra_plains,right
+13599,7301,photo_album_31,9,1,90,adult,1,IBEIS_PZ_1541,1814,ok,Female,zebra_plains,left
+9467,912,photo_album_48,9,1,90,adult,0,NNP_GIRM_0143,234,good,Female,giraffe_masai,frontleft
+9246,7749,photo_album_71,9,1,90,infant,0,____,-9246,poor,UNKNOWN NAME,giraffe_masai,right
+9133,3293,photo_album_13,9,1,90,infant,0,____,-9133,poor,UNKNOWN NAME,giraffe_masai,left
+10811,8194,photo_album_100,9,1,90,adult,0,IBEIS_PZ_0098,371,ok,Male,zebra_plains,frontright
+8867,8325,photo_album_80,9,1,90,infant,0,NNP_GIRM_0048,64,poor,UNKNOWN SEX,giraffe_masai,left
+9415,1099,photo_album_29,9,1,90,infant,0,____,-9415,poor,UNKNOWN NAME,giraffe_masai,frontright
+9108,8353,photo_album_17,9,1,90,adult,1,NNP_GIRM_0089,115,ok,Female,giraffe_masai,left
+12701,3398,photo_album_84,9,1,90,"juvenille, two year old",1,IBEIS_PZ_0883,1156,good,Male,zebra_plains,left
+12654,3434,photo_album_92,9,1,90,infant,0,IBEIS_PZ_0897,1170,ok,UNKNOWN SEX,zebra_plains,backleft
+10771,8167,photo_album_30,9,1,90,adult,0,IBEIS_PZ_0099,372,ok,Female,zebra_plains,right
+13236,7776,photo_album_27,9,1,90,infant,0,IBEIS_PZ_1091,1364,good,UNKNOWN SEX,zebra_plains,right
+13237,7776,photo_album_27,9,1,90,infant,0,IBEIS_PZ_1093,1366,ok,UNKNOWN SEX,zebra_plains,right
+9341,516,photo_album_72,9,1,90,infant,0,____,-9341,junk,UNKNOWN NAME,giraffe_masai,right
+13804,6197,photo_album_94,9,1,90,infant,1,IBEIS_PZ_0448,721,ok,Female,zebra_plains,left
+9418,927,photo_album_50,9,1,90,infant,0,____,-9418,ok,UNKNOWN NAME,giraffe_masai,frontright
+9419,927,photo_album_50,9,1,90,infant,0,____,-9419,poor,UNKNOWN NAME,giraffe_masai,right
+10344,7904,photo_album_47,9,1,90,infant,1,IBEIS_PZ_0206,479,good,UNKNOWN SEX,zebra_plains,left
+14404,2416,photo_album_9,9,1,90,adult,0,IBEIS_PZ_1282,1555,ok,Male,zebra_plains,left
+14405,2416,photo_album_9,9,1,90,adult,0,IBEIS_PZ_1216,1489,ok,Female,zebra_plains,left
+15528,242,photo_album_75,9,1,90,adult,1,IBEIS_PZ_1908,2181,excellent,UNKNOWN SEX,zebra_plains,left
+8926,8322,photo_album_42,9,1,90,"juvenille, two year old",0,NNP_GIRM_0068,90,good,Male,giraffe_masai,left
+8926,8322,photo_album_49,9,1,90,"juvenille, two year old",0,NNP_GIRM_0068,90,good,Male,giraffe_masai,left
+13301,366,photo_album_46,9,1,90,adult,0,IBEIS_PZ_0722,995,good,Female,zebra_plains,left
+13302,366,photo_album_46,9,1,90,adult,1,IBEIS_PZ_0754,1027,good,Male,zebra_plains,left
+15655,876,photo_album_50,9,1,90,adult,0,IBEIS_PZ_1375,1648,excellent,Female,zebra_plains,right
+8849,3131,photo_album_6,9,1,90,adult,0,NNP_GIRM_0042,55,good,Female,giraffe_masai,right
+11503,8792,photo_album_73,9,1,90,adult,1,IBEIS_PZ_0439,712,good,UNKNOWN SEX,zebra_plains,left
+8987,3336,photo_album_84,9,1,90,adult,0,NNP_GIRM_0019,23,ok,Male,giraffe_masai,left
+13324,386,photo_album_46,9,1,90,"juvenille, two year old",1,IBEIS_PZ_1484,1757,excellent,Female,zebra_plains,left
+15439,331,photo_album_75,9,1,90,adult,1,IBEIS_PZ_1415,1688,ok,Female,zebra_plains,left
+15258,1579,photo_album_12,8,1,88.88888889,"juvenille, one year old",0,IBEIS_PZ_1698,1971,good,Male,zebra_plains,left
+12637,3204,photo_album_13,8,1,88.88888889,infant,0,IBEIS_PZ_0686,959,ok,Female,zebra_plains,backleft
+17085,2559,photo_album_21,8,1,88.88888889,"juvenille, one year old",1,IBEIS_PZ_1612,1885,excellent,Male,zebra_plains,left
+17086,2559,photo_album_21,8,1,88.88888889,infant,0,____,-17086,poor,UNKNOWN NAME,zebra_plains,left
+14863,1595,photo_album_12,8,1,88.88888889,adult,0,IBEIS_PZ_1293,1566,good,Female,zebra_plains,left
+15365,1968,photo_album_22,8,1,88.88888889,adult,0,IBEIS_PZ_1111,1384,good,Female,zebra_plains,left
+15366,1968,photo_album_22,8,1,88.88888889,adult,0,IBEIS_PZ_1267,1540,poor,Female,zebra_plains,frontleft
+15367,1968,photo_album_22,8,1,88.88888889,infant,0,IBEIS_PZ_1413,1686,good,Male,zebra_plains,frontleft
+15222,1860,photo_album_25,8,1,88.88888889,adult,1,IBEIS_PZ_0377,650,excellent,Female,zebra_plains,left
+13310,360,photo_album_1,8,1,88.88888889,"juvenille, two year old",1,IBEIS_PZ_0996,1269,good,Female,zebra_plains,left
+11482,8772,photo_album_23,8,1,88.88888889,adult,1,IBEIS_PZ_0442,715,excellent,Male,zebra_plains,left
+12376,1301,photo_album_15,8,1,88.88888889,infant,1,IBEIS_PZ_0262,535,excellent,Female,zebra_plains,left
+12377,1301,photo_album_15,8,1,88.88888889,adult,0,IBEIS_PZ_1109,1382,good,Male,zebra_plains,frontleft
+12378,1301,photo_album_15,8,1,88.88888889,adult,1,IBEIS_PZ_0331,604,excellent,Female,zebra_plains,left
+15417,630,photo_album_20,7,1,87.5,infant,0,____,-15417,poor,UNKNOWN NAME,zebra_plains,left
+9562,5022,photo_album_86,8,2,80,"juvenille, one year old",1,NNP_GIRM_0116,167,excellent,Male,giraffe_masai,left
+16088,611,photo_album_20,8,2,80,infant,0,____,-16088,ok,UNKNOWN NAME,zebra_plains,right
+15244,1664,photo_album_12,8,2,80,adult,0,IBEIS_PZ_1424,1697,ok,Female,zebra_plains,left
+15245,1664,photo_album_12,8,2,80,adult,0,IBEIS_PZ_1442,1715,good,Male,zebra_plains,left
+11150,8517,photo_album_78,8,2,80,"juvenille, one year old",0,IBEIS_PZ_1612,1885,poor,Male,zebra_plains,left
+11151,8517,photo_album_78,8,2,80,adult,0,IBEIS_PZ_0497,770,ok,Female,zebra_plains,left
+15640,1073,photo_album_90,8,2,80,adult,0,IBEIS_PZ_1370,1643,poor,Male,zebra_plains,left
+15604,1005,photo_album_90,8,2,80,infant,0,____,-15604,poor,UNKNOWN NAME,zebra_plains,right
+8838,9174,photo_album_68,8,2,80,adult,0,NNP_GIRM_0039,52,ok,UNKNOWN SEX,giraffe_masai,right
+12561,3288,photo_album_13,8,2,80,adult,0,IBEIS_PZ_0904,1177,good,Male,zebra_plains,left
+9710,1316,photo_album_89,8,2,80,infant,0,____,-9710,poor,UNKNOWN NAME,giraffe_masai,left
+14683,1766,photo_album_76,8,2,80,infant,1,IBEIS_PZ_1355,1628,ok,Female,zebra_plains,left
+14684,1766,photo_album_76,8,2,80,adult,0,IBEIS_PZ_1245,1518,poor,Female,zebra_plains,left
+15654,878,photo_album_48,8,2,80,adult,0,IBEIS_PZ_1385,1658,excellent,Female,zebra_plains,right
+9251,1745,photo_album_54,8,2,80,infant,0,____,-9251,ok,UNKNOWN NAME,giraffe_masai,right
+9252,1745,photo_album_54,8,2,80,infant,0,____,-9252,poor,UNKNOWN NAME,giraffe_masai,back
+13434,77,photo_album_85,8,2,80,infant,0,____,-13434,ok,UNKNOWN NAME,zebra_plains,frontright
+9393,499,photo_album_59,8,2,80,adult,0,NNP_GIRM_0046,60,good,Male,giraffe_masai,left
+15955,536,photo_album_20,8,2,80,adult,0,IBEIS_PZ_0875,1148,ok,Male,zebra_plains,left
+15956,536,photo_album_20,8,2,80,infant,0,____,-15956,poor,UNKNOWN NAME,zebra_plains,left
+12744,3334,photo_album_92,8,2,80,"juvenille, two year old",0,IBEIS_PZ_0863,1136,good,Male,zebra_plains,right
+17680,6734,photo_album_45,8,2,80,infant,1,IBEIS_PZ_1786,2059,ok,UNKNOWN SEX,zebra_plains,frontleft
+13855,5668,photo_album_24,8,2,80,adult,0,IBEIS_PZ_1821,2094,ok,Female,zebra_plains,left
+15229,2330,photo_album_9,8,2,80,"juvenille, one year old",0,IBEIS_PZ_1698,1971,ok,Male,zebra_plains,frontleft
+13322,385,photo_album_1,8,2,80,infant,0,____,-13322,excellent,UNKNOWN NAME,zebra_plains,right
+17965,4821,photo_album_44,8,2,80,infant,0,____,-17965,poor,UNKNOWN NAME,zebra_plains,left
+9010,3089,photo_album_98,8,2,80,adult,0,NNP_GIRM_0007,8,poor,Male,giraffe_masai,left
+10764,8160,photo_album_30,8,2,80,"juvenille, one year old",0,IBEIS_PZ_0107,380,good,Female,zebra_plains,left
+9319,7276,photo_album_31,8,2,80,infant,0,____,-9319,poor,UNKNOWN NAME,giraffe_masai,left
+13239,7772,photo_album_71,8,2,80,adult,1,IBEIS_PZ_0519,792,excellent,Female,zebra_plains,left
+15601,1045,photo_album_90,8,2,80,infant,0,____,-15601,ok,UNKNOWN NAME,zebra_plains,right
+9084,3136,photo_album_6,8,2,80,adult,0,NNP_GIRM_0042,55,ok,Female,giraffe_masai,right
+9085,3136,photo_album_6,8,2,80,infant,0,____,-9085,poor,UNKNOWN NAME,giraffe_masai,front
+8947,3088,photo_album_98,8,2,80,adult,1,NNP_GIRM_0007,8,ok,Male,giraffe_masai,left
+11905,9120,photo_album_73,8,2,80,infant,0,IBEIS_PZ_0659,932,poor,UNKNOWN SEX,zebra_plains,frontleft
+11906,9120,photo_album_73,8,2,80,"juvenille, two year old",0,IBEIS_PZ_0661,934,poor,Female,zebra_plains,left
+15974,583,photo_album_72,8,2,80,infant,1,IBEIS_PZ_1565,1838,ok,Female,zebra_plains,left
+15975,583,photo_album_72,8,2,80,infant,0,____,-15975,junk,UNKNOWN NAME,zebra_plains,right
+15976,583,photo_album_72,8,2,80,infant,0,____,-15976,poor,UNKNOWN NAME,zebra_plains,right
+15977,583,photo_album_72,8,2,80,infant,0,____,-15977,ok,UNKNOWN NAME,zebra_plains,right
+15978,583,photo_album_72,8,2,80,infant,0,____,-15978,ok,UNKNOWN NAME,zebra_plains,backright
+12652,3226,photo_album_13,8,2,80,adult,0,IBEIS_PZ_0886,1159,poor,Female,zebra_plains,left
+11740,8943,photo_album_78,8,2,80,adult,0,IBEIS_PZ_0573,846,poor,UNKNOWN SEX,zebra_plains,left
+9371,641,photo_album_10,8,2,80,infant,0,____,-9371,junk,UNKNOWN NAME,giraffe_masai,left
+13458,26,photo_album_85,8,2,80,infant,0,____,-13458,ok,UNKNOWN NAME,zebra_plains,front
+9878,5460,photo_album_81,8,2,80,adult,0,NNP_GIRM_0019,23,ok,Male,giraffe_masai,left
+12245,1331,photo_album_89,8,2,80,adult,1,IBEIS_PZ_1103,1376,excellent,Male,zebra_plains,left
+12246,1331,photo_album_89,8,2,80,adult,1,IBEIS_PZ_1416,1689,ok,Female,zebra_plains,left
+12247,1331,photo_album_89,8,2,80,infant,1,IBEIS_PZ_1435,1708,ok,UNKNOWN SEX,zebra_plains,left
+12248,1331,photo_album_89,8,2,80,infant,1,IBEIS_PZ_1441,1714,good,UNKNOWN SEX,zebra_plains,left
+12249,1331,photo_album_89,8,2,80,adult,1,IBEIS_PZ_1436,1709,ok,Male,zebra_plains,left
+12250,1331,photo_album_89,8,2,80,adult,1,IBEIS_PZ_1415,1688,ok,Female,zebra_plains,left
+12251,1331,photo_album_89,8,2,80,infant,0,____,-12251,junk,UNKNOWN NAME,zebra_plains,left
+10381,7933,photo_album_47,8,2,80,infant,0,IBEIS_PZ_0013,286,ok,UNKNOWN SEX,zebra_plains,right
+13035,4995,photo_album_91,8,2,80,adult,1,IBEIS_PZ_1388,1661,ok,Female,zebra_plains,left
+17759,6597,photo_album_45,8,2,80,infant,0,____,-17759,good,UNKNOWN NAME,zebra_plains,right
+8865,8351,photo_album_80,8,2,80,"juvenille, one year old",1,NNP_GIRM_0047,63,good,Female,giraffe_masai,left
+8866,8351,photo_album_80,8,2,80,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+15418,469,photo_album_59,8,2,80,infant,0,____,-15418,ok,UNKNOWN NAME,zebra_plains,right
+9139,3316,photo_album_92,8,2,80,unknown,1,NNP_GIRM_0057,77,good,UNKNOWN SEX,giraffe_masai,left
+10834,8215,photo_album_43,8,2,80,adult,0,IBEIS_PZ_0210,483,ok,Male,zebra_plains,left
+11284,8627,photo_album_78,8,2,80,adult,0,IBEIS_PZ_0198,471,junk,Male,zebra_plains,left
+10896,8274,photo_album_43,8,2,80,infant,1,IBEIS_PZ_0279,552,ok,UNKNOWN SEX,zebra_plains,left
+9398,497,photo_album_28,8,2,80,infant,0,____,-9398,poor,UNKNOWN NAME,giraffe_masai,left
+9398,497,photo_album_10,8,2,80,infant,0,____,-9398,poor,UNKNOWN NAME,giraffe_masai,left
+15391,631,photo_album_28,8,2,80,infant,0,____,-15391,poor,UNKNOWN NAME,zebra_plains,left
+9645,5131,photo_album_37,8,2,80,infant,0,____,-9645,ok,UNKNOWN NAME,giraffe_masai,backleft
+9925,5574,photo_album_2,8,2,80,adult,1,NNP_GIRM_0076,100,excellent,Female,giraffe_masai,left
+8843,8337,photo_album_17,8,2,80,infant,0,NNP_GIRM_0002,2,ok,Male,giraffe_masai,right
+9531,980,photo_album_83,8,2,80,infant,0,____,-9531,ok,UNKNOWN NAME,giraffe_masai,right
+8904,9333,photo_album_23,8,2,80,adult,1,NNP_GIRM_0003,3,good,Male,giraffe_masai,left
+8905,9333,photo_album_23,8,2,80,unknown,1,NNP_GIRM_0005,5,ok,UNKNOWN SEX,giraffe_masai,left
+12685,3349,photo_album_93,8,2,80,adult,1,IBEIS_PZ_0964,1237,good,Male,zebra_plains,left
+14371,1510,photo_album_12,8,2,80,"juvenille, two year old",0,IBEIS_PZ_0566,839,ok,Male,zebra_plains,backleft
+14372,1510,photo_album_12,8,2,80,"juvenille, two year old",0,IBEIS_PZ_0587,860,ok,Male,zebra_plains,left
+14373,1510,photo_album_12,8,2,80,adult,0,IBEIS_PZ_1300,1573,poor,Male,zebra_plains,back
+15411,462,photo_album_32,8,2,80,adult,1,IBEIS_PZ_1564,1837,ok,UNKNOWN SEX,zebra_plains,frontleft
+13385,6,photo_album_85,8,2,80,adult,1,IBEIS_PZ_1561,1834,excellent,Male,zebra_plains,left
+13314,363,photo_album_46,8,2,80,infant,0,____,-13314,excellent,UNKNOWN NAME,zebra_plains,right
+14017,1874,photo_album_76,8,2,80,adult,0,IBEIS_PZ_1287,1560,good,Male,zebra_plains,left
+12519,3437,photo_album_92,8,2,80,infant,0,IBEIS_PZ_0897,1170,good,UNKNOWN SEX,zebra_plains,right
+16911,2976,photo_album_79,8,2,80,infant,0,____,-16911,poor,UNKNOWN NAME,zebra_plains,frontleft
+16912,2976,photo_album_79,8,2,80,adult,0,IBEIS_PZ_1664,1937,good,UNKNOWN SEX,zebra_plains,left
+16913,2976,photo_album_79,8,2,80,infant,0,____,-16913,poor,UNKNOWN NAME,zebra_plains,left
+9909,5385,photo_album_65,8,2,80,infant,0,____,-9909,good,UNKNOWN NAME,giraffe_masai,right
+13309,354,photo_album_1,8,2,80,infant,0,____,-13309,good,UNKNOWN NAME,zebra_plains,right
+12520,3248,photo_album_13,8,2,80,"juvenille, one year old",1,IBEIS_PZ_0931,1204,ok,UNKNOWN SEX,zebra_plains,left
+9218,312,photo_album_75,8,2,80,"juvenille, two year old",0,NNP_GIRM_0038,51,ok,Female,giraffe_masai,frontleft
+17440,6471,photo_album_45,8,2,80,infant,0,____,-17440,poor,UNKNOWN NAME,zebra_plains,left
+13038,5009,photo_album_91,8,2,80,infant,1,IBEIS_PZ_1390,1663,excellent,UNKNOWN SEX,zebra_plains,left
+10487,8008,photo_album_100,8,2,80,adult,1,IBEIS_PZ_0050,323,good,Female,zebra_plains,left
+9120,8352,photo_album_49,8,2,80,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+9121,8352,photo_album_49,8,2,80,"juvenille, one year old",1,NNP_GIRM_0047,63,good,Female,giraffe_masai,left
+13297,356,photo_album_14,8,2,80,infant,1,IBEIS_PZ_1490,1763,good,UNKNOWN SEX,zebra_plains,left
+9208,2120,photo_album_9,8,2,80,infant,0,____,-9208,ok,UNKNOWN NAME,giraffe_masai,right
+9209,2120,photo_album_9,8,2,80,infant,0,____,-9209,ok,UNKNOWN NAME,giraffe_masai,right
+9203,226,photo_album_75,8,2,80,adult,0,NNP_GIRM_0055,74,good,Female,giraffe_masai,left
+14444,1741,photo_album_22,8,2,80,adult,1,IBEIS_PZ_0349,622,excellent,Female,zebra_plains,left
+10880,8257,photo_album_43,8,2,80,adult,0,IBEIS_PZ_0103,376,poor,Female,zebra_plains,backleft
+14488,5142,photo_album_37,8,2,80,infant,0,____,-14488,poor,UNKNOWN NAME,zebra_plains,left
+14489,5142,photo_album_37,8,2,80,adult,1,IBEIS_PZ_1852,2125,good,Female,zebra_plains,left
+13310,360,photo_album_46,8,2,80,"juvenille, two year old",1,IBEIS_PZ_0996,1269,good,Female,zebra_plains,left
+9594,6962,photo_album_34,8,2,80,infant,0,____,-9594,poor,UNKNOWN NAME,giraffe_masai,frontleft
+9595,6962,photo_album_34,8,2,80,infant,0,____,-9595,poor,UNKNOWN NAME,giraffe_masai,frontleft
+13100,6962,photo_album_34,8,2,80,adult,0,IBEIS_PZ_0875,1148,poor,Male,zebra_plains,left
+13101,6962,photo_album_34,8,2,80,"juvenille, two year old",0,IBEIS_PZ_1026,1299,junk,Female,zebra_plains,backleft
+10024,4814,photo_album_44,8,2,80,adult,0,NNP_GIRM_0151,273,ok,Male,giraffe_masai,frontleft
+9291,6124,photo_album_94,8,2,80,adult,1,NNP_GIRM_0137,207,good,Female,giraffe_masai,left
+13296,369,photo_album_14,8,2,80,infant,0,____,-13296,good,UNKNOWN NAME,zebra_plains,backright
+18038,3609,photo_album_52,8,2,80,adult,0,IBEIS_PZ_1594,1867,excellent,Male,zebra_plains,left
+13396,76,photo_album_85,8,2,80,infant,0,____,-13396,poor,UNKNOWN NAME,zebra_plains,frontright
+16902,2556,photo_album_21,8,2,80,infant,0,____,-16902,poor,UNKNOWN NAME,zebra_plains,left
+10036,4819,photo_album_44,8,2,80,adult,0,NNP_GIRM_0151,273,ok,Male,giraffe_masai,left
+9009,8342,photo_album_17,8,2,80,infant,0,____,-9009,good,UNKNOWN NAME,giraffe_masai,right
+17910,3628,photo_album_52,8,2,80,infant,0,____,-17910,junk,UNKNOWN NAME,zebra_plains,right
+11843,9035,photo_album_73,8,2,80,infant,1,IBEIS_PZ_0635,908,ok,UNKNOWN SEX,zebra_plains,frontleft
+11844,9035,photo_album_73,8,2,80,adult,0,IBEIS_PZ_0516,789,poor,Male,zebra_plains,frontleft
+12790,5345,photo_album_2,8,2,80,adult,0,IBEIS_PZ_0270,543,good,Male,zebra_plains,left
+9565,5021,photo_album_86,8,2,80,"juvenille, one year old",1,NNP_GIRM_0116,167,good,Male,giraffe_masai,left
+14590,2322,photo_album_96,8,2,80,"juvenille, one year old",0,IBEIS_PZ_1242,1515,ok,Female,zebra_plains,left
+14981,1523,photo_album_12,8,2,80,adult,0,IBEIS_PZ_1703,1976,ok,Female,zebra_plains,backleft
+14982,1523,photo_album_12,8,2,80,"juvenille, one year old",0,IBEIS_PZ_1266,1539,good,Female,zebra_plains,left
+13790,6139,photo_album_94,8,2,80,adult,1,IBEIS_PZ_1512,1785,good,Female,zebra_plains,left
+9086,3162,photo_album_98,8,2,80,adult,0,NNP_GIRM_0040,53,ok,Female,giraffe_masai,right
+9087,3162,photo_album_98,8,2,80,"juvenille, two year old",0,NNP_GIRM_0051,70,ok,Male,giraffe_masai,right
+9088,3162,photo_album_98,8,2,80,"juvenille, two year old",0,NNP_GIRM_0049,68,ok,Male,giraffe_masai,backright
+9089,3162,photo_album_98,8,2,80,"juvenille, two year old",0,NNP_GIRM_0067,89,ok,UNKNOWN SEX,giraffe_masai,right
+11520,8809,photo_album_78,8,2,80,infant,0,IBEIS_PZ_0399,672,ok,Male,zebra_plains,right
+18309,4587,photo_album_63,8,2,80,infant,0,____,-18309,junk,UNKNOWN NAME,zebra_plains,left
+18310,4587,photo_album_63,8,2,80,infant,0,____,-18310,junk,UNKNOWN NAME,zebra_plains,left
+18311,4587,photo_album_63,8,2,80,infant,0,____,-18311,junk,UNKNOWN NAME,zebra_plains,front
+18312,4587,photo_album_63,8,2,80,infant,0,____,-18312,junk,UNKNOWN NAME,zebra_plains,back
+18313,4587,photo_album_63,8,2,80,adult,0,IBEIS_PZ_1614,1887,good,Female,zebra_plains,left
+18314,4587,photo_album_63,8,2,80,infant,0,____,-18314,good,UNKNOWN NAME,zebra_plains,right
+11156,8521,photo_album_68,8,2,80,adult,0,IBEIS_PZ_0303,576,ok,Male,zebra_plains,left
+9406,1094,photo_album_29,8,2,80,infant,0,____,-9406,ok,UNKNOWN NAME,giraffe_masai,right
+12433,3312,photo_album_7,8,2,80,"juvenille, two year old",0,IBEIS_PZ_0017,290,ok,Male,zebra_plains,left
+8867,8325,photo_album_17,8,2,80,infant,0,NNP_GIRM_0048,64,poor,UNKNOWN SEX,giraffe_masai,left
+8867,8325,photo_album_49,8,2,80,infant,0,NNP_GIRM_0048,64,poor,UNKNOWN SEX,giraffe_masai,left
+18055,4259,photo_album_99,8,2,80,infant,0,____,-18055,junk,UNKNOWN NAME,zebra_plains,left
+9108,8353,photo_album_49,8,2,80,adult,1,NNP_GIRM_0089,115,ok,Female,giraffe_masai,left
+9149,8350,photo_album_49,8,2,80,adult,0,NNP_GIRM_0022,27,ok,Female,giraffe_masai,left
+13270,389,photo_album_14,8,2,80,infant,0,____,-13270,excellent,UNKNOWN NAME,zebra_plains,right
+11856,9058,photo_album_68,8,2,80,adult,1,IBEIS_PZ_0641,914,ok,UNKNOWN SEX,zebra_plains,left
+12654,3434,photo_album_93,8,2,80,infant,0,IBEIS_PZ_0897,1170,ok,UNKNOWN SEX,zebra_plains,backleft
+11507,8796,photo_album_78,8,2,80,infant,0,IBEIS_PZ_0403,676,good,UNKNOWN SEX,zebra_plains,left
+13288,358,photo_album_14,8,2,80,adult,1,IBEIS_PZ_1491,1764,good,Male,zebra_plains,left
+13236,7776,photo_album_71,8,2,80,infant,0,IBEIS_PZ_1091,1364,good,UNKNOWN SEX,zebra_plains,right
+13237,7776,photo_album_71,8,2,80,infant,0,IBEIS_PZ_1093,1366,ok,UNKNOWN SEX,zebra_plains,right
+12711,3069,photo_album_98,8,2,80,adult,0,IBEIS_PZ_0231,504,ok,Female,zebra_plains,left
+9559,5017,photo_album_4,8,2,80,infant,0,____,-9559,good,UNKNOWN NAME,giraffe_masai,frontright
+8961,8330,photo_album_80,8,2,80,"juvenille, one year old",0,NNP_GIRM_0035,47,poor,Male,giraffe_masai,right
+8961,8330,photo_album_49,8,2,80,"juvenille, one year old",0,NNP_GIRM_0035,47,poor,Male,giraffe_masai,right
+14736,1992,photo_album_22,8,2,80,adult,0,IBEIS_PZ_1909,2182,good,Female,zebra_plains,left
+14737,1992,photo_album_22,8,2,80,"juvenille, two year old",0,IBEIS_PZ_1235,1508,ok,Female,zebra_plains,left
+14738,1992,photo_album_22,8,2,80,infant,0,IBEIS_PZ_1648,1921,ok,Female,zebra_plains,left
+16240,5228,photo_album_39,8,2,80,infant,0,____,-16240,poor,UNKNOWN NAME,zebra_plains,left
+15150,2320,photo_album_53,8,2,80,infant,1,IBEIS_PZ_1238,1511,good,Male,zebra_plains,left
+9168,370,photo_album_1,8,2,80,adult,0,NNP_GIRM_0019,23,ok,Male,giraffe_masai,left
+8801,8328,photo_album_42,8,2,80,infant,0,____,-8801,poor,UNKNOWN NAME,giraffe_masai,backleft
+8926,8322,photo_album_17,8,2,80,"juvenille, two year old",0,NNP_GIRM_0068,90,good,Male,giraffe_masai,left
+13299,388,photo_album_14,8,2,80,infant,1,IBEIS_PZ_1480,1753,good,UNKNOWN SEX,zebra_plains,left
+8849,3131,photo_album_98,8,2,80,adult,0,NNP_GIRM_0042,55,good,Female,giraffe_masai,right
+8849,3131,photo_album_61,8,2,80,adult,0,NNP_GIRM_0042,55,good,Female,giraffe_masai,right
+15468,146,photo_album_38,8,2,80,adult,1,IBEIS_PZ_1553,1826,excellent,Female,zebra_plains,left
+13759,6220,photo_album_94,8,2,80,infant,1,IBEIS_PZ_1160,1433,good,UNKNOWN SEX,zebra_plains,left
+13760,6220,photo_album_94,8,2,80,infant,0,IBEIS_PZ_0834,1107,ok,Male,zebra_plains,left
+9094,8327,photo_album_17,8,2,80,infant,0,____,-9094,poor,UNKNOWN NAME,giraffe_masai,right
+9094,8327,photo_album_11,8,2,80,infant,0,____,-9094,poor,UNKNOWN NAME,giraffe_masai,right
+11456,8746,photo_album_23,8,2,80,"juvenille, two year old",0,IBEIS_PZ_0342,615,ok,Female,zebra_plains,left
+12339,1238,photo_album_40,8,2,80,adult,1,IBEIS_PZ_1402,1675,excellent,Female,zebra_plains,left
+13324,386,photo_album_19,8,2,80,"juvenille, two year old",1,IBEIS_PZ_1484,1757,excellent,Female,zebra_plains,left
+13324,386,photo_album_82,8,2,80,"juvenille, two year old",1,IBEIS_PZ_1484,1757,excellent,Female,zebra_plains,left
+9431,1102,photo_album_29,8,2,80,infant,0,____,-9431,poor,UNKNOWN NAME,giraffe_masai,left
+15260,1986,photo_album_25,7,2,77.77777778,adult,0,IBEIS_PZ_1526,1799,ok,Female,zebra_plains,left
+8984,8326,photo_album_11,7,2,77.77777778,infant,0,____,-8984,good,UNKNOWN NAME,giraffe_masai,back
+8865,8351,photo_album_11,7,2,77.77777778,"juvenille, one year old",1,NNP_GIRM_0047,63,good,Female,giraffe_masai,left
+8866,8351,photo_album_11,7,2,77.77777778,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+12700,3283,photo_album_13,7,2,77.77777778,adult,1,IBEIS_PZ_0956,1229,good,UNKNOWN SEX,zebra_plains,left
+14351,1609,photo_album_12,7,2,77.77777778,adult,0,IBEIS_PZ_1255,1528,ok,Female,zebra_plains,left
+14352,1609,photo_album_12,7,2,77.77777778,adult,0,IBEIS_PZ_1305,1578,poor,Female,zebra_plains,front
+14353,1609,photo_album_12,7,2,77.77777778,adult,0,IBEIS_PZ_1273,1546,ok,Male,zebra_plains,left
+14354,1609,photo_album_12,7,2,77.77777778,adult,0,IBEIS_PZ_1583,1856,poor,Female,zebra_plains,left
+13909,2565,photo_album_21,7,2,77.77777778,infant,0,____,-13909,poor,UNKNOWN NAME,zebra_plains,left
+15185,1823,photo_album_22,7,2,77.77777778,adult,0,IBEIS_PZ_1365,1638,good,Female,zebra_plains,left
+14781,1769,photo_album_22,7,2,77.77777778,"juvenille, two year old",0,IBEIS_PZ_0566,839,good,Male,zebra_plains,left
+13514,8127,photo_album_30,7,2,77.77777778,infant,1,IBEIS_PZ_0120,393,good,UNKNOWN SEX,zebra_plains,left
+13515,8127,photo_album_30,7,2,77.77777778,infant,1,IBEIS_PZ_1398,1671,ok,UNKNOWN SEX,zebra_plains,left
+14545,1824,photo_album_25,6,2,75,adult,1,IBEIS_PZ_1279,1552,excellent,Female,zebra_plains,left
+12317,1304,photo_album_15,6,2,75,adult,1,IBEIS_PZ_0334,607,ok,Female,zebra_plains,left
+12318,1304,photo_album_15,6,2,75,adult,1,IBEIS_PZ_0333,606,excellent,Male,zebra_plains,left
+12319,1304,photo_album_15,6,2,75,infant,0,____,-12319,poor,UNKNOWN NAME,zebra_plains,left
+16568,7613,photo_album_5,6,2,75,infant,0,____,-16568,good,UNKNOWN NAME,zebra_plains,right
+18497,4275,photo_album_99,7,3,70,infant,0,____,-18497,poor,UNKNOWN NAME,zebra_plains,backright
+18498,4275,photo_album_99,7,3,70,infant,0,____,-18498,good,UNKNOWN NAME,zebra_plains,backright
+18499,4275,photo_album_99,7,3,70,infant,0,____,-18499,junk,UNKNOWN NAME,zebra_plains,backright
+18500,4275,photo_album_99,7,3,70,infant,0,____,-18500,ok,UNKNOWN NAME,zebra_plains,backright
+9138,8343,photo_album_49,7,3,70,adult,0,NNP_GIRM_0073,97,ok,Female,giraffe_masai,backleft
+10405,7949,photo_album_16,7,3,70,"juvenille, two year old",1,IBEIS_PZ_0028,301,good,Female,zebra_plains,left
+10893,8271,photo_album_43,7,3,70,adult,1,IBEIS_PZ_0282,555,ok,UNKNOWN SEX,zebra_plains,left
+9666,1313,photo_album_15,7,3,70,adult,1,NNP_GIRM_0096,127,good,Female,giraffe_masai,left
+17372,6599,photo_album_66,7,3,70,infant,0,____,-17372,good,UNKNOWN NAME,zebra_plains,right
+11815,9023,photo_album_78,7,3,70,adult,0,IBEIS_PZ_0464,737,ok,Male,zebra_plains,frontleft
+15663,827,photo_album_50,7,3,70,adult,0,IBEIS_PZ_1378,1651,ok,Male,zebra_plains,backleft
+15664,827,photo_album_50,7,3,70,adult,0,IBEIS_PZ_1382,1655,ok,Male,zebra_plains,backleft
+13005,5012,photo_album_4,7,3,70,adult,1,IBEIS_PZ_0182,455,excellent,Male,zebra_plains,left
+12985,5003,photo_album_86,7,3,70,infant,0,____,-12985,excellent,UNKNOWN NAME,zebra_plains,right
+9949,2603,photo_album_21,7,3,70,infant,0,____,-9949,ok,UNKNOWN NAME,giraffe_masai,right
+12264,1309,photo_album_89,7,3,70,adult,0,IBEIS_PZ_1442,1715,good,Male,zebra_plains,frontleft
+12265,1309,photo_album_89,7,3,70,adult,0,IBEIS_PZ_1101,1374,good,Male,zebra_plains,backleft
+12266,1309,photo_album_89,7,3,70,"juvenille, one year old",0,IBEIS_PZ_0423,696,good,Female,zebra_plains,left
+9072,3166,photo_album_61,7,3,70,infant,0,____,-9072,ok,UNKNOWN NAME,giraffe_masai,right
+13852,5671,photo_album_3,7,3,70,adult,1,IBEIS_PZ_1554,1827,good,UNKNOWN SEX,zebra_plains,left
+12303,1305,photo_album_89,7,3,70,"juvenille, one year old",0,IBEIS_PZ_0423,696,good,Female,zebra_plains,left
+12304,1305,photo_album_89,7,3,70,infant,0,IBEIS_PZ_1108,1381,good,UNKNOWN SEX,zebra_plains,backleft
+12305,1305,photo_album_89,7,3,70,"juvenille, one year old",0,IBEIS_PZ_0408,681,ok,Female,zebra_plains,left
+12306,1305,photo_album_89,7,3,70,adult,0,IBEIS_PZ_1424,1697,ok,Female,zebra_plains,left
+13239,7772,photo_album_27,7,3,70,adult,1,IBEIS_PZ_0519,792,excellent,Female,zebra_plains,left
+10008,4816,photo_album_44,7,3,70,adult,0,NNP_GIRM_0151,273,ok,Male,giraffe_masai,left
+9865,5390,photo_album_65,7,3,70,adult,0,NNP_GIRM_0103,138,ok,Male,giraffe_masai,backleft
+16035,563,photo_album_28,7,3,70,infant,0,____,-16035,poor,UNKNOWN NAME,zebra_plains,left
+16036,563,photo_album_28,7,3,70,infant,0,____,-16036,poor,UNKNOWN NAME,zebra_plains,left
+15658,968,photo_album_83,7,3,70,adult,0,IBEIS_PZ_0519,792,ok,Female,zebra_plains,left
+12713,3454,photo_album_93,7,3,70,infant,0,IBEIS_PZ_0899,1172,good,UNKNOWN SEX,zebra_plains,right
+10915,8295,photo_album_43,7,3,70,adult,0,IBEIS_PZ_0197,470,ok,Female,zebra_plains,left
+10916,8295,photo_album_43,7,3,70,infant,0,IBEIS_PZ_0196,469,poor,UNKNOWN SEX,zebra_plains,left
+10917,8295,photo_album_43,7,3,70,adult,1,IBEIS_PZ_0222,495,ok,UNKNOWN SEX,zebra_plains,left
+15388,479,photo_album_72,7,3,70,infant,0,____,-15388,poor,UNKNOWN NAME,zebra_plains,left
+8803,9175,photo_album_68,7,3,70,adult,0,NNP_GIRM_0039,52,good,UNKNOWN SEX,giraffe_masai,right
+14806,1480,photo_album_12,7,3,70,adult,1,IBEIS_PZ_1367,1640,excellent,Male,zebra_plains,left
+13754,6202,photo_album_94,7,3,70,infant,1,IBEIS_PZ_0766,1039,excellent,UNKNOWN SEX,zebra_plains,left
+14121,710,photo_album_26,7,3,70,adult,0,IBEIS_PZ_1447,1720,good,Male,zebra_plains,left
+10986,8388,photo_album_69,7,3,70,adult,0,IBEIS_PZ_0516,789,poor,Male,zebra_plains,frontleft
+12938,5513,photo_album_81,7,3,70,infant,1,IBEIS_PZ_1452,1725,good,UNKNOWN SEX,zebra_plains,frontleft
+9047,3314,photo_album_95,7,3,70,infant,0,____,-9047,ok,UNKNOWN NAME,giraffe_masai,right
+9048,3314,photo_album_95,7,3,70,unknown,0,NNP_GIRM_0060,80,poor,UNKNOWN SEX,giraffe_masai,right
+9049,3314,photo_album_95,7,3,70,"juvenille, two year old",1,NNP_GIRM_0080,104,ok,Female,giraffe_masai,left
+12052,9239,photo_album_23,7,3,70,adult,1,IBEIS_PZ_0735,1008,ok,Male,zebra_plains,left
+12052,9239,photo_album_73,7,3,70,adult,1,IBEIS_PZ_0735,1008,ok,Male,zebra_plains,left
+12053,9239,photo_album_23,7,3,70,"juvenille, two year old",0,IBEIS_PZ_0711,984,poor,Female,zebra_plains,left
+12053,9239,photo_album_73,7,3,70,"juvenille, two year old",0,IBEIS_PZ_0711,984,poor,Female,zebra_plains,left
+12054,9239,photo_album_23,7,3,70,infant,0,IBEIS_PZ_0726,999,poor,UNKNOWN SEX,zebra_plains,left
+12054,9239,photo_album_73,7,3,70,infant,0,IBEIS_PZ_0726,999,poor,UNKNOWN SEX,zebra_plains,left
+12105,9239,photo_album_23,7,3,70,infant,0,IBEIS_PZ_0728,1001,poor,UNKNOWN SEX,zebra_plains,front
+12105,9239,photo_album_73,7,3,70,infant,0,IBEIS_PZ_0728,1001,poor,UNKNOWN SEX,zebra_plains,front
+10852,8236,photo_album_43,7,3,70,adult,0,IBEIS_PZ_0215,488,poor,Female,zebra_plains,left
+10158,7793,photo_album_88,7,3,70,adult,1,IBEIS_PZ_0005,278,good,Female,zebra_plains,left
+10159,7793,photo_album_88,7,3,70,infant,0,IBEIS_PZ_0039,312,poor,UNKNOWN SEX,zebra_plains,left
+12280,1240,photo_album_40,7,3,70,adult,0,IBEIS_PZ_0394,667,poor,Female,zebra_plains,frontleft
+12281,1240,photo_album_40,7,3,70,"juvenille, one year old",0,IBEIS_PZ_0423,696,ok,Female,zebra_plains,frontleft
+12282,1240,photo_album_40,7,3,70,adult,0,IBEIS_PZ_1111,1384,good,Female,zebra_plains,left
+9099,3122,photo_album_61,7,3,70,adult,0,NNP_GIRM_0070,92,good,Female,giraffe_masai,frontright
+9100,3122,photo_album_61,7,3,70,adult,0,NNP_GIRM_0031,42,good,Female,giraffe_masai,frontleft
+13306,357,photo_album_46,7,3,70,infant,0,____,-13306,good,UNKNOWN NAME,zebra_plains,right
+10729,8139,photo_album_100,7,3,70,"juvenille, one year old",1,IBEIS_PZ_0110,383,good,Male,zebra_plains,left
+11427,8725,photo_album_78,7,3,70,"juvenille, two year old",0,IBEIS_PZ_0342,615,ok,Female,zebra_plains,left
+12618,3401,photo_album_93,7,3,70,infant,0,IBEIS_PZ_0898,1171,poor,UNKNOWN SEX,zebra_plains,backleft
+12619,3401,photo_album_93,7,3,70,adult,0,IBEIS_PZ_0876,1149,poor,Female,zebra_plains,backleft
+8865,8351,photo_album_17,7,3,70,"juvenille, one year old",1,NNP_GIRM_0047,63,good,Female,giraffe_masai,left
+8865,8351,photo_album_67,7,3,70,"juvenille, one year old",1,NNP_GIRM_0047,63,good,Female,giraffe_masai,left
+8865,8351,photo_album_49,7,3,70,"juvenille, one year old",1,NNP_GIRM_0047,63,good,Female,giraffe_masai,left
+8866,8351,photo_album_17,7,3,70,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+8866,8351,photo_album_67,7,3,70,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+8866,8351,photo_album_49,7,3,70,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+13252,7778,photo_album_71,7,3,70,adult,0,IBEIS_PZ_1099,1372,ok,Female,zebra_plains,backleft
+13252,7778,photo_album_27,7,3,70,adult,0,IBEIS_PZ_1099,1372,ok,Female,zebra_plains,backleft
+13847,5753,photo_album_62,7,3,70,infant,0,____,-13847,ok,UNKNOWN NAME,zebra_plains,backleft
+15854,2358,photo_album_53,7,3,70,infant,0,IBEIS_PZ_0410,683,ok,Female,zebra_plains,left
+15855,2358,photo_album_53,7,3,70,"juvenille, two year old",1,IBEIS_PZ_1221,1494,good,Female,zebra_plains,left
+15856,2358,photo_album_53,7,3,70,adult,0,IBEIS_PZ_1212,1485,ok,Female,zebra_plains,left
+15857,2358,photo_album_53,7,3,70,"juvenille, two year old",0,IBEIS_PZ_1351,1624,ok,Female,zebra_plains,left
+15858,2358,photo_album_53,7,3,70,adult,1,IBEIS_PZ_1585,1858,ok,UNKNOWN SEX,zebra_plains,left
+13905,2665,photo_album_21,7,3,70,"juvenille, one year old",0,IBEIS_PZ_1291,1564,ok,Male,zebra_plains,left
+15387,532,photo_album_28,7,3,70,infant,0,IBEIS_PZ_0884,1157,ok,Female,zebra_plains,left
+12708,3380,photo_album_92,7,3,70,adult,1,IBEIS_PZ_0714,987,good,Male,zebra_plains,left
+18611,4574,photo_album_63,7,3,70,infant,0,____,-18611,ok,UNKNOWN NAME,zebra_plains,backleft
+18612,4574,photo_album_63,7,3,70,infant,0,____,-18612,poor,UNKNOWN NAME,zebra_plains,left
+18613,4574,photo_album_63,7,3,70,infant,0,____,-18613,poor,UNKNOWN NAME,zebra_plains,backleft
+18614,4574,photo_album_63,7,3,70,adult,0,IBEIS_PZ_0620,893,good,Female,zebra_plains,left
+18469,3976,photo_album_52,7,3,70,infant,0,____,-18469,poor,UNKNOWN NAME,zebra_plains,right
+13289,393,photo_album_82,7,3,70,infant,0,____,-13289,excellent,UNKNOWN NAME,zebra_plains,right
+9665,1315,photo_album_89,7,3,70,adult,0,NNP_GIRM_0101,135,ok,Female,giraffe_masai,left
+16367,7576,photo_album_5,7,3,70,infant,0,____,-16367,excellent,UNKNOWN NAME,zebra_plains,right
+16368,7576,photo_album_5,7,3,70,infant,0,____,-16368,excellent,UNKNOWN NAME,zebra_plains,backright
+12537,3327,photo_album_95,7,3,70,adult,0,IBEIS_PZ_1567,1840,ok,Male,zebra_plains,left
+16070,537,photo_album_36,7,3,70,"juvenille, two year old",0,IBEIS_PZ_0902,1175,ok,Female,zebra_plains,frontleft
+16071,537,photo_album_36,7,3,70,infant,0,____,-16071,poor,UNKNOWN NAME,zebra_plains,left
+16072,537,photo_album_36,7,3,70,infant,0,____,-16072,poor,UNKNOWN NAME,zebra_plains,left
+13823,5679,photo_album_3,7,3,70,infant,1,IBEIS_PZ_1865,2138,ok,UNKNOWN SEX,zebra_plains,left
+13824,5679,photo_album_3,7,3,70,infant,0,____,-13824,poor,UNKNOWN NAME,zebra_plains,left
+13257,7770,photo_album_27,7,3,70,infant,0,IBEIS_PZ_1084,1357,ok,UNKNOWN SEX,zebra_plains,right
+13258,7770,photo_album_27,7,3,70,infant,0,IBEIS_PZ_1089,1362,ok,UNKNOWN SEX,zebra_plains,right
+11064,8449,photo_album_78,7,3,70,adult,1,IBEIS_PZ_0514,787,good,Male,zebra_plains,left
+10239,7844,photo_album_88,7,3,70,infant,0,IBEIS_PZ_0014,287,ok,UNKNOWN SEX,zebra_plains,left
+10240,7844,photo_album_88,7,3,70,adult,0,IBEIS_PZ_0010,283,ok,Male,zebra_plains,frontright
+10241,7844,photo_album_88,7,3,70,infant,0,IBEIS_PZ_0185,458,ok,Female,zebra_plains,back
+12527,3375,photo_album_7,7,3,70,adult,0,IBEIS_PZ_0920,1193,good,Female,zebra_plains,right
+12528,3375,photo_album_7,7,3,70,adult,0,IBEIS_PZ_0962,1235,poor,Female,zebra_plains,left
+16179,578,photo_album_10,7,3,70,infant,0,____,-16179,good,UNKNOWN NAME,zebra_plains,right
+13304,406,photo_album_1,7,3,70,"juvenille, one year old",0,IBEIS_PZ_0680,953,good,Male,zebra_plains,frontleft
+9053,8334,photo_album_42,7,3,70,adult,0,NNP_GIRM_0046,60,poor,Male,giraffe_masai,left
+9053,8334,photo_album_49,7,3,70,adult,0,NNP_GIRM_0046,60,poor,Male,giraffe_masai,left
+15631,888,photo_album_48,7,3,70,adult,1,IBEIS_PZ_1376,1649,ok,UNKNOWN SEX,zebra_plains,left
+9122,3080,photo_album_61,7,3,70,infant,0,____,-9122,poor,UNKNOWN NAME,giraffe_masai,right
+12558,3329,photo_album_84,7,3,70,infant,0,IBEIS_PZ_0961,1234,ok,UNKNOWN SEX,zebra_plains,frontright
+12653,3203,photo_album_18,7,3,70,adult,0,IBEIS_PZ_0067,340,good,Female,zebra_plains,left
+17401,6475,photo_album_45,7,3,70,infant,0,____,-17401,poor,UNKNOWN NAME,zebra_plains,left
+17899,4845,photo_album_44,7,3,70,adult,0,IBEIS_PZ_0512,785,good,Female,zebra_plains,left
+17900,4845,photo_album_44,7,3,70,infant,0,____,-17900,poor,UNKNOWN NAME,zebra_plains,left
+13833,5678,photo_album_62,7,3,70,adult,1,IBEIS_PZ_0020,293,good,Female,zebra_plains,left
+13834,5678,photo_album_62,7,3,70,infant,1,IBEIS_PZ_0306,579,ok,UNKNOWN SEX,zebra_plains,left
+10081,6786,photo_album_66,7,3,70,infant,0,____,-10081,ok,UNKNOWN NAME,giraffe_masai,right
+10082,6786,photo_album_66,7,3,70,infant,0,____,-10082,junk,UNKNOWN NAME,giraffe_masai,right
+13309,354,photo_album_82,7,3,70,infant,0,____,-13309,good,UNKNOWN NAME,zebra_plains,right
+15278,1974,photo_album_76,7,3,70,adult,0,IBEIS_PZ_1424,1697,ok,Female,zebra_plains,left
+15279,1974,photo_album_76,7,3,70,adult,0,IBEIS_PZ_1111,1384,poor,Female,zebra_plains,left
+15280,1974,photo_album_76,7,3,70,adult,0,IBEIS_PZ_0610,883,ok,Male,zebra_plains,left
+8811,3152,photo_album_98,7,3,70,adult,0,NNP_GIRM_0055,74,good,Female,giraffe_masai,left
+8976,8320,photo_album_42,7,3,70,adult,0,NNP_GIRM_0016,19,poor,Female,giraffe_masai,right
+8977,8320,photo_album_42,7,3,70,unknown,0,NNP_GIRM_0064,84,ok,UNKNOWN SEX,giraffe_masai,backleft
+11575,8850,photo_album_78,7,3,70,"juvenille, two year old",0,IBEIS_PZ_0395,668,poor,Female,zebra_plains,left
+11576,8850,photo_album_78,7,3,70,adult,0,IBEIS_PZ_0379,652,ok,Female,zebra_plains,left
+9457,963,photo_album_83,7,3,70,adult,0,NNP_GIRM_0151,273,ok,Male,giraffe_masai,left
+15386,571,photo_album_36,7,3,70,infant,0,____,-15386,good,UNKNOWN NAME,zebra_plains,right
+15471,253,photo_album_97,7,3,70,adult,1,IBEIS_PZ_1542,1815,good,Female,zebra_plains,left
+12632,3390,photo_album_92,7,3,70,adult,1,IBEIS_PZ_0719,992,good,Male,zebra_plains,left
+13017,4978,photo_album_86,7,3,70,infant,1,IBEIS_PZ_1391,1664,ok,UNKNOWN SEX,zebra_plains,left
+13018,4978,photo_album_86,7,3,70,adult,1,IBEIS_PZ_1397,1670,ok,Male,zebra_plains,left
+9489,928,photo_album_50,7,3,70,infant,0,____,-9489,good,UNKNOWN NAME,giraffe_masai,right
+9490,928,photo_album_50,7,3,70,infant,0,____,-9490,ok,UNKNOWN NAME,giraffe_masai,frontright
+14834,1836,photo_album_76,7,3,70,adult,1,IBEIS_PZ_1255,1528,excellent,Female,zebra_plains,left
+12874,5503,photo_album_81,7,3,70,infant,0,____,-12874,junk,UNKNOWN NAME,zebra_plains,left
+12875,5503,photo_album_81,7,3,70,adult,0,IBEIS_PZ_1450,1723,ok,Female,zebra_plains,left
+12876,5503,photo_album_81,7,3,70,infant,0,____,-12876,ok,UNKNOWN NAME,zebra_plains,backright
+12877,5503,photo_album_81,7,3,70,infant,0,____,-12877,poor,UNKNOWN NAME,zebra_plains,back
+15218,2458,photo_album_96,7,3,70,infant,0,IBEIS_PZ_1413,1686,good,Male,zebra_plains,left
+15219,2458,photo_album_96,7,3,70,adult,0,IBEIS_PZ_1267,1540,good,Female,zebra_plains,left
+15220,2458,photo_album_96,7,3,70,adult,0,IBEIS_PZ_1526,1799,ok,Female,zebra_plains,left
+15221,2458,photo_album_96,7,3,70,adult,0,IBEIS_PZ_1892,2165,poor,Female,zebra_plains,left
+9334,18,photo_album_57,7,3,70,infant,0,____,-9334,excellent,UNKNOWN NAME,giraffe_masai,right
+12690,3348,photo_album_84,7,3,70,adult,1,IBEIS_PZ_0930,1203,good,Male,zebra_plains,left
+12690,3348,photo_album_7,7,3,70,adult,1,IBEIS_PZ_0930,1203,good,Male,zebra_plains,left
+8936,8332,photo_album_11,7,3,70,adult,1,NNP_GIRM_0022,27,ok,Female,giraffe_masai,left
+12379,1257,photo_album_40,7,3,70,adult,1,IBEIS_PZ_1408,1681,good,UNKNOWN SEX,zebra_plains,left
+14479,5094,photo_album_37,7,3,70,adult,1,IBEIS_PZ_1827,2100,good,UNKNOWN SEX,zebra_plains,left
+8883,3443,photo_album_7,7,3,70,infant,1,NNP_GIRM_0066,87,ok,UNKNOWN SEX,giraffe_masai,frontleft
+13310,360,photo_album_14,7,3,70,"juvenille, two year old",1,IBEIS_PZ_0996,1269,good,Female,zebra_plains,left
+15410,529,photo_album_72,7,3,70,infant,0,IBEIS_PZ_0884,1157,ok,Female,zebra_plains,left
+14093,708,photo_album_33,7,3,70,adult,1,IBEIS_PZ_1643,1916,excellent,Male,zebra_plains,left
+13622,7354,photo_album_31,7,3,70,adult,1,IBEIS_PZ_1531,1804,good,Male,zebra_plains,left
+13623,7354,photo_album_31,7,3,70,infant,0,____,-13623,poor,UNKNOWN NAME,zebra_plains,left
+11857,9059,photo_album_68,7,3,70,infant,0,IBEIS_PZ_0642,915,ok,UNKNOWN SEX,zebra_plains,backleft
+11858,9059,photo_album_68,7,3,70,infant,0,IBEIS_PZ_0643,916,poor,UNKNOWN SEX,zebra_plains,left
+10850,8233,photo_album_43,7,3,70,infant,0,IBEIS_PZ_0203,476,ok,UNKNOWN SEX,zebra_plains,backleft
+12299,1303,photo_album_89,7,3,70,adult,0,IBEIS_PZ_0334,607,ok,Female,zebra_plains,backleft
+12300,1303,photo_album_89,7,3,70,adult,0,IBEIS_PZ_1429,1702,ok,Female,zebra_plains,left
+10324,7886,photo_album_16,7,3,70,adult,0,IBEIS_PZ_0205,478,ok,Male,zebra_plains,left
+12443,4888,photo_album_77,7,3,70,adult,1,IBEIS_PZ_0841,1114,ok,UNKNOWN SEX,zebra_plains,left
+12444,4888,photo_album_77,7,3,70,infant,0,IBEIS_PZ_0853,1126,poor,UNKNOWN SEX,zebra_plains,left
+12445,4888,photo_album_77,7,3,70,adult,0,IBEIS_PZ_0420,693,poor,Female,zebra_plains,left
+17107,2943,photo_album_79,7,3,70,adult,0,IBEIS_PZ_0333,606,ok,Male,zebra_plains,left
+16005,5220,photo_album_64,7,3,70,infant,1,IBEIS_PZ_1824,2097,good,UNKNOWN SEX,zebra_plains,left
+13260,7764,photo_album_71,7,3,70,adult,0,IBEIS_PZ_1090,1363,excellent,Female,zebra_plains,right
+15931,620,photo_album_36,7,3,70,adult,1,IBEIS_PZ_1568,1841,good,Female,zebra_plains,left
+15932,620,photo_album_36,7,3,70,adult,1,IBEIS_PZ_1566,1839,good,Male,zebra_plains,left
+9009,8342,photo_album_49,7,3,70,infant,0,____,-9009,good,UNKNOWN NAME,giraffe_masai,right
+14525,5181,photo_album_39,7,3,70,adult,1,IBEIS_PZ_1841,2114,good,Male,zebra_plains,left
+12811,5500,photo_album_81,7,3,70,adult,0,IBEIS_PZ_1450,1723,ok,Female,zebra_plains,left
+12812,5500,photo_album_81,7,3,70,adult,1,IBEIS_PZ_1781,2054,good,Male,zebra_plains,left
+12813,5500,photo_album_81,7,3,70,infant,0,IBEIS_PZ_1460,1733,ok,UNKNOWN SEX,zebra_plains,backleft
+11730,8953,photo_album_69,7,3,70,adult,0,IBEIS_PZ_0579,852,poor,Male,zebra_plains,right
+15393,605,photo_album_28,7,3,70,infant,1,IBEIS_PZ_1577,1850,ok,UNKNOWN SEX,zebra_plains,frontleft
+13278,362,photo_album_82,7,3,70,"juvenille, two year old",0,IBEIS_PZ_0902,1175,ok,Female,zebra_plains,left
+9679,1277,photo_album_40,7,3,70,adult,0,NNP_GIRM_0099,132,good,Male,giraffe_masai,left
+13814,6199,photo_album_94,7,3,70,adult,1,IBEIS_PZ_0474,747,ok,Male,zebra_plains,left
+10442,7973,photo_album_16,7,3,70,infant,0,IBEIS_PZ_0032,305,ok,UNKNOWN SEX,zebra_plains,left
+10443,7973,photo_album_16,7,3,70,infant,0,IBEIS_PZ_0190,463,poor,UNKNOWN SEX,zebra_plains,back
+10444,7973,photo_album_16,7,3,70,adult,1,IBEIS_PZ_0031,304,good,Female,zebra_plains,left
+8796,8339,photo_album_42,7,3,70,"juvenille, two year old",0,NNP_GIRM_0027,32,ok,Male,giraffe_masai,right
+14478,5208,photo_album_39,7,3,70,adult,1,IBEIS_PZ_1844,2117,good,Male,zebra_plains,left
+9003,3084,photo_album_6,7,3,70,adult,0,NNP_GIRM_0018,22,ok,Male,giraffe_masai,right
+13312,402,photo_album_46,7,3,70,infant,0,____,-13312,good,UNKNOWN NAME,zebra_plains,right
+11591,8863,photo_album_73,7,3,70,adult,1,IBEIS_PZ_0425,698,ok,Male,zebra_plains,left
+12757,1329,photo_album_15,7,3,70,adult,0,IBEIS_PZ_0885,1158,ok,Male,zebra_plains,left
+12757,1329,photo_album_89,7,3,70,adult,0,IBEIS_PZ_0885,1158,ok,Male,zebra_plains,left
+12758,1329,photo_album_15,7,3,70,adult,0,IBEIS_PZ_1412,1685,ok,UNKNOWN SEX,zebra_plains,backleft
+12758,1329,photo_album_89,7,3,70,adult,0,IBEIS_PZ_1412,1685,ok,UNKNOWN SEX,zebra_plains,backleft
+12759,1329,photo_album_15,7,3,70,adult,0,IBEIS_PZ_1567,1840,ok,Male,zebra_plains,left
+12759,1329,photo_album_89,7,3,70,adult,0,IBEIS_PZ_1567,1840,ok,Male,zebra_plains,left
+12728,3395,photo_album_95,7,3,70,adult,1,IBEIS_PZ_1742,2015,excellent,Male,zebra_plains,left
+15612,999,photo_album_90,7,3,70,adult,0,IBEIS_PZ_1372,1645,junk,UNKNOWN SEX,zebra_plains,frontleft
+10635,8087,photo_album_30,7,3,70,adult,0,IBEIS_PZ_0085,358,ok,Female,zebra_plains,left
+17506,6662,photo_album_66,7,3,70,infant,1,IBEIS_PZ_1798,2071,ok,UNKNOWN SEX,zebra_plains,left
+16556,7473,photo_album_5,7,3,70,infant,0,____,-16556,junk,UNKNOWN NAME,zebra_plains,front
+16557,7473,photo_album_5,7,3,70,infant,0,____,-16557,junk,UNKNOWN NAME,zebra_plains,backright
+16558,7473,photo_album_5,7,3,70,infant,0,____,-16558,junk,UNKNOWN NAME,zebra_plains,backright
+16559,7473,photo_album_5,7,3,70,infant,0,____,-16559,junk,UNKNOWN NAME,zebra_plains,back
+12453,4930,photo_album_77,7,3,70,"juvenille, two year old",1,IBEIS_PZ_0401,674,good,Female,zebra_plains,left
+11276,8619,photo_album_23,7,3,70,infant,0,IBEIS_PZ_0454,727,ok,Female,zebra_plains,left
+18630,4839,photo_album_44,7,3,70,infant,0,____,-18630,ok,UNKNOWN NAME,zebra_plains,backleft
+18631,4839,photo_album_44,7,3,70,adult,0,IBEIS_PZ_1590,1863,good,Female,zebra_plains,left
+18632,4839,photo_album_44,7,3,70,"juvenille, one year old",0,IBEIS_PZ_1592,1865,ok,Female,zebra_plains,left
+18633,4839,photo_album_44,7,3,70,infant,0,____,-18633,poor,UNKNOWN NAME,zebra_plains,backleft
+18634,4839,photo_album_44,7,3,70,infant,0,____,-18634,ok,UNKNOWN NAME,zebra_plains,backleft
+18635,4839,photo_album_44,7,3,70,infant,0,____,-18635,junk,UNKNOWN NAME,zebra_plains,left
+18636,4839,photo_album_44,7,3,70,infant,0,____,-18636,poor,UNKNOWN NAME,zebra_plains,back
+18637,4839,photo_album_44,7,3,70,infant,0,____,-18637,ok,UNKNOWN NAME,zebra_plains,back
+9149,8350,photo_album_42,7,3,70,adult,0,NNP_GIRM_0022,27,ok,Female,giraffe_masai,left
+9873,5552,photo_album_65,7,3,70,adult,0,NNP_GIRM_0019,23,good,Male,giraffe_masai,backleft
+9874,5552,photo_album_65,7,3,70,infant,0,____,-9874,ok,UNKNOWN NAME,giraffe_masai,backright
+13315,392,photo_album_46,7,3,70,adult,1,IBEIS_PZ_1010,1283,good,Female,zebra_plains,left
+13500,6210,photo_album_94,7,3,70,infant,1,IBEIS_PZ_1449,1722,ok,UNKNOWN SEX,zebra_plains,left
+18734,4673,photo_album_63,7,3,70,infant,0,____,-18734,ok,UNKNOWN NAME,zebra_plains,right
+18735,4673,photo_album_63,7,3,70,infant,0,____,-18735,poor,UNKNOWN NAME,zebra_plains,left
+18736,4673,photo_album_63,7,3,70,infant,0,____,-18736,junk,UNKNOWN NAME,zebra_plains,frontleft
+9147,8345,photo_album_80,7,3,70,"juvenille, one year old",0,NNP_GIRM_0047,63,ok,Female,giraffe_masai,left
+9148,8345,photo_album_80,7,3,70,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+12669,3355,photo_album_95,7,3,70,adult,0,IBEIS_PZ_0900,1173,ok,Male,zebra_plains,left
+9889,5572,photo_album_81,7,3,70,adult,0,NNP_GIRM_0108,153,ok,Female,giraffe_masai,backleft
+15891,829,photo_album_50,7,3,70,adult,0,IBEIS_PZ_1382,1655,ok,Male,zebra_plains,backleft
+15892,829,photo_album_50,7,3,70,adult,0,IBEIS_PZ_1378,1651,ok,Male,zebra_plains,backleft
+9067,8317,photo_album_49,7,3,70,infant,0,____,-9067,ok,UNKNOWN NAME,giraffe_masai,right
+14127,758,photo_album_33,7,3,70,adult,1,IBEIS_PZ_0444,717,good,Male,zebra_plains,left
+15401,550,photo_album_59,7,3,70,infant,0,____,-15401,ok,UNKNOWN NAME,zebra_plains,right
+15528,242,photo_album_38,7,3,70,adult,1,IBEIS_PZ_1908,2181,excellent,UNKNOWN SEX,zebra_plains,left
+10789,8181,photo_album_100,7,3,70,adult,1,IBEIS_PZ_0113,386,good,Male,zebra_plains,left
+10790,8181,photo_album_100,7,3,70,"juvenille, one year old",1,IBEIS_PZ_0106,379,excellent,Male,zebra_plains,left
+8926,8322,photo_album_55,7,3,70,"juvenille, two year old",0,NNP_GIRM_0068,90,good,Male,giraffe_masai,left
+13854,5675,photo_album_62,7,3,70,adult,0,IBEIS_PZ_1553,1826,ok,Female,zebra_plains,left
+8822,3138,photo_album_61,7,3,70,adult,0,NNP_GIRM_0059,79,ok,Female,giraffe_masai,right
+16188,634,photo_album_72,7,3,70,infant,0,____,-16188,poor,UNKNOWN NAME,zebra_plains,left
+14140,752,photo_album_26,7,3,70,infant,0,____,-14140,poor,UNKNOWN NAME,zebra_plains,backright
+14141,752,photo_album_26,7,3,70,adult,0,IBEIS_PZ_1207,1480,poor,Female,zebra_plains,right
+14151,703,photo_album_70,7,3,70,infant,1,IBEIS_PZ_1640,1913,excellent,UNKNOWN SEX,zebra_plains,left
+12983,5010,photo_album_86,7,3,70,adult,0,IBEIS_PZ_0182,455,good,Male,zebra_plains,frontleft
+13831,5755,photo_album_24,7,3,70,adult,0,IBEIS_PZ_0005,278,ok,Female,zebra_plains,left
+13478,6134,photo_album_94,7,3,70,"juvenille, two year old",1,IBEIS_PZ_1150,1423,good,Female,zebra_plains,left
+16011,562,photo_album_28,7,3,70,adult,1,IBEIS_PZ_1542,1815,ok,Female,zebra_plains,left
+16012,562,photo_album_28,7,3,70,infant,0,____,-16012,poor,UNKNOWN NAME,zebra_plains,left
+16013,562,photo_album_28,7,3,70,infant,0,____,-16013,junk,UNKNOWN NAME,zebra_plains,right
+13285,364,photo_album_19,7,3,70,infant,0,____,-13285,excellent,UNKNOWN NAME,zebra_plains,right
+9624,5109,photo_album_37,7,3,70,infant,1,NNP_GIRM_0148,247,ok,Female,giraffe_masai,left
+14421,2372,photo_album_96,7,3,70,infant,0,IBEIS_PZ_1253,1526,good,Male,zebra_plains,left
+9094,8327,photo_album_67,7,3,70,infant,0,____,-9094,poor,UNKNOWN NAME,giraffe_masai,right
+12484,4905,photo_album_77,7,3,70,adult,0,IBEIS_PZ_0592,865,ok,Female,zebra_plains,left
+14637,2005,photo_album_25,7,3,70,infant,0,IBEIS_PZ_1413,1686,ok,Male,zebra_plains,left
+14638,2005,photo_album_25,7,3,70,infant,0,IBEIS_PZ_1278,1551,ok,Female,zebra_plains,left
+14639,2005,photo_album_25,7,3,70,infant,0,IBEIS_PZ_1285,1558,ok,Female,zebra_plains,left
+14640,2005,photo_album_25,7,3,70,"juvenille, two year old",1,IBEIS_PZ_1573,1846,good,Female,zebra_plains,left
+14641,2005,photo_album_25,7,3,70,adult,0,IBEIS_PZ_1267,1540,ok,Female,zebra_plains,left
+14642,2005,photo_album_25,7,3,70,adult,0,IBEIS_PZ_1526,1799,good,Female,zebra_plains,left
+15493,141,photo_album_38,7,3,70,infant,0,IBEIS_PZ_1543,1816,ok,Male,zebra_plains,left
+15493,141,photo_album_75,7,3,70,infant,0,IBEIS_PZ_1543,1816,ok,Male,zebra_plains,left
+15494,141,photo_album_38,7,3,70,infant,0,____,-15494,good,UNKNOWN NAME,zebra_plains,backleft
+15494,141,photo_album_75,7,3,70,infant,0,____,-15494,good,UNKNOWN NAME,zebra_plains,backleft
+10121,6466,photo_album_66,7,3,70,infant,0,____,-10121,poor,UNKNOWN NAME,giraffe_masai,left
+10122,6466,photo_album_66,7,3,70,infant,0,____,-10122,ok,UNKNOWN NAME,giraffe_masai,backright
+10123,6466,photo_album_66,7,3,70,infant,0,____,-10123,poor,UNKNOWN NAME,giraffe_masai,right
+16135,415,photo_album_32,7,3,70,infant,0,____,-16135,poor,UNKNOWN NAME,zebra_plains,right
+11127,8500,photo_album_73,7,3,70,"juvenille, two year old",0,IBEIS_PZ_0056,329,good,Female,zebra_plains,frontleft
+14310,2492,photo_album_53,7,3,70,"juvenille, two year old",0,IBEIS_PZ_1294,1567,good,Male,zebra_plains,left
+14874,1538,photo_album_12,6,3,66.66666667,adult,0,IBEIS_PZ_1241,1514,ok,Female,zebra_plains,left
+14875,1538,photo_album_12,6,3,66.66666667,adult,0,IBEIS_PZ_1277,1550,good,Male,zebra_plains,left
+14876,1538,photo_album_12,6,3,66.66666667,adult,0,IBEIS_PZ_1892,2165,poor,Female,zebra_plains,left
+16088,611,photo_album_28,6,3,66.66666667,infant,0,____,-16088,ok,UNKNOWN NAME,zebra_plains,right
+10251,7849,photo_album_16,6,3,66.66666667,adult,0,IBEIS_PZ_0180,453,poor,Female,zebra_plains,right
+10252,7849,photo_album_16,6,3,66.66666667,infant,0,IBEIS_PZ_0015,288,junk,UNKNOWN SEX,zebra_plains,left
+10253,7849,photo_album_16,6,3,66.66666667,"juvenille, two year old",0,IBEIS_PZ_0184,457,ok,Male,zebra_plains,left
+10254,7849,photo_album_16,6,3,66.66666667,adult,0,IBEIS_PZ_0031,304,good,Female,zebra_plains,left
+11697,8924,photo_album_23,6,3,66.66666667,infant,0,IBEIS_PZ_0555,828,poor,Male,zebra_plains,left
+11698,8924,photo_album_23,6,3,66.66666667,adult,0,IBEIS_PZ_0556,829,poor,UNKNOWN SEX,zebra_plains,left
+10736,8143,photo_album_30,6,3,66.66666667,adult,0,IBEIS_PZ_0105,378,ok,Female,zebra_plains,frontleft
+10737,8143,photo_album_30,6,3,66.66666667,infant,0,IBEIS_PZ_0122,395,ok,Male,zebra_plains,left
+14751,1771,photo_album_22,6,3,66.66666667,adult,1,IBEIS_PZ_0571,844,excellent,Male,zebra_plains,left
+13840,5664,photo_album_24,6,3,66.66666667,infant,0,____,-13840,good,UNKNOWN NAME,zebra_plains,backleft
+14775,1753,photo_album_22,6,3,66.66666667,"juvenille, two year old",0,IBEIS_PZ_1219,1492,junk,Female,zebra_plains,left
+9375,498,photo_album_20,6,3,66.66666667,infant,0,____,-9375,junk,UNKNOWN NAME,giraffe_masai,left
+11130,8502,photo_album_23,6,3,66.66666667,adult,0,IBEIS_PZ_0499,772,ok,Female,zebra_plains,left
+9147,8345,photo_album_11,6,3,66.66666667,"juvenille, one year old",0,NNP_GIRM_0047,63,ok,Female,giraffe_masai,left
+9148,8345,photo_album_11,6,3,66.66666667,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+11688,8930,photo_album_23,6,3,66.66666667,adult,1,IBEIS_PZ_0558,831,ok,Female,zebra_plains,left
+13511,8061,photo_album_30,6,3,66.66666667,adult,0,IBEIS_PZ_0065,338,ok,Male,zebra_plains,left
+13512,8061,photo_album_30,6,3,66.66666667,adult,0,IBEIS_PZ_0079,352,ok,Female,zebra_plains,left
+13513,8061,photo_album_30,6,3,66.66666667,adult,1,IBEIS_PZ_0075,348,good,Male,zebra_plains,left
+15332,1789,photo_album_25,6,3,66.66666667,"juvenille, one year old",0,IBEIS_PZ_1228,1501,ok,Male,zebra_plains,left
+13243,7777,photo_album_27,6,3,66.66666667,infant,0,IBEIS_PZ_1087,1360,excellent,UNKNOWN SEX,zebra_plains,right
+14323,1623,photo_album_12,6,3,66.66666667,adult,0,IBEIS_PZ_1216,1489,good,Female,zebra_plains,left
+14324,1623,photo_album_12,6,3,66.66666667,adult,0,IBEIS_PZ_1282,1555,ok,Male,zebra_plains,left
+12413,1307,photo_album_15,5,3,62.5,adult,0,IBEIS_PZ_1111,1384,ok,Female,zebra_plains,left
+12414,1307,photo_album_15,5,3,62.5,"juvenille, one year old",0,IBEIS_PZ_0423,696,ok,Female,zebra_plains,frontleft
+12415,1307,photo_album_15,5,3,62.5,adult,1,IBEIS_PZ_1424,1697,excellent,Female,zebra_plains,left
+12973,5350,photo_album_81,6,4,60,infant,0,____,-12973,ok,UNKNOWN NAME,zebra_plains,front
+12974,5350,photo_album_81,6,4,60,infant,0,____,-12974,ok,UNKNOWN NAME,zebra_plains,front
+12975,5350,photo_album_81,6,4,60,infant,0,____,-12975,excellent,UNKNOWN NAME,zebra_plains,right
+12976,5350,photo_album_81,6,4,60,infant,0,____,-12976,ok,UNKNOWN NAME,zebra_plains,right
+12977,5350,photo_album_81,6,4,60,"juvenille, two year old",0,IBEIS_PZ_0271,544,ok,Female,zebra_plains,left
+13822,5666,photo_album_3,6,4,60,infant,1,IBEIS_PZ_1866,2139,ok,UNKNOWN SEX,zebra_plains,left
+9323,23,photo_album_57,6,4,60,infant,0,____,-9323,junk,UNKNOWN NAME,giraffe_masai,back
+13274,398,photo_album_19,6,4,60,infant,0,____,-13274,good,UNKNOWN NAME,zebra_plains,right
+12747,3097,photo_album_6,6,4,60,adult,1,IBEIS_PZ_0928,1201,ok,Male,zebra_plains,left
+15955,536,photo_album_10,6,4,60,adult,0,IBEIS_PZ_0875,1148,ok,Male,zebra_plains,left
+15956,536,photo_album_10,6,4,60,infant,0,____,-15956,poor,UNKNOWN NAME,zebra_plains,left
+12985,5003,photo_album_4,6,4,60,infant,0,____,-12985,excellent,UNKNOWN NAME,zebra_plains,right
+15605,849,photo_album_48,6,4,60,adult,0,IBEIS_PZ_0519,792,ok,Female,zebra_plains,left
+10521,8023,photo_album_100,6,4,60,adult,0,IBEIS_PZ_0057,330,good,Male,zebra_plains,left
+10522,8023,photo_album_100,6,4,60,infant,0,IBEIS_PZ_0055,328,poor,Male,zebra_plains,left
+10523,8023,photo_album_100,6,4,60,adult,0,IBEIS_PZ_0058,331,good,Female,zebra_plains,right
+10524,8023,photo_album_100,6,4,60,infant,0,IBEIS_PZ_0059,332,poor,UNKNOWN SEX,zebra_plains,back
+12629,3364,photo_album_93,6,4,60,infant,0,IBEIS_PZ_0916,1189,good,UNKNOWN SEX,zebra_plains,right
+9672,1261,photo_album_40,6,4,60,adult,0,NNP_GIRM_0076,100,good,Female,giraffe_masai,left
+14962,2351,photo_album_9,6,4,60,adult,0,IBEIS_PZ_1293,1566,ok,Female,zebra_plains,left
+14963,2351,photo_album_9,6,4,60,adult,0,IBEIS_PZ_1248,1521,poor,Male,zebra_plains,left
+14964,2351,photo_album_9,6,4,60,adult,0,IBEIS_PZ_1325,1598,poor,Male,zebra_plains,left
+12965,5360,photo_album_81,6,4,60,adult,0,IBEIS_PZ_1461,1734,ok,Female,zebra_plains,backleft
+12966,5360,photo_album_81,6,4,60,infant,1,IBEIS_PZ_1449,1722,ok,UNKNOWN SEX,zebra_plains,left
+18433,4647,photo_album_60,6,4,60,infant,0,____,-18433,poor,UNKNOWN NAME,zebra_plains,left
+18434,4647,photo_album_60,6,4,60,infant,0,____,-18434,poor,UNKNOWN NAME,zebra_plains,left
+9043,8331,photo_album_80,6,4,60,adult,0,NNP_GIRM_0022,27,ok,Female,giraffe_masai,left
+11514,8802,photo_album_69,6,4,60,adult,0,IBEIS_PZ_0409,682,good,Female,zebra_plains,left
+11004,8405,photo_album_73,6,4,60,infant,0,IBEIS_PZ_0517,790,ok,Male,zebra_plains,left
+11476,8766,photo_album_69,6,4,60,adult,1,IBEIS_PZ_0404,677,excellent,Female,zebra_plains,left
+15886,806,photo_album_50,6,4,60,infant,0,____,-15886,poor,UNKNOWN NAME,zebra_plains,right
+12637,3204,photo_album_18,6,4,60,infant,0,IBEIS_PZ_0686,959,ok,Female,zebra_plains,backleft
+14207,792,photo_album_26,6,4,60,adult,1,IBEIS_PZ_1641,1914,ok,Female,zebra_plains,left
+14322,2494,photo_album_9,6,4,60,adult,1,IBEIS_PZ_1243,1516,good,Male,zebra_plains,left
+12472,4932,photo_album_51,6,4,60,"juvenille, one year old",0,IBEIS_PZ_0852,1125,good,Male,zebra_plains,backleft
+15388,479,photo_album_59,6,4,60,infant,0,____,-15388,poor,UNKNOWN NAME,zebra_plains,left
+13316,373,photo_album_19,6,4,60,infant,0,____,-13316,excellent,UNKNOWN NAME,zebra_plains,right
+15021,1917,photo_album_76,6,4,60,"juvenille, one year old",0,IBEIS_PZ_1223,1496,ok,Female,zebra_plains,left
+15022,1917,photo_album_76,6,4,60,adult,1,IBEIS_PZ_1280,1553,ok,Female,zebra_plains,left
+15144,2149,photo_album_53,6,4,60,adult,0,IBEIS_PZ_1225,1498,ok,Male,zebra_plains,frontleft
+15145,2149,photo_album_53,6,4,60,adult,0,IBEIS_PZ_0503,776,ok,Female,zebra_plains,left
+13993,1996,photo_album_76,6,4,60,adult,0,IBEIS_PZ_1282,1555,ok,Male,zebra_plains,left
+12448,4928,photo_album_77,6,4,60,adult,0,IBEIS_PZ_0404,677,poor,Female,zebra_plains,left
+15579,820,photo_album_50,6,4,60,infant,0,____,-15579,poor,UNKNOWN NAME,zebra_plains,backleft
+18086,4803,photo_album_44,6,4,60,adult,1,IBEIS_PZ_0497,770,excellent,Female,zebra_plains,left
+12553,3117,photo_album_98,6,4,60,adult,0,IBEIS_PZ_0878,1151,poor,Female,zebra_plains,left
+12554,3117,photo_album_98,6,4,60,infant,0,IBEIS_PZ_0891,1164,junk,UNKNOWN SEX,zebra_plains,right
+10690,8119,photo_album_100,6,4,60,adult,0,IBEIS_PZ_0117,390,good,Female,zebra_plains,left
+10691,8119,photo_album_100,6,4,60,infant,0,IBEIS_PZ_0147,420,ok,UNKNOWN SEX,zebra_plains,right
+10692,8119,photo_album_100,6,4,60,"juvenille, two year old",1,IBEIS_PZ_0082,355,good,Female,zebra_plains,left
+8984,8326,photo_album_80,6,4,60,infant,0,____,-8984,good,UNKNOWN NAME,giraffe_masai,back
+8984,8326,photo_album_55,6,4,60,infant,0,____,-8984,good,UNKNOWN NAME,giraffe_masai,back
+16752,2742,photo_album_79,6,4,60,infant,0,____,-16752,poor,UNKNOWN NAME,zebra_plains,left
+16753,2742,photo_album_79,6,4,60,adult,0,IBEIS_PZ_1367,1640,ok,Male,zebra_plains,left
+16754,2742,photo_album_79,6,4,60,infant,0,____,-16754,poor,UNKNOWN NAME,zebra_plains,backleft
+13238,7773,photo_album_71,6,4,60,adult,0,IBEIS_PZ_1083,1356,good,Female,zebra_plains,right
+12901,5320,photo_album_65,6,4,60,adult,0,IBEIS_PZ_1447,1720,ok,Male,zebra_plains,backleft
+12902,5320,photo_album_65,6,4,60,infant,0,IBEIS_PZ_1448,1721,ok,Female,zebra_plains,backleft
+12903,5320,photo_album_65,6,4,60,infant,0,____,-12903,poor,UNKNOWN NAME,zebra_plains,backright
+12904,5320,photo_album_65,6,4,60,infant,0,____,-12904,poor,UNKNOWN NAME,zebra_plains,frontleft
+13452,84,photo_album_85,6,4,60,infant,0,____,-13452,ok,UNKNOWN NAME,zebra_plains,backright
+17324,2876,photo_album_79,6,4,60,infant,0,IBEIS_PZ_1661,1934,ok,UNKNOWN SEX,zebra_plains,left
+17325,2876,photo_album_79,6,4,60,adult,0,IBEIS_PZ_0025,298,good,Female,zebra_plains,left
+12733,3148,photo_album_6,6,4,60,infant,0,IBEIS_PZ_0877,1150,poor,UNKNOWN SEX,zebra_plains,left
+12734,3148,photo_album_6,6,4,60,adult,0,IBEIS_PZ_1542,1815,good,Female,zebra_plains,backleft
+8850,3082,photo_album_61,6,4,60,adult,0,NNP_GIRM_0018,22,ok,Male,giraffe_masai,right
+13454,79,photo_album_8,6,4,60,adult,1,IBEIS_PZ_1562,1835,ok,UNKNOWN SEX,zebra_plains,frontleft
+15385,588,photo_album_20,6,4,60,infant,0,____,-15385,poor,UNKNOWN NAME,zebra_plains,left
+12645,3396,photo_album_84,6,4,60,adult,1,IBEIS_PZ_0895,1168,good,Female,zebra_plains,left
+9169,403,photo_album_82,6,4,60,infant,0,____,-9169,excellent,UNKNOWN NAME,giraffe_masai,right
+17759,6597,photo_album_66,6,4,60,infant,0,____,-17759,good,UNKNOWN NAME,zebra_plains,right
+10199,7817,photo_album_88,6,4,60,infant,0,IBEIS_PZ_0235,508,ok,Female,zebra_plains,left
+15389,564,photo_album_10,6,4,60,infant,0,____,-15389,poor,UNKNOWN NAME,zebra_plains,left
+15390,564,photo_album_10,6,4,60,adult,1,IBEIS_PZ_1582,1855,ok,UNKNOWN SEX,zebra_plains,frontleft
+13847,5753,photo_album_24,6,4,60,infant,0,____,-13847,ok,UNKNOWN NAME,zebra_plains,backleft
+9316,7279,photo_album_31,6,4,60,adult,1,NNP_GIRM_0141,212,ok,Male,giraffe_masai,frontleft
+9777,7725,photo_album_87,6,4,60,adult,1,NNP_GIRM_0090,117,good,Female,giraffe_masai,left
+18719,4800,photo_album_44,6,4,60,infant,0,____,-18719,ok,UNKNOWN NAME,zebra_plains,backleft
+18720,4800,photo_album_44,6,4,60,adult,0,IBEIS_PZ_0518,791,good,Male,zebra_plains,left
+18721,4800,photo_album_44,6,4,60,adult,0,IBEIS_PZ_0497,770,good,Female,zebra_plains,left
+11741,8942,photo_album_73,6,4,60,adult,1,IBEIS_PZ_0572,845,ok,Female,zebra_plains,left
+9398,497,photo_album_36,6,4,60,infant,0,____,-9398,poor,UNKNOWN NAME,giraffe_masai,left
+10279,7861,photo_album_47,6,4,60,adult,0,IBEIS_PZ_0182,455,poor,Male,zebra_plains,left
+10280,7861,photo_album_47,6,4,60,adult,1,IBEIS_PZ_0026,299,good,Male,zebra_plains,left
+10281,7861,photo_album_47,6,4,60,adult,0,IBEIS_PZ_0023,296,poor,Female,zebra_plains,left
+13313,376,photo_album_46,6,4,60,infant,0,____,-13313,ok,UNKNOWN NAME,zebra_plains,frontright
+15391,631,photo_album_10,6,4,60,infant,0,____,-15391,poor,UNKNOWN NAME,zebra_plains,left
+9555,5014,photo_album_86,6,4,60,"juvenille, one year old",0,NNP_GIRM_0115,166,ok,Male,giraffe_masai,left
+9555,5014,photo_album_91,6,4,60,"juvenille, one year old",0,NNP_GIRM_0115,166,ok,Male,giraffe_masai,left
+9311,7277,photo_album_31,6,4,60,infant,0,____,-9311,poor,UNKNOWN NAME,giraffe_masai,left
+15628,828,photo_album_48,6,4,60,adult,0,IBEIS_PZ_1382,1655,ok,Male,zebra_plains,backleft
+15629,828,photo_album_48,6,4,60,adult,1,IBEIS_PZ_1177,1450,ok,Female,zebra_plains,left
+15630,828,photo_album_48,6,4,60,adult,0,IBEIS_PZ_1378,1651,ok,Male,zebra_plains,backleft
+13292,387,photo_album_82,6,4,60,infant,0,____,-13292,good,UNKNOWN NAME,zebra_plains,right
+10765,8161,photo_album_100,6,4,60,adult,1,IBEIS_PZ_0121,394,ok,Male,zebra_plains,left
+18338,3938,photo_album_52,6,4,60,infant,0,____,-18338,ok,UNKNOWN NAME,zebra_plains,right
+13429,34,photo_album_57,6,4,60,infant,0,____,-13429,good,UNKNOWN NAME,zebra_plains,right
+12399,1300,photo_album_89,6,4,60,adult,0,IBEIS_PZ_0334,607,ok,Female,zebra_plains,backleft
+12400,1300,photo_album_89,6,4,60,infant,0,IBEIS_PZ_1428,1701,ok,UNKNOWN SEX,zebra_plains,backleft
+12401,1300,photo_album_89,6,4,60,adult,1,IBEIS_PZ_1426,1699,good,Female,zebra_plains,left
+13293,382,photo_album_14,6,4,60,infant,0,____,-13293,excellent,UNKNOWN NAME,zebra_plains,right
+15488,316,photo_album_97,6,4,60,adult,1,IBEIS_PZ_1558,1831,ok,Female,zebra_plains,left
+15489,316,photo_album_97,6,4,60,infant,0,____,-15489,ok,UNKNOWN NAME,zebra_plains,right
+8843,8337,photo_album_11,6,4,60,infant,0,NNP_GIRM_0002,2,ok,Male,giraffe_masai,right
+17010,2700,photo_album_21,6,4,60,infant,1,IBEIS_PZ_1673,1946,good,Female,zebra_plains,left
+17011,2700,photo_album_21,6,4,60,infant,0,____,-17011,junk,UNKNOWN NAME,zebra_plains,left
+17703,6431,photo_album_45,6,4,60,infant,0,____,-17703,ok,UNKNOWN NAME,zebra_plains,frontright
+8969,9332,photo_album_69,6,4,60,"juvenille, one year old",1,NNP_GIRM_0006,7,ok,Male,giraffe_masai,left
+17265,2727,photo_album_21,6,4,60,infant,0,____,-17265,poor,UNKNOWN NAME,zebra_plains,left
+15427,478,photo_album_20,6,4,60,infant,0,____,-15427,poor,UNKNOWN NAME,zebra_plains,left
+13257,7770,photo_album_71,6,4,60,infant,0,IBEIS_PZ_1084,1357,ok,UNKNOWN SEX,zebra_plains,right
+13258,7770,photo_album_71,6,4,60,infant,0,IBEIS_PZ_1089,1362,ok,UNKNOWN SEX,zebra_plains,right
+8956,3441,photo_album_7,6,4,60,adult,0,NNP_GIRM_0025,30,good,Female,giraffe_masai,backleft
+10605,8064,photo_album_100,6,4,60,adult,0,IBEIS_PZ_0127,400,ok,Male,zebra_plains,backleft
+10606,8064,photo_album_100,6,4,60,adult,0,IBEIS_PZ_0132,405,ok,Female,zebra_plains,backleft
+13271,353,photo_album_19,6,4,60,infant,0,____,-13271,good,UNKNOWN NAME,zebra_plains,right
+13271,353,photo_album_1,6,4,60,infant,0,____,-13271,good,UNKNOWN NAME,zebra_plains,right
+12462,4931,photo_album_58,6,4,60,"juvenille, two year old",0,IBEIS_PZ_0401,674,ok,Female,zebra_plains,left
+12462,4931,photo_album_35,6,4,60,"juvenille, two year old",0,IBEIS_PZ_0401,674,ok,Female,zebra_plains,left
+11962,9144,photo_album_73,6,4,60,adult,0,IBEIS_PZ_0075,348,good,Male,zebra_plains,left
+13986,2368,photo_album_53,6,4,60,"juvenille, one year old",0,IBEIS_PZ_1223,1496,ok,Female,zebra_plains,left
+9184,314,photo_album_38,6,4,60,"juvenille, two year old",0,NNP_GIRM_0037,49,good,Female,giraffe_masai,left
+9911,5546,photo_album_81,6,4,60,infant,0,____,-9911,ok,UNKNOWN NAME,giraffe_masai,right
+15078,1970,photo_album_22,6,4,60,adult,0,IBEIS_PZ_1712,1985,ok,Female,zebra_plains,left
+15079,1970,photo_album_22,6,4,60,infant,1,IBEIS_PZ_1222,1495,good,Female,zebra_plains,left
+15080,1970,photo_album_22,6,4,60,adult,0,IBEIS_PZ_1226,1499,ok,Female,zebra_plains,left
+15081,1970,photo_album_22,6,4,60,adult,0,IBEIS_PZ_0592,865,poor,Female,zebra_plains,left
+12603,3197,photo_album_18,6,4,60,adult,0,IBEIS_PZ_0067,340,ok,Female,zebra_plains,frontleft
+15171,1834,photo_album_22,6,4,60,adult,0,IBEIS_PZ_1273,1546,ok,Male,zebra_plains,left
+8939,3438,photo_album_84,6,4,60,adult,0,NNP_GIRM_0044,57,good,Female,giraffe_masai,right
+8939,3438,photo_album_93,6,4,60,adult,0,NNP_GIRM_0044,57,good,Female,giraffe_masai,right
+13832,5676,photo_album_3,6,4,60,"juvenille, one year old",0,IBEIS_PZ_1386,1659,ok,Female,zebra_plains,left
+9101,8316,photo_album_67,6,4,60,adult,1,NNP_GIRM_0089,115,ok,Female,giraffe_masai,frontleft
+15646,819,photo_album_50,6,4,60,adult,0,IBEIS_PZ_1378,1651,ok,Male,zebra_plains,backleft
+15647,819,photo_album_50,6,4,60,adult,0,IBEIS_PZ_1382,1655,ok,Male,zebra_plains,backleft
+15648,819,photo_album_50,6,4,60,infant,0,____,-15648,ok,UNKNOWN NAME,zebra_plains,back
+13870,5677,photo_album_41,6,4,60,adult,0,IBEIS_PZ_0020,293,ok,Female,zebra_plains,left
+13870,5677,photo_album_62,6,4,60,adult,0,IBEIS_PZ_0020,293,ok,Female,zebra_plains,left
+13871,5677,photo_album_41,6,4,60,infant,1,IBEIS_PZ_1865,2138,ok,UNKNOWN SEX,zebra_plains,frontleft
+13871,5677,photo_album_62,6,4,60,infant,1,IBEIS_PZ_1865,2138,ok,UNKNOWN SEX,zebra_plains,frontleft
+12359,1255,photo_album_40,6,4,60,infant,0,IBEIS_PZ_1102,1375,good,Female,zebra_plains,left
+12360,1255,photo_album_40,6,4,60,adult,0,IBEIS_PZ_0755,1028,ok,Female,zebra_plains,backleft
+12361,1255,photo_album_40,6,4,60,adult,0,IBEIS_PZ_1113,1386,ok,Male,zebra_plains,left
+12362,1255,photo_album_40,6,4,60,adult,0,IBEIS_PZ_1905,2178,ok,Male,zebra_plains,left
+12363,1255,photo_album_40,6,4,60,adult,1,IBEIS_PZ_0928,1201,ok,Male,zebra_plains,left
+14208,706,photo_album_26,6,4,60,adult,1,IBEIS_PZ_1639,1912,good,Male,zebra_plains,left
+9582,6958,photo_album_34,6,4,60,adult,0,NNP_GIRM_0081,105,good,Male,giraffe_masai,frontleft
+9583,6958,photo_album_34,6,4,60,infant,0,____,-9583,poor,UNKNOWN NAME,giraffe_masai,frontleft
+9120,8352,photo_album_17,6,4,60,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+9121,8352,photo_album_17,6,4,60,"juvenille, one year old",1,NNP_GIRM_0047,63,good,Female,giraffe_masai,left
+10832,8213,photo_album_43,6,4,60,adult,0,IBEIS_PZ_0264,537,ok,Female,zebra_plains,left
+11280,8623,photo_album_78,6,4,60,adult,0,IBEIS_PZ_0205,478,ok,Male,zebra_plains,left
+16050,412,photo_album_32,6,4,60,infant,0,____,-16050,good,UNKNOWN NAME,zebra_plains,right
+16051,412,photo_album_32,6,4,60,infant,0,____,-16051,poor,UNKNOWN NAME,zebra_plains,backleft
+13268,391,photo_album_19,6,4,60,infant,1,IBEIS_PZ_1485,1758,good,UNKNOWN SEX,zebra_plains,frontleft
+8936,8332,photo_album_67,6,4,60,adult,1,NNP_GIRM_0022,27,ok,Female,giraffe_masai,left
+8936,8332,photo_album_80,6,4,60,adult,1,NNP_GIRM_0022,27,ok,Female,giraffe_masai,left
+8936,8332,photo_album_49,6,4,60,adult,1,NNP_GIRM_0022,27,ok,Female,giraffe_masai,left
+10409,7953,photo_album_88,6,4,60,adult,0,IBEIS_PZ_0453,726,ok,Male,zebra_plains,left
+10410,7953,photo_album_88,6,4,60,adult,0,IBEIS_PZ_0453,726,ok,Male,zebra_plains,left
+14396,1781,photo_album_76,6,4,60,adult,1,IBEIS_PZ_1288,1561,excellent,Male,zebra_plains,left
+14175,784,photo_album_33,6,4,60,adult,0,IBEIS_PZ_1366,1639,good,Male,zebra_plains,left
+13310,360,photo_album_82,6,4,60,"juvenille, two year old",1,IBEIS_PZ_0996,1269,good,Female,zebra_plains,left
+18136,4648,photo_album_60,6,4,60,infant,0,____,-18136,poor,UNKNOWN NAME,zebra_plains,left
+14148,785,photo_album_70,6,4,60,infant,0,IBEIS_PZ_1261,1534,ok,Female,zebra_plains,left
+12592,3130,photo_album_6,6,4,60,adult,0,IBEIS_PZ_0169,442,ok,Male,zebra_plains,left
+12593,3130,photo_album_6,6,4,60,adult,0,IBEIS_PZ_0949,1222,poor,UNKNOWN SEX,zebra_plains,left
+12594,3130,photo_album_6,6,4,60,adult,0,IBEIS_PZ_1567,1840,poor,Male,zebra_plains,left
+16067,632,photo_album_72,6,4,60,infant,0,____,-16067,poor,UNKNOWN NAME,zebra_plains,left
+9725,1260,photo_album_40,6,4,60,infant,0,____,-9725,ok,UNKNOWN NAME,giraffe_masai,right
+9726,1260,photo_album_40,6,4,60,infant,0,____,-9726,poor,UNKNOWN NAME,giraffe_masai,right
+9727,1260,photo_album_40,6,4,60,infant,0,____,-9727,junk,UNKNOWN NAME,giraffe_masai,right
+13396,76,photo_album_57,6,4,60,infant,0,____,-13396,poor,UNKNOWN NAME,zebra_plains,frontright
+10831,8212,photo_album_43,6,4,60,infant,1,IBEIS_PZ_0297,570,ok,UNKNOWN SEX,zebra_plains,left
+16086,580,photo_album_59,6,4,60,infant,0,____,-16086,good,UNKNOWN NAME,zebra_plains,right
+16087,580,photo_album_59,6,4,60,infant,0,____,-16087,poor,UNKNOWN NAME,zebra_plains,right
+16112,573,photo_album_36,6,4,60,infant,0,____,-16112,good,UNKNOWN NAME,zebra_plains,backright
+16113,573,photo_album_36,6,4,60,infant,0,____,-16113,poor,UNKNOWN NAME,zebra_plains,right
+16114,573,photo_album_36,6,4,60,infant,0,____,-16114,poor,UNKNOWN NAME,zebra_plains,right
+16115,573,photo_album_36,6,4,60,infant,0,____,-16115,ok,UNKNOWN NAME,zebra_plains,backleft
+13384,1159,photo_album_74,6,4,60,adult,0,IBEIS_PZ_1856,2129,ok,Female,zebra_plains,left
+13024,5000,photo_album_91,6,4,60,adult,0,IBEIS_PZ_1387,1660,good,Female,zebra_plains,left
+15934,538,photo_album_10,6,4,60,adult,1,IBEIS_PZ_1564,1837,ok,UNKNOWN SEX,zebra_plains,frontleft
+9017,3124,photo_album_98,6,4,60,adult,0,NNP_GIRM_0042,55,good,Female,giraffe_masai,right
+16005,5220,photo_album_39,6,4,60,infant,1,IBEIS_PZ_1824,2097,good,UNKNOWN SEX,zebra_plains,left
+17347,6536,photo_album_45,6,4,60,infant,1,IBEIS_PZ_1756,2029,ok,UNKNOWN SEX,zebra_plains,left
+17348,6536,photo_album_45,6,4,60,"juvenille, two year old",0,IBEIS_PZ_1586,1859,good,Male,zebra_plains,left
+17349,6536,photo_album_45,6,4,60,adult,0,IBEIS_PZ_1595,1868,ok,Female,zebra_plains,left
+13407,49,photo_album_57,6,4,60,infant,0,____,-13407,ok,UNKNOWN NAME,zebra_plains,frontright
+13408,49,photo_album_57,6,4,60,infant,0,____,-13408,good,UNKNOWN NAME,zebra_plains,right
+12689,3208,photo_album_18,6,4,60,adult,1,IBEIS_PZ_1741,2014,ok,Female,zebra_plains,left
+12067,9307,photo_album_68,6,4,60,adult,0,IBEIS_PZ_0118,391,ok,Male,zebra_plains,frontleft
+9009,8342,photo_album_11,6,4,60,infant,0,____,-9009,good,UNKNOWN NAME,giraffe_masai,right
+9009,8342,photo_album_80,6,4,60,infant,0,____,-9009,good,UNKNOWN NAME,giraffe_masai,right
+9009,8342,photo_album_55,6,4,60,infant,0,____,-9009,good,UNKNOWN NAME,giraffe_masai,right
+13347,1164,photo_album_74,6,4,60,"juvenille, one year old",0,IBEIS_PZ_1855,2128,ok,Male,zebra_plains,left
+14349,1926,photo_album_76,6,4,60,adult,1,IBEIS_PZ_1895,2168,ok,Female,zebra_plains,left
+14728,2177,photo_album_9,6,4,60,adult,0,IBEIS_PZ_1445,1718,poor,Female,zebra_plains,left
+12699,3410,photo_album_95,6,4,60,adult,0,IBEIS_PZ_0970,1243,ok,Female,zebra_plains,frontleft
+12699,3410,photo_album_84,6,4,60,adult,0,IBEIS_PZ_0970,1243,ok,Female,zebra_plains,frontleft
+9565,5021,photo_album_91,6,4,60,"juvenille, one year old",1,NNP_GIRM_0116,167,good,Male,giraffe_masai,left
+16200,5037,photo_album_37,6,4,60,infant,0,____,-16200,ok,UNKNOWN NAME,zebra_plains,backleft
+16201,5037,photo_album_37,6,4,60,adult,1,IBEIS_PZ_1726,1999,excellent,Male,zebra_plains,left
+9141,9219,photo_album_69,6,4,60,adult,0,NNP_GIRM_0015,18,good,Male,giraffe_masai,left
+15767,4840,photo_album_44,6,4,60,adult,0,IBEIS_PZ_0626,899,ok,Female,zebra_plains,left
+12493,4924,photo_album_77,6,4,60,adult,0,IBEIS_PZ_0404,677,poor,Female,zebra_plains,left
+12494,4924,photo_album_77,6,4,60,"juvenille, two year old",0,IBEIS_PZ_0401,674,ok,Female,zebra_plains,backleft
+9086,3162,photo_album_6,6,4,60,adult,0,NNP_GIRM_0040,53,ok,Female,giraffe_masai,right
+9087,3162,photo_album_6,6,4,60,"juvenille, two year old",0,NNP_GIRM_0051,70,ok,Male,giraffe_masai,right
+9088,3162,photo_album_6,6,4,60,"juvenille, two year old",0,NNP_GIRM_0049,68,ok,Male,giraffe_masai,backright
+9089,3162,photo_album_6,6,4,60,"juvenille, two year old",0,NNP_GIRM_0067,89,ok,UNKNOWN SEX,giraffe_masai,right
+9151,8323,photo_album_17,6,4,60,"juvenille, two year old",0,NNP_GIRM_0068,90,ok,Male,giraffe_masai,left
+9151,8323,photo_album_42,6,4,60,"juvenille, two year old",0,NNP_GIRM_0068,90,ok,Male,giraffe_masai,left
+9151,8323,photo_album_11,6,4,60,"juvenille, two year old",0,NNP_GIRM_0068,90,ok,Male,giraffe_masai,left
+9151,8323,photo_album_55,6,4,60,"juvenille, two year old",0,NNP_GIRM_0068,90,ok,Male,giraffe_masai,left
+18040,4851,photo_album_44,6,4,60,infant,0,____,-18040,ok,UNKNOWN NAME,zebra_plains,backleft
+18041,4851,photo_album_44,6,4,60,infant,0,____,-18041,ok,UNKNOWN NAME,zebra_plains,backleft
+14478,5208,photo_album_64,6,4,60,adult,1,IBEIS_PZ_1844,2117,good,Male,zebra_plains,left
+16435,7609,photo_album_5,6,4,60,infant,0,____,-16435,ok,UNKNOWN NAME,zebra_plains,right
+16436,7609,photo_album_5,6,4,60,infant,0,____,-16436,good,UNKNOWN NAME,zebra_plains,right
+14617,2324,photo_album_96,6,4,60,"juvenille, one year old",0,IBEIS_PZ_1242,1515,good,Female,zebra_plains,left
+16214,5117,photo_album_37,6,4,60,infant,0,____,-16214,poor,UNKNOWN NAME,zebra_plains,left
+12433,3312,photo_album_93,6,4,60,"juvenille, two year old",0,IBEIS_PZ_0017,290,ok,Male,zebra_plains,left
+15190,1813,photo_album_22,6,4,60,infant,0,IBEIS_PZ_1355,1628,poor,Female,zebra_plains,left
+12601,3145,photo_album_98,6,4,60,infant,0,IBEIS_PZ_0905,1178,ok,Female,zebra_plains,frontleft
+17987,4841,photo_album_44,6,4,60,adult,0,IBEIS_PZ_0595,868,good,Male,zebra_plains,left
+17988,4841,photo_album_44,6,4,60,"juvenille, two year old",0,IBEIS_PZ_0608,881,ok,Female,zebra_plains,left
+12596,3378,photo_album_95,6,4,60,adult,0,IBEIS_PZ_0888,1161,ok,Female,zebra_plains,backleft
+9657,6919,photo_album_34,6,4,60,adult,1,NNP_GIRM_0004,4,good,Male,giraffe_masai,left
+9108,8353,photo_album_80,6,4,60,adult,1,NNP_GIRM_0089,115,ok,Female,giraffe_masai,left
+9541,1105,photo_album_29,6,4,60,infant,0,____,-9541,poor,UNKNOWN NAME,giraffe_masai,right
+9542,1105,photo_album_29,6,4,60,infant,0,____,-9542,ok,UNKNOWN NAME,giraffe_masai,right
+9873,5552,photo_album_2,6,4,60,adult,0,NNP_GIRM_0019,23,good,Male,giraffe_masai,backleft
+9874,5552,photo_album_2,6,4,60,infant,0,____,-9874,ok,UNKNOWN NAME,giraffe_masai,backright
+17242,2888,photo_album_79,6,4,60,adult,0,IBEIS_PZ_1722,1995,ok,Female,zebra_plains,left
+17243,2888,photo_album_79,6,4,60,adult,0,IBEIS_PZ_0312,585,ok,Female,zebra_plains,left
+10867,8247,photo_album_43,6,4,60,adult,0,IBEIS_PZ_0195,468,poor,Female,zebra_plains,left
+10868,8247,photo_album_43,6,4,60,"juvenille, two year old",0,IBEIS_PZ_0187,460,junk,UNKNOWN SEX,zebra_plains,frontleft
+9147,8345,photo_album_17,6,4,60,"juvenille, one year old",0,NNP_GIRM_0047,63,ok,Female,giraffe_masai,left
+9147,8345,photo_album_55,6,4,60,"juvenille, one year old",0,NNP_GIRM_0047,63,ok,Female,giraffe_masai,left
+9148,8345,photo_album_17,6,4,60,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+9148,8345,photo_album_55,6,4,60,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+12669,3355,photo_album_7,6,4,60,adult,0,IBEIS_PZ_0900,1173,ok,Male,zebra_plains,left
+12663,3356,photo_album_95,6,4,60,adult,0,IBEIS_PZ_0873,1146,ok,Male,zebra_plains,frontleft
+10288,7864,photo_album_88,6,4,60,adult,1,IBEIS_PZ_0182,455,good,Male,zebra_plains,left
+10289,7864,photo_album_88,6,4,60,adult,1,IBEIS_PZ_0023,296,good,Female,zebra_plains,left
+10290,7864,photo_album_88,6,4,60,adult,0,IBEIS_PZ_0026,299,poor,Male,zebra_plains,left
+14347,2285,photo_album_96,6,4,60,adult,0,IBEIS_PZ_1276,1549,excellent,Male,zebra_plains,left
+14348,2285,photo_album_96,6,4,60,adult,1,IBEIS_PZ_1275,1548,excellent,Male,zebra_plains,left
+8961,8330,photo_album_55,6,4,60,"juvenille, one year old",0,NNP_GIRM_0035,47,poor,Male,giraffe_masai,right
+14974,2308,photo_album_96,6,4,60,"juvenille, two year old",0,IBEIS_PZ_1220,1493,good,Female,zebra_plains,frontleft
+17112,2934,photo_album_79,6,4,60,infant,0,____,-17112,good,UNKNOWN NAME,zebra_plains,front
+17113,2934,photo_album_79,6,4,60,adult,0,IBEIS_PZ_0417,690,ok,Male,zebra_plains,left
+14745,2241,photo_album_9,6,4,60,"juvenille, two year old",0,IBEIS_PZ_1215,1488,good,Female,zebra_plains,left
+14746,2241,photo_album_9,6,4,60,adult,0,IBEIS_PZ_1273,1546,good,Male,zebra_plains,left
+12590,3340,photo_album_84,6,4,60,adult,1,IBEIS_PZ_0937,1210,excellent,Female,zebra_plains,left
+17868,6729,photo_album_66,6,4,60,infant,0,____,-17868,ok,UNKNOWN NAME,zebra_plains,backright
+17869,6729,photo_album_66,6,4,60,infant,1,IBEIS_PZ_1731,2004,ok,Female,zebra_plains,left
+9556,5016,photo_album_91,6,4,60,infant,0,____,-9556,good,UNKNOWN NAME,giraffe_masai,right
+12111,8762,photo_album_69,6,4,60,adult,1,IBEIS_PZ_0400,673,excellent,Male,zebra_plains,left
+14070,2318,photo_album_96,6,4,60,adult,0,IBEIS_PZ_0377,650,good,Female,zebra_plains,left
+8801,8328,photo_album_67,6,4,60,infant,0,____,-8801,poor,UNKNOWN NAME,giraffe_masai,backleft
+8801,8328,photo_album_49,6,4,60,infant,0,____,-8801,poor,UNKNOWN NAME,giraffe_masai,backleft
+8926,8322,photo_album_67,6,4,60,"juvenille, two year old",0,NNP_GIRM_0068,90,good,Male,giraffe_masai,left
+14294,1920,photo_album_76,6,4,60,adult,0,IBEIS_PZ_1429,1702,ok,Female,zebra_plains,left
+14271,1512,photo_album_12,6,4,60,adult,0,IBEIS_PZ_0571,844,good,Male,zebra_plains,left
+8907,8315,photo_album_80,6,4,60,adult,1,NNP_GIRM_0087,113,ok,Male,giraffe_masai,left
+8908,8315,photo_album_80,6,4,60,infant,0,____,-8908,ok,UNKNOWN NAME,giraffe_masai,right
+13298,395,photo_album_82,6,4,60,infant,1,IBEIS_PZ_1483,1756,good,UNKNOWN SEX,zebra_plains,left
+14398,2278,photo_album_9,6,4,60,adult,0,IBEIS_PZ_0468,741,ok,Female,zebra_plains,left
+14399,2278,photo_album_9,6,4,60,"juvenille, two year old",0,IBEIS_PZ_1259,1532,good,Female,zebra_plains,backleft
+12565,3116,photo_album_98,6,4,60,adult,1,IBEIS_PZ_0878,1151,ok,Female,zebra_plains,left
+12566,3116,photo_album_98,6,4,60,infant,0,IBEIS_PZ_0926,1199,poor,UNKNOWN SEX,zebra_plains,frontleft
+14785,2097,photo_album_96,6,4,60,adult,1,IBEIS_PZ_1234,1507,good,Male,zebra_plains,left
+12642,3161,photo_album_6,6,4,60,adult,1,IBEIS_PZ_0169,442,good,Male,zebra_plains,left
+12577,3094,photo_album_98,6,4,60,adult,1,IBEIS_PZ_0942,1215,ok,Male,zebra_plains,left
+16971,3038,photo_album_79,6,4,60,infant,0,____,-16971,junk,UNKNOWN NAME,zebra_plains,right
+16972,3038,photo_album_79,6,4,60,infant,0,____,-16972,poor,UNKNOWN NAME,zebra_plains,left
+16973,3038,photo_album_79,6,4,60,adult,0,IBEIS_PZ_1279,1552,ok,Female,zebra_plains,left
+14527,5218,photo_album_64,6,4,60,infant,0,____,-14527,poor,UNKNOWN NAME,zebra_plains,left
+16215,5252,photo_album_39,6,4,60,adult,1,IBEIS_PZ_1821,2094,good,Female,zebra_plains,left
+16216,5252,photo_album_39,6,4,60,adult,0,IBEIS_PZ_0528,801,ok,Female,zebra_plains,left
+12484,4905,photo_album_51,6,4,60,adult,0,IBEIS_PZ_0592,865,ok,Female,zebra_plains,left
+10773,8170,photo_album_100,6,4,60,adult,0,IBEIS_PZ_0113,386,poor,Male,zebra_plains,left
+13243,7777,photo_album_71,6,4,60,infant,0,IBEIS_PZ_1087,1360,excellent,UNKNOWN SEX,zebra_plains,right
+12376,1301,photo_album_89,6,4,60,infant,1,IBEIS_PZ_0262,535,excellent,Female,zebra_plains,left
+12377,1301,photo_album_89,6,4,60,adult,0,IBEIS_PZ_1109,1382,good,Male,zebra_plains,frontleft
+12378,1301,photo_album_89,6,4,60,adult,1,IBEIS_PZ_0331,604,excellent,Female,zebra_plains,left
+8809,8321,photo_album_42,6,4,60,adult,0,NNP_GIRM_0016,19,ok,Female,giraffe_masai,right
+8810,8321,photo_album_42,6,4,60,unknown,0,NNP_GIRM_0064,84,poor,UNKNOWN SEX,giraffe_masai,backleft
+10162,7796,photo_album_88,6,4,60,adult,1,IBEIS_PZ_0033,306,good,Female,zebra_plains,left
+10163,7796,photo_album_88,6,4,60,"juvenille, one year old",1,IBEIS_PZ_0234,507,ok,Male,zebra_plains,left
+9431,1102,photo_album_90,6,4,60,infant,0,____,-9431,poor,UNKNOWN NAME,giraffe_masai,left
+10694,8121,photo_album_30,5,4,55.55555556,infant,0,IBEIS_PZ_0166,439,ok,UNKNOWN SEX,zebra_plains,backleft
+10695,8121,photo_album_30,5,4,55.55555556,infant,0,IBEIS_PZ_0102,375,ok,Female,zebra_plains,left
+10696,8121,photo_album_30,5,4,55.55555556,adult,0,IBEIS_PZ_0162,435,poor,Female,zebra_plains,left
+14655,1572,photo_album_12,5,4,55.55555556,adult,1,IBEIS_PZ_0415,688,excellent,Female,zebra_plains,left
+14339,1672,photo_album_12,5,4,55.55555556,adult,0,IBEIS_PZ_1243,1516,good,Male,zebra_plains,left
+14203,705,photo_album_26,5,4,55.55555556,adult,1,IBEIS_PZ_0312,585,good,Female,zebra_plains,left
+14204,705,photo_album_26,5,4,55.55555556,infant,0,____,-14204,poor,UNKNOWN NAME,zebra_plains,left
+14118,723,photo_album_26,5,4,55.55555556,adult,0,IBEIS_PZ_1288,1561,good,Male,zebra_plains,left
+11091,8473,photo_album_23,5,4,55.55555556,adult,1,IBEIS_PZ_0538,811,ok,Male,zebra_plains,left
+16127,575,photo_album_20,5,4,55.55555556,adult,1,IBEIS_PZ_0873,1146,good,Male,zebra_plains,left
+9053,8334,photo_album_11,5,4,55.55555556,adult,0,NNP_GIRM_0046,60,poor,Male,giraffe_masai,left
+13917,8174,photo_album_30,5,4,55.55555556,adult,0,IBEIS_PZ_0063,336,ok,Female,zebra_plains,backleft
+13439,83,photo_album_8,5,4,55.55555556,infant,0,____,-13439,ok,UNKNOWN NAME,zebra_plains,backright
+12775,1294,photo_album_15,5,4,55.55555556,infant,0,____,-12775,good,UNKNOWN NAME,zebra_plains,right
+12776,1294,photo_album_15,5,4,55.55555556,infant,0,____,-12776,good,UNKNOWN NAME,zebra_plains,right
+12777,1294,photo_album_15,5,4,55.55555556,infant,0,____,-12777,ok,UNKNOWN NAME,zebra_plains,right
+12587,3318,photo_album_7,5,4,55.55555556,"juvenille, two year old",0,IBEIS_PZ_0902,1175,good,Female,zebra_plains,backleft
+15384,531,photo_album_20,5,4,55.55555556,infant,0,IBEIS_PZ_0884,1157,ok,Female,zebra_plains,left
+8818,8335,photo_album_11,5,4,55.55555556,adult,0,NNP_GIRM_0046,60,ok,Male,giraffe_masai,left
+10499,8015,photo_album_30,5,4,55.55555556,"juvenille, two year old",0,IBEIS_PZ_0056,329,ok,Female,zebra_plains,backleft
+10500,8015,photo_album_30,5,4,55.55555556,adult,0,IBEIS_PZ_0061,334,ok,Female,zebra_plains,backleft
+10501,8015,photo_album_30,5,4,55.55555556,adult,0,IBEIS_PZ_0057,330,ok,Male,zebra_plains,backleft
+10502,8015,photo_album_30,5,4,55.55555556,infant,0,IBEIS_PZ_0055,328,poor,Male,zebra_plains,backleft
+14147,736,photo_album_26,5,4,55.55555556,adult,0,IBEIS_PZ_0105,378,good,Female,zebra_plains,left
+11767,9007,photo_album_23,5,4,55.55555556,adult,0,IBEIS_PZ_0596,869,poor,Female,zebra_plains,left
+12283,1306,photo_album_15,5,4,55.55555556,adult,0,IBEIS_PZ_0394,667,ok,Female,zebra_plains,frontleft
+12284,1306,photo_album_15,5,4,55.55555556,"juvenille, one year old",0,IBEIS_PZ_0423,696,ok,Female,zebra_plains,frontleft
+12285,1306,photo_album_15,5,4,55.55555556,adult,0,IBEIS_PZ_1111,1384,good,Female,zebra_plains,left
+12286,1306,photo_album_15,5,4,55.55555556,adult,0,IBEIS_PZ_1424,1697,good,Female,zebra_plains,left
+14978,1973,photo_album_25,5,4,55.55555556,adult,0,IBEIS_PZ_1424,1697,ok,Female,zebra_plains,left
+14979,1973,photo_album_25,5,4,55.55555556,adult,1,IBEIS_PZ_1111,1384,excellent,Female,zebra_plains,left
+16016,471,photo_album_28,5,4,55.55555556,infant,0,____,-16016,ok,UNKNOWN NAME,zebra_plains,front
+14622,1786,photo_album_22,5,4,55.55555556,"juvenille, one year old",0,IBEIS_PZ_1228,1501,good,Male,zebra_plains,left
+14623,1786,photo_album_22,5,4,55.55555556,adult,0,IBEIS_PZ_1275,1548,ok,Male,zebra_plains,left
+14585,1561,photo_album_12,5,4,55.55555556,"juvenille, one year old",1,IBEIS_PZ_1290,1563,good,Male,zebra_plains,left
+13839,5674,photo_album_62,5,5,50,infant,0,IBEIS_PZ_1725,1998,ok,Female,zebra_plains,left
+13425,3,photo_album_8,5,5,50,infant,0,____,-13425,excellent,UNKNOWN NAME,zebra_plains,backleft
+12978,4968,photo_album_86,5,5,50,infant,0,____,-12978,good,UNKNOWN NAME,zebra_plains,backright
+12979,4968,photo_album_86,5,5,50,infant,0,____,-12979,good,UNKNOWN NAME,zebra_plains,backright
+16180,610,photo_album_59,5,5,50,infant,0,____,-16180,good,UNKNOWN NAME,zebra_plains,right
+16181,610,photo_album_59,5,5,50,infant,0,____,-16181,good,UNKNOWN NAME,zebra_plains,backright
+16182,610,photo_album_59,5,5,50,infant,0,____,-16182,good,UNKNOWN NAME,zebra_plains,right
+11511,8800,photo_album_23,5,5,50,adult,0,IBEIS_PZ_0407,680,ok,Male,zebra_plains,left
+11512,8800,photo_album_23,5,5,50,adult,1,IBEIS_PZ_0174,447,ok,UNKNOWN SEX,zebra_plains,left
+8954,8336,photo_album_42,5,5,50,adult,0,NNP_GIRM_0046,60,ok,Male,giraffe_masai,left
+12505,3358,photo_album_92,5,5,50,adult,1,IBEIS_PZ_0912,1185,good,Male,zebra_plains,left
+9365,518,photo_album_36,5,5,50,adult,1,NNP_GIRM_0142,225,ok,Male,giraffe_masai,left
+9366,518,photo_album_36,5,5,50,infant,0,____,-9366,junk,UNKNOWN NAME,giraffe_masai,left
+12996,4994,photo_album_91,5,5,50,adult,1,IBEIS_PZ_1467,1740,ok,Male,zebra_plains,left
+14511,5189,photo_album_39,5,5,50,adult,0,IBEIS_PZ_0025,298,good,Female,zebra_plains,left
+10658,8096,photo_album_30,5,5,50,adult,0,IBEIS_PZ_0101,374,poor,Female,zebra_plains,frontleft
+10659,8096,photo_album_30,5,5,50,adult,1,IBEIS_PZ_0089,362,good,Male,zebra_plains,left
+17276,2777,photo_album_79,5,5,50,infant,0,____,-17276,poor,UNKNOWN NAME,zebra_plains,left
+12707,3262,photo_album_13,4,4,50,infant,1,IBEIS_PZ_0939,1212,ok,UNKNOWN SEX,zebra_plains,left
+14234,767,photo_album_26,5,5,50,adult,0,IBEIS_PZ_1892,2165,ok,Female,zebra_plains,left
+14235,767,photo_album_26,5,5,50,"juvenille, two year old",0,IBEIS_PZ_1573,1846,junk,Female,zebra_plains,left
+13855,5668,photo_album_62,5,5,50,adult,0,IBEIS_PZ_1821,2094,ok,Female,zebra_plains,left
+10603,8063,photo_album_100,5,5,50,adult,0,IBEIS_PZ_0079,352,good,Female,zebra_plains,left
+10604,8063,photo_album_100,5,5,50,adult,1,IBEIS_PZ_0065,338,good,Male,zebra_plains,left
+14172,729,photo_album_26,5,5,50,infant,1,IBEIS_PZ_1648,1921,excellent,Female,zebra_plains,left
+9043,8331,photo_album_49,5,5,50,adult,0,NNP_GIRM_0022,27,ok,Female,giraffe_masai,left
+15296,1975,photo_album_54,5,5,50,adult,0,IBEIS_PZ_0610,883,good,Male,zebra_plains,left
+15297,1975,photo_album_54,5,5,50,adult,0,IBEIS_PZ_1424,1697,ok,Female,zebra_plains,left
+14124,772,photo_album_33,5,5,50,infant,0,IBEIS_PZ_1229,1502,ok,Female,zebra_plains,left
+14125,772,photo_album_33,5,5,50,"juvenille, one year old",0,IBEIS_PZ_1290,1563,poor,Male,zebra_plains,left
+12093,9380,photo_album_78,5,5,50,"juvenille, one year old",1,IBEIS_PZ_0764,1037,ok,Female,zebra_plains,left
+12094,9380,photo_album_78,5,5,50,adult,0,IBEIS_PZ_0761,1034,ok,Female,zebra_plains,left
+12095,9380,photo_album_78,5,5,50,infant,0,IBEIS_PZ_0767,1040,ok,UNKNOWN SEX,zebra_plains,right
+16058,474,photo_album_72,5,5,50,infant,0,____,-16058,poor,UNKNOWN NAME,zebra_plains,backleft
+11850,9052,photo_album_78,5,5,50,adult,0,IBEIS_PZ_0099,372,poor,Female,zebra_plains,left
+10394,7943,photo_album_16,5,5,50,infant,0,IBEIS_PZ_0001,274,ok,Female,zebra_plains,left
+10395,7943,photo_album_16,5,5,50,adult,0,IBEIS_PZ_0040,313,ok,Female,zebra_plains,back
+15001,2234,photo_album_53,5,5,50,adult,0,IBEIS_PZ_1276,1549,good,Male,zebra_plains,left
+15002,2234,photo_album_53,5,5,50,"juvenille, two year old",0,IBEIS_PZ_1274,1547,ok,Male,zebra_plains,left
+17176,2733,photo_album_21,5,5,50,infant,0,____,-17176,junk,UNKNOWN NAME,zebra_plains,left
+15666,818,photo_album_48,5,5,50,infant,0,____,-15666,good,UNKNOWN NAME,zebra_plains,back
+15667,818,photo_album_48,5,5,50,adult,0,IBEIS_PZ_1497,1770,ok,Female,zebra_plains,backleft
+15668,818,photo_album_48,5,5,50,infant,0,____,-15668,ok,UNKNOWN NAME,zebra_plains,back
+15954,576,photo_album_72,5,5,50,infant,0,____,-15954,ok,UNKNOWN NAME,zebra_plains,backleft
+13863,5665,photo_album_3,5,5,50,adult,1,IBEIS_PZ_0528,801,good,Female,zebra_plains,left
+14152,782,photo_album_26,5,5,50,adult,0,IBEIS_PZ_1283,1556,ok,Female,zebra_plains,left
+10677,8107,photo_album_30,5,5,50,infant,1,IBEIS_PZ_0159,432,ok,UNKNOWN SEX,zebra_plains,left
+12553,3117,photo_album_61,5,5,50,adult,0,IBEIS_PZ_0878,1151,poor,Female,zebra_plains,left
+12554,3117,photo_album_61,5,5,50,infant,0,IBEIS_PZ_0891,1164,junk,UNKNOWN SEX,zebra_plains,right
+13112,6835,photo_album_34,5,5,50,adult,0,IBEIS_PZ_0991,1264,ok,Female,zebra_plains,right
+14121,710,photo_album_70,5,5,50,adult,0,IBEIS_PZ_1447,1720,good,Male,zebra_plains,left
+14634,1982,photo_album_54,5,5,50,adult,0,IBEIS_PZ_1267,1540,poor,Female,zebra_plains,left
+14635,1982,photo_album_54,5,5,50,adult,0,IBEIS_PZ_1268,1541,ok,Male,zebra_plains,front
+14636,1982,photo_album_54,5,5,50,"juvenille, two year old",0,IBEIS_PZ_1261,1534,ok,Female,zebra_plains,left
+10731,8141,photo_album_100,5,5,50,"juvenille, one year old",0,IBEIS_PZ_0107,380,ok,Female,zebra_plains,frontleft
+10732,8141,photo_album_100,5,5,50,adult,0,IBEIS_PZ_0121,394,ok,Male,zebra_plains,left
+10733,8141,photo_album_100,5,5,50,adult,0,IBEIS_PZ_0105,378,ok,Female,zebra_plains,frontleft
+12092,9384,photo_album_23,4,4,50,adult,1,IBEIS_PZ_0763,1036,ok,Female,zebra_plains,left
+12438,4885,photo_album_51,5,5,50,adult,0,IBEIS_PZ_0845,1118,poor,Male,zebra_plains,left
+9346,519,photo_album_59,5,5,50,adult,1,NNP_GIRM_0105,146,good,Female,giraffe_masai,left
+9737,7720,photo_album_87,5,5,50,adult,0,NNP_GIRM_0131,199,ok,Male,giraffe_masai,backleft
+16010,5045,photo_album_37,5,5,50,infant,0,____,-16010,ok,UNKNOWN NAME,zebra_plains,backleft
+9558,5013,photo_album_86,5,5,50,"juvenille, one year old",0,NNP_GIRM_0115,166,ok,Male,giraffe_masai,left
+15414,601,photo_album_72,5,5,50,infant,0,____,-15414,poor,UNKNOWN NAME,zebra_plains,right
+15634,916,photo_album_48,5,5,50,adult,1,IBEIS_PZ_0044,317,good,Female,zebra_plains,left
+17140,2690,photo_album_21,5,5,50,infant,0,____,-17140,poor,UNKNOWN NAME,zebra_plains,right
+17141,2690,photo_album_21,5,5,50,"juvenille, two year old",0,IBEIS_PZ_0395,668,ok,Female,zebra_plains,left
+18237,3695,photo_album_52,5,5,50,adult,1,IBEIS_PZ_0027,300,excellent,Male,zebra_plains,left
+13027,4980,photo_album_4,5,5,50,infant,1,IBEIS_PZ_1479,1752,ok,UNKNOWN SEX,zebra_plains,left
+13028,4980,photo_album_4,5,5,50,infant,0,IBEIS_PZ_1477,1750,good,UNKNOWN SEX,zebra_plains,right
+8859,9368,photo_album_78,5,5,50,adult,0,NNP_GIRM_0062,82,poor,Male,giraffe_masai,left
+13306,357,photo_album_82,5,5,50,infant,0,____,-13306,good,UNKNOWN NAME,zebra_plains,right
+15447,130,photo_album_97,5,5,50,adult,1,IBEIS_PZ_1717,1990,excellent,Male,zebra_plains,left
+9169,403,photo_album_19,5,5,50,infant,0,____,-9169,excellent,UNKNOWN NAME,giraffe_masai,right
+12967,5349,photo_album_81,5,5,50,infant,0,____,-12967,poor,UNKNOWN NAME,zebra_plains,front
+12968,5349,photo_album_81,5,5,50,infant,0,____,-12968,ok,UNKNOWN NAME,zebra_plains,front
+12969,5349,photo_album_81,5,5,50,"juvenille, two year old",0,IBEIS_PZ_0271,544,ok,Female,zebra_plains,left
+12970,5349,photo_album_81,5,5,50,infant,0,____,-12970,good,UNKNOWN NAME,zebra_plains,right
+12971,5349,photo_album_81,5,5,50,infant,0,____,-12971,poor,UNKNOWN NAME,zebra_plains,right
+12998,4988,photo_album_4,5,5,50,"juvenille, one year old",0,IBEIS_PZ_1386,1659,ok,Female,zebra_plains,frontleft
+12999,4988,photo_album_4,5,5,50,"juvenille, one year old",0,IBEIS_PZ_1470,1743,ok,UNKNOWN SEX,zebra_plains,right
+17801,6441,photo_album_66,5,5,50,adult,1,IBEIS_PZ_1818,2091,ok,Female,zebra_plains,left
+15389,564,photo_album_72,5,5,50,infant,0,____,-15389,poor,UNKNOWN NAME,zebra_plains,left
+15390,564,photo_album_72,5,5,50,adult,1,IBEIS_PZ_1582,1855,ok,UNKNOWN SEX,zebra_plains,frontleft
+9051,8346,photo_album_42,5,5,50,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+9052,8346,photo_album_42,5,5,50,"juvenille, one year old",0,NNP_GIRM_0047,63,ok,Female,giraffe_masai,left
+8828,8318,photo_album_49,5,5,50,infant,0,____,-8828,poor,UNKNOWN NAME,giraffe_masai,right
+13313,376,photo_album_19,5,5,50,infant,0,____,-13313,ok,UNKNOWN NAME,zebra_plains,frontright
+12575,3118,photo_album_6,5,5,50,adult,0,IBEIS_PZ_0878,1151,junk,Female,zebra_plains,left
+12576,3118,photo_album_6,5,5,50,infant,0,IBEIS_PZ_0891,1164,poor,UNKNOWN SEX,zebra_plains,right
+10898,8276,photo_album_43,5,5,50,adult,1,IBEIS_PZ_0278,551,ok,UNKNOWN SEX,zebra_plains,left
+13254,7757,photo_album_27,5,5,50,infant,0,IBEIS_PZ_1098,1371,junk,UNKNOWN SEX,zebra_plains,left
+10376,7929,photo_album_47,5,5,50,infant,0,IBEIS_PZ_0212,485,junk,Male,zebra_plains,left
+10377,7929,photo_album_47,5,5,50,adult,0,IBEIS_PZ_0219,492,poor,Female,zebra_plains,left
+15771,4842,photo_album_44,5,5,50,adult,0,IBEIS_PZ_0595,868,ok,Male,zebra_plains,left
+15772,4842,photo_album_44,5,5,50,"juvenille, two year old",0,IBEIS_PZ_0608,881,ok,Female,zebra_plains,left
+8843,8337,photo_album_42,5,5,50,infant,0,NNP_GIRM_0002,2,ok,Male,giraffe_masai,right
+8843,8337,photo_album_80,5,5,50,infant,0,NNP_GIRM_0002,2,ok,Male,giraffe_masai,right
+8843,8337,photo_album_49,5,5,50,infant,0,NNP_GIRM_0002,2,ok,Male,giraffe_masai,right
+12537,3327,photo_album_93,5,5,50,adult,0,IBEIS_PZ_1567,1840,ok,Male,zebra_plains,left
+16003,5049,photo_album_37,5,5,50,infant,0,____,-16003,junk,UNKNOWN NAME,zebra_plains,left
+16004,5049,photo_album_37,5,5,50,"juvenille, two year old",1,IBEIS_PZ_1847,2120,good,Male,zebra_plains,left
+10274,7858,photo_album_47,5,5,50,infant,1,IBEIS_PZ_0029,302,ok,UNKNOWN SEX,zebra_plains,left
+10275,7858,photo_album_47,5,5,50,adult,0,IBEIS_PZ_0204,477,poor,Female,zebra_plains,back
+10368,7922,photo_album_16,5,5,50,"juvenille, one year old",0,IBEIS_PZ_0227,500,poor,Female,zebra_plains,backleft
+13417,27,photo_album_8,5,5,50,infant,0,____,-13417,good,UNKNOWN NAME,zebra_plains,right
+9655,6932,photo_album_34,5,5,50,adult,1,NNP_GIRM_0119,172,good,Female,giraffe_masai,left
+9656,6932,photo_album_34,5,5,50,adult,0,NNP_GIRM_0105,146,ok,Female,giraffe_masai,frontleft
+12527,3375,photo_album_93,5,5,50,adult,0,IBEIS_PZ_0920,1193,good,Female,zebra_plains,right
+12528,3375,photo_album_93,5,5,50,adult,0,IBEIS_PZ_0962,1235,poor,Female,zebra_plains,left
+15149,2419,photo_album_96,5,5,50,adult,1,IBEIS_PZ_0551,824,good,Female,zebra_plains,left
+8953,8359,photo_album_73,5,5,50,adult,0,NNP_GIRM_0016,19,ok,Female,giraffe_masai,right
+12420,1321,photo_album_89,5,5,50,adult,0,IBEIS_PZ_1104,1377,good,Female,zebra_plains,backleft
+15365,1968,photo_album_76,5,5,50,adult,0,IBEIS_PZ_1111,1384,good,Female,zebra_plains,left
+15366,1968,photo_album_76,5,5,50,adult,0,IBEIS_PZ_1267,1540,poor,Female,zebra_plains,frontleft
+15367,1968,photo_album_76,5,5,50,infant,0,IBEIS_PZ_1413,1686,good,Male,zebra_plains,frontleft
+9101,8316,photo_album_17,5,5,50,adult,1,NNP_GIRM_0089,115,ok,Female,giraffe_masai,frontleft
+12483,4916,photo_album_77,5,5,50,"juvenille, two year old",0,IBEIS_PZ_0829,1102,ok,Male,zebra_plains,backleft
+11935,9181,photo_album_69,5,5,50,adult,1,IBEIS_PZ_0681,954,excellent,Female,zebra_plains,left
+9714,1262,photo_album_40,5,5,50,infant,0,____,-9714,good,UNKNOWN NAME,giraffe_masai,right
+12737,3157,photo_album_6,5,5,50,adult,1,IBEIS_PZ_0169,442,good,Male,zebra_plains,left
+14133,735,photo_album_70,5,5,50,adult,1,IBEIS_PZ_0131,404,excellent,Male,zebra_plains,left
+9410,976,photo_album_83,5,5,50,infant,0,____,-9410,junk,UNKNOWN NAME,giraffe_masai,left
+13775,6174,photo_album_94,5,5,50,adult,0,IBEIS_PZ_1122,1395,good,Male,zebra_plains,backleft
+13038,5009,photo_album_4,5,5,50,infant,1,IBEIS_PZ_1390,1663,excellent,UNKNOWN SEX,zebra_plains,left
+16714,2892,photo_album_79,5,5,50,"juvenille, one year old",0,IBEIS_PZ_1698,1971,ok,Male,zebra_plains,left
+16715,2892,photo_album_79,5,5,50,adult,0,IBEIS_PZ_1350,1623,ok,Female,zebra_plains,left
+16716,2892,photo_album_79,5,5,50,infant,0,____,-16716,poor,UNKNOWN NAME,zebra_plains,left
+9120,8352,photo_album_55,5,5,50,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+9121,8352,photo_album_55,5,5,50,"juvenille, one year old",1,NNP_GIRM_0047,63,good,Female,giraffe_masai,left
+15218,2458,photo_album_53,5,5,50,infant,0,IBEIS_PZ_1413,1686,good,Male,zebra_plains,left
+15219,2458,photo_album_53,5,5,50,adult,0,IBEIS_PZ_1267,1540,good,Female,zebra_plains,left
+15220,2458,photo_album_53,5,5,50,adult,0,IBEIS_PZ_1526,1799,ok,Female,zebra_plains,left
+15221,2458,photo_album_53,5,5,50,adult,0,IBEIS_PZ_1892,2165,poor,Female,zebra_plains,left
+13240,7775,photo_album_71,5,5,50,adult,0,IBEIS_PZ_1094,1367,good,Female,zebra_plains,right
+12606,3341,photo_album_84,5,5,50,adult,0,IBEIS_PZ_1567,1840,good,Male,zebra_plains,backleft
+15866,812,photo_album_48,5,5,50,adult,0,IBEIS_PZ_1372,1645,poor,UNKNOWN SEX,zebra_plains,frontleft
+9028,8329,photo_album_55,5,5,50,"juvenille, one year old",0,NNP_GIRM_0035,47,ok,Male,giraffe_masai,right
+16351,7426,photo_album_5,4,4,50,infant,0,____,-16351,poor,UNKNOWN NAME,zebra_plains,backright
+16352,7426,photo_album_5,4,4,50,infant,0,____,-16352,ok,UNKNOWN NAME,zebra_plains,backright
+16353,7426,photo_album_5,4,4,50,infant,0,____,-16353,ok,UNKNOWN NAME,zebra_plains,back
+13155,7037,photo_album_34,5,5,50,adult,1,IBEIS_PZ_1019,1292,ok,UNKNOWN SEX,zebra_plains,left
+12413,1307,photo_album_89,5,5,50,adult,0,IBEIS_PZ_1111,1384,ok,Female,zebra_plains,left
+12414,1307,photo_album_89,5,5,50,"juvenille, one year old",0,IBEIS_PZ_0423,696,ok,Female,zebra_plains,frontleft
+12415,1307,photo_album_89,5,5,50,adult,1,IBEIS_PZ_1424,1697,excellent,Female,zebra_plains,left
+14164,776,photo_album_33,5,5,50,adult,0,IBEIS_PZ_1279,1552,ok,Female,zebra_plains,left
+9407,978,photo_album_56,5,5,50,infant,0,____,-9407,junk,UNKNOWN NAME,giraffe_masai,right
+15898,978,photo_album_56,5,5,50,infant,0,____,-15898,ok,UNKNOWN NAME,zebra_plains,back
+15899,978,photo_album_56,5,5,50,infant,0,____,-15899,poor,UNKNOWN NAME,zebra_plains,right
+15900,978,photo_album_56,5,5,50,infant,0,____,-15900,junk,UNKNOWN NAME,zebra_plains,right
+13283,374,photo_album_46,5,5,50,infant,1,IBEIS_PZ_1482,1755,good,UNKNOWN SEX,zebra_plains,left
+13284,374,photo_album_46,5,5,50,adult,1,IBEIS_PZ_1492,1765,ok,UNKNOWN SEX,zebra_plains,left
+14486,5140,photo_album_37,5,5,50,adult,0,IBEIS_PZ_1685,1958,good,Female,zebra_plains,left
+13296,369,photo_album_1,5,5,50,infant,0,____,-13296,good,UNKNOWN NAME,zebra_plains,backright
+12673,3102,photo_album_98,5,5,50,adult,1,IBEIS_PZ_0889,1162,ok,Female,zebra_plains,left
+12697,3369,photo_album_95,5,5,50,infant,0,IBEIS_PZ_0917,1190,good,UNKNOWN SEX,zebra_plains,right
+10846,8228,photo_album_43,5,5,50,"juvenille, one year old",1,IBEIS_PZ_0294,567,ok,Female,zebra_plains,left
+17745,6560,photo_album_45,5,5,50,adult,0,IBEIS_PZ_0071,344,ok,Male,zebra_plains,left
+13295,394,photo_album_46,5,5,50,infant,1,IBEIS_PZ_1489,1762,good,UNKNOWN SEX,zebra_plains,frontleft
+13272,399,photo_album_82,5,5,50,adult,1,IBEIS_PZ_0895,1168,good,Female,zebra_plains,left
+13132,7049,photo_album_34,5,5,50,adult,0,IBEIS_PZ_1013,1286,poor,UNKNOWN SEX,zebra_plains,left
+13133,7049,photo_album_34,5,5,50,adult,1,IBEIS_PZ_0888,1161,good,Female,zebra_plains,left
+15526,160,photo_album_38,5,5,50,infant,1,IBEIS_PZ_0517,790,ok,Male,zebra_plains,left
+15998,570,photo_album_59,5,5,50,adult,1,IBEIS_PZ_1575,1848,good,Male,zebra_plains,frontleft
+12778,1254,photo_album_40,5,5,50,adult,1,IBEIS_PZ_0722,995,excellent,Female,zebra_plains,left
+12779,1254,photo_album_40,5,5,50,infant,1,IBEIS_PZ_1102,1375,excellent,Female,zebra_plains,left
+12780,1254,photo_album_40,5,5,50,adult,1,IBEIS_PZ_1113,1386,ok,Male,zebra_plains,left
+14223,1254,photo_album_40,5,5,50,infant,0,____,-14223,poor,UNKNOWN NAME,zebra_plains,left
+13389,56,photo_album_8,5,5,50,infant,0,____,-13389,poor,UNKNOWN NAME,zebra_plains,backright
+12470,4914,photo_album_77,5,5,50,infant,1,IBEIS_PZ_0859,1132,good,UNKNOWN SEX,zebra_plains,left
+16867,3060,photo_album_79,5,5,50,adult,1,IBEIS_PZ_0792,1065,good,Male,zebra_plains,left
+16868,3060,photo_album_79,5,5,50,infant,0,____,-16868,ok,UNKNOWN NAME,zebra_plains,back
+9278,5711,photo_album_41,5,5,50,infant,0,____,-9278,junk,UNKNOWN NAME,giraffe_masai,right
+9279,5711,photo_album_41,5,5,50,infant,0,____,-9279,poor,UNKNOWN NAME,giraffe_masai,right
+13979,1819,photo_album_54,5,5,50,adult,0,IBEIS_PZ_0444,717,ok,Male,zebra_plains,left
+9630,5226,photo_album_39,5,5,50,adult,0,NNP_GIRM_0095,124,ok,Female,giraffe_masai,left
+9565,5021,photo_album_4,5,5,50,"juvenille, one year old",1,NNP_GIRM_0116,167,good,Male,giraffe_masai,left
+8818,8335,photo_album_67,5,5,50,adult,0,NNP_GIRM_0046,60,ok,Male,giraffe_masai,left
+15959,5259,photo_album_39,5,5,50,adult,0,IBEIS_PZ_1821,2094,good,Female,zebra_plains,left
+15960,5259,photo_album_39,5,5,50,adult,1,IBEIS_PZ_0528,801,good,Female,zebra_plains,left
+15961,5259,photo_album_39,5,5,50,infant,0,____,-15961,poor,UNKNOWN NAME,zebra_plains,backleft
+11695,8925,photo_album_69,5,5,50,infant,0,IBEIS_PZ_0555,828,poor,Male,zebra_plains,left
+11696,8925,photo_album_69,5,5,50,adult,1,IBEIS_PZ_0556,829,ok,UNKNOWN SEX,zebra_plains,left
+12493,4924,photo_album_58,5,5,50,adult,0,IBEIS_PZ_0404,677,poor,Female,zebra_plains,left
+12494,4924,photo_album_58,5,5,50,"juvenille, two year old",0,IBEIS_PZ_0401,674,ok,Female,zebra_plains,backleft
+14707,1928,photo_album_25,5,5,50,adult,1,IBEIS_PZ_1252,1525,excellent,Male,zebra_plains,left
+8835,3144,photo_album_61,5,5,50,adult,0,NNP_GIRM_0059,79,poor,Female,giraffe_masai,right
+9003,3084,photo_album_61,5,5,50,adult,0,NNP_GIRM_0018,22,ok,Male,giraffe_masai,right
+13312,402,photo_album_82,5,5,50,infant,0,____,-13312,good,UNKNOWN NAME,zebra_plains,right
+13290,379,photo_album_46,5,5,50,infant,0,____,-13290,ok,UNKNOWN NAME,zebra_plains,right
+17973,4854,photo_album_44,5,5,50,adult,1,IBEIS_PZ_1658,1931,ok,Female,zebra_plains,left
+17974,4854,photo_album_44,5,5,50,infant,0,____,-17974,ok,UNKNOWN NAME,zebra_plains,backleft
+15909,4048,photo_album_99,5,5,50,adult,0,IBEIS_PZ_1602,1875,ok,Female,zebra_plains,left
+15052,2319,photo_album_96,5,5,50,adult,1,IBEIS_PZ_0377,650,excellent,Female,zebra_plains,left
+9492,1012,photo_album_90,5,5,50,adult,0,NNP_GIRM_0151,273,ok,Male,giraffe_masai,left
+9149,8350,photo_album_67,5,5,50,adult,0,NNP_GIRM_0022,27,ok,Female,giraffe_masai,left
+9192,306,photo_album_75,5,5,50,adult,0,NNP_GIRM_0055,74,ok,Female,giraffe_masai,left
+12488,4934,photo_album_51,5,5,50,adult,1,IBEIS_PZ_0847,1120,ok,UNKNOWN SEX,zebra_plains,left
+12742,3373,photo_album_93,5,5,50,adult,1,IBEIS_PZ_0890,1163,good,Male,zebra_plains,left
+15450,159,photo_album_97,5,5,50,infant,0,IBEIS_PZ_0517,790,ok,Male,zebra_plains,left
+13323,371,photo_album_82,5,5,50,infant,0,____,-13323,good,UNKNOWN NAME,zebra_plains,right
+11282,8625,photo_album_78,5,5,50,adult,0,IBEIS_PZ_0205,478,ok,Male,zebra_plains,left
+9067,8317,photo_album_67,5,5,50,infant,0,____,-9067,ok,UNKNOWN NAME,giraffe_masai,right
+13000,4972,photo_album_4,5,5,50,infant,1,IBEIS_PZ_1396,1669,good,UNKNOWN SEX,zebra_plains,left
+13001,4972,photo_album_4,5,5,50,adult,1,IBEIS_PZ_1393,1666,good,Male,zebra_plains,left
+13002,4972,photo_album_4,5,5,50,adult,1,IBEIS_PZ_1392,1665,good,Female,zebra_plains,left
+16812,2674,photo_album_21,5,5,50,adult,0,IBEIS_PZ_1896,2169,ok,Female,zebra_plains,left
+9629,6970,photo_album_34,5,5,50,"juvenille, two year old",1,NNP_GIRM_0080,104,ok,Female,giraffe_masai,frontleft
+9216,311,photo_album_75,5,5,50,infant,0,____,-9216,poor,UNKNOWN NAME,giraffe_masai,left
+10685,8113,photo_album_100,5,5,50,"juvenille, two year old",1,IBEIS_PZ_0082,355,excellent,Female,zebra_plains,left
+9574,6918,photo_album_34,5,5,50,adult,1,NNP_GIRM_0004,4,good,Male,giraffe_masai,left
+12980,5002,photo_album_4,5,5,50,infant,0,IBEIS_PZ_1389,1662,ok,UNKNOWN SEX,zebra_plains,backleft
+11531,8820,photo_album_78,5,5,50,adult,0,IBEIS_PZ_0383,656,ok,Female,zebra_plains,backleft
+11653,8820,photo_album_78,5,5,50,"juvenille, two year old",1,IBEIS_PZ_0388,661,ok,Female,zebra_plains,left
+10369,7924,photo_album_47,5,5,50,adult,0,IBEIS_PZ_0207,480,good,Female,zebra_plains,backleft
+8801,8328,photo_album_80,5,5,50,infant,0,____,-8801,poor,UNKNOWN NAME,giraffe_masai,backleft
+11059,8444,photo_album_69,5,5,50,adult,1,IBEIS_PZ_0527,800,ok,Male,zebra_plains,left
+12476,4904,photo_album_35,5,5,50,adult,0,IBEIS_PZ_0839,1112,ok,UNKNOWN SEX,zebra_plains,right
+12477,4904,photo_album_35,5,5,50,adult,0,IBEIS_PZ_0836,1109,ok,Female,zebra_plains,backleft
+11699,8923,photo_album_23,5,5,50,adult,0,IBEIS_PZ_0556,829,junk,UNKNOWN SEX,zebra_plains,left
+11700,8923,photo_album_23,5,5,50,infant,1,IBEIS_PZ_0555,828,ok,Male,zebra_plains,left
+15381,556,photo_album_72,5,5,50,infant,0,____,-15381,poor,UNKNOWN NAME,zebra_plains,left
+13299,388,photo_album_1,5,5,50,infant,1,IBEIS_PZ_1480,1753,good,UNKNOWN SEX,zebra_plains,left
+9958,2813,photo_album_79,5,5,50,"juvenille, two year old",1,NNP_GIRM_0068,90,good,Male,giraffe_masai,left
+18699,4852,photo_album_44,5,5,50,infant,0,____,-18699,poor,UNKNOWN NAME,zebra_plains,left
+13971,2002,photo_album_76,5,5,50,infant,0,IBEIS_PZ_1269,1542,poor,Female,zebra_plains,left
+13972,2002,photo_album_76,5,5,50,adult,0,IBEIS_PZ_0610,883,good,Male,zebra_plains,left
+13973,2002,photo_album_76,5,5,50,adult,0,IBEIS_PZ_0592,865,ok,Female,zebra_plains,left
+8879,7895,photo_album_16,5,5,50,infant,0,____,-8879,ok,UNKNOWN NAME,giraffe_masai,right
+10719,8135,photo_album_100,5,5,50,adult,0,IBEIS_PZ_0112,385,poor,Female,zebra_plains,left
+10720,8135,photo_album_100,5,5,50,"juvenille, one year old",1,IBEIS_PZ_0108,381,excellent,Female,zebra_plains,left
+10721,8135,photo_album_100,5,5,50,adult,0,IBEIS_PZ_0109,382,poor,Male,zebra_plains,left
+12442,4926,photo_album_77,5,5,50,infant,0,IBEIS_PZ_0831,1104,poor,UNKNOWN SEX,zebra_plains,left
+16612,7461,photo_album_5,5,5,50,infant,0,____,-16612,poor,UNKNOWN NAME,zebra_plains,backleft
+16613,7461,photo_album_5,5,5,50,infant,0,____,-16613,good,UNKNOWN NAME,zebra_plains,back
+16614,7461,photo_album_5,5,5,50,infant,0,____,-16614,junk,UNKNOWN NAME,zebra_plains,back
+16615,7461,photo_album_5,5,5,50,infant,0,____,-16615,poor,UNKNOWN NAME,zebra_plains,back
+16616,7461,photo_album_5,5,5,50,infant,0,____,-16616,poor,UNKNOWN NAME,zebra_plains,backright
+16617,7461,photo_album_5,5,5,50,infant,0,____,-16617,junk,UNKNOWN NAME,zebra_plains,backleft
+15169,1515,photo_album_12,5,5,50,"juvenille, two year old",1,IBEIS_PZ_0566,839,good,Male,zebra_plains,left
+15170,1515,photo_album_12,5,5,50,adult,0,IBEIS_PZ_0571,844,good,Male,zebra_plains,left
+10800,8189,photo_album_100,5,5,50,adult,0,IBEIS_PZ_0071,344,ok,Male,zebra_plains,left
+10801,8189,photo_album_100,5,5,50,adult,0,IBEIS_PZ_0077,350,ok,Female,zebra_plains,right
+15062,2385,photo_album_9,5,5,50,adult,1,IBEIS_PZ_0531,804,ok,Female,zebra_plains,left
+16503,7480,photo_album_87,5,5,50,infant,1,IBEIS_PZ_1264,1537,good,UNKNOWN SEX,zebra_plains,left
+16504,7480,photo_album_87,5,5,50,infant,0,IBEIS_PZ_1504,1777,ok,UNKNOWN SEX,zebra_plains,backleft
+10162,7796,photo_album_16,5,5,50,adult,1,IBEIS_PZ_0033,306,good,Female,zebra_plains,left
+10163,7796,photo_album_16,5,5,50,"juvenille, one year old",1,IBEIS_PZ_0234,507,ok,Male,zebra_plains,left
+9732,7719,photo_album_87,5,5,50,adult,0,NNP_GIRM_0022,27,ok,Female,giraffe_masai,backleft
+9733,7719,photo_album_87,5,5,50,adult,1,NNP_GIRM_0123,184,good,Male,giraffe_masai,left
+13411,53,photo_album_8,5,5,50,infant,0,____,-13411,poor,UNKNOWN NAME,zebra_plains,backright
+15980,476,photo_album_28,4,5,44.44444444,infant,0,____,-15980,poor,UNKNOWN NAME,zebra_plains,left
+9372,642,photo_album_20,4,5,44.44444444,infant,0,____,-9372,poor,UNKNOWN NAME,giraffe_masai,left
+11145,8514,photo_album_23,4,5,44.44444444,adult,0,IBEIS_PZ_1893,2166,good,Female,zebra_plains,frontleft
+11649,8514,photo_album_23,4,5,44.44444444,adult,0,IBEIS_PZ_0497,770,ok,Female,zebra_plains,frontleft
+12511,3196,photo_album_13,4,5,44.44444444,adult,0,IBEIS_PZ_0067,340,good,Female,zebra_plains,frontleft
+14659,1793,photo_album_22,4,5,44.44444444,infant,0,IBEIS_PZ_1356,1629,poor,UNKNOWN SEX,zebra_plains,backleft
+9361,515,photo_album_20,4,5,44.44444444,adult,0,NNP_GIRM_0055,74,good,Female,giraffe_masai,left
+9508,1057,photo_album_29,4,5,44.44444444,infant,0,____,-9508,junk,UNKNOWN NAME,giraffe_masai,front
+14595,1794,photo_album_22,4,5,44.44444444,adult,0,IBEIS_PZ_1319,1592,ok,Female,zebra_plains,backleft
+14083,1740,photo_album_25,4,5,44.44444444,adult,0,IBEIS_PZ_0503,776,poor,Female,zebra_plains,left
+14084,1740,photo_album_25,4,5,44.44444444,adult,0,IBEIS_PZ_1225,1498,ok,Male,zebra_plains,left
+16165,635,photo_album_28,4,5,44.44444444,infant,1,IBEIS_PZ_1574,1847,ok,UNKNOWN SEX,zebra_plains,left
+16166,635,photo_album_28,4,5,44.44444444,infant,0,____,-16166,poor,UNKNOWN NAME,zebra_plains,left
+17207,2716,photo_album_21,4,5,44.44444444,infant,0,____,-17207,poor,UNKNOWN NAME,zebra_plains,left
+13859,5669,photo_album_24,4,5,44.44444444,infant,1,IBEIS_PZ_0224,497,ok,Female,zebra_plains,left
+14075,1569,photo_album_12,4,5,44.44444444,adult,0,IBEIS_PZ_1239,1512,ok,Female,zebra_plains,left
+13323,371,photo_album_14,4,5,44.44444444,infant,0,____,-13323,good,UNKNOWN NAME,zebra_plains,right
+14763,1519,photo_album_12,4,5,44.44444444,"juvenille, two year old",0,IBEIS_PZ_1274,1547,poor,Male,zebra_plains,left
+14764,1519,photo_album_12,4,5,44.44444444,"juvenille, two year old",0,IBEIS_PZ_1281,1554,good,Female,zebra_plains,left
+9067,8317,photo_album_11,4,5,44.44444444,infant,0,____,-9067,ok,UNKNOWN NAME,giraffe_masai,right
+9138,8343,photo_album_55,4,6,40,adult,0,NNP_GIRM_0073,97,ok,Female,giraffe_masai,backleft
+13398,71,photo_album_57,4,6,40,infant,0,____,-13398,poor,UNKNOWN NAME,zebra_plains,backleft
+12487,4925,photo_album_35,4,6,40,infant,0,IBEIS_PZ_0831,1104,poor,UNKNOWN SEX,zebra_plains,backleft
+13406,70,photo_album_57,4,6,40,infant,0,____,-13406,junk,UNKNOWN NAME,zebra_plains,left
+12987,4996,photo_album_4,4,6,40,adult,0,IBEIS_PZ_1388,1661,ok,Female,zebra_plains,backleft
+13367,1157,photo_album_74,4,6,40,infant,0,____,-13367,ok,UNKNOWN NAME,zebra_plains,right
+13368,1157,photo_album_74,4,6,40,infant,0,____,-13368,poor,UNKNOWN NAME,zebra_plains,right
+8954,8336,photo_album_80,4,6,40,adult,0,NNP_GIRM_0046,60,ok,Male,giraffe_masai,left
+12482,4887,photo_album_77,4,6,40,adult,0,IBEIS_PZ_0833,1106,junk,UNKNOWN SEX,zebra_plains,left
+13274,398,photo_album_14,4,6,40,infant,0,____,-13274,good,UNKNOWN NAME,zebra_plains,right
+17083,2848,photo_album_79,4,6,40,adult,0,IBEIS_PZ_1674,1947,ok,Female,zebra_plains,left
+14490,5258,photo_album_64,4,6,40,infant,0,____,-14490,poor,UNKNOWN NAME,zebra_plains,left
+14491,5258,photo_album_64,4,6,40,infant,0,____,-14491,good,UNKNOWN NAME,zebra_plains,right
+12471,4919,photo_album_51,4,6,40,adult,0,IBEIS_PZ_0269,542,ok,Female,zebra_plains,backleft
+13116,7020,photo_album_34,4,6,40,adult,1,IBEIS_PZ_0946,1219,good,Female,zebra_plains,left
+13117,7020,photo_album_34,4,6,40,infant,1,IBEIS_PZ_1072,1345,ok,UNKNOWN SEX,zebra_plains,frontleft
+14240,645,photo_album_33,4,6,40,infant,0,____,-14240,poor,UNKNOWN NAME,zebra_plains,right
+14572,1754,photo_album_25,4,6,40,"juvenille, two year old",0,IBEIS_PZ_1219,1492,ok,Female,zebra_plains,left
+13277,348,photo_album_14,4,6,40,infant,0,____,-13277,good,UNKNOWN NAME,zebra_plains,right
+12707,3262,photo_album_18,4,6,40,infant,1,IBEIS_PZ_0939,1212,ok,UNKNOWN SEX,zebra_plains,left
+14203,705,photo_album_70,4,6,40,adult,1,IBEIS_PZ_0312,585,good,Female,zebra_plains,left
+14204,705,photo_album_70,4,6,40,infant,0,____,-14204,poor,UNKNOWN NAME,zebra_plains,left
+13311,405,photo_album_14,4,6,40,infant,0,____,-13311,excellent,UNKNOWN NAME,zebra_plains,right
+12578,3382,photo_album_84,4,6,40,adult,1,IBEIS_PZ_0925,1198,ok,UNKNOWN SEX,zebra_plains,frontleft
+17719,6529,photo_album_66,4,6,40,infant,0,____,-17719,poor,UNKNOWN NAME,zebra_plains,left
+16162,414,photo_album_32,4,6,40,infant,0,____,-16162,poor,UNKNOWN NAME,zebra_plains,right
+13970,2466,photo_album_96,4,6,40,adult,0,IBEIS_PZ_1283,1556,ok,Female,zebra_plains,backleft
+14325,2444,photo_album_53,4,6,40,"juvenille, one year old",0,IBEIS_PZ_0423,696,good,Female,zebra_plains,left
+15491,319,photo_album_97,4,6,40,adult,0,IBEIS_PZ_1103,1376,good,Male,zebra_plains,left
+10472,7996,photo_album_16,4,6,40,adult,0,IBEIS_PZ_0012,285,ok,Female,zebra_plains,left
+15962,423,photo_album_32,4,6,40,infant,0,____,-15962,poor,UNKNOWN NAME,zebra_plains,left
+9294,6125,photo_album_94,4,6,40,adult,1,NNP_GIRM_0024,29,excellent,Female,giraffe_masai,left
+15563,259,photo_album_97,4,6,40,infant,0,IBEIS_PZ_0905,1178,ok,Female,zebra_plains,left
+13316,373,photo_album_1,4,6,40,infant,0,____,-13316,excellent,UNKNOWN NAME,zebra_plains,right
+13121,7041,photo_album_34,4,6,40,adult,0,IBEIS_PZ_0719,992,good,Male,zebra_plains,left
+16109,454,photo_album_32,4,6,40,infant,0,____,-16109,poor,UNKNOWN NAME,zebra_plains,left
+16110,454,photo_album_32,4,6,40,infant,0,____,-16110,junk,UNKNOWN NAME,zebra_plains,right
+16203,5174,photo_album_64,4,6,40,infant,0,____,-16203,ok,UNKNOWN NAME,zebra_plains,backleft
+16203,5174,photo_album_39,4,6,40,infant,0,____,-16203,ok,UNKNOWN NAME,zebra_plains,backleft
+16204,5174,photo_album_64,4,6,40,infant,0,____,-16204,poor,UNKNOWN NAME,zebra_plains,backleft
+16204,5174,photo_album_39,4,6,40,infant,0,____,-16204,poor,UNKNOWN NAME,zebra_plains,backleft
+15564,282,photo_album_38,4,6,40,infant,1,IBEIS_PZ_1556,1829,ok,UNKNOWN SEX,zebra_plains,left
+15565,282,photo_album_38,4,6,40,infant,1,IBEIS_PZ_1560,1833,ok,UNKNOWN SEX,zebra_plains,frontleft
+13118,7024,photo_album_34,4,6,40,adult,1,IBEIS_PZ_1462,1735,ok,Male,zebra_plains,left
+9274,5708,photo_album_41,4,6,40,infant,0,____,-9274,junk,UNKNOWN NAME,giraffe_masai,frontleft
+9274,5708,photo_album_62,4,6,40,infant,0,____,-9274,junk,UNKNOWN NAME,giraffe_masai,frontleft
+14880,1838,photo_album_54,4,6,40,adult,1,IBEIS_PZ_1359,1632,excellent,Female,zebra_plains,left
+13980,2284,photo_album_9,4,6,40,adult,0,IBEIS_PZ_1275,1548,good,Male,zebra_plains,left
+13981,2284,photo_album_9,4,6,40,adult,0,IBEIS_PZ_1276,1549,good,Male,zebra_plains,left
+13982,2284,photo_album_9,4,6,40,"juvenille, one year old",0,IBEIS_PZ_1228,1501,poor,Male,zebra_plains,left
+15999,451,photo_album_32,4,6,40,adult,0,IBEIS_PZ_0906,1179,ok,Male,zebra_plains,left
+16000,451,photo_album_32,4,6,40,infant,0,____,-16000,ok,UNKNOWN NAME,zebra_plains,backleft
+12691,3386,photo_album_93,4,6,40,adult,1,IBEIS_PZ_0955,1228,good,Female,zebra_plains,left
+12692,3386,photo_album_93,4,6,40,"juvenille, two year old",0,IBEIS_PZ_0254,527,poor,Female,zebra_plains,left
+13892,2639,photo_album_21,4,6,40,"juvenille, two year old",1,IBEIS_PZ_1706,1979,ok,Female,zebra_plains,left
+14102,768,photo_album_33,4,6,40,"juvenille, two year old",0,IBEIS_PZ_1573,1846,ok,Female,zebra_plains,left
+10909,8289,photo_album_43,4,6,40,infant,0,IBEIS_PZ_0183,456,poor,UNKNOWN SEX,zebra_plains,left
+17150,2711,photo_album_21,4,6,40,"juvenille, two year old",0,IBEIS_PZ_0406,679,ok,Female,zebra_plains,left
+13238,7773,photo_album_27,4,6,40,adult,0,IBEIS_PZ_1083,1356,good,Female,zebra_plains,right
+9598,5167,photo_album_39,4,6,40,infant,0,____,-9598,poor,UNKNOWN NAME,giraffe_masai,left
+13452,84,photo_album_8,4,6,40,infant,0,____,-13452,ok,UNKNOWN NAME,zebra_plains,backright
+10908,8288,photo_album_43,4,6,40,adult,0,IBEIS_PZ_0269,542,ok,Female,zebra_plains,left
+13325,378,photo_album_82,4,6,40,"juvenille, two year old",1,IBEIS_PZ_0864,1137,good,Female,zebra_plains,left
+14091,2451,photo_album_53,4,6,40,adult,1,IBEIS_PZ_1267,1540,excellent,Female,zebra_plains,left
+9900,5571,photo_album_2,4,6,40,adult,0,NNP_GIRM_0019,23,ok,Male,giraffe_masai,backleft
+9901,5571,photo_album_2,4,6,40,infant,0,____,-9901,poor,UNKNOWN NAME,giraffe_masai,backleft
+14249,798,photo_album_70,4,6,40,"juvenille, two year old",1,IBEIS_PZ_0617,890,ok,Female,zebra_plains,left
+9169,403,photo_album_1,4,6,40,infant,0,____,-9169,excellent,UNKNOWN NAME,giraffe_masai,right
+10624,8077,photo_album_100,4,6,40,adult,0,IBEIS_PZ_0084,357,ok,Female,zebra_plains,left
+12911,5359,photo_album_2,4,6,40,adult,0,IBEIS_PZ_0848,1121,ok,Female,zebra_plains,left
+16244,5052,photo_album_37,4,6,40,adult,1,IBEIS_PZ_1846,2119,ok,Male,zebra_plains,left
+9051,8346,photo_album_67,4,6,40,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+9051,8346,photo_album_55,4,6,40,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+9052,8346,photo_album_67,4,6,40,"juvenille, one year old",0,NNP_GIRM_0047,63,ok,Female,giraffe_masai,left
+9052,8346,photo_album_55,4,6,40,"juvenille, one year old",0,NNP_GIRM_0047,63,ok,Female,giraffe_masai,left
+9438,962,photo_album_56,4,6,40,adult,0,NNP_GIRM_0151,273,ok,Male,giraffe_masai,left
+9493,1053,photo_album_90,4,6,40,infant,0,____,-9493,poor,UNKNOWN NAME,giraffe_masai,back
+13996,2470,photo_album_9,4,6,40,"juvenille, two year old",1,IBEIS_PZ_1235,1508,good,Female,zebra_plains,left
+13997,2470,photo_album_9,4,6,40,adult,0,IBEIS_PZ_1909,2182,ok,Female,zebra_plains,left
+8828,8318,photo_album_17,4,6,40,infant,0,____,-8828,poor,UNKNOWN NAME,giraffe_masai,right
+9584,5198,photo_album_64,4,6,40,infant,0,____,-9584,ok,UNKNOWN NAME,giraffe_masai,front
+18180,4568,photo_album_60,4,6,40,adult,0,IBEIS_PZ_1588,1861,ok,Female,zebra_plains,left
+16090,637,photo_album_10,4,6,40,adult,1,IBEIS_PZ_1571,1844,ok,Male,zebra_plains,left
+16091,637,photo_album_10,4,6,40,infant,0,____,-16091,poor,UNKNOWN NAME,zebra_plains,right
+9555,5014,photo_album_4,4,6,40,"juvenille, one year old",0,NNP_GIRM_0115,166,ok,Male,giraffe_masai,left
+14016,1930,photo_album_76,4,6,40,adult,1,IBEIS_PZ_1284,1557,good,Female,zebra_plains,left
+10404,7948,photo_album_88,4,6,40,infant,0,IBEIS_PZ_0189,462,ok,UNKNOWN SEX,zebra_plains,left
+15759,4754,photo_album_63,4,6,40,infant,0,IBEIS_PZ_0834,1107,good,Male,zebra_plains,left
+13253,7763,photo_album_27,4,6,40,adult,0,IBEIS_PZ_1083,1356,ok,Female,zebra_plains,right
+10183,7807,photo_album_88,4,6,40,adult,1,IBEIS_PZ_0003,276,ok,Female,zebra_plains,left
+13254,7757,photo_album_71,4,6,40,infant,0,IBEIS_PZ_1098,1371,junk,UNKNOWN SEX,zebra_plains,left
+15488,316,photo_album_38,4,6,40,adult,1,IBEIS_PZ_1558,1831,ok,Female,zebra_plains,left
+15489,316,photo_album_38,4,6,40,infant,0,____,-15489,ok,UNKNOWN NAME,zebra_plains,right
+17732,6539,photo_album_45,4,6,40,infant,0,____,-17732,poor,UNKNOWN NAME,zebra_plains,left
+17733,6539,photo_album_45,4,6,40,adult,1,IBEIS_PZ_1761,2034,ok,Female,zebra_plains,left
+17734,6539,photo_album_45,4,6,40,"juvenille, two year old",0,IBEIS_PZ_1586,1859,ok,Male,zebra_plains,left
+17735,6539,photo_album_45,4,6,40,adult,0,IBEIS_PZ_1595,1868,ok,Female,zebra_plains,left
+13320,384,photo_album_82,4,6,40,adult,1,IBEIS_PZ_1481,1754,good,Male,zebra_plains,left
+14477,5034,photo_album_37,4,6,40,infant,1,IBEIS_PZ_1845,2118,good,UNKNOWN SEX,zebra_plains,left
+18070,4581,photo_album_63,4,6,40,"juvenille, one year old",0,IBEIS_PZ_1592,1865,ok,Female,zebra_plains,left
+17876,6731,photo_album_45,4,6,40,infant,0,____,-17876,poor,UNKNOWN NAME,zebra_plains,left
+9372,642,photo_album_59,4,6,40,infant,0,____,-9372,poor,UNKNOWN NAME,giraffe_masai,left
+12615,3108,photo_album_61,4,6,40,adult,0,IBEIS_PZ_0909,1182,poor,Female,zebra_plains,frontleft
+12639,3098,photo_album_6,4,6,40,adult,0,IBEIS_PZ_0906,1179,ok,Male,zebra_plains,left
+12640,3098,photo_album_6,4,6,40,adult,1,IBEIS_PZ_0893,1166,good,Female,zebra_plains,left
+11331,8669,photo_album_78,4,6,40,adult,0,IBEIS_PZ_0444,717,ok,Male,zebra_plains,left
+9776,7705,photo_album_87,4,6,40,infant,0,____,-9776,junk,UNKNOWN NAME,giraffe_masai,left
+12489,4907,photo_album_35,4,6,40,adult,0,IBEIS_PZ_0592,865,good,Female,zebra_plains,backleft
+13870,5677,photo_album_3,4,6,40,adult,0,IBEIS_PZ_0020,293,ok,Female,zebra_plains,left
+13871,5677,photo_album_3,4,6,40,infant,1,IBEIS_PZ_1865,2138,ok,UNKNOWN SEX,zebra_plains,frontleft
+13129,6980,photo_album_34,4,6,40,adult,1,IBEIS_PZ_0214,487,excellent,Male,zebra_plains,left
+13130,6980,photo_album_34,4,6,40,adult,0,IBEIS_PZ_1006,1279,good,Male,zebra_plains,backleft
+15454,270,photo_album_97,4,6,40,adult,0,IBEIS_PZ_0937,1210,ok,Female,zebra_plains,left
+18410,3944,photo_album_52,4,6,40,"juvenille, two year old",1,IBEIS_PZ_1604,1877,good,Female,zebra_plains,left
+18411,3944,photo_album_52,4,6,40,infant,0,____,-18411,ok,UNKNOWN NAME,zebra_plains,backleft
+18412,3944,photo_album_52,4,6,40,infant,0,____,-18412,junk,UNKNOWN NAME,zebra_plains,left
+14773,1956,photo_album_76,4,6,40,adult,0,IBEIS_PZ_0551,824,good,Female,zebra_plains,left
+12512,3210,photo_album_18,4,6,40,adult,0,IBEIS_PZ_0074,347,poor,Male,zebra_plains,backleft
+13439,83,photo_album_57,4,6,40,infant,0,____,-13439,ok,UNKNOWN NAME,zebra_plains,backright
+15770,4778,photo_album_60,4,6,40,infant,0,____,-15770,ok,UNKNOWN NAME,zebra_plains,backright
+9780,7703,photo_album_5,4,6,40,infant,1,NNP_GIRM_0130,198,ok,UNKNOWN SEX,giraffe_masai,left
+9781,7703,photo_album_5,4,6,40,adult,1,NNP_GIRM_0127,193,ok,Female,giraffe_masai,left
+14494,5257,photo_album_64,4,6,40,infant,1,IBEIS_PZ_1849,2122,good,UNKNOWN SEX,zebra_plains,frontleft
+13856,5680,photo_album_62,4,6,40,infant,1,IBEIS_PZ_0212,485,ok,Male,zebra_plains,left
+14396,1781,photo_album_54,4,6,40,adult,1,IBEIS_PZ_1288,1561,excellent,Male,zebra_plains,left
+13003,4966,photo_album_4,4,6,40,adult,0,IBEIS_PZ_1173,1446,excellent,Male,zebra_plains,backleft
+18692,4828,photo_album_44,4,6,40,infant,0,____,-18692,junk,UNKNOWN NAME,zebra_plains,left
+8798,9313,photo_album_68,4,6,40,infant,0,____,-8798,poor,UNKNOWN NAME,giraffe_masai,right
+10921,8297,photo_album_43,4,6,40,infant,0,IBEIS_PZ_0238,511,poor,UNKNOWN SEX,zebra_plains,left
+13291,383,photo_album_19,4,6,40,infant,0,____,-13291,ok,UNKNOWN NAME,zebra_plains,right
+10912,8292,photo_album_43,4,6,40,adult,1,IBEIS_PZ_0267,540,ok,Female,zebra_plains,left
+14222,727,photo_album_70,4,6,40,infant,0,IBEIS_PZ_1413,1686,good,Male,zebra_plains,left
+14317,2442,photo_album_96,4,6,40,infant,0,IBEIS_PZ_1401,1674,poor,UNKNOWN SEX,zebra_plains,left
+14318,2442,photo_album_96,4,6,40,adult,0,IBEIS_PZ_1267,1540,good,Female,zebra_plains,left
+14319,2442,photo_album_96,4,6,40,adult,0,IBEIS_PZ_1226,1499,poor,Female,zebra_plains,left
+14180,766,photo_album_33,4,6,40,adult,0,IBEIS_PZ_1241,1514,good,Female,zebra_plains,left
+9083,3085,photo_album_61,4,6,40,adult,0,NNP_GIRM_0018,22,ok,Male,giraffe_masai,right
+10164,7797,photo_album_47,4,6,40,infant,0,IBEIS_PZ_0007,280,poor,UNKNOWN SEX,zebra_plains,left
+10165,7797,photo_album_47,4,6,40,adult,0,IBEIS_PZ_0325,598,ok,Male,zebra_plains,right
+9538,841,photo_album_50,4,6,40,adult,0,NNP_GIRM_0151,273,ok,Male,giraffe_masai,left
+17507,6586,photo_album_45,4,6,40,infant,0,____,-17507,poor,UNKNOWN NAME,zebra_plains,left
+13401,30,photo_album_57,4,6,40,infant,0,____,-13401,poor,UNKNOWN NAME,zebra_plains,backright
+13402,30,photo_album_57,4,6,40,infant,0,____,-13402,ok,UNKNOWN NAME,zebra_plains,backright
+12811,5500,photo_album_2,4,6,40,adult,0,IBEIS_PZ_1450,1723,ok,Female,zebra_plains,left
+12812,5500,photo_album_2,4,6,40,adult,1,IBEIS_PZ_1781,2054,good,Male,zebra_plains,left
+12813,5500,photo_album_2,4,6,40,infant,0,IBEIS_PZ_1460,1733,ok,UNKNOWN SEX,zebra_plains,backleft
+15384,531,photo_album_59,4,6,40,infant,0,IBEIS_PZ_0884,1157,ok,Female,zebra_plains,left
+16165,635,photo_album_59,4,6,40,infant,1,IBEIS_PZ_1574,1847,ok,UNKNOWN SEX,zebra_plains,left
+16166,635,photo_album_59,4,6,40,infant,0,____,-16166,poor,UNKNOWN NAME,zebra_plains,left
+8818,8335,photo_album_80,4,6,40,adult,0,NNP_GIRM_0046,60,ok,Male,giraffe_masai,left
+8796,8339,photo_album_80,4,6,40,"juvenille, two year old",0,NNP_GIRM_0027,32,ok,Male,giraffe_masai,right
+11638,8899,photo_album_73,4,6,40,infant,0,IBEIS_PZ_0261,534,poor,UNKNOWN SEX,zebra_plains,left
+13203,6947,photo_album_34,4,6,40,adult,0,IBEIS_PZ_1028,1301,ok,Male,zebra_plains,backleft
+9389,585,photo_album_10,4,6,40,infant,0,____,-9389,junk,UNKNOWN NAME,giraffe_masai,back
+9390,585,photo_album_10,4,6,40,infant,0,____,-9390,ok,UNKNOWN NAME,giraffe_masai,right
+13539,6190,photo_album_94,4,6,40,adult,0,IBEIS_PZ_1669,1942,ok,Male,zebra_plains,left
+13290,379,photo_album_14,4,6,40,infant,0,____,-13290,ok,UNKNOWN NAME,zebra_plains,right
+14516,5128,photo_album_37,4,6,40,infant,1,IBEIS_PZ_1875,2148,ok,UNKNOWN SEX,zebra_plains,left
+14517,5128,photo_album_37,4,6,40,infant,1,IBEIS_PZ_1877,2150,ok,UNKNOWN SEX,zebra_plains,left
+14518,5128,photo_album_37,4,6,40,infant,1,IBEIS_PZ_1876,2149,ok,UNKNOWN SEX,zebra_plains,left
+12714,3448,photo_album_84,4,6,40,adult,0,IBEIS_PZ_0882,1155,good,Female,zebra_plains,right
+14153,734,photo_album_33,4,6,40,infant,0,IBEIS_PZ_1413,1686,ok,Male,zebra_plains,left
+8829,8338,photo_album_49,4,6,40,infant,0,NNP_GIRM_0002,2,ok,Male,giraffe_masai,right
+9149,8350,photo_album_80,4,6,40,adult,0,NNP_GIRM_0022,27,ok,Female,giraffe_masai,left
+13317,377,photo_album_1,4,6,40,infant,1,IBEIS_PZ_1033,1306,ok,UNKNOWN SEX,zebra_plains,left
+13644,7332,photo_album_31,4,6,40,infant,0,____,-13644,poor,UNKNOWN NAME,zebra_plains,left
+10145,7789,photo_album_47,4,6,40,adult,0,IBEIS_PZ_0207,480,poor,Female,zebra_plains,backleft
+10146,7789,photo_album_47,4,6,40,infant,0,IBEIS_PZ_0212,485,poor,Male,zebra_plains,left
+10147,7789,photo_album_47,4,6,40,"juvenille, one year old",0,IBEIS_PZ_0227,500,poor,Female,zebra_plains,left
+10148,7789,photo_album_47,4,6,40,"juvenille, one year old",1,IBEIS_PZ_0244,517,ok,UNKNOWN SEX,zebra_plains,left
+10149,7789,photo_album_47,4,6,40,infant,0,IBEIS_PZ_0326,599,poor,UNKNOWN SEX,zebra_plains,left
+10150,7789,photo_album_47,4,6,40,adult,0,IBEIS_PZ_0043,316,poor,Female,zebra_plains,left
+12742,3373,photo_album_7,4,6,40,adult,1,IBEIS_PZ_0890,1163,good,Male,zebra_plains,left
+15003,1775,photo_album_54,4,6,40,"juvenille, two year old",0,IBEIS_PZ_1281,1554,good,Female,zebra_plains,left
+15004,1775,photo_album_54,4,6,40,infant,0,IBEIS_PZ_1229,1502,ok,Female,zebra_plains,left
+15005,1775,photo_album_54,4,6,40,"juvenille, one year old",0,IBEIS_PZ_1290,1563,good,Male,zebra_plains,left
+16671,7511,photo_album_87,4,6,40,adult,0,IBEIS_PZ_1347,1620,good,Male,zebra_plains,left
+16672,7511,photo_album_87,4,6,40,adult,0,IBEIS_PZ_0443,716,ok,Female,zebra_plains,left
+9147,8345,photo_album_67,4,6,40,"juvenille, one year old",0,NNP_GIRM_0047,63,ok,Female,giraffe_masai,left
+9148,8345,photo_album_67,4,6,40,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+13323,371,photo_album_46,4,6,40,infant,0,____,-13323,good,UNKNOWN NAME,zebra_plains,right
+13737,7271,photo_album_31,4,6,40,infant,0,____,-13737,poor,UNKNOWN NAME,zebra_plains,left
+17102,2935,photo_album_79,4,6,40,adult,0,IBEIS_PZ_0333,606,ok,Male,zebra_plains,left
+14567,1881,photo_album_54,4,6,40,adult,0,IBEIS_PZ_0468,741,ok,Female,zebra_plains,left
+14568,1881,photo_album_54,4,6,40,adult,0,IBEIS_PZ_1365,1638,ok,Female,zebra_plains,backleft
+14569,1881,photo_album_54,4,6,40,adult,0,IBEIS_PZ_1279,1552,poor,Female,zebra_plains,backleft
+14570,1881,photo_album_54,4,6,40,infant,0,IBEIS_PZ_0454,727,poor,Female,zebra_plains,left
+14571,1881,photo_album_54,4,6,40,"juvenille, two year old",0,IBEIS_PZ_1259,1532,poor,Female,zebra_plains,left
+13287,352,photo_album_46,4,6,40,infant,0,____,-13287,ok,UNKNOWN NAME,zebra_plains,right
+13441,36,photo_album_8,4,6,40,"juvenille, one year old",0,IBEIS_PZ_1386,1659,ok,Female,zebra_plains,frontleft
+11748,8936,photo_album_69,4,6,40,adult,0,IBEIS_PZ_0570,843,poor,Female,zebra_plains,left
+13494,6185,photo_album_94,4,6,40,adult,0,IBEIS_PZ_0848,1121,ok,Female,zebra_plains,left
+12980,5002,photo_album_86,4,6,40,infant,0,IBEIS_PZ_1389,1662,ok,UNKNOWN SEX,zebra_plains,backleft
+11030,8422,photo_album_69,4,6,40,"juvenille, two year old",1,IBEIS_PZ_0525,798,ok,Male,zebra_plains,left
+11031,8422,photo_album_69,4,6,40,adult,0,IBEIS_PZ_0532,805,poor,Male,zebra_plains,left
+13387,29,photo_album_57,4,6,40,infant,0,____,-13387,good,UNKNOWN NAME,zebra_plains,right
+8801,8328,photo_album_55,4,6,40,infant,0,____,-8801,poor,UNKNOWN NAME,giraffe_masai,backleft
+17646,6643,photo_album_45,4,6,40,infant,0,____,-17646,poor,UNKNOWN NAME,zebra_plains,left
+13674,7317,photo_album_31,4,6,40,adult,0,IBEIS_PZ_1603,1876,ok,Male,zebra_plains,left
+9501,922,photo_album_48,4,6,40,"juvenille, one year old",1,NNP_GIRM_0115,166,excellent,Male,giraffe_masai,left
+13381,1177,photo_album_74,4,6,40,infant,0,____,-13381,poor,UNKNOWN NAME,zebra_plains,backleft
+8907,8315,photo_album_11,4,6,40,adult,1,NNP_GIRM_0087,113,ok,Male,giraffe_masai,left
+8908,8315,photo_album_11,4,6,40,infant,0,____,-8908,ok,UNKNOWN NAME,giraffe_masai,right
+12565,3116,photo_album_6,4,6,40,adult,1,IBEIS_PZ_0878,1151,ok,Female,zebra_plains,left
+12566,3116,photo_album_6,4,6,40,infant,0,IBEIS_PZ_0926,1199,poor,UNKNOWN SEX,zebra_plains,frontleft
+15421,595,photo_album_28,4,6,40,infant,1,IBEIS_PZ_1576,1849,ok,UNKNOWN SEX,zebra_plains,left
+15422,595,photo_album_28,4,6,40,infant,0,____,-15422,poor,UNKNOWN NAME,zebra_plains,right
+15423,595,photo_album_28,4,6,40,infant,0,____,-15423,poor,UNKNOWN NAME,zebra_plains,right
+16755,2900,photo_album_79,4,6,40,"juvenille, one year old",0,IBEIS_PZ_1291,1564,ok,Male,zebra_plains,left
+9094,8327,photo_album_55,4,6,40,infant,0,____,-9094,poor,UNKNOWN NAME,giraffe_masai,right
+13864,5751,photo_album_62,4,6,40,infant,0,IBEIS_PZ_1662,1935,ok,Male,zebra_plains,left
+17964,4843,photo_album_44,4,6,40,infant,0,____,-17964,junk,UNKNOWN NAME,zebra_plains,left
+9376,514,photo_album_72,4,6,40,adult,0,NNP_GIRM_0055,74,ok,Female,giraffe_masai,left
+12726,3115,photo_album_98,4,6,40,infant,1,IBEIS_PZ_0927,1200,ok,UNKNOWN SEX,zebra_plains,left
+8828,8318,photo_album_11,3,5,37.5,infant,0,____,-8828,poor,UNKNOWN NAME,giraffe_masai,right
+16102,559,photo_album_20,3,5,37.5,infant,0,____,-16102,ok,UNKNOWN NAME,zebra_plains,right
+16103,559,photo_album_20,3,5,37.5,adult,0,IBEIS_PZ_0878,1151,ok,Female,zebra_plains,left
+16104,559,photo_album_20,3,5,37.5,infant,0,____,-16104,ok,UNKNOWN NAME,zebra_plains,frontright
+14882,1993,photo_album_22,3,5,37.5,"juvenille, two year old",0,IBEIS_PZ_1235,1508,ok,Female,zebra_plains,left
+14883,1993,photo_album_22,3,5,37.5,adult,0,IBEIS_PZ_1909,2182,good,Female,zebra_plains,left
+14701,1844,photo_album_25,3,5,37.5,"juvenille, one year old",0,IBEIS_PZ_1266,1539,poor,Female,zebra_plains,left
+14702,1844,photo_album_25,3,5,37.5,adult,0,IBEIS_PZ_1260,1533,good,Female,zebra_plains,left
+14294,1920,photo_album_25,3,5,37.5,adult,0,IBEIS_PZ_1429,1702,ok,Female,zebra_plains,left
+9138,8343,photo_album_11,3,6,33.33333333,adult,0,NNP_GIRM_0073,97,ok,Female,giraffe_masai,backleft
+12043,9231,photo_album_23,3,6,33.33333333,infant,1,IBEIS_PZ_0738,1011,ok,UNKNOWN SEX,zebra_plains,frontleft
+12044,9231,photo_album_23,3,6,33.33333333,infant,0,IBEIS_PZ_0708,981,poor,UNKNOWN SEX,zebra_plains,left
+12045,9231,photo_album_23,3,6,33.33333333,infant,0,IBEIS_PZ_0737,1010,poor,UNKNOWN SEX,zebra_plains,left
+15894,1071,photo_album_29,3,6,33.33333333,adult,0,IBEIS_PZ_1370,1643,poor,Male,zebra_plains,left
+14659,1793,photo_album_25,3,6,33.33333333,infant,0,IBEIS_PZ_1356,1629,poor,UNKNOWN SEX,zebra_plains,backleft
+8891,3305,photo_album_13,3,6,33.33333333,adult,0,NNP_GIRM_0010,13,ok,Female,giraffe_masai,left
+12522,3275,photo_album_13,3,6,33.33333333,infant,0,IBEIS_PZ_0871,1144,junk,UNKNOWN SEX,zebra_plains,right
+12523,3275,photo_album_13,3,6,33.33333333,adult,0,IBEIS_PZ_0869,1142,junk,Female,zebra_plains,left
+8796,8339,photo_album_11,3,6,33.33333333,"juvenille, two year old",0,NNP_GIRM_0027,32,ok,Male,giraffe_masai,right
+11424,8723,photo_album_23,3,6,33.33333333,adult,0,IBEIS_PZ_0345,618,poor,UNKNOWN SEX,zebra_plains,front
+11425,8723,photo_album_23,3,6,33.33333333,adult,0,IBEIS_PZ_0357,630,ok,Female,zebra_plains,backleft
+14153,734,photo_album_26,3,6,33.33333333,infant,0,IBEIS_PZ_1413,1686,ok,Male,zebra_plains,left
+9765,7674,photo_album_5,3,7,30,infant,0,____,-9765,poor,UNKNOWN NAME,giraffe_masai,frontleft
+13351,1154,photo_album_74,3,7,30,infant,0,____,-13351,junk,UNKNOWN NAME,zebra_plains,right
+15756,4420,photo_album_60,3,7,30,adult,0,IBEIS_PZ_1602,1875,good,Female,zebra_plains,left
+12487,4925,photo_album_58,3,7,30,infant,0,IBEIS_PZ_0831,1104,poor,UNKNOWN SEX,zebra_plains,backleft
+13786,6179,photo_album_94,3,7,30,adult,1,IBEIS_PZ_1138,1411,ok,Male,zebra_plains,left
+11281,8624,photo_album_68,3,7,30,adult,1,IBEIS_PZ_0475,748,good,Female,zebra_plains,left
+17586,6759,photo_album_45,3,7,30,infant,0,____,-17586,poor,UNKNOWN NAME,zebra_plains,backleft
+10448,7977,photo_album_88,3,7,30,adult,0,IBEIS_PZ_0034,307,poor,Male,zebra_plains,left
+10449,7977,photo_album_88,3,7,30,infant,0,IBEIS_PZ_0045,318,poor,UNKNOWN SEX,zebra_plains,backleft
+9550,5020,photo_album_91,3,7,30,"juvenille, one year old",0,NNP_GIRM_0116,167,ok,Male,giraffe_masai,left
+15566,328,photo_album_75,3,7,30,adult,1,IBEIS_PZ_0769,1042,good,Female,zebra_plains,left
+17439,6642,photo_album_66,3,7,30,infant,0,____,-17439,poor,UNKNOWN NAME,zebra_plains,left
+13422,59,photo_album_8,3,7,30,infant,0,____,-13422,ok,UNKNOWN NAME,zebra_plains,backright
+16154,5081,photo_album_37,3,7,30,adult,1,IBEIS_PZ_1882,2155,ok,Female,zebra_plains,left
+13342,1178,photo_album_74,3,7,30,infant,1,IBEIS_PZ_1858,2131,ok,Female,zebra_plains,left
+10154,7791,photo_album_47,3,7,30,infant,1,IBEIS_PZ_0212,485,ok,Male,zebra_plains,left
+14118,723,photo_album_70,3,7,30,adult,0,IBEIS_PZ_1288,1561,good,Male,zebra_plains,left
+13830,5701,photo_album_3,3,7,30,infant,0,____,-13830,poor,UNKNOWN NAME,zebra_plains,left
+10705,8128,photo_album_30,3,7,30,adult,0,IBEIS_PZ_0148,421,ok,UNKNOWN SEX,zebra_plains,right
+10706,8128,photo_album_30,3,7,30,"juvenille, one year old",0,IBEIS_PZ_0107,380,ok,Female,zebra_plains,frontleft
+10043,4075,photo_album_99,3,7,30,infant,0,____,-10043,poor,UNKNOWN NAME,giraffe_masai,left
+12472,4932,photo_album_35,3,7,30,"juvenille, one year old",0,IBEIS_PZ_0852,1125,good,Male,zebra_plains,backleft
+11100,8479,photo_album_68,3,7,30,infant,0,IBEIS_PZ_0370,643,poor,Male,zebra_plains,frontleft
+11101,8479,photo_album_68,3,7,30,adult,0,IBEIS_PZ_0512,785,ok,Female,zebra_plains,frontleft
+16123,5054,photo_album_37,3,7,30,adult,1,IBEIS_PZ_1823,2096,excellent,Male,zebra_plains,left
+12459,4893,photo_album_35,3,7,30,adult,0,IBEIS_PZ_0503,776,poor,Female,zebra_plains,frontleft
+15197,1922,photo_album_22,3,7,30,adult,0,IBEIS_PZ_1109,1382,ok,Male,zebra_plains,left
+17581,6811,photo_album_45,3,7,30,infant,0,____,-17581,poor,UNKNOWN NAME,zebra_plains,left
+14100,655,photo_album_33,3,7,30,infant,0,____,-14100,poor,UNKNOWN NAME,zebra_plains,left
+14101,655,photo_album_33,3,7,30,infant,0,____,-14101,poor,UNKNOWN NAME,zebra_plains,left
+13827,5727,photo_album_24,3,7,30,infant,0,____,-13827,ok,UNKNOWN NAME,zebra_plains,backleft
+11665,8967,photo_album_73,3,7,30,adult,0,IBEIS_PZ_0553,826,poor,UNKNOWN SEX,zebra_plains,frontleft
+11666,8967,photo_album_73,3,7,30,adult,0,IBEIS_PZ_0550,823,poor,UNKNOWN SEX,zebra_plains,left
+11667,8967,photo_album_73,3,7,30,adult,0,IBEIS_PZ_0559,832,ok,Male,zebra_plains,left
+11668,8967,photo_album_73,3,7,30,adult,0,IBEIS_PZ_1603,1876,ok,Male,zebra_plains,left
+14012,2086,photo_album_96,3,7,30,adult,0,IBEIS_PZ_0302,575,ok,Male,zebra_plains,left
+9536,1016,photo_album_29,3,7,30,adult,0,NNP_GIRM_0151,273,ok,Male,giraffe_masai,left
+9884,5470,photo_album_81,3,7,30,infant,0,____,-9884,poor,UNKNOWN NAME,giraffe_masai,left
+12964,5470,photo_album_81,3,7,30,"juvenille, two year old",0,IBEIS_PZ_0739,1012,poor,Female,zebra_plains,left
+11853,9048,photo_album_78,3,7,30,infant,0,IBEIS_PZ_0639,912,poor,UNKNOWN SEX,zebra_plains,backleft
+12478,4886,photo_album_51,3,7,30,adult,0,IBEIS_PZ_0850,1123,poor,UNKNOWN SEX,zebra_plains,left
+13817,5700,photo_album_3,3,7,30,infant,0,____,-13817,poor,UNKNOWN NAME,zebra_plains,left
+14091,2451,photo_album_9,3,7,30,adult,1,IBEIS_PZ_1267,1540,excellent,Female,zebra_plains,left
+12599,3096,photo_album_61,3,7,30,infant,0,IBEIS_PZ_0934,1207,poor,UNKNOWN SEX,zebra_plains,left
+13261,7758,photo_album_71,3,7,30,adult,0,IBEIS_PZ_1085,1358,ok,UNKNOWN SEX,zebra_plains,right
+14731,2281,photo_album_9,3,7,30,infant,0,IBEIS_PZ_0454,727,ok,Female,zebra_plains,left
+12641,3246,photo_album_18,3,7,30,adult,1,IBEIS_PZ_0874,1147,ok,Male,zebra_plains,left
+16062,526,photo_album_20,3,7,30,infant,0,____,-16062,poor,UNKNOWN NAME,zebra_plains,right
+16063,526,photo_album_20,3,7,30,infant,0,____,-16063,ok,UNKNOWN NAME,zebra_plains,right
+13306,357,photo_album_14,3,7,30,infant,0,____,-13306,good,UNKNOWN NAME,zebra_plains,right
+18270,4584,photo_album_63,3,7,30,"juvenille, one year old",1,IBEIS_PZ_0522,795,good,Male,zebra_plains,left
+9051,8346,photo_album_17,3,7,30,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+9052,8346,photo_album_17,3,7,30,"juvenille, one year old",0,NNP_GIRM_0047,63,ok,Female,giraffe_masai,left
+12077,9306,photo_album_69,3,7,30,"juvenille, one year old",1,IBEIS_PZ_0114,387,ok,UNKNOWN SEX,zebra_plains,left
+12320,1242,photo_album_40,3,7,30,infant,1,IBEIS_PZ_1105,1378,excellent,UNKNOWN SEX,zebra_plains,left
+12321,1242,photo_album_40,3,7,30,adult,1,IBEIS_PZ_1410,1683,ok,Male,zebra_plains,left
+15940,561,photo_album_72,3,7,30,infant,0,____,-15940,poor,UNKNOWN NAME,zebra_plains,left
+15941,561,photo_album_72,3,7,30,infant,0,____,-15941,poor,UNKNOWN NAME,zebra_plains,backleft
+15942,561,photo_album_72,3,7,30,infant,0,____,-15942,poor,UNKNOWN NAME,zebra_plains,right
+8828,8318,photo_album_80,3,7,30,infant,0,____,-8828,poor,UNKNOWN NAME,giraffe_masai,right
+13253,7763,photo_album_71,3,7,30,adult,0,IBEIS_PZ_1083,1356,ok,Female,zebra_plains,right
+14473,5171,photo_album_39,3,7,30,infant,0,____,-14473,junk,UNKNOWN NAME,zebra_plains,left
+14474,5171,photo_album_39,3,7,30,"juvenille, one year old",1,IBEIS_PZ_1832,2105,good,Female,zebra_plains,left
+11518,8807,photo_album_69,3,7,30,infant,1,IBEIS_PZ_0411,684,good,UNKNOWN SEX,zebra_plains,left
+11361,8689,photo_album_73,3,7,30,adult,0,IBEIS_PZ_0260,533,ok,Male,zebra_plains,left
+15428,480,photo_album_59,3,7,30,infant,0,____,-15428,ok,UNKNOWN NAME,zebra_plains,right
+17099,2735,photo_album_21,3,7,30,adult,0,IBEIS_PZ_1689,1962,ok,UNKNOWN SEX,zebra_plains,left
+15427,478,photo_album_59,3,7,30,infant,0,____,-15427,poor,UNKNOWN NAME,zebra_plains,left
+12480,4941,photo_album_35,3,7,30,"juvenille, two year old",0,IBEIS_PZ_0837,1110,poor,UNKNOWN SEX,zebra_plains,left
+13364,1167,photo_album_74,3,7,30,infant,0,____,-13364,poor,UNKNOWN NAME,zebra_plains,left
+12527,3375,photo_album_84,3,7,30,adult,0,IBEIS_PZ_0920,1193,good,Female,zebra_plains,right
+12528,3375,photo_album_84,3,7,30,adult,0,IBEIS_PZ_0962,1235,poor,Female,zebra_plains,left
+15596,975,photo_album_83,3,7,30,infant,0,IBEIS_PZ_1383,1656,ok,UNKNOWN SEX,zebra_plains,right
+16038,589,photo_album_59,3,7,30,adult,1,IBEIS_PZ_1578,1851,ok,Female,zebra_plains,left
+10679,8109,photo_album_100,3,7,30,adult,0,IBEIS_PZ_1250,1523,good,Female,zebra_plains,left
+13281,380,photo_album_82,3,7,30,infant,1,IBEIS_PZ_1443,1716,ok,UNKNOWN SEX,zebra_plains,left
+10308,7877,photo_album_88,3,7,30,adult,0,IBEIS_PZ_0223,496,poor,Female,zebra_plains,left
+10309,7877,photo_album_88,3,7,30,adult,0,IBEIS_PZ_0047,320,poor,Male,zebra_plains,left
+15126,2235,photo_album_96,3,7,30,"juvenille, one year old",0,IBEIS_PZ_1228,1501,good,Male,zebra_plains,left
+15290,1983,photo_album_54,3,7,30,infant,0,IBEIS_PZ_1278,1551,ok,Female,zebra_plains,left
+15291,1983,photo_album_54,3,7,30,adult,0,IBEIS_PZ_1366,1639,ok,Male,zebra_plains,left
+15292,1983,photo_album_54,3,7,30,adult,0,IBEIS_PZ_1277,1550,ok,Male,zebra_plains,left
+15293,1983,photo_album_54,3,7,30,"juvenille, two year old",0,IBEIS_PZ_1573,1846,good,Female,zebra_plains,left
+14170,794,photo_album_70,3,7,30,adult,0,IBEIS_PZ_1712,1985,ok,Female,zebra_plains,left
+9971,2796,photo_album_79,3,7,30,infant,0,____,-9971,poor,UNKNOWN NAME,giraffe_masai,left
+15624,859,photo_album_50,3,7,30,infant,0,____,-15624,ok,UNKNOWN NAME,zebra_plains,right
+10844,8225,photo_album_43,3,7,30,adult,0,IBEIS_PZ_0264,537,poor,Female,zebra_plains,left
+18306,4592,photo_album_60,3,7,30,"juvenille, one year old",1,IBEIS_PZ_1627,1900,good,UNKNOWN SEX,zebra_plains,left
+9457,963,photo_album_56,3,7,30,adult,0,NNP_GIRM_0151,273,ok,Male,giraffe_masai,left
+13415,54,photo_album_8,3,7,30,infant,0,____,-13415,ok,UNKNOWN NAME,zebra_plains,right
+10399,7945,photo_album_47,3,7,30,adult,0,IBEIS_PZ_0230,503,poor,Female,zebra_plains,left
+10223,7835,photo_album_88,3,7,30,adult,0,IBEIS_PZ_0037,310,poor,Male,zebra_plains,left
+10224,7835,photo_album_88,3,7,30,adult,1,IBEIS_PZ_0044,317,ok,Female,zebra_plains,left
+12743,3113,photo_album_61,3,7,30,infant,0,IBEIS_PZ_0974,1247,poor,UNKNOWN SEX,zebra_plains,left
+15922,5240,photo_album_64,3,7,30,infant,0,____,-15922,junk,UNKNOWN NAME,zebra_plains,left
+9270,5691,photo_album_41,3,7,30,infant,0,____,-9270,junk,UNKNOWN NAME,giraffe_masai,frontleft
+18624,3922,photo_album_52,3,7,30,adult,1,IBEIS_PZ_1624,1897,ok,Female,zebra_plains,left
+11589,8861,photo_album_69,3,7,30,infant,0,IBEIS_PZ_0410,683,ok,Female,zebra_plains,left
+12532,3106,photo_album_98,3,7,30,"juvenille, one year old",0,IBEIS_PZ_0967,1240,poor,Male,zebra_plains,left
+14250,730,photo_album_33,3,7,30,adult,0,IBEIS_PZ_1526,1799,ok,Female,zebra_plains,left
+9407,978,photo_album_83,3,7,30,infant,0,____,-9407,junk,UNKNOWN NAME,giraffe_masai,right
+15898,978,photo_album_83,3,7,30,infant,0,____,-15898,ok,UNKNOWN NAME,zebra_plains,back
+15899,978,photo_album_83,3,7,30,infant,0,____,-15899,poor,UNKNOWN NAME,zebra_plains,right
+15900,978,photo_album_83,3,7,30,infant,0,____,-15900,junk,UNKNOWN NAME,zebra_plains,right
+8807,8349,photo_album_80,3,7,30,"juvenille, one year old",0,NNP_GIRM_0035,47,excellent,Male,giraffe_masai,right
+10173,7801,photo_album_16,3,7,30,adult,0,IBEIS_PZ_1821,2094,ok,Female,zebra_plains,left
+15948,543,photo_album_36,3,7,30,infant,0,____,-15948,poor,UNKNOWN NAME,zebra_plains,right
+15949,543,photo_album_36,3,7,30,infant,0,____,-15949,ok,UNKNOWN NAME,zebra_plains,right
+15950,543,photo_album_36,3,7,30,infant,0,____,-15950,poor,UNKNOWN NAME,zebra_plains,left
+15951,543,photo_album_36,3,7,30,infant,0,____,-15951,junk,UNKNOWN NAME,zebra_plains,right
+17915,4669,photo_album_60,3,7,30,adult,0,IBEIS_PZ_1593,1866,ok,UNKNOWN SEX,zebra_plains,left
+17916,4669,photo_album_60,3,7,30,adult,1,IBEIS_PZ_1611,1884,ok,Female,zebra_plains,left
+17917,4669,photo_album_60,3,7,30,infant,0,____,-17917,poor,UNKNOWN NAME,zebra_plains,left
+17918,4669,photo_album_60,3,7,30,infant,0,____,-17918,poor,UNKNOWN NAME,zebra_plains,left
+8963,8344,photo_album_49,3,7,30,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,left
+8964,8344,photo_album_49,3,7,30,"juvenille, one year old",0,NNP_GIRM_0047,63,ok,Female,giraffe_masai,left
+13272,399,photo_album_19,3,7,30,adult,1,IBEIS_PZ_0895,1168,good,Female,zebra_plains,left
+13272,399,photo_album_14,3,7,30,adult,1,IBEIS_PZ_0895,1168,good,Female,zebra_plains,left
+12717,3354,photo_album_92,3,7,30,adult,0,IBEIS_PZ_0900,1173,poor,Male,zebra_plains,left
+16006,431,photo_album_32,3,7,30,infant,0,____,-16006,poor,UNKNOWN NAME,zebra_plains,left
+13438,51,photo_album_85,3,7,30,infant,0,____,-13438,good,UNKNOWN NAME,zebra_plains,right
+13456,43,photo_album_85,3,7,30,infant,0,____,-13456,good,UNKNOWN NAME,zebra_plains,right
+9506,2164,photo_album_53,3,7,30,adult,0,NNP_GIRM_0111,158,ok,Male,giraffe_masai,backleft
+9507,2164,photo_album_53,3,7,30,infant,0,____,-9507,ok,UNKNOWN NAME,giraffe_masai,right
+18240,4825,photo_album_44,3,7,30,infant,0,____,-18240,poor,UNKNOWN NAME,zebra_plains,left
+15585,967,photo_album_56,3,7,30,adult,0,IBEIS_PZ_0519,792,ok,Female,zebra_plains,left
+12470,4914,photo_album_58,3,7,30,infant,1,IBEIS_PZ_0859,1132,good,UNKNOWN SEX,zebra_plains,left
+12470,4914,photo_album_35,3,7,30,infant,1,IBEIS_PZ_0859,1132,good,UNKNOWN SEX,zebra_plains,left
+10164,7797,photo_album_88,3,7,30,infant,0,IBEIS_PZ_0007,280,poor,UNKNOWN SEX,zebra_plains,left
+10165,7797,photo_album_88,3,7,30,adult,0,IBEIS_PZ_0325,598,ok,Male,zebra_plains,right
+9538,841,photo_album_48,3,7,30,adult,0,NNP_GIRM_0151,273,ok,Male,giraffe_masai,left
+11076,8461,photo_album_78,3,7,30,infant,0,IBEIS_PZ_0529,802,poor,UNKNOWN SEX,zebra_plains,left
+10350,7910,photo_album_16,3,7,30,adult,1,IBEIS_PZ_0307,580,ok,UNKNOWN SEX,zebra_plains,left
+17343,6505,photo_album_66,3,7,30,infant,0,____,-17343,poor,UNKNOWN NAME,zebra_plains,left
+17344,6505,photo_album_66,3,7,30,infant,0,____,-17344,poor,UNKNOWN NAME,zebra_plains,backright
+16186,5178,photo_album_39,3,7,30,adult,1,IBEIS_PZ_1723,1996,good,Female,zebra_plains,left
+16187,5178,photo_album_39,3,7,30,infant,0,____,-16187,ok,UNKNOWN NAME,zebra_plains,backleft
+10528,8025,photo_album_30,3,7,30,adult,0,IBEIS_PZ_0060,333,ok,Male,zebra_plains,left
+13278,362,photo_album_19,3,7,30,"juvenille, two year old",0,IBEIS_PZ_0902,1175,ok,Female,zebra_plains,left
+8818,8335,photo_album_55,3,7,30,adult,0,NNP_GIRM_0046,60,ok,Male,giraffe_masai,left
+15346,1846,photo_album_76,3,7,30,"juvenille, two year old",0,IBEIS_PZ_0677,950,good,Male,zebra_plains,left
+15347,1846,photo_album_76,3,7,30,adult,0,IBEIS_PZ_1288,1561,ok,Male,zebra_plains,left
+17526,6585,photo_album_45,3,7,30,adult,1,IBEIS_PZ_1754,2027,ok,Male,zebra_plains,left
+13308,372,photo_album_82,3,7,30,infant,0,____,-13308,good,UNKNOWN NAME,zebra_plains,right
+13308,372,photo_album_46,3,7,30,infant,0,____,-13308,good,UNKNOWN NAME,zebra_plains,right
+13269,404,photo_album_14,3,7,30,infant,0,____,-13269,excellent,UNKNOWN NAME,zebra_plains,right
+10681,8111,photo_album_100,3,7,30,adult,0,IBEIS_PZ_0095,368,poor,Female,zebra_plains,right
+10682,8111,photo_album_100,3,7,30,"juvenille, one year old",0,IBEIS_PZ_0119,392,poor,UNKNOWN SEX,zebra_plains,left
+14153,734,photo_album_70,3,7,30,infant,0,IBEIS_PZ_1413,1686,ok,Male,zebra_plains,left
+15861,865,photo_album_48,3,7,30,infant,0,____,-15861,poor,UNKNOWN NAME,zebra_plains,right
+13082,7017,photo_album_34,3,7,30,"juvenille, two year old",1,IBEIS_PZ_1000,1273,ok,Male,zebra_plains,left
+9913,5557,photo_album_2,3,7,30,infant,0,____,-9913,ok,UNKNOWN NAME,giraffe_masai,backright
+9914,5557,photo_album_2,3,7,30,infant,0,____,-9914,ok,UNKNOWN NAME,giraffe_masai,backright
+13315,392,photo_album_19,3,7,30,adult,1,IBEIS_PZ_1010,1283,good,Female,zebra_plains,left
+14123,701,photo_album_33,3,7,30,adult,1,IBEIS_PZ_1722,1995,excellent,Female,zebra_plains,left
+11211,8566,photo_album_23,3,7,30,adult,0,IBEIS_PZ_0447,720,poor,UNKNOWN SEX,zebra_plains,frontleft
+11212,8566,photo_album_23,3,7,30,infant,0,IBEIS_PZ_0446,719,poor,UNKNOWN SEX,zebra_plains,left
+14451,5186,photo_album_39,3,7,30,adult,1,IBEIS_PZ_1830,2103,good,Female,zebra_plains,left
+12980,5002,photo_album_91,3,7,30,infant,0,IBEIS_PZ_1389,1662,ok,UNKNOWN SEX,zebra_plains,backleft
+10347,7907,photo_album_47,3,7,30,adult,0,IBEIS_PZ_1712,1985,good,Female,zebra_plains,left
+9537,838,photo_album_50,3,7,30,adult,1,NNP_GIRM_0151,273,good,Male,giraffe_masai,left
+8907,8315,photo_album_17,3,7,30,adult,1,NNP_GIRM_0087,113,ok,Male,giraffe_masai,left
+8908,8315,photo_album_17,3,7,30,infant,0,____,-8908,ok,UNKNOWN NAME,giraffe_masai,right
+16108,5155,photo_album_64,3,7,30,adult,0,IBEIS_PZ_1602,1875,good,Female,zebra_plains,left
+18763,3965,photo_album_52,3,7,30,adult,0,IBEIS_PZ_0620,893,good,Female,zebra_plains,left
+15094,2440,photo_album_96,3,7,30,adult,1,IBEIS_PZ_1442,1715,excellent,Male,zebra_plains,left
+13276,359,photo_album_46,3,7,30,infant,0,____,-13276,ok,UNKNOWN NAME,zebra_plains,right
+10037,4432,photo_album_60,3,7,30,infant,0,____,-10037,poor,UNKNOWN NAME,giraffe_masai,left
+13735,7353,photo_album_31,3,7,30,infant,0,____,-13735,poor,UNKNOWN NAME,zebra_plains,left
+13336,1170,photo_album_74,3,7,30,infant,0,____,-13336,poor,UNKNOWN NAME,zebra_plains,left
+10862,8244,photo_album_43,3,7,30,adult,0,IBEIS_PZ_0220,493,poor,Female,zebra_plains,left
+8820,8341,photo_album_67,3,7,30,infant,0,____,-8820,ok,UNKNOWN NAME,giraffe_masai,right
+8820,8341,photo_album_80,3,7,30,infant,0,____,-8820,ok,UNKNOWN NAME,giraffe_masai,right
+14631,1796,photo_album_54,3,7,30,infant,0,IBEIS_PZ_1360,1633,poor,UNKNOWN SEX,zebra_plains,left
+13305,400,photo_album_19,3,7,30,infant,0,____,-13305,good,UNKNOWN NAME,zebra_plains,right
+15785,1988,photo_album_22,2,7,22.22222222,adult,0,IBEIS_PZ_1268,1541,junk,Male,zebra_plains,front
+15786,1988,photo_album_22,2,7,22.22222222,adult,0,IBEIS_PZ_1262,1535,ok,Male,zebra_plains,left
+14237,657,photo_album_26,2,7,22.22222222,infant,0,____,-14237,junk,UNKNOWN NAME,zebra_plains,left
+14238,657,photo_album_26,2,7,22.22222222,infant,0,____,-14238,poor,UNKNOWN NAME,zebra_plains,left
+14239,657,photo_album_26,2,7,22.22222222,infant,0,____,-14239,poor,UNKNOWN NAME,zebra_plains,left
+10543,8038,photo_album_30,2,7,22.22222222,adult,0,IBEIS_PZ_0067,340,ok,Female,zebra_plains,left
+10544,8038,photo_album_30,2,7,22.22222222,infant,0,IBEIS_PZ_0068,341,ok,Male,zebra_plains,left
+10607,8065,photo_album_30,2,7,22.22222222,adult,0,IBEIS_PZ_0132,405,ok,Female,zebra_plains,left
+10608,8065,photo_album_30,2,7,22.22222222,adult,0,IBEIS_PZ_0127,400,poor,Male,zebra_plains,left
+13248,7759,photo_album_27,2,7,22.22222222,adult,0,IBEIS_PZ_1086,1359,poor,Female,zebra_plains,backright
+15273,1886,photo_album_25,2,7,22.22222222,adult,0,IBEIS_PZ_1216,1489,good,Female,zebra_plains,left
+13836,5695,photo_album_24,2,7,22.22222222,adult,1,IBEIS_PZ_1864,2137,ok,Female,zebra_plains,left
+13276,359,photo_album_1,2,7,22.22222222,infant,0,____,-13276,ok,UNKNOWN NAME,zebra_plains,right
+14971,2020,photo_album_54,2,8,20,adult,1,IBEIS_PZ_1243,1516,good,Male,zebra_plains,left
+14608,1937,photo_album_76,2,8,20,"juvenille, one year old",0,IBEIS_PZ_0423,696,ok,Female,zebra_plains,left
+18382,4615,photo_album_63,2,8,20,infant,0,____,-18382,junk,UNKNOWN NAME,zebra_plains,left
+18383,4615,photo_album_63,2,8,20,infant,0,____,-18383,poor,UNKNOWN NAME,zebra_plains,left
+18384,4615,photo_album_63,2,8,20,infant,0,____,-18384,junk,UNKNOWN NAME,zebra_plains,left
+12987,4996,photo_album_91,2,8,20,adult,0,IBEIS_PZ_1388,1661,ok,Female,zebra_plains,backleft
+12978,4968,photo_album_91,2,8,20,infant,0,____,-12978,good,UNKNOWN NAME,zebra_plains,backright
+12979,4968,photo_album_91,2,8,20,infant,0,____,-12979,good,UNKNOWN NAME,zebra_plains,backright
+16055,558,photo_album_36,2,8,20,infant,1,IBEIS_PZ_1555,1828,ok,UNKNOWN SEX,zebra_plains,left
+16056,558,photo_album_36,2,8,20,infant,0,____,-16056,poor,UNKNOWN NAME,zebra_plains,left
+16057,558,photo_album_36,2,8,20,infant,0,____,-16057,junk,UNKNOWN NAME,zebra_plains,left
+10448,7977,photo_album_47,2,8,20,adult,0,IBEIS_PZ_0034,307,poor,Male,zebra_plains,left
+10449,7977,photo_album_47,2,8,20,infant,0,IBEIS_PZ_0045,318,poor,UNKNOWN SEX,zebra_plains,backleft
+13326,1168,photo_album_74,2,8,20,infant,0,____,-13326,junk,UNKNOWN NAME,zebra_plains,frontleft
+14203,705,photo_album_33,2,8,20,adult,1,IBEIS_PZ_0312,585,good,Female,zebra_plains,left
+14204,705,photo_album_33,2,8,20,infant,0,____,-14204,poor,UNKNOWN NAME,zebra_plains,left
+9549,4992,photo_album_4,2,8,20,infant,0,____,-9549,ok,UNKNOWN NAME,giraffe_masai,right
+12460,4891,photo_album_58,2,8,20,adult,0,IBEIS_PZ_0373,646,poor,Female,zebra_plains,left
+12461,4891,photo_album_58,2,8,20,adult,1,IBEIS_PZ_0060,333,good,Male,zebra_plains,left
+11092,8474,photo_album_69,2,8,20,adult,0,IBEIS_PZ_0537,810,poor,UNKNOWN SEX,zebra_plains,left
+15881,977,photo_album_56,2,8,20,infant,0,____,-15881,poor,UNKNOWN NAME,zebra_plains,backright
+13327,1171,photo_album_74,2,8,20,adult,1,IBEIS_PZ_1857,2130,ok,Male,zebra_plains,left
+15658,968,photo_album_56,2,8,20,adult,0,IBEIS_PZ_0519,792,ok,Female,zebra_plains,left
+12648,3239,photo_album_13,2,8,20,adult,0,IBEIS_PZ_0867,1140,poor,Female,zebra_plains,left
+13521,6138,photo_album_94,2,8,20,adult,1,IBEIS_PZ_1125,1398,excellent,Male,zebra_plains,left
+12448,4928,photo_album_58,2,8,20,adult,0,IBEIS_PZ_0404,677,poor,Female,zebra_plains,left
+14338,1760,photo_album_54,2,8,20,adult,0,IBEIS_PZ_1240,1513,good,Male,zebra_plains,left
+18478,4623,photo_album_60,2,8,20,infant,0,____,-18478,poor,UNKNOWN NAME,zebra_plains,frontleft
+18479,4623,photo_album_60,2,8,20,infant,0,____,-18479,poor,UNKNOWN NAME,zebra_plains,left
+14341,2252,photo_album_96,2,8,20,"juvenille, two year old",0,IBEIS_PZ_0587,860,good,Male,zebra_plains,left
+9892,5458,photo_album_65,2,8,20,infant,0,____,-9892,poor,UNKNOWN NAME,giraffe_masai,frontright
+9893,5458,photo_album_65,2,8,20,infant,0,____,-9893,poor,UNKNOWN NAME,giraffe_masai,right
+11596,8868,photo_album_68,2,8,20,adult,0,IBEIS_PZ_0394,667,ok,Female,zebra_plains,backleft
+9354,502,photo_album_72,2,8,20,infant,0,____,-9354,poor,UNKNOWN NAME,giraffe_masai,right
+9593,5197,photo_album_64,2,8,20,infant,0,____,-9593,ok,UNKNOWN NAME,giraffe_masai,backleft
+8828,8318,photo_album_55,2,8,20,infant,0,____,-8828,poor,UNKNOWN NAME,giraffe_masai,right
+12910,5496,photo_album_81,2,8,20,adult,0,IBEIS_PZ_0944,1217,ok,Female,zebra_plains,left
+8994,3325,photo_album_7,2,8,20,"juvenille, two year old",0,NNP_GIRM_0036,48,ok,Male,giraffe_masai,back
+16049,428,photo_album_32,2,8,20,infant,0,____,-16049,poor,UNKNOWN NAME,zebra_plains,left
+8843,8337,photo_album_55,2,8,20,infant,0,NNP_GIRM_0002,2,ok,Male,giraffe_masai,right
+10478,8003,photo_album_47,2,8,20,"juvenille, one year old",1,IBEIS_PZ_0041,314,ok,Female,zebra_plains,left
+10479,8003,photo_album_47,2,8,20,adult,0,IBEIS_PZ_0216,489,ok,Male,zebra_plains,left
+10420,7960,photo_album_47,2,8,20,adult,0,IBEIS_PZ_0229,502,ok,Female,zebra_plains,left
+14161,739,photo_album_33,2,8,20,infant,0,IBEIS_PZ_1648,1921,ok,Female,zebra_plains,left
+15985,455,photo_album_32,2,8,20,infant,0,____,-15985,poor,UNKNOWN NAME,zebra_plains,left
+15596,975,photo_album_56,2,8,20,infant,0,IBEIS_PZ_1383,1656,ok,UNKNOWN SEX,zebra_plains,right
+13404,55,photo_album_57,2,8,20,infant,0,____,-13404,poor,UNKNOWN NAME,zebra_plains,right
+10238,7843,photo_album_88,2,8,20,adult,0,IBEIS_PZ_0229,502,poor,Female,zebra_plains,left
+14775,1753,photo_album_54,2,8,20,"juvenille, two year old",0,IBEIS_PZ_1219,1492,junk,Female,zebra_plains,left
+9053,8334,photo_album_17,2,8,20,adult,0,NNP_GIRM_0046,60,poor,Male,giraffe_masai,left
+14522,5076,photo_album_37,2,8,20,infant,0,____,-14522,junk,UNKNOWN NAME,zebra_plains,left
+14523,5076,photo_album_37,2,8,20,infant,0,____,-14523,poor,UNKNOWN NAME,zebra_plains,left
+18575,4421,photo_album_60,2,8,20,adult,0,IBEIS_PZ_1594,1867,good,Male,zebra_plains,left
+17990,4049,photo_album_99,2,8,20,adult,0,IBEIS_PZ_1594,1867,good,Male,zebra_plains,left
+10209,7828,photo_album_88,2,8,20,adult,1,IBEIS_PZ_0453,726,good,Male,zebra_plains,left
+10210,7828,photo_album_88,2,8,20,infant,0,IBEIS_PZ_0321,594,poor,UNKNOWN SEX,zebra_plains,backleft
+15641,954,photo_album_56,2,8,20,infant,0,____,-15641,poor,UNKNOWN NAME,zebra_plains,frontleft
+13415,54,photo_album_85,2,8,20,infant,0,____,-13415,ok,UNKNOWN NAME,zebra_plains,right
+10661,8098,photo_album_100,2,8,20,adult,0,IBEIS_PZ_0167,440,ok,Female,zebra_plains,backleft
+10662,8098,photo_album_100,2,8,20,infant,0,IBEIS_PZ_0158,431,ok,Female,zebra_plains,back
+10399,7945,photo_album_16,2,8,20,adult,0,IBEIS_PZ_0230,503,poor,Female,zebra_plains,left
+14208,706,photo_album_33,2,8,20,adult,1,IBEIS_PZ_1639,1912,good,Male,zebra_plains,left
+12343,1251,photo_album_40,2,8,20,adult,0,IBEIS_PZ_0603,876,ok,Female,zebra_plains,backleft
+14094,793,photo_album_70,2,8,20,infant,0,IBEIS_PZ_1222,1495,ok,Female,zebra_plains,left
+10633,8081,photo_album_100,2,8,20,"juvenille, one year old",1,IBEIS_PZ_0137,410,ok,Male,zebra_plains,left
+15876,965,photo_album_83,2,8,20,infant,0,____,-15876,poor,UNKNOWN NAME,zebra_plains,right
+15876,965,photo_album_56,2,8,20,infant,0,____,-15876,poor,UNKNOWN NAME,zebra_plains,right
+12555,3127,photo_album_6,2,8,20,adult,1,IBEIS_PZ_0922,1195,good,Female,zebra_plains,left
+12556,3127,photo_album_6,2,8,20,adult,1,IBEIS_PZ_0894,1167,ok,Male,zebra_plains,left
+13267,350,photo_album_1,2,8,20,adult,1,IBEIS_PZ_1488,1761,ok,UNKNOWN SEX,zebra_plains,left
+9203,226,photo_album_97,2,8,20,adult,0,NNP_GIRM_0055,74,good,Female,giraffe_masai,left
+11795,8982,photo_album_69,2,8,20,adult,0,IBEIS_PZ_0602,875,ok,Female,zebra_plains,frontright
+11796,8982,photo_album_69,2,8,20,adult,1,IBEIS_PZ_0613,886,good,Female,zebra_plains,left
+12097,9382,photo_album_73,2,8,20,adult,0,IBEIS_PZ_0763,1036,poor,Female,zebra_plains,left
+12532,3106,photo_album_61,2,8,20,"juvenille, one year old",0,IBEIS_PZ_0967,1240,poor,Male,zebra_plains,left
+12994,4979,photo_album_86,2,8,20,adult,0,IBEIS_PZ_1468,1741,poor,Female,zebra_plains,backleft
+12995,4979,photo_album_86,2,8,20,adult,0,IBEIS_PZ_1476,1749,poor,Female,zebra_plains,left
+14179,700,photo_album_33,2,8,20,adult,0,IBEIS_PZ_0312,585,ok,Female,zebra_plains,left
+16067,632,photo_album_36,2,8,20,infant,0,____,-16067,poor,UNKNOWN NAME,zebra_plains,left
+13248,7759,photo_album_71,2,8,20,adult,0,IBEIS_PZ_1086,1359,poor,Female,zebra_plains,backright
+13295,394,photo_album_1,2,8,20,infant,1,IBEIS_PZ_1489,1762,good,UNKNOWN SEX,zebra_plains,frontleft
+11891,9090,photo_album_68,2,8,20,adult,0,IBEIS_PZ_0657,930,poor,Male,zebra_plains,backleft
+8799,9228,photo_album_73,2,8,20,"juvenille, one year old",0,NNP_GIRM_0026,31,ok,Female,giraffe_masai,right
+8800,9228,photo_album_73,2,8,20,infant,1,NNP_GIRM_0041,54,ok,UNKNOWN SEX,giraffe_masai,left
+16023,5214,photo_album_39,2,8,20,infant,0,____,-16023,junk,UNKNOWN NAME,zebra_plains,frontleft
+16024,5214,photo_album_39,2,8,20,infant,0,____,-16024,junk,UNKNOWN NAME,zebra_plains,left
+16219,5071,photo_album_37,2,8,20,infant,0,____,-16219,poor,UNKNOWN NAME,zebra_plains,left
+16173,477,photo_album_36,2,8,20,infant,0,____,-16173,ok,UNKNOWN NAME,zebra_plains,backleft
+12935,5488,photo_album_2,2,8,20,adult,0,IBEIS_PZ_0214,487,good,Male,zebra_plains,backleft
+13689,7347,photo_album_31,2,8,20,infant,0,____,-13689,poor,UNKNOWN NAME,zebra_plains,left
+10133,7786,photo_album_47,2,8,20,"juvenille, one year old",1,IBEIS_PZ_0227,500,ok,Female,zebra_plains,left
+10134,7786,photo_album_47,2,8,20,adult,0,IBEIS_PZ_0247,520,junk,Male,zebra_plains,backleft
+10135,7786,photo_album_47,2,8,20,adult,1,IBEIS_PZ_0043,316,good,Female,zebra_plains,left
+10136,7786,photo_album_47,2,8,20,infant,0,IBEIS_PZ_0212,485,poor,Male,zebra_plains,left
+10137,7786,photo_album_47,2,8,20,infant,1,IBEIS_PZ_0235,508,good,Female,zebra_plains,left
+9630,5226,photo_album_64,2,8,20,adult,0,NNP_GIRM_0095,124,ok,Female,giraffe_masai,left
+14526,5231,photo_album_64,2,8,20,adult,0,IBEIS_PZ_0255,528,ok,Male,zebra_plains,left
+15359,2248,photo_album_96,2,8,20,adult,0,IBEIS_PZ_1254,1527,ok,Male,zebra_plains,left
+15360,2248,photo_album_96,2,8,20,adult,0,IBEIS_PZ_0444,717,good,Male,zebra_plains,left
+15361,2248,photo_album_96,2,8,20,infant,0,IBEIS_PZ_0088,361,ok,Female,zebra_plains,left
+9875,5463,photo_album_2,2,8,20,adult,0,NNP_GIRM_0081,105,good,Male,giraffe_masai,left
+9876,5463,photo_album_2,2,8,20,infant,0,____,-9876,poor,UNKNOWN NAME,giraffe_masai,left
+15507,283,photo_album_38,2,8,20,adult,1,IBEIS_PZ_1559,1832,ok,Male,zebra_plains,left
+15407,467,photo_album_36,2,8,20,infant,0,____,-15407,poor,UNKNOWN NAME,zebra_plains,left
+11276,8619,photo_album_68,2,8,20,infant,0,IBEIS_PZ_0454,727,ok,Female,zebra_plains,left
+8829,8338,photo_album_42,2,8,20,infant,0,NNP_GIRM_0002,2,ok,Male,giraffe_masai,right
+9149,8350,photo_album_55,2,8,20,adult,0,NNP_GIRM_0022,27,ok,Female,giraffe_masai,left
+10167,7799,photo_album_88,2,8,20,adult,0,IBEIS_PZ_1821,2094,poor,Female,zebra_plains,backleft
+10168,7799,photo_album_88,2,8,20,infant,0,IBEIS_PZ_0224,497,poor,Female,zebra_plains,left
+10169,7799,photo_album_88,2,8,20,infant,0,IBEIS_PZ_0188,461,ok,UNKNOWN SEX,zebra_plains,backleft
+12646,3300,photo_album_18,2,8,20,adult,1,IBEIS_PZ_0264,537,ok,Female,zebra_plains,left
+10331,7891,photo_album_47,2,8,20,adult,0,IBEIS_PZ_0312,585,ok,Female,zebra_plains,frontleft
+15397,565,photo_album_36,2,8,20,adult,0,IBEIS_PZ_1547,1820,good,Male,zebra_plains,left
+14188,760,photo_album_26,2,8,20,infant,0,____,-14188,poor,UNKNOWN NAME,zebra_plains,left
+12328,1275,photo_album_40,2,8,20,adult,0,IBEIS_PZ_1414,1687,poor,Male,zebra_plains,left
+12635,3371,photo_album_7,2,8,20,infant,1,IBEIS_PZ_0923,1196,good,UNKNOWN SEX,zebra_plains,left
+12636,3371,photo_album_7,2,8,20,adult,0,IBEIS_PZ_0291,564,good,Female,zebra_plains,left
+9336,10,photo_album_8,2,8,20,adult,0,NNP_GIRM_0140,210,ok,Female,giraffe_masai,left
+9336,10,photo_album_57,2,8,20,adult,0,NNP_GIRM_0140,210,ok,Female,giraffe_masai,left
+13893,2611,photo_album_21,2,8,20,adult,1,IBEIS_PZ_1719,1992,ok,UNKNOWN SEX,zebra_plains,left
+15867,955,photo_album_83,2,8,20,infant,0,____,-15867,ok,UNKNOWN NAME,zebra_plains,right
+16052,5139,photo_album_37,2,8,20,infant,0,____,-16052,poor,UNKNOWN NAME,zebra_plains,left
+9340,13,photo_album_8,2,8,20,infant,0,____,-9340,poor,UNKNOWN NAME,giraffe_masai,front
+12481,4918,photo_album_51,2,8,20,adult,0,IBEIS_PZ_0269,542,ok,Female,zebra_plains,left
+12983,5010,photo_album_4,2,8,20,adult,0,IBEIS_PZ_0182,455,good,Male,zebra_plains,frontleft
+13298,395,photo_album_1,2,8,20,infant,1,IBEIS_PZ_1483,1756,good,UNKNOWN SEX,zebra_plains,left
+15381,556,photo_album_28,2,8,20,infant,0,____,-15381,poor,UNKNOWN NAME,zebra_plains,left
+10176,7803,photo_album_47,2,8,20,adult,0,IBEIS_PZ_0022,295,poor,Male,zebra_plains,left
+10177,7803,photo_album_47,2,8,20,adult,1,IBEIS_PZ_0322,595,good,UNKNOWN SEX,zebra_plains,frontleft
+10178,7803,photo_album_47,2,8,20,infant,0,IBEIS_PZ_0226,499,poor,UNKNOWN SEX,zebra_plains,backleft
+14260,1800,photo_album_54,2,8,20,adult,0,IBEIS_PZ_1277,1550,poor,Male,zebra_plains,left
+18480,4829,photo_album_44,2,8,20,infant,0,____,-18480,poor,UNKNOWN NAME,zebra_plains,left
+12986,4977,photo_album_86,2,8,20,infant,0,____,-12986,poor,UNKNOWN NAME,zebra_plains,right
+8809,8321,photo_album_67,2,8,20,adult,0,NNP_GIRM_0016,19,ok,Female,giraffe_masai,right
+8810,8321,photo_album_67,2,8,20,unknown,0,NNP_GIRM_0064,84,poor,UNKNOWN SEX,giraffe_masai,backleft
+10877,8254,photo_album_43,2,8,20,adult,0,IBEIS_PZ_0214,487,ok,Male,zebra_plains,left
+12726,3115,photo_album_61,2,8,20,infant,1,IBEIS_PZ_0927,1200,ok,UNKNOWN SEX,zebra_plains,left
+15254,1957,photo_album_25,1,7,12.5,adult,0,IBEIS_PZ_1111,1384,poor,Female,zebra_plains,left
+15255,1957,photo_album_25,1,7,12.5,infant,0,IBEIS_PZ_1301,1574,poor,UNKNOWN SEX,zebra_plains,right
+14259,1583,photo_album_12,1,7,12.5,adult,0,IBEIS_PZ_0407,680,ok,Male,zebra_plains,left
+14423,1959,photo_album_25,1,7,12.5,"juvenille, two year old",0,IBEIS_PZ_0395,668,poor,Female,zebra_plains,backleft
+16969,2714,photo_album_21,1,8,11.11111111,adult,1,IBEIS_PZ_0101,374,ok,Female,zebra_plains,left
+12741,3235,photo_album_18,1,8,11.11111111,adult,0,IBEIS_PZ_0896,1169,ok,Male,zebra_plains,left
+9106,8347,photo_album_17,1,8,11.11111111,"juvenille, one year old",0,NNP_GIRM_0035,47,excellent,Male,giraffe_masai,backright
+12581,3272,photo_album_13,1,8,11.11111111,infant,0,IBEIS_PZ_0971,1244,poor,UNKNOWN SEX,zebra_plains,left
+13241,7742,photo_album_27,1,8,11.11111111,adult,0,IBEIS_PZ_0519,792,poor,Female,zebra_plains,left
+13242,7742,photo_album_27,1,8,11.11111111,adult,0,IBEIS_PZ_1092,1365,poor,UNKNOWN SEX,zebra_plains,right
+12791,5501,photo_album_2,1,8,11.11111111,adult,1,IBEIS_PZ_1450,1723,good,Female,zebra_plains,left
+12792,5501,photo_album_2,1,8,11.11111111,adult,0,IBEIS_PZ_1781,2054,good,Male,zebra_plains,left
+8955,8348,photo_album_11,1,8,11.11111111,"juvenille, one year old",0,NNP_GIRM_0035,47,excellent,Male,giraffe_masai,right
+13278,362,photo_album_1,1,8,11.11111111,"juvenille, two year old",0,IBEIS_PZ_0902,1175,ok,Female,zebra_plains,left
+13287,352,photo_album_1,1,8,11.11111111,infant,0,____,-13287,ok,UNKNOWN NAME,zebra_plains,right
+10542,8037,photo_album_30,1,8,11.11111111,adult,0,IBEIS_PZ_0067,340,good,Female,zebra_plains,frontleft
+14236,738,photo_album_70,1,9,10,"juvenille, two year old",0,IBEIS_PZ_1235,1508,good,Female,zebra_plains,left
+12524,3240,photo_album_13,1,9,10,adult,0,IBEIS_PZ_0983,1256,junk,UNKNOWN SEX,zebra_plains,left
+14103,652,photo_album_70,1,9,10,infant,0,____,-14103,poor,UNKNOWN NAME,zebra_plains,left
+11393,8713,photo_album_69,1,9,10,adult,0,IBEIS_PZ_0263,536,poor,Male,zebra_plains,backleft
+11394,8713,photo_album_69,1,9,10,adult,0,IBEIS_PZ_0337,610,poor,Female,zebra_plains,left
+11395,8713,photo_album_69,1,9,10,infant,0,IBEIS_PZ_0364,637,poor,UNKNOWN SEX,zebra_plains,left
+11396,8713,photo_album_69,1,9,10,adult,0,IBEIS_PZ_0356,629,poor,UNKNOWN SEX,zebra_plains,left
+12409,1243,photo_album_40,1,9,10,adult,1,IBEIS_PZ_1403,1676,excellent,Female,zebra_plains,left
+14112,659,photo_album_26,1,9,10,adult,0,IBEIS_PZ_1208,1481,poor,Female,zebra_plains,left
+12441,4946,photo_album_35,1,9,10,"juvenille, one year old",0,IBEIS_PZ_0840,1113,poor,UNKNOWN SEX,zebra_plains,left
+10466,7990,photo_album_16,1,9,10,adult,0,IBEIS_PZ_0240,513,poor,Male,zebra_plains,back
+14233,713,photo_album_33,1,9,10,"juvenille, two year old",1,IBEIS_PZ_1351,1624,good,Female,zebra_plains,left
+10023,4072,photo_album_99,1,9,10,infant,0,____,-10023,poor,UNKNOWN NAME,giraffe_masai,left
+10228,7837,photo_album_47,1,9,10,adult,1,IBEIS_PZ_0200,473,good,Female,zebra_plains,left
+8918,9323,photo_album_23,1,9,10,adult,1,NNP_GIRM_0045,58,ok,Female,giraffe_masai,left
+14502,5212,photo_album_39,1,9,10,infant,0,____,-14502,junk,UNKNOWN NAME,zebra_plains,left
+13011,4974,photo_album_4,1,9,10,infant,0,IBEIS_PZ_1395,1668,ok,UNKNOWN SEX,zebra_plains,backleft
+15586,1024,photo_album_90,1,9,10,infant,0,____,-15586,poor,UNKNOWN NAME,zebra_plains,left
+12459,4893,photo_album_58,1,9,10,adult,0,IBEIS_PZ_0503,776,poor,Female,zebra_plains,frontleft
+13447,46,photo_album_85,1,9,10,infant,0,____,-13447,good,UNKNOWN NAME,zebra_plains,backright
+13360,1176,photo_album_74,1,9,10,infant,0,____,-13360,poor,UNKNOWN NAME,zebra_plains,left
+13361,1176,photo_album_74,1,9,10,infant,0,____,-13361,poor,UNKNOWN NAME,zebra_plains,left
+18739,4649,photo_album_63,1,9,10,infant,0,____,-18739,poor,UNKNOWN NAME,zebra_plains,left
+18740,4649,photo_album_63,1,9,10,infant,0,____,-18740,poor,UNKNOWN NAME,zebra_plains,left
+18741,4649,photo_album_63,1,9,10,adult,0,IBEIS_PZ_1603,1876,ok,Male,zebra_plains,left
+18742,4649,photo_album_63,1,9,10,infant,0,____,-18742,ok,UNKNOWN NAME,zebra_plains,backright
+14185,651,photo_album_70,1,9,10,infant,0,____,-14185,junk,UNKNOWN NAME,zebra_plains,left
+14197,656,photo_album_33,1,9,10,infant,0,____,-14197,poor,UNKNOWN NAME,zebra_plains,left
+15254,1957,photo_album_54,1,9,10,adult,0,IBEIS_PZ_1111,1384,poor,Female,zebra_plains,left
+15255,1957,photo_album_54,1,9,10,infant,0,IBEIS_PZ_1301,1574,poor,UNKNOWN SEX,zebra_plains,right
+15433,129,photo_album_38,1,9,10,infant,0,____,-15433,good,UNKNOWN NAME,zebra_plains,frontright
+15434,129,photo_album_38,1,9,10,"juvenille, one year old",0,IBEIS_PZ_1386,1659,ok,Female,zebra_plains,left
+15994,460,photo_album_32,1,9,10,adult,0,IBEIS_PZ_0875,1148,ok,Male,zebra_plains,left
+10303,7874,photo_album_16,1,9,10,adult,0,IBEIS_PZ_0223,496,poor,Female,zebra_plains,left
+10304,7874,photo_album_16,1,9,10,infant,0,IBEIS_PZ_0249,522,junk,UNKNOWN SEX,zebra_plains,back
+8828,8318,photo_album_67,1,9,10,infant,0,____,-8828,poor,UNKNOWN NAME,giraffe_masai,right
+18676,4309,photo_album_99,1,9,10,infant,0,____,-18676,poor,UNKNOWN NAME,zebra_plains,left
+9106,8347,photo_album_42,1,9,10,"juvenille, one year old",0,NNP_GIRM_0035,47,excellent,Male,giraffe_masai,backright
+9106,8347,photo_album_67,1,9,10,"juvenille, one year old",0,NNP_GIRM_0035,47,excellent,Male,giraffe_masai,backright
+17676,6708,photo_album_66,1,9,10,infant,0,____,-17676,poor,UNKNOWN NAME,zebra_plains,left
+10478,8003,photo_album_88,1,9,10,"juvenille, one year old",1,IBEIS_PZ_0041,314,ok,Female,zebra_plains,left
+10479,8003,photo_album_88,1,9,10,adult,0,IBEIS_PZ_0216,489,ok,Male,zebra_plains,left
+14228,648,photo_album_70,1,9,10,infant,0,____,-14228,poor,UNKNOWN NAME,zebra_plains,right
+13244,7741,photo_album_27,1,9,10,adult,0,IBEIS_PZ_0519,792,poor,Female,zebra_plains,left
+10985,8387,photo_album_68,1,9,10,adult,0,IBEIS_PZ_0516,789,poor,Male,zebra_plains,left
+13280,368,photo_album_19,1,9,10,adult,1,IBEIS_PZ_0754,1027,good,Male,zebra_plains,left
+14788,2454,photo_album_53,1,9,10,adult,0,IBEIS_PZ_1526,1799,good,Female,zebra_plains,left
+14789,2454,photo_album_53,1,9,10,adult,0,IBEIS_PZ_1227,1500,ok,Male,zebra_plains,left
+14481,5070,photo_album_37,1,9,10,infant,0,____,-14481,junk,UNKNOWN NAME,zebra_plains,left
+15641,954,photo_album_83,1,9,10,infant,0,____,-15641,poor,UNKNOWN NAME,zebra_plains,frontleft
+13338,1172,photo_album_74,1,9,10,infant,0,____,-13338,junk,UNKNOWN NAME,zebra_plains,left
+13415,54,photo_album_57,1,9,10,infant,0,____,-13415,ok,UNKNOWN NAME,zebra_plains,right
+15874,952,photo_album_83,1,9,10,infant,0,____,-15874,junk,UNKNOWN NAME,zebra_plains,right
+15874,952,photo_album_56,1,9,10,infant,0,____,-15874,junk,UNKNOWN NAME,zebra_plains,right
+9811,5450,photo_album_81,1,9,10,adult,0,NNP_GIRM_0105,146,ok,Female,giraffe_masai,backleft
+9811,5450,photo_album_2,1,9,10,adult,0,NNP_GIRM_0105,146,ok,Female,giraffe_masai,backleft
+13331,1161,photo_album_74,1,9,10,infant,0,____,-13331,junk,UNKNOWN NAME,zebra_plains,frontleft
+13440,63,photo_album_8,1,9,10,infant,0,____,-13440,poor,UNKNOWN NAME,zebra_plains,backright
+14454,5039,photo_album_37,1,9,10,infant,0,____,-14454,junk,UNKNOWN NAME,zebra_plains,left
+15938,5184,photo_album_64,1,9,10,adult,1,IBEIS_PZ_1836,2109,ok,Male,zebra_plains,left
+15939,5184,photo_album_64,1,9,10,adult,1,IBEIS_PZ_1833,2106,ok,UNKNOWN SEX,zebra_plains,left
+12049,9236,photo_album_68,1,9,10,infant,0,IBEIS_PZ_0708,981,poor,UNKNOWN SEX,zebra_plains,frontleft
+12103,9236,photo_album_68,1,9,10,adult,0,IBEIS_PZ_0713,986,poor,Female,zebra_plains,frontleft
+8955,8348,photo_album_17,1,9,10,"juvenille, one year old",0,NNP_GIRM_0035,47,excellent,Male,giraffe_masai,right
+12994,4979,photo_album_91,1,9,10,adult,0,IBEIS_PZ_1468,1741,poor,Female,zebra_plains,backleft
+12995,4979,photo_album_91,1,9,10,adult,0,IBEIS_PZ_1476,1749,poor,Female,zebra_plains,left
+13283,374,photo_album_1,1,9,10,infant,1,IBEIS_PZ_1482,1755,good,UNKNOWN SEX,zebra_plains,left
+13284,374,photo_album_1,1,9,10,adult,1,IBEIS_PZ_1492,1765,ok,UNKNOWN SEX,zebra_plains,left
+8807,8349,photo_album_49,1,9,10,"juvenille, one year old",0,NNP_GIRM_0035,47,excellent,Male,giraffe_masai,right
+8898,8333,photo_album_42,1,9,10,adult,0,NNP_GIRM_0046,60,ok,Male,giraffe_masai,left
+13686,7270,photo_album_31,1,9,10,infant,0,____,-13686,junk,UNKNOWN NAME,zebra_plains,left
+13295,394,photo_album_19,1,9,10,infant,1,IBEIS_PZ_1489,1762,good,UNKNOWN SEX,zebra_plains,frontleft
+13272,399,photo_album_1,1,9,10,adult,1,IBEIS_PZ_0895,1168,good,Female,zebra_plains,left
+16178,633,photo_album_36,1,9,10,infant,0,____,-16178,poor,UNKNOWN NAME,zebra_plains,left
+14509,5263,photo_album_64,1,9,10,adult,0,IBEIS_PZ_1685,1958,good,Female,zebra_plains,left
+14453,5134,photo_album_37,1,9,10,infant,0,____,-14453,poor,UNKNOWN NAME,zebra_plains,left
+12490,4929,photo_album_58,1,9,10,adult,0,IBEIS_PZ_0404,677,poor,Female,zebra_plains,left
+13389,56,photo_album_57,1,9,10,infant,0,____,-13389,poor,UNKNOWN NAME,zebra_plains,backright
+17482,6706,photo_album_66,1,9,10,infant,0,____,-17482,poor,UNKNOWN NAME,zebra_plains,left
+9814,5466,photo_album_2,1,9,10,infant,0,____,-9814,poor,UNKNOWN NAME,giraffe_masai,left
+9815,5466,photo_album_2,1,9,10,infant,0,____,-9815,poor,UNKNOWN NAME,giraffe_masai,left
+9578,5238,photo_album_64,1,9,10,infant,0,____,-9578,poor,UNKNOWN NAME,giraffe_masai,left
+9446,983,photo_album_83,1,9,10,infant,0,____,-9446,junk,UNKNOWN NAME,giraffe_masai,right
+9446,983,photo_album_56,1,9,10,infant,0,____,-9446,junk,UNKNOWN NAME,giraffe_masai,right
+9447,983,photo_album_83,1,9,10,infant,0,____,-9447,ok,UNKNOWN NAME,giraffe_masai,right
+9447,983,photo_album_56,1,9,10,infant,0,____,-9447,ok,UNKNOWN NAME,giraffe_masai,right
+13371,1175,photo_album_74,1,9,10,adult,0,IBEIS_PZ_1857,2130,ok,Male,zebra_plains,left
+9505,884,photo_album_48,1,9,10,infant,0,____,-9505,poor,UNKNOWN NAME,giraffe_masai,front
+13826,5702,photo_album_3,1,9,10,infant,0,____,-13826,poor,UNKNOWN NAME,zebra_plains,left
+11232,8579,photo_album_68,1,9,10,adult,0,IBEIS_PZ_0474,747,ok,Male,zebra_plains,left
+11233,8579,photo_album_68,1,9,10,infant,0,IBEIS_PZ_0473,746,poor,UNKNOWN SEX,zebra_plains,left
+14097,716,photo_album_33,1,9,10,infant,1,IBEIS_PZ_1638,1911,ok,Female,zebra_plains,left
+10458,7983,photo_album_88,1,9,10,adult,0,IBEIS_PZ_0182,455,ok,Male,zebra_plains,left
+10459,7983,photo_album_88,1,9,10,adult,0,IBEIS_PZ_0023,296,junk,Female,zebra_plains,left
+10460,7983,photo_album_88,1,9,10,adult,0,IBEIS_PZ_0026,299,poor,Male,zebra_plains,left
+18576,4313,photo_album_99,1,9,10,infant,0,____,-18576,junk,UNKNOWN NAME,zebra_plains,left
+18577,4313,photo_album_99,1,9,10,infant,0,____,-18577,poor,UNKNOWN NAME,zebra_plains,left
+18578,4313,photo_album_99,1,9,10,infant,0,____,-18578,poor,UNKNOWN NAME,zebra_plains,left
+18579,4313,photo_album_99,1,9,10,infant,0,____,-18579,poor,UNKNOWN NAME,zebra_plains,right
+13287,352,photo_album_14,1,9,10,infant,0,____,-13287,ok,UNKNOWN NAME,zebra_plains,right
+11865,9065,photo_album_68,1,9,10,adult,0,IBEIS_PZ_0640,913,poor,UNKNOWN SEX,zebra_plains,left
+14463,5160,photo_album_39,1,9,10,infant,0,____,-14463,junk,UNKNOWN NAME,zebra_plains,left
+13432,62,photo_album_85,1,9,10,infant,0,____,-13432,ok,UNKNOWN NAME,zebra_plains,backright
+17536,6660,photo_album_66,1,9,10,infant,0,____,-17536,junk,UNKNOWN NAME,zebra_plains,left
+17649,6704,photo_album_66,1,9,10,adult,0,IBEIS_PZ_0755,1028,ok,Female,zebra_plains,left
+17650,6704,photo_album_66,1,9,10,infant,0,____,-17650,poor,UNKNOWN NAME,zebra_plains,left
+13631,7331,photo_album_31,1,9,10,adult,0,IBEIS_PZ_1429,1702,ok,Female,zebra_plains,left
+9551,4993,photo_album_86,1,9,10,infant,0,____,-9551,poor,UNKNOWN NAME,giraffe_masai,frontleft
+12442,4926,photo_album_58,1,9,10,infant,0,IBEIS_PZ_0831,1104,poor,UNKNOWN SEX,zebra_plains,left
+9638,5165,photo_album_39,1,9,10,infant,0,____,-9638,poor,UNKNOWN NAME,giraffe_masai,left
+12986,4977,photo_album_4,1,9,10,infant,0,____,-12986,poor,UNKNOWN NAME,zebra_plains,right
+13365,1155,photo_album_74,1,9,10,infant,0,____,-13365,junk,UNKNOWN NAME,zebra_plains,right
+9408,979,photo_album_83,1,9,10,infant,0,____,-9408,junk,UNKNOWN NAME,giraffe_masai,front
+12485,4940,photo_album_58,1,9,10,infant,0,IBEIS_PZ_0856,1129,poor,UNKNOWN SEX,zebra_plains,left
+8820,8341,photo_album_17,1,9,10,infant,0,____,-8820,ok,UNKNOWN NAME,giraffe_masai,right
+13495,6186,photo_album_94,1,9,10,adult,0,IBEIS_PZ_0848,1121,ok,Female,zebra_plains,left
+13305,400,photo_album_14,1,9,10,infant,0,____,-13305,good,UNKNOWN NAME,zebra_plains,right
+17456,6565,photo_album_66,0,10,0,adult,1,IBEIS_PZ_1796,2069,ok,Female,zebra_plains,left
+12524,3240,photo_album_18,0,10,0,adult,0,IBEIS_PZ_0983,1256,junk,UNKNOWN SEX,zebra_plains,left
+9445,982,photo_album_56,0,10,0,infant,0,____,-9445,junk,UNKNOWN NAME,giraffe_masai,right
+9818,5560,photo_album_81,0,10,0,infant,0,____,-9818,junk,UNKNOWN NAME,giraffe_masai,right
+9819,5560,photo_album_81,0,10,0,infant,0,____,-9819,junk,UNKNOWN NAME,giraffe_masai,backright
+13691,7340,photo_album_31,0,10,0,adult,0,IBEIS_PZ_1347,1620,ok,Male,zebra_plains,left
+8954,8336,photo_album_55,0,10,0,adult,0,NNP_GIRM_0046,60,ok,Male,giraffe_masai,left
+12482,4887,photo_album_51,0,10,0,adult,0,IBEIS_PZ_0833,1106,junk,UNKNOWN SEX,zebra_plains,left
+16951,2718,photo_album_21,0,9,0,infant,0,____,-16951,poor,UNKNOWN NAME,zebra_plains,left
+12718,3219,photo_album_18,0,10,0,adult,0,IBEIS_PZ_0910,1183,poor,Female,zebra_plains,left
+12718,3219,photo_album_13,0,9,0,adult,0,IBEIS_PZ_0910,1183,poor,Female,zebra_plains,left
+9021,8340,photo_album_42,0,10,0,"juvenille, two year old",0,NNP_GIRM_0027,32,good,Male,giraffe_masai,right
+9021,8340,photo_album_11,0,8,0,"juvenille, two year old",0,NNP_GIRM_0027,32,good,Male,giraffe_masai,right
+9021,8340,photo_album_55,0,10,0,"juvenille, two year old",0,NNP_GIRM_0027,32,good,Male,giraffe_masai,right
+13472,6217,photo_album_94,0,10,0,adult,0,IBEIS_PZ_1128,1401,junk,UNKNOWN SEX,zebra_plains,left
+12463,4939,photo_album_35,0,10,0,adult,0,IBEIS_PZ_0844,1117,poor,Female,zebra_plains,left
+12720,3236,photo_album_18,0,10,0,adult,1,IBEIS_PZ_0896,1169,good,Male,zebra_plains,left
+9461,981,photo_album_56,0,10,0,infant,0,____,-9461,junk,UNKNOWN NAME,giraffe_masai,frontright
+10310,7878,photo_album_88,0,10,0,infant,1,IBEIS_PZ_0209,482,good,Female,zebra_plains,left
+10311,7878,photo_album_88,0,10,0,adult,0,IBEIS_PZ_0019,292,poor,UNKNOWN SEX,zebra_plains,frontleft
+14696,1913,photo_album_54,0,10,0,adult,1,IBEIS_PZ_1280,1553,ok,Female,zebra_plains,left
+13675,7312,photo_album_31,0,10,0,adult,0,IBEIS_PZ_1402,1675,ok,Female,zebra_plains,left
+10279,7861,photo_album_16,0,10,0,adult,0,IBEIS_PZ_0182,455,poor,Male,zebra_plains,left
+10280,7861,photo_album_16,0,10,0,adult,1,IBEIS_PZ_0026,299,good,Male,zebra_plains,left
+10281,7861,photo_album_16,0,10,0,adult,0,IBEIS_PZ_0023,296,poor,Female,zebra_plains,left
+8880,3142,photo_album_98,0,10,0,adult,0,NNP_GIRM_0059,79,ok,Female,giraffe_masai,right
+13383,1173,photo_album_74,0,10,0,infant,0,____,-13383,junk,UNKNOWN NAME,zebra_plains,left
+13562,7309,photo_album_31,0,10,0,infant,0,____,-13562,poor,UNKNOWN NAME,zebra_plains,left
+12449,4938,photo_album_35,0,10,0,infant,0,IBEIS_PZ_0860,1133,poor,UNKNOWN SEX,zebra_plains,backleft
+12450,4938,photo_album_35,0,10,0,infant,0,IBEIS_PZ_0857,1130,poor,UNKNOWN SEX,zebra_plains,left
+12681,3229,photo_album_18,0,10,0,infant,1,IBEIS_PZ_0969,1242,ok,UNKNOWN SEX,zebra_plains,left
+12616,3241,photo_album_18,0,10,0,adult,0,IBEIS_PZ_0867,1140,junk,Female,zebra_plains,left
+13577,7315,photo_album_31,0,10,0,infant,0,____,-13577,poor,UNKNOWN NAME,zebra_plains,left
+13319,375,photo_album_19,0,10,0,adult,1,IBEIS_PZ_1486,1759,ok,UNKNOWN SEX,zebra_plains,left
+8976,8320,photo_album_17,0,10,0,adult,0,NNP_GIRM_0016,19,poor,Female,giraffe_masai,right
+8977,8320,photo_album_17,0,10,0,unknown,0,NNP_GIRM_0064,84,ok,UNKNOWN SEX,giraffe_masai,backleft
+8948,9167,photo_album_68,0,10,0,adult,1,NNP_GIRM_0013,16,good,Male,giraffe_masai,left
+8955,8348,photo_album_67,0,10,0,"juvenille, one year old",0,NNP_GIRM_0035,47,excellent,Male,giraffe_masai,right
+9038,3320,photo_album_7,0,10,0,"juvenille, two year old",0,NNP_GIRM_0036,48,ok,Male,giraffe_masai,back
+8807,8349,photo_album_42,0,10,0,"juvenille, one year old",0,NNP_GIRM_0035,47,excellent,Male,giraffe_masai,right
+8807,8349,photo_album_67,0,10,0,"juvenille, one year old",0,NNP_GIRM_0035,47,excellent,Male,giraffe_masai,right
+13473,6244,photo_album_94,0,10,0,infant,0,IBEIS_PZ_1183,1456,junk,UNKNOWN SEX,zebra_plains,left
+12630,3222,photo_album_13,0,9,0,infant,0,IBEIS_PZ_0908,1181,poor,UNKNOWN SEX,zebra_plains,left
+13812,6218,photo_album_94,0,10,0,adult,0,IBEIS_PZ_1129,1402,junk,UNKNOWN SEX,zebra_plains,left
+11188,8549,photo_album_69,0,10,0,adult,0,IBEIS_PZ_0445,718,poor,Female,zebra_plains,left
+12451,4896,photo_album_58,0,10,0,adult,0,IBEIS_PZ_0849,1122,junk,UNKNOWN SEX,zebra_plains,left
+16186,5178,photo_album_64,0,10,0,adult,1,IBEIS_PZ_1723,1996,good,Female,zebra_plains,left
+16187,5178,photo_album_64,0,10,0,infant,0,____,-16187,ok,UNKNOWN NAME,zebra_plains,backleft
+9266,1152,photo_album_74,0,10,0,infant,0,____,-9266,junk,UNKNOWN NAME,giraffe_masai,left
+9578,5238,photo_album_39,0,10,0,infant,0,____,-9578,poor,UNKNOWN NAME,giraffe_masai,left
+13308,372,photo_album_19,0,10,0,infant,0,____,-13308,good,UNKNOWN NAME,zebra_plains,right
+13308,372,photo_album_14,0,10,0,infant,0,____,-13308,good,UNKNOWN NAME,zebra_plains,right
+15449,321,photo_album_38,0,10,0,infant,0,____,-15449,ok,UNKNOWN NAME,zebra_plains,backleft
+11211,8566,photo_album_69,0,10,0,adult,0,IBEIS_PZ_0447,720,poor,UNKNOWN SEX,zebra_plains,frontleft
+11212,8566,photo_album_69,0,10,0,infant,0,IBEIS_PZ_0446,719,poor,UNKNOWN SEX,zebra_plains,left
+14209,743,photo_album_70,0,10,0,infant,0,____,-14209,ok,UNKNOWN NAME,zebra_plains,right
+13470,6238,photo_album_94,0,10,0,adult,0,IBEIS_PZ_0443,716,ok,Female,zebra_plains,left
+9551,4993,photo_album_91,0,10,0,infant,0,____,-9551,poor,UNKNOWN NAME,giraffe_masai,frontleft
+14120,660,photo_album_26,0,9,0,infant,0,____,-14120,poor,UNKNOWN NAME,zebra_plains,left
+12442,4926,photo_album_35,0,10,0,infant,0,IBEIS_PZ_0831,1104,poor,UNKNOWN SEX,zebra_plains,left
+10128,7784,photo_album_16,0,10,0,infant,0,IBEIS_PZ_0328,601,poor,UNKNOWN SEX,zebra_plains,backleft
+8809,8321,photo_album_17,0,10,0,adult,0,NNP_GIRM_0016,19,ok,Female,giraffe_masai,right
+8809,8321,photo_album_11,0,9,0,adult,0,NNP_GIRM_0016,19,ok,Female,giraffe_masai,right
+8810,8321,photo_album_17,0,10,0,unknown,0,NNP_GIRM_0064,84,poor,UNKNOWN SEX,giraffe_masai,backleft
+8810,8321,photo_album_11,0,9,0,unknown,0,NNP_GIRM_0064,84,poor,UNKNOWN SEX,giraffe_masai,backleft
+9408,979,photo_album_56,0,10,0,infant,0,____,-9408,junk,UNKNOWN NAME,giraffe_masai,front
+12485,4940,photo_album_51,0,10,0,infant,0,IBEIS_PZ_0856,1129,poor,UNKNOWN SEX,zebra_plains,left
+8820,8341,photo_album_55,0,10,0,infant,0,____,-8820,ok,UNKNOWN NAME,giraffe_masai,right
