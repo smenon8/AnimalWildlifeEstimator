@@ -1,7 +1,7 @@
 #### Animal Photo Bias Scripts
 ##### Author: Sreejith Menon
 
-###### Project home-page: http://compbio.cs.uic.edu/~sreejith/AnimalBias.html
+###### Project home-page: http://compbio.cs.uic.edu/~sreejith/PhotoBias.html
 
 ###### Features implemented - to date
 1. Create mechanical turk jobs - only user input needed is number of jobs we need.
@@ -17,6 +17,4 @@
 6. Generate general rank lists (by number of shares per images, species, age etc.)
 
 7. Generate a per job rank list (number of shares for zebra in a particular album versus number of shares for giraffes etc.)
-
-
 
