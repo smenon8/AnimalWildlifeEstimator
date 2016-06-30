@@ -1,6 +1,13 @@
-
 # coding: utf-8
 # python-3
+# Author: Sreejith Menon (smenon8@uic.edu)
+# Creation date: 6/14/16
+
+# Description: Contains multiple methods to calculate final result statistics. 
+# The methods in this script file highly utilizes objects created by JobsMapResultsFilesToContainerObjs.py. 
+# Three global variables are declared in the scope of this project, the currently point to CSV files that have information from second phase of the mechanical turk deployment. 
+# gidAidMapFl, aidFeatureMapFl, imgJobMap
+# These parameters are used by multiple methods within this script.
 
 import importlib
 import JobsMapResultsFilesToContainerObjs as ImageMap
@@ -11,13 +18,18 @@ import GetPropertiesAPI as GP
 import matplotlib.pyplot as plt 
 import csv
 import json
+from collections import OrderedDict
 importlib.reload(ImageMap)
 importlib.reload(GP)
 
+# Global variables for the scope of this script
 gidAidMapFl = "../data/experiment2_gid_aid_map.json"
 aidFeatureMapFl = "../data/experiment2_aid_features.json"
 imgJobMap = "../data/imageGID_job_map_expt2_corrected.csv"
-
+ 
+# This method is a simplification of adding up the share/no share counts of a particular image. 
+# For example, for a particular image which appeared in 5 different albums, the share rates were 9,5,9,10,10. 
+# This method will return gid:sum([9,5,9,10,10]).
 def genTotCnts(ovrCnts):
     dSum = {}
     for key in ovrCnts:
@@ -25,6 +37,8 @@ def genTotCnts(ovrCnts):
         
     return dSum
 
+# This dictionary answers the question, what percentage of this feature/image were shared. 
+# The share proportion is calculated as total_shares/(total_shares+total_not_shares).
 def getShrProp(ovrAggCnts) :   
     totCnt = genTotCnts(ovrAggCnts)
 
@@ -43,6 +57,9 @@ def getShrProp(ovrAggCnts) :
     return propDict
 
 # independent of the results
+# This method defines the counting logic for a particular image for a given feature. 
+# For instance, for the feature ‘SPECIES’, there might be images that contains both a zebra and a giraffe. 
+# In that case, the share counts have to be added to both zebra and giraffe. 
 def getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature,withNumInds=True):
     featuresPerImg = ImageMap.extractImageFeaturesFromMap(gidAidMapFl,aidFeatureMapFl,feature)
     
@@ -57,6 +74,8 @@ def getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature,withNumInds=True):
         
     return countLogic
 
+# This method is used to generate the number of shares and not_shares per feature in a particular album. 
+# For instance, if the required features list contains ‘SPECIES’, then it tells the share and not_share count per album for each available/identifiable species.
 def genAlbmFtrs(gidAidMapFl,aidFeatureMapFl,imgJobMap,reqdFtrList):
     albmFtrDict = {}
     albumGidDict = ImageMap.genAlbumGIDDictFromMap(imgJobMap)
@@ -76,6 +95,7 @@ def genAlbmFtrs(gidAidMapFl,aidFeatureMapFl,imgJobMap,reqdFtrList):
             
     return albmFtrDict
 
+# flNm should be a json file, only considers the images that appear in multiple album
 def getShrPropImgsAcrossAlbms(imgJobMap,resSetStrt,resSetEnd,flNm):
     imgAlbumDict = ImageMap.genImgAlbumDictFromMap(imgJobMap)
     master = ImageMap.createResultDict(resSetStrt,resSetEnd)
@@ -83,29 +103,81 @@ def getShrPropImgsAcrossAlbms(imgJobMap,resSetStrt,resSetEnd,flNm):
 
     albumGidDict = ImageMap.genImgAlbumDictFromMap(imgJobMap)
 
+    # filters the GID's that appears in multiple albums
     imgsInMultAlbms = list(filter(lambda x : len(albumGidDict[x]) > 1,albumGidDict.keys()))
 
     gidAlbmDict = ImageMap.genImgAlbumDictFromMap(imgJobMap)
 
-
-    imgShareNotShareList
-    imgAlbmPropDict = {}
+    imgAlbmPropDict = {} # image album proportion dict
     for tup in imgShareNotShareList:
-        imgAlbmPropDict[(tup[0],tup[1])] = tup[4]
+        if tup[0] in imgsInMultAlbms:
+            imgAlbmPropDict[(tup[0],tup[1])] = tup[4]
 
+    return imgAlbmPropDict,getConsistencyDict(imgsInMultAlbms,gidAlbmDict,imgAlbmPropDict,flNm)
 
+# get a filter condition for a particular feature
+def getFltrCondn(ftr):
+    if ftr=='NID':
+        return lambda x : x[0] != 'UNIDENTIFIED' and int(x[0]) > 0
+    else: # for all other features
+        return lambda x : x[0] != 'UNIDENTIFIED' 
+
+# The below method works for features and should not be used for generating consistency object for imags themselves
+def genObjsForConsistency(gidAidMapFl,aidFeatureMapFl,ftr,imgJobMap,resSetStrt=1,resSetEnd=100):    
+    d = shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,ftr,imgJobMap,resSetStrt,resSetEnd)
+
+    fltrCondn = getFltrCondn(ftr)
+    d_filtered = {}
+    d_filtered_keys = list(filter(fltrCondn, d.keys()))
+    for key in d_filtered_keys:
+        d_filtered[key] = d[key]
+
+    ftrAlbmPropDict = getShrProp(d_filtered)
+    filteredKeyArr = [x[0] for x in ftrAlbmPropDict.keys()]
+
+    ftrAlbmDict = {}
+    for ftr,albm in ftrAlbmPropDict.keys():
+        ftrAlbmDict[ftr] = ftrAlbmDict.get(ftr,[]) + [albm]
+        
+    return filteredKeyArr,ftrAlbmDict,ftrAlbmPropDict
+
+# This method can be used to generate the consistency dictionary for any feature including GID
+# consistency dict - { gid : { albm:shrProportion } }
+def getConsistencyDict(filteredKeyArr,ftrAlbmDict,ftrAlbmShrPropDict,flNm='/tmp/getConsistencyDict.output'):
     consistency = {}
-    for gid in imgsInMultAlbms:
+    for ftr in filteredKeyArr:
         tempDict = {}
-        for albm in gidAlbmDict[gid]:
-            tempDict[albm] = imgAlbmPropDict.get((gid,albm),None)
-        consistency[gid] = tempDict
+        for albm in ftrAlbmDict[ftr]:
+            tempDict[albm] = ftrAlbmShrPropDict.get((ftr,albm),None)
+        consistency[ftr] = tempDict
+
+    consistency_mult = {}
+    for key in consistency:
+        if len(consistency[key]) > 1:
+            consistency_mult[key] = consistency[key]
 
     fl = open(flNm,"w")
-    json.dump(consistency,fl,indent=4)
+    json.dump(consistency_mult,fl,indent=4)
     fl.close()
-    
-    return consistency
+        
+    return consistency_mult
+
+# consistency object is retuned by getShrPropImgsAcrossAlbms()
+def genVarStddevShrPropAcrsAlbms(consistency):    
+    gidShrVarStdDevDict = {}
+    for gid in consistency:
+        albmShrRateD = consistency[gid]
+
+        if None not in albmShrRateD.values():
+            var = s.variance(albmShrRateD.values())
+            mean = s.mean(albmShrRateD.values())
+            std = s.stdev(albmShrRateD.values())
+
+            gidShrVarStdDevDict[gid] = {'mean' : mean,
+                                        'variance' : var,
+                                       'standard_deviation' : std}
+
+    return gidShrVarStdDevDict
 
 # verified
 def ovrallShrCntsByFtr(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,resSetEnd):
@@ -134,7 +206,7 @@ def ovrallShrCntsByFtr(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,
     return answerSet
 
 
-def shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,resSetEnd):
+def shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt=1,resSetEnd=100):
     countLogic = getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature)
     imgAlbumDict = ImageMap.genImgAlbumDictFromMap(imgJobMap)
     master = ImageMap.createResultDict(resSetStrt,resSetEnd)
@@ -247,6 +319,44 @@ def genNumIndsRankList():
 
     return noOfIndsPerImgSharesRnkLst,noOfIndsPerImgNotSharesRnkLst
 
+# Get structure for calculating position bias
+# Arguments: Image Job Map in csv format, start of the results file, end of the results files. 
+# Argument data-type: str, int, int
+# PRE-condition: 
+# Entire path is provided for imgJobMap and the file should exist.
+# All files starting from photo_album_<resStart>.results until photo_album_<resEnd>.results should exist under results folder.
+# Returns: A Python dictionary object that has position of images in the album and number of shares, number of not_shares, the total and the proportion of share rate as a nested dictionary.
+# Comments:  Number of shares/not shares for each and every position are enumerated inside a list. 
+# Use of OrderedDict() from the Python collections framework ensures that the records are picked in the exact same order they appear in the albums. 
+# This returned dictionary can then be embedded inside a data-frame and can be visualized.
+def getPosShrProptn(imgJobMap,resStart,resEnd):    
+    pos = {} # 1:(shr,noShr,prop)
+    for i in range(resStart,resEnd):
+        results = ImageMap.createResultDict(i,i)
+        imgAlbumDict = ImageMap.genImgAlbumDictFromMap(imgJobMap)
+        shrCnt,junk = ImageMap.imgShareCountsPerAlbum(imgAlbumDict,results)
+
+        for i in range(1,len(shrCnt)+1):
+            pos[i] = pos.get(i,[]) + [(shrCnt[i-1][2],shrCnt[i-1][3])]
+
+    summaryPosCnt = OrderedDict()
+    for position in pos:
+        shrs = [x[0] for x in pos[position]]
+        notShrs = [x[1] for x in pos[position]]
+
+        total = [x[0]+x[1] for x in pos[position]]
+
+        summaryPosCnt[position] = {'share' : sum(shrs),
+                                  'not_share' : sum(notShrs),
+                                  'total': sum(total)
+                                  }
+
+    for pos in summaryPosCnt:
+        dct = summaryPosCnt[pos]
+        dct['proportion'] = dct['share'] * 100 / dct['total']  
+
+    return summaryPosCnt
+
 def __main__():
 
     d = ovrallShrCntsByTwoFtrs(gidAidMapFl,aidFeatureMapFl,"SPECIES","AGE",imgJobMap,1,100)
@@ -287,7 +397,7 @@ def __main__():
     rankListImgsDf['Total'] = rankListImgsDf['Shared'] + rankListImgsDf['Not Shared']
     rankListImgsDf['Proportion'] = rankListImgsDf['Shared'] * 100 / rankListImgsDf['Total']
     rankListImgsDf = rankListImgsDf.sort_values(by = ['Proportion'],ascending = False)
-    rankListImgsDf.to_csv('../data/rankListImages_expt2.csv')
+    #rankListImgsDf.to_csv('../FinalResults/rankListImages_expt2.csv')
 
     '''
     resultsAIDGIDDf > Merged data frame that add's AID info to the results data
@@ -300,7 +410,7 @@ def __main__():
     resultsAIDGIDDf = pd.merge(aidGidDf,resultsPerJobDf,left_on='GID',right_on = 'GID',how="right")
 
     gidAidResultsFeaturesDf = pd.merge(resultsAIDGIDDf,aidFeaturesDf,left_on = 'AID',right_on = 'AID') # most important data frame with all the info
-    gidAidResultsFeaturesDf.to_csv("../data/resultsFeaturesComb_expt2.csv",index=False)
+    gidAidResultsFeaturesDf.to_csv("../FinalResults/resultsFeaturesComb_expt2.csv",index=False)
 
 
 if __name__ == "__main__":

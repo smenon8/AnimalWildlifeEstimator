@@ -32,7 +32,6 @@ import GetPropertiesAPI as GP
 import importlib
 import json
 #importlib.reload(GP) # un-comment if there are any changes made to API
-from time import sleep
 import sys
 import math
 
@@ -57,6 +56,28 @@ def writeCsvFromDict(header,inDict,outFL):
 	
 	writeFL.close()
 
+def genJsonFromMSAIData(flName,outFlNm):
+    data = []
+    with open(flName) as openFl:
+        for row in openFl:
+            data.append(row)
+
+
+    cleanData = []
+    for row in data:
+        cleanData.append(row.replace("\\","").replace('"\n',""))
+
+    apiResultsDict = {}
+
+    for i in range(1,len(cleanData)):
+        key,value = cleanData[i].split("\t")
+        value = value.replace('"{"tags"','{"tags"')
+        key = key.replace('"','')
+        apiResultsDict[key] = json.loads(value)
+
+    json.dump(apiResultsDict,open(outFlNm,"w"),indent=4)
+    
+    return None
 
 # Logic for reading data from the consolidatedHITResults file - changed
 # The input for the below method will be a csv file/list with all the image GID's for which the features have to be extracted.
@@ -105,6 +126,8 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 		features[aid].append(qual_text)
 		yaw_text = GP.getImageFeature(aid,"yaw_texts")
 		features[aid].append(yaw_text)
+		contrib_tag = GP.getImageFeature(aid,"image_contributor_tag")
+		features[aid].append(contrib_tag)
 		aidInd += 1
 		percentComplete = aidInd * 100 / len(aidList)
 		if math.floor(percentComplete) %5 == 0:

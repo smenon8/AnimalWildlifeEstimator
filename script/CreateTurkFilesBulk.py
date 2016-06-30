@@ -1,6 +1,8 @@
-
 # coding: utf-8
 # python-3
+# Author: Sreejith Menon (smenon8@uic.edu)
+
+
 # Description: Contains a single method that generates mechanical turk jobs for generating photo-albums in bulk. 
 # This script contains a __main__() method that accepts command line arguments and can be directly executed through terminal.
 # To run the script provide 4 parameters in the order fileName, jobMapName, numberOfFiles, numberOfImgs.
@@ -19,8 +21,6 @@ import sys
 importlib.reload(GP) 
 importlib.reload(GM) 
 
-# Arguments: File Name prefix of the job files, File name of the map file of albums and the images in those albums, number of jobs needed, number of images needed per job.
-# Returns: None 
 # Selects noOfJobs number of random contributors (there might be duplicates in the selected contributor list). 
 # There is hard-coded code for removing contributors who did not click any picture.
 # For each job, noOfImgsPerJob number of images are selected from the range of images a particular contributor has clicked. 

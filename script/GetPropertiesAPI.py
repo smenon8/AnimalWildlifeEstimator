@@ -9,6 +9,7 @@ Functionaties:
     1. getAnnotID(<image gid>) : returns Annotation ID of the image gid
     2. getImageFeature(<annot_id>,<feature>) : returns the feature corresponding to the annotation ID
     3. getContributorGID(<contributor_id>) : returns a list of images (image gid) clicked by the contributor
+    4. getAgeFeatureReadableFmt(<age from IBEIS API> : returns a human readable age)
 """
 
 import urllib.request
@@ -52,13 +53,16 @@ def getContributorGID(cid):
 
     return jsonObj['response'][0]
 
+# Age in IBEIS is stored as a list (an estimated range in months). 
+# IBEIS identifies the age of the animal up to 3 years. 
+# The animals will be classified as Infants, a year-old juveniles, two year old juveniles or fully grown adults. 
 def getAgeFeatureReadableFmt(ageList):
     if ageList[0] == [-1,-1] or ageList[0] == [None,2] or ageList[0] == [3, 5] or ageList[0] == [6, 11]:
         return ["infant"]
     elif ageList[0] == [12,23]:
-        return ["juvenille, one year old"]
+        return ["juveniles - one year old"]
     elif ageList[0] == [24,35]:
-        return ["juvenille, two year old"]
+        return ["juveniles- two year old"]
     elif ageList[0] == [36,None]:
         return ["adult"]
     else:

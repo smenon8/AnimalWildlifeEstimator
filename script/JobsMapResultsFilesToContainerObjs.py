@@ -1,10 +1,13 @@
 # coding: utf-8
 # python-3
+# Author: Sreejith Menon (smenon8@uic.edu)
+# Creation date: 5/23/16
 
 '''
 Script for getting all images without duplicates from the csv file.
-Author: Sreejith Menon
 Date: May 23, 2016
+
+The mapFlName referred to in the  entire script is : ../data/imageGID_job_map_expt2_corrected.csv
 '''
 
 import csv
@@ -12,6 +15,7 @@ import BuildConsolidatedFeaturesFile as Features
 import importlib
 import re
 import json
+from collections import OrderedDict
 importlib.reload(Features)
 
 def genUniqueImageListFromMap(mapFlName):
@@ -70,11 +74,22 @@ def genAidGidDictFromMap(mapFL):
     for gid in jsonObj:
         if jsonObj[gid][0] != None:
             for aid in jsonObj[gid][0]:
-                aidGidDict[gid] = aidGidDict.get(gid,[]) + [aid]
-        else:
-            aidGidDict[gid] = None # make note
+                aidGidDict[aid] = aidGidDict.get(aid,[]) + [gid]
 
     return aidGidDict
+
+def genGidAidDictFromMap(mapFL):
+    jsonObj = json.load(open(mapFL,"r"))
+
+    gidAidDict = {}
+    for gid in jsonObj:
+        if jsonObj[gid][0] != None:
+            for aid in jsonObj[gid][0]:
+                gidAidDict[gid] = gidAidDict.get(gid,[]) + [aid]
+        else:
+            gidAidDict[gid] = None
+    
+    return gidAidDict
 
 def genAidGidTupListFromMap(mapFL):
     jsonObj = json.load(open(mapFL,"r"))
@@ -104,6 +119,7 @@ def genAidFeatureDictList(mapFL):
         featuresDict['EXEMPLAR_FLAG'] = features[5][0]
         featuresDict['QUALITY'] = features[6][0]
         featuresDict['VIEW_POINT'] = features[7][0]
+        featuresDict['CONTRIBUTOR'] = features[8][0] # newly added on 06/22
         
         aidFeaturesList.append(featuresDict)
 
@@ -126,7 +142,8 @@ def genAidFeatureDictDict(mapFL):
         featuresDict['EXEMPLAR_FLAG'] = str(features[5][0]) # type-casting to string necessary
         featuresDict['QUALITY'] = features[6][0]
         featuresDict['VIEW_POINT'] = features[7][0]
-        
+        featuresDict['CONTRIBUTOR'] = features[8][0] # newly added on 06/22
+
         aidFeaturesDict[aid] = featuresDict
 
     return aidFeaturesDict
@@ -135,7 +152,7 @@ def genAidFeatureDictDict(mapFL):
 def extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature):    
     aidFeatureDict = genAidFeatureDictDict(aidFtrMapFl)
     
-    gidAidDict = genAidGidDictFromMap(gidAidMapFl)
+    gidAidDict = genGidAidDictFromMap(gidAidMapFl)
 
     gidFtr = {}
     for gid in gidAidDict:
@@ -149,7 +166,7 @@ def extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature):
 # Part 1: Building the results dictionary (all the fields of interest for all the available jobs)
 # Returns a master dictionary that has job: answers key-value pair. 
 def createResultDict(jobRangeStart,jobRangeEnd):
-    masterDict = {}
+    masterDict = OrderedDict()
 
     for i in range(jobRangeStart,jobRangeEnd+1):
         inFLTitle = "photo_album_" + str(i)
@@ -164,13 +181,13 @@ def createResultDict(jobRangeStart,jobRangeEnd):
         for line in inFLList[1:]:
             resultList.append(line.split("\t"))
 
-        resultDict = {}
+        resultDict = OrderedDict()
         for i in range(0,len(resultList)):
             for j in range(0,len(header)):
                 resultDict[header[j]] = resultDict.get(header[j],[]) + [resultList[i][j]]
 
         keysOfInterest = list(filter(lambda x: re.search("Answer",x),resultDict.keys()))
-        newDict = {}
+        newDict = OrderedDict()
         for key in keysOfInterest:
             newDict[key] = resultDict[key]
 
