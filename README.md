@@ -18,3 +18,17 @@
 
 7. Generate a per job rank list (number of shares for zebra in a particular album versus number of shares for giraffes etc.)
 
+8. Generate rank list by share proportion based on ecological features like species, sex, age, view_point of the animal.
+
+9. Generate rank list by share proportion based on album features and other image EXIF information.
+
+10. Append the results from Amazon Mechanical Turk API with tags from Microsoft Image Tagging API and generate a rank list by share proportion.
+
+11. Build a regression model with all the ecological factors and tags from Microsoft Image Tagging API using the bag-of-words model.
+
+12. Evaluate various performance metrics of the learned algorithm using parameters like ROC/AUC, RSS, RMSE and F-scores.
+
+
+
+
+
