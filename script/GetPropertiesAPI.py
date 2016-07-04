@@ -12,44 +12,37 @@ Functionaties:
     4. getAgeFeatureReadableFmt(<age from IBEIS API> : returns a human readable age)
 """
 
-import urllib.request
+import requests
 import json
 
 ftrNms = {'SPECIES' : 'species_texts', 'AGE' : 'age_months_est', 'INDIVIDUAL_NAME' : 'nids' , 'SEX' : 'sex_texts',
              'EXEMPLAR_FLAG':'exemplar_flags', 'QUALITY' : 'quality_texts', 'VIEW_POINT' : 'yaw_texts'}
-             
+
+baseurl = 'http://pachy.cs.uic.edu:5000'
+
 # Argument : GID of a single image
 # Returns : Corresponding Annotation ID of the GID
 def getAnnotID(gid):
-    url = "http://pachy.cs.uic.edu:5000/api/image/aids/?gid_list=["+str(gid)+"]"
-    response = urllib.request.urlopen(url)
-    responseData = response.read().decode('utf-8')
-    jsonObj = json.loads(responseData)
+    response = requests.get(baseurl + '/api/image/aids/', data = dict(gid_list=[gid]))
+    jsonObj = response.json()
 
-    if len(jsonObj['response'][0]) != 0:
-        return jsonObj['response'][0]
-    else:
-        return None
+    return jsonObj['response'][0] if len(jsonObj['response'][0]) != 0 else None
         
 # Arguments : Annotation ID , Required Feature
 # Accepted Features: species_texts, age_months_est, exemplar_flags, sex_texts, yaw_texts, quality_texts,image_contributor_tag
 # Returns : Returns the feature
 def getImageFeature(aid,feature):
-    url = "http://pachy.cs.uic.edu:5000/api/annot/" + feature + "/?aid_list=[" + str(aid) + "]"
-    response = urllib.request.urlopen(url)
-    responseData = response.read().decode('utf-8')
-    jsonObj = json.loads(responseData)
+    response = requests.get(baseurl + '/api/annot/' + feature + '/', data = dict(aid_list=[aid]))
+    jsonObj = response.json()
 
     return jsonObj['response']
-
 
 # Arguments : Contributor ID
 # Returns : A list of the images(image GID) contributed by the contributor
 def getContributorGID(cid):
     url = "http://pachy.cs.uic.edu:5000/api/contributor/gids/?contrib_rowid_list=["+str(cid)+"]"
-    response = urllib.request.urlopen(url)
-    responseData = response.read().decode('utf-8')
-    jsonObj = json.loads(responseData)
+    response = requests.get(baseurl + '/api/contributor/gids/', data = dict(contrib_rowid_list=[cid]))
+    jsonObj = response.json()
 
     return jsonObj['response'][0]
 
@@ -69,9 +62,9 @@ def getAgeFeatureReadableFmt(ageList):
         return ["unknown"]
 
 def __main__():
-    # print(getAnnotID(6526))
-    # #print(getContributorGID(1))
-    # print(getImageFeature(8810,"exemplar_flags"))
+    print(getAnnotID(100))
+    print(getContributorGID(1))
+    print(getImageFeature(8810,"exemplar_flags"))
     ages = [9448, 15613]
     for a in ages:
         print(getAgeFeatureReadableFmt(getImageFeature(a,"age_months_est")))

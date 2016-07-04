@@ -10,8 +10,12 @@ import pandas as pd
 import json
 from collections import OrderedDict
 from sklearn.linear_model import LogisticRegression, LinearRegression
+from sklearn import svm,tree
+from sklearn.cross_validation import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+import sys
 
-THRESHOLD = 20
+THRESHOLD = 80
 # Method for generating feature header
 def genHead(dataDict,ftr):
     if ftr != 'tags':
@@ -23,13 +27,20 @@ def genHead(dataDict,ftr):
     
     return list(ftrList)
 
-def createDataFlDict(data,allAttribs,logistic=True):
+def createDataFlDict(data,allAttribs,binaryClf,threshold,extremeClf = False):
     gidAttribDict = {}
-    for gid in data.keys():
-        ftrDict = data[gid]
+
+    if extremeClf:
+        fDataKeys= list(filter(lambda x : float(data[x]['Proportion']) >= 80.0 or float(data[x]['Proportion']) <= 20.0,data.keys()))
+        fData = {gid: data[gid] for gid in fDataKeys}
+    else:
+        fData = data
+
+    for gid in fData.keys():
+        ftrDict = fData[gid]
         attribDict = OrderedDict.fromkeys(allAttribs,0)
 
-        ftrs = ['SPECIES','SEX','AGE','QUALITY','VIEW_POINT']
+        ftrs = ['SPECIES','SEX','AGE','QUALITY','VIEW_POINT','INDIVIDUAL_NAME']
 
         for ftr in ftrs:
             spcs = ftrDict[ftr].split(',')
@@ -41,8 +52,8 @@ def createDataFlDict(data,allAttribs,logistic=True):
         for tag in tgs:
             attribDict[tag] = 1
 
-        if logistic:
-            attribDict['TARGET'] = 1 if float(ftrDict['Proportion'] ) > 80 else 0 # Thresholding for the share proportion
+        if binaryClf:
+            attribDict['TARGET'] = 1 if float(ftrDict['Proportion'] ) > threshold else 0 # Thresholding for the share proportion
         else:
             attribDict['TARGET'] = float(ftrDict['Proportion'])
 
@@ -54,48 +65,44 @@ def createDataFlDict(data,allAttribs,logistic=True):
     
     return gidAttribDict
 
-# Accuracy of the regression model is defined as the percentage of correct predictions for LOGISTIC
-# For LINEAR(MULTIPLE), its defined as the predictions that fall in the range of THRESHOLD - defined as a constant
-def buildRegrModel(data,allAttribs,splitProp,overrideThreshold=THRESHOLD,logistic=True):
-    THRESHOLD = overrideThreshold
-    gidAttribDict = createDataFlDict(data,allAttribs,logistic)
-    
-    nTrain = int(len(gidAttribDict.keys()) * splitProp)
-    nTest = len(gidAttribDict.keys()) - int(len(gidAttribDict.keys()) * splitProp)
-    
-    if logistic:
-        regr = LogisticRegression()
-    else:
-        regr = LinearRegression()
 
+def getClassifierAlgo(methodName):
+    if methodName == 'logistic':
+        return LogisticRegression()
+    elif methodName == 'svm':
+        return svm.SVC(probability=True)
+    elif methodName == 'dtree':
+        return tree.DecisionTreeClassifier()
+    elif methodName == 'random_forests':
+        return RandomForestClassifier()
+    else:
+        try:
+            raise Exception('Exception : Classifier Method Unknown')
+        except Exception as inst:
+            print(inst.args)
+            sys.exit()
+
+def trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit):
     df = pd.DataFrame(gidAttribDict).transpose()
     df = df[allAttribs + ["TARGET"]] # Rearranging the order of the columns
 
     attributes = df.columns[:len(allAttribs)] # all attributes
 
-    train_x = df[attributes].head(nTrain)
-    train_y = df['TARGET'].head(nTrain)
-
-    regr.fit(train_x,train_y)
-
-    test_x = df[attributes].tail(nTest)
-    test_y =df['TARGET'].tail(nTest) 
-    test_y = list(test_y)
-
-    predictions = regr.predict(test_x)
-    predictions = list(predictions)
+    dataFeatures = df[attributes]
+    targetVar = df['TARGET']
+    
+    return train_test_split(dataFeatures, targetVar, test_size=trainTestSplit,random_state=0)
 
 
-    count = 0
-    if logistic:
-        for i in range(len(predictions)):
-            if predictions[i] == test_y[i]:
-                count += 1
-    else:        
-        for i in range(len(predictions)):
-            if abs(predictions[i]-test_y[i]) <= THRESHOLD: # defined as a global const, overridable 
-                count += 1
-    if logistic:
-        return test_x, test_y, regr.predict_proba(test_x)[:,1], count*100/nTest
-    else: 
-        return count*100/nTest,regr # accuracy
+# returns test attributes, actual test TARGET, predicted values and predicition probabilities
+def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,extremeClf=True):
+    gidAttribDict = createDataFlDict(data,allAttribs,True,threshold,extremeClf) # binaryClf attribute in createDataFlDict will be True here
+
+    train_x,test_x,train_y,test_y = trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit) # new statement
+    clf = getClassifierAlgo(methodName)
+    clf.fit(train_x,train_y)
+
+    predictions = list(clf.predict(test_x))
+
+    return test_x,test_y,predictions,clf.predict_proba(test_x)[:,1],clf.score(test_x,test_y) # prediction probabilities
+
