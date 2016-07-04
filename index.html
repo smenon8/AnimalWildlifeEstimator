@@ -35,7 +35,7 @@
       <div class="container" align="center">
           <section id="site-map">
           <a href="#tech-used" class="btn btn-primary">View Technology Keywords</a>
-          <a href="#project-overview" class="btn">View Project Overview</a>
+          <a href="#project-overview" class="btn">View Project Progress</a>
           <a href="#script-index" class="btn btn-info">View Scripts Index</a>
         </section>
       </div>
@@ -50,6 +50,7 @@
       <li>Python-3</li>
       <li>Jupyter-Notebook</li>
       <li>pandas</li>
+      <li>matplotlib</li>
       <li>sklearn</li>
       <li>sklearn-metrics</li>
       <li>Amazon Mechanical Turk</li>
@@ -59,22 +60,23 @@
       </ul>
 
       <h3>
-      <a id="project-overview" class="anchor" href="#project-overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Project Overview</a></h3>
+      <a id="project-overview" class="anchor" href="#project-overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Project Progress</a></h3>
 
-      <ol>
-      <li><p>Create mechanical turk jobs - only user input needed is number of jobs we need.</p></li>
-      <li><p>Create deployment, approval and download scripts for all the mechanical turk jobs.</p></li>
-      <li><p>Parse .results file and have a python object/csv/json ready for processing. </p></li>
-      <li><p>Extract all essential features given a list of images (can be specified as a csv)</p></li>
-      <li><p>Join features with the results and return python data-frames/csv/json for statistical calculation.</p></li>
-      <li><p>Generate general rank lists (by number of shares per images, species, age etc.)</p></li>
-      <li><p>Generate a per job rank list (number of shares for zebra in a particular album versus number of shares for giraffes etc.)</p></li>
-      <li><p>Generate rank list by share proportion based on ecological features like species, sex, age, view_point of the animal.</p></li>
-      <li><p>Generate rank list by share proportion based on album features and other image EXIF information.</p></li>
-      <li><p>Append the results from Amazon Mechanical Turk API with tags from Microsoft Image Tagging API and generate a rank list by share proportion.</p></li>
-      <li><p>Build a regression model with all the ecological factors and tags from Microsoft Image Tagging API using the bag-of-words model.</p></li>
-      <li><p>Evaluate various performance metrics of the learned algorithm using parameters like ROC/AUC, RSS, RMSE and F-scores.</p></li>
-      </ol>
+      <ul>
+      <li>Extract features from IBEIS through a function call.</li>
+      <li>Completely automated the process for selection of images and creation of Amazon Mechanical Turk jobs. </li>
+      <li>Completely automated deployment, approval and download for all the mechanical turk jobs.</li>
+      <li>Completely automated parsing of .results file from the mechanical turk engine and return a python object/csv/json ready for processing.</li>
+      <li>API available for both single as well multiple feature extraction for an images or a list of images (can be specified as a csv).</li>
+      <li>API available to join features with the results and return python data-frames/csv/json for statistical calculation.</li>
+      <li>API available for generating rank list of most shared pictures.</li>
+      <li>API available for generating rank list by share proportion based on ecological features like species, sex, age, view_point of the animal.</li>
+      <li>API available for generating rank lists for a specific feature across all albums or individual albums (number of shares for zebra in a particular album versus number of shares for giraffes etc.)</li>
+      <li>API available to append the results from Amazon Mechanical Turk API with tags from Microsoft Image Tagging API and generate a rank list of most shared tags.</li>
+      <li>Added functionality to generate reports of all statistics in HTML format with bar charts wherever necessary.</li>
+      <li>API available for data prepartion for applying classifiers using the Bag-of-words methodology. </li>
+      <li>API available for building learning models like Logistic Regression, Support Vector Machines, Decision Trees and Random Forests and returning the predictions as well as performance metrics for the classifier. </li>
+      </ul>
 
       <h3>
       <a id="script-index" class="anchor" href="#script-index" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Available Scripts Index</a></h3>
