@@ -32,10 +32,11 @@
         </section>
       </div>
 
-      <div class="container" align="center">
+      <div class="container-fluid" align="center">
           <section id="site-map">
-          <a href="#tech-used" class="btn btn-primary">View Technology Keywords</a>
+          <a href="#tech-used" class="btn btn-primary">View Technology Stack</a>
           <a href="#project-overview" class="btn">View Project Progress</a>
+          <a href="http://compbio.cs.uic.edu/~sreejith/ResultsDashboard.html" class="btn">View Project Results</a>
           <a href="#script-index" class="btn btn-info">View Scripts Index</a>
         </section>
       </div>
@@ -45,7 +46,7 @@
       <section id="main_content">
 
       <h3>
-      <a id="tech-used" class="anchor" href="#tech-used" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Technology Keywords</a></h3>
+      <a id="tech-used" class="anchor" href="#tech-used" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Technology Stack</a></h3>
       <ul>
       <li>Python-3</li>
       <li>Jupyter-Notebook</li>
@@ -199,7 +200,6 @@
               e.  Comments: Most important method of this script. This generates a .question file that is fed to createHIT command. If prodFileWrite parameter is set to True, then a job with the same image GID’s is generated with the word ‘prod’ appended to the outFile name. prodFileWrite is defaulted to False, so it will only generate a file for mechanical turk sandbox if this parameter is unspecified. <br>
       </ul>
 
-
       <br>
       <h3>
       <a id="CreateTurkFilesBulk" class="anchor" href="#CreateTurkFilesBulk" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>CreateTurkFilesBulk.py</a></h3>
@@ -219,6 +219,72 @@
               d.  Returns: None <br>
               e.  Comments: Selects noOfJobs number of random contributors (there might be duplicates in the selected contributor list). There is hard-coded code for removing contributors who did not click any picture. For each job, noOfImgsPerJob number of images are selected from the range of images a particular contributor has clicked. This is done to ensure that given a particular album, all the images are clicked by the same contributor. The script assumes the value of prodFileWrite in line 63 as True. It generates 1 input, 1 question file per noOfJobs and 1 map file that contains a map between albums and the images in them. <br>
       </ul>
+
+      <br>
+      <h3>
+      <a id="DeriveFinalResultSet" class="anchor" href="#DeriveFinalResultSet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>DeriveFinalResultSet.py</a></h3>
+      Description: Contains multiple methods to calculate final result statistics. The methods in this script file highly utilizes objects created by JobsMapResultsFilesToContainerObjs.py. Three global variables are declared in the scope of this project, the currently point to CSV files that have information from second phase of the mechanical turk deployment. <br><br>
+      gidAidMapFl, aidFeatureMapFl, imgJobMap <br>
+      These parameters are used by multiple methods within this script. <br>
+
+      <ul>
+      <li><a id="getPosShrProptn" href="#getPosShrProptn">getPosShrProptn(imgJobMap,resStart,resEnd)</a></li>
+              a.  Arguments: Image Job Map in CSV format, start of the results file, end of the results files. <br>
+              b.  Argument data-type: str, int, int <br>
+              c.  PRE-condition: <br>
+              i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              ii. All files starting from photo_album_<resStart>.results until photo_album_<resEnd>.results should exist under results folder.<br>
+              b.  Returns: A Python dictionary object that has position of images in the album and number of shares, number of not_shares, the total and the proportion of share rate as a nested dictionary. <br>
+              c.  Comments:  Number of shares/not shares for each and every position are enumerated inside a list. Use of OrderedDict() from the Python collections framework ensures that the records are picked in the exact same order they appear in the albums. This returned dictionary can then be embedded inside a data-frame and can be visualized. <br>
+
+
+      <br>
+      <li><a id="genTotCnts" href="#genTotCnts">genTotCnts(ovrCnts)</a></li>
+              a.  Arguments: Overall counts dictionary, an enumeration of share/no share data per image. <br>
+              b.  Arguments data-type: Python dictionary object. <br>
+              c.  PRE-condition: <br>
+              i.  The values in the argument dictionary should be a Python list object. <br>
+              ii. All the values in the list are integers. <br>
+              d.  Returns: A python dictionary which has the same keys as the argument data-type, but the values are simply the sum total of all values in the list corresponding to the argument dictionary key. <br>
+              e.  Comments: This method is a simplification of adding up the share/no share counts of a particular image. For example, for a particular image which appeared in 5 different albums, the share rates were 9,5,9,10,10. This method will return gid:sum([9,5,9,10,10)]. <br>
+
+
+      <br>
+      <li><a id="getShrProp" href="#getShrProp">getShrProp(ovrAggCnts)</a></li>
+              a.  Arguments: Overall Aggregate counts, typically outputted by genTotCnts method. A python dictionary with key and sum total of shares, no_shares and totals. <br>
+              b.  Arguments data-type: Python dictionary object.<br>
+              c.  PRE-condition:<br>
+              i.  The value in the argument dictionary should a single valued integer. <br>
+              ii. The key should be a iterable, most preferably a Python tuple object.  <br>
+              iii.  Keys should contain the strings: ‘share’, ‘total’ or ‘not_share’<br>
+              d.  Returns: A python dictionary which is simply the share proportion of that particular key. <br>
+              e.  Comments: This method will be used to calculate the share proportion of a particular feature or an image. This dictionary answers the question, what percentage of this feature/image were shared. The share proportion is calculated as total_shares/(total_shares+total_not_shares). <br>
+
+      
+      <br>
+      <li><a id="getCountingLogic" href="#getCountingLogic">getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature,withNumInds=True)</a></li>
+              a.  Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), feature, number of individuals in the output required (defaulted to True) <br>
+              b.  Arguments data-type: str, str, str, boolean <br>
+              c.  PRE-condition: <br>
+              i.  Entire path is provided for gidAidMapFl and aidFeatureMapFl and the file should exist in JSON file format. <br>
+              ii. Should be from an acceptable set of feature strings. <br>
+              d.  Returns: A Python dictionary object. <br>
+              e.  Comments: This method defines the counting logic for a particular image for a given feature. For instance, for the feature ‘SPECIES’, there might be images that contains both a zebra and a giraffe. In that case, the share counts have to be added to both zebra and giraffe. <br>
+
+
+      <br>
+      <li><a id="genAlbmFtrs" href="#genAlbmFtrs">genAlbmFtrs(gidAidMapFl,aidFeatureMapFl,imgJobMap,reqdFtrList)</a></li>
+              a.  Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), Image GID-Album map file(CSV), required features list – a list of features for which the properties needs to be determined. <br>
+              b.  Arguments data-type: str, str, str, Python List <br>
+              c.  PRE-condition: <br>
+              i.  Entire path is provided for gidAidMapFl and aidFeatureMapFl and the file should exist in JSON file format. <br>
+              ii. Entire path is provided for imgJobMap and the file should exist in CSV format. <br>
+              iii.  The feature list should contain elements from the acceptable set of features. <br>
+              d.  Returns: A Python dictionary object. <br>
+              e.  Comments: This method is used to generate the number of shares and not_shares per feature in a particular album. For instance, if the required features list contains ‘SPECIES’, then it tells the share and not_share count per album for each available/identifiable species. <br>
+
+      </ul>
+
       </section>
     </div>
 
