@@ -4,31 +4,19 @@
 ###### Project home-page: http://compbio.cs.uic.edu/~sreejith/PhotoBias.html
 
 ###### Features implemented - to date
-1. Create mechanical turk jobs - only user input needed is number of jobs we need.
-
-2. Create deployment, approval and download scripts for all the mechanical turk jobs.
-
-3. Parse .results file and have a python object/csv/json ready for processing. 
-
-4. Extract all essential features given a list of images (can be specified as a csv)
-
-5. Join features with the results and return python data-frames/csv/json for statistical calculation.
-
-6. Generate general rank lists (by number of shares per images, species, age etc.)
-
-7. Generate a per job rank list (number of shares for zebra in a particular album versus number of shares for giraffes etc.)
-
-8. Generate rank list by share proportion based on ecological features like species, sex, age, view_point of the animal.
-
-9. Generate rank list by share proportion based on album features and other image EXIF information.
-
-10. Append the results from Amazon Mechanical Turk API with tags from Microsoft Image Tagging API and generate a rank list by share proportion.
-
-11. Build a regression model with all the ecological factors and tags from Microsoft Image Tagging API using the bag-of-words model.
-
-12. Evaluate various performance metrics of the learned algorithm using parameters like ROC/AUC, RSS, RMSE and F-scores.
-
-
+* Extract features from IBEIS through a function call.
+* Completely automated the process for selection of images and creation of Amazon Mechanical Turk jobs.
+* Completely automated deployment, approval and download for all the mechanical turk jobs.
+* Completely automated parsing of .results file from the mechanical turk engine and return a python object/csv/json ready for processing.
+* API available for both single as well multiple feature extraction for an images or a list of images (can be specified as a csv).
+* API available to join features with the results and return python data-frames/csv/json for statistical calculation.
+* API available for generating rank list of most shared pictures.
+* API available for generating rank list by share proportion based on ecological features like species, sex, age, view_point of the animal.
+* API available for generating rank lists for a specific feature across all albums or individual albums (number of shares for zebra in a particular album versus number of shares for giraffes etc.)
+* API available to append the results from Amazon Mechanical Turk API with tags from Microsoft Image Tagging API and generate a rank list of most shared tags.
+* Added functionality to generate reports of all statistics in HTML format with bar charts wherever necessary.
+* API available for data prepartion for applying classifiers using the Bag-of-words methodology.
+* API available for building learning models like Logistic Regression, Support Vector Machines, Decision Trees and Random Forests and returning the predictions as well as performance metrics for the classifier.
 
 
 
