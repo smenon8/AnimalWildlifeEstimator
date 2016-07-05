@@ -32,7 +32,7 @@
         </section>
       </div>
 
-      <div class="container-fluid" align="center">
+      <div class="container" align="center">
           <section id="site-map">
           <a href="#tech-used" class="btn btn-primary">View Technology Stack</a>
           <a href="#project-overview" class="btn">View Project Progress</a>
@@ -109,6 +109,16 @@
         <li><a href="#getShrProp">getShrProp(ovrAggCnts)</a></li>
         <li><a href="#getCountingLogic">getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature,withNumInds=True)</a></li>
         <li><a href="#genAlbmFtrs">genAlbmFtrs(gidAidMapFl,aidFeatureMapFl,imgJobMap,reqdFtrList)</a></li>
+        <li><a href="#getShrPropImgsAcrossAlbms">getShrPropImgsAcrossAlbms(imgJobMap,resSetStrt,resSetEnd,flNm)</a></li>
+        <li><a href="#getFltrCondn">getFltrCondn(ftr)</a></li>
+        <li><a href="#genObjsForConsistency">genObjsForConsistency(gidAidMapFl,aidFeatureMapFl,ftr,imgJobMap,resSetStrt=1,resSetEnd=100)</a></li>
+        <li><a href="#getConsistencyDict">getConsistencyDict(filteredKeyArr,ftrAlbmDict,ftrAlbmShrPropDict,flNm='/tmp/getConsistencyDict.output')</a></li>
+        <li><a href="#genVarStddevShrPropAcrsAlbms">genVarStddevShrPropAcrsAlbms(consistency)</a></li>
+        <li><a href="#ovrallShrCntsByFtr">ovrallShrCntsByFtr(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,resSetEnd)</a></li>
+        <li><a href="#shrCntsByFtrPrAlbm">shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt=1,resSetEnd=100)</a></li>
+        <li><a href="#ovrallShrCntsByTwoFtrs">ovrallShrCntsByTwoFtrs(gidAidMapFl,aidFeatureMapFl,ftr1,ftr2,imgJobMap,resSetStrt,resSetEnd)</a></li>
+        <li><a href="#genNumIndsRankList">genNumIndsRankList()</a></li>
+        
       </ul>
       </li>
       </ol>
@@ -282,6 +292,17 @@
               iii.  The feature list should contain elements from the acceptable set of features. <br>
               d.  Returns: A Python dictionary object. <br>
               e.  Comments: This method is used to generate the number of shares and not_shares per feature in a particular album. For instance, if the required features list contains ‘SPECIES’, then it tells the share and not_share count per album for each available/identifiable species. <br>
+
+      <br>
+      <li><a id="getShrPropImgsAcrossAlbms" href="#getShrPropImgsAcrossAlbms">getShrPropImgsAcrossAlbms(imgJobMap,resSetStrt,resSetEnd,flNm)</a></li>
+              a.  Arguments: Image Job Map in CSV format, start of the results file, end of the results files, output file name in json format. <br>
+              b.  Arguments data-type: str, int, int, str <br>
+              c.  PRE-condition: <br>
+              i.  Entire path is provided for imgJobMap and the file should exist. <br>
+              ii. All files starting from photo_album_&ltresStart&gt.results until photo_album_&ltresEnd&gt.results should exist under results folder. <br>
+              d.  Returns: Two Python Dictionary objects. <br>
+              e.  Comments: This method derives the share proportions of images across different albums as opposed to generating an overall proportion of images. For example, the output of this method will contain how many times a particular image was shared in a particular album. This is particularly insightful for images that appear across multiple albums. It could essentially tell if a certain image was shared in the same way or differently and if the share rate of an image is orthogonal to the context of album. <br>
+
 
       </ul>
 
