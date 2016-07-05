@@ -1,7 +1,7 @@
 #### Animal Photo Bias Scripts
 ##### Author: Sreejith Menon
 
-###### Project home-page: http://compbio.cs.uic.edu/~sreejith/PhotoBias.html
+###### Project home-page: https://smenon8.github.io/AnimalPhotoBias/
 
 ###### Features implemented - to date
 * Extract features from IBEIS through a function call.
