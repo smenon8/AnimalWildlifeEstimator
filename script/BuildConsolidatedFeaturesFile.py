@@ -110,21 +110,21 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 	aidInd = 0
 	print("Features to be extracted for %d annotation IDs" %len(aidList))
 	for aid in aidList:
-		nid = GP.getImageFeature(aid,"nids")
+		nid = GP.getImageFeature(aid,"name/rowid")
 		features[aid] = [nid]
 		names = GP.getImageFeature(aid,"names")
 		features[aid].append(names)
 		spec_text = GP.getImageFeature(aid,"species_texts")
 		features[aid].append(spec_text)
-		sex_text = GP.getImageFeature(aid,"sex_texts")
+		sex_text = GP.getImageFeature(aid,"sex/text")
 		features[aid].append(sex_text)
-		est_age = GP.getImageFeature(aid,"age_months_est")
+		est_age = GP.getImageFeature(aid,"age/months")
 		features[aid].append(GP.getAgeFeatureReadableFmt(est_age))
-		exemplar = GP.getImageFeature(aid,"exemplar_flags")
+		exemplar = GP.getImageFeature(aid,"exemplar")
 		features[aid].append(list(map(str,exemplar))) # needed to convert the flags to string
-		qual_text = GP.getImageFeature(aid,"quality_texts")
+		qual_text = GP.getImageFeature(aid,"quality/text")
 		features[aid].append(qual_text)
-		yaw_text = GP.getImageFeature(aid,"yaw_texts")
+		yaw_text = GP.getImageFeature(aid,"yaw/text")
 		features[aid].append(yaw_text)
 		contrib_tag = GP.getImageFeature(aid,"image_contributor_tag")
 		features[aid].append(contrib_tag)

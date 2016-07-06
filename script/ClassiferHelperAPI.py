@@ -104,5 +104,5 @@ def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,extre
 
     predictions = list(clf.predict(test_x))
 
-    return test_x,test_y,predictions,clf.predict_proba(test_x)[:,1],clf.score(test_x,test_y) # prediction probabilities
+    return clf,test_x,test_y,predictions,clf.predict_proba(test_x)[:,1],clf.score(test_x,test_y) # prediction probabilities
 
