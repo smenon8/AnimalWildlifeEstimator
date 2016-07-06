@@ -132,7 +132,8 @@
               a.  Argument: GID of a single image. <br>
               b.  Argument data-type: int/str <br>
               c.  PRE-condition: <br>
-              i.  gid should be a valid image ID <br>
+              
+              &nbsp &nbsp i.  gid should be a valid image ID <br> 
               d.  Returns: Corresponding Annotation IDs in the image. <br>
               e.  Return data-type: Python list object <br>
               f.  Comments: Used to extract annotation IDs for a particular image GID <br>  
@@ -141,8 +142,8 @@
               a.  Arguments: Annotation ID, Required Feature <br>
               b.  Argument data-type: int/str, str <br>
               c.  PRE-condition: <br>
-              i.  aid should be a valid annotation ID <br>
-              ii. feature should be from the set: {species_texts, age_months_est, exemplar_flags, sex_texts, yaw_texts, quality_texts, image_contributor_tag} <br>
+              &nbsp &nbsp i.  aid should be a valid annotation ID <br>
+              &nbsp &nbsp  ii. feature should be from the set: {species_texts, age_months_est, exemplar_flags, sex_texts, yaw_texts, quality_texts, image_contributor_tag} <br>
               d.  Returns: Corresponding feature of the specified annotation ID <br>
               e.  Return data-type: Python list object, typically with 1 element <br>
               f.  Comments: Used to extract features for a particular annotation ID. <br>
@@ -152,7 +153,7 @@
               a.  Arguments: Contributor ID <br>
               b.  Argument data-type: int/str <br>
               c.  PRE-condition: <br>
-              i.  cid should be a valid contributor ID <br>
+              &nbsp &nbsp i.  cid should be a valid contributor ID <br>
               d.  Returns: List of images clicked by the contributor <br>
               e.  Return data-type: Python list object <br>
               f.  Comments: Used to extract all images clicked by a particular photographer. <br>
@@ -162,7 +163,7 @@
               a.  Arguments: Age as extracted from IBEIS API call. <br>
               b.  Arguments data-type: Python list. <br>
               c.  PRE-condition: <br>
-              i.  Age should be in one of the following formats: [[-1,-1]] or [[None,2]] or [[3, 5]] or [[6, 11]] or [[12,23]] or [[24,35]] or [[36,None]] <br>
+              &nbsp &nbsp i.  Age should be in one of the following formats: [[-1,-1]] or [[None,2]] or [[3, 5]] or [[6, 11]] or [[12,23]] or [[24,35]] or [[36,None]] <br>
               d.  Returns: A human readable string of the age. <br>
               e.  Comments: Age in IBEIS is stored as a list (an estimated range in months). IBEIS identifies the age of the animal up to 3 years. The animals will be classified as Infants, a year-old juveniles, two-year-old juveniles or fully grown adults. <br>
 
@@ -181,8 +182,8 @@
               a.  Arguments: Start range, End Range and list in the same range <br>
               b.  Argument data-type: int, int, int <br>
               c.  PRE-condition: <br>
-              i.  All elements in the oldList should be in the range [begin, end] <br>
-              ii. begin, end should be valid image GIDs. <br>
+              &nbsp &nbsp i.  All elements in the oldList should be in the range [begin, end] <br>
+              &nbsp &nbsp ii. begin, end should be valid image GIDs. <br>
               d.  Returns: A randomly selected image GID in the range [begin, end] and not in oldList. <br>
               e.  Return data-type: int <br>
               f.  Comments: This method is used when there arises a case when a particular image in the image album have to be replaced with another randomly selected image. <br>
@@ -192,9 +193,9 @@
               a.  Arguments: Start range, end range and number of images in photo album <br>
               b.  Argument data-type: int, int, int <br>
               c.  PRE-condition: <br>
-              i.  begin and stop should be both valid image GID’s. <br>
-              ii. begin < stop <br>
-              iii.  stop – begin > maxImgs <br>
+              &nbsp &nbsp i.  begin and stop should be both valid image GID’s. <br>
+              &nbsp &nbsp ii. begin < stop <br>
+              &nbsp &nbsp iii.  stop – begin > maxImgs <br>
               d.  Returns: A python list with randomly selected image GID’s that are in the range [begin, stop] and len(list) = maxImgs <br>
               e.  Comments: This method is used to generate a list of random images that will be further used as an input to the method that generates the photo album mechanical turk job. The list has no duplicates and has exactly maxImgs number of images. <br>
 
@@ -203,9 +204,9 @@
               a.  Arguments: Start GID, end GID, name of output file, number of images in photo album, a boolean to generate a m-turk job for production environment. <br>
               b.  Argument data-type: int, int, str, int, boolean <br>
               c.  PRE-condition: <br>
-              i.  startGID and endGID should be both valid image GID’s. <br>
-              ii. startGID < endGID <br>
-              iii.  endGID - startGID > maxImgs <br>
+              &nbsp &nbsp i.  startGID and endGID should be both valid image GID’s. <br>
+              &nbsp &nbsp ii. startGID < endGID <br>
+              &nbsp &nbsp iii.  endGID - startGID > maxImgs <br>
               d.  Returns: A python list with randomly selected image GID’s that are in the photo album. The GID’s are in the range [startGID, endGID] and len(list) = maxImgs <br>
               e.  Comments: Most important method of this script. This generates a .question file that is fed to createHIT command. If prodFileWrite parameter is set to True, then a job with the same image GID’s is generated with the word ‘prod’ appended to the outFile name. prodFileWrite is defaulted to False, so it will only generate a file for mechanical turk sandbox if this parameter is unspecified. <br>
       </ul>
@@ -224,8 +225,8 @@
               a.  Arguments: File Name prefix of the job files, File name of the map file of albums and the images in those albums, number of jobs needed, number of images needed per job. <br>
               b.  Argument data-type: str, str, int, int <br>
               c.  PRE-condition:  <br>
-              i.  Entire path is provided for both flNm and jobMapName. <br>
-              ii. Path exists in the host system. <br>
+              &nbsp &nbsp i.  Entire path is provided for both flNm and jobMapName. <br>
+              &nbsp &nbsp ii. Path exists in the host system. <br>
               d.  Returns: None <br>
               e.  Comments: Selects noOfJobs number of random contributors (there might be duplicates in the selected contributor list). There is hard-coded code for removing contributors who did not click any picture. For each job, noOfImgsPerJob number of images are selected from the range of images a particular contributor has clicked. This is done to ensure that given a particular album, all the images are clicked by the same contributor. The script assumes the value of prodFileWrite in line 63 as True. It generates 1 input, 1 question file per noOfJobs and 1 map file that contains a map between albums and the images in them. <br>
       </ul>
@@ -242,8 +243,8 @@
               a.  Arguments: Image Job Map in CSV format, start of the results file, end of the results files. <br>
               b.  Argument data-type: str, int, int <br>
               c.  PRE-condition: <br>
-              i.  Entire path is provided for imgJobMap and the file should exist.<br>
-              ii. All files starting from photo_album_<resStart>.results until photo_album_<resEnd>.results should exist under results folder.<br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              &nbsp &nbsp ii. All files starting from photo_album_<resStart>.results until photo_album_<resEnd>.results should exist under results folder.<br>
               b.  Returns: A Python dictionary object that has position of images in the album and number of shares, number of not_shares, the total and the proportion of share rate as a nested dictionary. <br>
               c.  Comments:  Number of shares/not shares for each and every position are enumerated inside a list. Use of OrderedDict() from the Python collections framework ensures that the records are picked in the exact same order they appear in the albums. This returned dictionary can then be embedded inside a data-frame and can be visualized. <br>
 
@@ -253,8 +254,8 @@
               a.  Arguments: Overall counts dictionary, an enumeration of share/no share data per image. <br>
               b.  Arguments data-type: Python dictionary object. <br>
               c.  PRE-condition: <br>
-              i.  The values in the argument dictionary should be a Python list object. <br>
-              ii. All the values in the list are integers. <br>
+              &nbsp &nbsp i.  The values in the argument dictionary should be a Python list object. <br>
+              &nbsp &nbsp ii. All the values in the list are integers. <br>
               d.  Returns: A python dictionary which has the same keys as the argument data-type, but the values are simply the sum total of all values in the list corresponding to the argument dictionary key. <br>
               e.  Comments: This method is a simplification of adding up the share/no share counts of a particular image. For example, for a particular image which appeared in 5 different albums, the share rates were 9,5,9,10,10. This method will return gid:sum([9,5,9,10,10)]. <br>
 
@@ -264,9 +265,9 @@
               a.  Arguments: Overall Aggregate counts, typically outputted by genTotCnts method. A python dictionary with key and sum total of shares, no_shares and totals. <br>
               b.  Arguments data-type: Python dictionary object.<br>
               c.  PRE-condition:<br>
-              i.  The value in the argument dictionary should a single valued integer. <br>
-              ii. The key should be a iterable, most preferably a Python tuple object.  <br>
-              iii.  Keys should contain the strings: ‘share’, ‘total’ or ‘not_share’<br>
+              &nbsp &nbsp i.  The value in the argument dictionary should a single valued integer. <br>
+              &nbsp &nbsp ii. The key should be a iterable, most preferably a Python tuple object.  <br>
+              &nbsp &nbsp iii.  Keys should contain the strings: ‘share’, ‘total’ or ‘not_share’<br>
               d.  Returns: A python dictionary which is simply the share proportion of that particular key. <br>
               e.  Comments: This method will be used to calculate the share proportion of a particular feature or an image. This dictionary answers the question, what percentage of this feature/image were shared. The share proportion is calculated as total_shares/(total_shares+total_not_shares). <br>
 
@@ -276,8 +277,8 @@
               a.  Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), feature, number of individuals in the output required (defaulted to True) <br>
               b.  Arguments data-type: str, str, str, boolean <br>
               c.  PRE-condition: <br>
-              i.  Entire path is provided for gidAidMapFl and aidFeatureMapFl and the file should exist in JSON file format. <br>
-              ii. Should be from an acceptable set of feature strings. <br>
+              &nbsp &nbsp i.  Entire path is provided for gidAidMapFl and aidFeatureMapFl and the file should exist in JSON file format. <br>
+              &nbsp &nbsp ii. Should be from an acceptable set of feature strings. <br>
               d.  Returns: A Python dictionary object. <br>
               e.  Comments: This method defines the counting logic for a particular image for a given feature. For instance, for the feature ‘SPECIES’, there might be images that contains both a zebra and a giraffe. In that case, the share counts have to be added to both zebra and giraffe. <br>
 
@@ -287,9 +288,9 @@
               a.  Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), Image GID-Album map file(CSV), required features list – a list of features for which the properties needs to be determined. <br>
               b.  Arguments data-type: str, str, str, Python List <br>
               c.  PRE-condition: <br>
-              i.  Entire path is provided for gidAidMapFl and aidFeatureMapFl and the file should exist in JSON file format. <br>
-              ii. Entire path is provided for imgJobMap and the file should exist in CSV format. <br>
-              iii.  The feature list should contain elements from the acceptable set of features. <br>
+              &nbsp &nbsp i.  Entire path is provided for gidAidMapFl and aidFeatureMapFl and the file should exist in JSON file format. <br>
+              &nbsp &nbsp ii. Entire path is provided for imgJobMap and the file should exist in CSV format. <br>
+              &nbsp &nbsp iii.  The feature list should contain elements from the acceptable set of features. <br>
               d.  Returns: A Python dictionary object. <br>
               e.  Comments: This method is used to generate the number of shares and not_shares per feature in a particular album. For instance, if the required features list contains ‘SPECIES’, then it tells the share and not_share count per album for each available/identifiable species. <br>
 
@@ -298,8 +299,8 @@
               a.  Arguments: Image Job Map in CSV format, start of the results file, end of the results files, output file name in json format. <br>
               b.  Arguments data-type: str, int, int, str <br>
               c.  PRE-condition: <br>
-              i.  Entire path is provided for imgJobMap and the file should exist. <br>
-              ii. All files starting from photo_album_&ltresStart&gt.results until photo_album_&ltresEnd&gt.results should exist under results folder. <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist. <br>
+              &nbsp &nbsp ii. All files starting from photo_album_&ltresStart&gt.results until photo_album_&ltresEnd&gt.results should exist under results folder. <br>
               d.  Returns: Two Python Dictionary objects. <br>
               e.  Comments: This method derives the share proportions of images across different albums as opposed to generating an overall proportion of images. For example, the output of this method will contain how many times a particular image was shared in a particular album. This is particularly insightful for images that appear across multiple albums. It could essentially tell if a certain image was shared in the same way or differently and if the share rate of an image is orthogonal to the context of album. <br>
 
