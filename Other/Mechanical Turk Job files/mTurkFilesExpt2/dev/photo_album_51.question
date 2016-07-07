@@ -1,0 +1,120 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+  <HTMLContent><![CDATA[
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <script type='text/javascript'>
+				  /**
+				 * Gets a URL parameter from the query string
+				 */
+				function turkGetParam( name, defaultValue ) { 
+				   var regexS = "[\?&]"+name+"=([^&#]*)"; 
+				   var regex = new RegExp( regexS ); 
+				   var tmpURL = window.location.href; 
+				   var results = regex.exec( tmpURL ); 
+				   if( results == null ) { 
+					 return defaultValue; 
+				   } else { 
+					 return results[1];    
+				   } 
+				}
+
+				/**
+				 * URL decode a parameter
+				 */
+				function decode(strToDecode)
+				{
+				  var encoded = strToDecode;
+				  return unescape(encoded.replace(/\+/g,  " "));
+				}
+
+
+				/**
+				 * Returns the Mechanical Turk Site to post the HIT to (sandbox. prod)
+				 */
+				function turkGetSubmitToHost() {
+				  return decode(turkGetParam("turkSubmitTo", "https://www.mturk.com"));
+				}
+
+
+				/**
+				 * Sets the assignment ID in the form. Defaults to use mturk_form and submitButton
+				 */ 
+				function turkSetAssignmentID( form_name, button_name ) {
+
+				  if (form_name == null) {
+					form_name = "mturk_form";
+				  }
+
+				  if (button_name == null) {
+					button_name = "submitButton";
+				  }
+
+				  assignmentID = turkGetParam('assignmentId', "");
+				  document.getElementById('assignmentId').value = assignmentID;
+
+				  if (assignmentID == "ASSIGNMENT_ID_NOT_AVAILABLE") { 
+					// If we're previewing, disable the button and give it a helpful message
+					btn = document.getElementById(button_name);
+					if (btn) {
+					  btn.disabled = true; 
+					  btn.value = "You must ACCEPT the HIT before you can submit the results.";
+					} 
+				  }
+
+				  form = document.getElementById(form_name); 
+				}
+  </script>
+ </head>
+ <body>
+ <h3> Creating a photo album</h3>
+  <p><b>Background:</b></p>
+  <p> We are a research group working on a project to count and track threatened and endangered animals through publicly shared social media photos. </p> 
+  <p>Having accurate information about wildlife populations is critical to protecting them and conserving their habitats.</p>  
+  <p>Gathering accurate information from public social media reports would make it possible to collect up-to-date information about wildlife more broadly than otherwise possible and help conservation efforts.</p>
+  <p>As part of this research, we must understand what kinds of animal photos people are likely to share (and not share) with their friends.</p>
+  
+  <p><b>This HIT:</b></p> 
+  <p>In this HIT, we will show you a number of nature photos a person took while on vacation in Africa.</p> 
+  <p>Please imagine that these are <em>your own photos</em> that you have taken and tell us which of these photos you would share or not share on social media. </p>
+  <p> Thank you for your help</p>
+  
+  <form name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit'>
+  
+  <p><b>How frequently do you share <em>your own photographs</em> on social media?</b> (e.g., Facebook, WhatsApp, Snapchat, Instagram).</p>
+  <input type = 'radio' value = 'never' name = 'q1' id = 'q1,never'> Never
+  <input type = 'radio' value = 'infrequently' name = 'q1' id = 'q1,infrequent'/> Once a month or less
+  <input type = 'radio' value = 'sometimes' name = 'q1' id = 'q1,sometimes'/> About once a week
+  <input type = 'radio' value = 'regularly' name = 'q1' id = 'q1,regularly'/> Most days
+  <input type = 'radio' value = 'everyday' name = 'q1' id = 'q1,everyday'/> Every day
+  <br><br>
+  
+  <p><b>If you were to go on a once-in-a-lifetime vacation and take many photos, how many do you think you would share on social media</b> (either during the trip or afterwards)? </p>
+  <input type = 'radio' value = 'A' name = 'q2' id = 'q2,A'> None
+  <input type = 'radio' value = 'B' name = 'q2' id = 'q2,B'> 1 to 5
+  <input type = 'radio' value = 'C' name = 'q2' id = 'q2,C'> 5 to 10
+  <input type = 'radio' value = 'D' name = 'q2' id = 'q2,D'> 10 to 50
+  <input type = 'radio' value = 'E' name = 'q2' id = 'q2,E'> 50 or more
+  <br><br><table border="1"><tr><td><center><input value="4919" name="4919" type="hidden"><input value="share" name="4919" type="radio">Share<input value="noShare" name="4919" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4919.png"></td><td><center><input value="4932" name="4932" type="hidden"><input value="share" name="4932" type="radio">Share<input value="noShare" name="4932" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4932.png"></td></tr>
+<tr><td><center><input value="4950" name="4950" type="hidden"><input value="share" name="4950" type="radio">Share<input value="noShare" name="4950" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4950.png"></td><td><center><input value="4934" name="4934" type="hidden"><input value="share" name="4934" type="radio">Share<input value="noShare" name="4934" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4934.png"></td></tr>
+<tr><td><center><input value="4885" name="4885" type="hidden"><input value="share" name="4885" type="radio">Share<input value="noShare" name="4885" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4885.png"></td><td><center><input value="4886" name="4886" type="hidden"><input value="share" name="4886" type="radio">Share<input value="noShare" name="4886" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4886.png"></td></tr>
+<tr><td><center><input value="4901" name="4901" type="hidden"><input value="share" name="4901" type="radio">Share<input value="noShare" name="4901" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4901.png"></td><td><center><input value="4887" name="4887" type="hidden"><input value="share" name="4887" type="radio">Share<input value="noShare" name="4887" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4887.png"></td></tr>
+<tr><td><center><input value="4922" name="4922" type="hidden"><input value="share" name="4922" type="radio">Share<input value="noShare" name="4922" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4922.png"></td><td><center><input value="4876" name="4876" type="hidden"><input value="share" name="4876" type="radio">Share<input value="noShare" name="4876" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4876.png"></td></tr>
+<tr><td><center><input value="4940" name="4940" type="hidden"><input value="share" name="4940" type="radio">Share<input value="noShare" name="4940" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4940.png"></td><td><center><input value="4905" name="4905" type="hidden"><input value="share" name="4905" type="radio">Share<input value="noShare" name="4905" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4905.png"></td></tr>
+<tr><td><center><input value="4895" name="4895" type="hidden"><input value="share" name="4895" type="radio">Share<input value="noShare" name="4895" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4895.png"></td><td><center><input value="4913" name="4913" type="hidden"><input value="share" name="4913" type="radio">Share<input value="noShare" name="4913" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4913.png"></td></tr>
+<tr><td><center><input value="4911" name="4911" type="hidden"><input value="share" name="4911" type="radio">Share<input value="noShare" name="4911" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4911.png"></td><td><center><input value="4909" name="4909" type="hidden"><input value="share" name="4909" type="radio">Share<input value="noShare" name="4909" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4909.png"></td></tr>
+<tr><td><center><input value="4873" name="4873" type="hidden"><input value="share" name="4873" type="radio">Share<input value="noShare" name="4873" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4873.png"></td><td><center><input value="4918" name="4918" type="hidden"><input value="share" name="4918" type="radio">Share<input value="noShare" name="4918" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4918.png"></td></tr>
+<tr><td><center><input value="4872" name="4872" type="hidden"><input value="share" name="4872" type="radio">Share<input value="noShare" name="4872" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4872.png"></td><td><center><input value="4870" name="4870" type="hidden"><input value="share" name="4870" type="radio">Share<input value="noShare" name="4870" type="radio">Do Not Share</center><img alt="Unavailable" src="http://pachy.cs.uic.edu:5000/static/images/src/4870.png"></td></tr></table>  <br>
+  <p>Please enter any general comments or feedback on the HIT [optional]</p>
+  <input type ="text" name="generalComments" id=comments>
+  <input type="hidden" name="assignmentId" id= assignmentId> 
+  <p><input type='submit' id='submitButton' name = 'submitButton' value='Submit' /></p></form>
+  
+  <script language='Javascript'>turkSetAssignmentID(mturk_form,submitButton);</script>
+ </body>
+</html>
+]]>
+  </HTMLContent>
+  <FrameHeight>500</FrameHeight>
+</HTMLQuestion>

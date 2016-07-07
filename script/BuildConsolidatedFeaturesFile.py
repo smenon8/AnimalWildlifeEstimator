@@ -112,7 +112,7 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 	for aid in aidList:
 		nid = GP.getImageFeature(aid,"name/rowid")
 		features[aid] = [nid]
-		names = GP.getImageFeature(aid,"names")
+		names = GP.getImageFeature(aid,"name/text")
 		features[aid].append(names)
 		spec_text = GP.getImageFeature(aid,"species_texts")
 		features[aid].append(spec_text)

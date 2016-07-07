@@ -62,15 +62,17 @@ def getAgeFeatureReadableFmt(ageList):
         return ["unknown"]
 
 def __main__():
-    print(getAnnotID(2))
-    print(getAnnotID(1))
-    # print(getContributorGID(1))
-    # for i in range(10):
-    #     print(getImageFeature(i,"age/months/max"))
-    # ages = [9448, 15613]
-    # for a in ages:
-    #     print(getAgeFeatureReadableFmt(getImageFeature(a,"age_months_est")))
+    for i in range(1,11):
+        print(getImageFeature(getAnnotID(i),"age/months")) # age
+        print(getImageFeature(getAnnotID(i),"yaw/text")) # yaw_texts
+        print(getImageFeature(getAnnotID(i),"exemplar")) # exemplar flag
+        print(getImageFeature(getAnnotID(i),"quality/text")) # quality
+        print(getImageFeature(getAnnotID(i),"sex/text")) # sex
+        print(getImageFeature(getAnnotID(i),"species/text")) # species
+        print(getImageFeature(getAnnotID(i),"name/rowid")) # NID
+        print(getImageFeature(getAnnotID(i),"name/text")) # Individual Name
+
 
 if __name__ == "__main__":
-   #__main__()
-   pass
+   __main__()
+   #pass
