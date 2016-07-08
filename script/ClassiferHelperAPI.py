@@ -13,7 +13,13 @@ from sklearn.linear_model import LogisticRegression, LinearRegression
 from sklearn import svm,tree
 from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report,accuracy_score,f1_score,precision_score,recall_score,roc_auc_score,mean_absolute_error, mean_squared_error,zero_one_loss
 import sys
+import numpy as np
+import ClassifierCapsuleClass as ClfClass
+import importlib
+importlib.reload(ClfClass)
+
 
 THRESHOLD = 80
 # Method for generating feature header
@@ -26,6 +32,30 @@ def genHead(dataDict,ftr):
     ftrList = {item for block in ftrList for item in block}
     
     return list(ftrList)
+
+def getMasterData(flNm):
+    df = pd.DataFrame.from_csv(flNm)
+    cols = list(df.columns)
+    df.drop('URL',1,inplace=True)
+    df.drop('Album',1,inplace=True)
+    df.reset_index(inplace=True)
+    df = df.iloc[np.random.permutation(len(df))]
+    df.to_csv("/tmp/tmp.csv",index=False)
+    
+    reader = csv.reader(open("/tmp/tmp.csv","r"))
+    head = reader.__next__()
+    data = {}
+    for row in reader:
+        temp = {}
+        for i in range(1,len(row)):
+            temp[head[i]] = row[i] 
+        data[row[0]] = temp
+
+    return data
+
+def genAttribsHead(data,ftrList):
+    return [attrib for ftr in ftrList for attrib in genHead(data,ftr)]
+
 
 def createDataFlDict(data,allAttribs,binaryClf,threshold,extremeClf = False):
     gidAttribDict = {}
@@ -43,17 +73,15 @@ def createDataFlDict(data,allAttribs,binaryClf,threshold,extremeClf = False):
         ftrs = ['SPECIES','SEX','AGE','QUALITY','VIEW_POINT','INDIVIDUAL_NAME']
 
         for ftr in ftrs:
-            spcs = ftrDict[ftr].split(',')
-            for itm in spcs:
+            for itm in ftrDict[ftr].split(','):
                 attribDict[itm] = 1
 
         # logic for tgs
-        tgs = literal_eval(ftrDict['tags'])
-        for tag in tgs:
+        for tag in literal_eval(ftrDict['tags']):
             attribDict[tag] = 1
 
         if binaryClf:
-            attribDict['TARGET'] = 1 if float(ftrDict['Proportion'] ) > threshold else 0 # Thresholding for the share proportion
+            attribDict['TARGET'] = 1 if float(ftrDict['Proportion'] ) >= threshold else 0 # Thresholding for the share proportion
         else:
             attribDict['TARGET'] = float(ftrDict['Proportion'])
 
@@ -77,7 +105,7 @@ def getClassifierAlgo(methodName):
         return RandomForestClassifier()
     else:
         try:
-            raise Exception('Exception : Classifier Method Unknown')
+            raise Exception('Exception : Classifier Method %s Unknown' %methodName)
         except Exception as inst:
             print(inst.args)
             sys.exit()
@@ -93,16 +121,13 @@ def trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit):
     
     return train_test_split(dataFeatures, targetVar, test_size=trainTestSplit,random_state=0)
 
-
-# returns test attributes, actual test TARGET, predicted values and predicition probabilities
+# Returns a classifier object of Type ClassifierCapsuleClass
 def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,extremeClf=True):
     gidAttribDict = createDataFlDict(data,allAttribs,True,threshold,extremeClf) # binaryClf attribute in createDataFlDict will be True here
 
     train_x,test_x,train_y,test_y = trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit) # new statement
     clf = getClassifierAlgo(methodName)
-    clf.fit(train_x,train_y)
 
-    predictions = list(clf.predict(test_x))
+    clfObj = ClfClass.ClassifierCapsule(clf,methodName,trainTestSplit,train_x,train_y,test_x,test_y)
 
-    return clf,test_x,test_y,predictions,clf.predict_proba(test_x)[:,1],clf.score(test_x,test_y) # prediction probabilities
-
+    return clfObj
