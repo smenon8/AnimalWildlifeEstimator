@@ -93,9 +93,12 @@ def createDataFlDict(data,allAttribs,binaryClf,threshold,extremeClf = False):
     return gidAttribDict
 
 
-def getClassifierAlgo(methodName):
+def getClassifierAlgo(methodName,hasSparse=True):
     if methodName == 'logistic':
-        return LogisticRegression()
+        if not hasSparse:
+            return LogisticRegression(penalty='l1')
+        else:
+            return LogisticRegression()
     elif methodName == 'svm':
         return svm.SVC(probability=True)
     elif methodName == 'dtree':
@@ -121,12 +124,12 @@ def trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit):
     return train_test_split(dataFeatures, targetVar, test_size=trainTestSplit,random_state=0)
 
 # Returns a classifier object of Type ClassifierCapsuleClass
-def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,extremeClf=True):
+def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,hasSparse=False,extremeClf=True):
     gidAttribDict = createDataFlDict(data,allAttribs,True,threshold,extremeClf) # binaryClf attribute in createDataFlDict will be True here
 
     train_x,test_x,train_y,test_y = trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit) # new statement
-    clf = getClassifierAlgo(methodName)
+    clf = getClassifierAlgo(methodName,hasSparse)
 
-    clfObj = ClfClass.ClassifierCapsule(clf,methodName,trainTestSplit,train_x,train_y,test_x,test_y)
+    clfObj = ClfClass.ClassifierCapsule(clf,methodName,trainTestSplit,hasSparse,train_x,train_y,test_x,test_y)
 
     return clfObj

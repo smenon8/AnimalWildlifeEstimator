@@ -3,10 +3,11 @@ import warnings
 # write logic to calculate ROC curve
 
 class ClassifierCapsule:
-    def __init__(self,clfObj,methodName,splitPercent,train_x,train_y,test_x,test_y):
+    def __init__(self,clfObj,methodName,splitPercent,hasSparseFtr,train_x,train_y,test_x,test_y):
         self.clfObj = clfObj
         self.methodName = methodName
         self.splitPercent = splitPercent
+        self.hasSparseFtr = hasSparseFtr
         self.train_x = train_x
         self.train_y = train_y
         self.test_x = test_x
