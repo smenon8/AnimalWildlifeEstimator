@@ -1,5 +1,5 @@
 from sklearn.metrics import classification_report,accuracy_score,f1_score,precision_score,recall_score,roc_auc_score,mean_absolute_error, mean_squared_error,zero_one_loss,roc_curve
-
+import warnings
 # write logic to calculate ROC curve
 
 class ClassifierCapsule:
@@ -23,13 +23,18 @@ class ClassifierCapsule:
         self.sqerr = None 
         self.zerooneloss = None
         self.roccurve = None
+        self.warningMsg = None
 
 
     def runClf(self):
-        self.clfObj.fit(self.train_x,self.train_y)
-        self.preds = list(self.clfObj.predict(self.test_x))
-        self.predProbabs = self.clfObj.predict_proba(self.test_x)[:,1]
-        self.evalClassifierPerf()
+        with warnings.catch_warnings(record=True) as w:
+            self.clfObj.fit(self.train_x,self.train_y)
+            self.preds = list(self.clfObj.predict(self.test_x))
+            self.predProbabs = self.clfObj.predict_proba(self.test_x)[:,1]
+            self.evalClassifierPerf()
+            if len(w) >= 1:
+                self.warningMsg = "Warning: F-score ill-defined because of no valid predictions (F-score set to 0)"
+                print(self.warningMsg)
 
     def evalClassifierPerf(self):
         self.accScore = accuracy_score(self.test_y,self.preds)

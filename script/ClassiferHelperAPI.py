@@ -13,7 +13,6 @@ from sklearn.linear_model import LogisticRegression, LinearRegression
 from sklearn import svm,tree
 from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report,accuracy_score,f1_score,precision_score,recall_score,roc_auc_score,mean_absolute_error, mean_squared_error,zero_one_loss
 import sys
 import numpy as np
 import ClassifierCapsuleClass as ClfClass

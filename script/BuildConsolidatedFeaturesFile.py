@@ -114,7 +114,7 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 		features[aid] = [nid]
 		names = GP.getImageFeature(aid,"name/text")
 		features[aid].append(names)
-		spec_text = GP.getImageFeature(aid,"species_texts")
+		spec_text = GP.getImageFeature(aid,"species/text")
 		features[aid].append(spec_text)
 		sex_text = GP.getImageFeature(aid,"sex/text")
 		features[aid].append(sex_text)
@@ -126,7 +126,7 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 		features[aid].append(qual_text)
 		yaw_text = GP.getImageFeature(aid,"yaw/text")
 		features[aid].append(yaw_text)
-		contrib_tag = GP.getImageFeature(aid,"image_contributor_tag")
+		contrib_tag = GP.getImageFeature(aid,"image/contributor/tag")
 		features[aid].append(contrib_tag)
 		aidInd += 1
 		percentComplete = aidInd * 100 / len(aidList)

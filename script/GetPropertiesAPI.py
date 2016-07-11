@@ -71,6 +71,7 @@ def __main__():
         print(getImageFeature(getAnnotID(i),"species/text")) # species
         print(getImageFeature(getAnnotID(i),"name/rowid")) # NID
         print(getImageFeature(getAnnotID(i),"name/text")) # Individual Name
+        print(getImageFeature(getAnnotID(i),"image/contributor/tag")) # Image contributor Tag
 
 
 if __name__ == "__main__":

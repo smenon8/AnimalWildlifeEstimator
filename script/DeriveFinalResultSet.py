@@ -319,13 +319,6 @@ def genNumIndsRankList():
 
     return noOfIndsPerImgSharesRnkLst,noOfIndsPerImgNotSharesRnkLst
 
-# Get structure for calculating position bias
-# Arguments: Image Job Map in csv format, start of the results file, end of the results files. 
-# Argument data-type: str, int, int
-# PRE-condition: 
-# Entire path is provided for imgJobMap and the file should exist.
-# All files starting from photo_album_<resStart>.results until photo_album_<resEnd>.results should exist under results folder.
-# Returns: A Python dictionary object that has position of images in the album and number of shares, number of not_shares, the total and the proportion of share rate as a nested dictionary.
 # Comments:  Number of shares/not shares for each and every position are enumerated inside a list. 
 # Use of OrderedDict() from the Python collections framework ensures that the records are picked in the exact same order they appear in the albums. 
 # This returned dictionary can then be embedded inside a data-frame and can be visualized.
