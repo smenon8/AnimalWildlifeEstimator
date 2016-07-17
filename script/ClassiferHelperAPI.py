@@ -21,7 +21,10 @@ importlib.reload(ClfClass)
 
 
 THRESHOLD = 80
+
 # Method for generating feature header
+# Converting the categorical features into dummy variables
+# Returns a list of list
 def genHead(dataDict,ftr):
     if ftr != 'tags':
         ftrList = [dataDict[gid][ftr].split(',') for gid in dataDict.keys()]
@@ -32,6 +35,7 @@ def genHead(dataDict,ftr):
     
     return list(ftrList)
 
+# Filling in 0's and 1's for the dummy variables.
 def getMasterData(flNm):
     df = pd.DataFrame.from_csv(flNm)
     cols = list(df.columns)
@@ -52,6 +56,7 @@ def getMasterData(flNm):
 
     return data
 
+# Flatten out the list of lists p
 def genAttribsHead(data,ftrList):
     return [attrib for ftr in ftrList for attrib in genHead(data,ftr)]
 
