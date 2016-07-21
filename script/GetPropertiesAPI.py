@@ -32,7 +32,7 @@ def getAnnotID(gid):
 # Accepted Features: species_texts, age_months_est, exemplar_flags, sex_texts, yaw_texts, quality_texts,image_contributor_tag
 # Returns : Returns the feature
 def getImageFeature(aid,feature):
-    response = requests.get(baseurl + '/api/annot/' + feature + '/', data = dict(aid_list=[aid]))
+    response = requests.get(baseurl + '/api/image/' + feature + '/', data = dict(aid_list=[aid]))
     jsonObj = response.json()
 
     return jsonObj['response']
@@ -72,7 +72,6 @@ def __main__():
         print(getImageFeature(getAnnotID(i),"name/rowid")) # NID
         print(getImageFeature(getAnnotID(i),"name/text")) # Individual Name
         print(getImageFeature(getAnnotID(i),"image/contributor/tag")) # Image contributor Tag
-
 
 if __name__ == "__main__":
    __main__()
