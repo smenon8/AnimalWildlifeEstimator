@@ -305,8 +305,29 @@
               &nbsp &nbsp ii. All files starting from photo_album_&ltresStart&gt.results until photo_album_&ltresEnd&gt.results should exist under results folder. <br>
               d.  Returns: Two Python Dictionary objects. <br>
               e.  Comments: This method derives the share proportions of images across different albums as opposed to generating an overall proportion of images. For example, the output of this method will contain how many times a particular image was shared in a particular album. This is particularly insightful for images that appear across multiple albums. It could essentially tell if a certain image was shared in the same way or differently and if the share rate of an image is orthogonal to the context of album. <br>
-      
+      <br>
 
+      <!-- New content -->
+      <li><a id="getFltrCondn" href="#getFltrCondn">getFltrCondn(ftr)</a></li>
+       		  a. Arguments: Feature name <br>
+       		  b. Arguments data-type: str <br>
+       		  c. PRE-condition: <br>
+       		  &nbsp &nbsp i. Provided argument should be a valid feature. <br>
+       		  d. Returns: A lambda function  <br>
+       		  e. Comments: This method returns a lambda function or a logic in filtering all valid rows without the UNIDENTIFIED. A slight adjustment is needed depending on what feature is being filtered. <br>
+
+     <br>
+     <li><a id="genObjsForConsistency" href="#genObjsForConsistency">genObjsForConsistency(gidAidMapFl,aidFeatureMapFl,ftr,imgJobMap,resSetStrt,resSetEnd)</a></li>
+      		  a. Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), Feature name, Image GID-Album map file(CSV), start of the results file, end of the results files.<br>
+       		  b. Arguments data-type: str, str, str, str, int, int <br>
+       		  c. PRE-condition: <br>
+       		   &nbsp &nbsp i.  Entire path is provided for gidAidMapFl and aidFeatureMapFl and the file should exist in JSON file format. <br>
+              &nbsp &nbsp ii. Entire path is provided for imgJobMap and the file should exist in CSV format. <br>
+              &nbsp &nbsp iii.  The feature list should contain elements from the acceptable set of features. <br>
+       		  d. Returns: A lambda function  <br>
+       		  e. Comments: This is a helper method for getConsistencyDict(). It returns three objects. A list with only valid entries i.e. without the UNIDENTIFIED entries. A dictionary object that Contains <br>
+
+     <br>
       </ul>
       </section>
     </div>
