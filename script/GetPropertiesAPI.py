@@ -14,6 +14,7 @@ Functionaties:
 
 import requests
 import json
+import datetime
 
 ftrNms = {'SPECIES' : 'species_texts', 'AGE' : 'age_months_est', 'INDIVIDUAL_NAME' : 'nids' , 'SEX' : 'sex_texts',
              'EXEMPLAR_FLAG':'exemplar_flags', 'QUALITY' : 'quality_texts', 'VIEW_POINT' : 'yaw_texts'}
@@ -32,7 +33,15 @@ def getAnnotID(gid):
 # Accepted Features: species_texts, age_months_est, exemplar_flags, sex_texts, yaw_texts, quality_texts,image_contributor_tag
 # Returns : Returns the feature
 def getImageFeature(aid,feature):
-    response = requests.get(baseurl + '/api/image/' + feature + '/', data = dict(aid_list=[aid]))
+    response = requests.get(baseurl + '/api/annot/' + feature + '/', data = dict(aid_list=[aid]))
+    jsonObj = response.json()
+
+    return jsonObj['response']
+
+# Arguments : GID of an image, required EXIF feature
+# This method should be used for extracting the exif information of a picture.
+def getExifData(gid,exifFtr):
+    response = requests.get(baseurl + '/api/image/' + exifFtr + '/', data = dict(gid_list=[gid]))
     jsonObj = response.json()
 
     return jsonObj['response']
@@ -61,17 +70,26 @@ def getAgeFeatureReadableFmt(ageList):
     else:
         return ["unknown"]
 
+# Method for converting unix times into human readable format. 
+# Current return format: YYYY-MM-DD HH-mm-ss
+def getUnixTimeReadableFmt(unixtm):
+    return datetime.datetime.fromtimestamp(int(unixtm)).strftime('%Y-%m-%d %H:%M:%S')
+
 def __main__():
-    for i in range(1,11):
-        print(getImageFeature(getAnnotID(i),"age/months")) # age
-        print(getImageFeature(getAnnotID(i),"yaw/text")) # yaw_texts
-        print(getImageFeature(getAnnotID(i),"exemplar")) # exemplar flag
-        print(getImageFeature(getAnnotID(i),"quality/text")) # quality
-        print(getImageFeature(getAnnotID(i),"sex/text")) # sex
-        print(getImageFeature(getAnnotID(i),"species/text")) # species
-        print(getImageFeature(getAnnotID(i),"name/rowid")) # NID
-        print(getImageFeature(getAnnotID(i),"name/text")) # Individual Name
-        print(getImageFeature(getAnnotID(i),"image/contributor/tag")) # Image contributor Tag
+    # for i in range(1,2):
+    #     print(getImageFeature(getAnnotID(i),"age/months")) # age
+    #     print(getImageFeature(getAnnotID(i),"yaw/text")) # yaw_texts
+    #     print(getImageFeature(getAnnotID(i),"exemplar")) # exemplar flag
+    #     print(getImageFeature(getAnnotID(i),"quality/text")) # quality
+    #     print(getImageFeature(getAnnotID(i),"sex/text")) # sex
+    #     print(getImageFeature(getAnnotID(i),"species/text")) # species
+    #     print(getImageFeature(getAnnotID(i),"name/rowid")) # NID
+    #     print(getImageFeature(getAnnotID(i),"name/text")) # Individual Name
+    #     print(getImageFeature(getAnnotID(i),"image/contributor/tag")) # Image contributor Tag
+
+    print(getUnixTimeReadableFmt(getExifData(1,'unixtime')[0]))
+    print(getExifData(1,'lat'))
+    print(getExifData(1,'lon'))
 
 if __name__ == "__main__":
    __main__()
