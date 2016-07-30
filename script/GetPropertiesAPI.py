@@ -27,21 +27,21 @@ def getAnnotID(gid):
     response = requests.get(baseurl + '/api/image/annot/rowid/', data = dict(gid_list=[gid]))
     jsonObj = response.json()
 
-    return jsonObj['response'][0] if len(jsonObj['response'][0]) != 0 else None
+    return jsonObj['response'][0] if len(jsonObj['response']) != 0 else None
         
 # Arguments : Annotation ID , Required Feature
 # Accepted Features: species_texts, age_months_est, exemplar_flags, sex_texts, yaw_texts, quality_texts,image_contributor_tag
 # Returns : Returns the feature
-def getImageFeature(aid,feature):
-    response = requests.get(baseurl + '/api/annot/' + feature + '/', data = dict(aid_list=[aid]))
+def getImageFeature(aidList,feature):
+    response = requests.get(baseurl + '/api/annot/' + feature + '/?aid_list=' + str(aidList))
     jsonObj = response.json()
 
     return jsonObj['response']
 
 # Arguments : GID of an image, required EXIF feature
 # This method should be used for extracting the exif information of a picture.
-def getExifData(gid,exifFtr):
-    response = requests.get(baseurl + '/api/image/' + exifFtr + '/', data = dict(gid_list=[gid]))
+def getExifData(gidList,exifFtr):
+    response = requests.get(baseurl + '/api/image/' + exifFtr +'/?gid_list='+ str(gidList))
     jsonObj = response.json()
 
     return jsonObj['response']
@@ -87,7 +87,9 @@ def __main__():
     #     print(getImageFeature(getAnnotID(i),"name/text")) # Individual Name
     #     print(getImageFeature(getAnnotID(i),"image/contributor/tag")) # Image contributor Tag
 
-    print(getUnixTimeReadableFmt(getExifData(1,'unixtime')[0]))
+    print(getExifData([1,2,3],'unixtime'))
+    print(getExifData([1],'unixtime'))
+    print(getExifData([2,3],'unixtime'))
     print(getExifData(1,'lat'))
     print(getExifData(1,'lon'))
 

@@ -91,11 +91,18 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 	else: #input is provided as a list
 		allGID = inp 
 
+	#aids = GP.getAnnotID(allGID)
 	# Extracts all the annotation ID's from IBEIS
+	#GidAidMap = {allGID[i] : aids[i] for i in range(0,len(allGID))}
+	gidInd = 0
 	GidAidMap = {}
 	for gid in allGID:
 		aid = GP.getAnnotID(int(gid))
 		GidAidMap[gid] = [aid]
+		gidInd += 1
+		percentComplete = gidInd * 100 / len(allGID)
+		if math.floor(percentComplete) %5 == 0:
+			printCompltnPercent(percentComplete)
 
 	print("Extracted all annotation ID's for selected images.")
 
@@ -107,31 +114,44 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 
 	# Extracts all feature info based on annotation ID's from IBEIS
 	features = {}
-	aidInd = 0
 	print("Features to be extracted for %d annotation IDs" %len(aidList))
-	for aid in aidList:
-		nid = GP.getImageFeature(aid,"name/rowid")
-		features[aid] = [nid]
-		names = GP.getImageFeature(aid,"name/text")
-		features[aid].append(names)
-		spec_text = GP.getImageFeature(aid,"species/text")
-		features[aid].append(spec_text)
-		sex_text = GP.getImageFeature(aid,"sex/text")
-		features[aid].append(sex_text)
-		est_age = GP.getImageFeature(aid,"age/months")
-		features[aid].append(GP.getAgeFeatureReadableFmt(est_age))
-		exemplar = GP.getImageFeature(aid,"exemplar")
-		features[aid].append(list(map(str,exemplar))) # needed to convert the flags to string
-		qual_text = GP.getImageFeature(aid,"quality/text")
-		features[aid].append(qual_text)
-		yaw_text = GP.getImageFeature(aid,"yaw/text")
-		features[aid].append(yaw_text)
-		contrib_tag = GP.getImageFeature(aid,"image/contributor/tag")
-		features[aid].append(contrib_tag)
-		aidInd += 1
-		percentComplete = aidInd * 100 / len(aidList)
-		if math.floor(percentComplete) %5 == 0:
-			printCompltnPercent(percentComplete)
+	nids = GP.getImageFeature(aidList,"name/rowid")
+	names = GP.getImageFeature(aidList,"name/text")
+	species_texts = GP.getImageFeature(aidList,"species/text")
+	sex_texts = GP.getImageFeature(aidList,"sex/text")
+	age_months = GP.getImageFeature(aidList,"age/months")
+	exemplar_flags = GP.getImageFeature(aidList,"exemplar")
+	quality_texts = GP.getImageFeature(aidList,"quality/text")
+	yaw_texts = GP.getImageFeature(aidList,"yaw/text")
+	image_contrib_tags = GP.getImageFeature(aidList,"image/contributor/tag")
+
+	features = {aidList[i] : [nids[i],names[i],species_texts[i],sex_texts[i],
+				GP.getAgeFeatureReadableFmt(age_months[i]),str(exemplar_flags[i]),
+				quality_texts[i],yaw_texts[i],image_contrib_tags[i]] 
+				for i in range(0,len(aidList))}
+	# for aid in aidList:
+	# 	nid = GP.getImageFeature(aid,"name/rowid")
+	# 	features[aid] = [nid]
+	# 	names = GP.getImageFeature(aid,"name/text")
+	# 	features[aid].append(names)
+	# 	spec_text = GP.getImageFeature(aid,"species/text")
+	# 	features[aid].append(spec_text)
+	# 	sex_text = GP.getImageFeature(aid,"sex/text")
+	# 	features[aid].append(sex_text)
+	# 	est_age = GP.getImageFeature(aid,"age/months")
+	# 	features[aid].append(GP.getAgeFeatureReadableFmt(est_age))
+	# 	exemplar = GP.getImageFeature(aid,"exemplar")
+	# 	features[aid].append(list(map(str,exemplar))) # needed to convert the flags to string
+	# 	qual_text = GP.getImageFeature(aid,"quality/text")
+	# 	features[aid].append(qual_text)
+	# 	yaw_text = GP.getImageFeature(aid,"yaw/text")
+	# 	features[aid].append(yaw_text)
+	# 	contrib_tag = GP.getImageFeature(aid,"image/contributor/tag")
+	# 	features[aid].append(contrib_tag)
+	# 	aidInd += 1
+	# 	percentComplete = aidInd * 100 / len(aidList)
+	# 	if math.floor(percentComplete) %5 == 0:
+	# 		printCompltnPercent(percentComplete)
 	print()
 	print("All features extracted.")
 

@@ -1,4 +1,3 @@
-# coding: utf-8
 # python-3
 # Author: Sreejith Menon (smenon8@uic.edu)
 # Creation date: 5/23/16
