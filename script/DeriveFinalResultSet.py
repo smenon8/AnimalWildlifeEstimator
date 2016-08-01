@@ -271,7 +271,7 @@ def ovrallShrCntsByTwoFtrs(gidAidMapFl,aidFeatureMapFl,ftr1,ftr2,imgJobMap,resSe
                 answerSet[varNameNotShare] = answerSet.get(varNameNotShare,[]) + [tup[3]]
                 answerSet[varNameTot] = answerSet.get(varNameTot,[]) + [tup[2] + tup[3]]
           
-    # handling un-even features
+    # handling un-even features - issues after GetPropertiesAPI update - issue being tracked - issue name: Issue with consolidated feature file #1
     unEvnFtrsTups = list(set(unEvnFtrsTups))
     for tup in unEvnFtrsTups:
         aidList = GP.getAnnotID(tup[0])

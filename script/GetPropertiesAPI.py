@@ -59,16 +59,16 @@ def getContributorGID(cid):
 # IBEIS identifies the age of the animal up to 3 years. 
 # The animals will be classified as Infants, a year-old juveniles, two year old juveniles or fully grown adults. 
 def getAgeFeatureReadableFmt(ageList):
-    if ageList[0] == [-1,-1] or ageList[0] == [None,2] or ageList[0] == [3, 5] or ageList[0] == [6, 11]:
-        return ["infant"]
-    elif ageList[0] == [12,23]:
-        return ["juveniles - one year old"]
-    elif ageList[0] == [24,35]:
-        return ["juveniles- two year old"]
-    elif ageList[0] == [36,None]:
-        return ["adult"]
+    if ageList == [-1,-1] or ageList == [None,2] or ageList == [3, 5] or ageList == [6, 11]:
+        return "infant"
+    elif ageList == [12,23]:
+        return "juveniles - one year old"
+    elif ageList == [24,35]:
+        return "juveniles- two year old"
+    elif ageList == [36,None]:
+        return "adult"
     else:
-        return ["unknown"]
+        return "unknown"
 
 # Method for converting unix times into human readable format. 
 # Current return format: YYYY-MM-DD HH-mm-ss

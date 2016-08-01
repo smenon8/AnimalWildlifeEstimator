@@ -103,7 +103,8 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 		percentComplete = gidInd * 100 / len(allGID)
 		if math.floor(percentComplete) %5 == 0:
 			printCompltnPercent(percentComplete)
-
+		print()
+		
 	print("Extracted all annotation ID's for selected images.")
 
 	# filter out all the non-NONE annotation ids

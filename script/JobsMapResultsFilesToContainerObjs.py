@@ -110,15 +110,15 @@ def genAidFeatureDictList(mapFL):
         featuresDict = {}
         features = jsonObj[aid]
         featuresDict['AID'] = aid
-        featuresDict['NID'] = features[0][0]
-        featuresDict['INDIVIDUAL_NAME'] = features[1][0]
-        featuresDict['SPECIES'] = features[2][0]
-        featuresDict['SEX'] = features[3][0]
-        featuresDict['AGE'] = features[4][0]
-        featuresDict['EXEMPLAR_FLAG'] = features[5][0]
-        featuresDict['QUALITY'] = features[6][0]
-        featuresDict['VIEW_POINT'] = features[7][0]
-        featuresDict['CONTRIBUTOR'] = features[8][0] # newly added on 06/22
+        featuresDict['NID'] = features[0]
+        featuresDict['INDIVIDUAL_NAME'] = features[1]
+        featuresDict['SPECIES'] = features[2]
+        featuresDict['SEX'] = features[3]
+        featuresDict['AGE'] = features[4]
+        featuresDict['EXEMPLAR_FLAG'] = features[5]
+        featuresDict['QUALITY'] = features[6]
+        featuresDict['VIEW_POINT'] = features[7]
+        featuresDict['CONTRIBUTOR'] = features[8] # newly added on 06/22
         
         aidFeaturesList.append(featuresDict)
 
@@ -133,15 +133,15 @@ def genAidFeatureDictDict(mapFL):
         featuresDict = {}
         features = jsonObj[aid]
         # featuresDict['AID'] = aid
-        featuresDict['NID'] = str(features[0][0])
-        featuresDict['INDIVIDUAL_NAME'] = features[1][0]
-        featuresDict['SPECIES'] = features[2][0]
-        featuresDict['SEX'] = features[3][0]
-        featuresDict['AGE'] = features[4][0]
-        featuresDict['EXEMPLAR_FLAG'] = str(features[5][0]) # type-casting to string necessary
-        featuresDict['QUALITY'] = features[6][0]
-        featuresDict['VIEW_POINT'] = features[7][0]
-        featuresDict['CONTRIBUTOR'] = features[8][0] # newly added on 06/22
+        featuresDict['NID'] = str(features[0])
+        featuresDict['INDIVIDUAL_NAME'] = features[1]
+        featuresDict['SPECIES'] = features[2]
+        featuresDict['SEX'] = features[3]
+        featuresDict['AGE'] = features[4]
+        featuresDict['EXEMPLAR_FLAG'] = str(features[5]) # type-casting to string necessary
+        featuresDict['QUALITY'] = features[6]
+        featuresDict['VIEW_POINT'] = features[7]
+        featuresDict['CONTRIBUTOR'] = features[8] # newly added on 06/22
 
         aidFeaturesDict[aid] = featuresDict
 
