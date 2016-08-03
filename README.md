@@ -1,7 +1,13 @@
-#### Animal Photo Bias Scripts
+#### Animal Wildlife Estimator Using Social Media (A.W.E.S.O.M.E.)
 ##### Author: Sreejith Menon
 
 ###### Project home-page: https://smenon8.github.io/AnimalPhotoBias/
+###### Project Description : 
+Identify and quantify bias of human photographers when it comes to sharing pictures of animals on social media. 
+The project broadly attempts to build a population estimation model of a particular species in a particular region using pictures which are shared as public albums in social media. For purposes of simulating the shared pictures on social media, data was generated from Amazon Mechanical Turk jobs. Amazon Mechanical Turk is used to ask random virtual workers from across the globe asking them if they will or will not share a particular image in a group of 20 images. 
+
+2 experiments have been conducted till date. 
+
 
 ###### Features implemented - to date
 * Extract features from IBEIS through a function call.
