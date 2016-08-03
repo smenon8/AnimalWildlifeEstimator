@@ -52,6 +52,7 @@
       <li>pandas</li>
       <li>matplotlib</li>
       <li>Plot.ly</li>
+      <li>Folium</li>
       <li>sklearn</li>
       <li>sklearn-metrics</li>
       <li>Amazon Mechanical Turk</li>
@@ -87,8 +88,10 @@
         <ul>
           <li><a href="#getAnnotID">getAnnotID(gid)</a></li>
           <li><a href="#getImageFeature">getImageFeature(aid,feature)</a></li>
+          <li><a href="#getExifData">getExifData(gidList,exifFtr)</a></li>
           <li><a href="#getContributorGID">getContributorGID(cid)</a></li>
           <li><a href="#getAgeFeatureReadableFmt">getAgeFeatureReadableFmt(ageList)</a></li>
+          <li><a href="#getUnixTimeReadableFmt">getUnixTimeReadableFmt(unixtm)</a></li>
         </ul>
       </li>
       <li><p><a id="generate-mturk-file-api" href="#generate-mturk-file-api"> GenerateMTurkFileAPI.py </a></p>
@@ -140,15 +143,26 @@
               e.  Return data-type: Python list object <br>
               f.  Comments: Used to extract annotation IDs for a particular image GID <br>  
       <br>
-      <li><a id="getImageFeature" href="#getImageFeature">getImageFeature(aid,feature)</a></li>
-              a.  Arguments: Annotation ID, Required Feature <br>
-              b.  Argument data-type: int/str, str <br>
+      <li><a id="getImageFeature" href="#getImageFeature">getImageFeature(aidList,feature)</a></li>
+              a.  Arguments: List of Annotation IDs, Required Feature <br>
+              b.  Argument data-type: Python list, str <br>
               c.  PRE-condition: <br>
               &nbsp &nbsp i.  aid should be a valid annotation ID <br>
               &nbsp &nbsp  ii. feature should be from the set: {"age/months", "yaw/text", "exemplar", "quality/text", "sex/text", "species/text", "name/rowid", "name/text", "image_contributor_tag"} <br>
               d.  Returns: Corresponding feature of the specified annotation ID <br>
-              e.  Return data-type: Python list object, typically with 1 element <br>
-              f.  Comments: Used to extract features for a particular annotation ID. <br>
+              e.  Return data-type: Python list object <br>
+              f.  Comments: Used to extract features for a given list of annotation IDs. <br>
+
+      <br>
+      <li><a id="getExifData" href="#getExifData">getExifData(gidList,exifFtr)</a></li>
+              a.  Arguments: List of GIDs, Required EXIF Feature <br>
+              b.  Argument data-type: Python list, str <br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  GID should be a valid image in IBEIS database <br>
+              &nbsp &nbsp  ii. feature should be from the set: {unixtime, lat, long} <br>
+              d.  Returns: Corresponding EXIF feature for the specified image <br>
+              e.  Return data-type: Python list object <br>
+              f.  Comments: Used to extract EXIF features for a given list of image GIDs. <br>
 
       <br>
       <li><a id="getContributorGID" href="#getContributorGID">getContributorGID(cid)</a></li>
@@ -169,6 +183,14 @@
               d.  Returns: A human readable string of the age. <br>
               e.  Comments: Age in IBEIS is stored as a list (an estimated range in months). IBEIS identifies the age of the animal up to 3 years. The animals will be classified as Infants, a year-old juveniles, two-year-old juveniles or fully grown adults. <br>
 
+      <br>
+      <li><a id="getUnixTimeReadableFmt" href="#getUnixTimeReadableFmt">getUnixTimeReadableFmt(unixtm)</a></li>
+              a.  Arguments: Unixtime as extracted from IBEIS API call. <br>
+              b.  Arguments data-type: int <br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  The unix time provided in the input should be a valid unix time in integer form. <br>
+              d.  Returns: A human readable string of the unixtime in YYYY-MM-DD HH:mm:ss. <br>
+              e.  Comments: The time each picture is taken is stored in unix time format. This method is short-hand method to convert the unix time into a human readable date time. <br>
       </ul>
 
 
