@@ -17,6 +17,7 @@
 * Added functionality to generate reports of all statistics in HTML format with bar charts wherever necessary.
 * API available for data prepartion for applying classifiers using the Bag-of-words methodology.
 * API available for building learning models like Logistic Regression, Support Vector Machines, Decision Trees and Random Forests and returning the predictions as well as performance metrics for the classifier.
+* API available for visualizing the shared/not shared pictures on map and create clusters of share-no share homogenous region.
 
 
 
