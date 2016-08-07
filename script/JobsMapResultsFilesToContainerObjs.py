@@ -17,6 +17,7 @@ import json
 from collections import OrderedDict
 importlib.reload(Features)
 
+# This method is used to generate a list of all images that are used in the current experiment as specified by the map file.
 def genUniqueImageListFromMap(mapFlName):
 	reader = csv.reader(open(mapFlName,"r"))
 	head = reader.__next__()
@@ -32,6 +33,8 @@ def genUniqueImageListFromMap(mapFlName):
 
 	return uniqueImgs
 
+# This method is used to generate a dictionary in the form { Album : [GIDS] }. 
+# This object will give us the capability to query which images exist in a particular album.
 def genAlbumGIDDictFromMap(mapFlName):
 	reader = csv.reader(open(mapFlName,"r"))
 	head = reader.__next__()
@@ -42,6 +45,8 @@ def genAlbumGIDDictFromMap(mapFlName):
 
 	return data
 
+# This method is used to generate a dictionary in the form { GID: [Albums] }. 
+# This object will give us the capability to query which album contain a particular GID.
 def genImgAlbumDictFromMap(mapFLName):
 	uniqImgs = genUniqueImageListFromMap(mapFLName)
 	albumImg = genAlbumGIDDictFromMap(mapFLName)
@@ -54,7 +59,7 @@ def genImgAlbumDictFromMap(mapFLName):
 
 	return imgAlbum
 
-
+# This method is used to generate a dictionary in the form { GID : No. of albums it appears }. 
 def getImageFreqFromMap(inFL):
     imgAlbumDict = genImgAlbumDictFromMap(inFL)
 
@@ -66,6 +71,7 @@ def getImageFreqFromMap(inFL):
 
     return imgFreq
 
+# This method is used to generate a dictionary in the form { AID : GID }.
 def genAidGidDictFromMap(mapFL):
     jsonObj = json.load(open(mapFL,"r"))
 
@@ -77,6 +83,7 @@ def genAidGidDictFromMap(mapFL):
 
     return aidGidDict
 
+# This method is used to generate a dictionary in the form { GID : List of AIDs in that image }.
 def genGidAidDictFromMap(mapFL):
     jsonObj = json.load(open(mapFL,"r"))
 
@@ -90,6 +97,7 @@ def genGidAidDictFromMap(mapFL):
     
     return gidAidDict
 
+# This method is used to generate  a list of tuples in the form ( AID , GID ).
 def genAidGidTupListFromMap(mapFL):
     jsonObj = json.load(open(mapFL,"r"))
 
@@ -101,6 +109,8 @@ def genAidGidTupListFromMap(mapFL):
 
     return aidGidTupList
 
+# This method is used to generate a list of dictionaries in the form [{'AID': xx,'NID' : xx ,.. }]. 
+# This object will give us the capability to iterate through all annotations and their respective features.
 def genAidFeatureDictList(mapFL):
     jsonObj = json.load(open(mapFL,"r"))
 
@@ -124,6 +134,8 @@ def genAidFeatureDictList(mapFL):
 
     return aidFeaturesList
 
+# This method is used to generate a dictionary in the form { AID : {'NID' : xxx , 'SPECIES' : xxx, .. }}. 
+# This object will give us the capability to query one/multiple features given a annotation ID.
 def genAidFeatureDictDict(mapFL):
     jsonObj = json.load(open(mapFL,"r"))
 
@@ -148,6 +160,8 @@ def genAidFeatureDictDict(mapFL):
     return aidFeaturesDict
 
 # mapFL - json format (should be in the format {gid: {aid : features}})
+# This method is used to generate a dictionary in the form { GID : [list of features instances in that image]}. 
+# This object will give us the capability to check what feature instances are present in a given image. 
 def extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature):    
     aidFeatureDict = genAidFeatureDictDict(aidFtrMapFl)
     
@@ -164,6 +178,10 @@ def extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature):
 
 # Part 1: Building the results dictionary (all the fields of interest for all the available jobs)
 # Returns a master dictionary that has job: answers key-value pair. 
+# Every album corresponds to a .result file which is extracted from the Amazon Mechanical Turk interface. 
+# This method parses the results file and generates a python object consisting of each response key with the actual response from the users. 
+# The dictionary is of the form: { photo_album_i : { Answer.GID : [ GID|'share' , 'GID'|'noShare'] }} 
+# All the results file from jobRangeStart to jobRangeEnd will be parsed and included in the output object.
 def createResultDict(jobRangeStart,jobRangeEnd):
     masterDict = OrderedDict()
 
@@ -194,6 +212,10 @@ def createResultDict(jobRangeStart,jobRangeEnd):
         
     return masterDict
 
+# This method returns a Python list which gives us the capability to iterate through all the images, the number of times an image was shared or not shared in a particular album. 
+# This object will form the basis of all statistic computations in the project. The format of a tuple inside the list is of the form (GID, Album, Share count, Not Share count, Proportion). 
+# The other return object is the list of all (GID, albums) for which there was no valid response. 
+# (Form fields in certain albums in experiment 2 were not mandatory in the beginning, the bug was identified and corrected in a later stage.)
 def imgShareCountsPerAlbum(imgAlbumDict,results):
     imgShareNotShareList = []
     noResponse = []

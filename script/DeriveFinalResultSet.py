@@ -95,7 +95,10 @@ def genAlbmFtrs(gidAidMapFl,aidFeatureMapFl,imgJobMap,reqdFtrList):
             
     return albmFtrDict
 
-# flNm should be a json file, only considers the images that appear in multiple album
+# This method derives the share proportions of images across different albums as opposed to generating an overall proportion of images. 
+# For example, the output of this method will contain how many times a particular image was shared in a particular album. 
+# This is particularly insightful for images that appear across multiple albums. 
+# It could essentially tell if a certain image was shared in the same way or differently and if the share rate of an image is orthogonal to the context of album.
 def getShrPropImgsAcrossAlbms(imgJobMap,resSetStrt,resSetEnd,flNm):
     imgAlbumDict = ImageMap.genImgAlbumDictFromMap(imgJobMap)
     master = ImageMap.createResultDict(resSetStrt,resSetEnd)
@@ -115,14 +118,18 @@ def getShrPropImgsAcrossAlbms(imgJobMap,resSetStrt,resSetEnd,flNm):
 
     return imgAlbmPropDict,getConsistencyDict(imgsInMultAlbms,gidAlbmDict,imgAlbmPropDict,flNm)
 
-# get a filter condition for a particular feature
+# This method returns a lambda function or a logic in filtering all valid rows without the UNIDENTIFIED. 
+# A slight adjustment is needed depending on what feature is being filtered.
 def getFltrCondn(ftr):
     if ftr=='NID':
         return lambda x : x[0] != 'UNIDENTIFIED' and int(x[0]) > 0
     else: # for all other features
         return lambda x : x[0] != 'UNIDENTIFIED' 
 
-# The below method works for features and should not be used for generating consistency object for imags themselves
+# This is a helper method for getConsistencyDict(). It returns three objects.
+# i. A list with only valid features i.e. without the UNIDENTIFIED entries. 
+# ii. A dictionary object that contains the albums in which a particular feature is seen. Ex. GIRAFFE is seen in albums 1, 3,4,5 etc. 
+# iii. A dictionary object that contains the share proportion of feature per album. Ex. giraffes in album 1 were shared 70% of times etc. Format of the key: (feature, album)
 def genObjsForConsistency(gidAidMapFl,aidFeatureMapFl,ftr,imgJobMap,resSetStrt=1,resSetEnd=100):    
     d = shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,ftr,imgJobMap,resSetStrt,resSetEnd)
 
@@ -141,8 +148,9 @@ def genObjsForConsistency(gidAidMapFl,aidFeatureMapFl,ftr,imgJobMap,resSetStrt=1
         
     return filteredKeyArr,ftrAlbmDict,ftrAlbmPropDict
 
-# This method can be used to generate the consistency dictionary for any feature including GID
-# consistency dict - { gid : { albm:shrProportion } }
+# This method should be thought as the main counting logic while calculating the share rate related statistic for any feature that is extracted from IBEIS. 
+# The output dictionary is all the valid features and thier share-rates across different albums. 
+# The output dictionary is a key - dictionary pair. Ex. {giraffe : {album_1 : 70, album_2 : 89}, ...}
 def getConsistencyDict(filteredKeyArr,ftrAlbmDict,ftrAlbmShrPropDict,flNm='/tmp/getConsistencyDict.output'):
     consistency = {}
     for ftr in filteredKeyArr:
@@ -163,6 +171,7 @@ def getConsistencyDict(filteredKeyArr,ftrAlbmDict,ftrAlbmShrPropDict,flNm='/tmp/
     return consistency_mult
 
 # consistency object is retuned by getShrPropImgsAcrossAlbms()
+# his method generates the mean, variance and standard deviation for a particular feature element for across different albums. 
 def genVarStddevShrPropAcrsAlbms(consistency):    
     gidShrVarStdDevDict = {}
     for gid in consistency:
@@ -179,7 +188,11 @@ def genVarStddevShrPropAcrsAlbms(consistency):
 
     return gidShrVarStdDevDict
 
-# verified
+# This method generates the overall share statistic for every element of a particular feature. 
+# The logic involves simple counting for each element of the feature based on the counting logic. 
+# This explicitly handles the images where there are multiple features and the counts are made in each of the feature. 
+# This method is ideal for getting share rate of a particular feature across the entire experiment, not limited by album. 
+# In other words, the result dict has share proportions calculated across albums. 
 def ovrallShrCntsByFtr(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,resSetEnd):
     countLogic = getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature)
     imgAlbumDict = ImageMap.genImgAlbumDictFromMap(imgJobMap)
@@ -205,7 +218,12 @@ def ovrallShrCntsByFtr(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,
                 
     return answerSet
 
-
+# This method generates the share statistic for every element of a particular feature for each album in which there are some instances with the said feature. 
+# The logic involves simple counting for each element of the feature based on the counting logic. 
+# This explicitly handles the images where there are multiple features and the counts are made in each of the feature. 
+# This method is ideal for getting share rate of a particular feature across the entire experiment by album. 
+# In other words, this should used to calculate and compare the share rates of a particular feature and how it changes across different albums. 
+# As a sidenote, if the same feature is being shared differently across albums, then it means there is some contextual information from the album that is dominating this effect.
 def shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt=1,resSetEnd=100):
     countLogic = getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature)
     imgAlbumDict = ImageMap.genImgAlbumDictFromMap(imgJobMap)
@@ -230,6 +248,12 @@ def shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt=
                 answerSet[varNameTot] = answerSet.get(varNameTot,[]) + [tup[2] + tup[3]]
     return answerSet
 
+# This method is used to generate cross statistic for two features. 
+# The logic involves simple counting for each element of the feature based on the counting logic. 
+# Since there are two features to be dealt here, the instances are divided into even and uneven features. 
+# Even features are defined as when the number of instances of feature 1 and feature 2 are identical. 
+# Uneven features on the other hand are when the number of instances of feature 1 and feature 2 are not identical. 
+# Uneven features are handled differently for 1-many, many-1 and many-many.
 def ovrallShrCntsByTwoFtrs(gidAidMapFl,aidFeatureMapFl,ftr1,ftr2,imgJobMap,resSetStrt,resSetEnd):
     countLogic1 = getCountingLogic(gidAidMapFl,aidFeatureMapFl,ftr1)
     countLogic2 = getCountingLogic(gidAidMapFl,aidFeatureMapFl,ftr2)
@@ -296,7 +320,7 @@ def ovrallShrCntsByTwoFtrs(gidAidMapFl,aidFeatureMapFl,ftr1,ftr2,imgJobMap,resSe
             answerSet[varNameTot] = answerSet.get(varNameTot,[]) + [tup[2] + tup[3]]
             
     return answerSet
-
+# This method generates the rank list of number of individuals in an image by share proportion.
 def genNumIndsRankList():
     # no. of individuals per image
     countLogic = getCountingLogic(gidAidMapFl,aidFeatureMapFl,"SPECIES")
