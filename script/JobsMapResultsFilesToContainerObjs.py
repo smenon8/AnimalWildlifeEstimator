@@ -247,6 +247,8 @@ def imgShareCountsPerAlbum(imgAlbumDict,results):
     return imgShareNotShareList,noResponse
 
 # audit script
+# This method is an audit method that ensures there are no leaks or incorrect data in the result and feature objects. 
+# The 3 boolean variables indicate 3 different types of errors.
 def auditResMap(imgAlbumDict,resultList):
     err1 = False
     err2 = False
