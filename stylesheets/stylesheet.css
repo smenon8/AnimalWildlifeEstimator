@@ -129,6 +129,16 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
 }
 
+#codeContent p{
+  background: #323335;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-size: 13px;
+  color: #ECEFF6;
+  margin-left: 20px;
+  margin-right: 21px;
+  line-height: 16px;
+}
+
 dt {
   font-style: italic;
   font-weight: bold;
@@ -136,10 +146,11 @@ dt {
 
 ul li {
   list-style: none;
+  font-size: 15px;
 }
 
 ul li:before {
-  content: ">>";
+  content: "+";
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 13px;
   color: #b5e853;

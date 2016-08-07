@@ -94,46 +94,53 @@
           <li><a href="#getUnixTimeReadableFmt">getUnixTimeReadableFmt(unixtm)</a></li>
         </ul>
       </li>
+      
       <li><p><a id="generate-mturk-file-api" href="#generate-mturk-file-api"> GenerateMTurkFileAPI.py </a></p>
         <ul>
         <li><a href="#genRandomImg">genRandomImg(begin,end,oldList)</a></li>
-        <li><a href="#genImageList">genImageList(begin,stop,maxImgs=20)</a></li>
-        <li><a href="#generateMTurkFile">generateMTurkFile(startGID,endGID,outFile,maxImgs=20,prodFileWrite=False)</a></li>
+        <li><a href="#genImageList">genImageList(begin,stop,maxImgs)</a></li>
+        <li><a href="#generateMTurkFile">generateMTurkFile(startGID,endGID,outFile,maxImgs,prodFileWrite)</a></li>
         </ul>
       </li>
+      
       <li><p><a href="#CreateTurkFilesBulk"> CreateTurkFilesBulk.py </a></p>
         <ul>
-          <li><a href="#createTurkFilesBulk">createTurkFilesBulk(flNm,jobMapName,noOfJobs,noOfImgsPerJob = 20)</a></li> 
+          <li><a href="#createTurkFilesBulk">createTurkFilesBulk(flNm,jobMapName,noOfJobs,noOfImgsPerJob)</a></li> 
         </ul>
       </li>
+      
       <li><p><a href="#DeriveFinalResultSet"> DeriveFinalResultSet.py </a></p>
       <ul>
         <li><a href="#getPosShrProptn">getPosShrProptn(imgJobMap,resStart,resEnd)</a></li>
         <li><a href="#genTotCnts">genTotCnts(ovrCnts)</a></li>
         <li><a href="#getShrProp">getShrProp(ovrAggCnts)</a></li>
-        <li><a href="#getCountingLogic">getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature,withNumInds=True)</a></li>
+        <li><a href="#getCountingLogic">getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature,withNumInds)</a></li>
         <li><a href="#genAlbmFtrs">genAlbmFtrs(gidAidMapFl,aidFeatureMapFl,imgJobMap,reqdFtrList)</a></li>
         <li><a href="#getShrPropImgsAcrossAlbms">getShrPropImgsAcrossAlbms(imgJobMap,resSetStrt,resSetEnd,flNm)</a></li>
         <li><a href="#getFltrCondn">getFltrCondn(ftr)</a></li>
-        <li><a href="#genObjsForConsistency">genObjsForConsistency(gidAidMapFl,aidFeatureMapFl,ftr,imgJobMap,resSetStrt=1,resSetEnd=100)</a></li>
-        <li><a href="#getConsistencyDict">getConsistencyDict(filteredKeyArr,ftrAlbmDict,ftrAlbmShrPropDict,flNm='/tmp/getConsistencyDict.output')</a></li>
+        <li><a href="#genObjsForConsistency">genObjsForConsistency(gidAidMapFl,aidFeatureMapFl,ftr,imgJobMap,resSetStrt,resSetEnd)</a></li>
+        <li><a href="#getConsistencyDict">getConsistencyDict(filteredKeyArr,ftrAlbmDict,ftrAlbmShrPropDict,flNm)</a></li>
         <li><a href="#genVarStddevShrPropAcrsAlbms">genVarStddevShrPropAcrsAlbms(consistency)</a></li>
         <li><a href="#ovrallShrCntsByFtr">ovrallShrCntsByFtr(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,resSetEnd)</a></li>
-        <li><a href="#shrCntsByFtrPrAlbm">shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt=1,resSetEnd=100)</a></li>
+        <li><a href="#shrCntsByFtrPrAlbm">shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,resSetEnd)</a></li>
         <li><a href="#ovrallShrCntsByTwoFtrs">ovrallShrCntsByTwoFtrs(gidAidMapFl,aidFeatureMapFl,ftr1,ftr2,imgJobMap,resSetStrt,resSetEnd)</a></li>
-        <li><a href="#genNumIndsRankList">genNumIndsRankList()</a></li>
-        
+        <li><a href="#genNumIndsRankList">genNumIndsRankList()</a></li> 
       </ul>
       </li>
+
+      <li><p><a href="#JobsMapResultsFilesToContainerObjs"> JobsMapResultsFilesToContainerObjs.py </a></p>
+      
       </ol>
       </div>
     <br>
-    <br>
+
       <h3>
       <a id="GetPropertiesAPI" class="anchor" href="#GetPropertiesAPI" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>GetPropertiesAPI.py</a></h3>
       Description: Contains methods to extract specific information from IBEIS database through REST-ful API calls.
+      <div id="codeContent">
       <ul>
       <li><a id="getAnnotID" href="#getAnnotID">getAnnotID(gid) </a></li>
+      <p>
               a.  Argument: GID of a single image. <br>
               b.  Argument data-type: int/str <br>
               c.  PRE-condition: <br>
@@ -142,8 +149,10 @@
               d.  Returns: Corresponding Annotation IDs in the image. <br>
               e.  Return data-type: Python list object <br>
               f.  Comments: Used to extract annotation IDs for a particular image GID <br>  
-      <br>
+      </p>
+
       <li><a id="getImageFeature" href="#getImageFeature">getImageFeature(aidList,feature)</a></li>
+      <p>
               a.  Arguments: List of Annotation IDs, Required Feature <br>
               b.  Argument data-type: Python list, str <br>
               c.  PRE-condition: <br>
@@ -152,9 +161,10 @@
               d.  Returns: Corresponding feature of the specified annotation ID <br>
               e.  Return data-type: Python list object <br>
               f.  Comments: Used to extract features for a given list of annotation IDs. <br>
-
-      <br>
+      </p>
+      
       <li><a id="getExifData" href="#getExifData">getExifData(gidList,exifFtr)</a></li>
+      <p>
               a.  Arguments: List of GIDs, Required EXIF Feature <br>
               b.  Argument data-type: Python list, str <br>
               c.  PRE-condition: <br>
@@ -163,9 +173,10 @@
               d.  Returns: Corresponding EXIF feature for the specified image <br>
               e.  Return data-type: Python list object <br>
               f.  Comments: Used to extract EXIF features for a given list of image GIDs. <br>
+      </p>
 
-      <br>
       <li><a id="getContributorGID" href="#getContributorGID">getContributorGID(cid)</a></li>
+      <p>
               a.  Arguments: Contributor ID <br>
               b.  Argument data-type: int/str <br>
               c.  PRE-condition: <br>
@@ -173,36 +184,40 @@
               d.  Returns: List of images clicked by the contributor <br>
               e.  Return data-type: Python list object <br>
               f.  Comments: Used to extract all images clicked by a particular photographer. <br>
+      </p>
 
-      <br>
       <li><a id="getAgeFeatureReadableFmt" href="#getAgeFeatureReadableFmt">getAgeFeatureReadableFmt(ageList)</a></li>
+      <p>
               a.  Arguments: Age as extracted from IBEIS API call. <br>
               b.  Arguments data-type: Python list. <br>
               c.  PRE-condition: <br>
               &nbsp &nbsp i.  Age should be in one of the following formats: [[-1,-1]] or [[None,2]] or [[3, 5]] or [[6, 11]] or [[12,23]] or [[24,35]] or [[36,None]] <br>
               d.  Returns: A human readable string of the age. <br>
               e.  Comments: Age in IBEIS is stored as a list (an estimated range in months). IBEIS identifies the age of the animal up to 3 years. The animals will be classified as Infants, a year-old juveniles, two-year-old juveniles or fully grown adults. <br>
-
-      <br>
+      </p>
+  
       <li><a id="getUnixTimeReadableFmt" href="#getUnixTimeReadableFmt">getUnixTimeReadableFmt(unixtm)</a></li>
+      <p>
               a.  Arguments: Unixtime as extracted from IBEIS API call. <br>
               b.  Arguments data-type: int <br>
               c.  PRE-condition: <br>
               &nbsp &nbsp i.  The unix time provided in the input should be a valid unix time in integer form. <br>
               d.  Returns: A human readable string of the unixtime in YYYY-MM-DD HH:mm:ss. <br>
               e.  Comments: The time each picture is taken is stored in unix time format. This method is short-hand method to convert the unix time into a human readable date time. <br>
+      </p>
       </ul>
-
-
+      </div>
       <br>
+      
       <h3>
       <a id="GenerateMTurkFileAPI" class="anchor" href="#GenerateMTurkFileAPI" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>GenerateMTurkFileAPI.py</a></h3>
       Description: Contains methods to generate a single mechanical turk photo album. There are multiple methods in the API but the method generateMTurkFile() needs to be called to generate one image album job file.
       <br>
       <i>Hardcoded parameter: excepFL – points to the CSV file which is a enumeration of all identified human images. This is provided to avoid occurrences of human images in the mechanical turk photo album jobs.</i>      
-
+      <div id="codeContent">
       <ul>
       <li><a id="genRandomImg" href="#genRandomImg">genRandomImg(begin,end,oldList)</a></li>
+      <p>
               a.  Arguments: Start range, End Range and list in the same range <br>
               b.  Argument data-type: int, int, int <br>
               c.  PRE-condition: <br>
@@ -211,9 +226,10 @@
               d.  Returns: A randomly selected image GID in the range [begin, end] and not in oldList. <br>
               e.  Return data-type: int <br>
               f.  Comments: This method is used when there arises a case when a particular image in the image album have to be replaced with another randomly selected image. <br>
+      </p>
 
-      <br>
       <li><a id="genImageList" href="#genImageList">genImageList(begin,stop,maxImgs=20)</a></li>
+      <p>
               a.  Arguments: Start range, end range and number of images in photo album <br>
               b.  Argument data-type: int, int, int <br>
               c.  PRE-condition: <br>
@@ -222,9 +238,10 @@
               &nbsp &nbsp iii.  stop – begin > maxImgs <br>
               d.  Returns: A python list with randomly selected image GID’s that are in the range [begin, stop] and len(list) = maxImgs <br>
               e.  Comments: This method is used to generate a list of random images that will be further used as an input to the method that generates the photo album mechanical turk job. The list has no duplicates and has exactly maxImgs number of images. <br>
+      </p>
 
-      <br>
       <li><a id="generateMTurkFile" href="#generateMTurkFile">generateMTurkFile(startGID,endGID,outFile,maxImgs=20,prodFileWrite=False)</a></li>
+      <p>
               a.  Arguments: Start GID, end GID, name of output file, number of images in photo album, a boolean to generate a m-turk job for production environment. <br>
               b.  Argument data-type: int, int, str, int, boolean <br>
               c.  PRE-condition: <br>
@@ -233,9 +250,10 @@
               &nbsp &nbsp iii.  endGID - startGID > maxImgs <br>
               d.  Returns: A python list with randomly selected image GID’s that are in the photo album. The GID’s are in the range [startGID, endGID] and len(list) = maxImgs <br>
               e.  Comments: Most important method of this script. This generates a .question file that is fed to createHIT command. If prodFileWrite parameter is set to True, then a job with the same image GID’s is generated with the word ‘prod’ appended to the outFile name. prodFileWrite is defaulted to False, so it will only generate a file for mechanical turk sandbox if this parameter is unspecified. <br>
+      </p>
       </ul>
-
-      <br>
+      </div>
+      
       <h3>
       <a id="CreateTurkFilesBulk" class="anchor" href="#CreateTurkFilesBulk" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>CreateTurkFilesBulk.py</a></h3>
       Description: Contains a single method that generates mechanical turk jobs for generating photo-albums in bulk. This script contains a __main__() method that accepts command line arguments and can be directly executed through terminal. <br><br>
@@ -244,8 +262,10 @@
       Successfully written : /tmp/sample1 <br>
       Successfully written : /tmp/sample2 <br>
 
+      <div id="codeContent">
       <ul>
       <li><a id="createTurkFilesBulk" href="#createTurkFilesBulk">createTurkFilesBulk(flNm,jobMapName,noOfJobs,noOfImgsPerJob = 20)</a></li>
+      <p>
               a.  Arguments: File Name prefix of the job files, File name of the map file of albums and the images in those albums, number of jobs needed, number of images needed per job. <br>
               b.  Argument data-type: str, str, int, int <br>
               c.  PRE-condition:  <br>
@@ -253,7 +273,9 @@
               &nbsp &nbsp ii. Path exists in the host system. <br>
               d.  Returns: None <br>
               e.  Comments: Selects noOfJobs number of random contributors (there might be duplicates in the selected contributor list). There is hard-coded code for removing contributors who did not click any picture. For each job, noOfImgsPerJob number of images are selected from the range of images a particular contributor has clicked. This is done to ensure that given a particular album, all the images are clicked by the same contributor. The script assumes the value of prodFileWrite in line 63 as True. It generates 1 input, 1 question file per noOfJobs and 1 map file that contains a map between albums and the images in them. <br>
+      </p>
       </ul>
+      </div>
 
       <br>
       <h3>
@@ -261,9 +283,10 @@
       Description: Contains multiple methods to calculate final result statistics. The methods in this script file highly utilizes objects created by JobsMapResultsFilesToContainerObjs.py. Three global variables are declared in the scope of this project, the currently point to CSV files that have information from second phase of the mechanical turk deployment. <br><br>
       gidAidMapFl, aidFeatureMapFl, imgJobMap <br>
       These parameters are used by multiple methods within this script. <br>
-
+      <div id="codeContent">
       <ul>
       <li><a id="getPosShrProptn" href="#getPosShrProptn">getPosShrProptn(imgJobMap,resStart,resEnd)</a></li>
+      <p>
               a.  Arguments: Image Job Map in CSV format, start of the results file, end of the results files. <br>
               b.  Argument data-type: str, int, int <br>
               c.  PRE-condition: <br>
@@ -271,10 +294,10 @@
               &nbsp &nbsp ii. All files starting from photo_album_<resStart>.results until photo_album_<resEnd>.results should exist under results folder.<br>
               b.  Returns: A Python dictionary object that has position of images in the album and number of shares, number of not_shares, the total and the proportion of share rate as a nested dictionary. <br>
               c.  Comments:  Number of shares/not shares for each and every position are enumerated inside a list. Use of OrderedDict() from the Python collections framework ensures that the records are picked in the exact same order they appear in the albums. This returned dictionary can then be embedded inside a data-frame and can be visualized. <br>
+      </p>
 
-
-      <br>
       <li><a id="genTotCnts" href="#genTotCnts">genTotCnts(ovrCnts)</a></li>
+      <p>
               a.  Arguments: Overall counts dictionary, an enumeration of share/no share data per image. <br>
               b.  Arguments data-type: Python dictionary object. <br>
               c.  PRE-condition: <br>
@@ -282,10 +305,10 @@
               &nbsp &nbsp ii. All the values in the list are integers. <br>
               d.  Returns: A python dictionary which has the same keys as the argument data-type, but the values are simply the sum total of all values in the list corresponding to the argument dictionary key. <br>
               e.  Comments: This method is a simplification of adding up the share/no share counts of a particular image. For example, for a particular image which appeared in 5 different albums, the share rates were 9,5,9,10,10. This method will return gid:sum([9,5,9,10,10)]. <br>
+      </p>
 
-
-      <br>
       <li><a id="getShrProp" href="#getShrProp">getShrProp(ovrAggCnts)</a></li>
+      <p>
               a.  Arguments: Overall Aggregate counts, typically outputted by genTotCnts method. A python dictionary with key and sum total of shares, no_shares and totals. <br>
               b.  Arguments data-type: Python dictionary object.<br>
               c.  PRE-condition:<br>
@@ -294,21 +317,21 @@
               &nbsp &nbsp iii.  Keys should contain the strings: ‘share’, ‘total’ or ‘not_share’<br>
               d.  Returns: A python dictionary which is simply the share proportion of that particular key. <br>
               e.  Comments: This method will be used to calculate the share proportion of a particular feature or an image. This dictionary answers the question, what percentage of this feature/image were shared. The share proportion is calculated as total_shares/(total_shares+total_not_shares). <br>
-
-      
-      <br>
+      </p>
+ 
       <li><a id="getCountingLogic" href="#getCountingLogic">getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature,withNumInds=True)</a></li>
+      <p>
               a.  Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), feature, number of individuals in the output required (defaulted to True) <br>
               b.  Arguments data-type: str, str, str, boolean <br>
               c.  PRE-condition: <br>
               &nbsp &nbsp i.  Entire path is provided for gidAidMapFl and aidFeatureMapFl and the file should exist in JSON file format. <br>
               &nbsp &nbsp ii. Should be from an acceptable set of feature strings. <br>
               d.  Returns: A Python dictionary object. <br>
-              e.  Comments: This method defines the counting logic for a particular image for a given feature. For instance, for the feature ‘SPECIES’, there might be images that contains both a zebra and a giraffe. In that case, the share counts have to be added to both zebra and giraffe. <br>
+              e.  Comments: This method defines the counting logic for a particular image for a given feature. The counting logic will return an optional number of individuals in the result dictionary if the aparamerter withNumInds is set to True. For instance, for the feature ‘SPECIES’, there might be images that contains both a zebra and a giraffe. In that case, the share counts have to be added to both zebra and giraffe. <br>
+      </p>
 
-
-      <br>
       <li><a id="genAlbmFtrs" href="#genAlbmFtrs">genAlbmFtrs(gidAidMapFl,aidFeatureMapFl,imgJobMap,reqdFtrList)</a></li>
+      <p>
               a.  Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), Image GID-Album map file(CSV), required features list – a list of features for which the properties needs to be determined. <br>
               b.  Arguments data-type: str, str, str, Python List <br>
               c.  PRE-condition: <br>
@@ -317,9 +340,10 @@
               &nbsp &nbsp iii.  The feature list should contain elements from the acceptable set of features. <br>
               d.  Returns: A Python dictionary object. <br>
               e.  Comments: This method is used to generate the number of shares and not_shares per feature in a particular album. For instance, if the required features list contains ‘SPECIES’, then it tells the share and not_share count per album for each available/identifiable species. <br>
+      </p>
 
-      <br>
       <li><a id="getShrPropImgsAcrossAlbms" href="#getShrPropImgsAcrossAlbms">getShrPropImgsAcrossAlbms(imgJobMap,resSetStrt,resSetEnd,flNm)</a></li>
+      <p>
               a.  Arguments: Image Job Map in CSV format, start of the results file, end of the results files, output file name in json format. <br>
               b.  Arguments data-type: str, int, int, str <br>
               c.  PRE-condition: <br>
@@ -327,30 +351,101 @@
               &nbsp &nbsp ii. All files starting from photo_album_&ltresStart&gt.results until photo_album_&ltresEnd&gt.results should exist under results folder. <br>
               d.  Returns: Two Python Dictionary objects. <br>
               e.  Comments: This method derives the share proportions of images across different albums as opposed to generating an overall proportion of images. For example, the output of this method will contain how many times a particular image was shared in a particular album. This is particularly insightful for images that appear across multiple albums. It could essentially tell if a certain image was shared in the same way or differently and if the share rate of an image is orthogonal to the context of album. <br>
-      <br>
+      </p>
 
-      <!-- New content -->
       <li><a id="getFltrCondn" href="#getFltrCondn">getFltrCondn(ftr)</a></li>
+      <p>
        		  a. Arguments: Feature name <br>
        		  b. Arguments data-type: str <br>
        		  c. PRE-condition: <br>
        		  &nbsp &nbsp i. Provided argument should be a valid feature. <br>
        		  d. Returns: A lambda function  <br>
        		  e. Comments: This method returns a lambda function or a logic in filtering all valid rows without the UNIDENTIFIED. A slight adjustment is needed depending on what feature is being filtered. <br>
+      </p>
 
-     <br>
      <li><a id="genObjsForConsistency" href="#genObjsForConsistency">genObjsForConsistency(gidAidMapFl,aidFeatureMapFl,ftr,imgJobMap,resSetStrt,resSetEnd)</a></li>
+     <p>
       		  a. Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), Feature name, Image GID-Album map file(CSV), start of the results file, end of the results files.<br>
        		  b. Arguments data-type: str, str, str, str, int, int <br>
        		  c. PRE-condition: <br>
        		   &nbsp &nbsp i.  Entire path is provided for gidAidMapFl and aidFeatureMapFl and the file should exist in JSON file format. <br>
               &nbsp &nbsp ii. Entire path is provided for imgJobMap and the file should exist in CSV format. <br>
               &nbsp &nbsp iii.  The feature list should contain elements from the acceptable set of features. <br>
-       		  d. Returns: A lambda function  <br>
-       		  e. Comments: This is a helper method for getConsistencyDict(). It returns three objects. A list with only valid entries i.e. without the UNIDENTIFIED entries. A dictionary object that Contains <br>
+       		  d. Returns: Python List Object, Two Python Dictionary objects  <br>
+       		  e. Comments: This is a helper method for <a href="#getConsistencyDict">getConsistencyDict()</a>. It returns three objects. <br>
+            &nbsp &nbsp i. A list with only valid features i.e. without the UNIDENTIFIED entries. <br>
+            &nbsp &nbsp ii. A dictionary object that contains the albums in which a particular feature is seen. Ex. GIRAFFE is seen in albums 1, 3,4,5 etc. <br>
+            &nbsp &nbsp iii. A dictionary object that contains the share proportion of feature per album. Ex. giraffes in album 1 were shared 70% of times etc. Format of the key: (feature, album)<br>
+      </p>
 
-     <br>
+      <li><a id="getConsistencyDict" href="#getConsistencyDict">getConsistencyDict(filteredKeyArr,ftrAlbmDict,ftrAlbmShrPropDict,flNm)</a></li>
+      <p>
+            a. Arguments: The filtered key array, Feature Album dictionary and feature album share proportion dictionary are direct outputs of <a href="#genObjsForConsistency">genObjsForConsistency()</a> <br>
+            b. Arguments data-type: Python List Object, Python Dictionary Object, Python Dictionary object, str <br>
+            c. PRE-condition: Same conditions as <a href="#genObjsForConsistency">genObjsForConsistency()</a> <br>
+            d. Returns: A Python Dictionary object. <br>
+            e. Comments: This method should be thought as the main counting logic while calculating the share rate related statistic for any feature that is extracted from IBEIS. The output dictionary is all the valid features and thier share-rates across different albums. The output dictionary is a key - dictionary pair. Ex. {giraffe : {album_1 : 70, album_2 : 89}, ...}
+
+      </p>
+
+      <li><a id="genVarStddevShrPropAcrsAlbms" href="#genVarStddevShrPropAcrsAlbms">genVarStddevShrPropAcrsAlbms(consistency)</a></li>
+      <p>
+            a. Arguments: Consistency dictionary is the direct ouput of <a href="#getConsistencyDict">getConsistencyDict()</a> <br>
+            b. Arguments data-type: Python Dictionary object <br>
+            c. PRE-condition: Same conditions as <a href="#genObjsForConsistency">genObjsForConsistency()</a> <br>
+            d. Returns: A Python Dictionary object. <br>
+            e. Comments: As the method name suggests, this method generates the mean, variance and standard deviation for a particular feature element for across different albums. <br>
+      </p>
+
+      <li><a id="ovrallShrCntsByFtr" href="#ovrallShrCntsByFtr">ovrallShrCntsByFtr(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,resSetEnd)</a></li>
+      <p>
+            a. Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), Feature name, Image GID-Album map file(CSV), start of the results file, end of the results files.<br>
+            b. Arguments data-type: str, str, str, str, int, int <br>
+            c. PRE-condition: <br>
+             &nbsp &nbsp i.  Entire path is provided for gidAidMapFl and aidFeatureMapFl and the file should exist in JSON file format. <br>
+              &nbsp &nbsp ii. Entire path is provided for imgJobMap and the file should exist in CSV format. <br>
+              &nbsp &nbsp iii.  The feature list should contain elements from the acceptable set of features. <br>
+            d. Returns: A Python Dictionary object. <br>
+            e. Comments: This method generates the overall share statistic for every element of a particular feature. The logic involves simple counting for each element of the feature based on the counting logic (refer <a href="#getCountingLogic">getCountingLogic()</a>). This explicitly handles the images where there are multiple features and the counts are made in each of the feature. This method is ideal for getting share rate of a particular feature across the entire experiment, not limited by album. In other words, the result dict has share proportions calculated across albums. <br>
+      </p>
+
+      <li><a id="shrCntsByFtrPrAlbm" href="#shrCntsByFtrPrAlbm">shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,resSetEnd)</a></li>
+      <p>
+            a. Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), Feature name, Image GID-Album map file(CSV), start of the results file, end of the results files.<br>
+            b. Arguments data-type: str, str, str, str, int, int <br>
+            c. PRE-condition: <br>
+             &nbsp &nbsp i.  Entire path is provided for gidAidMapFl and aidFeatureMapFl and the file should exist in JSON file format. <br>
+              &nbsp &nbsp ii. Entire path is provided for imgJobMap and the file should exist in CSV format. <br>
+              &nbsp &nbsp iii.  The feature list should contain elements from the acceptable set of features. <br>
+            d. Returns: A Python Dictionary object. <br>
+            e. Comments: This method generates the share statistic for every element of a particular feature for each album in which there are some instances with the said feature. The logic involves simple counting for each element of the feature based on the counting logic (refer <a href="#getCountingLogic">getCountingLogic()</a>). This explicitly handles the images where there are multiple features and the counts are made in each of the feature. This method is ideal for getting share rate of a particular feature across the entire experiment by album. In other words, this should used to calculate and compare the share rates of a particular feature and how it changes across different albums. As a sidenote, if the same feature is being shared differently across albums, then it means there is some contextual information from the album that is dominating this effect.<br>
+      </p>
+
+      <li><a id="ovrallShrCntsByTwoFtrs" href="#ovrallShrCntsByTwoFtrs">ovrallShrCntsByTwoFtrs(gidAidMapFl,aidFeatureMapFl,ftr1,ftr2,imgJobMap,resSetStrt,resSetEnd)</a></li>
+      <p>
+            a. Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), Feature name 1, Feature name 2, Image GID-Album map file(CSV), start of the results file, end of the results files.<br>
+            b. Arguments data-type: str, str, str, str, int, int <br>
+            c. PRE-condition: <br>
+             &nbsp &nbsp i.  Entire path is provided for gidAidMapFl and aidFeatureMapFl and the file should exist in JSON file format. <br>
+              &nbsp &nbsp ii. Entire path is provided for imgJobMap and the file should exist in CSV format. <br>
+              &nbsp &nbsp iii.  The feature list should contain elements from the acceptable set of features. <br>
+            d. Returns: A Python Dictionary object. <br>
+            e. Comments: This method is used to generate cross statistic for two features. For example, this question typically answers questions like <i>How many <b>giraffes</b> that were looking <b>left</b> were shared? Or How many <b>infants</b> that were <b>males</b> were shared?</i><br>
+            The logic involves simple counting for each element of the feature based on the counting logic (refer <a href="#getCountingLogic">getCountingLogic()</a>). Since there are two features to be dealt here, the instances are divided into even and uneven features. Even features are defined as when the number of instances of feature 1 and feature 2 are identical. Uneven features on the other hand are when the number of instances of feature 1 and feature 2 are not identical. Uneven features are handled differently for 1-many, many-1 and many-many.<br>
+      </p>
+
+      <li><a id="genNumIndsRankList" href="#genNumIndsRankList">genNumIndsRankList()</a></li>
+      <p>
+          a. Arguments: <br>
+          b. Arguments data-type: <br>
+          c. PRE-condition: <br>
+          d. Returns: A Python Dictionary object. <br>
+          e. Comments: As the method name suggests, this method generates the rank list of number of individuals in an image by share proportion. There is an active issue being tracked to parametrize this method for future use at  <a href="https://github.com/smenon8/AnimalPhotoBias/issues"> GitHub  Issues</a><br>
+      </p>
       </ul>
+      </div>
+
+
       </section>
     </div>
 
