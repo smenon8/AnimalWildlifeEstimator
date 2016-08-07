@@ -129,6 +129,10 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
 }
 
+#descContent p{
+  font-size: 15px;
+}
+
 #codeContent p{
   background: #323335;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;

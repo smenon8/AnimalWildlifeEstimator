@@ -16,7 +16,7 @@
       <div class="container">
         <h1><u>A</u>nimal <u>W</u>ildlife <u>ES</u>timator using <u>SO</u>cial <u>ME</u>dia
         (A. W. E. S. O. M. E)</h1>
-        <h2>Scripts for identifying and quantifying biases in sharing of animal pictures on social media and models to predict likelihood of a picture being shared on social media platform.</h2>
+        <h2>Identify and quantify bias of human photographers when it comes to sharing pictures of animals on social media. The project broadly attempts to build a population estimation model of a particular species in a particular region using pictures which are shared as public albums in social media. For purposes of simulating the shared pictures on social media, data was generated from Amazon Mechanical Turk jobs. Amazon Mechanical Turk is used to ask random virtual workers from across the globe asking them if they will or will not share a particular image in a group of 20 images.</h2>
         <h4>
         <a id="author-sreejith-menon" class="anchor" href="#author-sreejith-menon" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><b>Author:</b> Sreejith Menon
         <br> <b>Email:</b> smenon8@uic.edu
@@ -35,7 +35,7 @@
           <section id="site-map">
           <a href="#tech-used" class="btn btn-primary">View Technology Stack</a>
           <a href="#project-overview" class="btn">View Project Progress</a>
-          <a href="http://compbio.cs.uic.edu/~sreejith/ResultsDashboard.html" class="btn">View Project Results</a>
+          <a href="http://compbio.cs.uic.edu/~sreejith/ResultsDashboard.html" class="btn">View Results Dashboard</a>
           <a href="#script-index" class="btn btn-info">View Scripts Index</a>
         </section>
       </div>
@@ -78,6 +78,7 @@
       <li>Added functionality to generate reports of all statistics in HTML format with bar charts wherever necessary.</li>
       <li>API available for data prepartion for applying classifiers using the Bag-of-words methodology. </li>
       <li>API available for building learning models like Logistic Regression, Support Vector Machines, Decision Trees and Random Forests and returning the predictions as well as performance metrics for the classifier. </li>
+      <li>API available for visualizing the shared/not shared pictures on map and create clusters of share-no share homogenous region.</li>
       </ul>
       
       <h3>
@@ -109,6 +110,24 @@
         </ul>
       </li>
       
+      <li><p><a href="#JobsMapResultsFilesToContainerObjs"> JobsMapResultsFilesToContainerObjs.py </a></p>
+      <ul>
+        <li><a href="#genUniqueImageListFromMap">genUniqueImageListFromMap(mapFlName)</a></li>
+        <li><a href="#genAlbumGIDDictFromMap">genAlbumGIDDictFromMap(mapFlName)</a></li>
+        <li><a href="#genImgAlbumDictFromMap">genImgAlbumDictFromMap(mapFLName)</a></li>
+        <li><a href="#getImageFreqFromMap">getImageFreqFromMap(inFL)</a></li>
+        <li><a href="#genAidGidDictFromMap">genAidGidDictFromMap(mapFL)</a></li>
+        <li><a href="#genGidAidDictFromMap">genGidAidDictFromMap(mapFL)</a></li>
+        <li><a href="#genAidGidTupListFromMap">genAidGidTupListFromMap(mapFL)</a></li>
+        <li><a href="#genAidFeatureDictList">genAidFeatureDictList(mapFL)</a></li>
+        <li><a href="#genAidFeatureDictDict">genAidFeatureDictDict(mapFL)</a></li>
+        <li><a href="#extractImageFeaturesFromMap">extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature)</a></li>
+        <li><a href="#createResultDict">createResultDict(jobRangeStart,jobRangeEnd)</a></li>
+        <li><a href="#imgShareCountsPerAlbum">imgShareCountsPerAlbum(imgAlbumDict,results)</a></li>
+        <li><a href="#auditResMap">auditResMap(imgAlbumDict,resultList)</a></li>
+      </ul>
+      </li>
+
       <li><p><a href="#DeriveFinalResultSet"> DeriveFinalResultSet.py </a></p>
       <ul>
         <li><a href="#getPosShrProptn">getPosShrProptn(imgJobMap,resStart,resEnd)</a></li>
@@ -128,15 +147,14 @@
       </ul>
       </li>
 
-      <li><p><a href="#JobsMapResultsFilesToContainerObjs"> JobsMapResultsFilesToContainerObjs.py </a></p>
-      
       </ol>
       </div>
     <br>
 
       <h3>
       <a id="GetPropertiesAPI" class="anchor" href="#GetPropertiesAPI" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>GetPropertiesAPI.py</a></h3>
-      Description: Contains methods to extract specific information from IBEIS database through REST-ful API calls.
+      <div id="descContent"><p>
+      Description: Contains methods to extract specific information from IBEIS database through REST-ful API calls.</p></div>
       <div id="codeContent">
       <ul>
       <li><a id="getAnnotID" href="#getAnnotID">getAnnotID(gid) </a></li>
@@ -211,9 +229,11 @@
       
       <h3>
       <a id="GenerateMTurkFileAPI" class="anchor" href="#GenerateMTurkFileAPI" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>GenerateMTurkFileAPI.py</a></h3>
+      <div id="descContent"><p>
       Description: Contains methods to generate a single mechanical turk photo album. There are multiple methods in the API but the method generateMTurkFile() needs to be called to generate one image album job file.
       <br>
-      <i>Hardcoded parameter: excepFL – points to the CSV file which is a enumeration of all identified human images. This is provided to avoid occurrences of human images in the mechanical turk photo album jobs.</i>      
+      <i>Hardcoded parameter: excepFL – points to the CSV file which is a enumeration of all identified human images. This is provided to avoid occurrences of human images in the mechanical turk photo album jobs.</i>  
+      </p></div>    
       <div id="codeContent">
       <ul>
       <li><a id="genRandomImg" href="#genRandomImg">genRandomImg(begin,end,oldList)</a></li>
@@ -256,11 +276,12 @@
       
       <h3>
       <a id="CreateTurkFilesBulk" class="anchor" href="#CreateTurkFilesBulk" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>CreateTurkFilesBulk.py</a></h3>
+      <div id="descContent"><p>
       Description: Contains a single method that generates mechanical turk jobs for generating photo-albums in bulk. This script contains a __main__() method that accepts command line arguments and can be directly executed through terminal. <br><br>
       To run the script, provide 4 parameters in the order fileName, jobMapName, numberOfFiles, numberOfImgs. <br>
       python CreateTurkFilesBulk.py /tmp/sample /tmp/sample.CSV 2 10 <br>
       Successfully written : /tmp/sample1 <br>
-      Successfully written : /tmp/sample2 <br>
+      Successfully written : /tmp/sample2 <br></p></div>
 
       <div id="codeContent">
       <ul>
@@ -280,9 +301,10 @@
       <br>
       <h3>
       <a id="DeriveFinalResultSet" class="anchor" href="#DeriveFinalResultSet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>DeriveFinalResultSet.py</a></h3>
+      <div id="descContent"><p>
       Description: Contains multiple methods to calculate final result statistics. The methods in this script file highly utilizes objects created by JobsMapResultsFilesToContainerObjs.py. Three global variables are declared in the scope of this project, the currently point to CSV files that have information from second phase of the mechanical turk deployment. <br><br>
       gidAidMapFl, aidFeatureMapFl, imgJobMap <br>
-      These parameters are used by multiple methods within this script. <br>
+      These parameters are used by multiple methods within this script. <br></p></div>
       <div id="codeContent">
       <ul>
       <li><a id="getPosShrProptn" href="#getPosShrProptn">getPosShrProptn(imgJobMap,resStart,resEnd)</a></li>
@@ -444,6 +466,154 @@
       </p>
       </ul>
       </div>
+
+    <br>
+      <h3>
+      <a id="JobsMapResultsFilesToContainerObjs" class="anchor" href="#JobsMapResultsFilesToContainerObjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>JobsMapResultsFilesToContainerObjs.py</a></h3>
+      <div id="descContent"><p>
+      Description: Contains methods that generates a Python Object from different map files. This method gives an interface for building required data structures to compute various stastistics. There are multiple methods that output CSV or JSON or both. Use methods in this script to generate easy-to-use Python objects. There are methods that parse the .results file that is extracted from Amazon Mechanical Turk jobs.<br>
+      <i>Note that the method names are very similar and take same argument in most cases.</i></p></div>
+      <div id="codeContent">
+      <ul>
+      <li><a id="genUniqueImageListFromMap" href="#genUniqueImageListFromMap">genUniqueImageListFromMap(mapFlName)</a></li>
+      <p>
+              a.  Arguments: Image Job Map in CSV format <br>
+              b.  Argument data-type: str<br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              d.  Returns: A Python List Object <br>
+              e.  Comments: This method is used to generate a list of all images that are used in the current experiment as specified by the map file.<br>
+      </p>
+
+      <li><a id="genAlbumGIDDictFromMap" href="#genAlbumGIDDictFromMap">genAlbumGIDDictFromMap(mapFlName)</a></li>
+      <p>
+              a.  Arguments: Image Job Map in CSV format <br>
+              b.  Argument data-type: str<br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              d.  Returns: A Python Dictionary Object <br>
+              e.  Comments: This method is used to generate a dictionary in the form { Album : [GIDS] }. This object will give us the capability to query which images exist in a particular album.<br>
+      </p>
+
+      <li><a id="genImgAlbumDictFromMap" href="#genImgAlbumDictFromMap">genImgAlbumDictFromMap(mapFlName)</a></li>
+      <p>
+              a.  Arguments: Image Job Map in CSV format <br>
+              b.  Argument data-type: str<br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              d.  Returns: A Python Dictionary Object <br>
+              e.  Comments: This method is used to generate a dictionary in the form { GID: [Albums] }. This object will give us the capability to query which album contain a particular GID.<br>
+      </p>
+
+      <li><a id="getImageFreqFromMap" href="#getImageFreqFromMap">getImageFreqFromMap(inFL)</a></li>
+      <p>
+              a.  Arguments: Image Job Map in CSV format <br>
+              b.  Argument data-type: str<br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              d.  Returns: A Python Dictionary Object <br>
+              e.  Comments: This method is used to generate a dictionary in the form { GID : No. of albums it appears }. <br>
+      </p>
+
+      <li><a id="genAidGidDictFromMap" href="#genAidGidDictFromMap">genAidGidDictFromMap(mapFL)</a></li>
+      <p>
+              a.  Arguments: GID-AID map file(JSON) <br>
+              b.  Argument data-type: str<br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              d.  Returns: A Python Dictionary Object <br>
+              e.  Comments: This method is used to generate a dictionary in the form { AID : GID }. <br>
+      </p>
+
+      <li><a id="genGidAidDictFromMap" href="#genGidAidDictFromMap">genGidAidDictFromMap(mapFL)</a></li>
+      <p>
+              a.  Arguments: GID-AID map file(JSON) <br>
+              b.  Argument data-type: str<br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              d.  Returns: A Python Dictionary Object <br>
+              e.  Comments: This method is used to generate a dictionary in the form { GID : List of AIDs in that image }. <br>
+      </p>
+
+      <li><a id="genAidGidTupListFromMap" href="#genAidGidTupListFromMap">genAidGidTupListFromMap(mapFL)</a></li>
+      <p>
+              a.  Arguments: GID-AID map file(JSON) <br>
+              b.  Argument data-type: str<br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              d.  Returns: A Python List Object (A list of tuples)<br>
+              e.  Comments: This method is used to generate  a list of tuples in the form ( AID , GID ). <br>
+      </p>
+
+      <li><a id="genAidFeatureDictList" href="#genAidFeatureDictList">genAidFeatureDictList(mapFL)</a></li>
+      <p>
+              a.  Arguments: AID-Feature map file(JSON) <br>
+              b.  Argument data-type: str<br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              d.  Returns: A Python List Object (A list of tuples)<br>
+              e.  Comments: This method is used to generate a list of dictionaries in the form [{'AID': xx,'NID' : xx ,.. }]. This object will give us the capability to iterate through all annotations and their respective features.<br>
+      </p>
+
+      <li><a id="genAidFeatureDictDict" href="#genAidFeatureDictDict">genAidFeatureDictDict(mapFL)</a></li>
+      <p>
+              a.  Arguments: AID-Feature map file(JSON) <br>
+              b.  Argument data-type: str<br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              d.  Returns: A Python Dictionary<br>
+              e.  Comments: This method is used to generate a dictionary in the form { AID : {'NID' : xxx , 'SPECIES' : xxx, .. }}. This object will give us the capability to query one/multiple features given a annotation ID.<br>
+      </p>
+
+      <li><a id="extractImageFeaturesFromMap" href="#extractImageFeaturesFromMap">extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature)</a></li>
+      <p>
+              a.  Arguments: GID-AID map file(JSON), AID-Feature map file(JSON, feature <br>
+              b.  Argument data-type: str, str, str<br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              &nbsp &nbsp ii.  The feature list should contain elements from the acceptable set of features. <br>
+              d. Returns: A Python Dictionary object. <br>
+              e.  Comments: This method is used to generate a dictionary in the form { GID : [list of features instances in that image]}. This object will give us the capability to check what feature instances are present in a given image. <br>
+      </p>
+
+      <li><a id="createResultDict" href="#createResultDict">createResultDict(jobRangeStart,jobRangeEnd)</a></li>
+      <p>
+              a.  Arguments: Start of the results file, end of the results files. <br>
+              b.  Argument data-type: int, int<br>
+              c.  PRE-condition: <br>
+              d. Returns: A Python Dictionary object. <br>
+              e.  Comments: Every album corresponds to a .result file which is extracted from the Amazon Mechanical Turk interface. This method parses the results file and generates a python object consisting of each response key with the actual response from the users. The dictionary is of the form: { photo_album_i : { Answer.GID : [ GID|'share' , 'GID'|'noShare'] }} All the results file from jobRangeStart to jobRangeEnd will be parsed and included in the output object.<br>
+      </p>
+
+      <li><a id="imgShareCountsPerAlbum" href="#imgShareCountsPerAlbum">imgShareCountsPerAlbum(imgAlbumDict,results)</a></li>
+      <p>
+              a.  Arguments: Image Job Map in CSV format, results is the direct output of the method <a href="#createResultDict">createResultDict()</a> <br>
+              b.  Argument data-type: str, Python Dictionary object<br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              d. Returns: 2 Python List object. <br>
+              e.  Comments: This method returns a Python list which gives us the capability to iterate through all the images, the number of times an image was shared or not shared in a particular album. This object will form the basis of all statistic computations in the project. The format of a tuple inside the list is of the form (GID, Album, Share count, Not Share count, Proportion). The other return object is the list of all (GID, albums) for which there was no valid response. (Form fields in certain albums in experiment 2 were not mandatory in the beginning, the bug was identified and corrected in a later stage.)<br>
+      </p>
+
+      <li><a id="auditResMap" href="#auditResMap">auditResMap(imgAlbumDict,resultList)</a></li>
+      <p>
+              a.  Arguments: Image Job Map in CSV format, results is the direct output of the method <a href="#imgShareCountsPerAlbum">imgShareCountsPerAlbum()</a> <br>
+              b.  Argument data-type: str, Python list object<br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
+              d. Returns: 3 boolean variables. <br>
+              e.  Comments: This method is an audit method that ensures there are no leaks or incorrect data in the result and feature objects. The 3 boolean variables indicate 3 different types of errors.<br>
+              &nbsp &nbsp i. If error1 is returned as True it means there are images in the result objects that were not originally a part of the map file<br>
+              &nbsp &nbsp ii. If error2 is returned as True it means there are images in the map file but not in results file. <br>
+              &nbsp &nbsp iii. If error3 is returned as True it means there are images in the results file that are not in the map file. 
+      </p>
+
+      </ul>
+      </div>
+
+      
+
+
 
 
       </section>
