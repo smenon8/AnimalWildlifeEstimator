@@ -76,16 +76,16 @@ def getUnixTimeReadableFmt(unixtm):
     return datetime.datetime.fromtimestamp(int(unixtm)).strftime('%Y-%m-%d %H:%M:%S')
 
 def __main__():
-    # for i in range(1,2):
-    #     print(getImageFeature(getAnnotID(i),"age/months")) # age
-    #     print(getImageFeature(getAnnotID(i),"yaw/text")) # yaw_texts
-    #     print(getImageFeature(getAnnotID(i),"exemplar")) # exemplar flag
-    #     print(getImageFeature(getAnnotID(i),"quality/text")) # quality
-    #     print(getImageFeature(getAnnotID(i),"sex/text")) # sex
-    #     print(getImageFeature(getAnnotID(i),"species/text")) # species
-    #     print(getImageFeature(getAnnotID(i),"name/rowid")) # NID
-    #     print(getImageFeature(getAnnotID(i),"name/text")) # Individual Name
-    #     print(getImageFeature(getAnnotID(i),"image/contributor/tag")) # Image contributor Tag
+    for i in range(1,2):
+        print(getImageFeature(getAnnotID(i),"age/months")) # age
+        print(getImageFeature(getAnnotID(i),"yaw/text")) # yaw_texts
+        print(getImageFeature(getAnnotID(i),"exemplar")) # exemplar flag
+        print(getImageFeature(getAnnotID(i),"quality/text")) # quality
+        print(getImageFeature(getAnnotID(i),"sex/text")) # sex
+        print(getImageFeature(getAnnotID(i),"species/text")) # species
+        print(getImageFeature(getAnnotID(i),"name/rowid")) # NID
+        print(getImageFeature(getAnnotID(i),"name/text")) # Individual Name
+        print(getImageFeature(getAnnotID(i),"image/contributor/tag")) # Image contributor Tag
 
     print(getExifData([1,2,3],'unixtime'))
     print(getExifData([1],'unixtime'))
