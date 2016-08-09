@@ -14,36 +14,28 @@ import BuildConsolidatedFeaturesFile as Features
 import importlib
 import re
 import json
-from collections import OrderedDict
+from collections import OrderedDict, Counter
 importlib.reload(Features)
 
 # This method is used to generate a list of all images that are used in the current experiment as specified by the map file.
 def genUniqueImageListFromMap(mapFlName):
-	reader = csv.reader(open(mapFlName,"r"))
-	head = reader.__next__()
-	data = []
-	for row in reader:
-	    data.append(row)
+    with open(mapFlName,"r") as csvFl:
+        reader = csv.reader(csvFl)
+        head = reader.__next__()
+        data = [row for row in reader]
 
-	images = []
-	for row in data:
-		images += row[1:len(row)-1]
+    images = [img for row in data for img in row[1:]]
 
-	uniqueImgs = list(set(images))
-
-	return uniqueImgs
+    return list(set(images))
 
 # This method is used to generate a dictionary in the form { Album : [GIDS] }. 
 # This object will give us the capability to query which images exist in a particular album.
 def genAlbumGIDDictFromMap(mapFlName):
-	reader = csv.reader(open(mapFlName,"r"))
-	head = reader.__next__()
-	data = {}
+    reader = csv.reader(open(mapFlName,"r"))
+    head = reader.__next__()
+    data = {row[0] : row[1:] for row in reader}
 
-	for row in reader:
-		data[row[0]] = row[1:]
-
-	return data
+    return data
 
 # This method is used to generate a dictionary in the form { GID: [Albums] }. 
 # This object will give us the capability to query which album contain a particular GID.
@@ -62,12 +54,7 @@ def genImgAlbumDictFromMap(mapFLName):
 # This method is used to generate a dictionary in the form { GID : No. of albums it appears }. 
 def getImageFreqFromMap(inFL):
     imgAlbumDict = genImgAlbumDictFromMap(inFL)
-
-    imgFreq = []
-    for img in imgAlbumDict:
-        imgFreq.append((img, len(imgAlbumDict[img])))
-
-    imgFreq = sorted(imgFreq,key = lambda x : x[1],reverse = True)
+    imgFreq = sorted([(img, len(imgAlbumDict[img])) for img in imgAlbumDict],key = lambda x : x[1],reverse = True)
 
     return imgFreq
 
@@ -188,15 +175,11 @@ def createResultDict(jobRangeStart,jobRangeEnd):
     for i in range(jobRangeStart,jobRangeEnd+1):
         inFLTitle = "photo_album_" + str(i)
         inFL = "../results/photo_album_" + str(i) + ".results"
-        inFLList = []
         with open(inFL,"r") as inp:
-            for line in inp:
-                inFLList.append(line.replace('"',''))
+            inFLList = [line.replace('"','') for line in inp]
 
-        resultList = []
         header = inFLList[0].split("\t")
-        for line in inFLList[1:]:
-            resultList.append(line.split("\t"))
+        resultList = [line.split("\t") for line in inFLList[1:]]
 
         resultDict = OrderedDict()
         for i in range(0,len(resultList)):
@@ -211,6 +194,16 @@ def createResultDict(jobRangeStart,jobRangeEnd):
         masterDict[inFLTitle] = newDict
         
     return masterDict
+
+# This method will be used to extract responses to general questions in the mechanical turk job.
+# For instance, in experiment 1 and 2, there were questions asking about how often one shares on social media etc.
+def genCntrsGenQues(jobRangeStart,jobRangeEnd,keyList):
+    results = createResultDict(jobRangeStart,jobRangeEnd)
+
+    answers = [[ans for album in results.keys() for ans in results[album][key]] for key in keyList]
+    cntrObj = {keyList[i] : Counter(answers[i]) for i in range(len(keyList))}
+
+    return cntrObj
 
 # This method returns a Python list which gives us the capability to iterate through all the images, the number of times an image was shared or not shared in a particular album. 
 # This object will form the basis of all statistic computations in the project. The format of a tuple inside the list is of the form (GID, Album, Share count, Not Share count, Proportion). 
