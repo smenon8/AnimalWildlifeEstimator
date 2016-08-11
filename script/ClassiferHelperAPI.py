@@ -45,14 +45,15 @@ def getMasterData(flNm):
     df = df.iloc[np.random.permutation(len(df))]
     df.to_csv("/tmp/tmp.csv",index=False)
     
-    reader = csv.reader(open("/tmp/tmp.csv","r"))
-    head = reader.__next__()
-    data = {}
-    for row in reader:
-        temp = {}
-        for i in range(1,len(row)):
-            temp[head[i]] = row[i] 
-        data[row[0]] = temp
+    with open("/tmp/tmp.csv","r") as tmpFL:
+        reader = csv.reader(tmpFL)
+        head = reader.__next__()
+        data = {}
+        for row in reader:
+            temp = {}
+            for i in range(1,len(row)):
+                temp[head[i]] = row[i] 
+            data[row[0]] = temp
 
     return data
 

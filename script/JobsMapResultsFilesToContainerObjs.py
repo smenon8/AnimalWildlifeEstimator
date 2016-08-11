@@ -195,6 +195,7 @@ def createResultDict(jobRangeStart,jobRangeEnd):
         
     return masterDict
 
+# Not added to github pages
 # This method will be used to extract responses to general questions in the mechanical turk job.
 # For instance, in experiment 1 and 2, there were questions asking about how often one shares on social media etc.
 def genCntrsGenQues(jobRangeStart,jobRangeEnd,keyList):
@@ -204,6 +205,21 @@ def genCntrsGenQues(jobRangeStart,jobRangeEnd,keyList):
     cntrObj = {keyList[i] : Counter(answers[i]) for i in range(len(keyList))}
 
     return cntrObj
+
+def genMSAIDataHighConfidenceTags(tagInpDataFl,threshold=0.5):
+    with open(tagInpDataFl,"r") as tagInp:
+        taggedData = json.load(tagInp)
+
+    gidFtrs = {}
+    for gid in taggedData:
+        tgs = taggedData[gid]['tags']
+        if len(tgs) == 0:
+            gidFtrs[gid] = [None]
+        for dic in tgs:
+            if dic['confidence'] >= threshold: # added for retaining only high confidence tags
+                gidFtrs[gid] = gidFtrs.get(gid,[]) + [dic['name']]
+
+    return gidFtrs
 
 # This method returns a Python list which gives us the capability to iterate through all the images, the number of times an image was shared or not shared in a particular album. 
 # This object will form the basis of all statistic computations in the project. The format of a tuple inside the list is of the form (GID, Album, Share count, Not Share count, Proportion). 

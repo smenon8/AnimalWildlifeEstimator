@@ -1,0 +1,178 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+  <HTMLContent><![CDATA[
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+ </head>
+ <body>
+ <h3> Creating a photo album</h3>
+  <p><b>Background:</b></p>
+  <p> We are a research group working on a project to count and track threatened and endangered animals through publicly shared social media photos. </p> 
+  <p>Having accurate information about wildlife populations is critical to protecting them and conserving their habitats.</p>  
+  <p>Gathering accurate information from public social media reports would make it possible to collect up-to-date information about wildlife more broadly than otherwise possible and help conservation efforts.</p>
+  <p>As part of this research, we must understand what kinds of animal photos people are likely to share (and not share) with their friends.</p>
+  
+  <p><b>This HIT:</b></p> 
+  <p>In this HIT,we will first ask 2 questions about your photo-sharing habits, and then we will show you a number of nature photos a person took while on vacation in Africa.</p> 
+  
+  <p>Please imagine that these are <em>your own photos</em> that you have taken and tell us which of these photos you would share or not share on social media. </p>
+  
+  <p> Thank you for your help</p>
+  
+  <form name='mturk_form' method='post' id='mturk_form' action='https://www.mturk.com/mturk/externalSubmit'>
+  
+  <p><b>How frequently do you share <em>your own photographs</em> on social media?</b> (e.g., Facebook, WhatsApp, Snapchat, Instagram).</p>
+  <input type = 'radio' value = 'never' name = 'q1' id = 'q1,never' required> Never
+  <input type = 'radio' value = 'infrequently' name = 'q1' id = 'q1,infrequent'/> Once a month or less
+  <input type = 'radio' value = 'sometimes' name = 'q1' id = 'q1,sometimes'/> About once a week
+  <input type = 'radio' value = 'regularly' name = 'q1' id = 'q1,regularly'/> Most days
+  <input type = 'radio' value = 'everyday' name = 'q1' id = 'q1,everyday'/> Every day
+  <br><br>
+  
+  <p><b>If you were to go on a once-in-a-lifetime vacation and take many photos, how many do you think you would share on social media</b> (either during the trip or afterwards)? </p>
+  <input type = 'radio' value = 'A' name = 'q2' id = 'q2,A' required> None
+  <input type = 'radio' value = 'B' name = 'q2' id = 'q2,B'> 1 to 5
+  <input type = 'radio' value = 'C' name = 'q2' id = 'q2,C'> 5 to 10
+  <input type = 'radio' value = 'D' name = 'q2' id = 'q2,D'> 10 to 50
+  <input type = 'radio' value = 'E' name = 'q2' id = 'q2,E'> 50 or more
+  <br><br>
+  
+<table border = 1>
+<tr>
+   <td>
+      <center><br><input type='radio' value='share' name='8' id='8,share'>Share
+      <input type='radio' value='do not share' name='8' id='8,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/8/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+   <td>
+      <center><br><input type='radio' value='share' name='80' id='80,share'>Share
+      <input type='radio' value='do not share' name='80' id='80,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/80/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+</tr>
+<tr>
+   <td>
+      <center><br><input type='radio' value='share' name='90' id='90,share'>Share
+      <input type='radio' value='do not share' name='90' id='90,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/90/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+   <td>
+      <center><br><input type='radio' value='share' name='91' id='91,share'>Share
+      <input type='radio' value='do not share' name='91' id='91,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/91/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+</tr>
+<tr>
+   <td>
+      <center><br><input type='radio' value='share' name='37' id='37,share'>Share
+      <input type='radio' value='do not share' name='37' id='37,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/37/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+   <td>
+      <center><br><input type='radio' value='share' name='16' id='16,share'>Share
+      <input type='radio' value='do not share' name='16' id='16,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/16/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+</tr>
+<tr>
+   <td>
+      <center><br><input type='radio' value='share' name='69' id='69,share'>Share
+      <input type='radio' value='do not share' name='69' id='69,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/69/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+   <td>
+      <center><br><input type='radio' value='share' name='24' id='24,share'>Share
+      <input type='radio' value='do not share' name='24' id='24,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/24/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+</tr>
+<tr>
+   <td>
+      <center><br><input type='radio' value='share' name='12' id='12,share'>Share
+      <input type='radio' value='do not share' name='12' id='12,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/12/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+   <td>
+      <center><br><input type='radio' value='share' name='101' id='101,share'>Share
+      <input type='radio' value='do not share' name='101' id='101,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/101/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+</tr>
+<tr>
+   <td>
+      <center><br><input type='radio' value='share' name='19' id='19,share'>Share
+      <input type='radio' value='do not share' name='19' id='19,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/19/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+   <td>
+      <center><br><input type='radio' value='share' name='50' id='50,share'>Share
+      <input type='radio' value='do not share' name='50' id='50,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/50/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+</tr>
+<tr>
+   <td>
+      <center><br><input type='radio' value='share' name='85' id='85,share'>Share
+      <input type='radio' value='do not share' name='85' id='85,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/85/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+   <td>
+      <center><br><input type='radio' value='share' name='97' id='97,share'>Share
+      <input type='radio' value='do not share' name='97' id='97,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/97/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+</tr>
+<tr>
+   <td>
+      <center><br><input type='radio' value='share' name='34' id='34,share'>Share
+      <input type='radio' value='do not share' name='34' id='34,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/34/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+   <td>
+      <center><br><input type='radio' value='share' name='10' id='10,share'>Share
+      <input type='radio' value='do not share' name='10' id='10,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/10/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+</tr>
+<tr>
+   <td>
+      <center><br><input type='radio' value='share' name='33' id='33,share'>Share
+      <input type='radio' value='do not share' name='33' id='33,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/33/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+   <td>
+      <center><br><input type='radio' value='share' name='79' id='79,share'>Share
+      <input type='radio' value='do not share' name='79' id='79,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/79/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+</tr>
+<tr>
+   <td>
+      <center><br><input type='radio' value='share' name='99' id='99,share'>Share
+      <input type='radio' value='do not share' name='99' id='99,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/99/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+   <td>
+      <center><br><input type='radio' value='share' name='84' id='84,share'>Share
+      <input type='radio' value='do not share' name='84' id='84,do_not_share'>Do not share</center>
+      <img src = "http://pachy.cs.uic.edu:5000/api/image/src/84/?resize_pix_w=500" alt="Unavailable"/>
+   </td>
+</tr>
+
+</table>  
+   <br>
+  <p>Please enter any general comments or feedback on the HIT [optional]</p>
+  <input type ="text" name="generalComments" id=comments>
+  <input type="hidden" name="assignmentId" id= assignmentId> 
+  <br>
+  <p><input type='submit' id='submitButton' name = 'submitButton' value='Submit' /></p></form>
+  
+  <script language='Javascript'>turkSetAssignmentID();</script>
+ </body>
+</html>
+]]>
+  </HTMLContent>
+  <FrameHeight>500</FrameHeight>
+</HTMLQuestion>

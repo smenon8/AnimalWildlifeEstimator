@@ -56,6 +56,8 @@ def writeCsvFromDict(header,inDict,outFL):
 	
 	writeFL.close()
 
+# Original Microsoft Tagging API output is a R list, 
+# This method parses the data into python readable form and dumps the output into a JSON.
 def genJsonFromMSAIData(flName,outFlNm):
     data = []
     with open(flName) as openFl:

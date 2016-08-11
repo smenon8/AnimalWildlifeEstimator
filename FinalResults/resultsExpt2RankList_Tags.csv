@@ -1,4 +1,4 @@
-GID,Shares,Not Shares,Total,Proportion,tags
+GID,Shared,Not Shared,Total,Proportion,tags
 7768,10,0,10,100.0,"['grass', 'zebra', 'outdoor', 'sky', 'animal', 'standing', 'mammal', 'field']"
 2151,10,0,10,100.0,"['grass', 'zebra', 'outdoor', 'animal', 'field', 'mammal', 'standing', 'grassy', 'dry']"
 9019,10,0,10,100.0,"['ground', 'outdoor', 'zebra', 'animal', 'grass', 'mammal', 'road', 'dirt', 'walking']"
