@@ -320,6 +320,7 @@ def ovrallShrCntsByTwoFtrs(gidAidMapFl,aidFeatureMapFl,ftr1,ftr2,imgJobMap,resSe
             answerSet[varNameTot] = answerSet.get(varNameTot,[]) + [tup[2] + tup[3]]
             
     return answerSet
+
 # This method generates the rank list of number of individuals in an image by share proportion.
 def genNumIndsRankList():
     # no. of individuals per image
