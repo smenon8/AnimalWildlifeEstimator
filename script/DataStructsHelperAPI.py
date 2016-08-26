@@ -6,6 +6,7 @@ Author : Sreejith Menon (smenon8@uic.edu)
 '''
 
 import csv
+from datetime import datetime
 
 # Generate list of tuples from csv
 def genlstTupFrmCsv(flNm,headerExists=True):
@@ -22,3 +23,7 @@ def cnvrtDictToLstTup(dct):
 
 # Generate dictionary with row[0] as key and row[1:] as value
 # Generate dictionary object from JSON.
+
+# Generate Date(String) in outFmt from TimeStamp(String) in inpFmt
+def getDateFromStr(dtStr,inpFmt,outFmt):
+	return datetime.strptime(dtStr,'%Y-%m-%d %H:%M:%S').date().strftime('%Y-%m-%d')

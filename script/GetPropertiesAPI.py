@@ -72,8 +72,9 @@ def getAgeFeatureReadableFmt(ageList):
 
 # Method for converting unix times into human readable format. 
 # Current return format: YYYY-MM-DD HH-mm-ss
+# Modified to take into consideration daylight saving changes (now uses utcfromtimestamp method)
 def getUnixTimeReadableFmt(unixtm):
-    return datetime.datetime.fromtimestamp(int(unixtm)).strftime('%Y-%m-%d %H:%M:%S')
+    return datetime.datetime.utcfromtimestamp(int(unixtm)).strftime('%Y-%m-%d %H:%M:%S')
 
 def __main__():
     for i in range(1,2):

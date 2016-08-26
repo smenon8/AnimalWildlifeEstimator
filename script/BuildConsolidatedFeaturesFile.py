@@ -56,6 +56,28 @@ def writeCsvFromDict(header,inDict,outFL):
 	
 	writeFL.close()
 
+def buildExifFeatureFl(inp,outFL,isInpFl = True):
+	if isInpFl:
+		with open(inp,"r") as inpFL:
+			gids = [row[0] for row in csv.reader(inpFL)]
+	else: #input is provided as a list
+		allGID = inp 
+
+	gids = list(map(lambda x : int(x),gids))
+	datetimes = GP.getExifData(gids,'unixtime')
+	lats = GP.getExifData(gids,'lat')
+	longs = GP.getExifData(gids,'lon')
+
+	imgProps = {gids[i] : {'datetime' : GP.getUnixTimeReadableFmt(datetimes[i]),
+                      'lat' : lats[i],
+                      'long' : longs[i]} 
+           for i in range(0,len(gids))}
+
+	with open(outFL,"w") as outFl:
+	    json.dump(imgProps,outFl,indent=4)
+
+	return None
+
 # Original Microsoft Tagging API output is a R list, 
 # This method parses the data into python readable form and dumps the output into a JSON.
 def genJsonFromMSAIData(flName,outFlNm):
@@ -132,29 +154,6 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 				GP.getAgeFeatureReadableFmt(age_months[i]),str(exemplar_flags[i]),
 				quality_texts[i],yaw_texts[i],image_contrib_tags[i]] 
 				for i in range(0,len(aidList))}
-	# for aid in aidList:
-	# 	nid = GP.getImageFeature(aid,"name/rowid")
-	# 	features[aid] = [nid]
-	# 	names = GP.getImageFeature(aid,"name/text")
-	# 	features[aid].append(names)
-	# 	spec_text = GP.getImageFeature(aid,"species/text")
-	# 	features[aid].append(spec_text)
-	# 	sex_text = GP.getImageFeature(aid,"sex/text")
-	# 	features[aid].append(sex_text)
-	# 	est_age = GP.getImageFeature(aid,"age/months")
-	# 	features[aid].append(GP.getAgeFeatureReadableFmt(est_age))
-	# 	exemplar = GP.getImageFeature(aid,"exemplar")
-	# 	features[aid].append(list(map(str,exemplar))) # needed to convert the flags to string
-	# 	qual_text = GP.getImageFeature(aid,"quality/text")
-	# 	features[aid].append(qual_text)
-	# 	yaw_text = GP.getImageFeature(aid,"yaw/text")
-	# 	features[aid].append(yaw_text)
-	# 	contrib_tag = GP.getImageFeature(aid,"image/contributor/tag")
-	# 	features[aid].append(contrib_tag)
-	# 	aidInd += 1
-	# 	percentComplete = aidInd * 100 / len(aidList)
-	# 	if math.floor(percentComplete) %5 == 0:
-	# 		printCompltnPercent(percentComplete)
 	print()
 	print("All features extracted.")
 
