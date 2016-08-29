@@ -222,5 +222,11 @@ def __main__():
 	buildExifFeatureFl(allGidPart2,"../data/imgs_exif_data_full2.json",False)
 	print("Completed EXIF feature extraction . . .Part2")
 
+	print("Combining part files to full files")
+	DS.combineJson("../data/full1_gid_aid_map.json","../data/full2_gid_aid_map.json","../data/full_gid_aid_map.json")
+	DS.combineJson("../data/full1_gid_aid_features.json","../data/full2_gid_aid_features.json","../data/full_gid_aid_features.json")
+	DS.combineJson("../data/full1_aid_features.json","../data/full2_aid_features.json","../data/full_aid_features.json")
+	DS.combineJson("../data/imgs_exif_data_full1.json","../data/imgs_exif_data_full2.json","../data/imgs_exif_data_full.json")
+
 if __name__ == "__main__":
 	__main__()	
