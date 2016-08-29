@@ -7,6 +7,7 @@ Author : Sreejith Menon (smenon8@uic.edu)
 
 import csv
 from datetime import datetime
+import json
 
 # Generate list of tuples from csv
 def genlstTupFrmCsv(flNm,headerExists=True):
@@ -27,3 +28,14 @@ def cnvrtDictToLstTup(dct):
 # Generate Date(String) in outFmt from TimeStamp(String) in inpFmt
 def getDateFromStr(dtStr,inpFmt,outFmt):
 	return datetime.strptime(dtStr,'%Y-%m-%d %H:%M:%S').date().strftime('%Y-%m-%d')
+
+def combineJson(fl1,fl2,outFlNm):
+	with open(fl1,"r") as f1, open(fl2,"r") as f2:
+		jObj1 = json.load(f1)
+		jObj2 = json.load(f2)
+
+		jObj1.update(jObj2)
+		with open(outFlNm,"w") as out:
+			json.dump(jObj1,out,indent=4)
+
+	return None

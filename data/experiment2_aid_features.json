@@ -32,6 +32,17 @@
         "left",
         "NNP GZC Car '1BLUE', Person 'B'"
     ],
+    "18434": [
+        -18434,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '2RED', Person 'C'"
+    ],
     "12303": [
         696,
         "IBEIS_PZ_0423",
@@ -98,16 +109,27 @@
         "left",
         "NNP GZC Car '1BLUE', Person 'B'"
     ],
-    "8879": [
-        -8879,
+    "13367": [
+        -13367,
         "____",
-        "giraffe_masai",
+        "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
         "ok",
         "right",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+        "NNP GZC Car '17WHITE', Person 'A'"
+    ],
+    "12975": [
+        -12975,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "excellent",
+        "right",
+        "NNP GZC Car '3WHITE', Person 'A'"
     ],
     "12317": [
         607,
@@ -197,16 +219,16 @@
         "left",
         "NNP GZC Car '1BLUE', Person 'A'"
     ],
-    "16435": [
-        -16435,
-        "____",
+    "12339": [
+        1675,
+        "IBEIS_PZ_1402",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "ok",
-        "right",
-        "NNP GZC Car '8WHITE', Person 'A'"
+        "Female",
+        "adult",
+        "1",
+        "excellent",
+        "left",
+        "NNP GZC Car '1BLUE', Person 'A'"
     ],
     "16436": [
         -16436,
@@ -263,17 +285,6 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'D'"
     ],
-    "9684": [
-        -9684,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "ok",
-        "right",
-        "NNP GZC Car '1BLUE', Person 'B'"
-    ],
     "12359": [
         1375,
         "IBEIS_PZ_1102",
@@ -296,16 +307,16 @@
         "backleft",
         "NNP GZC Car '1BLUE', Person 'A'"
     ],
-    "10252": [
-        288,
-        "IBEIS_PZ_0015",
+    "12361": [
+        1386,
+        "IBEIS_PZ_1113",
         "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
+        "Male",
+        "adult",
         "0",
-        "junk",
+        "ok",
         "left",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+        "NNP GZC Car '1BLUE', Person 'A'"
     ],
     "12362": [
         2178,
@@ -329,16 +340,27 @@
         "left",
         "NNP GZC Car '1BLUE', Person 'A'"
     ],
-    "10253": [
-        457,
-        "IBEIS_PZ_0184",
+    "13312": [
+        -13312,
+        "____",
         "zebra_plains",
-        "Male",
-        "juveniles- two year old",
+        "UNKNOWN NAME",
+        "infant",
         "0",
+        "good",
+        "right",
+        "NNP GZC Car '12WHITE', Person 'A'"
+    ],
+    "14349": [
+        2168,
+        "IBEIS_PZ_1895",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "1",
         "ok",
         "left",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "12376": [
         535,
@@ -450,17 +472,6 @@
         "left",
         "NNP GZC Car '1BLUE', Person 'B'"
     ],
-    "18309": [
-        -18309,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "junk",
-        "left",
-        "NNP GZC Car '2RED', Person 'C'"
-    ],
     "12404": [
         995,
         "IBEIS_PZ_0722",
@@ -494,16 +505,27 @@
         "left",
         "NNP GZC Car '1BLUE', Person 'B'"
     ],
-    "12407": [
-        1386,
-        "IBEIS_PZ_1113",
+    "16503": [
+        1537,
+        "IBEIS_PZ_1264",
         "zebra_plains",
-        "Male",
-        "adult",
+        "UNKNOWN SEX",
+        "infant",
         "1",
         "good",
         "left",
-        "NNP GZC Car '1BLUE', Person 'B'"
+        "NNP GZC Car '8WHITE', Person 'A'"
+    ],
+    "16504": [
+        1777,
+        "IBEIS_PZ_1504",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "ok",
+        "backleft",
+        "NNP GZC Car '8WHITE', Person 'A'"
     ],
     "12409": [
         1676,
@@ -548,6 +570,17 @@
         "excellent",
         "left",
         "NNP GZC Car '1BLUE', Person 'B'"
+    ],
+    "13675": [
+        1675,
+        "IBEIS_PZ_1402",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '7WHITE', Person 'B'"
     ],
     "12420": [
         1377,
@@ -714,38 +747,38 @@
         "frontleft",
         "NNP GZC Car '2WHITE', Person 'A'"
     ],
-    "12460": [
-        646,
-        "IBEIS_PZ_0373",
+    "16556": [
+        -16556,
+        "____",
         "zebra_plains",
-        "Female",
-        "adult",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "poor",
-        "left",
-        "NNP GZC Car '2WHITE', Person 'A'"
+        "junk",
+        "front",
+        "NNP GZC Car '8WHITE', Person 'A'"
     ],
-    "12461": [
-        333,
-        "IBEIS_PZ_0060",
+    "16557": [
+        -16557,
+        "____",
         "zebra_plains",
-        "Male",
-        "adult",
-        "1",
-        "good",
-        "left",
-        "NNP GZC Car '2WHITE', Person 'A'"
-    ],
-    "12462": [
-        674,
-        "IBEIS_PZ_0401",
-        "zebra_plains",
-        "Female",
-        "juveniles- two year old",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "ok",
-        "left",
-        "NNP GZC Car '2WHITE', Person 'A'"
+        "junk",
+        "backright",
+        "NNP GZC Car '8WHITE', Person 'A'"
+    ],
+    "16558": [
+        -16558,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "junk",
+        "backright",
+        "NNP GZC Car '8WHITE', Person 'A'"
     ],
     "16559": [
         -16559,
@@ -989,16 +1022,38 @@
         "backleft",
         "NNP GZC Car '2WHITE', Person 'A'"
     ],
-    "14371": [
-        839,
-        "IBEIS_PZ_0566",
+    "12499": [
+        1154,
+        "IBEIS_PZ_0881",
         "zebra_plains",
-        "Male",
-        "juveniles- two year old",
+        "Female",
+        "adult",
         "0",
         "ok",
-        "backleft",
-        "NNP GZC Car '1PURPLE', Person 'A'"
+        "frontleft",
+        "NNP GZC Car '1WHITE', Person 'B'"
+    ],
+    "12500": [
+        1143,
+        "IBEIS_PZ_0870",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '1WHITE', Person 'B'"
+    ],
+    "12501": [
+        1261,
+        "IBEIS_PZ_0988",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '1WHITE', Person 'B'"
     ],
     "13689": [
         -13689,
@@ -1022,16 +1077,16 @@
         "left",
         "NNP GZC Car '1WHITE', Person 'C'"
     ],
-    "12511": [
-        340,
-        "IBEIS_PZ_0067",
+    "18469": [
+        -18469,
+        "____",
         "zebra_plains",
-        "Female",
-        "adult",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "good",
-        "frontleft",
-        "NNP GZC Car '1WHITE', Person 'B'"
+        "poor",
+        "right",
+        "NNP GZC Car '2RED', Person 'A'"
     ],
     "12512": [
         347,
@@ -1088,27 +1143,27 @@
         "back",
         "NNP GZC Car '8WHITE', Person 'A'"
     ],
-    "16615": [
-        -16615,
+    "12519": [
+        1170,
+        "IBEIS_PZ_0897",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "good",
+        "right",
+        "NNP GZC Car '1WHITE', Person 'C'"
+    ],
+    "16616": [
+        -16616,
         "____",
         "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
         "poor",
-        "back",
+        "backright",
         "NNP GZC Car '8WHITE', Person 'A'"
-    ],
-    "12520": [
-        1204,
-        "IBEIS_PZ_0931",
-        "zebra_plains",
-        "UNKNOWN SEX",
-        "juveniles - one year old",
-        "1",
-        "ok",
-        "left",
-        "NNP GZC Car '1WHITE', Person 'B'"
     ],
     "16617": [
         -16617,
@@ -1374,16 +1429,27 @@
         "left",
         "NNP GZC Car '8WHITE', Person 'A'"
     ],
-    "18480": [
-        -18480,
-        "____",
+    "12577": [
+        1215,
+        "IBEIS_PZ_0942",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
+        "Male",
+        "adult",
+        "1",
+        "ok",
         "left",
-        "NNP GZC Car '2RED', Person 'D'"
+        "NNP GZC Car '1WHITE', Person 'A'"
+    ],
+    "12578": [
+        1198,
+        "IBEIS_PZ_0925",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "adult",
+        "1",
+        "ok",
+        "frontleft",
+        "NNP GZC Car '1WHITE', Person 'C'"
     ],
     "12581": [
         1244,
@@ -1395,6 +1461,17 @@
         "poor",
         "left",
         "NNP GZC Car '1WHITE', Person 'B'"
+    ],
+    "10422": [
+        294,
+        "IBEIS_PZ_0021",
+        "zebra_plains",
+        "Female",
+        "infant",
+        "0",
+        "poor",
+        "left",
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "12587": [
         1175,
@@ -1451,16 +1528,16 @@
         "left",
         "NNP GZC Car '1WHITE', Person 'A'"
     ],
-    "12339": [
-        1675,
-        "IBEIS_PZ_1402",
+    "16435": [
+        -16435,
+        "____",
         "zebra_plains",
-        "Female",
-        "adult",
-        "1",
-        "excellent",
-        "left",
-        "NNP GZC Car '1BLUE', Person 'A'"
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "right",
+        "NNP GZC Car '8WHITE', Person 'A'"
     ],
     "12596": [
         1161,
@@ -1539,16 +1616,16 @@
         "left",
         "NNP GZC Car '1WHITE', Person 'B'"
     ],
-    "16714": [
-        1971,
-        "IBEIS_PZ_1698",
+    "12618": [
+        1171,
+        "IBEIS_PZ_0898",
         "zebra_plains",
-        "Male",
-        "juveniles - one year old",
+        "UNKNOWN SEX",
+        "infant",
         "0",
-        "ok",
-        "left",
-        "NNP GZC Car '1RED', Person 'B'"
+        "poor",
+        "backleft",
+        "NNP GZC Car '1WHITE', Person 'C'"
     ],
     "16715": [
         1623,
@@ -1616,16 +1693,16 @@
         "left",
         "NNP GZC Car '1WHITE', Person 'B'"
     ],
-    "12632": [
-        992,
-        "IBEIS_PZ_0719",
+    "13514": [
+        393,
+        "IBEIS_PZ_0120",
         "zebra_plains",
-        "Male",
-        "adult",
+        "UNKNOWN SEX",
+        "infant",
         "1",
         "good",
         "left",
-        "NNP GZC Car '1WHITE', Person 'C'"
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
     "12635": [
         1196,
@@ -1814,16 +1891,16 @@
         "left",
         "NNP GZC Car '1RED', Person 'B'"
     ],
-    "12663": [
-        1146,
-        "IBEIS_PZ_0873",
+    "15081": [
+        865,
+        "IBEIS_PZ_0592",
         "zebra_plains",
-        "Male",
+        "Female",
         "adult",
         "0",
-        "ok",
-        "frontleft",
-        "NNP GZC Car '1WHITE', Person 'C'"
+        "poor",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "10303": [
         496,
@@ -1858,16 +1935,16 @@
         "left",
         "NNP GZC Car '1WHITE', Person 'A'"
     ],
-    "13035": [
-        1661,
-        "IBEIS_PZ_1388",
-        "zebra_plains",
+    "8939": [
+        57,
+        "NNP_GIRM_0044",
+        "giraffe_masai",
         "Female",
         "adult",
-        "1",
-        "ok",
-        "left",
-        "NNP GZC Car '3PURPLE', Person 'B'"
+        "0",
+        "good",
+        "right",
+        "NNP GZC Car '1WHITE', Person 'C'"
     ],
     "12681": [
         1242,
@@ -1890,6 +1967,17 @@
         "ok",
         "frontleft",
         "NNP GZC Car '1WHITE', Person 'B'"
+    ],
+    "12685": [
+        1237,
+        "IBEIS_PZ_0964",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "1",
+        "good",
+        "left",
+        "NNP GZC Car '1WHITE', Person 'C'"
     ],
     "12689": [
         2014,
@@ -1957,16 +2045,16 @@
         "left",
         "NNP GZC Car '1WHITE', Person 'B'"
     ],
-    "10308": [
-        496,
-        "IBEIS_PZ_0223",
+    "14404": [
+        1555,
+        "IBEIS_PZ_1282",
         "zebra_plains",
-        "Female",
+        "Male",
         "adult",
         "0",
-        "poor",
+        "ok",
         "left",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "12699": [
         1243,
@@ -2045,17 +2133,6 @@
         "left",
         "NNP GZC Car '1WHITE', Person 'A'"
     ],
-    "13814": [
-        747,
-        "IBEIS_PZ_0474",
-        "zebra_plains",
-        "Male",
-        "adult",
-        "1",
-        "ok",
-        "left",
-        "NNP GZC Car '5WHITE', Person 'A'"
-    ],
     "12713": [
         1172,
         "IBEIS_PZ_0899",
@@ -2077,6 +2154,17 @@
         "good",
         "right",
         "NNP GZC Car '1WHITE', Person 'C'"
+    ],
+    "12461": [
+        333,
+        "IBEIS_PZ_0060",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "1",
+        "good",
+        "left",
+        "NNP GZC Car '2WHITE', Person 'A'"
     ],
     "16812": [
         2169,
@@ -2108,6 +2196,17 @@
         "adult",
         "0",
         "poor",
+        "left",
+        "NNP GZC Car '1WHITE', Person 'B'"
+    ],
+    "12720": [
+        1169,
+        "IBEIS_PZ_0896",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "1",
+        "good",
         "left",
         "NNP GZC Car '1WHITE', Person 'B'"
     ],
@@ -2144,17 +2243,6 @@
         "left",
         "NNP GZC Car '1WHITE', Person 'A'"
     ],
-    "12361": [
-        1386,
-        "IBEIS_PZ_1113",
-        "zebra_plains",
-        "Male",
-        "adult",
-        "0",
-        "ok",
-        "left",
-        "NNP GZC Car '1BLUE', Person 'A'"
-    ],
     "12728": [
         2015,
         "IBEIS_PZ_1742",
@@ -2166,16 +2254,27 @@
         "left",
         "NNP GZC Car '1WHITE', Person 'C'"
     ],
-    "17140": [
-        -17140,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+    "8948": [
+        16,
+        "NNP_GIRM_0013",
+        "giraffe_masai",
+        "Male",
+        "adult",
+        "1",
+        "good",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
+    "8880": [
+        79,
+        "NNP_GIRM_0059",
+        "giraffe_masai",
+        "Female",
+        "adult",
         "0",
-        "poor",
+        "ok",
         "right",
-        "NNP GZC Car '1RED', Person 'A'"
+        "NNP GZC Car '1WHITE', Person 'A'"
     ],
     "12733": [
         1150,
@@ -2275,6 +2374,17 @@
         "ok",
         "left",
         "NNP GZC Car '1WHITE', Person 'A'"
+    ],
+    "10381": [
+        286,
+        "IBEIS_PZ_0013",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "ok",
+        "right",
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "12757": [
         1158,
@@ -2507,16 +2617,16 @@
         "left",
         "NNP GZC Car '1RED', Person 'B'"
     ],
-    "8883": [
-        87,
-        "NNP_GIRM_0066",
-        "giraffe_masai",
-        "UNKNOWN SEX",
-        "infant",
-        "1",
-        "ok",
-        "frontleft",
-        "NNP GZC Car '1WHITE', Person 'C'"
+    "17325": [
+        298,
+        "IBEIS_PZ_0025",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "good",
+        "left",
+        "NNP GZC Car '1RED', Person 'B'"
     ],
     "16951": [
         -16951,
@@ -2528,17 +2638,6 @@
         "poor",
         "left",
         "NNP GZC Car '1RED', Person 'A'"
-    ],
-    "12976": [
-        -12976,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "ok",
-        "right",
-        "NNP GZC Car '3WHITE', Person 'A'"
     ],
     "16969": [
         374,
@@ -2584,16 +2683,27 @@
         "left",
         "NNP GZC Car '1RED', Person 'B'"
     ],
-    "12877": [
-        -12877,
+    "16973": [
+        1552,
+        "IBEIS_PZ_1279",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '1RED', Person 'B'"
+    ],
+    "13386": [
+        -13386,
         "____",
         "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "poor",
-        "back",
-        "NNP GZC Car '3WHITE', Person 'A'"
+        "excellent",
+        "backleft",
+        "NNP GZC Car '10WHITE', Person 'A'"
     ],
     "8796": [
         32,
@@ -2660,6 +2770,17 @@
         "good",
         "right",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
+    "18433": [
+        -18433,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '2RED', Person 'C'"
     ],
     "12901": [
         1720,
@@ -2760,16 +2881,16 @@
         "left",
         "NNP GZC Car '3WHITE', Person 'A'"
     ],
-    "17010": [
-        1946,
-        "IBEIS_PZ_1673",
+    "13387": [
+        -13387,
+        "____",
         "zebra_plains",
-        "Female",
+        "UNKNOWN NAME",
         "infant",
-        "1",
+        "0",
         "good",
-        "left",
-        "NNP GZC Car '1RED', Person 'A'"
+        "right",
+        "NNP GZC Car '10WHITE', Person 'A'"
     ],
     "17011": [
         -17011,
@@ -2837,16 +2958,16 @@
         "right",
         "NNP GZC Car '1WHITE', Person 'A'"
     ],
-    "11030": [
-        798,
-        "IBEIS_PZ_0525",
-        "zebra_plains",
+    "8837": [
+        105,
+        "NNP_GIRM_0081",
+        "giraffe_masai",
         "Male",
-        "juveniles- two year old",
+        "adult",
         "1",
-        "ok",
+        "good",
         "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+        "NNP GZC Car '1WHITE', Person 'C'"
     ],
     "8838": [
         52,
@@ -2892,16 +3013,38 @@
         "right",
         "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
     ],
-    "8849": [
-        55,
-        "NNP_GIRM_0042",
+    "8984": [
+        -8984,
+        "____",
         "giraffe_masai",
-        "Female",
-        "adult",
+        "UNKNOWN NAME",
+        "infant",
         "0",
         "good",
+        "back",
+        "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
+    ],
+    "8850": [
+        22,
+        "NNP_GIRM_0018",
+        "giraffe_masai",
+        "Male",
+        "adult",
+        "0",
+        "ok",
         "right",
         "NNP GZC Car '1WHITE', Person 'A'"
+    ],
+    "12979": [
+        -12979,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "good",
+        "backright",
+        "NNP GZC Car '3PURPLE', Person 'B'"
     ],
     "8859": [
         82,
@@ -2946,6 +3089,17 @@
         "poor",
         "left",
         "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
+    ],
+    "12964": [
+        1012,
+        "IBEIS_PZ_0739",
+        "zebra_plains",
+        "Female",
+        "juveniles- two year old",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '3WHITE', Person 'A'"
     ],
     "12965": [
         1734,
@@ -3046,27 +3200,27 @@
         "front",
         "NNP GZC Car '3WHITE', Person 'A'"
     ],
-    "12975": [
-        -12975,
+    "8879": [
+        -8879,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "right",
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+    ],
+    "12976": [
+        -12976,
         "____",
         "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "excellent",
-        "right",
-        "NNP GZC Car '3WHITE', Person 'A'"
-    ],
-    "8880": [
-        79,
-        "NNP_GIRM_0059",
-        "giraffe_masai",
-        "Female",
-        "adult",
-        "0",
         "ok",
         "right",
-        "NNP GZC Car '1WHITE', Person 'A'"
+        "NNP GZC Car '3WHITE', Person 'A'"
     ],
     "12977": [
         544,
@@ -3090,16 +3244,16 @@
         "backright",
         "NNP GZC Car '3PURPLE', Person 'B'"
     ],
-    "12979": [
-        -12979,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
+    "8883": [
+        87,
+        "NNP_GIRM_0066",
+        "giraffe_masai",
+        "UNKNOWN SEX",
         "infant",
-        "0",
-        "good",
-        "backright",
-        "NNP GZC Car '3PURPLE', Person 'B'"
+        "1",
+        "ok",
+        "frontleft",
+        "NNP GZC Car '1WHITE', Person 'C'"
     ],
     "17076": [
         1989,
@@ -3167,16 +3321,16 @@
         "right",
         "NNP GZC Car '3PURPLE', Person 'B'"
     ],
-    "17083": [
-        1947,
-        "IBEIS_PZ_1674",
-        "zebra_plains",
+    "8891": [
+        13,
+        "NNP_GIRM_0010",
+        "giraffe_masai",
         "Female",
         "adult",
         "0",
         "ok",
         "left",
-        "NNP GZC Car '1RED', Person 'B'"
+        "NNP GZC Car '1WHITE', Person 'B'"
     ],
     "17085": [
         1885,
@@ -3255,27 +3409,27 @@
         "right",
         "NNP GZC Car '3PURPLE', Person 'B'"
     ],
-    "13000": [
-        1669,
-        "IBEIS_PZ_1396",
-        "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
-        "1",
-        "good",
-        "left",
-        "NNP GZC Car '3PURPLE', Person 'B'"
-    ],
-    "13001": [
-        1666,
-        "IBEIS_PZ_1393",
-        "zebra_plains",
+    "8904": [
+        3,
+        "NNP_GIRM_0003",
+        "giraffe_masai",
         "Male",
         "adult",
         "1",
         "good",
         "left",
-        "NNP GZC Car '3PURPLE', Person 'B'"
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
+    "8905": [
+        5,
+        "NNP_GIRM_0005",
+        "giraffe_masai",
+        "UNKNOWN SEX",
+        "unknown",
+        "1",
+        "ok",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "13002": [
         1665,
@@ -3288,16 +3442,16 @@
         "left",
         "NNP GZC Car '3PURPLE', Person 'B'"
     ],
-    "17099": [
-        1962,
-        "IBEIS_PZ_1689",
+    "13003": [
+        1446,
+        "IBEIS_PZ_1173",
         "zebra_plains",
-        "UNKNOWN SEX",
+        "Male",
         "adult",
         "0",
-        "ok",
-        "left",
-        "NNP GZC Car '1RED', Person 'A'"
+        "excellent",
+        "backleft",
+        "NNP GZC Car '3PURPLE', Person 'B'"
     ],
     "8908": [
         -8908,
@@ -3442,6 +3596,17 @@
         "left",
         "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
     ],
+    "13024": [
+        1660,
+        "IBEIS_PZ_1387",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "good",
+        "left",
+        "NNP GZC Car '3PURPLE', Person 'B'"
+    ],
     "13027": [
         1752,
         "IBEIS_PZ_1479",
@@ -3475,16 +3640,16 @@
         "left",
         "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
     ],
-    "8939": [
-        57,
-        "NNP_GIRM_0044",
-        "giraffe_masai",
+    "13035": [
+        1661,
+        "IBEIS_PZ_1388",
+        "zebra_plains",
         "Female",
         "adult",
-        "0",
-        "good",
-        "right",
-        "NNP GZC Car '1WHITE', Person 'C'"
+        "1",
+        "ok",
+        "left",
+        "NNP GZC Car '3PURPLE', Person 'B'"
     ],
     "13038": [
         1663,
@@ -3519,16 +3684,16 @@
         "left",
         "NNP GZC Car '1WHITE', Person 'A'"
     ],
-    "8948": [
-        16,
-        "NNP_GIRM_0013",
-        "giraffe_masai",
-        "Male",
-        "adult",
-        "1",
-        "good",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    "17140": [
+        -17140,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "right",
+        "NNP GZC Car '1RED', Person 'A'"
     ],
     "17141": [
         668,
@@ -3596,6 +3761,17 @@
         "backleft",
         "NNP GZC Car '1WHITE', Person 'C'"
     ],
+    "17150": [
+        679,
+        "IBEIS_PZ_0406",
+        "zebra_plains",
+        "Female",
+        "juveniles- two year old",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '1RED', Person 'A'"
+    ],
     "8961": [
         47,
         "NNP_GIRM_0035",
@@ -3628,17 +3804,6 @@
         "ok",
         "left",
         "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
-    ],
-    "8891": [
-        13,
-        "NNP_GIRM_0010",
-        "giraffe_masai",
-        "Female",
-        "adult",
-        "0",
-        "ok",
-        "left",
-        "NNP GZC Car '1WHITE', Person 'B'"
     ],
     "8969": [
         7,
@@ -3684,16 +3849,27 @@
         "backleft",
         "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
     ],
-    "8984": [
-        -8984,
+    "17176": [
+        -17176,
         "____",
-        "giraffe_masai",
+        "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "good",
-        "back",
-        "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
+        "junk",
+        "left",
+        "NNP GZC Car '1RED', Person 'A'"
+    ],
+    "13082": [
+        1273,
+        "IBEIS_PZ_1000",
+        "zebra_plains",
+        "Male",
+        "juveniles- two year old",
+        "1",
+        "ok",
+        "left",
+        "NNP GZC Car '6WHITE', Person 'B'"
     ],
     "8987": [
         23,
@@ -3760,6 +3936,17 @@
         "junk",
         "backleft",
         "NNP GZC Car '6WHITE', Person 'B'"
+    ],
+    "14348": [
+        1548,
+        "IBEIS_PZ_1275",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "1",
+        "excellent",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "9008": [
         114,
@@ -3959,16 +4146,16 @@
         "back",
         "NNP GZC Car '1WHITE', Person 'C'"
     ],
-    "10381": [
-        286,
-        "IBEIS_PZ_0013",
+    "12576": [
+        1164,
+        "IBEIS_PZ_0891",
         "zebra_plains",
         "UNKNOWN SEX",
         "infant",
         "0",
-        "ok",
+        "poor",
         "right",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+        "NNP GZC Car '1WHITE', Person 'A'"
     ],
     "9043": [
         27,
@@ -3980,6 +4167,17 @@
         "ok",
         "left",
         "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
+    ],
+    "10394": [
+        274,
+        "IBEIS_PZ_0001",
+        "zebra_plains",
+        "Female",
+        "infant",
+        "0",
+        "ok",
+        "left",
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "9047": [
         -9047,
@@ -4300,16 +4498,16 @@
         "left",
         "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
     ],
-    "10394": [
-        274,
-        "IBEIS_PZ_0001",
-        "zebra_plains",
-        "Female",
+    "9578": [
+        -9578,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
         "infant",
         "0",
-        "ok",
+        "poor",
         "left",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+        "NNP GZC Car '3RED', Person 'B'"
     ],
     "9120": [
         158,
@@ -4388,6 +4586,17 @@
         "left",
         "NNP GZC Car '1WHITE', Person 'A'"
     ],
+    "17324": [
+        1934,
+        "IBEIS_PZ_1661",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '1RED', Person 'B'"
+    ],
     "9133": [
         -9133,
         "____",
@@ -4443,16 +4652,16 @@
         "right",
         "NNP GZC Car '9WHITE', Person 'A'"
     ],
-    "13237": [
-        1366,
-        "IBEIS_PZ_1093",
-        "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
+    "9141": [
+        18,
+        "NNP_GIRM_0015",
+        "giraffe_masai",
+        "Male",
+        "adult",
         "0",
-        "ok",
-        "right",
-        "NNP GZC Car '9WHITE', Person 'A'"
+        "good",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "13238": [
         1356,
@@ -4509,16 +4718,16 @@
         "right",
         "NNP GZC Car '9WHITE', Person 'A'"
     ],
-    "13243": [
-        1360,
-        "IBEIS_PZ_1087",
-        "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
+    "9147": [
+        63,
+        "NNP_GIRM_0047",
+        "giraffe_masai",
+        "Female",
+        "juveniles - one year old",
         "0",
-        "excellent",
-        "right",
-        "NNP GZC Car '9WHITE', Person 'A'"
+        "ok",
+        "left",
+        "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
     ],
     "13244": [
         792,
@@ -4553,16 +4762,16 @@
         "left",
         "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
     ],
-    "17344": [
-        -17344,
-        "____",
+    "13248": [
+        1359,
+        "IBEIS_PZ_1086",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Female",
+        "adult",
         "0",
         "poor",
         "backright",
-        "NNP GZC Car '6RED', Person 'B'"
+        "NNP GZC Car '9WHITE', Person 'A'"
     ],
     "13249": [
         792,
@@ -4641,16 +4850,16 @@
         "right",
         "NNP GZC Car '9WHITE', Person 'A'"
     ],
-    "13260": [
-        1363,
-        "IBEIS_PZ_1090",
-        "zebra_plains",
+    "9164": [
+        172,
+        "NNP_GIRM_0119",
+        "giraffe_masai",
         "Female",
         "adult",
         "0",
-        "excellent",
-        "right",
-        "NNP GZC Car '9WHITE', Person 'A'"
+        "good",
+        "left",
+        "NNP GZC Car '12WHITE', Person 'A'"
     ],
     "13261": [
         1358,
@@ -4773,16 +4982,16 @@
         "right",
         "NNP GZC Car '12WHITE', Person 'A'"
     ],
-    "17372": [
-        -17372,
+    "13276": [
+        -13276,
         "____",
         "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "good",
+        "ok",
         "right",
-        "NNP GZC Car '6RED', Person 'B'"
+        "NNP GZC Car '12WHITE', Person 'A'"
     ],
     "13277": [
         -13277,
@@ -4817,16 +5026,16 @@
         "left",
         "NNP GZC Car '12WHITE', Person 'A'"
     ],
-    "13280": [
-        1027,
-        "IBEIS_PZ_0754",
-        "zebra_plains",
-        "Male",
-        "adult",
-        "1",
+    "9184": [
+        49,
+        "NNP_GIRM_0037",
+        "giraffe_masai",
+        "Female",
+        "juveniles- two year old",
+        "0",
         "good",
         "left",
-        "NNP GZC Car '12WHITE', Person 'A'"
+        "NNP GZC Car '11WHITE', Person 'A'"
     ],
     "13281": [
         1716,
@@ -4916,6 +5125,17 @@
         "right",
         "NNP GZC Car '12WHITE', Person 'A'"
     ],
+    "13291": [
+        -13291,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "right",
+        "NNP GZC Car '12WHITE', Person 'A'"
+    ],
     "13292": [
         -13292,
         "____",
@@ -4993,16 +5213,16 @@
         "left",
         "NNP GZC Car '12WHITE', Person 'A'"
     ],
-    "13301": [
-        995,
-        "IBEIS_PZ_0722",
-        "zebra_plains",
-        "Female",
-        "adult",
+    "9726": [
+        -9726,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "good",
-        "left",
-        "NNP GZC Car '12WHITE', Person 'A'"
+        "poor",
+        "right",
+        "NNP GZC Car '1BLUE', Person 'A'"
     ],
     "13302": [
         1027,
@@ -5026,16 +5246,16 @@
         "right",
         "NNP GZC Car '12WHITE', Person 'A'"
     ],
-    "13304": [
-        953,
-        "IBEIS_PZ_0680",
-        "zebra_plains",
-        "Male",
-        "juveniles - one year old",
+    "9208": [
+        -9208,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "good",
-        "frontleft",
-        "NNP GZC Car '12WHITE', Person 'A'"
+        "ok",
+        "right",
+        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "9209": [
         -9209,
@@ -5114,16 +5334,16 @@
         "right",
         "NNP GZC Car '12WHITE', Person 'A'"
     ],
-    "13312": [
-        -13312,
+    "9216": [
+        -9216,
         "____",
-        "zebra_plains",
+        "giraffe_masai",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "good",
-        "right",
-        "NNP GZC Car '12WHITE', Person 'A'"
+        "poor",
+        "left",
+        "NNP GZC Car '11WHITE', Person 'A'"
     ],
     "13313": [
         -13313,
@@ -5202,16 +5422,16 @@
         "left",
         "NNP GZC Car '12WHITE', Person 'A'"
     ],
-    "16556": [
-        -16556,
-        "____",
+    "12460": [
+        646,
+        "IBEIS_PZ_0373",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Female",
+        "adult",
         "0",
-        "junk",
-        "front",
-        "NNP GZC Car '8WHITE', Person 'A'"
+        "poor",
+        "left",
+        "NNP GZC Car '2WHITE', Person 'A'"
     ],
     "13322": [
         -13322,
@@ -5268,16 +5488,16 @@
         "left",
         "NNP GZC Car '11WHITE', Person 'A'"
     ],
-    "16557": [
-        -16557,
-        "____",
+    "13327": [
+        2130,
+        "IBEIS_PZ_1857",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "junk",
-        "backright",
-        "NNP GZC Car '8WHITE', Person 'A'"
+        "Male",
+        "adult",
+        "1",
+        "ok",
+        "left",
+        "NNP GZC Car '17WHITE', Person 'A'"
     ],
     "13331": [
         -13331,
@@ -5301,16 +5521,16 @@
         "right",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "16558": [
-        -16558,
-        "____",
+    "12462": [
+        674,
+        "IBEIS_PZ_0401",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Female",
+        "juveniles- two year old",
         "0",
-        "junk",
-        "backright",
-        "NNP GZC Car '8WHITE', Person 'A'"
+        "ok",
+        "left",
+        "NNP GZC Car '2WHITE', Person 'A'"
     ],
     "13336": [
         -13336,
@@ -5345,17 +5565,6 @@
         "left",
         "NNP GZC Car '2WHITE', Person 'A'"
     ],
-    "13674": [
-        1876,
-        "IBEIS_PZ_1603",
-        "zebra_plains",
-        "Male",
-        "adult",
-        "0",
-        "ok",
-        "left",
-        "NNP GZC Car '7WHITE', Person 'B'"
-    ],
     "13342": [
         2131,
         "IBEIS_PZ_1858",
@@ -5389,16 +5598,16 @@
         "left",
         "NNP GZC Car '6RED', Person 'B'"
     ],
-    "18608": [
-        -18608,
-        "____",
+    "10416": [
+        310,
+        "IBEIS_PZ_0037",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Male",
+        "adult",
         "0",
-        "ok",
-        "backleft",
-        "NNP GZC Car '2RED', Person 'B'"
+        "good",
+        "left",
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "13347": [
         2128,
@@ -5432,6 +5641,39 @@
         "poor",
         "right",
         "NNP GZC Car '9WHITE', Person 'A'"
+    ],
+    "13351": [
+        -13351,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "junk",
+        "right",
+        "NNP GZC Car '17WHITE', Person 'A'"
+    ],
+    "17083": [
+        1947,
+        "IBEIS_PZ_1674",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '1RED', Person 'B'"
+    ],
+    "11101": [
+        785,
+        "IBEIS_PZ_0512",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "ok",
+        "frontleft",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "17456": [
         2069,
@@ -5477,16 +5719,16 @@
         "left",
         "NNP GZC Car '17WHITE', Person 'A'"
     ],
-    "13365": [
-        -13365,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "junk",
-        "right",
-        "NNP GZC Car '17WHITE', Person 'A'"
+    "9269": [
+        253,
+        "NNP_GIRM_0149",
+        "giraffe_masai",
+        "Male",
+        "juveniles - one year old",
+        "1",
+        "ok",
+        "frontleft",
+        "NNP GZC Car '4RED', Person 'A'"
     ],
     "9270": [
         -9270,
@@ -5499,16 +5741,16 @@
         "frontleft",
         "NNP GZC Car '4RED', Person 'A'"
     ],
-    "13367": [
-        -13367,
+    "9271": [
+        -9271,
         "____",
-        "zebra_plains",
+        "giraffe_masai",
         "UNKNOWN NAME",
         "infant",
         "0",
         "ok",
         "right",
-        "NNP GZC Car '17WHITE', Person 'A'"
+        "NNP GZC Car '4RED', Person 'A'"
     ],
     "13368": [
         -13368,
@@ -5521,16 +5763,16 @@
         "right",
         "NNP GZC Car '17WHITE', Person 'A'"
     ],
-    "14516": [
-        2148,
-        "IBEIS_PZ_1875",
+    "18612": [
+        -18612,
+        "____",
         "zebra_plains",
-        "UNKNOWN SEX",
+        "UNKNOWN NAME",
         "infant",
-        "1",
-        "ok",
+        "0",
+        "poor",
         "left",
-        "NNP GZC Car '3RED', Person 'A'"
+        "NNP GZC Car '2RED', Person 'C'"
     ],
     "9274": [
         -9274,
@@ -5565,27 +5807,27 @@
         "right",
         "NNP GZC Car '4RED', Person 'A'"
     ],
-    "14517": [
-        2150,
-        "IBEIS_PZ_1877",
-        "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
-        "1",
-        "ok",
-        "left",
-        "NNP GZC Car '3RED', Person 'A'"
-    ],
-    "10422": [
-        294,
-        "IBEIS_PZ_0021",
-        "zebra_plains",
-        "Female",
+    "9279": [
+        -9279,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
         "infant",
         "0",
         "poor",
-        "left",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+        "right",
+        "NNP GZC Car '4RED', Person 'A'"
+    ],
+    "13381": [
+        -13381,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "backleft",
+        "NNP GZC Car '17WHITE', Person 'A'"
     ],
     "13383": [
         -13383,
@@ -5620,16 +5862,16 @@
         "left",
         "NNP GZC Car '10WHITE', Person 'A'"
     ],
-    "13386": [
-        -13386,
+    "9311": [
+        -9311,
         "____",
-        "zebra_plains",
+        "giraffe_masai",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "excellent",
-        "backleft",
-        "NNP GZC Car '10WHITE', Person 'A'"
+        "poor",
+        "left",
+        "NNP GZC Car '7WHITE', Person 'B'"
     ],
     "9291": [
         207,
@@ -5818,16 +6060,16 @@
         "left",
         "NNP GZC Car '6RED', Person 'B'"
     ],
-    "13411": [
-        -13411,
+    "17507": [
+        -17507,
         "____",
         "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
         "poor",
-        "backright",
-        "NNP GZC Car '10WHITE', Person 'A'"
+        "left",
+        "NNP GZC Car '6RED', Person 'B'"
     ],
     "9316": [
         212,
@@ -5884,6 +6126,17 @@
         "frontright",
         "NNP GZC Car '10WHITE', Person 'A'"
     ],
+    "13422": [
+        -13422,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "backright",
+        "NNP GZC Car '10WHITE', Person 'A'"
+    ],
     "13425": [
         -13425,
         "____",
@@ -5895,16 +6148,16 @@
         "backleft",
         "NNP GZC Car '10WHITE', Person 'A'"
     ],
-    "11795": [
-        875,
-        "IBEIS_PZ_0602",
+    "15891": [
+        1655,
+        "IBEIS_PZ_1382",
         "zebra_plains",
-        "Female",
+        "Male",
         "adult",
         "0",
         "ok",
-        "frontright",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+        "backleft",
+        "NNP GZC Car '15WHITE', Person 'A'"
     ],
     "13429": [
         -13429,
@@ -5939,16 +6192,16 @@
         "left",
         "NNP GZC Car '10WHITE', Person 'A'"
     ],
-    "11796": [
-        886,
-        "IBEIS_PZ_0613",
+    "15892": [
+        1651,
+        "IBEIS_PZ_1378",
         "zebra_plains",
-        "Female",
+        "Male",
         "adult",
-        "1",
-        "good",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+        "0",
+        "ok",
+        "backleft",
+        "NNP GZC Car '15WHITE', Person 'A'"
     ],
     "13434": [
         -13434,
@@ -6005,16 +6258,16 @@
         "backright",
         "NNP GZC Car '10WHITE', Person 'A'"
     ],
-    "9344": [
-        -9344,
+    "17536": [
+        -17536,
         "____",
-        "giraffe_masai",
+        "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "ok",
+        "junk",
         "left",
-        "NNP GZC Car '13WHITE', Person 'B'"
+        "NNP GZC Car '6RED', Person 'B'"
     ],
     "13441": [
         1659,
@@ -6082,16 +6335,16 @@
         "backright",
         "NNP GZC Car '10WHITE', Person 'A'"
     ],
-    "9353": [
-        132,
-        "NNP_GIRM_0099",
-        "giraffe_masai",
+    "13814": [
+        747,
+        "IBEIS_PZ_0474",
+        "zebra_plains",
         "Male",
         "adult",
-        "0",
+        "1",
         "ok",
-        "frontleft",
-        "NNP GZC Car '13WHITE', Person 'B'"
+        "left",
+        "NNP GZC Car '5WHITE', Person 'A'"
     ],
     "9354": [
         -9354,
@@ -6104,16 +6357,27 @@
         "right",
         "NNP GZC Car '13WHITE', Person 'B'"
     ],
-    "8904": [
-        3,
-        "NNP_GIRM_0003",
-        "giraffe_masai",
-        "Male",
-        "adult",
-        "1",
-        "good",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    "13847": [
+        -13847,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "backleft",
+        "NNP GZC Car '4RED', Person 'A'"
+    ],
+    "13452": [
+        -13452,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "backright",
+        "NNP GZC Car '10WHITE', Person 'A'"
     ],
     "13454": [
         1835,
@@ -6269,27 +6533,16 @@
         "left",
         "NNP GZC Car '5WHITE', Person 'A'"
     ],
-    "8905": [
-        5,
-        "NNP_GIRM_0005",
-        "giraffe_masai",
-        "UNKNOWN SEX",
-        "unknown",
-        "1",
-        "ok",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
-    ],
-    "9389": [
-        -9389,
+    "17581": [
+        -17581,
         "____",
-        "giraffe_masai",
+        "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "junk",
-        "back",
-        "NNP GZC Car '13WHITE', Person 'B'"
+        "poor",
+        "left",
+        "NNP GZC Car '6RED', Person 'B'"
     ],
     "9390": [
         -9390,
@@ -6300,6 +6553,17 @@
         "0",
         "ok",
         "right",
+        "NNP GZC Car '13WHITE', Person 'B'"
+    ],
+    "9393": [
+        60,
+        "NNP_GIRM_0046",
+        "giraffe_masai",
+        "Male",
+        "adult",
+        "0",
+        "good",
+        "left",
         "NNP GZC Car '13WHITE', Person 'B'"
     ],
     "17586": [
@@ -6324,16 +6588,16 @@
         "left",
         "NNP GZC Car '13WHITE', Person 'B'"
     ],
-    "13495": [
-        1121,
-        "IBEIS_PZ_0848",
-        "zebra_plains",
-        "Female",
-        "adult",
+    "9399": [
+        -9399,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "ok",
-        "left",
-        "NNP GZC Car '5WHITE', Person 'A'"
+        "excellent",
+        "right",
+        "NNP GZC Car '13WHITE', Person 'B'"
     ],
     "13500": [
         1722,
@@ -6412,27 +6676,38 @@
         "left",
         "NNP GZC Car '2RED', Person 'D'"
     ],
-    "9415": [
-        -9415,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
-        "frontright",
-        "NNP GZC Car '15WHITE', Person 'D'"
-    ],
-    "18636": [
-        -18636,
-        "____",
+    "13511": [
+        338,
+        "IBEIS_PZ_0065",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Male",
+        "adult",
         "0",
-        "poor",
-        "back",
-        "NNP GZC Car '2RED', Person 'D'"
+        "ok",
+        "left",
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+    ],
+    "13512": [
+        352,
+        "IBEIS_PZ_0079",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "ok",
+        "left",
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+    ],
+    "13513": [
+        348,
+        "IBEIS_PZ_0075",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "1",
+        "good",
+        "left",
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
     "9418": [
         -9418,
@@ -6445,16 +6720,16 @@
         "frontright",
         "NNP GZC Car '15WHITE', Person 'A'"
     ],
-    "13515": [
-        1671,
-        "IBEIS_PZ_1398",
-        "zebra_plains",
-        "UNKNOWN SEX",
+    "9419": [
+        -9419,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
         "infant",
-        "1",
-        "ok",
-        "left",
-        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+        "0",
+        "poor",
+        "right",
+        "NNP GZC Car '15WHITE', Person 'A'"
     ],
     "9421": [
         234,
@@ -6610,16 +6885,16 @@
         "right",
         "NNP GZC Car '15WHITE', Person 'C'"
     ],
-    "14545": [
-        1552,
-        "IBEIS_PZ_1279",
-        "zebra_plains",
-        "Female",
-        "adult",
-        "1",
-        "excellent",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+    "9447": [
+        -9447,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "right",
+        "NNP GZC Car '15WHITE', Person 'C'"
     ],
     "9448": [
         -9448,
@@ -6654,16 +6929,27 @@
         "left",
         "NNP GZC Car '6RED', Person 'B'"
     ],
-    "17649": [
-        1028,
-        "IBEIS_PZ_0755",
+    "10544": [
+        341,
+        "IBEIS_PZ_0068",
         "zebra_plains",
-        "Female",
+        "Male",
+        "infant",
+        "0",
+        "ok",
+        "left",
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+    ],
+    "9457": [
+        273,
+        "NNP_GIRM_0151",
+        "giraffe_masai",
+        "Male",
         "adult",
         "0",
         "ok",
         "left",
-        "NNP GZC Car '6RED', Person 'B'"
+        "NNP GZC Car '15WHITE', Person 'C'"
     ],
     "17650": [
         -17650,
@@ -6687,17 +6973,6 @@
         "frontright",
         "NNP GZC Car '15WHITE', Person 'C'"
     ],
-    "9726": [
-        -9726,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
-        "right",
-        "NNP GZC Car '1BLUE', Person 'A'"
-    ],
     "13562": [
         -13562,
         "____",
@@ -6719,17 +6994,6 @@
         "good",
         "frontleft",
         "NNP GZC Car '15WHITE', Person 'A'"
-    ],
-    "14568": [
-        1638,
-        "IBEIS_PZ_1365",
-        "zebra_plains",
-        "Female",
-        "adult",
-        "0",
-        "ok",
-        "backleft",
-        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "9478": [
         234,
@@ -6775,16 +7039,27 @@
         "left",
         "NNP GZC Car '6RED', Person 'B'"
     ],
-    "9489": [
-        -9489,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
+    "17680": [
+        2059,
+        "IBEIS_PZ_1786",
+        "zebra_plains",
+        "UNKNOWN SEX",
         "infant",
-        "0",
+        "1",
+        "ok",
+        "frontleft",
+        "NNP GZC Car '6RED', Person 'B'"
+    ],
+    "17681": [
+        2015,
+        "IBEIS_PZ_1742",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "1",
         "good",
-        "right",
-        "NNP GZC Car '15WHITE', Person 'A'"
+        "left",
+        "NNP GZC Car '6RED', Person 'B'"
     ],
     "9490": [
         -9490,
@@ -6896,6 +7171,17 @@
         "frontright",
         "NNP GZC Car '6RED', Person 'B'"
     ],
+    "13001": [
+        1666,
+        "IBEIS_PZ_1393",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "1",
+        "good",
+        "left",
+        "NNP GZC Car '3PURPLE', Person 'B'"
+    ],
     "9516": [
         -9516,
         "____",
@@ -6928,28 +7214,6 @@
         "good",
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
-    ],
-    "14638": [
-        1551,
-        "IBEIS_PZ_1278",
-        "zebra_plains",
-        "Female",
-        "infant",
-        "0",
-        "ok",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
-    ],
-    "8907": [
-        113,
-        "NNP_GIRM_0087",
-        "giraffe_masai",
-        "Male",
-        "adult",
-        "1",
-        "ok",
-        "left",
-        "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
     ],
     "13622": [
         1804,
@@ -6984,16 +7248,16 @@
         "left",
         "NNP GZC Car '15WHITE', Person 'D'"
     ],
-    "9531": [
-        -9531,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
+    "12511": [
+        340,
+        "IBEIS_PZ_0067",
+        "zebra_plains",
+        "Female",
+        "adult",
         "0",
-        "ok",
-        "right",
-        "NNP GZC Car '15WHITE', Person 'C'"
+        "good",
+        "frontleft",
+        "NNP GZC Car '1WHITE', Person 'B'"
     ],
     "17726": [
         2053,
@@ -7072,16 +7336,16 @@
         "left",
         "NNP GZC Car '6RED', Person 'B'"
     ],
-    "9542": [
-        -9542,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
+    "17734": [
+        1859,
+        "IBEIS_PZ_1586",
+        "zebra_plains",
+        "Male",
+        "juveniles- two year old",
         "0",
         "ok",
-        "right",
-        "NNP GZC Car '15WHITE', Person 'D'"
+        "left",
+        "NNP GZC Car '6RED', Person 'B'"
     ],
     "17735": [
         1868,
@@ -7090,17 +7354,6 @@
         "Female",
         "adult",
         "0",
-        "ok",
-        "left",
-        "NNP GZC Car '6RED', Person 'B'"
-    ],
-    "17503": [
-        2068,
-        "IBEIS_PZ_1795",
-        "zebra_plains",
-        "Female",
-        "adult",
-        "1",
         "ok",
         "left",
         "NNP GZC Car '6RED', Person 'B'"
@@ -7182,6 +7435,17 @@
         "right",
         "NNP GZC Car '3PURPLE', Person 'B'"
     ],
+    "9558": [
+        166,
+        "NNP_GIRM_0115",
+        "giraffe_masai",
+        "Male",
+        "juveniles - one year old",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '3PURPLE', Person 'B'"
+    ],
     "9559": [
         -9559,
         "____",
@@ -7237,6 +7501,17 @@
         "right",
         "NNP GZC Car '6RED', Person 'B'"
     ],
+    "10275": [
+        477,
+        "IBEIS_PZ_0204",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "poor",
+        "back",
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+    ],
     "9574": [
         4,
         "NNP_GIRM_0004",
@@ -7259,27 +7534,27 @@
         "frontleft",
         "NNP GZC Car '3RED', Person 'B'"
     ],
-    "9578": [
-        -9578,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
-        "left",
-        "NNP GZC Car '3RED', Person 'B'"
-    ],
-    "13675": [
-        1675,
-        "IBEIS_PZ_1402",
+    "13674": [
+        1876,
+        "IBEIS_PZ_1603",
         "zebra_plains",
-        "Female",
+        "Male",
         "adult",
         "0",
         "ok",
         "left",
         "NNP GZC Car '7WHITE', Person 'B'"
+    ],
+    "16615": [
+        -16615,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "back",
+        "NNP GZC Car '8WHITE', Person 'A'"
     ],
     "9582": [
         105,
@@ -7314,16 +7589,16 @@
         "front",
         "NNP GZC Car '3RED', Person 'B'"
     ],
-    "16616": [
-        -16616,
-        "____",
+    "14568": [
+        1638,
+        "IBEIS_PZ_1365",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Female",
+        "adult",
         "0",
-        "poor",
-        "backright",
-        "NNP GZC Car '8WHITE', Person 'A'"
+        "ok",
+        "backleft",
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "13686": [
         -13686,
@@ -7391,17 +7666,6 @@
         "frontleft",
         "NNP GZC Car '6WHITE', Person 'B'"
     ],
-    "9311": [
-        -9311,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
-        "left",
-        "NNP GZC Car '7WHITE', Person 'B'"
-    ],
     "9598": [
         -9598,
         "____",
@@ -7413,16 +7677,16 @@
         "left",
         "NNP GZC Car '3RED', Person 'B'"
     ],
-    "18667": [
-        674,
-        "IBEIS_PZ_0401",
+    "14571": [
+        1532,
+        "IBEIS_PZ_1259",
         "zebra_plains",
         "Female",
         "juveniles- two year old",
         "0",
-        "good",
+        "poor",
         "left",
-        "NNP GZC Car '2RED', Person 'A'"
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "17801": [
         2091,
@@ -7457,16 +7721,16 @@
         "left",
         "NNP GZC Car '3RED', Person 'A'"
     ],
-    "13892": [
-        1979,
-        "IBEIS_PZ_1706",
+    "17988": [
+        881,
+        "IBEIS_PZ_0608",
         "zebra_plains",
         "Female",
         "juveniles- two year old",
-        "1",
+        "0",
         "ok",
         "left",
-        "NNP GZC Car '1RED', Person 'A'"
+        "NNP GZC Car '2RED', Person 'D'"
     ],
     "9629": [
         104,
@@ -7533,6 +7797,17 @@
         "ok",
         "backleft",
         "NNP GZC Car '3RED', Person 'A'"
+    ],
+    "14233": [
+        1624,
+        "IBEIS_PZ_1351",
+        "zebra_plains",
+        "Female",
+        "juveniles- two year old",
+        "1",
+        "good",
+        "left",
+        "NNP GZC Car '14WHITE', Person 'A'"
     ],
     "18734": [
         -18734,
@@ -7633,6 +7908,17 @@
         "left",
         "NNP GZC Car '1BLUE', Person 'B'"
     ],
+    "9672": [
+        100,
+        "NNP_GIRM_0076",
+        "giraffe_masai",
+        "Female",
+        "adult",
+        "0",
+        "good",
+        "left",
+        "NNP GZC Car '1BLUE', Person 'A'"
+    ],
     "9051": [
         158,
         "NNP_GIRM_0111",
@@ -7710,16 +7996,16 @@
         "right",
         "NNP GZC Car '1BLUE', Person 'B'"
     ],
-    "17876": [
-        -17876,
+    "9684": [
+        -9684,
         "____",
-        "zebra_plains",
+        "giraffe_masai",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "poor",
-        "left",
-        "NNP GZC Car '6RED', Person 'B'"
+        "ok",
+        "right",
+        "NNP GZC Car '1BLUE', Person 'B'"
     ],
     "18720": [
         791,
@@ -7776,6 +8062,28 @@
         "left",
         "NNP GZC Car '5WHITE', Person 'A'"
     ],
+    "13267": [
+        1761,
+        "IBEIS_PZ_1488",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "adult",
+        "1",
+        "ok",
+        "left",
+        "NNP GZC Car '12WHITE', Person 'A'"
+    ],
+    "17099": [
+        1962,
+        "IBEIS_PZ_1689",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "adult",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '1RED', Person 'A'"
+    ],
     "13802": [
         718,
         "IBEIS_PZ_0445",
@@ -7809,16 +8117,16 @@
         "left",
         "NNP GZC Car '2RED', Person 'D'"
     ],
-    "15954": [
-        -15954,
-        "____",
+    "11858": [
+        916,
+        "IBEIS_PZ_0643",
         "zebra_plains",
-        "UNKNOWN NAME",
+        "UNKNOWN SEX",
         "infant",
         "0",
-        "ok",
-        "backleft",
-        "NNP GZC Car '13WHITE', Person 'B'"
+        "poor",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "9710": [
         -9710,
@@ -7831,16 +8139,16 @@
         "left",
         "NNP GZC Car '1BLUE', Person 'B'"
     ],
-    "18736": [
-        -18736,
-        "____",
+    "15599": [
+        1651,
+        "IBEIS_PZ_1378",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Male",
+        "adult",
         "0",
-        "junk",
-        "frontleft",
-        "NNP GZC Car '2RED', Person 'C'"
+        "ok",
+        "backleft",
+        "NNP GZC Car '15WHITE', Person 'A'"
     ],
     "9714": [
         -9714,
@@ -7853,6 +8161,17 @@
         "right",
         "NNP GZC Car '1BLUE', Person 'A'"
     ],
+    "13812": [
+        1402,
+        "IBEIS_PZ_1129",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "adult",
+        "0",
+        "junk",
+        "left",
+        "NNP GZC Car '5WHITE', Person 'A'"
+    ],
     "17910": [
         -17910,
         "____",
@@ -7864,8 +8183,8 @@
         "right",
         "NNP GZC Car '2RED', Person 'A'"
     ],
-    "17918": [
-        -17918,
+    "13817": [
+        -13817,
         "____",
         "zebra_plains",
         "UNKNOWN NAME",
@@ -7873,7 +8192,7 @@
         "0",
         "poor",
         "left",
-        "NNP GZC Car '2RED', Person 'C'"
+        "NNP GZC Car '4RED', Person 'A'"
     ],
     "17915": [
         1866,
@@ -7908,16 +8227,16 @@
         "left",
         "NNP GZC Car '2RED', Person 'C'"
     ],
-    "13822": [
-        2139,
-        "IBEIS_PZ_1866",
+    "17918": [
+        -17918,
+        "____",
         "zebra_plains",
-        "UNKNOWN SEX",
+        "UNKNOWN NAME",
         "infant",
-        "1",
-        "ok",
+        "0",
+        "poor",
         "left",
-        "NNP GZC Car '4RED', Person 'A'"
+        "NNP GZC Car '2RED', Person 'C'"
     ],
     "9727": [
         -9727,
@@ -8084,27 +8403,38 @@
         "backleft",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "13847": [
-        -13847,
-        "____",
+    "11865": [
+        913,
+        "IBEIS_PZ_0640",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "UNKNOWN SEX",
+        "adult",
+        "0",
+        "poor",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
+    "10500": [
+        334,
+        "IBEIS_PZ_0061",
+        "zebra_plains",
+        "Female",
+        "adult",
         "0",
         "ok",
         "backleft",
-        "NNP GZC Car '4RED', Person 'A'"
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
-    "18692": [
-        -18692,
-        "____",
+    "13852": [
+        1827,
+        "IBEIS_PZ_1554",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "junk",
+        "UNKNOWN SEX",
+        "adult",
+        "1",
+        "good",
         "left",
-        "NNP GZC Car '2RED', Person 'D'"
+        "NNP GZC Car '4RED', Person 'A'"
     ],
     "13854": [
         1826,
@@ -8149,6 +8479,17 @@
         "ok",
         "left",
         "NNP GZC Car '4RED', Person 'A'"
+    ],
+    "9203": [
+        74,
+        "NNP_GIRM_0055",
+        "giraffe_masai",
+        "Female",
+        "adult",
+        "0",
+        "good",
+        "left",
+        "NNP GZC Car '11WHITE', Person 'A'"
     ],
     "9765": [
         -9765,
@@ -8282,16 +8623,16 @@
         "backleft",
         "NNP GZC Car '2RED', Person 'D'"
     ],
-    "9141": [
-        18,
-        "NNP_GIRM_0015",
-        "giraffe_masai",
-        "Male",
-        "adult",
+    "13237": [
+        1366,
+        "IBEIS_PZ_1093",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
         "0",
-        "good",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+        "ok",
+        "right",
+        "NNP GZC Car '9WHITE', Person 'A'"
     ],
     "17987": [
         868,
@@ -8304,16 +8645,16 @@
         "left",
         "NNP GZC Car '2RED', Person 'D'"
     ],
-    "17988": [
-        881,
-        "IBEIS_PZ_0608",
+    "13892": [
+        1979,
+        "IBEIS_PZ_1706",
         "zebra_plains",
         "Female",
         "juveniles- two year old",
-        "0",
+        "1",
         "ok",
         "left",
-        "NNP GZC Car '2RED', Person 'D'"
+        "NNP GZC Car '1RED', Person 'A'"
     ],
     "13893": [
         1992,
@@ -8425,16 +8766,16 @@
         "backleft",
         "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
-    "9147": [
-        63,
-        "NNP_GIRM_0047",
-        "giraffe_masai",
-        "Female",
-        "juveniles - one year old",
+    "13243": [
+        1360,
+        "IBEIS_PZ_1087",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
         "0",
-        "ok",
-        "left",
-        "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
+        "excellent",
+        "right",
+        "NNP GZC Car '9WHITE', Person 'A'"
     ],
     "9148": [
         158,
@@ -8446,17 +8787,6 @@
         "ok",
         "left",
         "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
-    ],
-    "15975": [
-        -15975,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "junk",
-        "right",
-        "NNP GZC Car '13WHITE', Person 'B'"
     ],
     "13939": [
         1512,
@@ -8513,38 +8843,38 @@
         "left",
         "NNP GZC Car '6RED', Person 'B'"
     ],
-    "13248": [
-        1359,
-        "IBEIS_PZ_1086",
+    "17344": [
+        -17344,
+        "____",
         "zebra_plains",
-        "Female",
-        "adult",
+        "UNKNOWN NAME",
+        "infant",
         "0",
         "poor",
         "backright",
-        "NNP GZC Car '9WHITE', Person 'A'"
+        "NNP GZC Car '6RED', Person 'B'"
     ],
-    "15297": [
-        1697,
-        "IBEIS_PZ_1424",
+    "18055": [
+        -18055,
+        "____",
         "zebra_plains",
-        "Female",
-        "adult",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "ok",
+        "junk",
+        "left",
+        "NNP GZC Car '2RED', Person 'B'"
+    ],
+    "13961": [
+        1971,
+        "IBEIS_PZ_1698",
+        "zebra_plains",
+        "Male",
+        "juveniles - one year old",
+        "0",
+        "good",
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
-    ],
-    "9865": [
-        138,
-        "NNP_GIRM_0103",
-        "giraffe_masai",
-        "Male",
-        "adult",
-        "0",
-        "ok",
-        "backleft",
-        "NNP GZC Car '3WHITE', Person 'A'"
     ],
     "9873": [
         23,
@@ -8557,16 +8887,16 @@
         "backleft",
         "NNP GZC Car '3WHITE', Person 'A'"
     ],
-    "9874": [
-        -9874,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
+    "13970": [
+        1556,
+        "IBEIS_PZ_1283",
+        "zebra_plains",
+        "Female",
+        "adult",
         "0",
         "ok",
-        "backright",
-        "NNP GZC Car '3WHITE', Person 'A'"
+        "backleft",
+        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "13971": [
         1542,
@@ -8579,16 +8909,16 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "13972": [
-        883,
-        "IBEIS_PZ_0610",
-        "zebra_plains",
-        "Male",
-        "adult",
+    "9876": [
+        -9876,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "good",
+        "poor",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "NNP GZC Car '3WHITE', Person 'A'"
     ],
     "13973": [
         865,
@@ -8612,16 +8942,16 @@
         "left",
         "NNP GZC Car '2RED', Person 'C'"
     ],
-    "10521": [
-        330,
-        "IBEIS_PZ_0057",
+    "14617": [
+        1515,
+        "IBEIS_PZ_1242",
         "zebra_plains",
-        "Male",
-        "adult",
+        "Female",
+        "juveniles - one year old",
         "0",
         "good",
         "left",
-        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "13252": [
         1372,
@@ -8656,16 +8986,16 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'D'"
     ],
-    "18469": [
-        -18469,
-        "____",
+    "13981": [
+        1549,
+        "IBEIS_PZ_1276",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Male",
+        "adult",
         "0",
-        "poor",
-        "right",
-        "NNP GZC Car '2RED', Person 'A'"
+        "good",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "13982": [
         1501,
@@ -8755,27 +9085,27 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "13996": [
-        1508,
-        "IBEIS_PZ_1235",
-        "zebra_plains",
-        "Female",
-        "juveniles- two year old",
-        "1",
-        "good",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'D'"
-    ],
-    "13997": [
-        2182,
-        "IBEIS_PZ_1909",
-        "zebra_plains",
-        "Female",
+    "9900": [
+        23,
+        "NNP_GIRM_0019",
+        "giraffe_masai",
+        "Male",
         "adult",
         "0",
         "ok",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'D'"
+        "backleft",
+        "NNP GZC Car '3WHITE', Person 'A'"
+    ],
+    "9901": [
+        -9901,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "backleft",
+        "NNP GZC Car '3WHITE', Person 'A'"
     ],
     "9909": [
         -9909,
@@ -8799,6 +9129,28 @@
         "right",
         "NNP GZC Car '3WHITE', Person 'A'"
     ],
+    "9913": [
+        -9913,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "backright",
+        "NNP GZC Car '3WHITE', Person 'A'"
+    ],
+    "9914": [
+        -9914,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "backright",
+        "NNP GZC Car '3WHITE', Person 'A'"
+    ],
     "12575": [
         1151,
         "IBEIS_PZ_0878",
@@ -8809,6 +9161,17 @@
         "junk",
         "left",
         "NNP GZC Car '1WHITE', Person 'A'"
+    ],
+    "14012": [
+        575,
+        "IBEIS_PZ_0302",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "14016": [
         1557,
@@ -8821,16 +9184,16 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "12576": [
-        1164,
-        "IBEIS_PZ_0891",
+    "14017": [
+        1560,
+        "IBEIS_PZ_1287",
         "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
+        "Male",
+        "adult",
         "0",
-        "poor",
-        "right",
-        "NNP GZC Car '1WHITE', Person 'A'"
+        "good",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "13833": [
         293,
@@ -8865,16 +9228,27 @@
         "left",
         "NNP GZC Car '2RED', Person 'D'"
     ],
-    "9164": [
-        172,
-        "NNP_GIRM_0119",
-        "giraffe_masai",
+    "13260": [
+        1363,
+        "IBEIS_PZ_1090",
+        "zebra_plains",
         "Female",
         "adult",
         "0",
-        "good",
+        "excellent",
+        "right",
+        "NNP GZC Car '9WHITE', Person 'A'"
+    ],
+    "9878": [
+        23,
+        "NNP_GIRM_0019",
+        "giraffe_masai",
+        "Male",
+        "adult",
+        "0",
+        "ok",
         "left",
-        "NNP GZC Car '12WHITE', Person 'A'"
+        "NNP GZC Car '3WHITE', Person 'A'"
     ],
     "18136": [
         -18136,
@@ -8898,6 +9272,17 @@
         "right",
         "NNP GZC Car '1RED', Person 'A'"
     ],
+    "14516": [
+        2148,
+        "IBEIS_PZ_1875",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "1",
+        "ok",
+        "left",
+        "NNP GZC Car '3RED', Person 'A'"
+    ],
     "9958": [
         90,
         "NNP_GIRM_0068",
@@ -8909,27 +9294,16 @@
         "left",
         "NNP GZC Car '1RED', Person 'B'"
     ],
-    "13267": [
-        1761,
-        "IBEIS_PZ_1488",
-        "zebra_plains",
-        "UNKNOWN SEX",
-        "adult",
-        "1",
-        "ok",
+    "9971": [
+        -9971,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
         "left",
-        "NNP GZC Car '12WHITE', Person 'A'"
-    ],
-    "15998": [
-        1848,
-        "IBEIS_PZ_1575",
-        "zebra_plains",
-        "Male",
-        "adult",
-        "1",
-        "good",
-        "frontleft",
-        "NNP GZC Car '13WHITE', Person 'B'"
+        "NNP GZC Car '1RED', Person 'B'"
     ],
     "14070": [
         650,
@@ -8942,6 +9316,28 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'D'"
     ],
+    "14075": [
+        1512,
+        "IBEIS_PZ_1239",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'A'"
+    ],
+    "14517": [
+        2150,
+        "IBEIS_PZ_1877",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "1",
+        "ok",
+        "left",
+        "NNP GZC Car '3RED', Person 'A'"
+    ],
     "14083": [
         776,
         "IBEIS_PZ_0503",
@@ -8953,16 +9349,27 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "18180": [
-        1861,
-        "IBEIS_PZ_1588",
+    "14084": [
+        1498,
+        "IBEIS_PZ_1225",
         "zebra_plains",
-        "Female",
+        "Male",
         "adult",
         "0",
         "ok",
         "left",
-        "NNP GZC Car '2RED', Person 'C'"
+        "NNP GZC Car '1PURPLE', Person 'B'"
+    ],
+    "14636": [
+        1534,
+        "IBEIS_PZ_1261",
+        "zebra_plains",
+        "Female",
+        "juveniles- two year old",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "14091": [
         1540,
@@ -9019,16 +9426,16 @@
         "left",
         "NNP GZC Car '14WHITE', Person 'A'"
     ],
-    "14101": [
-        -14101,
-        "____",
+    "10542": [
+        340,
+        "IBEIS_PZ_0067",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Female",
+        "adult",
         "0",
-        "poor",
-        "left",
-        "NNP GZC Car '14WHITE', Person 'A'"
+        "good",
+        "frontleft",
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
     "14102": [
         1846,
@@ -9052,16 +9459,16 @@
         "left",
         "NNP GZC Car '14WHITE', Person 'A'"
     ],
-    "10008": [
-        273,
-        "NNP_GIRM_0151",
-        "giraffe_masai",
-        "Male",
-        "adult",
+    "18200": [
+        -18200,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
         "0",
         "ok",
-        "left",
-        "NNP GZC Car '2RED', Person 'D'"
+        "backright",
+        "NNP GZC Car '2RED', Person 'B'"
     ],
     "18201": [
         -18201,
@@ -9085,16 +9492,16 @@
         "backright",
         "NNP GZC Car '2RED', Person 'B'"
     ],
-    "14639": [
-        1558,
-        "IBEIS_PZ_1285",
+    "10543": [
+        340,
+        "IBEIS_PZ_0067",
         "zebra_plains",
         "Female",
-        "infant",
+        "adult",
         "0",
         "ok",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
     "14518": [
         2149,
@@ -9118,16 +9525,16 @@
         "left",
         "NNP GZC Car '14WHITE', Person 'A'"
     ],
-    "14640": [
-        1846,
-        "IBEIS_PZ_1573",
+    "18736": [
+        -18736,
+        "____",
         "zebra_plains",
-        "Female",
-        "juveniles- two year old",
-        "1",
-        "good",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "junk",
+        "frontleft",
+        "NNP GZC Car '2RED', Person 'C'"
     ],
     "14118": [
         1561,
@@ -9140,38 +9547,49 @@
         "left",
         "NNP GZC Car '14WHITE', Person 'A'"
     ],
-    "10024": [
-        273,
-        "NNP_GIRM_0151",
+    "10023": [
+        -10023,
+        "____",
         "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '2RED', Person 'B'"
+    ],
+    "14120": [
+        -14120,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '14WHITE', Person 'A'"
+    ],
+    "14121": [
+        1720,
+        "IBEIS_PZ_1447",
+        "zebra_plains",
         "Male",
         "adult",
         "0",
-        "ok",
-        "frontleft",
-        "NNP GZC Car '2RED', Person 'D'"
-    ],
-    "13276": [
-        -13276,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "ok",
-        "right",
-        "NNP GZC Car '12WHITE', Person 'A'"
-    ],
-    "18055": [
-        -18055,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "junk",
+        "good",
         "left",
-        "NNP GZC Car '2RED', Person 'B'"
+        "NNP GZC Car '14WHITE', Person 'A'"
+    ],
+    "14123": [
+        1995,
+        "IBEIS_PZ_1722",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "1",
+        "excellent",
+        "left",
+        "NNP GZC Car '14WHITE', Person 'A'"
     ],
     "14124": [
         1502,
@@ -9228,16 +9646,16 @@
         "left",
         "NNP GZC Car '2RED', Person 'C'"
     ],
-    "13961": [
-        1971,
-        "IBEIS_PZ_1698",
-        "zebra_plains",
+    "9865": [
+        138,
+        "NNP_GIRM_0103",
+        "giraffe_masai",
         "Male",
-        "juveniles - one year old",
+        "adult",
         "0",
-        "good",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "ok",
+        "backleft",
+        "NNP GZC Car '3WHITE', Person 'A'"
     ],
     "10043": [
         -10043,
@@ -9261,38 +9679,38 @@
         "backright",
         "NNP GZC Car '14WHITE', Person 'A'"
     ],
-    "18237": [
-        300,
-        "IBEIS_PZ_0027",
+    "14141": [
+        1480,
+        "IBEIS_PZ_1207",
         "zebra_plains",
-        "Male",
+        "Female",
         "adult",
-        "1",
-        "excellent",
-        "left",
-        "NNP GZC Car '2RED', Person 'A'"
+        "0",
+        "poor",
+        "right",
+        "NNP GZC Car '14WHITE', Person 'A'"
     ],
-    "10048": [
-        -10048,
+    "18240": [
+        -18240,
         "____",
-        "giraffe_masai",
+        "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
         "poor",
-        "right",
-        "NNP GZC Car '6RED', Person 'B'"
+        "left",
+        "NNP GZC Car '2RED', Person 'D'"
     ],
-    "9184": [
-        49,
-        "NNP_GIRM_0037",
-        "giraffe_masai",
-        "Female",
-        "juveniles- two year old",
-        "0",
+    "13280": [
+        1027,
+        "IBEIS_PZ_0754",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "1",
         "good",
         "left",
-        "NNP GZC Car '11WHITE', Person 'A'"
+        "NNP GZC Car '12WHITE', Person 'A'"
     ],
     "14147": [
         378,
@@ -9503,16 +9921,16 @@
         "left",
         "NNP GZC Car '14WHITE', Person 'A'"
     ],
-    "13970": [
-        1556,
-        "IBEIS_PZ_1283",
-        "zebra_plains",
-        "Female",
-        "adult",
+    "9874": [
+        -9874,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
         "0",
         "ok",
-        "backleft",
-        "NNP GZC Car '1PURPLE', Person 'D'"
+        "backright",
+        "NNP GZC Car '3WHITE', Person 'A'"
     ],
     "9192": [
         74,
@@ -9547,16 +9965,16 @@
         "left",
         "NNP GZC Car '14WHITE', Person 'A'"
     ],
-    "9876": [
-        -9876,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
+    "13972": [
+        883,
+        "IBEIS_PZ_0610",
+        "zebra_plains",
+        "Male",
+        "adult",
         "0",
-        "poor",
+        "good",
         "left",
-        "NNP GZC Car '3WHITE', Person 'A'"
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "14203": [
         585,
@@ -9624,16 +10042,16 @@
         "left",
         "NNP GZC Car '2RED', Person 'C'"
     ],
-    "9878": [
-        23,
-        "NNP_GIRM_0019",
-        "giraffe_masai",
-        "Male",
-        "adult",
+    "18309": [
+        -18309,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "ok",
+        "junk",
         "left",
-        "NNP GZC Car '3WHITE', Person 'A'"
+        "NNP GZC Car '2RED', Person 'C'"
     ],
     "18310": [
         -18310,
@@ -9734,6 +10152,17 @@
         "backleft",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
+    "14249": [
+        890,
+        "IBEIS_PZ_0617",
+        "zebra_plains",
+        "Female",
+        "juveniles- two year old",
+        "1",
+        "ok",
+        "left",
+        "NNP GZC Car '14WHITE', Person 'A'"
+    ],
     "14226": [
         1558,
         "IBEIS_PZ_1285",
@@ -9744,6 +10173,17 @@
         "ok",
         "left",
         "NNP GZC Car '14WHITE', Person 'A'"
+    ],
+    "14659": [
+        1629,
+        "IBEIS_PZ_1356",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "poor",
+        "backleft",
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "14228": [
         -14228,
@@ -9800,16 +10240,16 @@
         "left",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "14233": [
-        1624,
-        "IBEIS_PZ_1351",
+    "10137": [
+        508,
+        "IBEIS_PZ_0235",
         "zebra_plains",
         "Female",
-        "juveniles- two year old",
+        "infant",
         "1",
         "good",
         "left",
-        "NNP GZC Car '14WHITE', Person 'A'"
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "14234": [
         2165,
@@ -9830,6 +10270,17 @@
         "juveniles- two year old",
         "0",
         "junk",
+        "left",
+        "NNP GZC Car '14WHITE', Person 'A'"
+    ],
+    "14236": [
+        1508,
+        "IBEIS_PZ_1235",
+        "zebra_plains",
+        "Female",
+        "juveniles- two year old",
+        "0",
+        "good",
         "left",
         "NNP GZC Car '14WHITE', Person 'A'"
     ],
@@ -9943,27 +10394,27 @@
         "left",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "14249": [
-        890,
-        "IBEIS_PZ_0617",
+    "9884": [
+        -9884,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '3WHITE', Person 'A'"
+    ],
+    "14250": [
+        1799,
+        "IBEIS_PZ_1526",
         "zebra_plains",
         "Female",
-        "juveniles- two year old",
-        "1",
+        "adult",
+        "0",
         "ok",
         "left",
         "NNP GZC Car '14WHITE', Person 'A'"
-    ],
-    "10154": [
-        485,
-        "IBEIS_PZ_0212",
-        "zebra_plains",
-        "Male",
-        "infant",
-        "1",
-        "ok",
-        "left",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "10158": [
         278,
@@ -9998,27 +10449,27 @@
         "left",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "9203": [
-        74,
-        "NNP_GIRM_0055",
-        "giraffe_masai",
-        "Female",
+    "14259": [
+        680,
+        "IBEIS_PZ_0407",
+        "zebra_plains",
+        "Male",
         "adult",
         "0",
-        "good",
+        "ok",
         "left",
-        "NNP GZC Car '11WHITE', Person 'A'"
+        "NNP GZC Car '1PURPLE', Person 'A'"
     ],
-    "10164": [
-        280,
-        "IBEIS_PZ_0007",
+    "14260": [
+        1550,
+        "IBEIS_PZ_1277",
         "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
+        "Male",
+        "adult",
         "0",
         "poor",
         "left",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "10165": [
         598,
@@ -10064,16 +10515,16 @@
         "backleft",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "12618": [
-        1171,
-        "IBEIS_PZ_0898",
+    "16714": [
+        1971,
+        "IBEIS_PZ_1698",
         "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
+        "Male",
+        "juveniles - one year old",
         "0",
-        "poor",
-        "backleft",
-        "NNP GZC Car '1WHITE', Person 'C'"
+        "ok",
+        "left",
+        "NNP GZC Car '1RED', Person 'B'"
     ],
     "14271": [
         844,
@@ -10119,16 +10570,16 @@
         "backleft",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "18763": [
-        893,
-        "IBEIS_PZ_0620",
+    "12619": [
+        1149,
+        "IBEIS_PZ_0876",
         "zebra_plains",
         "Female",
         "adult",
         "0",
-        "good",
-        "left",
-        "NNP GZC Car '2RED', Person 'A'"
+        "poor",
+        "backleft",
+        "NNP GZC Car '1WHITE', Person 'C'"
     ],
     "10183": [
         276,
@@ -10207,16 +10658,16 @@
         "left",
         "NNP GZC Car '2RED', Person 'C'"
     ],
-    "9208": [
-        -9208,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
+    "13304": [
+        953,
+        "IBEIS_PZ_0680",
+        "zebra_plains",
+        "Male",
+        "juveniles - one year old",
         "0",
-        "ok",
-        "right",
-        "NNP GZC Car '1PURPLE', Person 'D'"
+        "good",
+        "frontleft",
+        "NNP GZC Car '12WHITE', Person 'A'"
     ],
     "14294": [
         1702,
@@ -10229,16 +10680,38 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "17401": [
-        -17401,
+    "13305": [
+        -13305,
         "____",
         "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "poor",
+        "good",
+        "right",
+        "NNP GZC Car '12WHITE', Person 'A'"
+    ],
+    "10209": [
+        726,
+        "IBEIS_PZ_0453",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "1",
+        "good",
         "left",
-        "NNP GZC Car '6RED', Person 'B'"
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+    ],
+    "10210": [
+        594,
+        "IBEIS_PZ_0321",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "poor",
+        "backleft",
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "14310": [
         1567,
@@ -10250,6 +10723,17 @@
         "good",
         "left",
         "NNP GZC Car '1PURPLE', Person 'D'"
+    ],
+    "18480": [
+        -18480,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '2RED', Person 'D'"
     ],
     "18410": [
         1877,
@@ -10350,16 +10834,16 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'A'"
     ],
-    "10228": [
-        473,
-        "IBEIS_PZ_0200",
+    "14324": [
+        1555,
+        "IBEIS_PZ_1282",
         "zebra_plains",
-        "Female",
+        "Male",
         "adult",
-        "1",
-        "good",
+        "0",
+        "ok",
         "left",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+        "NNP GZC Car '1PURPLE', Person 'A'"
     ],
     "14325": [
         696,
@@ -10449,16 +10933,16 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'D'"
     ],
-    "9900": [
-        23,
-        "NNP_GIRM_0019",
-        "giraffe_masai",
-        "Male",
-        "adult",
-        "0",
-        "ok",
-        "backleft",
-        "NNP GZC Car '3WHITE', Person 'A'"
+    "13996": [
+        1508,
+        "IBEIS_PZ_1235",
+        "zebra_plains",
+        "Female",
+        "juveniles- two year old",
+        "1",
+        "good",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "10251": [
         453,
@@ -10471,27 +10955,27 @@
         "right",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "14348": [
-        1548,
-        "IBEIS_PZ_1275",
+    "10252": [
+        288,
+        "IBEIS_PZ_0015",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "junk",
+        "left",
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+    ],
+    "10253": [
+        457,
+        "IBEIS_PZ_0184",
         "zebra_plains",
         "Male",
-        "adult",
-        "1",
-        "excellent",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'D'"
-    ],
-    "14349": [
-        2168,
-        "IBEIS_PZ_1895",
-        "zebra_plains",
-        "Female",
-        "adult",
-        "1",
+        "juveniles- two year old",
+        "0",
         "ok",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "10254": [
         304,
@@ -10548,17 +11032,6 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'A'"
     ],
-    "13981": [
-        1549,
-        "IBEIS_PZ_1276",
-        "zebra_plains",
-        "Male",
-        "adult",
-        "0",
-        "good",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'D'"
-    ],
     "10274": [
         302,
         "IBEIS_PZ_0029",
@@ -10570,16 +11043,16 @@
         "left",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "10275": [
-        477,
-        "IBEIS_PZ_0204",
+    "14371": [
+        839,
+        "IBEIS_PZ_0566",
         "zebra_plains",
-        "Female",
-        "adult",
+        "Male",
+        "juveniles- two year old",
         "0",
-        "poor",
-        "back",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+        "ok",
+        "backleft",
+        "NNP GZC Car '1PURPLE', Person 'A'"
     ],
     "14372": [
         860,
@@ -10801,16 +11274,16 @@
         "backright",
         "NNP GZC Car '2RED', Person 'B'"
     ],
-    "14404": [
-        1555,
-        "IBEIS_PZ_1282",
+    "10308": [
+        496,
+        "IBEIS_PZ_0223",
         "zebra_plains",
-        "Male",
+        "Female",
         "adult",
         "0",
-        "ok",
+        "poor",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'D'"
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "10309": [
         320,
@@ -10878,17 +11351,6 @@
         "backleft",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "12619": [
-        1149,
-        "IBEIS_PZ_0876",
-        "zebra_plains",
-        "Female",
-        "adult",
-        "0",
-        "poor",
-        "backleft",
-        "NNP GZC Car '1WHITE', Person 'C'"
-    ],
     "10331": [
         585,
         "IBEIS_PZ_0312",
@@ -10900,16 +11362,16 @@
         "frontleft",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "11962": [
-        348,
-        "IBEIS_PZ_0075",
+    "16058": [
+        -16058,
+        "____",
         "zebra_plains",
-        "Male",
-        "adult",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "good",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+        "poor",
+        "backleft",
+        "NNP GZC Car '13WHITE', Person 'B'"
     ],
     "10344": [
         479,
@@ -10955,17 +11417,6 @@
         "left",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "14120": [
-        -14120,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
-        "left",
-        "NNP GZC Car '14WHITE', Person 'A'"
-    ],
     "14451": [
         2103,
         "IBEIS_PZ_1830",
@@ -10998,17 +11449,6 @@
         "junk",
         "left",
         "NNP GZC Car '3RED', Person 'A'"
-    ],
-    "13817": [
-        -13817,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
-        "left",
-        "NNP GZC Car '4RED', Person 'A'"
     ],
     "14463": [
         -14463,
@@ -11043,16 +11483,16 @@
         "backleft",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "14017": [
-        1560,
-        "IBEIS_PZ_1287",
-        "zebra_plains",
+    "8907": [
+        113,
+        "NNP_GIRM_0087",
+        "giraffe_masai",
         "Male",
         "adult",
-        "0",
-        "good",
+        "1",
+        "ok",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "GIRM_MUGU_20,hyrule:joncrall:/media/raid/work/GIRM_MUGU_20,,,,,0"
     ],
     "10376": [
         485,
@@ -11318,6 +11758,17 @@
         "left",
         "NNP GZC Car '3RED', Person 'B'"
     ],
+    "14963": [
+        1521,
+        "IBEIS_PZ_1248",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'D'"
+    ],
     "14511": [
         298,
         "IBEIS_PZ_0025",
@@ -11329,16 +11780,16 @@
         "left",
         "NNP GZC Car '3RED', Person 'B'"
     ],
-    "10416": [
-        310,
-        "IBEIS_PZ_0037",
+    "18608": [
+        -18608,
+        "____",
         "zebra_plains",
-        "Male",
-        "adult",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "good",
-        "left",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+        "ok",
+        "backleft",
+        "NNP GZC Car '2RED', Person 'B'"
     ],
     "10417": [
         473,
@@ -11362,16 +11813,16 @@
         "backleft",
         "NNP GZC Car '2RED', Person 'C'"
     ],
-    "18612": [
-        -18612,
-        "____",
+    "10420": [
+        502,
+        "IBEIS_PZ_0229",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Female",
+        "adult",
         "0",
-        "poor",
+        "ok",
         "left",
-        "NNP GZC Car '2RED', Person 'C'"
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "18613": [
         -18613,
@@ -11460,17 +11911,6 @@
         "ok",
         "left",
         "NNP GZC Car '2RED', Person 'A'"
-    ],
-    "13381": [
-        -13381,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
-        "backleft",
-        "NNP GZC Car '17WHITE', Person 'A'"
     ],
     "18630": [
         -18630,
@@ -11582,16 +12022,16 @@
         "backleft",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "13305": [
-        -13305,
+    "9251": [
+        -9251,
         "____",
-        "zebra_plains",
+        "giraffe_masai",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "good",
+        "ok",
         "right",
-        "NNP GZC Car '12WHITE', Person 'A'"
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "10458": [
         455,
@@ -11625,17 +12065,6 @@
         "poor",
         "left",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
-    ],
-    "13440": [
-        -13440,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
-        "backright",
-        "NNP GZC Car '10WHITE', Person 'A'"
     ],
     "10466": [
         513,
@@ -11692,16 +12121,16 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "14571": [
-        1532,
-        "IBEIS_PZ_1259",
+    "18667": [
+        674,
+        "IBEIS_PZ_0401",
         "zebra_plains",
         "Female",
         "juveniles- two year old",
         "0",
-        "poor",
+        "good",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "NNP GZC Car '2RED', Person 'A'"
     ],
     "14572": [
         1492,
@@ -11802,16 +12231,16 @@
         "backleft",
         "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
-    "10500": [
-        334,
-        "IBEIS_PZ_0061",
+    "18692": [
+        -18692,
+        "____",
         "zebra_plains",
-        "Female",
-        "adult",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "ok",
-        "backleft",
-        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+        "junk",
+        "left",
+        "NNP GZC Car '2RED', Person 'D'"
     ],
     "10501": [
         330,
@@ -11857,27 +12286,16 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "13327": [
-        2130,
-        "IBEIS_PZ_1857",
+    "10521": [
+        330,
+        "IBEIS_PZ_0057",
         "zebra_plains",
         "Male",
         "adult",
-        "1",
-        "ok",
-        "left",
-        "NNP GZC Car '17WHITE', Person 'A'"
-    ],
-    "14617": [
-        1515,
-        "IBEIS_PZ_1242",
-        "zebra_plains",
-        "Female",
-        "juveniles - one year old",
         "0",
         "good",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'D'"
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
     "10522": [
         328,
@@ -11956,17 +12374,6 @@
         "left",
         "NNP GZC Car '17WHITE', Person 'A'"
     ],
-    "9216": [
-        -9216,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
-        "left",
-        "NNP GZC Car '11WHITE', Person 'A'"
-    ],
     "14631": [
         1633,
         "IBEIS_PZ_1360",
@@ -12000,16 +12407,16 @@
         "front",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "14636": [
-        1534,
-        "IBEIS_PZ_1261",
-        "zebra_plains",
-        "Female",
-        "juveniles- two year old",
+    "9489": [
+        -9489,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "ok",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "good",
+        "right",
+        "NNP GZC Car '15WHITE', Person 'A'"
     ],
     "14637": [
         1686,
@@ -12022,38 +12429,38 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "10542": [
-        340,
-        "IBEIS_PZ_0067",
+    "14638": [
+        1551,
+        "IBEIS_PZ_1278",
         "zebra_plains",
         "Female",
-        "adult",
-        "0",
-        "good",
-        "frontleft",
-        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
-    ],
-    "10543": [
-        340,
-        "IBEIS_PZ_0067",
-        "zebra_plains",
-        "Female",
-        "adult",
-        "0",
-        "ok",
-        "left",
-        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
-    ],
-    "10544": [
-        341,
-        "IBEIS_PZ_0068",
-        "zebra_plains",
-        "Male",
         "infant",
         "0",
         "ok",
         "left",
-        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+        "NNP GZC Car '1PURPLE', Person 'B'"
+    ],
+    "14639": [
+        1558,
+        "IBEIS_PZ_1285",
+        "zebra_plains",
+        "Female",
+        "infant",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'B'"
+    ],
+    "14640": [
+        1846,
+        "IBEIS_PZ_1573",
+        "zebra_plains",
+        "Female",
+        "juveniles- two year old",
+        "1",
+        "good",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "14641": [
         1540,
@@ -12165,27 +12572,60 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'D'"
     ],
-    "14659": [
-        1629,
-        "IBEIS_PZ_1356",
+    "10635": [
+        358,
+        "IBEIS_PZ_0085",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "ok",
+        "left",
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+    ],
+    "13000": [
+        1669,
+        "IBEIS_PZ_1396",
         "zebra_plains",
         "UNKNOWN SEX",
         "infant",
-        "0",
-        "poor",
-        "backleft",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "1",
+        "good",
+        "left",
+        "NNP GZC Car '3PURPLE', Person 'B'"
     ],
-    "9271": [
-        -9271,
+    "18763": [
+        893,
+        "IBEIS_PZ_0620",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "good",
+        "left",
+        "NNP GZC Car '2RED', Person 'A'"
+    ],
+    "17401": [
+        -17401,
         "____",
-        "giraffe_masai",
+        "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "ok",
-        "right",
-        "NNP GZC Car '4RED', Person 'A'"
+        "poor",
+        "left",
+        "NNP GZC Car '6RED', Person 'B'"
+    ],
+    "17010": [
+        1946,
+        "IBEIS_PZ_1673",
+        "zebra_plains",
+        "Female",
+        "infant",
+        "1",
+        "good",
+        "left",
+        "NNP GZC Car '1RED', Person 'A'"
     ],
     "14683": [
         1628,
@@ -12297,17 +12737,6 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "9279": [
-        -9279,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
-        "right",
-        "NNP GZC Car '4RED', Person 'A'"
-    ],
     "10624": [
         357,
         "IBEIS_PZ_0084",
@@ -12319,16 +12748,16 @@
         "left",
         "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
-    "9901": [
-        -9901,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
+    "14728": [
+        1718,
+        "IBEIS_PZ_1445",
+        "zebra_plains",
+        "Female",
+        "adult",
         "0",
         "poor",
-        "backleft",
-        "NNP GZC Car '3WHITE', Person 'A'"
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "10633": [
         410,
@@ -12385,27 +12814,27 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "11331": [
-        717,
-        "IBEIS_PZ_0444",
-        "zebra_plains",
-        "Male",
-        "adult",
-        "0",
-        "ok",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
-    ],
-    "16110": [
-        -16110,
+    "15427": [
+        -15427,
         "____",
         "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "junk",
-        "right",
-        "NNP GZC Car '13WHITE', Person 'A'"
+        "poor",
+        "left",
+        "NNP GZC Car '13WHITE', Person 'B'"
+    ],
+    "10720": [
+        381,
+        "IBEIS_PZ_0108",
+        "zebra_plains",
+        "Female",
+        "juveniles - one year old",
+        "1",
+        "excellent",
+        "left",
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
     "12697": [
         1190,
@@ -12517,27 +12946,16 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'A'"
     ],
-    "9971": [
-        -9971,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
-        "left",
-        "NNP GZC Car '1RED', Person 'B'"
-    ],
-    "10677": [
-        432,
-        "IBEIS_PZ_0159",
+    "14773": [
+        824,
+        "IBEIS_PZ_0551",
         "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
-        "1",
-        "ok",
+        "Female",
+        "adult",
+        "0",
+        "good",
         "left",
-        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "14775": [
         1492,
@@ -12572,16 +12990,16 @@
         "left",
         "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
-    "17482": [
-        -17482,
-        "____",
+    "14781": [
+        839,
+        "IBEIS_PZ_0566",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Male",
+        "juveniles- two year old",
         "0",
-        "poor",
+        "good",
         "left",
-        "NNP GZC Car '6RED', Person 'B'"
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "14785": [
         1507,
@@ -12594,16 +13012,27 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'D'"
     ],
-    "13387": [
-        -13387,
-        "____",
+    "10690": [
+        390,
+        "IBEIS_PZ_0117",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Female",
+        "adult",
         "0",
         "good",
+        "left",
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+    ],
+    "10691": [
+        420,
+        "IBEIS_PZ_0147",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "ok",
         "right",
-        "NNP GZC Car '10WHITE', Person 'A'"
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
     "14788": [
         1799,
@@ -12682,6 +13111,17 @@
         "frontleft",
         "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
+    "13301": [
+        995,
+        "IBEIS_PZ_0722",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "good",
+        "left",
+        "NNP GZC Car '12WHITE', Person 'A'"
+    ],
     "14806": [
         1640,
         "IBEIS_PZ_1367",
@@ -12704,16 +13144,16 @@
         "left",
         "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
-    "10720": [
-        381,
-        "IBEIS_PZ_0108",
+    "12632": [
+        992,
+        "IBEIS_PZ_0719",
         "zebra_plains",
-        "Female",
-        "juveniles - one year old",
+        "Male",
+        "adult",
         "1",
-        "excellent",
+        "good",
         "left",
-        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+        "NNP GZC Car '1WHITE', Person 'C'"
     ],
     "10721": [
         382,
@@ -12814,6 +13254,17 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
+    "13997": [
+        2182,
+        "IBEIS_PZ_1909",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'D'"
+    ],
     "10764": [
         380,
         "IBEIS_PZ_0107",
@@ -12880,16 +13331,16 @@
         "left",
         "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
-    "14084": [
-        1498,
-        "IBEIS_PZ_1225",
+    "18180": [
+        1861,
+        "IBEIS_PZ_1588",
         "zebra_plains",
-        "Male",
+        "Female",
         "adult",
         "0",
         "ok",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "NNP GZC Car '2RED', Person 'C'"
     ],
     "14874": [
         1514,
@@ -13001,27 +13452,38 @@
         "right",
         "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
-    "10811": [
-        371,
-        "IBEIS_PZ_0098",
+    "18636": [
+        -18636,
+        "____",
         "zebra_plains",
-        "Male",
-        "adult",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "ok",
-        "frontright",
-        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+        "poor",
+        "back",
+        "NNP GZC Car '2RED', Person 'D'"
     ],
-    "14773": [
-        824,
-        "IBEIS_PZ_0551",
+    "17503": [
+        2068,
+        "IBEIS_PZ_1795",
         "zebra_plains",
         "Female",
         "adult",
-        "0",
-        "good",
+        "1",
+        "ok",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "NNP GZC Car '6RED', Person 'B'"
+    ],
+    "10677": [
+        432,
+        "IBEIS_PZ_0159",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "1",
+        "ok",
+        "left",
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
     "18500": [
         -18500,
@@ -13033,6 +13495,28 @@
         "ok",
         "backright",
         "NNP GZC Car '2RED', Person 'B'"
+    ],
+    "12043": [
+        1011,
+        "IBEIS_PZ_0738",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "1",
+        "ok",
+        "frontleft",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
+    "14545": [
+        1552,
+        "IBEIS_PZ_1279",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "1",
+        "excellent",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "10679": [
         1523,
@@ -13078,16 +13562,16 @@
         "left",
         "PZ_MUGU_20,hyrule:joncrall:/media/raid/work/PZ_MUGU_20,,,,,0"
     ],
-    "17507": [
-        -17507,
+    "13411": [
+        -13411,
         "____",
         "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
         "poor",
-        "left",
-        "NNP GZC Car '6RED', Person 'B'"
+        "backright",
+        "NNP GZC Car '10WHITE', Person 'A'"
     ],
     "14935": [
         2169,
@@ -13166,16 +13650,16 @@
         "left",
         "PZ_MUGU_20,hyrule:joncrall:/media/raid/work/PZ_MUGU_20,,,,,0"
     ],
-    "14781": [
-        839,
-        "IBEIS_PZ_0566",
+    "10685": [
+        355,
+        "IBEIS_PZ_0082",
         "zebra_plains",
-        "Male",
+        "Female",
         "juveniles- two year old",
-        "0",
-        "good",
+        "1",
+        "excellent",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
     "14962": [
         1566,
@@ -13188,27 +13672,27 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'D'"
     ],
-    "14963": [
-        1521,
-        "IBEIS_PZ_1248",
+    "10867": [
+        468,
+        "IBEIS_PZ_0195",
         "zebra_plains",
-        "Male",
+        "Female",
         "adult",
         "0",
         "poor",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'D'"
+        "PZ_MUGU_20,hyrule:joncrall:/media/raid/work/PZ_MUGU_20,,,,,0"
     ],
-    "14964": [
-        1598,
-        "IBEIS_PZ_1325",
+    "10868": [
+        460,
+        "IBEIS_PZ_0187",
         "zebra_plains",
-        "Male",
-        "adult",
+        "UNKNOWN SEX",
+        "juveniles- two year old",
         "0",
-        "poor",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'D'"
+        "junk",
+        "frontleft",
+        "PZ_MUGU_20,hyrule:joncrall:/media/raid/work/PZ_MUGU_20,,,,,0"
     ],
     "12052": [
         1008,
@@ -13254,16 +13738,16 @@
         "frontleft",
         "NNP GZC Car '1PURPLE', Person 'D'"
     ],
-    "12053": [
-        984,
-        "IBEIS_PZ_0711",
+    "16149": [
+        -16149,
+        "____",
         "zebra_plains",
-        "Female",
-        "juveniles- two year old",
+        "UNKNOWN NAME",
+        "infant",
         "0",
         "poor",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+        "backleft",
+        "NNP GZC Car '13WHITE', Person 'A'"
     ],
     "10880": [
         376,
@@ -13320,6 +13804,17 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'A'"
     ],
+    "17876": [
+        -17876,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '6RED', Person 'B'"
+    ],
     "10893": [
         555,
         "IBEIS_PZ_0282",
@@ -13342,16 +13837,16 @@
         "left",
         "PZ_MUGU_20,hyrule:joncrall:/media/raid/work/PZ_MUGU_20,,,,,0"
     ],
-    "18200": [
-        -18200,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+    "10008": [
+        273,
+        "NNP_GIRM_0151",
+        "giraffe_masai",
+        "Male",
+        "adult",
         "0",
         "ok",
-        "backright",
-        "NNP GZC Car '2RED', Person 'B'"
+        "left",
+        "NNP GZC Car '2RED', Person 'D'"
     ],
     "10898": [
         551,
@@ -13364,16 +13859,16 @@
         "left",
         "PZ_MUGU_20,hyrule:joncrall:/media/raid/work/PZ_MUGU_20,,,,,0"
     ],
-    "15001": [
-        1549,
-        "IBEIS_PZ_1276",
+    "10692": [
+        355,
+        "IBEIS_PZ_0082",
         "zebra_plains",
-        "Male",
-        "adult",
-        "0",
+        "Female",
+        "juveniles- two year old",
+        "1",
         "good",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'D'"
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
     "15002": [
         1547,
@@ -13397,16 +13892,16 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "10908": [
-        542,
-        "IBEIS_PZ_0269",
+    "15004": [
+        1502,
+        "IBEIS_PZ_1229",
         "zebra_plains",
         "Female",
-        "adult",
+        "infant",
         "0",
         "ok",
         "left",
-        "PZ_MUGU_20,hyrule:joncrall:/media/raid/work/PZ_MUGU_20,,,,,0"
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "15005": [
         1563,
@@ -13418,6 +13913,17 @@
         "good",
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
+    ],
+    "10912": [
+        540,
+        "IBEIS_PZ_0267",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "1",
+        "ok",
+        "left",
+        "PZ_MUGU_20,hyrule:joncrall:/media/raid/work/PZ_MUGU_20,,,,,0"
     ],
     "10915": [
         470,
@@ -13507,16 +14013,16 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'D'"
     ],
-    "10867": [
-        468,
-        "IBEIS_PZ_0195",
+    "13432": [
+        -13432,
+        "____",
         "zebra_plains",
-        "Female",
-        "adult",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "poor",
-        "left",
-        "PZ_MUGU_20,hyrule:joncrall:/media/raid/work/PZ_MUGU_20,,,,,0"
+        "ok",
+        "backright",
+        "NNP GZC Car '10WHITE', Person 'A'"
     ],
     "15062": [
         804,
@@ -13584,16 +14090,16 @@
         "frontleft",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "10868": [
-        460,
-        "IBEIS_PZ_0187",
-        "zebra_plains",
-        "UNKNOWN SEX",
-        "juveniles- two year old",
+    "10024": [
+        273,
+        "NNP_GIRM_0151",
+        "giraffe_masai",
+        "Male",
+        "adult",
         "0",
-        "junk",
+        "ok",
         "frontleft",
-        "PZ_MUGU_20,hyrule:joncrall:/media/raid/work/PZ_MUGU_20,,,,,0"
+        "NNP GZC Car '2RED', Person 'D'"
     ],
     "15094": [
         1715,
@@ -13605,17 +14111,6 @@
         "excellent",
         "left",
         "NNP GZC Car '1PURPLE', Person 'D'"
-    ],
-    "14121": [
-        1720,
-        "IBEIS_PZ_1447",
-        "zebra_plains",
-        "Male",
-        "adult",
-        "0",
-        "good",
-        "left",
-        "NNP GZC Car '14WHITE', Person 'A'"
     ],
     "11002": [
         796,
@@ -13639,60 +14134,60 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "17536": [
-        -17536,
+    "9344": [
+        -9344,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '13WHITE', Person 'B'"
+    ],
+    "15489": [
+        -15489,
         "____",
         "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "junk",
-        "left",
-        "NNP GZC Car '6RED', Person 'B'"
+        "ok",
+        "right",
+        "NNP GZC Car '11WHITE', Person 'A'"
     ],
-    "11393": [
-        536,
-        "IBEIS_PZ_0263",
+    "16173": [
+        -16173,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "backleft",
+        "NNP GZC Car '13WHITE', Person 'B'"
+    ],
+    "15491": [
+        1376,
+        "IBEIS_PZ_1103",
         "zebra_plains",
         "Male",
         "adult",
         "0",
-        "poor",
-        "backleft",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+        "good",
+        "left",
+        "NNP GZC Car '11WHITE', Person 'A'"
     ],
-    "12077": [
-        387,
-        "IBEIS_PZ_0114",
+    "11030": [
+        798,
+        "IBEIS_PZ_0525",
         "zebra_plains",
-        "UNKNOWN SEX",
-        "juveniles - one year old",
+        "Male",
+        "juveniles- two year old",
         "1",
         "ok",
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
-    ],
-    "11395": [
-        637,
-        "IBEIS_PZ_0364",
-        "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
-        "0",
-        "poor",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
-    ],
-    "15126": [
-        1501,
-        "IBEIS_PZ_1228",
-        "zebra_plains",
-        "Male",
-        "juveniles - one year old",
-        "0",
-        "good",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "11031": [
         805,
@@ -13760,16 +14255,16 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "11503": [
-        712,
-        "IBEIS_PZ_0439",
-        "zebra_plains",
-        "UNKNOWN SEX",
+    "9353": [
+        132,
+        "NNP_GIRM_0099",
+        "giraffe_masai",
+        "Male",
         "adult",
-        "1",
-        "good",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+        "0",
+        "ok",
+        "frontleft",
+        "NNP GZC Car '13WHITE', Person 'B'"
     ],
     "11064": [
         787,
@@ -13837,17 +14332,6 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "13452": [
-        -13452,
-        "____",
-        "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "ok",
-        "backright",
-        "NNP GZC Car '10WHITE', Person 'A'"
-    ],
     "13326": [
         -13326,
         "____",
@@ -13914,21 +14398,10 @@
         "frontleft",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "11101": [
-        785,
-        "IBEIS_PZ_0512",
+    "15197": [
+        1382,
+        "IBEIS_PZ_1109",
         "zebra_plains",
-        "Female",
-        "adult",
-        "0",
-        "ok",
-        "frontleft",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
-    ],
-    "9235": [
-        157,
-        "NNP_GIRM_0110",
-        "giraffe_masai",
         "Male",
         "adult",
         "0",
@@ -13936,38 +14409,71 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "10685": [
-        355,
-        "IBEIS_PZ_0082",
+    "13440": [
+        -13440,
+        "____",
         "zebra_plains",
-        "Female",
-        "juveniles- two year old",
-        "1",
-        "excellent",
-        "left",
-        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "backright",
+        "NNP GZC Car '10WHITE', Person 'A'"
     ],
-    "12092": [
-        1036,
-        "IBEIS_PZ_0763",
-        "zebra_plains",
-        "Female",
-        "adult",
-        "1",
-        "ok",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
-    ],
-    "14141": [
-        1480,
-        "IBEIS_PZ_1207",
+    "13631": [
+        1702,
+        "IBEIS_PZ_1429",
         "zebra_plains",
         "Female",
         "adult",
         "0",
+        "ok",
+        "left",
+        "NNP GZC Car '7WHITE', Person 'B'"
+    ],
+    "16188": [
+        -16188,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
         "poor",
-        "right",
-        "NNP GZC Car '14WHITE', Person 'A'"
+        "left",
+        "NNP GZC Car '13WHITE', Person 'B'"
+    ],
+    "13822": [
+        2139,
+        "IBEIS_PZ_1866",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "1",
+        "ok",
+        "left",
+        "NNP GZC Car '4RED', Person 'A'"
+    ],
+    "18237": [
+        300,
+        "IBEIS_PZ_0027",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "1",
+        "excellent",
+        "left",
+        "NNP GZC Car '2RED', Person 'A'"
+    ],
+    "14964": [
+        1598,
+        "IBEIS_PZ_1325",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "15218": [
         1686,
@@ -14057,16 +14563,16 @@
         "frontleft",
         "NNP GZC Car '1PURPLE', Person 'D'"
     ],
-    "18240": [
-        -18240,
+    "10048": [
+        -10048,
         "____",
-        "zebra_plains",
+        "giraffe_masai",
         "UNKNOWN NAME",
         "infant",
         "0",
         "poor",
-        "left",
-        "NNP GZC Car '2RED', Person 'D'"
+        "right",
+        "NNP GZC Car '6RED', Person 'B'"
     ],
     "11145": [
         2166,
@@ -14178,6 +14684,17 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
+    "15273": [
+        1489,
+        "IBEIS_PZ_1216",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "good",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'B'"
+    ],
     "15278": [
         1697,
         "IBEIS_PZ_1424",
@@ -14233,6 +14750,17 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
+    "12105": [
+        1001,
+        "IBEIS_PZ_0728",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "poor",
+        "front",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
     "15290": [
         1551,
         "IBEIS_PZ_1278",
@@ -14277,17 +14805,6 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "14259": [
-        680,
-        "IBEIS_PZ_0407",
-        "zebra_plains",
-        "Male",
-        "adult",
-        "0",
-        "ok",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'A'"
-    ],
     "15296": [
         883,
         "IBEIS_PZ_0610",
@@ -14299,16 +14816,16 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "13472": [
-        1401,
-        "IBEIS_PZ_1128",
+    "15297": [
+        1697,
+        "IBEIS_PZ_1424",
         "zebra_plains",
-        "UNKNOWN SEX",
+        "Female",
         "adult",
         "0",
-        "junk",
+        "ok",
         "left",
-        "NNP GZC Car '5WHITE', Person 'A'"
+        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "16203": [
         -16203,
@@ -14475,16 +14992,16 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "17581": [
-        -17581,
+    "9389": [
+        -9389,
         "____",
-        "zebra_plains",
+        "giraffe_masai",
         "UNKNOWN NAME",
         "infant",
         "0",
-        "poor",
-        "left",
-        "NNP GZC Car '6RED', Person 'B'"
+        "junk",
+        "back",
+        "NNP GZC Car '13WHITE', Person 'B'"
     ],
     "11280": [
         478,
@@ -14695,6 +15212,17 @@
         "left",
         "NNP GZC Car '13WHITE', Person 'B'"
     ],
+    "15411": [
+        1837,
+        "IBEIS_PZ_1564",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "adult",
+        "1",
+        "ok",
+        "frontleft",
+        "NNP GZC Car '13WHITE', Person 'A'"
+    ],
     "15414": [
         -15414,
         "____",
@@ -14772,16 +15300,16 @@
         "right",
         "NNP GZC Car '13WHITE', Person 'B'"
     ],
-    "15427": [
-        -15427,
-        "____",
+    "11331": [
+        717,
+        "IBEIS_PZ_0444",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Male",
+        "adult",
         "0",
-        "poor",
+        "ok",
         "left",
-        "NNP GZC Car '13WHITE', Person 'B'"
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "15428": [
         -15428,
@@ -14826,6 +15354,17 @@
         "ok",
         "left",
         "NNP GZC Car '11WHITE', Person 'A'"
+    ],
+    "13495": [
+        1121,
+        "IBEIS_PZ_0848",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '5WHITE', Person 'A'"
     ],
     "15439": [
         1688,
@@ -14904,6 +15443,17 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
+    "13472": [
+        1401,
+        "IBEIS_PZ_1128",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "adult",
+        "0",
+        "junk",
+        "left",
+        "NNP GZC Car '5WHITE', Person 'A'"
+    ],
     "15468": [
         1826,
         "IBEIS_PZ_1553",
@@ -14937,17 +15487,6 @@
         "left",
         "NNP GZC Car '11WHITE', Person 'A'"
     ],
-    "10199": [
-        508,
-        "IBEIS_PZ_0235",
-        "zebra_plains",
-        "Female",
-        "infant",
-        "0",
-        "ok",
-        "left",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
-    ],
     "15488": [
         1831,
         "IBEIS_PZ_1558",
@@ -14959,16 +15498,16 @@
         "left",
         "NNP GZC Car '11WHITE', Person 'A'"
     ],
-    "15489": [
-        -15489,
-        "____",
+    "11393": [
+        536,
+        "IBEIS_PZ_0263",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Male",
+        "adult",
         "0",
-        "ok",
-        "right",
-        "NNP GZC Car '11WHITE', Person 'A'"
+        "poor",
+        "backleft",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "11394": [
         610,
@@ -14981,16 +15520,16 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "15491": [
-        1376,
-        "IBEIS_PZ_1103",
+    "11395": [
+        637,
+        "IBEIS_PZ_0364",
         "zebra_plains",
-        "Male",
-        "adult",
+        "UNKNOWN SEX",
+        "infant",
         "0",
-        "good",
+        "poor",
         "left",
-        "NNP GZC Car '11WHITE', Person 'A'"
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "11396": [
         629,
@@ -15047,17 +15586,6 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
     ],
-    "12519": [
-        1170,
-        "IBEIS_PZ_0897",
-        "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
-        "0",
-        "good",
-        "right",
-        "NNP GZC Car '1WHITE', Person 'C'"
-    ],
     "11424": [
         618,
         "IBEIS_PZ_0345",
@@ -15091,6 +15619,17 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
+    "15526": [
+        790,
+        "IBEIS_PZ_0517",
+        "zebra_plains",
+        "Male",
+        "infant",
+        "1",
+        "ok",
+        "left",
+        "NNP GZC Car '11WHITE', Person 'A'"
+    ],
     "15528": [
         2181,
         "IBEIS_PZ_1908",
@@ -15113,16 +15652,27 @@
         "right",
         "NNP GZC Car '9WHITE', Person 'A'"
     ],
-    "13514": [
-        393,
-        "IBEIS_PZ_0120",
+    "9415": [
+        -9415,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "frontright",
+        "NNP GZC Car '15WHITE', Person 'D'"
+    ],
+    "12520": [
+        1204,
+        "IBEIS_PZ_0931",
         "zebra_plains",
         "UNKNOWN SEX",
-        "infant",
+        "juveniles - one year old",
         "1",
-        "good",
+        "ok",
         "left",
-        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
+        "NNP GZC Car '1WHITE', Person 'B'"
     ],
     "11456": [
         615,
@@ -15135,16 +15685,16 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "9419": [
-        -9419,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
+    "13515": [
+        1671,
+        "IBEIS_PZ_1398",
+        "zebra_plains",
+        "UNKNOWN SEX",
         "infant",
-        "0",
-        "poor",
-        "right",
-        "NNP GZC Car '15WHITE', Person 'A'"
+        "1",
+        "ok",
+        "left",
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
     "15563": [
         1178,
@@ -15289,16 +15839,16 @@
         "backleft",
         "NNP GZC Car '15WHITE', Person 'A'"
     ],
-    "15599": [
-        1651,
-        "IBEIS_PZ_1378",
+    "11503": [
+        712,
+        "IBEIS_PZ_0439",
         "zebra_plains",
-        "Male",
+        "UNKNOWN SEX",
         "adult",
-        "0",
-        "ok",
-        "backleft",
-        "NNP GZC Car '15WHITE', Person 'A'"
+        "1",
+        "good",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "15601": [
         -15601,
@@ -15322,16 +15872,16 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "15604": [
-        -15604,
-        "____",
+    "11508": [
+        676,
+        "IBEIS_PZ_0403",
         "zebra_plains",
-        "UNKNOWN NAME",
+        "UNKNOWN SEX",
         "infant",
-        "0",
-        "poor",
-        "right",
-        "NNP GZC Car '15WHITE', Person 'D'"
+        "1",
+        "good",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "15605": [
         792,
@@ -15343,6 +15893,17 @@
         "ok",
         "left",
         "NNP GZC Car '15WHITE', Person 'A'"
+    ],
+    "15606": [
+        1646,
+        "IBEIS_PZ_1373",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "ok",
+        "right",
+        "NNP GZC Car '15WHITE', Person 'D'"
     ],
     "11511": [
         680,
@@ -15420,6 +15981,17 @@
         "ok",
         "right",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
+    "15624": [
+        -15624,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "right",
+        "NNP GZC Car '15WHITE', Person 'A'"
     ],
     "11531": [
         656,
@@ -15718,17 +16290,6 @@
         "right",
         "NNP GZC Car '2RED', Person 'C'"
     ],
-    "9251": [
-        -9251,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "ok",
-        "right",
-        "NNP GZC Car '1PURPLE', Person 'B'"
-    ],
     "11589": [
         683,
         "IBEIS_PZ_0410",
@@ -15762,16 +16323,16 @@
         "backleft",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "9447": [
-        -9447,
-        "____",
-        "giraffe_masai",
-        "UNKNOWN NAME",
-        "infant",
+    "10811": [
+        371,
+        "IBEIS_PZ_0098",
+        "zebra_plains",
+        "Male",
+        "adult",
         "0",
         "ok",
-        "right",
-        "NNP GZC Car '15WHITE', Person 'C'"
+        "frontright",
+        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
     ],
     "11844": [
         789,
@@ -15805,6 +16366,17 @@
         "ok",
         "frontleft",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
+    "12663": [
+        1146,
+        "IBEIS_PZ_0873",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "0",
+        "ok",
+        "frontleft",
+        "NNP GZC Car '1WHITE', Person 'C'"
     ],
     "11653": [
         661,
@@ -15883,16 +16455,16 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "10137": [
-        508,
-        "IBEIS_PZ_0235",
+    "15767": [
+        899,
+        "IBEIS_PZ_0626",
         "zebra_plains",
         "Female",
-        "infant",
-        "1",
-        "good",
+        "adult",
+        "0",
+        "ok",
         "left",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
+        "NNP GZC Car '2RED', Person 'D'"
     ],
     "15770": [
         -15770,
@@ -15927,16 +16499,16 @@
         "left",
         "NNP GZC Car '2RED', Person 'D'"
     ],
-    "9457": [
-        273,
-        "NNP_GIRM_0151",
-        "giraffe_masai",
-        "Male",
+    "17649": [
+        1028,
+        "IBEIS_PZ_0755",
+        "zebra_plains",
+        "Female",
         "adult",
         "0",
         "ok",
         "left",
-        "NNP GZC Car '15WHITE', Person 'C'"
+        "NNP GZC Car '6RED', Person 'B'"
     ],
     "11688": [
         831,
@@ -15970,6 +16542,39 @@
         "ok",
         "left",
         "NNP GZC Car '1PURPLE', Person 'B'"
+    ],
+    "17372": [
+        -17372,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "good",
+        "right",
+        "NNP GZC Car '6RED', Person 'B'"
+    ],
+    "11695": [
+        828,
+        "IBEIS_PZ_0555",
+        "zebra_plains",
+        "Male",
+        "infant",
+        "0",
+        "poor",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
+    "11696": [
+        829,
+        "IBEIS_PZ_0556",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "adult",
+        "1",
+        "ok",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "11697": [
         828,
@@ -16015,16 +16620,16 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "11508": [
-        676,
-        "IBEIS_PZ_0403",
+    "15604": [
+        -15604,
+        "____",
         "zebra_plains",
-        "UNKNOWN SEX",
+        "UNKNOWN NAME",
         "infant",
-        "1",
-        "good",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+        "0",
+        "poor",
+        "right",
+        "NNP GZC Car '15WHITE', Person 'D'"
     ],
     "12875": [
         1723,
@@ -16035,6 +16640,17 @@
         "0",
         "ok",
         "left",
+        "NNP GZC Car '3WHITE', Person 'A'"
+    ],
+    "12938": [
+        1725,
+        "IBEIS_PZ_1452",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "1",
+        "good",
+        "frontleft",
         "NNP GZC Car '3WHITE', Person 'A'"
     ],
     "12876": [
@@ -16059,16 +16675,16 @@
         "left",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "16973": [
-        1552,
-        "IBEIS_PZ_1279",
+    "12877": [
+        -12877,
+        "____",
         "zebra_plains",
-        "Female",
-        "adult",
+        "UNKNOWN NAME",
+        "infant",
         "0",
-        "ok",
-        "left",
-        "NNP GZC Car '1RED', Person 'B'"
+        "poor",
+        "back",
+        "NNP GZC Car '3WHITE', Person 'A'"
     ],
     "11730": [
         852,
@@ -16135,17 +16751,6 @@
         "poor",
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
-    ],
-    "15081": [
-        865,
-        "IBEIS_PZ_0592",
-        "zebra_plains",
-        "Female",
-        "adult",
-        "0",
-        "poor",
-        "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
     ],
     "15854": [
         683,
@@ -16246,16 +16851,16 @@
         "right",
         "NNP GZC Car '15WHITE', Person 'C'"
     ],
-    "14250": [
-        1799,
-        "IBEIS_PZ_1526",
+    "10154": [
+        485,
+        "IBEIS_PZ_0212",
         "zebra_plains",
-        "Female",
-        "adult",
-        "0",
+        "Male",
+        "infant",
+        "1",
         "ok",
         "left",
-        "NNP GZC Car '14WHITE', Person 'A'"
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "15874": [
         -15874,
@@ -16301,27 +16906,27 @@
         "right",
         "NNP GZC Car '15WHITE', Person 'A'"
     ],
-    "15891": [
-        1655,
-        "IBEIS_PZ_1382",
+    "11795": [
+        875,
+        "IBEIS_PZ_0602",
         "zebra_plains",
-        "Male",
+        "Female",
         "adult",
         "0",
         "ok",
-        "backleft",
-        "NNP GZC Car '15WHITE', Person 'A'"
+        "frontright",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "15892": [
-        1651,
-        "IBEIS_PZ_1378",
+    "11796": [
+        886,
+        "IBEIS_PZ_0613",
         "zebra_plains",
-        "Male",
+        "Female",
         "adult",
-        "0",
-        "ok",
-        "backleft",
-        "NNP GZC Car '15WHITE', Person 'A'"
+        "1",
+        "good",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "15894": [
         1643,
@@ -16422,16 +17027,27 @@
         "left",
         "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
-    "14260": [
-        1550,
-        "IBEIS_PZ_1277",
+    "17482": [
+        -17482,
+        "____",
         "zebra_plains",
-        "Male",
-        "adult",
+        "UNKNOWN NAME",
+        "infant",
         "0",
         "poor",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "NNP GZC Car '6RED', Person 'B'"
+    ],
+    "10164": [
+        280,
+        "IBEIS_PZ_0007",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "poor",
+        "left",
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "15931": [
         1841,
@@ -16565,16 +17181,16 @@
         "right",
         "NNP GZC Car '13WHITE', Person 'B'"
     ],
-    "15949": [
-        -15949,
-        "____",
+    "11853": [
+        912,
+        "IBEIS_PZ_0639",
         "zebra_plains",
-        "UNKNOWN NAME",
+        "UNKNOWN SEX",
         "infant",
         "0",
-        "ok",
-        "right",
-        "NNP GZC Car '13WHITE', Person 'B'"
+        "poor",
+        "backleft",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "15950": [
         -15950,
@@ -16620,16 +17236,16 @@
         "backleft",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "11858": [
-        916,
-        "IBEIS_PZ_0643",
+    "15954": [
+        -15954,
+        "____",
         "zebra_plains",
-        "UNKNOWN SEX",
+        "UNKNOWN NAME",
         "infant",
         "0",
-        "poor",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+        "ok",
+        "backleft",
+        "NNP GZC Car '13WHITE', Person 'B'"
     ],
     "15955": [
         1148,
@@ -16708,16 +17324,16 @@
         "left",
         "NNP GZC Car '13WHITE', Person 'B'"
     ],
-    "17681": [
-        2015,
-        "IBEIS_PZ_1742",
+    "15975": [
+        -15975,
+        "____",
         "zebra_plains",
-        "Male",
-        "adult",
-        "1",
-        "good",
-        "left",
-        "NNP GZC Car '6RED', Person 'B'"
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "junk",
+        "right",
+        "NNP GZC Car '13WHITE', Person 'B'"
     ],
     "15976": [
         -15976,
@@ -16774,6 +17390,28 @@
         "left",
         "NNP GZC Car '13WHITE', Person 'B'"
     ],
+    "15981": [
+        -15981,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "good",
+        "right",
+        "NNP GZC Car '13WHITE', Person 'B'"
+    ],
+    "15982": [
+        -15982,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "right",
+        "NNP GZC Car '13WHITE', Person 'B'"
+    ],
     "10173": [
         2094,
         "IBEIS_PZ_1821",
@@ -16795,6 +17433,17 @@
         "poor",
         "left",
         "NNP GZC Car '13WHITE', Person 'A'"
+    ],
+    "15126": [
+        1501,
+        "IBEIS_PZ_1228",
+        "zebra_plains",
+        "Male",
+        "juveniles - one year old",
+        "0",
+        "good",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "11891": [
         930,
@@ -16818,16 +17467,16 @@
         "left",
         "NNP GZC Car '13WHITE', Person 'A'"
     ],
-    "11853": [
-        912,
-        "IBEIS_PZ_0639",
+    "15998": [
+        1848,
+        "IBEIS_PZ_1575",
         "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
-        "0",
-        "poor",
-        "backleft",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+        "Male",
+        "adult",
+        "1",
+        "good",
+        "frontleft",
+        "NNP GZC Car '13WHITE', Person 'B'"
     ],
     "15999": [
         1179,
@@ -16970,6 +17619,28 @@
         "0",
         "ok",
         "front",
+        "NNP GZC Car '13WHITE', Person 'B'"
+    ],
+    "16020": [
+        -16020,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "right",
+        "NNP GZC Car '13WHITE', Person 'B'"
+    ],
+    "16021": [
+        -16021,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "right",
         "NNP GZC Car '13WHITE', Person 'B'"
     ],
     "16023": [
@@ -17148,16 +17819,16 @@
         "left",
         "NNP GZC Car '13WHITE', Person 'B'"
     ],
-    "16058": [
-        -16058,
-        "____",
+    "11962": [
+        348,
+        "IBEIS_PZ_0075",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Male",
+        "adult",
         "0",
-        "poor",
-        "backleft",
-        "NNP GZC Car '13WHITE', Person 'B'"
+        "good",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "16062": [
         -16062,
@@ -17302,6 +17973,17 @@
         "right",
         "NNP GZC Car '13WHITE', Person 'B'"
     ],
+    "9235": [
+        157,
+        "NNP_GIRM_0110",
+        "giraffe_masai",
+        "Male",
+        "adult",
+        "0",
+        "ok",
+        "left",
+        "NNP GZC Car '1PURPLE', Person 'B'"
+    ],
     "16102": [
         -16102,
         "____",
@@ -17357,16 +18039,16 @@
         "left",
         "NNP GZC Car '13WHITE', Person 'A'"
     ],
-    "17176": [
-        -17176,
+    "16110": [
+        -16110,
         "____",
         "zebra_plains",
         "UNKNOWN NAME",
         "infant",
         "0",
         "junk",
-        "left",
-        "NNP GZC Car '1RED', Person 'A'"
+        "right",
+        "NNP GZC Car '13WHITE', Person 'A'"
     ],
     "16112": [
         -16112,
@@ -17423,6 +18105,17 @@
         "left",
         "NNP GZC Car '3RED', Person 'A'"
     ],
+    "15949": [
+        -15949,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "right",
+        "NNP GZC Car '13WHITE', Person 'B'"
+    ],
     "16127": [
         1146,
         "IBEIS_PZ_0873",
@@ -17445,16 +18138,16 @@
         "right",
         "NNP GZC Car '13WHITE', Person 'A'"
     ],
-    "12043": [
-        1011,
-        "IBEIS_PZ_0738",
+    "10199": [
+        508,
+        "IBEIS_PZ_0235",
         "zebra_plains",
-        "UNKNOWN SEX",
+        "Female",
         "infant",
-        "1",
+        "0",
         "ok",
-        "frontleft",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+        "left",
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "12044": [
         981,
@@ -17478,6 +18171,28 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
+    "12049": [
+        981,
+        "IBEIS_PZ_0708",
+        "zebra_plains",
+        "UNKNOWN SEX",
+        "infant",
+        "0",
+        "poor",
+        "frontleft",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
+    "14101": [
+        -14101,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "poor",
+        "left",
+        "NNP GZC Car '14WHITE', Person 'A'"
+    ],
     "16147": [
         1843,
         "IBEIS_PZ_1570",
@@ -17500,16 +18215,16 @@
         "left",
         "NNP GZC Car '13WHITE', Person 'A'"
     ],
-    "16149": [
-        -16149,
-        "____",
+    "12053": [
+        984,
+        "IBEIS_PZ_0711",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
+        "Female",
+        "juveniles- two year old",
         "0",
         "poor",
-        "backleft",
-        "NNP GZC Car '13WHITE', Person 'A'"
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "12054": [
         999,
@@ -17532,17 +18247,6 @@
         "ok",
         "left",
         "NNP GZC Car '3RED', Person 'A'"
-    ],
-    "8837": [
-        105,
-        "NNP_GIRM_0081",
-        "giraffe_masai",
-        "Male",
-        "adult",
-        "1",
-        "good",
-        "left",
-        "NNP GZC Car '1WHITE', Person 'C'"
     ],
     "16162": [
         -16162,
@@ -17632,16 +18336,16 @@
         "left",
         "NNP GZC Car '13WHITE', Person 'B'"
     ],
-    "16173": [
-        -16173,
-        "____",
+    "12077": [
+        387,
+        "IBEIS_PZ_0114",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
+        "UNKNOWN SEX",
+        "juveniles - one year old",
+        "1",
         "ok",
-        "backleft",
-        "NNP GZC Car '13WHITE', Person 'B'"
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "16178": [
         -16178,
@@ -17720,27 +18424,49 @@
         "backleft",
         "NNP GZC Car '3RED', Person 'B'"
     ],
-    "16188": [
-        -16188,
-        "____",
+    "12092": [
+        1036,
+        "IBEIS_PZ_0763",
         "zebra_plains",
-        "UNKNOWN NAME",
-        "infant",
-        "0",
-        "poor",
+        "Female",
+        "adult",
+        "1",
+        "ok",
         "left",
-        "NNP GZC Car '13WHITE', Person 'B'"
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "12938": [
-        1725,
-        "IBEIS_PZ_1452",
+    "12093": [
+        1037,
+        "IBEIS_PZ_0764",
+        "zebra_plains",
+        "Female",
+        "juveniles - one year old",
+        "1",
+        "ok",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
+    "12094": [
+        1034,
+        "IBEIS_PZ_0761",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "ok",
+        "left",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
+    "12095": [
+        1040,
+        "IBEIS_PZ_0767",
         "zebra_plains",
         "UNKNOWN SEX",
         "infant",
-        "1",
-        "good",
-        "frontleft",
-        "NNP GZC Car '3WHITE', Person 'A'"
+        "0",
+        "ok",
+        "right",
+        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "12097": [
         1036,
@@ -17753,16 +18479,38 @@
         "left",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
-    "12105": [
-        1001,
-        "IBEIS_PZ_0728",
+    "12103": [
+        986,
+        "IBEIS_PZ_0713",
         "zebra_plains",
-        "UNKNOWN SEX",
-        "infant",
+        "Female",
+        "adult",
         "0",
         "poor",
-        "front",
+        "frontleft",
         "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
+    ],
+    "16200": [
+        -16200,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "ok",
+        "backleft",
+        "NNP GZC Car '3RED', Person 'A'"
+    ],
+    "16201": [
+        1999,
+        "IBEIS_PZ_1726",
+        "zebra_plains",
+        "Male",
+        "adult",
+        "1",
+        "excellent",
+        "left",
+        "NNP GZC Car '3RED', Person 'A'"
     ],
     "13623": [
         -13623,
@@ -17841,16 +18589,27 @@
         "left",
         "NNP GZC Car '3RED', Person 'A'"
     ],
-    "9269": [
-        253,
-        "NNP_GIRM_0149",
+    "9531": [
+        -9531,
+        "____",
         "giraffe_masai",
-        "Male",
-        "juveniles - one year old",
-        "1",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
         "ok",
-        "frontleft",
-        "NNP GZC Car '4RED', Person 'A'"
+        "right",
+        "NNP GZC Car '15WHITE', Person 'C'"
+    ],
+    "8849": [
+        55,
+        "NNP_GIRM_0042",
+        "giraffe_masai",
+        "Female",
+        "adult",
+        "0",
+        "good",
+        "right",
+        "NNP GZC Car '1WHITE', Person 'A'"
     ],
     "16240": [
         -16240,
@@ -17874,16 +18633,27 @@
         "left",
         "NNP GZC Car '3RED', Person 'A'"
     ],
-    "13631": [
-        1702,
-        "IBEIS_PZ_1429",
+    "12407": [
+        1386,
+        "IBEIS_PZ_1113",
         "zebra_plains",
-        "Female",
+        "Male",
+        "adult",
+        "1",
+        "good",
+        "left",
+        "NNP GZC Car '1BLUE', Person 'B'"
+    ],
+    "15001": [
+        1549,
+        "IBEIS_PZ_1276",
+        "zebra_plains",
+        "Male",
         "adult",
         "0",
-        "ok",
+        "good",
         "left",
-        "NNP GZC Car '7WHITE', Person 'B'"
+        "NNP GZC Car '1PURPLE', Person 'D'"
     ],
     "14319": [
         1499,
@@ -17896,17 +18666,6 @@
         "left",
         "NNP GZC Car '1PURPLE', Person 'D'"
     ],
-    "10635": [
-        358,
-        "IBEIS_PZ_0085",
-        "zebra_plains",
-        "Female",
-        "adult",
-        "0",
-        "ok",
-        "left",
-        "PZ_MUGU_19,hyrule:joncrall:/media/raid/work/PZ_MUGU_19,,,,,0"
-    ],
     "9541": [
         -9541,
         "____",
@@ -17918,27 +18677,27 @@
         "right",
         "NNP GZC Car '15WHITE', Person 'D'"
     ],
-    "17734": [
-        1859,
-        "IBEIS_PZ_1586",
-        "zebra_plains",
-        "Male",
-        "juveniles- two year old",
-        "0",
-        "ok",
-        "left",
-        "NNP GZC Car '6RED', Person 'B'"
-    ],
-    "15004": [
-        1502,
-        "IBEIS_PZ_1229",
-        "zebra_plains",
-        "Female",
+    "9542": [
+        -9542,
+        "____",
+        "giraffe_masai",
+        "UNKNOWN NAME",
         "infant",
         "0",
         "ok",
+        "right",
+        "NNP GZC Car '15WHITE', Person 'D'"
+    ],
+    "10908": [
+        542,
+        "IBEIS_PZ_0269",
+        "zebra_plains",
+        "Female",
+        "adult",
+        "0",
+        "ok",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'B'"
+        "PZ_MUGU_20,hyrule:joncrall:/media/raid/work/PZ_MUGU_20,,,,,0"
     ],
     "10909": [
         456,
@@ -17951,16 +18710,16 @@
         "left",
         "PZ_MUGU_20,hyrule:joncrall:/media/raid/work/PZ_MUGU_20,,,,,0"
     ],
-    "14324": [
-        1555,
-        "IBEIS_PZ_1282",
+    "10228": [
+        473,
+        "IBEIS_PZ_0200",
         "zebra_plains",
-        "Male",
+        "Female",
         "adult",
-        "0",
-        "ok",
+        "1",
+        "good",
         "left",
-        "NNP GZC Car '1PURPLE', Person 'A'"
+        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
     ],
     "12245": [
         1376,
@@ -18039,6 +18798,17 @@
         "left",
         "NNP GZC Car '1BLUE', Person 'B'"
     ],
+    "13365": [
+        -13365,
+        "____",
+        "zebra_plains",
+        "UNKNOWN NAME",
+        "infant",
+        "0",
+        "junk",
+        "right",
+        "NNP GZC Car '17WHITE', Person 'A'"
+    ],
     "16351": [
         -16351,
         "____",
@@ -18071,28 +18841,6 @@
         "ok",
         "back",
         "NNP GZC Car '8WHITE', Person 'A'"
-    ],
-    "10420": [
-        502,
-        "IBEIS_PZ_0229",
-        "zebra_plains",
-        "Female",
-        "adult",
-        "0",
-        "ok",
-        "left",
-        "PZ_MUGU_18,hyrule:joncrall:/media/raid/work/PZ_MUGU_18,,,,,0"
-    ],
-    "11865": [
-        913,
-        "IBEIS_PZ_0640",
-        "zebra_plains",
-        "UNKNOWN SEX",
-        "adult",
-        "0",
-        "poor",
-        "left",
-        "NNP_Master,pachy.cs.uic.edu:jonc:/home/shared_ibeis/data/work/NNP_Master,,,,,6"
     ],
     "12264": [
         1715,

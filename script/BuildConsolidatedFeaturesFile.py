@@ -61,7 +61,7 @@ def buildExifFeatureFl(inp,outFL,isInpFl = True):
 		with open(inp,"r") as inpFL:
 			gids = [row[0] for row in csv.reader(inpFL)]
 	else: #input is provided as a list
-		allGID = inp 
+		gids = inp 
 
 	gids = list(map(lambda x : int(x),gids))
 	datetimes = GP.getExifData(gids,'unixtime')
@@ -127,8 +127,7 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 		percentComplete = gidInd * 100 / len(allGID)
 		if math.floor(percentComplete) %5 == 0:
 			printCompltnPercent(percentComplete)
-		print()
-		
+	print()	
 	print("Extracted all annotation ID's for selected images.")
 
 	# filter out all the non-NONE annotation ids
@@ -199,3 +198,29 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 
 	print("Script completed.")
 
+
+def __main__():
+	allGidPart1 = list(map(str,list(range(1,5000))))
+
+	print("Starting feature extraction for GIDs . . .Part1")
+	buildFeatureFl(allGidPart1,"../data/full1.csv",False)
+
+	print("Completed feature extraction . . .Part1")	
+
+	print("Starting EXIF feature extraction for GIDs . . .Part1")
+	buildExifFeatureFl(allGidPart1,"../data/imgs_exif_data_full1.json",False)
+	print("Completed EXIF feature extraction . . .Part1")
+
+	allGidPart2 = list(map(str,list(range(5000,9407))))
+
+	print("Starting feature extraction for GIDs . . .Part2")
+	buildFeatureFl(allGidPart2,"../data/full2.csv",False)
+
+	print("Completed feature extraction . . .Part2")	
+
+	print("Starting EXIF feature extraction for GIDs . . .Part2")
+	buildExifFeatureFl(allGidPart2,"../data/imgs_exif_data_full2.json",False)
+	print("Completed EXIF feature extraction . . .Part2")
+
+if __name__ == "__main__":
+	__main__()	
