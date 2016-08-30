@@ -38,6 +38,7 @@ def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,daysDict,filterBySpeci
 
 	return nidMarkRecapSet
 
+# Return Petersen-Lincoln Index for mark-recapture
 def applyMarkRecap(nidMarkRecapSet):
 	uniqueIndsDay1 = {nid for nid in nidMarkRecapSet if 1 in nidMarkRecapSet[nid]}
 	uniqueIndsDay2 = {nid for nid in nidMarkRecapSet if 2 in nidMarkRecapSet[nid]}
