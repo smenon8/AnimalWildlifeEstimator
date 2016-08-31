@@ -3,10 +3,13 @@ import json
 import DeriveFinalResultSet as DRS
 import DataStructsHelperAPI as DS
 import importlib
+import pandas as pd
+import warnings
+import sys
 
 importlib.reload(DS)
 
-def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,daysDict,filterBySpecies=None):
+def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies=None,shareData=False):
 	with open(inExifFl,"r") as inpFl:
 		jsonObj = json.load(inpFl)
 
@@ -15,10 +18,14 @@ def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,daysDict,filterBySpeci
 
 	# filter out only the GIDs that were taken on either of the days specified in the days dictionary
 	filteredGid = list(filter(lambda x : imgDateDict[x] in daysDict.keys(),imgDateDict.keys()))
-
+	
+	# Logic to handle only the images that are shared
+	if shareData:
+		filteredGid = genSharedGids(filteredGid,gidPropMapFl)
+	
 	# Replace the day with Mark or Recapture
 	gidsDayNumFull = { gid : daysDict[imgDateDict[gid]] for gid in filteredGid } 
-	
+
 	# Build map of images and the individuals in it. 
 	gidNid = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,"NID",False)
 	if filterBySpecies != None:
@@ -45,6 +52,19 @@ def applyMarkRecap(nidMarkRecapSet):
 
 	marks = len(uniqueIndsDay1)
 	recaptures = len(uniqueIndsDay1 & uniqueIndsDay2)
-	population = len(uniqueIndsDay2) * marks / recaptures
+	try:
+		population = len(uniqueIndsDay2) * marks / recaptures
+	except:
+		warnings.warn("There are no recaptures for this case.")
+		population = 0
+
 	
-	return population
+	return marks,recaptures,population
+
+def genSharedGids(gidList,gidPropMapFl):
+	df = pd.DataFrame.from_csv(gidPropMapFl)
+	gidPropDict = df['Proportion'].to_dict()
+	highSharedGids = { str(gid) for gid in gidPropDict.keys() if float(gidPropDict[gid]) >= 80.0 }
+
+	return list(set(gidList) & highSharedGids)
+
