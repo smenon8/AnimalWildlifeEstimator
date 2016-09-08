@@ -22,7 +22,7 @@ def infoGain(attribute,targetAttribute):
     subsetEntropy = 0.0
     nextVal = getNextEle(attribute)
     for i in range(len(attribute)):
-        ele = attribute[i]
+        ele = next(nextVal)
         frequencyEle[ele] = frequencyEle.get(ele,0) + 1
     
 
