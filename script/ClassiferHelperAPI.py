@@ -99,12 +99,9 @@ def createDataFlDict(data,allAttribs,binaryClf,threshold,extremeClf = False):
     return gidAttribDict
 
 
-def getClassifierAlgo(methodName,hasSparse=True):
+def getClassifierAlgo(methodName):
     if methodName == 'logistic':
-        if not hasSparse:
-            return LogisticRegression(penalty='l1')
-        else:
-            return LogisticRegression()
+        return LogisticRegression()
     elif methodName == 'svm':
         return svm.SVC(probability=True)
     elif methodName == 'dtree':
@@ -130,12 +127,34 @@ def trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit):
     return train_test_split(dataFeatures, targetVar, test_size=trainTestSplit,random_state=0)
 
 # Returns a classifier object of Type ClassifierCapsuleClass
-def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,hasSparse=False,extremeClf=True):
+def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,extremeClf=True):
     gidAttribDict = createDataFlDict(data,allAttribs,True,threshold,extremeClf) # binaryClf attribute in createDataFlDict will be True here
 
     train_x,test_x,train_y,test_y = trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit) # new statement
-    clf = getClassifierAlgo(methodName,hasSparse)
-
-    clfObj = ClfClass.ClassifierCapsule(clf,methodName,trainTestSplit,hasSparse,train_x,train_y,test_x,test_y)
+    clf = getClassifierAlgo(methodName)
+    clfObj = ClfClass.ClassifierCapsule(clf,methodName,trainTestSplit,train_x,train_y,test_x,test_y)
 
     return clfObj
+
+
+# Generating attributes, converting categorical attributes into discrete binary output.
+# For instance - SPECIES : Zebra will be converted into (Zebra: 1, Giraffe: 0 .. )
+def genAllAttribs(masterDataFl,constraint,infoGainFlNm=None):
+    data = getMasterData(masterDataFl)
+    if constraint == "sparse":
+        ftrList = ['SPECIES','SEX','AGE','QUALITY','VIEW_POINT','INDIVIDUAL_NAME','CONTRIBUTOR','tags'] 
+        allAttribs = genAttribsHead(data,ftrList)
+    elif constraint == "non_sparse":
+        ftrList = ['SPECIES','SEX','AGE','QUALITY','VIEW_POINT', 'tags']
+        allAttribs = genAttribsHead(data,ftrList)
+    elif constraint == "non_zero":
+        with open(infoGainFlNm,"r") as infoGainFlNm:
+            allAttribs = [row[0] for row in csv.reader(infoGainFlNm) if float(row[1]) != 0]
+    elif constraint == "abv_mean":
+        with open(infoGainFlNm,"r") as infoGainFlNm:
+            infoGains = [(row[0],float(row[1])) for row in csv.reader(infoGainFlNm)]
+        infoGainNums = [row[1] for row in infoGains]
+        avg = np.mean(infoGainNums)
+        allAttribs = [row[0] for row in infoGains if float(row[1]) >= avg]
+    
+    return allAttribs

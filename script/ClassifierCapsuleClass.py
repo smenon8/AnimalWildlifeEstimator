@@ -3,11 +3,10 @@ import warnings
 # write logic to calculate ROC curve
 
 class ClassifierCapsule:
-    def __init__(self,clfObj,methodName,splitPercent,hasSparseFtr,train_x,train_y,test_x,test_y):
+    def __init__(self,clfObj,methodName,splitPercent,train_x,train_y,test_x,test_y):
         self.clfObj = clfObj
         self.methodName = methodName
         self.splitPercent = splitPercent
-        self.hasSparseFtr = hasSparseFtr
         self.train_x = train_x
         self.train_y = train_y
         self.test_x = test_x
@@ -43,6 +42,7 @@ class ClassifierCapsule:
         self.precision = precision_score(self.test_y,self.preds)
         self.recall = recall_score(self.test_y,self.preds)
         self.auc = roc_auc_score(self.test_y,self.predProbabs) # intakes predicition probabilities
+        self.roccurve = roc_curve(self.test_y,self.predProbabs)
         self.abserr = mean_absolute_error(self.test_y,self.preds)
         self.sqerr = mean_squared_error(self.test_y,self.preds)
         self.zerooneloss = zero_one_loss(self.test_y,self.preds)
