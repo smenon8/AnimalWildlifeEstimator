@@ -6,15 +6,16 @@ import requests
 import time
 import uuid
 import json
-
+import os
 
 DOMAIN = 'http://pachy.cs.uic.edu:5001'
 
 
-def upload(image_path, signature='api/upload/image'):
+def upload(image_path, flickrURL,signature='api/upload/image'):
     url = '%s/%s/' % (DOMAIN, signature)
+    imgFl = str(image_path + str(os.path.basename(flickrURL)))
     file_dict = {
-        'image': open(image_path, 'rb'),
+        'image': open(imgFl, 'rb'),
     }
     response = requests.post(url, files=file_dict)
     response_dict = response.json()
