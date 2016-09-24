@@ -82,7 +82,9 @@
       <li>API available for visualizing the shared/not shared pictures on map and create clusters of share-no share homogenous region.</li>
       <li>API available for generating heat maps of the region of shared photos and not shared photos</li>
       <li>API available for applying mark-recapture and calculate the Petersen-Lincoln Index on the GZC data-set.</li>
-      <li>API available for applying mark-recapture and calculate the Petersen-Lincoln Index on the shared GZC data-set obtained from the Mechanical Turk experiments.</li> 
+      <li>API available for applying mark-recapture and calculate the Petersen-Lincoln Index on the shared GZC data-set obtained from the Mechanical Turk experiments.</li>
+      <li>API available for extracting images from Flickr when the tags and text are specified.</li> 
+      <li>API available for parallel download of images from Flickr and concurrent execution of image detection tasks on IBEIS. </li>
       </ul>
       
       <h3>
@@ -162,6 +164,14 @@
       </ul>
       </li>
 
+      <li><p><a href="#ClassifierCapsuleClass"> ClassifierCapsuleClass.py</a></p>
+      <ul>
+        <li><a href="#CapsuleClassAttribs">Object Attributes</a></li>
+        <li><a href="#runClf">runClf()</a></li>
+        <li><a href="#evalClassifierPerf">evalClassifierPerf()</a></li>
+      </ul>
+      </li>
+
       <li><p><a href="#ClassifierHelperAPI"> ClassifierHelperAPI.py </a></p>
       <ul>
         <li><a href="#genHead">genHead(dataDict,ftr)</a></li>
@@ -172,17 +182,36 @@
       </ul>
       </li>
 
+      <li><p><a href="#FeatureSelectionAPI"> FeatureSelectionAPI.py</a></p>
+      <ul>
+        <li><a href="#dataEntropy">dataEntropy(attribute)</a></li>
+        <li><a href="#getNextEle">getNextEle(attribList)</a></li>
+        <li><a href="#infoGain">infoGain(attribute,targetAttribute)</a></li>
+      </ul>
+      </li>
+
       <li><p><a href="#MarkRecapHelper"> MarkRecapHelper.py</a></p>
       <ul>
-        <li><a href="#genNidMarkRecapDict">genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies,shareData)</a></li>
+        <li><a href="#createFlickrObj">createFlickrObj(flickrKeyFl)</a></li>
         <li><a href="#applyMarkRecap">applyMarkRecap(nidMarkRecapSet)</a></li>
         <li><a href="#genSharedGids">genSharedGids(gidList,gidPropMapFl)</a></li>
+      </ul>
+      </li>
+
+      <li><p><a href="#SocialMediaImageExtracts"> SocialMediaImageExtracts.py</a></p>
+      <ul>
+        <li><a href="#createFlickrObj">createFlickrObj(flickrKeyFl)</a></li>
+        <li><a href="#searchInFlickr">searchInFlickr(flickrObj,tags,text)</a></li>
       </ul>
       </li>
 
       <li><p><a href="#AppendMicrosoftAIData"> AppendMicrosoftAIData.ipynb </a></p> </li>
       <li><p><a href="#VisualizeResults"> VisualizeResults.ipynb </a></p> </li>
       <li><p><a href="#ImageShareabilityClassifiers"> ImageShareabilityClassifiers.ipynb </a></p> </li>
+      <li><p><a href="#InterAnnotatorAgreement"> InterAnnotatorAgreement.ipynb </a></p> </li>
+      <li><p><a href="#LocationBiasCheck"> LocationBiasCheck.ipynb </a></p> </li>
+
+
 
 
       </ol>
