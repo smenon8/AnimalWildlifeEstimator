@@ -147,6 +147,18 @@ def genAidFeatureDictDict(mapFL):
 
     return aidFeaturesDict
 
+def genGidAidFtrDf(gidAidMapFl,aidFtrMapFl,outFlNm="/tmp/genGidAidFtrDf.dump.csv"):
+    aidFeaturesDf = pd.DataFrame(genAidFeatureDictList(aidFtrMapFl))
+    aidFeaturesDf['AID'] = aidFeaturesDf['AID'].astype('int32')
+    
+    aidGidDict = genAidGidTupListFromMap(gidAidMapFl)
+    aidGidDf= pd.DataFrame(aidGidDict,columns = ['AID','GID'])
+    
+    df = pd.merge(aidGidDf,aidFeaturesDf,left_on='AID',right_on='AID')
+    df.to_csv(outFlNm,index=False)
+
+    return df
+
 # mapFL - json format (should be in the format {gid: {aid : features}})
 # This method is used to generate a dictionary in the form { GID : [list of features instances in that image]}. 
 # This object will give us the capability to check what feature instances are present in a given image. 
@@ -261,7 +273,7 @@ def imgShareCountsPerAlbum(imgAlbumDict,results):
 
     return imgShareNotShareList,noResponse
 
-def createMstrFl(gidAidFtrFl,attribList,outFlNm="/tmp/dump.csv"):
+def createMstrFl(gidAidFtrFl,attribList,outFlNm="/tmp/createMstrFl.dump.csv"):
     df = pd.DataFrame.from_csv(gidAidFtrFl)
     df.reset_index(inplace=True)
 

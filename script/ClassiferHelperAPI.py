@@ -35,7 +35,7 @@ def genHead(dataDict,ftr):
     
     return list(ftrList)
 
-# Filling in 0's and 1's for the dummy variables.
+
 def getMasterData(flNm):
     df = pd.DataFrame.from_csv(flNm)
 
@@ -52,7 +52,7 @@ def getMasterData(flNm):
 def genAttribsHead(data,ftrList):
     return [attrib for ftr in ftrList for attrib in genHead(data,ftr)]
 
-
+# Filling in 0's and 1's for the dummy variables.
 def createDataFlDict(data,allAttribs,binaryClf,threshold,extremeClf = False):
     gidAttribDict = {}
 
