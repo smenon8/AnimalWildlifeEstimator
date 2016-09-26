@@ -38,14 +38,14 @@ def genHead(dataDict,ftr):
 # Filling in 0's and 1's for the dummy variables.
 def getMasterData(flNm):
     df = pd.DataFrame.from_csv(flNm)
-    cols = list(df.columns)
-    df.drop('URL',1,inplace=True)
-    df.drop('Album',1,inplace=True)
+
     df.reset_index(inplace=True)
     df = df.iloc[np.random.permutation(len(df))]
     df['GID'] = df['GID'].astype(str)
+    df.to_csv("/tmp/tmp.csv",index=False)
     df.index = df['GID']
-    df.drop('GID',1,inplace=True)
+    df.drop(['GID','URL','Album'],1,inplace=True)
+
     return df.to_dict(orient='index')
 
 # Flatten out the list of lists p

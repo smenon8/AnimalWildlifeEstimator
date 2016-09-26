@@ -15,6 +15,7 @@ import importlib
 import re
 import json
 from collections import OrderedDict, Counter
+import pandas as pd
 importlib.reload(Features)
 
 # This method is used to generate a list of all images that are used in the current experiment as specified by the map file.
@@ -259,6 +260,21 @@ def imgShareCountsPerAlbum(imgAlbumDict,results):
                 imgShareNotShareList.append((gid,album,shareCount,notShareCount,shareCount*100/(shareCount+notShareCount)))
 
     return imgShareNotShareList,noResponse
+
+def createMstrFl(gidAidFtrFl,attribList,outFlNm="/tmp/dump.csv"):
+    df = pd.DataFrame.from_csv(gidAidFtrFl)
+    df.reset_index(inplace=True)
+
+    df = df[attribList]
+    if 'CONTRIBUTOR' in attribList:
+        df['CONTRIBUTOR'] = df[['CONTRIBUTOR']].applymap(lambda x : x.replace(',',''))
+
+    df = df.groupby('GID').agg(','.join).reset_index()
+    df.GID = df.GID.astype(str) 
+
+    df.to_csv(outFlNm,index=False)
+
+    return df
 
 # audit script
 # This method is an audit method that ensures there are no leaks or incorrect data in the result and feature objects. 
