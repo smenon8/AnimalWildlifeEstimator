@@ -43,19 +43,10 @@ def getMasterData(flNm):
     df.drop('Album',1,inplace=True)
     df.reset_index(inplace=True)
     df = df.iloc[np.random.permutation(len(df))]
-    df.to_csv("/tmp/tmp.csv",index=False)
-    
-    with open("/tmp/tmp.csv","r") as tmpFL:
-        reader = csv.reader(tmpFL)
-        head = reader.__next__()
-        data = {}
-        for row in reader:
-            temp = {}
-            for i in range(1,len(row)):
-                temp[head[i]] = row[i] 
-            data[row[0]] = temp
-
-    return data
+    df['GID'] = df['GID'].astype(str)
+    df.index = df['GID']
+    df.drop('GID',1,inplace=True)
+    return df.to_dict(orient='index')
 
 # Flatten out the list of lists p
 def genAttribsHead(data,ftrList):
