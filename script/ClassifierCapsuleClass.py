@@ -28,6 +28,7 @@ class ClassifierCapsule:
         self.warningMsg = None
 
     def setTestAttrib(self,clsAttribStr,value):
+        w = []
         if clsAttribStr not in dir(self):
             try:
                 raise Exception('Exception : Classifier Attribute %s Unknown' %clsAttribStr)

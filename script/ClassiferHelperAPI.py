@@ -72,11 +72,11 @@ def createDataFlDict(data,allAttribs,threshold,dataMode = 'Train',writeTempFiles
         ftrs = ['SPECIES','SEX','AGE','QUALITY','VIEW_POINT','INDIVIDUAL_NAME']
 
         for ftr in ftrs:
-            for itm in ftrDict[ftr].split(','):
+            for itm in set(ftrDict[ftr].split(',')):
                 attribDict[itm] = 1
 
         # logic for tgs
-        for tag in literal_eval(ftrDict['tags']):
+        for tag in set(literal_eval(ftrDict['tags'])):
             attribDict[tag] = 1
 
         if dataMode == 'Train':
@@ -113,7 +113,7 @@ def trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit):
 
     attributes = df.columns[:len(allAttribs)] # all attributes
 
-    dataFeatures = df[attributes]
+    dataFeatures = df[list(set(attributes))]
     targetVar = df['TARGET']
     
     return train_test_split(dataFeatures, targetVar, test_size=trainTestSplit,random_state=0)
