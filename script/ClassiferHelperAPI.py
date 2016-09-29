@@ -44,7 +44,10 @@ def getMasterData(flNm):
     df['GID'] = df['GID'].astype(str)
     df.to_csv("/tmp/tmp.csv",index=False)
     df.index = df['GID']
-    df.drop(['GID','URL','Album'],1,inplace=True)
+    if 'URL' in df.columns: 
+        df.drop(['GID','URL','Album'],1,inplace=True)
+    else:
+        df.drop(['GID'],1,inplace=True)
 
     return df.to_dict(orient='index')
 
@@ -53,13 +56,13 @@ def genAttribsHead(data,ftrList):
     return [attrib for ftr in ftrList for attrib in genHead(data,ftr)]
 
 # Filling in 0's and 1's for the dummy variables.
-def createDataFlDict(data,allAttribs,binaryClf,threshold,extremeClf = False):
+def createDataFlDict(data,allAttribs,threshold,dataMode = 'Train',writeTempFiles=False):
     gidAttribDict = {}
 
-    if extremeClf:
+    if dataMode == 'Train':
         fDataKeys= list(filter(lambda x : float(data[x]['Proportion']) >= 80.0 or float(data[x]['Proportion']) <= 20.0,data.keys()))
         fData = {gid: data[gid] for gid in fDataKeys}
-    else:
+    else: # there will be no proportion, unlablelled data
         fData = data
 
     for gid in fData.keys():
@@ -76,17 +79,15 @@ def createDataFlDict(data,allAttribs,binaryClf,threshold,extremeClf = False):
         for tag in literal_eval(ftrDict['tags']):
             attribDict[tag] = 1
 
-        if binaryClf:
+        if dataMode == 'Train':
             attribDict['TARGET'] = 1 if float(ftrDict['Proportion'] ) >= threshold else 0 # Thresholding for the share proportion
-        else:
-            attribDict['TARGET'] = float(ftrDict['Proportion'])
 
         gidAttribDict[gid] = attribDict
-
-    json.dump(gidAttribDict,open("/tmp/gidAttribDict.json","w"),indent=4)
-
-    pd.DataFrame(gidAttribDict).transpose().to_csv("/tmp/gidAttribDict.csv")
     
+    if writeTempFiles:
+        json.dump(gidAttribDict,open("/tmp/gidAttribDict.json","w"),indent=4)
+        pd.DataFrame(gidAttribDict).transpose().to_csv("/tmp/gidAttribDict.csv")
+        
     return gidAttribDict
 
 
@@ -118,8 +119,8 @@ def trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit):
     return train_test_split(dataFeatures, targetVar, test_size=trainTestSplit,random_state=0)
 
 # Returns a classifier object of Type ClassifierCapsuleClass
-def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,extremeClf=True):
-    gidAttribDict = createDataFlDict(data,allAttribs,True,threshold,extremeClf) # binaryClf attribute in createDataFlDict will be True here
+def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName):
+    gidAttribDict = createDataFlDict(data,allAttribs,threshold) # binaryClf attribute in createDataFlDict will be True here
 
     train_x,test_x,train_y,test_y = trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit) # new statement
     clf = getClassifierAlgo(methodName)

@@ -16,6 +16,7 @@ import re
 import json
 from collections import OrderedDict, Counter
 import pandas as pd
+import DataStructsHelperAPI as DS
 importlib.reload(Features)
 
 # This method is used to generate a list of all images that are used in the current experiment as specified by the map file.
@@ -273,7 +274,7 @@ def imgShareCountsPerAlbum(imgAlbumDict,results):
 
     return imgShareNotShareList,noResponse
 
-def createMstrFl(gidAidFtrFl,attribList,outFlNm="/tmp/createMstrFl.dump.csv"):
+def createMstrFl(gidAidFtrFl,tagsFlNm,attribList,outFlNm="/tmp/createMstrFl.dump.csv"):
     df = pd.DataFrame.from_csv(gidAidFtrFl)
     df.reset_index(inplace=True)
 
@@ -284,9 +285,14 @@ def createMstrFl(gidAidFtrFl,attribList,outFlNm="/tmp/createMstrFl.dump.csv"):
     df = df.groupby('GID').agg(','.join).reset_index()
     df.GID = df.GID.astype(str) 
 
-    df.to_csv(outFlNm,index=False)
+    gidFtrsLst = DS.cnvrtDictToLstTup(genMSAIDataHighConfidenceTags(tagsFlNm))
+    df_tags = pd.DataFrame(gidFtrsLst,columns=['GID','tags'])
+    df_tags['GID'] = df_tags['GID'].astype(str)
+    
+    df_comb = pd.merge(df,df_tags,left_on='GID',right_on='GID')
+    df_comb.to_csv(outFlNm,index=False)
 
-    return df
+    return df_comb
 
 # audit script
 # This method is an audit method that ensures there are no leaks or incorrect data in the result and feature objects. 
