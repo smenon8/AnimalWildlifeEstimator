@@ -101,7 +101,7 @@ def getClassifierAlgo(methodName,kernel='rbf'):
     elif methodName == 'random_forests':
         return RandomForestClassifier()
     elif methodName == 'bayesian':
-        return naive_bayes.MultinomialNB()
+        return naive_bayes.BernoulliNB()
     else:
         try:
             raise Exception('Exception : Classifier Method %s Unknown' %methodName)

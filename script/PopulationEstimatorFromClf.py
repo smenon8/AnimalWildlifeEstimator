@@ -9,6 +9,8 @@ import MarkRecapHelper as MR
 import pandas as pd
 import json
 import ClassiferHelperAPI as CH
+import importlib
+importlib.reload(CH)
 
 def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None):
 	# Create training data
