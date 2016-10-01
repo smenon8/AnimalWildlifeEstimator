@@ -9,7 +9,7 @@ import sys
 
 importlib.reload(DS)
 
-def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies=None,shareData='proportion'):
+def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies=None,shareData='proportion',probabThreshold=1):
 	with open(inExifFl,"r") as inpFl:
 		jsonObj = json.load(inpFl)
 
@@ -21,7 +21,7 @@ def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,
 	
 	# Logic to handle only the images that are shared
 	if shareData in {'proportion' , 'classifier' }:
-		filteredGid = genSharedGids(filteredGid,gidPropMapFl,shareData)
+		filteredGid = genSharedGids(filteredGid,gidPropMapFl,shareData,probabThreshold)
 	
 	# Replace the day with Mark or Recapture
 	gidsDayNumFull = { gid : daysDict[imgDateDict[gid]] for gid in filteredGid } 
@@ -73,6 +73,6 @@ def genSharedGids(gidList,gidPropMapFl,shareData='proportion',probabThreshold=1)
 
 	return list(set(gidList) & highSharedGids)
 
-def runMarkRecap(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies=None,shareData='proportion'):
-	nidMarkRecapSet = genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies,shareData)
+def runMarkRecap(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies=None,shareData='proportion',probabThreshold=1):
+	nidMarkRecapSet = genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies,shareData,probabThreshold)
 	return applyMarkRecap(nidMarkRecapSet)

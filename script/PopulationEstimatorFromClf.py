@@ -9,6 +9,7 @@ import MarkRecapHelper as MR
 import pandas as pd
 import json
 import ClassiferHelperAPI as CH
+import DeriveFinalResultSet as DRS
 import importlib
 importlib.reload(CH)
 
@@ -38,7 +39,7 @@ def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None):
 
 	return clfObj, prediction_results
 
-def estimatePopulation(clfObj,prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
+def estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
 	df = pd.DataFrame(prediction_results,index=['share']).transpose().reset_index()
 	df.columns = ['GID','share']
 	df.to_csv("/tmp/PredictionResults.csv",index=False)
@@ -77,9 +78,24 @@ def estimatePopulation(clfObj,prediction_results,inExifFl,inGidAidMapFl,inAidFtr
 	print("Population of giraffes = %f" %population_g)
 
 	return {'all' : population_all , 
-			'zebras' : population_z , 'giraffes' : population_g, 
-			'shared_images_count' : int(sum(clfObj.preds))}
+			'zebras' : population_z , 'giraffes' : population_g}
 
+# synthetic experiment #1 and #2
+def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,genk):
+	gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
+
+	sdCards = {}
+	for key in gidContribDct.keys():
+	    sdCards[gidContribDct[key][0]] = sdCards.get(gidContribDct[key][0],[]) + [key]
+
+	sdCardSorted = {}
+	for contrib in sdCards.keys():
+	    sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_probabs.get(x,0),reverse=True)
+
+	# selecting the top k scores as shared
+	predictions_k = {gid : 1 for contrib in sdCardSorted.keys() for gid in sdCardSorted[contrib][:genk()]}
+
+	return estimatePopulation(predictions_k,inExifFl,inGidAidMapFl,inAidFtrFl)
 
 def __main__():
 	clfTypes = ['bayesian','logistic','svm','dtree','random_forests']
@@ -95,7 +111,7 @@ def __main__():
                      clf,
                      attribType,
                      "../data/infoGainsExpt2.csv")
-	        thisObjhead = {'Classifier' : clf , 'Attribute' : attribType}
+	        thisObjhead = {'Classifier' : clf , 'Attribute' : attribType,'shared_images_count' : int(sum(clfObj.preds))}
 	        thisObj = estimatePopulation(clfObj,predResults,
 	        				"../data/imgs_exif_data_full.json",
 							"../data/full_gid_aid_map.json",
