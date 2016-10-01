@@ -38,46 +38,50 @@ import htmltag as HT
 import cufflinks as cf # this is necessary to link pandas to plotly
 cf.go_online()
 
-attribsType = 'abv_mean'
 minSplit = 0.2
 maxSplit = 0.6
 
-allAttribs = CH.genAllAttribs("../FinalResults/ImgShrRnkListWithTags.csv",attribsType,"../data/infoGainsExpt2.csv")
-data= CH.getMasterData("../FinalResults/ImgShrRnkListWithTags.csv")    
+for attribsType in ['sparse','non_sparse','non_zero','abv_mean']:
+    print("Classifier training started for %s" %attribsType)
 
-methods = ['logistic','svm','dtree','random_forests']
+    allAttribs = CH.genAllAttribs("../FinalResults/ImgShrRnkListWithTags.csv",attribsType,"../data/infoGainsExpt2.csv")
+    data= CH.getMasterData("../FinalResults/ImgShrRnkListWithTags.csv")    
 
-classifiers = []
-for method in methods:
-    for i in np.arange(minSplit,maxSplit,0.1): # i is the test percent
-        clfObj = CH.buildBinClassifier(data,allAttribs,1-i,80,method)
-        clfObj.runClf()
-        classifiers.append(clfObj)
+    methods = ['bayesian','logistic','svm','dtree','random_forests']
+
+    classifiers = []
+    for method in methods:
+        for i in np.arange(minSplit,maxSplit,0.1): # i is the test percent
+            clfObj = CH.buildBinClassifier(data,allAttribs,1-i,80,method)
+            clfObj.runClf()
+            classifiers.append(clfObj)
+            
+    printableClfs = []
+
+    for clf in classifiers:
+        printableClfs.append(dict(literal_eval(clf.__str__())))
         
-printableClfs = []
+    df = pd.DataFrame(printableClfs)
+    df = df[['methodName','splitPercent','accScore','precision','recall','f1Score','auc','sqerr']]
+    df.columns = ['Classifier','Train-Test Split','Accuracy','Precision','Recall','F1 score','AUC','Squared Error']
+    df.to_csv("../ClassifierResults/extrmClfMetrics_%s.csv" %attribsType,index=False)
 
-for clf in classifiers:
-    printableClfs.append(dict(literal_eval(clf.__str__())))
+    # Will take up valuable Plot.ly plots per day. Limited to 50 plots per day.
+    # changes to file name important
+    iFrameBlock = []
+    for i in np.arange(minSplit,maxSplit,0.1):
+        df1 = df[(df['Train-Test Split']==1-i)]
+        df1.index = df1['Classifier']
+        df1 = df1[['Accuracy','Precision','Recall','F1 score','AUC','Squared Error']].transpose()
+        fig = df1.iplot(kind='bar',filename=str('Train-Test_Split_Ratio %s %f' %(attribsType,i)),title=str('Train-Test Split Ratio: %f' %i))
+        iFrameBlock.append(fig.embed_code)
+
+    flNm = "../ClassifierResults/performanceComparison_%s.html" %attribsType
+    with open(flNm,"w") as perf:
+        perf.write(HT.h1("Performance Comparisons of Classifiers with %s Attributes." %attribsType))
+        for row in iFrameBlock:
+            perf.write(HT.HTML(row))
     
-df = pd.DataFrame(printableClfs)
-df = df[['methodName','splitPercent','accScore','precision','recall','f1Score','auc','sqerr']]
-df.columns = ['Classifier','Train-Test Split','Accuracy','Precision','Recall','F1 score','AUC','Squared Error']
-df.to_csv("../ClassifierResults/extrmClfMetrics_%s.csv" %attribsType,index=False)
-
-# Will take up valuable Plot.ly plots per day. Limited to 50 plots per day.
-# changes to file name important
-iFrameBlock = []
-for i in np.arange(minSplit,maxSplit,0.1):
-    df1 = df[(df['Train-Test Split']==1-i)]
-    df1.index = df1['Classifier']
-    df1 = df1[['Accuracy','Precision','Recall','F1 score','AUC','Squared Error']].transpose()
-    fig = df1.iplot(kind='bar',filename=str('Train-Test_Split_Ratio %s %f' %(attribsType,i)),title=str('Train-Test Split Ratio: %f' %i))
-    iFrameBlock.append(fig.embed_code)
-
-flNm = "../ClassifierResults/performanceComparison_%s.html" %attribsType
-with open(flNm,"w") as perf:
-    perf.write(HT.h1("Performance Comparisons of Classifiers with %s Attributes." %attribsType))
-    for row in iFrameBlock:
-        perf.write(HT.HTML(row))
-    
+    print("Classifier training complete for %s" %attribsType)
+    print()
     

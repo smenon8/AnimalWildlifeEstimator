@@ -9,7 +9,7 @@ import sys
 
 importlib.reload(DS)
 
-def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies=None,shareData=False):
+def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies=None,shareData='proportion'):
 	with open(inExifFl,"r") as inpFl:
 		jsonObj = json.load(inpFl)
 
@@ -20,8 +20,8 @@ def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,
 	filteredGid = list(filter(lambda x : imgDateDict[x] in daysDict.keys(),imgDateDict.keys()))
 	
 	# Logic to handle only the images that are shared
-	if shareData:
-		filteredGid = genSharedGids(filteredGid,gidPropMapFl)
+	if shareData in {'proportion' , 'classifier' }:
+		filteredGid = genSharedGids(filteredGid,gidPropMapFl,shareData)
 	
 	# Replace the day with Mark or Recapture
 	gidsDayNumFull = { gid : daysDict[imgDateDict[gid]] for gid in filteredGid } 
@@ -61,10 +61,18 @@ def applyMarkRecap(nidMarkRecapSet):
 	
 	return marks,recaptures,population
 
-def genSharedGids(gidList,gidPropMapFl):
+def genSharedGids(gidList,gidPropMapFl,shareData='proportion'):
 	df = pd.DataFrame.from_csv(gidPropMapFl)
-	gidPropDict = df['Proportion'].to_dict()
-	highSharedGids = { str(gid) for gid in gidPropDict.keys() if float(gidPropDict[gid]) >= 80.0 }
+
+	if shareData == 'proportion':
+		gidPropDict = df['Proportion'].to_dict()
+		highSharedGids = { str(gid) for gid in gidPropDict.keys() if float(gidPropDict[gid]) >= 80.0 }
+	else:
+		gidShrDict = df['share'].to_dict()
+		highSharedGids = { str(gid) for gid in gidShrDict.keys() if float(gidShrDict[gid]) == 1 }
 
 	return list(set(gidList) & highSharedGids)
 
+def runMarkRecap(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies=None,shareData='proportion'):
+	nidMarkRecapSet = genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies,shareData)
+	return applyMarkRecap(nidMarkRecapSet)

@@ -10,7 +10,7 @@ import pandas as pd
 import json
 from collections import OrderedDict
 from sklearn.linear_model import LogisticRegression, LinearRegression
-from sklearn import svm,tree
+from sklearn import svm,tree,naive_bayes
 from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 import sys
@@ -91,15 +91,17 @@ def createDataFlDict(data,allAttribs,threshold,dataMode = 'Train',writeTempFiles
     return gidAttribDict
 
 
-def getClassifierAlgo(methodName):
+def getClassifierAlgo(methodName,kernel='rbf'):
     if methodName == 'logistic':
         return LogisticRegression()
     elif methodName == 'svm':
-        return svm.SVC(probability=True)
+        return svm.SVC(kernel=kernel,probability=True)
     elif methodName == 'dtree':
         return tree.DecisionTreeClassifier()
     elif methodName == 'random_forests':
         return RandomForestClassifier()
+    elif methodName == 'bayesian':
+        return naive_bayes.MultinomialNB()
     else:
         try:
             raise Exception('Exception : Classifier Method %s Unknown' %methodName)
