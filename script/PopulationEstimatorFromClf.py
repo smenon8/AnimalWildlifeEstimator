@@ -1,24 +1,34 @@
-# Population Estimator Implementation
+# python-3
+
+# Population Estimator Implementation on predicted shared dataset. 
+# Author: Sreejith Menon (smenon8@uic.edu)
+# Script creation date: Sept 30, 2016
+
+
 import MarkRecapHelper as MR
 import pandas as pd
 import json
 import ClassiferHelperAPI as CH
 
 def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None):
+	# Create training data
 	allAttribs = CH.genAllAttribs(train_data_fl,attribType,infoGainFl)
 	train_data= CH.getMasterData(train_data_fl)
 	
-	print("Number of attributes %i" %len(allAttribs))
+	print("Number of attributes : %i" %len(allAttribs))
 	
+	# Create testing data
 	test_data= CH.getMasterData(test_data_fl)
 	testObj = CH.createDataFlDict(test_data,allAttribs,0.8,'Test')
-
-	clfObj = CH.buildBinClassifier(train_data,allAttribs,0.0,80,clf)
 
 	testDf =  pd.DataFrame(testObj).transpose()
 	attributes = testDf.columns[:len(allAttribs)]
 	testDataFeatures = testDf[allAttribs]
 
+	# Build classifier
+	clfObj = CH.buildBinClassifier(train_data,allAttribs,0.0,80,clf)
+
+	# Set testing data and run classifier
 	clfObj.setTestAttrib('test_x',testDataFeatures)
 	clfObj.runClf(computeMetrics=False)
 
@@ -83,11 +93,13 @@ def __main__():
                      clf,
                      attribType,
                      "../data/infoGainsExpt2.csv")
-
-	        estimates.append(estimatePopulation(clfObj,predResults,
+	        thisObjhead = {'Classifier' : clf , 'Attribute' : attribType}
+	        thisObj = estimatePopulation(clfObj,predResults,
 	        				"../data/imgs_exif_data_full.json",
 							"../data/full_gid_aid_map.json",
-							"../data/full_aid_features.json"))
+							"../data/full_aid_features.json")
+
+	        estimates.append({**thisObjhead,**thisObj})
 	        print()
 	        print()
 

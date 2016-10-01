@@ -61,7 +61,7 @@ def applyMarkRecap(nidMarkRecapSet):
 	
 	return marks,recaptures,population
 
-def genSharedGids(gidList,gidPropMapFl,shareData='proportion'):
+def genSharedGids(gidList,gidPropMapFl,shareData='proportion',probabThreshold=1):
 	df = pd.DataFrame.from_csv(gidPropMapFl)
 
 	if shareData == 'proportion':
@@ -69,7 +69,7 @@ def genSharedGids(gidList,gidPropMapFl,shareData='proportion'):
 		highSharedGids = { str(gid) for gid in gidPropDict.keys() if float(gidPropDict[gid]) >= 80.0 }
 	else:
 		gidShrDict = df['share'].to_dict()
-		highSharedGids = { str(gid) for gid in gidShrDict.keys() if float(gidShrDict[gid]) == 1 }
+		highSharedGids = { str(gid) for gid in gidShrDict.keys() if float(gidShrDict[gid]) >= probabThreshold }
 
 	return list(set(gidList) & highSharedGids)
 
