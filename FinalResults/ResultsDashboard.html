@@ -52,7 +52,7 @@
 <p><strong> 
 <a href="resultsExpt2RankList_Tags.html"> View overall rank list of images by shared proportion appended with tags from Microsoft Image Tagging API</a>
 </strong>
-<br><i>Sorted in descending order of Share rate.<br>API available.</i>
+<br><i>Sorted in descending order of Share rate.<br>API available.</i></p>
 
 
 <p><strong> 
@@ -63,7 +63,7 @@
 <p><strong> 
 <a href="ImgShrRnkListWithTags.html"> Master Rank List. Highly cramped up.</a>
 </strong>
-<br><i>Has all the images with all features and tags from Microsoft Image tagging API sorted in the reverse order of share rates<br>Sorted in descending order of Share rate <br>API not available.</i>
+<br><i>Has all the images with all features and tags from Microsoft Image tagging API sorted in the reverse order of share rates<br>Sorted in descending order of Share rate <br>API not available.</i></p>
 
 <p><strong>
 Comparions of performance of all classifiers
@@ -74,31 +74,64 @@ Comparions of performance of all classifiers
 <li> <a href="performanceComparison_non_zero.html"> Performance comparisons of classifiers with all attributes with <b>NON-ZERO INFORMATION GAIN</b> </a></li>
 <li> <a href="performanceComparison_abv_mean.html"> Performance comparisons of classifiers with all attributes with <b>ABOVE AVERAGE INFORMATION GAIN</b> </a></li>
 </ul>
-<i>Has all the images with all features and tags from Microsoft Image tagging API sorted in the reverse order of share rates<br>Sorted in descending order of Share rate <br>API not available.</i>
+<i>Has all the images with all features and tags from Microsoft Image tagging API sorted in the reverse order of share rates<br>Sorted in descending order of Share rate <br>API not available.</i></p>
 
 <p><strong> 
 <a href="ClickLocations.html"> Visualization of places where the pictures were taken.</a>
 </strong>
 <br><i>Only has highly shared images (&#8804 80%) and highly not shared(&#8805 20) images only. Green markers indicate the photos that were shared. Red markers in the plot indicate the pictures that were not shared. <br>
-Observation: Most pictures are clicked along a pathway inside the national park. <br>API not available.</i>
+Observation: Most pictures are clicked along a pathway inside the national park. <br>API not available.</i></p>
 
 <p><strong> 
 <a href="HeatMapsClusters.html"> Heat Maps and location visualizations of the shared/not shared images</a>
 </strong>
 <br><i>This link contains heat maps and clusters of share and not shared data displayed side by side.  <br>
 For heat maps, the brighter red indicates the most heat and bluer regions are colder regions. In terms of the problem in hand, red regions are where most shared/not shared photos are concentrated. A comparison between share regions and not-share regions would help infere any location bias. <br>
-Click on the colored circles to zoom to that location. Normal zoom functions work as well. <br>API not available.</i>
+Click on the colored circles to zoom to that location. Normal zoom functions work as well. <br>API not available.</i></p>
 
 
 <p><strong> 
 <a href="MarkRecaptureWarmup.html"> Mark-Recapture using Petersen-Lincoln Index on click data and distribution of how individuals were identified per day</a>
 </strong>
 <br><i>This link mainly has the preliminary results for Petersen-Lincoln Index calculations for population of zebras and giraffes from click data, shared - data from Amazon Mechanical Turk experiments and also a grouped distribution of sightings across different days of GZC rally. This link also has visualizations on how individuals were identified across different days of the Great Zebra Count (GZC) rally. There are visuals which show how many individuals were identified on the first day, how many individuals were seen only on that day and how many individuals were first seen on that day.<br>
-<br>API available.</i>
-</body>
+<br>API available.</i></p>
 
 <p><strong> 
 <a href="PopulationEstimationUsingClf.html"> Mark-Recapture using Petersen-Lincoln Index on predicted share data.</a>
 </strong>
 <br><i>This link contains the results of mark recapture on the predicted share data. The classifiers are entirely trained on the AWS dataset and then the classifier is applied to the whole GZC dataset. Mark recapture is then applied to all the images which were predicted to be shared. </i>
+</p>
+
+<br>
+<p><strong>
+List of population estimation evaluation metrics for all classification methods.
+</strong>
+<ol>
+	<li><a href=bayesian_sparse_kShares.html>Classifier method: bayesian Attribute Selection Method: sparse</a></li>
+	<li><a href=bayesian_non_sparse_kShares.html>Classifier method: bayesian Attribute Selection Method: non_sparse</a></li>
+	<li><a href=bayesian_non_zero_kShares.html>Classifier method: bayesian Attribute Selection Method: non_zero</a></li>
+	<li><a href=bayesian_abv_mean_kShares.html>Classifier method: bayesian Attribute Selection Method: abv_mean</a></li>
+	<li><a href=logistic_sparse_kShares.html>Classifier method: logistic Attribute Selection Method: sparse</a></li>
+	<li><a href=logistic_non_sparse_kShares.html>Classifier method: logistic Attribute Selection Method: non_sparse</a></li>
+	<li><a href=logistic_non_zero_kShares.html>Classifier method: logistic Attribute Selection Method: non_zero</a></li>
+	<li><a href=logistic_abv_mean_kShares.html>Classifier method: logistic Attribute Selection Method: abv_mean</a></li>
+	<li><a href=svm_sparse_kShares.html>Classifier method: svm Attribute Selection Method: sparse</a></li>
+	<li><a href=svm_non_sparse_kShares.html>Classifier method: svm Attribute Selection Method: non_sparse</a></li>
+	<li><a href=svm_non_zero_kShares.html>Classifier method: svm Attribute Selection Method: non_zero</a></li>
+	<li><a href=svm_abv_mean_kShares.html>Classifier method: svm Attribute Selection Method: abv_mean</a></li>
+	<li><a href=dtree_sparse_kShares.html>Classifier method: dtree Attribute Selection Method: sparse</a></li>
+	<li><a href=dtree_non_sparse_kShares.html>Classifier method: dtree Attribute Selection Method: non_sparse</a></li>
+	<li><a href=dtree_non_zero_kShares.html>Classifier method: dtree Attribute Selection Method: non_zero</a></li>
+	<li><a href=dtree_abv_mean_kShares.html>Classifier method: dtree Attribute Selection Method: abv_mean</a></li>
+	<li><a href=random_forests_sparse_kShares.html>Classifier method: random_forests Attribute Selection Method: sparse</a></li>
+	<li><a href=random_forests_non_sparse_kShares.html>Classifier method: random_forests Attribute Selection Method: non_sparse</a></li>
+	<li><a href=random_forests_non_zero_kShares.html>Classifier method: random_forests Attribute Selection Method: non_zero</a></li>
+	<li><a href=random_forests_abv_mean_kShares.html>Classifier method: random_forests Attribute Selection Method: abv_mean</a></li>
+	<li><a href=ada_boost_sparse_kShares.html>Classifier method: ada_boost Attribute Selection Method: sparse</a></li>
+	<li><a href=ada_boost_non_sparse_kShares.html>Classifier method: ada_boost Attribute Selection Method: non_sparse</a></li>
+	<li><a href=ada_boost_non_zero_kShares.html>Classifier method: ada_boost Attribute Selection Method: non_zero</a></li>
+	<li><a href=ada_boost_abv_mean_kShares.html>Classifier method: ada_boost Attribute Selection Method: abv_mean</a></li>
+
+</ol>
+</p></body>
 </html>
