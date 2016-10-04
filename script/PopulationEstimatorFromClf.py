@@ -11,14 +11,18 @@ import json
 import ClassiferHelperAPI as CH
 import DeriveFinalResultSet as DRS
 import importlib
+import sys
+import cufflinks as cf # this is necessary to link pandas to plotly
+cf.go_online()
+import plotly.graph_objs as go
 importlib.reload(CH)
+import htmltag as HT
+import random
 
 def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None):
 	# Create training data
 	allAttribs = CH.genAllAttribs(train_data_fl,attribType,infoGainFl)
 	train_data= CH.getMasterData(train_data_fl)
-	
-	print("Number of attributes : %i" %len(allAttribs))
 	
 	# Create testing data
 	test_data= CH.getMasterData(test_data_fl)
@@ -55,7 +59,6 @@ def estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
 					days,
 					shareData='classifier')
 	marks_all,recaptures_all,population_all = MR.applyMarkRecap(nidMarkRecapSet)
-	print("Population of all animals = %f" %population_all)
 
 	nidMarkRecapSet = MR.genNidMarkRecapDict(inExifFl,
 					inGidAidMapFl,
@@ -65,7 +68,6 @@ def estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
 					filterBySpecies='zebra_plains',
 					shareData='classifier')
 	marks_z,recaptures_z,population_z = MR.applyMarkRecap(nidMarkRecapSet)
-	print("Population of zebras = %f" %population_z)
 
 	nidMarkRecapSet = MR.genNidMarkRecapDict(inExifFl,
 					inGidAidMapFl,
@@ -75,7 +77,6 @@ def estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
 					filterBySpecies='giraffe_masai',
 					shareData='classifier')
 	marks_g,recaptures_g,population_g = MR.applyMarkRecap(nidMarkRecapSet)
-	print("Population of giraffes = %f" %population_g)
 
 	return {'all' : population_all , 
 			'zebras' : population_z , 'giraffes' : population_g}
@@ -97,9 +98,56 @@ def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,g
 
 	return estimatePopulation(predictions_k,inExifFl,inGidAidMapFl,inAidFtrFl)
 
-def __main__():
-	clfTypes = ['bayesian','logistic','svm','dtree','random_forests']
+def runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl):
+	clfTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
 	attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
+
+	for clf in clfTypes:
+	    for attrib in attribTypes:
+	        print("Starting to run %s classifer on test data\nAttribute Selection Method : %s" %(clf,attrib))
+	        clfObj,predResults = trainTestClf("../FinalResults/ImgShrRnkListWithTags.csv",
+	                             "../data/full_gid_aid_ftr_agg.csv",
+	                             clf,
+	                             attrib,
+	                             "../data/infoGainsExpt2.csv")
+
+	        flNm = str("../FinalResults/"+ clf + "_" + attrib + "_kShares")
+
+	        prediction_probabs = {list(clfObj.test_x.index)[i] : clfObj.predProbabs[i] for i in range(len(clfObj.test_x.index))}
+	        fixedK = {k : kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : k) for k in range(59,85)}
+
+	        df = pd.DataFrame(fixedK).transpose().reset_index()
+	        df.columns = ['num_images','all','giraffes','zebras']
+	        df.index = df['num_images']
+	        df.drop(['num_images'],1,inplace=True)
+	        df.to_csv(str(flNm+".csv"))
+	        df_html = df.to_html(index=True)
+	        randomized = kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : random.randint(60,90))
+	        df['Randomized_all'] = randomized['all']
+	        df['Randomized_giraffe'] = randomized['giraffes']
+	        df['Randomized_zebras'] = randomized['zebras']
+	        
+	        fig1 = df.iplot(kind='line',layout=layout,filename=str(clf + "_" + attrib + "_kShares"))
+	        fullFl = HT.HTML(HT.body(HT.h2("Population Estimates with k shares per contributor using %s and attribute selection method %s" %(clf,attrib)),
+	                        HT.HTML(df_html),
+	                        HT.HTML(fig1.embed_code)         
+	                       ))
+
+	        outputFile = open(str(flNm+".html"),"w")
+	        outputFile.write(fullFl)
+	        outputFile.close()
+	        print("Classification testing complete %s : %s" %(clf,attrib))
+	        print()
+
+
+def __main__(argv):
+	clfTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
+	attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
+	
+	if len(sys.argv) > 1:
+		outFlNm = sys.argv[1]
+	else:
+		outFlNm = "/tmp/PopulationEstimatorFromClf.dump.json"
 
 	estimates = []
 	for clf in clfTypes:
@@ -112,17 +160,44 @@ def __main__():
                      attribType,
                      "../data/infoGainsExpt2.csv")
 	        thisObjhead = {'Classifier' : clf , 'Attribute' : attribType,'shared_images_count' : int(sum(clfObj.preds))}
-	        thisObj = estimatePopulation(clfObj,predResults,
+	        thisObj = estimatePopulation(predResults,
 	        				"../data/imgs_exif_data_full.json",
 							"../data/full_gid_aid_map.json",
 							"../data/full_aid_features.json")
 
 	        estimates.append({**thisObjhead,**thisObj})
-	        print()
+	        print("Complete")
 	        print()
 
-	with open("/tmp/populationEstimates.json","w") as jsonFl:
+	with open(outFlNm,"w") as jsonFl:
 		json.dump(estimates,jsonFl,indent=4)
 
 if __name__ == "__main__":
-	__main__()
+	inExifFl,inGidAidMapFl,inAidFtrFl = "../data/imgs_exif_data_full.json","../data/full_gid_aid_map.json","../data/full_aid_features.json"
+	layout = go.Layout(
+        title="Number of images shared(k) versus estimated population",
+        titlefont = dict(
+                size=15),
+        xaxis=dict(
+            title="Number of images shared (k)",
+            titlefont = dict(
+                size=15),
+            showticklabels=True,
+            tickangle=35,
+            tickfont=dict(
+                size=9,
+                color='black')
+        ),
+        yaxis=dict(
+            title="Estimated Population",
+            titlefont = dict(
+                size=15),
+            showticklabels=True,
+            tickfont=dict(
+                size=9,
+                color='black')
+        )
+        )
+	runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl)
+
+	# __main__(sys.argv)

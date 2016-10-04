@@ -1,0 +1,194 @@
+[
+    {
+        "Classifier": "bayesian",
+        "Attribute": "sparse",
+        "all": 0,
+        "shared_images_count": 10,
+        "giraffes": 0,
+        "zebras": 0
+    },
+    {
+        "Classifier": "bayesian",
+        "Attribute": "non_sparse",
+        "all": 714.0,
+        "shared_images_count": 233,
+        "giraffes": 132.0,
+        "zebras": 0
+    },
+    {
+        "Classifier": "bayesian",
+        "Attribute": "non_zero",
+        "all": 0,
+        "shared_images_count": 92,
+        "giraffes": 0,
+        "zebras": 0
+    },
+    {
+        "Classifier": "bayesian",
+        "Attribute": "abv_mean",
+        "all": 0,
+        "shared_images_count": 133,
+        "giraffes": 0,
+        "zebras": 0
+    },
+    {
+        "Classifier": "logistic",
+        "Attribute": "sparse",
+        "all": 0,
+        "shared_images_count": 8,
+        "giraffes": 0,
+        "zebras": 0
+    },
+    {
+        "Classifier": "logistic",
+        "Attribute": "non_sparse",
+        "all": 1287.5,
+        "shared_images_count": 417,
+        "giraffes": 39.0,
+        "zebras": 1410.0
+    },
+    {
+        "Classifier": "logistic",
+        "Attribute": "non_zero",
+        "all": 304.0,
+        "shared_images_count": 49,
+        "giraffes": 0,
+        "zebras": 304.0
+    },
+    {
+        "Classifier": "logistic",
+        "Attribute": "abv_mean",
+        "all": 0,
+        "shared_images_count": 32,
+        "giraffes": 0,
+        "zebras": 0
+    },
+    {
+        "Classifier": "svm",
+        "Attribute": "sparse",
+        "all": 3620.9302325581393,
+        "shared_images_count": 6523,
+        "giraffes": 176.8,
+        "zebras": 3468.3529411764707
+    },
+    {
+        "Classifier": "svm",
+        "Attribute": "non_sparse",
+        "all": 2117.818181818182,
+        "shared_images_count": 736,
+        "giraffes": 72.0,
+        "zebras": 2945.3333333333335
+    },
+    {
+        "Classifier": "svm",
+        "Attribute": "non_zero",
+        "all": 3620.9302325581393,
+        "shared_images_count": 6523,
+        "giraffes": 176.8,
+        "zebras": 3468.3529411764707
+    },
+    {
+        "Classifier": "svm",
+        "Attribute": "abv_mean",
+        "all": 3620.9302325581393,
+        "shared_images_count": 6523,
+        "giraffes": 176.8,
+        "zebras": 3468.3529411764707
+    },
+    {
+        "Classifier": "dtree",
+        "Attribute": "sparse",
+        "all": 0,
+        "shared_images_count": 12,
+        "giraffes": 0,
+        "zebras": 0
+    },
+    {
+        "Classifier": "dtree",
+        "Attribute": "non_sparse",
+        "all": 2749.793103448276,
+        "shared_images_count": 1277,
+        "giraffes": 0,
+        "zebras": 2749.793103448276
+    },
+    {
+        "Classifier": "dtree",
+        "Attribute": "non_zero",
+        "all": 0,
+        "shared_images_count": 19,
+        "giraffes": 0,
+        "zebras": 0
+    },
+    {
+        "Classifier": "dtree",
+        "Attribute": "abv_mean",
+        "all": 6.0,
+        "shared_images_count": 17,
+        "giraffes": 0,
+        "zebras": 6.0
+    },
+    {
+        "Classifier": "random_forests",
+        "Attribute": "sparse",
+        "all": 0,
+        "shared_images_count": 14,
+        "giraffes": 0,
+        "zebras": 0
+    },
+    {
+        "Classifier": "random_forests",
+        "Attribute": "non_sparse",
+        "all": 999.1666666666666,
+        "shared_images_count": 828,
+        "giraffes": 59.5,
+        "zebras": 1116.0
+    },
+    {
+        "Classifier": "random_forests",
+        "Attribute": "non_zero",
+        "all": 0,
+        "shared_images_count": 2,
+        "giraffes": 0,
+        "zebras": 0
+    },
+    {
+        "Classifier": "random_forests",
+        "Attribute": "abv_mean",
+        "all": 0,
+        "shared_images_count": 14,
+        "giraffes": 0,
+        "zebras": 0
+    },
+    {
+        "Classifier": "ada_boost",
+        "Attribute": "sparse",
+        "all": 42.666666666666664,
+        "shared_images_count": 74,
+        "giraffes": 0,
+        "zebras": 26.666666666666668
+    },
+    {
+        "Classifier": "ada_boost",
+        "Attribute": "non_sparse",
+        "all": 2062.6666666666665,
+        "shared_images_count": 1141,
+        "giraffes": 182.0,
+        "zebras": 1899.25
+    },
+    {
+        "Classifier": "ada_boost",
+        "Attribute": "non_zero",
+        "all": 2057.0,
+        "shared_images_count": 871,
+        "giraffes": 156.0,
+        "zebras": 2119.0
+    },
+    {
+        "Classifier": "ada_boost",
+        "Attribute": "abv_mean",
+        "all": 4151.666666666667,
+        "shared_images_count": 971,
+        "giraffes": 186.0,
+        "zebras": 5040.0
+    }
+]

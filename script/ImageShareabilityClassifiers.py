@@ -41,14 +41,14 @@ cf.go_online()
 minSplit = 0.2
 maxSplit = 0.6
 
+data= CH.getMasterData("../FinalResults/ImgShrRnkListWithTags.csv")  
+methods = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
+
 for attribsType in ['sparse','non_sparse','non_zero','abv_mean']:
-    print("Classifier training started for %s" %attribsType)
+    print("Classifier training started for %s" %attribsType)  
 
     allAttribs = CH.genAllAttribs("../FinalResults/ImgShrRnkListWithTags.csv",attribsType,"../data/infoGainsExpt2.csv")
-    data= CH.getMasterData("../FinalResults/ImgShrRnkListWithTags.csv")    
-
-    methods = ['bayesian','logistic','svm','dtree','random_forests']
-
+    
     classifiers = []
     for method in methods:
         for i in np.arange(minSplit,maxSplit,0.1): # i is the test percent

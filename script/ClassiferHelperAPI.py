@@ -12,7 +12,7 @@ from collections import OrderedDict
 from sklearn.linear_model import LogisticRegression, LinearRegression
 from sklearn import svm,tree,naive_bayes
 from sklearn.cross_validation import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 import sys
 import numpy as np
 import ClassifierCapsuleClass as ClfClass
@@ -91,17 +91,19 @@ def createDataFlDict(data,allAttribs,threshold,dataMode = 'Train',writeTempFiles
     return gidAttribDict
 
 
-def getClassifierAlgo(methodName,kernel='rbf'):
+def getClassifierAlgo(methodName,**kwargs):
     if methodName == 'logistic':
-        return LogisticRegression()
+        return LogisticRegression(**kwargs)
     elif methodName == 'svm':
-        return svm.SVC(kernel=kernel,probability=True)
+        return svm.SVC(probability=True,**kwargs)
     elif methodName == 'dtree':
-        return tree.DecisionTreeClassifier()
+        return tree.DecisionTreeClassifier(**kwargs)
     elif methodName == 'random_forests':
-        return RandomForestClassifier()
+        return RandomForestClassifier(**kwargs)
     elif methodName == 'bayesian':
-        return naive_bayes.BernoulliNB()
+        return naive_bayes.BernoulliNB(**kwargs)
+    elif methodName =='ada_boost':
+        return AdaBoostClassifier(**kwargs)
     else:
         try:
             raise Exception('Exception : Classifier Method %s Unknown' %methodName)
