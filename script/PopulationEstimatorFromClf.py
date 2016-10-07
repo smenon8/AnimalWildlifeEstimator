@@ -102,13 +102,14 @@ def runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
 	clfTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
 	attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
 	clfArgs = {'dummy' : {'strategy' : 'most_frequent'},
-            'bayesian' : None,
-            'logistic' : None,
+            'bayesian' : {'fit_prior' : True},
+            'logistic' : {'penalty' : 'l2'},
             'svm' : {'kernel' : 'rbf','probability' : True},
-            'dtree' : None,
-            'random_forests' : None,
-            'ada_boost' : None}
-            
+            'dtree' : {'criterion' : 'entropy'},
+            'random_forests' : {'n_estimators' : 10 },
+            'ada_boost' : {'n_estimators' : 50 }}
+
+
 	for clf in clfTypes:
 	    for attrib in attribTypes:
 	        print("Starting to run %s classifer on test data\nAttribute Selection Method : %s" %(clf,attrib))
@@ -117,6 +118,7 @@ def runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
 	                             clf,
 	                             attrib,
 	                             infoGainFl="../data/infoGainsExpt2.csv",
+	                             clfArgs[clf]
 	                             )
 
 	        flNm = str("../FinalResults/"+ clf + "_" + attrib + "_kShares")

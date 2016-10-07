@@ -57,7 +57,7 @@ def genAttribsHead(data,ftrList):
     return [attrib for ftr in ftrList for attrib in genHead(data,ftr)]
 
 # Filling in 0's and 1's for the dummy variables.
-def createDataFlDict(data,allAttribs,threshold,dataMode = 'Train',writeTempFiles=False):
+def createDataFlDict(data,allAttribs,threshold,dataMode ='Train',writeTempFiles=False):
     gidAttribDict = {}
 
     if dataMode == 'Train':
