@@ -19,7 +19,7 @@ importlib.reload(CH)
 import htmltag as HT
 import random
 
-def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None):
+def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None,clfArgs=None):
 	# Create training data
 	allAttribs = CH.genAllAttribs(train_data_fl,attribType,infoGainFl)
 	train_data= CH.getMasterData(train_data_fl)
@@ -33,7 +33,7 @@ def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None):
 	testDataFeatures = testDf[allAttribs]
 
 	# Build classifier
-	clfObj = CH.buildBinClassifier(train_data,allAttribs,0.0,80,clf)
+	clfObj = CH.buildBinClassifier(train_data,allAttribs,0.0,80,clf,clfArgs.get(clf,None))
 
 	# Set testing data and run classifier
 	clfObj.setTestAttrib('test_x',testDataFeatures)
@@ -98,10 +98,17 @@ def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,g
 
 	return estimatePopulation(predictions_k,inExifFl,inGidAidMapFl,inAidFtrFl)
 
-def runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl):
+def runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
 	clfTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
 	attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
-
+	clfArgs = {'dummy' : {'strategy' : 'most_frequent'},
+            'bayesian' : None,
+            'logistic' : None,
+            'svm' : {'kernel' : 'rbf','probability' : True},
+            'dtree' : None,
+            'random_forests' : None,
+            'ada_boost' : None}
+            
 	for clf in clfTypes:
 	    for attrib in attribTypes:
 	        print("Starting to run %s classifer on test data\nAttribute Selection Method : %s" %(clf,attrib))
@@ -109,12 +116,13 @@ def runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl):
 	                             "../data/full_gid_aid_ftr_agg.csv",
 	                             clf,
 	                             attrib,
-	                             "../data/infoGainsExpt2.csv")
+	                             infoGainFl="../data/infoGainsExpt2.csv",
+	                             )
 
 	        flNm = str("../FinalResults/"+ clf + "_" + attrib + "_kShares")
 
 	        prediction_probabs = {list(clfObj.test_x.index)[i] : clfObj.predProbabs[i] for i in range(len(clfObj.test_x.index))}
-	        fixedK = {k : kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : k) for k in range(59,85)}
+	        fixedK = {k : kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : k) for k in krange}
 
 	        df = pd.DataFrame(fixedK).transpose().reset_index()
 	        df.columns = ['num_images','all','giraffes','zebras']
@@ -122,7 +130,7 @@ def runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl):
 	        df.drop(['num_images'],1,inplace=True)
 	        df.to_csv(str(flNm+".csv"))
 	        df_html = df.to_html(index=True)
-	        randomized = kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : random.randint(60,90))
+	        randomized = kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : random.randint(min(krange),max(krange)))
 	        df['Randomized_all'] = randomized['all']
 	        df['Randomized_giraffe'] = randomized['giraffes']
 	        df['Randomized_zebras'] = randomized['zebras']
@@ -198,6 +206,6 @@ if __name__ == "__main__":
                 color='black')
         )
         )
-	runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl)
+	runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,76))
 
 	# __main__(sys.argv)

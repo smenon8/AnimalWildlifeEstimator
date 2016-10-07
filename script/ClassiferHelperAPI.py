@@ -13,6 +13,7 @@ from sklearn.linear_model import LogisticRegression, LinearRegression
 from sklearn import svm,tree,naive_bayes
 from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+from sklearn.dummy import DummyClassifier
 import sys
 import numpy as np
 import ClassifierCapsuleClass as ClfClass
@@ -91,19 +92,21 @@ def createDataFlDict(data,allAttribs,threshold,dataMode = 'Train',writeTempFiles
     return gidAttribDict
 
 
-def getClassifierAlgo(methodName,**kwargs):
+def getClassifierAlgo(methodName,kwargs):
     if methodName == 'logistic':
         return LogisticRegression(**kwargs)
     elif methodName == 'svm':
-        return svm.SVC(probability=True,**kwargs)
+        return svm.SVC(**kwargs)
     elif methodName == 'dtree':
         return tree.DecisionTreeClassifier(**kwargs)
     elif methodName == 'random_forests':
         return RandomForestClassifier(**kwargs)
     elif methodName == 'bayesian':
         return naive_bayes.BernoulliNB(**kwargs)
-    elif methodName =='ada_boost':
+    elif methodName == 'ada_boost':
         return AdaBoostClassifier(**kwargs)
+    elif methodName == 'dummy':
+        return DummyClassifier(**kwargs)
     else:
         try:
             raise Exception('Exception : Classifier Method %s Unknown' %methodName)
@@ -123,11 +126,11 @@ def trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit):
     return train_test_split(dataFeatures, targetVar, test_size=trainTestSplit,random_state=0)
 
 # Returns a classifier object of Type ClassifierCapsuleClass
-def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName):
+def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,kwargs=None):
     gidAttribDict = createDataFlDict(data,allAttribs,threshold) # binaryClf attribute in createDataFlDict will be True here
 
     train_x,test_x,train_y,test_y = trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit) # new statement
-    clf = getClassifierAlgo(methodName)
+    clf = getClassifierAlgo(methodName,kwargs)
     clfObj = ClfClass.ClassifierCapsule(clf,methodName,trainTestSplit,train_x,train_y,test_x,test_y)
 
     return clfObj

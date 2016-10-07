@@ -42,8 +42,14 @@ minSplit = 0.2
 maxSplit = 0.6
 
 data= CH.getMasterData("../FinalResults/ImgShrRnkListWithTags.csv")  
-methods = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
-
+methods = ['dummy','bayesian','logistic','svm','dtree','random_forests','ada_boost']
+kwargsDict = {'dummy' : {'strategy' : 'most_frequent'},
+            'bayesian' : None,
+            'logistic' : None,
+            'svm' : {'kernel' : 'rbf','probability' : True},
+            'dtree' : None,
+            'random_forests' : None,
+            'ada_boost' : None}
 for attribsType in ['sparse','non_sparse','non_zero','abv_mean']:
     print("Classifier training started for %s" %attribsType)  
 
@@ -52,7 +58,7 @@ for attribsType in ['sparse','non_sparse','non_zero','abv_mean']:
     classifiers = []
     for method in methods:
         for i in np.arange(minSplit,maxSplit,0.1): # i is the test percent
-            clfObj = CH.buildBinClassifier(data,allAttribs,1-i,80,method)
+            clfObj = CH.buildBinClassifier(data,allAttribs,1-i,80,method,kwargsDict[clf])
             clfObj.runClf()
             classifiers.append(clfObj)
             
