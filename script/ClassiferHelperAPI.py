@@ -57,7 +57,7 @@ def genAttribsHead(data,ftrList):
     return [attrib for ftr in ftrList for attrib in genHead(data,ftr)]
 
 # Filling in 0's and 1's for the dummy variables.
-def createDataFlDict(data,allAttribs,threshold,dataMode ='Train',writeTempFiles=False):
+def createDataFlDict(data,allAttribs,threshold,dataMode ='Train',writeTempFiles=False,ftrs = ['SPECIES','SEX','AGE','QUALITY','VIEW_POINT','INDIVIDUAL_NAME']):
     gidAttribDict = {}
 
     if dataMode == 'Train':
@@ -69,8 +69,6 @@ def createDataFlDict(data,allAttribs,threshold,dataMode ='Train',writeTempFiles=
     for gid in fData.keys():
         ftrDict = fData[gid]
         attribDict = OrderedDict.fromkeys(allAttribs,0)
-
-        ftrs = ['SPECIES','SEX','AGE','QUALITY','VIEW_POINT','INDIVIDUAL_NAME']
 
         for ftr in ftrs:
             for itm in set(ftrDict[ftr].split(',')):
