@@ -18,7 +18,9 @@ import sys
 import numpy as np
 import ClassifierCapsuleClass as ClfClass
 import importlib
+import RegressionCapsuleClass as RgrClass
 importlib.reload(ClfClass)
+importlib.reload(RgrClass)
 
 
 THRESHOLD = 80
@@ -91,7 +93,7 @@ def createDataFlDict(data,allAttribs,threshold,dataMode ='Train',writeTempFiles=
     return gidAttribDict
 
 
-def getClassifierAlgo(methodName,kwargs):
+def getLearningAlgo(methodName,kwargs):
     if methodName == 'logistic':
         return LogisticRegression(**kwargs)
     elif methodName == 'svm':
@@ -106,6 +108,8 @@ def getClassifierAlgo(methodName,kwargs):
         return AdaBoostClassifier(**kwargs)
     elif methodName == 'dummy':
         return DummyClassifier(**kwargs)
+    elif methodName == 'linear':
+        return LinearRegression(**kwargs)
     else:
         try:
             raise Exception('Exception : Classifier Method %s Unknown' %methodName)
@@ -129,7 +133,7 @@ def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,kwarg
     gidAttribDict = createDataFlDict(data,allAttribs,threshold) # binaryClf attribute in createDataFlDict will be True here
 
     train_x,test_x,train_y,test_y = trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit) # new statement
-    clf = getClassifierAlgo(methodName,kwargs)
+    clf = getLearningAlgo(methodName,kwargs)
     clfObj = ClfClass.ClassifierCapsule(clf,methodName,trainTestSplit,train_x,train_y,test_x,test_y)
 
     return clfObj
@@ -156,3 +160,33 @@ def genAllAttribs(masterDataFl,constraint,infoGainFlNm=None):
         allAttribs = [row[0] for row in infoGains if float(row[1]) >= avg]
     
     return allAttribs
+
+
+def buildRegrMod(train_data_fl,allAttribs,trainTestSplit,methodName,kwargs=None):
+    train_data= getMasterData(train_data_fl)
+    gidAttribDict = createDataFlDict(train_data,allAttribs,80,dataMode='regression')
+
+    df = pd.DataFrame(gidAttribDict).transpose()
+    dfCol = df.columns
+    df.reset_index(inplace=True)
+    df.columns = ['GID'] + list(dfCol)
+    df['GID'] = df['GID'].apply(pd.to_numeric)
+
+    dfResults = pd.DataFrame.from_csv(train_data_fl)['Proportion'].reset_index()
+    regressionData = pd.merge(df,dfResults,on='GID')
+    regressionData.drop(['GID'],1,inplace=True)
+
+    rgr = getLearningAlgo(methodName,kwargs)
+    ftrs = list(regressionData.columns)
+    ftrs.remove('Proportion')
+
+    X = regressionData[ftrs]
+    y = regressionData['Proportion']
+
+    train_x,test_x,train_y,test_y = train_test_split(X,y,test_size=trainTestSplit,random_state=0)
+
+    rgrObj = RgrClass.RegressionCapsule(rgr,methodName,trainTestSplit,train_x,train_y,test_x,test_y)
+
+    return rgrObj
+
+
