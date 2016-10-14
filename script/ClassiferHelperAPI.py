@@ -72,7 +72,8 @@ def createDataFlDict(data,allAttribs,threshold,dataMode ='Train',writeTempFiles=
 
         for ftr in ftrs:
             for itm in set(ftrDict[ftr].split(',')):
-                attribDict[itm] = 1
+                if itm in allAttribs:
+                    attribDict[itm] = 1
 
         # logic for tgs
         for tag in set(literal_eval(ftrDict['tags'])):

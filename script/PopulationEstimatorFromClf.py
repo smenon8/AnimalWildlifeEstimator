@@ -118,7 +118,7 @@ def runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
 	                             clf,
 	                             attrib,
 	                             infoGainFl="../data/infoGainsExpt2.csv",
-	                             clfArgs[clf]
+	                             clfArgs = clfArgs[clf]
 	                             )
 
 	        flNm = str("../FinalResults/"+ clf + "_" + attrib + "_kShares")
