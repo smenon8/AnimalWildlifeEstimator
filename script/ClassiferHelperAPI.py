@@ -9,7 +9,7 @@ from ast import literal_eval
 import pandas as pd
 import json
 from collections import OrderedDict
-from sklearn.linear_model import LogisticRegression, LinearRegression
+from sklearn.linear_model import LogisticRegression, LinearRegression, Lasso, Ridge, ElasticNet
 from sklearn import svm,tree,naive_bayes
 from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
@@ -79,7 +79,8 @@ def createDataFlDict(data,allAttribs,threshold,dataMode ='Train',writeTempFiles=
 
         # logic for tgs
         for tag in set(literal_eval(ftrDict['tags'])):
-            attribDict[tag] = 1
+            if tag in allAttribs:
+                attribDict[tag] = 1
 
         if dataMode == 'Train':
             attribDict['TARGET'] = 1 if float(ftrDict['Proportion'] ) >= threshold else 0 # Thresholding for the share proportion
@@ -110,6 +111,10 @@ def getLearningAlgo(methodName,kwargs):
         return DummyClassifier(**kwargs)
     elif methodName == 'linear':
         return LinearRegression(**kwargs)
+    elif methodName == 'ridge':
+        return Ridge(**kwargs)
+    elif methodName == 'lasso':
+        return Lasso(**kwargs)
     else:
         try:
             raise Exception('Exception : Classifier Method %s Unknown' %methodName)
@@ -183,7 +188,7 @@ def buildRegrMod(train_data_fl,allAttribs,trainTestSplit,methodName,kwargs=None)
     X = regressionData[ftrs]
     y = regressionData['Proportion']
 
-    train_x,test_x,train_y,test_y = train_test_split(X,y,test_size=trainTestSplit,random_state=0)
+    train_x,test_x,train_y,test_y = train_test_split(X,y,test_size=1-trainTestSplit,random_state=0)
 
     rgrObj = RgrClass.RegressionCapsule(rgr,methodName,trainTestSplit,train_x,train_y,test_x,test_y)
 
