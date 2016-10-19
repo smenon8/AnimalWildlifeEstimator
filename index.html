@@ -164,12 +164,28 @@
         <li><a href="#genNumIndsRankList">genNumIndsRankList()</a></li> 
       </ul>
       </li>
-
+	
+	  <li><p><a href="#BaseCapsuleClass"> BaseCapsuleClass.py</a></p>
+      <ul>
+        <li><a href="#CapsuleClassAttribs">Object Attributes</a></li>
+        <li><a href="#runClf">runClf()</a></li>
+        <li><a href="#setTestAttrib">setTestAttrib(clsAttribStr,value):</a></li>
+      </ul>
+      </li>
+	  
+	  <li><p><a href="#RegressionCapsuleClass"> RegressionCapsuleClass.py</a></p>
+      <ul>
+        <li><a href="#CapsuleClassAttribs">Object Attributes</a></li>
+        <li><a href="#runClf">runClf()</a></li>
+        <li><a href="#evalClassifierPerf">evalClassifierPerf()</a></li>
+		<li><a href="#removeOutliers">removeOutliers()</a></li>
+      </ul>
+      </li>
+	  
       <li><p><a href="#ClassifierCapsuleClass"> ClassifierCapsuleClass.py</a></p>
       <ul>
         <li><a href="#CapsuleClassAttribs">Object Attributes</a></li>
         <li><a href="#runClf">runClf()</a></li>
-        <li><a href="#setTestAttrib">setTestAttrib(self,clsAttribStr,value)</a></li>
         <li><a href="#evalClassifierPerf">evalClassifierPerf()</a></li>
       </ul>
       </li>
@@ -180,10 +196,11 @@
         <li><a href="#getMasterData">getMasterData(flNm)</a></li>
         <li><a href="#genAttribsHead">genAttribsHead(data,ftrList)</a></li>
         <li><a href="#createDataFlDict">createDataFlDict(data,allAttribs,threshold,dataMode,writeTempFiles)</a></li>
-        <li><a href="#getClassifierAlgo">getClassifierAlgo(methodName)</a></li>
+        <li><a href="#getLearningAlgo">getLearningAlgo(methodName,kwargs)</a></li>
         <li><a href="#trainTestSplitter">trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit)</a></li>
         <li><a href="#buildBinClassifier">buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,extremeClf)</a></li>
         <li><a href="#genAllAttribs">genAllAttribs(masterDataFl,constraint,infoGainFlNm</a></li>
+		<li><a href="#buildRegrMod">buildRegrMod(train_data_fl,allAttribs,trainTestSplit,methodName,kwargs)</li></a>
         
       </ul>
       </li>
@@ -203,6 +220,16 @@
         <li><a href="#genSharedGids">genSharedGids(gidList,gidPropMapFl)</a></li>
       </ul>
       </li>
+	  
+	  <li><p><a href="#PopulationEstimatorFromClf"> PopulationEstimatorFromClf.py</a></p>
+      <ul>
+        <li><a href="#trainTestClf">trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl,clfArgs)</a></li>
+        <li><a href="#estimatePopulation">estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl)</a></li>
+        <li><a href="#kSharesPerContributor">kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,genk)</a></li>
+		<li><a href="#runSyntheticExpts">runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,krange)</a></li>
+      </ul>
+      </li>
+	  
 
       <li><p><a href="#SocialMediaImageExtracts"> SocialMediaImageExtracts.py</a></p>
       <ul>
