@@ -99,8 +99,14 @@ def getLearningAlgo(methodName,kwargs):
         return LogisticRegression(**kwargs)
     elif methodName == 'svm':
         return svm.SVC(**kwargs)
+    elif methodName == 'linear_svr':
+        return svm.LinearSVR(**kwargs)
+    elif methodName == 'svr':
+        return svm.SVR()
     elif methodName == 'dtree':
         return tree.DecisionTreeClassifier(**kwargs)
+    elif methodName == 'dtree_regressor':
+        return tree.DecisionTreeRegressor()
     elif methodName == 'random_forests':
         return RandomForestClassifier(**kwargs)
     elif methodName == 'bayesian':
