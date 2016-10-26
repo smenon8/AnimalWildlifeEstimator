@@ -27,6 +27,9 @@ The project broadly attempts to build a population estimation model of a particu
 * API available for generating `heat maps` of the region of shared photos and not shared photos
 * API available for applying mark-recapture and calculate the `Petersen-Lincoln Index` on the GZC data-set.
 * API available for applying mark-recapture and calculate the `Petersen-Lincoln Index` on the shared GZC data-set obtained from the `Mechanical Turk` experiments. 
-
+* API available for extracting images from Flickr when the tags and text are specified.
+* API available for parallel download of images from Flickr and concurrent execution of image detection tasks on IBEIS.
+* API available for directly predicting the share proportion using different regression techniques. Regression  methods used include `Linear`, `Ridge`, `Lasso`, `SVR` etc.
+* Methods to estimate population using synthetic albums which are formed using the predicted shared data. Mark-Recapture models are then applied to this predicted data, to study effects of individual photographers in the population estimation steps. 
 
 
