@@ -19,16 +19,9 @@ importlib.reload(CH)
 import htmltag as HT
 import random
 
+inExifFl,inGidAidMapFl,inAidFtrFl = "../data/imgs_exif_data_full.json","../data/full_gid_aid_map.json","../data/full_aid_features.json"
 
-kwargsDict = {'dummy' : {'strategy' : 'most_frequent'},
-            'bayesian' : {'fit_prior' : True},
-            'logistic' : {'penalty' : 'l2'},
-            'svm' : {'kernel' : 'rbf','probability' : True},
-            'dtree' : {'criterion' : 'entropy'},
-            'random_forests' : {'n_estimators' : 10 },
-            'ada_boost' : {'n_estimators' : 50 }}
-
-def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None,clfArgs=None):
+def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None,methArgs=None):
 	# Create training data
 	allAttribs = CH.genAllAttribs(train_data_fl,attribType,infoGainFl)
 	train_data= CH.getMasterData(train_data_fl)
@@ -40,7 +33,7 @@ def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None,clfAr
 	testDf =  pd.DataFrame(testObj).transpose()
 
 	# Build classifier
-	clfObj = CH.buildBinClassifier(train_data,allAttribs,0.0,80,clf,clfArgs.get(clf,None))
+	clfObj = CH.buildBinClassifier(train_data,allAttribs,0.0,80,clf,methArgs.get(clf,None))
 
 	# Set testing data and run classifier
 	testDataFeatures = testDf[clfObj.train_x.columns]
@@ -54,7 +47,7 @@ def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None,clfAr
 def biasedCoinFlipper(p):
 	return 1 if random.random() < p else 0
 
-def trainTestRgrs(train_data_fl,test_data_fl,methodName,attribType,infoGainFl=None,regrArgs=None):
+def trainTestRgrs(train_data_fl,test_data_fl,methodName,attribType,infoGainFl=None,methArgs=None):
 	allAttribs = CH.genAllAttribs(train_data_fl,attribType,infoGainFl)
 	
 	test_data= CH.getMasterData(test_data_fl)
@@ -62,7 +55,7 @@ def trainTestRgrs(train_data_fl,test_data_fl,methodName,attribType,infoGainFl=No
 	
 	testDf =  pd.DataFrame(testObj).transpose()
 
-	rgrObj = CH.buildRegrMod(train_data_fl,allAttribs,0.0,methodName,kwargs=regrArgs.get(methodName,None))
+	rgrObj = CH.buildRegrMod(train_data_fl,allAttribs,0.0,methodName,kwargs=methArgs.get(methodName,None))
 
 	testDataFeatures = testDf[rgrObj.train_x.columns]
 	rgrObj.setTestAttrib('test_x',testDataFeatures)
@@ -111,7 +104,7 @@ def estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
 	return {'all' : population_all , 
 			'zebras' : population_z , 'giraffes' : population_g}
 
-def kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl,k):
+def kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl,genk):
 	gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
 
 	sdCards = {}
@@ -122,12 +115,16 @@ def kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inA
 	for contrib in sdCards.keys():
 	    sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_results.get(x,0),reverse=True)
 
+	k = genk()
+	
 	predictions_k = {}
 	for contrib in sdCardSorted.keys():
 		pctCnt = 0
-		while pctCnt < k and pctCnt < len(sdCardSorted[contrib]):
+		exitCntr = 0
+		while pctCnt < k and pctCnt < len(sdCardSorted[contrib]) and exitCntr <= 500:
 			nextImg = sdCardSorted[contrib][pctCnt]
-			flip = biasedCoinFlipper(prediction_results[nextImg]/100)
+			exitCntr += 1
+			flip = biasedCoinFlipper(prediction_results.get(nextImg,0)/100)
 			if flip == 1:
 				predictions_k[nextImg] = 1
 				pctCnt += 1
@@ -151,22 +148,77 @@ def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,g
 
 	return estimatePopulation(predictions_k,inExifFl,inGidAidMapFl,inAidFtrFl)
 
+def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs):
+	for meth in methTypes:
+		for attrib in attribTypes:
+			print("Starting to run %s classifer on test data\nAttribute Selection Method : %s" %(meth,attrib))
+			if isClf:
+				trainTestMeth = trainTestClf
+			else:
+				trainTestMeth = trainTestRgrs
+
+			methObj,predResults = trainTestMeth("../FinalResults/ImgShrRnkListWithTags.csv",
+								"../data/full_gid_aid_ftr_agg.csv",
+	                            meth,
+	                            attrib,
+	                            infoGainFl="../data/infoGainsExpt2.csv",
+	                            methArgs = methArgs
+	                            )
+
+			flNm = str("../FinalResults/"+ meth + "_" + attrib + "_kShares")
+			if isClf:
+				predictions = {list(methObj.test_x.index)[i] : methObj.predProbabs[i] for i in range(len(methObj.test_x.index))}
+				kSharesMethod = kSharesPerContributor
+			else:
+				predictions = predResults
+				kSharesMethod = kSharesPerContribAfterCoinFlip
+				print(kSharesMethod)
+			print("Starting population estimation experiments")
+			
+			fixedK = {k : kSharesMethod(predictions,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : k) for k in krange}
+			print("Population estimation experiments complete")
+			
+			df = pd.DataFrame(fixedK).transpose().reset_index()
+			df.columns = ['num_images','all','giraffes','zebras']
+			df.index = df['num_images']
+			df.drop(['num_images'],1,inplace=True)
+			df.to_csv(str(flNm+".csv"))
+			df_html = df.to_html(index=True)
+			randomized = kSharesMethod(predictions,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : random.randint(min(krange),max(krange)))
+			df['Randomized_all'] = randomized['all']
+			df['Randomized_giraffe'] = randomized['giraffes']
+			df['Randomized_zebras'] = randomized['zebras']
+	        
+			fig1 = df.iplot(kind='line',layout=layout,filename=str(meth + "_" + attrib + "_kShares"))
+			fullFl = HT.HTML(HT.body(HT.h2("Population Estimates with k shares per contributor using %s and attribute selection method %s" %(meth,attrib)),
+							HT.HTML(df_html),
+							HT.HTML(fig1.embed_code)         
+					))
+
+			outputFile = open(str(flNm+".html"),"w")
+			outputFile.write(fullFl)
+			outputFile.close()
+			print("Classification testing complete %s : %s" %(meth,attrib))
+			print()
+
 def runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
 	rgrTypes = ['linear','ridge','lasso','svr','dtree_regressor']
 	attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
 
-	rgrArgs = {'linear' : {'fit_intercept' : True},
+	regrArgs = {'linear' : {'fit_intercept' : True},
 			'ridge' : {'fit_intercept' : True},
 			'lasso' : {'fit_intercept' : True},
 			'svr' : {'fit_intercept' : True},
 			'dtree_regressor' : {'fit_intercept' : True}}
 
-	return None
+	runSyntheticExpts(False, rgrTypes, attribTypes, krange, regrArgs)
+
+
 
 def runSyntheticExptsClf(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
 	clfTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
 	attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
-	clfArgs = {'dummy' : {'strategy' : 'most_frequent'},
+	methArgs = {'dummy' : {'strategy' : 'most_frequent'},
             'bayesian' : {'fit_prior' : True},
             'logistic' : {'penalty' : 'l2'},
             'svm' : {'kernel' : 'rbf','probability' : True},
@@ -174,45 +226,7 @@ def runSyntheticExptsClf(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
             'random_forests' : {'n_estimators' : 10 },
             'ada_boost' : {'n_estimators' : 50 }}
 
-
-	for clf in clfTypes:
-	    for attrib in attribTypes:
-	        print("Starting to run %s classifer on test data\nAttribute Selection Method : %s" %(clf,attrib))
-	        clfObj,predResults = trainTestClf("../FinalResults/ImgShrRnkListWithTags.csv",
-	                             "../data/full_gid_aid_ftr_agg.csv",
-	                             clf,
-	                             attrib,
-	                             infoGainFl="../data/infoGainsExpt2.csv",
-	                             clfArgs = clfArgs
-	                             )
-
-	        flNm = str("../FinalResults/"+ clf + "_" + attrib + "_kShares")
-
-	        prediction_probabs = {list(clfObj.test_x.index)[i] : clfObj.predProbabs[i] for i in range(len(clfObj.test_x.index))}
-	        fixedK = {k : kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : k) for k in krange}
-
-	        df = pd.DataFrame(fixedK).transpose().reset_index()
-	        df.columns = ['num_images','all','giraffes','zebras']
-	        df.index = df['num_images']
-	        df.drop(['num_images'],1,inplace=True)
-	        df.to_csv(str(flNm+".csv"))
-	        df_html = df.to_html(index=True)
-	        randomized = kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : random.randint(min(krange),max(krange)))
-	        df['Randomized_all'] = randomized['all']
-	        df['Randomized_giraffe'] = randomized['giraffes']
-	        df['Randomized_zebras'] = randomized['zebras']
-	        
-	        fig1 = df.iplot(kind='line',layout=layout,filename=str(clf + "_" + attrib + "_kShares"))
-	        fullFl = HT.HTML(HT.body(HT.h2("Population Estimates with k shares per contributor using %s and attribute selection method %s" %(clf,attrib)),
-	                        HT.HTML(df_html),
-	                        HT.HTML(fig1.embed_code)         
-	                       ))
-
-	        outputFile = open(str(flNm+".html"),"w")
-	        outputFile.write(fullFl)
-	        outputFile.close()
-	        print("Classification testing complete %s : %s" %(clf,attrib))
-	        print()
+	runSyntheticExpts(True, clfTypes, attribTypes, krange, methArgs)
 
 
 def __main__(argv):
@@ -257,7 +271,6 @@ def __main__(argv):
 		json.dump(estimates,jsonFl,indent=4)
 
 if __name__ == "__main__":
-	inExifFl,inGidAidMapFl,inAidFtrFl = "../data/imgs_exif_data_full.json","../data/full_gid_aid_map.json","../data/full_aid_features.json"
 	layout = go.Layout(
         title="Number of images shared(k) versus estimated population",
         titlefont = dict(
@@ -282,6 +295,6 @@ if __name__ == "__main__":
                 color='black')
         )
         )
-	runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,76))
+	runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,76))
 
 	#__main__(sys.argv)
