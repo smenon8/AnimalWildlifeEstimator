@@ -132,19 +132,17 @@ def trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit):
     df = pd.DataFrame(gidAttribDict).transpose()
     df = df[allAttribs + ["TARGET"]] # Rearranging the order of the columns
 
-    attributes = df.columns[:len(allAttribs)] # all attributes
-
-    dataFeatures = df[list(set(attributes))]
     targetVar = df['TARGET']
-    
-    return train_test_split(dataFeatures, targetVar, test_size=trainTestSplit,random_state=0)
+    del df['TARGET']    
+    return train_test_split(df, targetVar, test_size=trainTestSplit,random_state=0)
 
 # Returns a classifier object of Type ClassifierCapsuleClass
 def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,kwargs=None):
     gidAttribDict = createDataFlDict(data,allAttribs,threshold) # binaryClf attribute in createDataFlDict will be True here
 
-    train_x,test_x,train_y,test_y = trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit) # new statement
+    train_x, test_x, train_y, test_y = trainTestSplitter(gidAttribDict, allAttribs, trainTestSplit) # new statement
     clf = getLearningAlgo(methodName,kwargs)
+    
     clfObj = ClfClass.ClassifierCapsule(clf,methodName,trainTestSplit,train_x,train_y,test_x,test_y)
 
     return clfObj
@@ -193,8 +191,10 @@ def buildRegrMod(train_data_fl,allAttribs,trainTestSplit,methodName,kwargs=None)
 
     X = regressionData[ftrs]
     y = regressionData['Proportion']
-
-    train_x,test_x,train_y,test_y = train_test_split(X,y,test_size=1-trainTestSplit,random_state=0)
+    if trainTestSplit != 0:
+        train_x,test_x,train_y,test_y = train_test_split(X,y,test_size=1-trainTestSplit,random_state=0)
+    else:
+        train_x,test_x,train_y,test_y = X, None, y, None
 
     rgrObj = RgrClass.RegressionCapsule(rgr,methodName,trainTestSplit,train_x,train_y,test_x,test_y)
 

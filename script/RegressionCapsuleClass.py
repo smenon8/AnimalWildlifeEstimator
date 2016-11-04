@@ -24,16 +24,17 @@ class RegressionCapsule(BaseCapsule):
 		df = pd.DataFrame(predDict,index=['Predictions']).transpose()
 
 		self.test_x.drop(self.test_x.index[idxs], inplace=True)
-		self.test_y.drop(self.test_y.index[idxs], inplace=True)
+		if self.test_y != None:
+			self.test_y.drop(self.test_y.index[idxs], inplace=True)
 		df.drop(df.index[idxs], inplace=True)
 		
 		self.preds = list(df['Predictions'])
 
 		print("Number of outliers identified: %d" %len(idxs))
-		print(len(self.test_x),len(self.test_y),len(self.preds))
+		print(len(self.test_x),len(self.preds))
 
-	def runClf(self,computeMetrics=True,removeOutliers=True):
-		BaseCapsule.runClf(self)
+	def runRgr(self,computeMetrics=True,removeOutliers=True):
+		BaseCapsule.run(self)
 		
 		if removeOutliers:
 			self.removeOutliers()

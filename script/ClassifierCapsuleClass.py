@@ -40,7 +40,7 @@ class ClassifierCapsule(BaseCapsule):
                 return 0
 
     def runClf(self,computeMetrics=True):
-        BaseCapsule.runClf(self)
+        BaseCapsule.run(self)
         self.predProbabs = self.clfObj.predict_proba(self.test_x)[:,1]
         if computeMetrics:
             return self.evalClassifierPerf()

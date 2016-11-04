@@ -36,7 +36,7 @@ class BaseCapsule:
 			return 0
 
 
-	def runClf(self):
+	def run(self):
 		self.clfObj.fit(self.train_x,self.train_y)
 		self.preds = list(self.clfObj.predict(self.test_x))
 		

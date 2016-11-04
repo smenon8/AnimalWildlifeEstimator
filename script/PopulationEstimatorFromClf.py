@@ -19,6 +19,15 @@ importlib.reload(CH)
 import htmltag as HT
 import random
 
+
+kwargsDict = {'dummy' : {'strategy' : 'most_frequent'},
+            'bayesian' : {'fit_prior' : True},
+            'logistic' : {'penalty' : 'l2'},
+            'svm' : {'kernel' : 'rbf','probability' : True},
+            'dtree' : {'criterion' : 'entropy'},
+            'random_forests' : {'n_estimators' : 10 },
+            'ada_boost' : {'n_estimators' : 50 }}
+
 def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None,clfArgs=None):
 	# Create training data
 	allAttribs = CH.genAllAttribs(train_data_fl,attribType,infoGainFl)
@@ -29,19 +38,40 @@ def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None,clfAr
 	testObj = CH.createDataFlDict(test_data,allAttribs,0.8,'Test')
 
 	testDf =  pd.DataFrame(testObj).transpose()
-	attributes = testDf.columns[:len(allAttribs)]
-	testDataFeatures = testDf[allAttribs]
 
 	# Build classifier
 	clfObj = CH.buildBinClassifier(train_data,allAttribs,0.0,80,clf,clfArgs.get(clf,None))
 
 	# Set testing data and run classifier
+	testDataFeatures = testDf[clfObj.train_x.columns]
 	clfObj.setTestAttrib('test_x',testDataFeatures)
 	clfObj.runClf(computeMetrics=False)
 
 	prediction_results = {list(clfObj.test_x.index)[i] : clfObj.preds[i] for i in range(len(clfObj.test_x.index))}    
 
 	return clfObj, prediction_results
+
+def biasedCoinFlipper(p):
+	return 1 if random.random() < p else 0
+
+def trainTestRgrs(train_data_fl,test_data_fl,methodName,attribType,infoGainFl=None,regrArgs=None):
+	allAttribs = CH.genAllAttribs(train_data_fl,attribType,infoGainFl)
+	
+	test_data= CH.getMasterData(test_data_fl)
+	testObj = CH.createDataFlDict(test_data,allAttribs,0.8,'Test')
+	
+	testDf =  pd.DataFrame(testObj).transpose()
+
+	rgrObj = CH.buildRegrMod(train_data_fl,allAttribs,0.0,methodName,kwargs=regrArgs.get(methodName,None))
+
+	testDataFeatures = testDf[rgrObj.train_x.columns]
+	rgrObj.setTestAttrib('test_x',testDataFeatures)
+	rgrObj.runRgr(computeMetrics=False, removeOutliers=True)
+	
+	prediction_results = {list(rgrObj.test_x.index)[i] : rgrObj.preds[i] for i in range(len(rgrObj.test_x.index))}    
+
+	return rgrObj, prediction_results
+
 
 def estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
 	df = pd.DataFrame(prediction_results,index=['share']).transpose().reset_index()
@@ -81,6 +111,29 @@ def estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
 	return {'all' : population_all , 
 			'zebras' : population_z , 'giraffes' : population_g}
 
+def kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl,k):
+	gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
+
+	sdCards = {}
+	for key in gidContribDct.keys():
+	    sdCards[gidContribDct[key][0]] = sdCards.get(gidContribDct[key][0],[]) + [key]
+
+	sdCardSorted = {}
+	for contrib in sdCards.keys():
+	    sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_results.get(x,0),reverse=True)
+
+	predictions_k = {}
+	for contrib in sdCardSorted.keys():
+		pctCnt = 0
+		while pctCnt < k and pctCnt < len(sdCardSorted[contrib]):
+			nextImg = sdCardSorted[contrib][pctCnt]
+			flip = biasedCoinFlipper(prediction_results[nextImg]/100)
+			if flip == 1:
+				predictions_k[nextImg] = 1
+				pctCnt += 1
+
+	return estimatePopulation(predictions_k,inExifFl,inGidAidMapFl,inAidFtrFl)
+
 # synthetic experiment #1 and #2
 def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,genk):
 	gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
@@ -98,7 +151,19 @@ def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,g
 
 	return estimatePopulation(predictions_k,inExifFl,inGidAidMapFl,inAidFtrFl)
 
-def runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
+def runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
+	rgrTypes = ['linear','ridge','lasso','svr','dtree_regressor']
+	attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
+
+	rgrArgs = {'linear' : {'fit_intercept' : True},
+			'ridge' : {'fit_intercept' : True},
+			'lasso' : {'fit_intercept' : True},
+			'svr' : {'fit_intercept' : True},
+			'dtree_regressor' : {'fit_intercept' : True}}
+
+	return None
+
+def runSyntheticExptsClf(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
 	clfTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
 	attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
 	clfArgs = {'dummy' : {'strategy' : 'most_frequent'},
@@ -118,7 +183,7 @@ def runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
 	                             clf,
 	                             attrib,
 	                             infoGainFl="../data/infoGainsExpt2.csv",
-	                             clfArgs = clfArgs[clf]
+	                             clfArgs = clfArgs
 	                             )
 
 	        flNm = str("../FinalResults/"+ clf + "_" + attrib + "_kShares")
@@ -154,6 +219,14 @@ def __main__(argv):
 	clfTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
 	attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
 	
+	kwargsDict = {'dummy' : {'strategy' : 'most_frequent'},
+            'bayesian' : {'fit_prior' : True},
+            'logistic' : {'penalty' : 'l2'},
+            'svm' : {'kernel' : 'rbf','probability' : True},
+            'dtree' : {'criterion' : 'entropy'},
+            'random_forests' : {'n_estimators' : 10 },
+            'ada_boost' : {'n_estimators' : 50 }}
+
 	if len(sys.argv) > 1:
 		outFlNm = sys.argv[1]
 	else:
@@ -168,7 +241,8 @@ def __main__(argv):
                      "../data/full_gid_aid_ftr_agg.csv",
                      clf,
                      attribType,
-                     "../data/infoGainsExpt2.csv")
+                     "../data/infoGainsExpt2.csv",
+                     kwargsDict)
 	        thisObjhead = {'Classifier' : clf , 'Attribute' : attribType,'shared_images_count' : int(sum(clfObj.preds))}
 	        thisObj = estimatePopulation(predResults,
 	        				"../data/imgs_exif_data_full.json",
@@ -210,4 +284,4 @@ if __name__ == "__main__":
         )
 	runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,76))
 
-	# __main__(sys.argv)
+	#__main__(sys.argv)
