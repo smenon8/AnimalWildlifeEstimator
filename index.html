@@ -200,7 +200,7 @@
         <li><a href="#trainTestSplitter">trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit)</a></li>
         <li><a href="#buildBinClassifier">buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,extremeClf)</a></li>
         <li><a href="#genAllAttribs">genAllAttribs(masterDataFl,constraint,infoGainFlNm</a></li>
-		<li><a href="#buildRegrMod">buildRegrMod(train_data_fl,allAttribs,trainTestSplit,methodName,kwargs)</li></a>
+		    <li><a href="#buildRegrMod">buildRegrMod(train_data_fl,allAttribs,trainTestSplit,methodName,kwargs)</li></a>
         
       </ul>
       </li>
@@ -225,8 +225,13 @@
       <ul>
         <li><a href="#trainTestClf">trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl,clfArgs)</a></li>
         <li><a href="#estimatePopulation">estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl)</a></li>
+        <li><a href="#biasedCoinFlipper">biasedCoinFlipper(p)</a></li>
+        <li><a href="#trainTestRgrs">trainTestRgrs(train_data_fl,test_data_fl,methodName,attribType,infoGainFl,methArgs)</a></li>
         <li><a href="#kSharesPerContributor">kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,genk)</a></li>
-		<li><a href="#runSyntheticExpts">runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,krange)</a></li>
+        <li><a href="#kSharesPerContribAfterCoinFlip">kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl,genk)</a></li>
+		    <li><a href="#runSyntheticExpts">runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,krange)</a></li>
+        <li><a href="#runSyntheticExptsRgr">runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,krange)</a></li>
+        <li><a href="#runSyntheticExptsClf">runSyntheticExptsClf(inExifFl,inGidAidMapFl,inAidFtrFl,krange)</a></li>
       </ul>
       </li>
 	  
@@ -667,7 +672,7 @@
 
       <li><a id="extractImageFeaturesFromMap" href="#extractImageFeaturesFromMap">extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature)</a></li>
       <p>
-              a.  Arguments: GID-AID map file(JSON), AID-Feature map file(JSON, feature <br>
+              a.  Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), feature <br>
               b.  Argument data-type: str, str, str<br>
               c.  PRE-condition: <br>
               &nbsp &nbsp i.  Entire path is provided for imgJobMap and the file should exist.<br>
@@ -720,6 +725,72 @@
 
       </ul>
       </div>
+
+
+      <h3>
+      <a id="PopulationEstimatorFromClf" class="anchor" href="#PopulationEstimatorFromClf" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>PopulationEstimatorFromClf.py</a></h3>
+      <div id="descContent"><p>
+      Description: Contains methods to run population estimation synthetic experiements.</p></div>
+      <div id="codeContent">
+      <ul>
+      <li><a id="trainTestClf" href="#trainTestClf">trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl,methArgs)</a></li>
+      <p>
+              a.  Argument: Training data in CSV format, Testing data in CSV format, Classifier method name, attribute selection method name, Information gain file in CSV format, keyword arguments for classifiers.  <br>
+              b.  Argument data-type: str, str, str, str, str, dict <br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Files should exist <br> 
+              d.  Returns: Classifier object, shared(1) not-shared(0) predictions  <br>
+              e.  Return data-type: ClassifierCapsuleClass object, Python dictionary object <br>
+              f.  Comments: This method is a wrapper method to build and run classifiers using the training and the testing data respecitively. There are no checks to determine if there is any overlap between training and testing data files.<br>  
+      </p>
+
+      <li><a id="biasedCoinFlipper" href="#biasedCoinFlipper">biasedCoinFlipper(p)</a></li>
+      <p>
+              a.  Arguments: Probability <br>
+              b.  Argument data-type: float <br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  p should be between 0 and 1 <br>
+              d.  Returns: 0/1 <br>
+              e.  Return data-type: int <br>
+              f.  Comments: As the name suggests, this is a biased coin flipper. Simulates flipping a biased coin with a bias of p. Heads mean 1 and tail mean 0. <br>
+      </p>
+      
+      <li><a id="trainTestRgrs" href="#trainTestRgrs">trainTestRgrs(train_data_fl,test_data_fl,clf,attribType,infoGainFl,methArgs)</a></li>
+      <p>
+              a.  Argument: Training data in CSV format, Testing data in CSV format, Classifier method name, attribute selection method name, Information gain file in CSV format, keyword arguments for classifiers.  <br>
+              b.  Argument data-type: str, str, str, str, str, dict <br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Files should exist <br> 
+              d.  Returns: Regression object, Likelihoods of an image being shared.  <br>
+              e.  Return data-type: RegressionCapsuleclass object, Python dictionary object <br>
+              f.  Comments: This method is a wrapper method to build and run regressors using the training and the testing data respecitively. There are no checks to determine if there is any overlap between training and testing data files.<br>  
+      </p>
+
+      <li><a id="estimatePopulation" href="#estimatePopulation">estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl)</a></li>
+      <p>
+              a.  Arguments: Prediction results, EXIF information of images in JSON, GID-AID map file(JSON), AID-Feature map file(JSON)<br>
+              b.  Argument data-type: Python dict, str, str, str <br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Files should exist.<br>
+              d.  Returns: Populaion of zebras, giraffes and all animals <br>
+              e.  Return data-type: Python dict object <br>
+              f.  Comments: This method is used to actually estimate the population. This method utilizes methods from MarkRecapHelper to calculate the population of all animals, zebras and giraffes on the basis of the prediction results that are generated by the classifiers or regressor predictions.<br>
+      </p>
+
+      <li><a id="estimatePopulation" href="#estimatePopulation">estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl)</a></li>
+      <p>
+              a.  Arguments: Prediction results, EXIF information of images in JSON, GID-AID map file(JSON), AID-Feature map file(JSON)<br>
+              b.  Argument data-type: Python dict, str, str, str <br>
+              c.  PRE-condition: <br>
+              &nbsp &nbsp i.  Files should exist.<br>
+              d.  Returns: Populaion of zebras, giraffes and all animals <br>
+              e.  Return data-type: Python dict object <br>
+              f.  Comments: This method is used to actually estimate the population. This method utilizes methods from MarkRecapHelper to calculate the population of all animals, zebras and giraffes on the basis of the prediction results that are generated by the classifiers or regressor predictions.<br>
+      </p>
+
+      </ul>
+      </div>
+      <br>
 
       </section>
     </div>
