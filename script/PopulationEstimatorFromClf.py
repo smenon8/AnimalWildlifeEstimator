@@ -132,7 +132,23 @@ def kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inA
 	return estimatePopulation(predictions_k,inExifFl,inGidAidMapFl,inAidFtrFl)
 
 # synthetic experiment #1 and #2
-def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,genk):
+def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,genk,top=False):
+	gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
+
+	sdCards = {}
+	for key in gidContribDct.keys():
+	    sdCards[gidContribDct[key][0]] = sdCards.get(gidContribDct[key][0],[]) + [key]
+
+	sdCardSorted = {}
+	for contrib in sdCards.keys():
+	    sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_probabs.get(x,0),reverse=top)
+
+	# selecting the top k scores as shared
+	predictions_k = {gid : 1 for contrib in sdCardSorted.keys() for gid in sdCardSorted[contrib][:genk()]}
+
+	return estimatePopulation(predictions_k,inExifFl,inGidAidMapFl,inAidFtrFl)
+
+def shareAbvThreshold(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,threshold):
 	gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
 
 	sdCards = {}
@@ -143,12 +159,16 @@ def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,g
 	for contrib in sdCards.keys():
 	    sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_probabs.get(x,0),reverse=True)
 
+	threshold = threshold()
+	for contrib in sdCardSorted.keys():
+		sdCardSorted[contrib] = list(filter(lambda x : prediction_probabs.get(x,0) >= threshold,sdCards[contrib]))
+
 	# selecting the top k scores as shared
-	predictions_k = {gid : 1 for contrib in sdCardSorted.keys() for gid in sdCardSorted[contrib][:genk()]}
+	predictions_k = {gid : 1 for contrib in sdCardSorted.keys() for gid in sdCardSorted[contrib]}
 
 	return estimatePopulation(predictions_k,inExifFl,inGidAidMapFl,inAidFtrFl)
 
-def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs):
+def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs, thresholdMeth = False):
 	for meth in methTypes:
 		for attrib in attribTypes:
 			print("Starting to run %s classifer on test data\nAttribute Selection Method : %s" %(meth,attrib))
@@ -164,24 +184,30 @@ def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs):
 	                            infoGainFl="../data/infoGainsExpt2.csv",
 	                            methArgs = methArgs
 	                            )
+			if thresholdMeth:
+				flNm = str("../FinalResults/"+ meth + "_" + attrib + "_thresholded")
+			else:
+				flNm = str("../FinalResults/"+ meth + "_" + attrib + "_kShares")
 
-			flNm = str("../FinalResults/"+ meth + "_" + attrib + "_kShares")
 			if isClf:
 				predictions = {list(methObj.test_x.index)[i] : methObj.predProbabs[i] for i in range(len(methObj.test_x.index))}
 				kSharesMethod = kSharesPerContributor
 			else:
 				predictions = predResults
-				kSharesMethod = kSharesPerContribAfterCoinFlip
-				print(kSharesMethod)
+				if thresholdMeth:
+					kSharesMethod = shareAbvThreshold
+				else:
+					kSharesMethod = kSharesPerContribAfterCoinFlip
+
 			print("Starting population estimation experiments")
 			
 			fixedK = {k : kSharesMethod(predictions,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : k) for k in krange}
 			print("Population estimation experiments complete")
 			
 			df = pd.DataFrame(fixedK).transpose().reset_index()
-			df.columns = ['num_images','all','giraffes','zebras']
-			df.index = df['num_images']
-			df.drop(['num_images'],1,inplace=True)
+			df.columns = ['threshold','all','giraffes','zebras']
+			df.index = df['threshold']
+			df.drop(['threshold'],1,inplace=True)
 			df.to_csv(str(flNm+".csv"))
 			df_html = df.to_html(index=True)
 			randomized = kSharesMethod(predictions,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : random.randint(min(krange),max(krange)))
@@ -189,8 +215,11 @@ def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs):
 			df['Randomized_giraffe'] = randomized['giraffes']
 			df['Randomized_zebras'] = randomized['zebras']
 	        
-			fig1 = df.iplot(kind='line',layout=layout,filename=str(meth + "_" + attrib + "_kShares"))
-			fullFl = HT.HTML(HT.body(HT.h2("Population Estimates with k shares per contributor using %s and attribute selection method %s" %(meth,attrib)),
+			if thresholdMeth:
+			 fig1 = df.iplot(kind='line',layout=layout,filename=str(meth + "_" + attrib + "_thresholded"))
+			else:
+				fig1 = df.iplot(kind='line',layout=layout,filename=str(meth + "_" + attrib + "_kShares"))
+			fullFl = HT.HTML(HT.body(HT.h2("Population Estimates when contributors share all images above threshold using %s and attribute selection method %s" %(meth,attrib)),
 							HT.HTML(df_html),
 							HT.HTML(fig1.embed_code)         
 					))
@@ -201,7 +230,7 @@ def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs):
 			print("Classification testing complete %s : %s" %(meth,attrib))
 			print()
 
-def runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
+def runSyntheticExptsRgr(inExifFl, inGidAidMapFl, inAidFtrFl, krange, thresholdMeth):
 	rgrTypes = ['linear','ridge','lasso','svr','dtree_regressor']
 	attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
 
@@ -211,11 +240,11 @@ def runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
 			'svr' : {'fit_intercept' : True},
 			'dtree_regressor' : {'fit_intercept' : True}}
 
-	runSyntheticExpts(False, rgrTypes, attribTypes, krange, regrArgs)
+	runSyntheticExpts(False, rgrTypes, attribTypes, krange, regrArgs, thresholdMeth)
 
 
 
-def runSyntheticExptsClf(inExifFl,inGidAidMapFl,inAidFtrFl,krange):
+def runSyntheticExptsClf(inExifFl, inGidAidMapFl, inAidFtrFl, krange):
 	clfTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
 	attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
 	methArgs = {'dummy' : {'strategy' : 'most_frequent'},
@@ -272,11 +301,11 @@ def __main__(argv):
 
 if __name__ == "__main__":
 	layout = go.Layout(
-        title="Number of images shared(k) versus estimated population",
+        title="Threshold versus estimated population",
         titlefont = dict(
                 size=15),
         xaxis=dict(
-            title="Number of images shared (k)",
+            title="Shareability likelihood threshold",
             titlefont = dict(
                 size=15),
             showticklabels=True,
@@ -295,6 +324,6 @@ if __name__ == "__main__":
                 color='black')
         )
         )
-	runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,76))
+	runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,range(40,95,5),thresholdMeth=True)
 
 	#__main__(sys.argv)

@@ -27,7 +27,7 @@ def searchInFlickr(flickrObj,tags=[],text=None):
 	return urlList
 
 def __main__():
-	urlList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/Project/flickr_key.json"),["giraffe","zebra"],"masai")
+	urlList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["grevy's zebra"],None)
 	print(urlList)
 
 if __name__ == "__main__":
