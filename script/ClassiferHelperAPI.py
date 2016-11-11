@@ -199,5 +199,3 @@ def buildRegrMod(train_data_fl,allAttribs,trainTestSplit,methodName,kwargs=None)
     rgrObj = RgrClass.RegressionCapsule(rgr,methodName,trainTestSplit,train_x,train_y,test_x,test_y)
 
     return rgrObj
-
-

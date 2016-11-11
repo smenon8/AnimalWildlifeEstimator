@@ -183,6 +183,7 @@ def extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature):
 # This method parses the results file and generates a python object consisting of each response key with the actual response from the users. 
 # The dictionary is of the form: { photo_album_i : { Answer.GID : [ GID|'share' , 'GID'|'noShare'] }} 
 # All the results file from jobRangeStart to jobRangeEnd will be parsed and included in the output object.
+# Setting workerData to True also includes the turker ID in the result dictionary.
 def createResultDict(jobRangeStart,jobRangeEnd,workerData=False):
     masterDict = OrderedDict()
 
@@ -203,6 +204,7 @@ def createResultDict(jobRangeStart,jobRangeEnd,workerData=False):
         keysOfInterest = list(filter(lambda x: re.search("Answer",x),resultDict.keys()))
         if workerData:
             keysOfInterest += list(filter(lambda x: re.search("workerid",x),resultDict.keys()))
+
         newDict = OrderedDict()
         for key in keysOfInterest:
             newDict[key] = resultDict[key]
