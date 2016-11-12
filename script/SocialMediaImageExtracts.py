@@ -2,8 +2,17 @@
 # Author : Sreejith Menon
 # Email : smenon8@uic.edu
 
+import sys
 import json
 import flickrapi as f
+from urllib.request import urlretrieve
+from functools import partial
+from multiprocessing.pool import Pool
+import os
+
+def download_link(directory,url):
+    flName = str(directory + str(os.path.basename(url)))
+    urlretrieve(url, flName)
 
 def createFlickrObj(flickrKeyFl):
 	# creating Flickr Object
@@ -14,21 +23,35 @@ def createFlickrObj(flickrKeyFl):
 
 	return flickrObj
 
-def searchInFlickr(flickrObj,tags=[],text=None):
-	photosJson = json.loads(flickrObj.photos.search(tags=tags,text=text,privacy_filter=1).decode(encoding='utf-8'))
+def searchInFlickr(flickrObj, tags=[], text=None, page=1):
+	print("Scraping from page %d" %page)
+	photosJson = json.loads(flickrObj.photos.search(tags=tags, text=text, privacy_filter=1, page=page, per_page=500).decode(encoding='utf-8'))
 
 	photos = photosJson['photos']['photo']
 	urlList = []
+	photoID = []
 	for i in range(len(photos)):
 	    dct = photos[i]
 	    url = 'https://farm%s.staticflickr.com/%s/%s_%s_b.jpg' %(str(dct['farm']),dct['server'],dct['id'],dct['secret'])
+	    photoID.append(dct['id'])
 	    urlList.append(url)
 
-	return urlList
+	return urlList, photoID
 
-def __main__():
-	urlList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["grevy's zebra"],None)
-	print(urlList)
+def __main__(argv):
+	if len(argv) != 2:
+		page = 1
+	else:
+		page = int(argv[1])
+
+	print("Scraping from page %d" %page)
+	urlList,photoIDList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["grevy's zebra"],None,1)
+
+	download_dir = "/tmp/images/"
+
+	download = partial(download_link, download_dir)
+	with Pool(10) as p:
+	    p.map(download, urlList)
 
 if __name__ == "__main__":
-	__main__()
+	__main__(sys.argv)
