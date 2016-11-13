@@ -336,11 +336,11 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
             else:
                 titleSuffix = "regressors random choices"
         else:
-            suffix = "_kShares.csv"
+            suffix = "_kSharesbottom.csv"
             if clfOrRgr == 'clf':
                 titleSuffix = "classifiers top k choices"
             else:
-                titleSuffix = "regressors top k choices"
+                titleSuffix = "regressors bottom k choices"
 
     df = pd.DataFrame.from_csv(str("../FinalResults/"+flNms[0]+suffix)).reset_index()
     df.columns = list(map(lambda x : str(x + "_" + flNms[0]) if x != hdr else x,list(df.columns)))
