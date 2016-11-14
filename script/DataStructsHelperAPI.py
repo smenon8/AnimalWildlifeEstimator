@@ -22,8 +22,6 @@ def genlstTupFrmCsv(flNm,headerExists=True):
 def cnvrtDictToLstTup(dct):
 	return [(key,dct[key]) for key in dct.keys()]
 
-# Generate dictionary with row[0] as key and row[1:] as value
-# Generate dictionary object from JSON.
 
 # Generate Date(String) in outFmt from TimeStamp(String) in inpFmt
 def getDateFromStr(dtStr,inpFmt,outFmt):
@@ -39,3 +37,12 @@ def combineJson(fl1,fl2,outFlNm):
 			json.dump(jObj1,out,indent=4)
 
 	return None
+
+def flipKeyValue(dct):
+	outDct = {}
+
+	for key in dct.keys():
+		for val in dct[key]:
+			outDct[val] = outDct.get(val,[]) + [key]
+
+	return outDct

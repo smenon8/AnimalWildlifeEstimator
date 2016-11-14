@@ -379,6 +379,47 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
     figCodes = [fig.embed_code for fig in figs]
     return figCodes
 
+def populationEstimatorFileGen():
+    clfTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
+    attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
+    
+    kwargsDict = {'dummy' : {'strategy' : 'most_frequent'},
+            'bayesian' : {'fit_prior' : True},
+            'logistic' : {'penalty' : 'l2'},
+            'svm' : {'kernel' : 'rbf','probability' : True},
+            'dtree' : {'criterion' : 'entropy'},
+            'random_forests' : {'n_estimators' : 10 },
+            'ada_boost' : {'n_estimators' : 50 }}
+
+    if len(sys.argv) > 1:
+        outFlNm = sys.argv[1]
+    else:
+        outFlNm = "/tmp/PopulationEstimatorFromClf.dump.json"
+
+    estimates = []
+    for clf in clfTypes:
+        for attribType in attribTypes:
+            print("Classifier : %s" %clf)
+            print("Attribute selection method : %s" %attribType)
+            clfObj,predResults = trainTestClf("../FinalResults/ImgShrRnkListWithTags.csv",
+                     "../data/full_gid_aid_ftr_agg.csv",
+                     clf,
+                     attribType,
+                     "../data/infoGainsExpt2.csv",
+                     kwargsDict)
+            thisObjhead = {'Classifier' : clf , 'Attribute' : attribType,'shared_images_count' : int(sum(clfObj.preds))}
+            thisObj = estimatePopulation(predResults,
+                            "../data/imgs_exif_data_full.json",
+                            "../data/full_gid_aid_map.json",
+                            "../data/full_aid_features.json")
+
+            estimates.append({**thisObjhead,**thisObj})
+            print("Complete")
+            print()
+
+    with open(outFlNm,"w") as jsonFl:
+        json.dump(estimates,jsonFl,indent=4)
+
 def __main__():
     parser = argparse.ArgumentParser()
     parser.add_argument('-cr','--clfOrRgr', help='Classifier method or regressor to be used', required=True)
@@ -407,4 +448,5 @@ def __main__():
         runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,75),thresholdMeth = False)
 
 if __name__ == "__main__":
-    __main__()
+    # __main__()
+    pass
