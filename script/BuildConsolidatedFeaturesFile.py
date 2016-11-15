@@ -34,6 +34,7 @@ import json
 #importlib.reload(GP) # un-comment if there are any changes made to API
 import sys
 import math
+import DataStructsHelperAPI as DS
 
 def printCompltnPercent(percentComplete):
 	i = int(percentComplete)
@@ -67,10 +68,19 @@ def buildExifFeatureFl(inp,outFL,isInpFl = True):
 	datetimes = GP.getExifData(gids,'unixtime')
 	lats = GP.getExifData(gids,'lat')
 	longs = GP.getExifData(gids,'lon')
+	width = GP.getExifData(gids,'width')
+	height = GP.getExifData(gids,'height')
+	orientation = GP.getExifData(gids,'orientation')
+	size = GP.getExifData(gids,'size')
 
 	imgProps = {gids[i] : {'datetime' : GP.getUnixTimeReadableFmt(datetimes[i]),
                       'lat' : lats[i],
-                      'long' : longs[i]} 
+                      'long' : longs[i],
+                      'width' : width[i],
+                      'height' : height[i],
+                      'orientation' : orientation[i],
+                      'size' : size[i]
+                      } 
            for i in range(0,len(gids))}
 
 	with open(outFL,"w") as outFl:
@@ -102,6 +112,25 @@ def genJsonFromMSAIData(flName,outFlNm):
     json.dump(apiResultsDict,open(outFlNm,"w"),indent=4)
     
     return None
+
+def getAdditionalAnnotFeatures(gidAidMap, ftrName, outFlNm='/tmp/getAdditionalAnnotFeatures.dump.json'):
+	with open(gidAidMap,"r") as gidAidMapFl:
+		gidAidJson = json.load(gidAidMapFl)
+
+	additionalFtrDct = {}
+	gidInd = 0
+	n = len(gidAidJson.keys())
+	for gid in gidAidJson.keys():
+		additionalFtrDct[gid] = additionalFtrDct.get(gid,[]) + [GP.getImageFeature(gidAidJson[gid][0],ftrName)][0]
+		gidInd += 1
+		percentComplete = gidInd * 100 / n
+		if math.floor(percentComplete) %5 == 0:
+			printCompltnPercent(percentComplete)
+
+	with open(outFlNm,"w") as outFlObj:
+		json.dump(additionalFtrDct, outFlObj, indent=4)
+
+	return None
 
 # Logic for reading data from the consolidatedHITResults file - changed
 # The input for the below method will be a csv file/list with all the image GID's for which the features have to be extracted.
@@ -204,7 +233,6 @@ def __main__():
 
 	print("Starting feature extraction for GIDs . . .Part1")
 	buildFeatureFl(allGidPart1,"../data/full1.csv",False)
-
 	print("Completed feature extraction . . .Part1")	
 
 	print("Starting EXIF feature extraction for GIDs . . .Part1")
@@ -229,4 +257,6 @@ def __main__():
 	DS.combineJson("../data/imgs_exif_data_full1.json","../data/imgs_exif_data_full2.json","../data/imgs_exif_data_full.json")
 
 if __name__ == "__main__":
-	__main__()	
+	# __main__()	
+	gidAidMapFl = "../data/full_gid_aid_map.json"
+	getAdditionalAnnotFeatures(gidAidMapFl,'bbox',"../data/gid_bbox.json")

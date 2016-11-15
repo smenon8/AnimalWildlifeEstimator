@@ -47,7 +47,7 @@ def __main__(argv):
 	print("Scraping from page %d" %page)
 	urlList,photoIDList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["grevy's zebra"],None,1)
 
-	download_dir = "/tmp/images/"
+	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/"
 
 	download = partial(download_link, download_dir)
 	with Pool(10) as p:
