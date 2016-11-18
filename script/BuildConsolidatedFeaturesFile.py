@@ -34,7 +34,10 @@ import json
 #importlib.reload(GP) # un-comment if there are any changes made to API
 import sys
 import math
+import pandas as pd
 import DataStructsHelperAPI as DS
+from math import floor
+importlib.reload(DS)
 
 def printCompltnPercent(percentComplete):
 	i = int(percentComplete)
@@ -73,6 +76,7 @@ def buildExifFeatureFl(inp,outFL,isInpFl = True):
 	orientation = GP.getExifData(gids,'orientation')
 	size = GP.getExifData(gids,'size')
 
+
 	imgProps = {gids[i] : {'datetime' : GP.getUnixTimeReadableFmt(datetimes[i]),
                       'lat' : lats[i],
                       'long' : longs[i],
@@ -85,6 +89,22 @@ def buildExifFeatureFl(inp,outFL,isInpFl = True):
 
 	with open(outFL,"w") as outFl:
 	    json.dump(imgProps,outFl,indent=4)
+
+	return None
+
+def buildBeautyFtrFl(inpFl, ftrs, outFlPrefix):
+	df = pd.DataFrame.from_csv(inpFl).transpose().reset_index()
+	df['index'] = df['index'].apply(lambda x : floor(float(x)))
+	df.columns = ftrs
+	df['GID'] = df['GID'].apply(lambda x : str(int(x)))
+	df.to_csv(str(outFlPrefix + ".csv"),index=False)
+	df.index=df['GID']
+	df.drop(['GID'],1,inplace=True)
+
+	dctObj = df.to_dict(orient='index')
+
+	with open(str(outFlPrefix + ".json"),"w") as jsonObj:
+	    json.dump(dctObj,jsonObj,indent=4)
 
 	return None
 
@@ -258,5 +278,24 @@ def __main__():
 
 if __name__ == "__main__":
 	# __main__()	
-	gidAidMapFl = "../data/full_gid_aid_map.json"
-	getAdditionalAnnotFeatures(gidAidMapFl,'bbox',"../data/gid_bbox.json")
+	# gidAidMapFl = "../data/full_gid_aid_map.json"
+	# getAdditionalAnnotFeatures(gidAidMapFl,'bbox',"../data/gid_bbox.json")
+
+	buildBeautyFtrFl("../data/beautyFeatures_GZC_R.csv",['GID','pleasure','arousal','dominance','y'],"../data/beautyFeatures_GZC")
+
+	DS.combineJson("../data/beautyFeatures_GZC.json","../data/imgs_exif_data_full.json","../data/GZC_exifs_beauty_full.json")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

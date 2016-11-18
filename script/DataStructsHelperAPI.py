@@ -32,7 +32,9 @@ def combineJson(fl1,fl2,outFlNm):
 		jObj1 = json.load(f1)
 		jObj2 = json.load(f2)
 
-		jObj1.update(jObj2)
+		for key in jObj1.keys():
+			jObj1[key].update(jObj2[key])
+
 		with open(outFlNm,"w") as out:
 			json.dump(jObj1,out,indent=4)
 

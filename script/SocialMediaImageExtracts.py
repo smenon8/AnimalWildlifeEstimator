@@ -47,6 +47,10 @@ def __main__(argv):
 	print("Scraping from page %d" %page)
 	urlList,photoIDList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["grevy's zebra"],None,1)
 
+	with open("../data/fileURLS.dat","w") as urlListFl:
+		for url in urlList:
+			urlListFl.write(url + "\n")
+
 	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/"
 
 	download = partial(download_link, download_dir)
@@ -54,4 +58,4 @@ def __main__(argv):
 	    p.map(download, urlList)
 
 if __name__ == "__main__":
-	__main__(sys.argv)
+	__main__(sys.sargv)

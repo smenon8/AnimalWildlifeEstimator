@@ -85,7 +85,7 @@ def delete(*args, **kwargs):
     return _request(requests.delete, *args, **kwargs)
 
 
-if __name__ == '__main__':
+def __main__():
     # Upload image
     gid = upload('grevys.jpg')
 
@@ -210,3 +210,9 @@ if __name__ == '__main__':
     }
     delete('api/annot', data_dict)
     print('\nDeleted aid_list  = %r' % (aid_list, ))
+
+if __name__ == "__main__":
+    with open("../data/fileURLS.dat","r") as urlListFl:
+        urlList = urlListFl.read().split("\n")
+    for url in urlList:
+        upload()
