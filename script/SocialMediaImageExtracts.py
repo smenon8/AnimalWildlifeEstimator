@@ -44,18 +44,22 @@ def __main__(argv):
 	else:
 		page = int(argv[1])
 
-	print("Scraping from page %d" %page)
-	urlList,photoIDList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["grevy's zebra"],None,1)
-
+	urlListMaster = []
+	for i in range(1,page):
+		print("Scraping from page %d" %i)
+		urlList,photoIDList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["grevy's zebra"],None,i)
+		print(len(urlList))
+		urlListMaster.extend(urlList)
+	
 	with open("../data/fileURLS.dat","w") as urlListFl:
-		for url in urlList:
+		for url in urlListMaster:
 			urlListFl.write(url + "\n")
 
-	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/"
+	# download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/"
 
-	download = partial(download_link, download_dir)
-	with Pool(10) as p:
-	    p.map(download, urlList)
+	# download = partial(download_link, download_dir)
+	# with Pool(10) as p:
+	#     p.map(download, urlListMaster)
 
 if __name__ == "__main__":
-	__main__(sys.sargv)
+	__main__(sys.argv)
