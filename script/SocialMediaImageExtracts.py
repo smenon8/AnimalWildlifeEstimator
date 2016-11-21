@@ -8,11 +8,14 @@ import flickrapi as f
 from urllib.request import urlretrieve
 from functools import partial
 from multiprocessing.pool import Pool
+import time
 import os
+from threading import Thread
 
-def download_link(directory,url):
+def download_link(directory, url):
     flName = str(directory + str(os.path.basename(url)))
-    urlretrieve(url, flName)
+    if not os.path.isfile(flName):
+    	urlretrieve(url, flName)
 
 def createFlickrObj(flickrKeyFl):
 	# creating Flickr Object
@@ -38,6 +41,15 @@ def searchInFlickr(flickrObj, tags=[], text=None, page=1):
 
 	return urlList, photoID
 
+def multiProcDownload(download_dir, urlList):
+	start_time = time.time()
+
+	download = partial(download_link, download_dir)
+	with Pool(5) as p:
+		p.map(download, urlList)
+
+	print("Time elapsed: %f" %(time.time() - start_time))
+
 def __main__(argv):
 	if len(argv) != 2:
 		page = 1
@@ -51,15 +63,32 @@ def __main__(argv):
 		print(len(urlList))
 		urlListMaster.extend(urlList)
 	
+	print(len(urlListMaster))
+	urlListMaster = list(set(urlListMaster))
+	print(len(urlListMaster))
 	with open("../data/fileURLS.dat","w") as urlListFl:
 		for url in urlListMaster:
 			urlListFl.write(url + "\n")
 
-	# download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/"
-
-	# download = partial(download_link, download_dir)
-	# with Pool(10) as p:
-	#     p.map(download, urlListMaster)
 
 if __name__ == "__main__":
-	__main__(sys.argv)
+	# __main__(sys.argv)
+
+	with open("../data/fileURLS.dat","r") as urlListFl:
+		urlList = [url for url in urlListFl.read().split("\n")]
+
+	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/"
+
+	idxs = [i for i in range(1400,len(urlList),200)]
+
+	for i in range(1,len(idxs)):
+		print("Downloading from range %i to %i" %(idxs[i-1],idxs[i]-1))
+		multiProcDownload(download_dir, urlList[idxs[i-1]:idxs[i]])
+
+	print("Downloading last chunk")
+	print(urlList[1800:])
+	multiProcDownload(download_dir, urlList[1800:len(urlList)-1])
+
+
+
+
