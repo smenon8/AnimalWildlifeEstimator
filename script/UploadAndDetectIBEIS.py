@@ -10,17 +10,27 @@ import os
 
 DOMAIN = 'http://pachy.cs.uic.edu:5001'
 
-
-def upload(image_path, flickrURL,signature='api/upload/image'):
+def upload(image_path, signature='api/upload/image'):
     url = '%s/%s/' % (DOMAIN, signature)
-    imgFl = str(image_path + str(os.path.basename(flickrURL)))
     file_dict = {
-        'image': open(imgFl, 'rb'),
+        'image': open(image_path, 'rb'),
     }
     response = requests.post(url, files=file_dict)
     response_dict = response.json()
     assert response_dict['status']['success']
     return response_dict['response']
+
+# def upload(image_path, flickrURL,signature='api/upload/image'):
+#     url = '%s/%s/' % (DOMAIN, signature)
+#     imgFl = str(image_path + str(os.path.basename(flickrURL)))
+#     print(imgFl)
+#     file_dict = {
+#         'image': open(imgFl, 'rb'),
+#     }
+#     # response = requests.post(url, files=file_dict)
+#     response_dict = response.json()
+#     assert response_dict['status']['success']
+#     return response_dict['response']
 
 
 def check_job_status(jobid_str):
@@ -84,21 +94,13 @@ def post(*args, **kwargs):
 def delete(*args, **kwargs):
     return _request(requests.delete, *args, **kwargs)
 
-
-def __main__():
-    # Upload image
-    gid = upload('grevys.jpg')
-
-    # Get image UUID
-    gid = 9
+def run_detection_task(gid):
     data_dict = {
-        'gid_list': [9],
+        'gid_list': [gid],
     }
     image_uuid_list = get('api/image/uuid', data_dict)
     image_uuid_dict = image_uuid_list[0]
     image_uuid = uuid.UUID(image_uuid_dict['__UUID__'])
-    print('Image gid         = %r' % (gid, ))
-    print('Image UUID        = %r' % (image_uuid, ))
 
     # Run detection on the image (blocking)
     #    NOTE: IBEIS IA caches information, once detection has been run on an
@@ -211,8 +213,13 @@ def __main__():
     delete('api/annot', data_dict)
     print('\nDeleted aid_list  = %r' % (aid_list, ))
 
+def __main__():
+    run_detection_task(1725)
+
 if __name__ == "__main__":
-    with open("../data/fileURLS.dat","r") as urlListFl:
-        urlList = urlListFl.read().split("\n")
-    for url in urlList:
-        upload()
+    __main__()
+    # with open("../data/fileURLS.dat","r") as urlListFl:
+    #     urlList = urlListFl.read().split("\n")
+    # for url in urlList:
+    #     print("Uploading image : %s " %str(os.path.basename(url)))
+    #     upload("/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/",url)

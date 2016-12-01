@@ -42,14 +42,3 @@ calcContrast <- function(imgPath) {
 }
 
 vctrs <- list()
-for(i in 1:9406) {
-  flNm = sprintf("/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/All_Zebra_Count_Images/%i.jpeg",i)
-  means <- getAverageHSV(flNm)
-  result <- calcEmotionalFtrs(means) 
-  
-  y <- calcContrast(flNm)
-  # pleasure, arousal, dominance, luminance(y)
-  vctrs[[i]] <- c(i,result[1],result[2],result[3],y)
-}
-
-write.table(vctrs,file="../data/beautyFeatures_GZC.csv",sep=",",append=FALSE,col.names=FALSE)

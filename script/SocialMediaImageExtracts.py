@@ -41,10 +41,10 @@ def searchInFlickr(flickrObj, tags=[], text=None, page=1):
 
 	return urlList, photoID
 
-def multiProcDownload(download_dir, urlList):
+def multiProcMeth(methodName, arg, urlList):
 	start_time = time.time()
 
-	download = partial(download_link, download_dir)
+	download = partial(methodName, arg)
 	with Pool(5) as p:
 		p.map(download, urlList)
 
@@ -83,11 +83,11 @@ if __name__ == "__main__":
 
 	for i in range(1,len(idxs)):
 		print("Downloading from range %i to %i" %(idxs[i-1],idxs[i]-1))
-		multiProcDownload(download_dir, urlList[idxs[i-1]:idxs[i]])
+		multiProcDownload(download_link, download_dir, urlList[idxs[i-1]:idxs[i]])
 
 	print("Downloading last chunk")
 	print(urlList[1800:])
-	multiProcDownload(download_dir, urlList[1800:len(urlList)-1])
+	multiProcDownload(download_link, download_dir, urlList[1800:len(urlList)-1])
 
 
 
