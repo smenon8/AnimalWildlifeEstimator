@@ -10,7 +10,7 @@ from functools import partial
 from multiprocessing.pool import Pool
 import time
 import os
-from threading import Thread
+import re
 
 def download_link(directory, url):
     flName = str(directory + str(os.path.basename(url)))
@@ -50,12 +50,30 @@ def multiProcMeth(methodName, arg, urlList):
 
 	print("Time elapsed: %f" %(time.time() - start_time))
 
-def __main__(argv):
-	if len(argv) != 2:
-		page = 1
+def _getExif(flickrObj, photo_id):
+	exifJson = json.loads(flickrObj.photos.geo.getLocation(photo_id = photo_id).decode('utf-8'))
+	if 'code' in exifJson:
+		lat = 0.0
+		long = 0.0
 	else:
-		page = int(argv[1])
+		lat = exifJson['photo']['location']['latitude']
+		long = exifJson['photo']['location']['longitude']
 
+	return dict (lat =  lat, long = long)
+
+def getExif(flickrObj, urlList):
+	photo_ids = [re.findall(r'.*/(.*)_.*_b.jpg', url)[0] for url in urlList]
+
+	fullExifData = {}
+	for photo in photo_ids:
+		fullExifData[photo] = _getExif(flickrObj, photo)
+
+	with open("../data/Flickr_Location_data.json","w") as jsonFl:
+		json.dump(fullExifData, jsonFl, indent = 4)
+
+	return None
+
+def scrape_flickr(page):
 	urlListMaster = []
 	for i in range(1,page):
 		print("Scraping from page %d" %i)
@@ -70,11 +88,8 @@ def __main__(argv):
 		for url in urlListMaster:
 			urlListFl.write(url + "\n")
 
-
-if __name__ == "__main__":
-	# __main__(sys.argv)
-
-	with open("../data/fileURLS.dat","r") as urlListFl:
+def download_imgs(urlFlList = "../data/fileURLS.dat"):
+	with open(urlFlList,"r") as urlListFl:
 		urlList = [url for url in urlListFl.read().split("\n")]
 
 	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/"
@@ -88,6 +103,16 @@ if __name__ == "__main__":
 	print("Downloading last chunk")
 	print(urlList[1800:])
 	multiProcDownload(download_link, download_dir, urlList[1800:len(urlList)-1])
+
+def __main__():
+	with open("../data/fileURLS.dat","r") as urlListFl:
+		urlList = [url for url in urlListFl.read().split("\n")]
+
+	getExif(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"), urlList)
+
+
+if __name__ == "__main__":
+	__main__()
 
 
 

@@ -1,6 +1,11 @@
 from skimage import io, color, feature, transform
 import numpy as np
+import time
+import json
+from BuildConsolidatedFeaturesFile import printCompltnPercent
+import math
 
+final_ftr_obj = {}
 def calc_contrast(r, g, b):
 	# y is the luminance
 	y = 0.299 * r + 0.587 * g + 0.114 * b
@@ -15,7 +20,7 @@ def get_spat_arrng_ftrs(gray_img):
 	I_anti = np.identity(600)[::-1] # anti - diagonal identity matrix
 	inner = feature.hog(left) - feature.hog(I_anti.dot(right))
 
-	return np.linalg.norm(inner)
+	return dict(symmetry = np.linalg.norm(inner))
 
 def calc_color_ftrs(h, s, v):
 	v_mean = np.mean(v)
@@ -41,9 +46,8 @@ def get_arr(imgObj):
 
 	return (first, second, third)
 
-def __main__():
-	imgFlNm = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/All_Zebra_Count_Images/8598.jpeg"
-
+def extr_beauty_ftrs(gid):
+	imgFlNm = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/All_Zebra_Count_Images/%s.jpeg" %gid
 	rgbImg = io.imread(imgFlNm)
 	hsvImg = color.rgb2hsv(rgbImg)
 	grayImg = color.rgb2gray(rgbImg)
@@ -52,12 +56,36 @@ def __main__():
 	hue, saturation, value = get_arr(hsvImg)
 
 	contrast = calc_contrast(red, green, blue)
-	emoFtrs = calc_color_ftrs(hue, saturation, value)
+	ftrs = calc_color_ftrs(hue, saturation, value)
 
-	print("Contrast : %f" %contrast)
-	print(emoFtrs)
+	ftrs.update(get_spat_arrng_ftrs(grayImg))
+	final_ftr_obj[gid] = ftrs
+	
+	return None
 
-	print(get_spat_arrng_ftrs(grayImg))
+def __main__():
+	gids = [i for i in range(1,9407)]
+
+	start = time.time()
+	for gid in gids:
+		extr_beauty_ftrs(gid)
+		percentComplete = gid * 100 / len(gids)
+		if math.floor(percentComplete) % 2 == 0:
+			printCompltnPercent(percentComplete)
+
+	with open("../data/beautyFeatures_FlickrImgs.json", "w") as outFl:
+		json.dump(final_ftr_obj, outFl, indent = 4)
+
+	end = time.time()
+
+	print("Time elapsed: %f" %(end-start))
+	# ftr_extract = partial(extr_beauty_ftrs, final_ftr_obj)
+	# with Pool(5) as p:
+	# 	p.map(ftr_extract, gids)
+
+	# print(final_ftr_obj)
+
 
 if __name__ == "__main__":
 	__main__()
+	#print(extr_beauty_ftrs("/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/All_Zebra_Count_Images/8598.jpeg"))

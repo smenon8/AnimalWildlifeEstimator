@@ -101,6 +101,7 @@ def run_detection_task(gid):
     image_uuid_list = get('api/image/uuid', data_dict)
     image_uuid_dict = image_uuid_list[0]
     image_uuid = uuid.UUID(image_uuid_dict['__UUID__'])
+    print("image_uuid %i" %image_uuid)
 
     # Run detection on the image (blocking)
     #    NOTE: IBEIS IA caches information, once detection has been run on an
@@ -113,6 +114,7 @@ def run_detection_task(gid):
     data_dict = {
         'gid_list': [gid],
     }
+
     aids_list = get('api/detect/cnn/yolo', data_dict)
     aid_list = aids_list[0]
     print('\nAnnot aid_list    = %r' % (aid_list, ))
@@ -214,10 +216,16 @@ def run_detection_task(gid):
     print('\nDeleted aid_list  = %r' % (aid_list, ))
 
 def __main__():
-    run_detection_task(1725)
+    run_detection_task(1)
 
 if __name__ == "__main__":
-    __main__()
+    # __main__()
+
+    data_dict = {
+        'gid_list': [1725],
+    }
+
+    delete('api/image',data_dict)
     # with open("../data/fileURLS.dat","r") as urlListFl:
     #     urlList = urlListFl.read().split("\n")
     # for url in urlList:
