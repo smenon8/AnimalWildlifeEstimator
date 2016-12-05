@@ -7,6 +7,8 @@ import time
 import uuid
 import json
 import os
+from functools import partial
+from multiprocessing.pool import Pool
 
 DOMAIN = 'http://pachy.cs.uic.edu:5001'
 
@@ -204,28 +206,35 @@ def run_detection_task(gid):
     put('api/annot/note', data_dict)
     check_annot_metadata(aid_list)
 
-    args = (DOMAIN, gid, )
-    print('\nReview the detection here: %s/turk/detection/?gid=%d' % args)
-    raw_input('continue? [enter]')
+    # args = (DOMAIN, gid, )
+    # print('\nReview the detection here: %s/turk/detection/?gid=%d' % args)
+    # # raw_input('continue? [enter]')
 
-    # Finally, delete the annotation we have added three times
-    data_dict = {
-        'aid_list': aid_list,
-    }
-    delete('api/annot', data_dict)
-    print('\nDeleted aid_list  = %r' % (aid_list, ))
+    # # , delete the annotation we have added three times
+    # data_dict = {
+    #     'aid_list': aid_list,
+    # }
+    # delete('api/annot', data_dict)
+    # print('\nDeleted aid_list  = %r' % (aid_list, ))
 
 def __main__():
-    run_detection_task(1)
+    gidList = [i for i in range(1,1725)]
+
+    detect = partial(run_detection_task)
+
+    with Pool(2) as p:
+        p.map(detect, gidList)
 
 if __name__ == "__main__":
-    # __main__()
+    __main__()
 
-    data_dict = {
-        'gid_list': [1725],
-    }
+    
 
-    delete('api/image',data_dict)
+    # data_dict = {
+    #     'gid_list': [1725],
+    # }
+
+    # delete('api/image',data_dict)
     # with open("../data/fileURLS.dat","r") as urlListFl:
     #     urlList = urlListFl.read().split("\n")
     # for url in urlList:

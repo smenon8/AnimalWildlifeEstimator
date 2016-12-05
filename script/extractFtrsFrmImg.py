@@ -57,7 +57,7 @@ def extr_beauty_ftrs(gid):
 
 	contrast = calc_contrast(red, green, blue)
 	ftrs = calc_color_ftrs(hue, saturation, value)
-
+	ftrs['contrast'] = contrast
 	ftrs.update(get_spat_arrng_ftrs(grayImg))
 	final_ftr_obj[gid] = ftrs
 	
@@ -73,7 +73,7 @@ def __main__():
 		if math.floor(percentComplete) % 2 == 0:
 			printCompltnPercent(percentComplete)
 
-	with open("../data/beautyFeatures_FlickrImgs.json", "w") as outFl:
+	with open("../data/beautyFeatures_GZC.json", "w") as outFl:
 		json.dump(final_ftr_obj, outFl, indent = 4)
 
 	end = time.time()
