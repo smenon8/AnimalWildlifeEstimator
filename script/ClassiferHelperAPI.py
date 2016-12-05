@@ -11,7 +11,7 @@ import json
 from collections import OrderedDict
 from sklearn.linear_model import LogisticRegression, LinearRegression, Lasso, Ridge, ElasticNet
 from sklearn import svm,tree,naive_bayes
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.dummy import DummyClassifier
 import sys
@@ -28,7 +28,7 @@ THRESHOLD = 80
 # Method for generating feature header
 # Converting the categorical features into dummy variables
 # Returns a list of list
-def genHead(dataDict,ftr):
+def genHead(dataDict, ftr):
     if ftr != 'tags':
         ftrList = [dataDict[gid][ftr].split(',') for gid in dataDict.keys()]
     else:
@@ -45,7 +45,7 @@ def getMasterData(flNm):
     df.reset_index(inplace=True)
     df = df.iloc[np.random.permutation(len(df))]
     df['GID'] = df['GID'].astype(str)
-    df.to_csv("/tmp/tmp.csv",index=False)
+
     df.index = df['GID']
     if 'URL' in df.columns: 
         df.drop(['GID','URL','Album'],1,inplace=True)
@@ -55,11 +55,11 @@ def getMasterData(flNm):
     return df.to_dict(orient='index')
 
 # Flatten out the list of lists p
-def genAttribsHead(data,ftrList):
+def genAttribsHead(data, ftrList):
     return [attrib for ftr in ftrList for attrib in genHead(data,ftr)]
 
 # Filling in 0's and 1's for the dummy variables.
-def createDataFlDict(data,allAttribs,threshold,dataMode ='Train',writeTempFiles=False,ftrs = ['SPECIES','SEX','AGE','QUALITY','VIEW_POINT','INDIVIDUAL_NAME']):
+def createDataFlDict(data, allAttribs, threshold, dataMode ='Train', writeTempFiles=False, ftrs = ['SPECIES','SEX','AGE','QUALITY','VIEW_POINT','INDIVIDUAL_NAME']):
     gidAttribDict = {}
 
     if dataMode == 'Train':
@@ -94,7 +94,7 @@ def createDataFlDict(data,allAttribs,threshold,dataMode ='Train',writeTempFiles=
     return gidAttribDict
 
 
-def getLearningAlgo(methodName,kwargs):
+def getLearningAlgo(methodName, kwargs):
     if methodName == 'logistic':
         return LogisticRegression(**kwargs)
     elif methodName == 'svm':
@@ -128,7 +128,7 @@ def getLearningAlgo(methodName,kwargs):
             print(inst.args)
             sys.exit()
 
-def trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit):
+def trainTestSplitter(gidAttribDict, allAttribs, trainTestSplit):
     df = pd.DataFrame(gidAttribDict).transpose()
     df = df[allAttribs + ["TARGET"]] # Rearranging the order of the columns
 
@@ -137,7 +137,7 @@ def trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit):
     return train_test_split(df, targetVar, test_size=trainTestSplit,random_state=0)
 
 # Returns a classifier object of Type ClassifierCapsuleClass
-def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,kwargs=None):
+def buildBinClassifier(data, allAttribs, trainTestSplit, threshold, methodName, kwargs=None):
     gidAttribDict = createDataFlDict(data,allAttribs,threshold) # binaryClf attribute in createDataFlDict will be True here
 
     train_x, test_x, train_y, test_y = trainTestSplitter(gidAttribDict, allAttribs, trainTestSplit) # new statement
@@ -150,7 +150,7 @@ def buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,kwarg
 
 # Generating attributes, converting categorical attributes into discrete binary output.
 # For instance - SPECIES : Zebra will be converted into (Zebra: 1, Giraffe: 0 .. )
-def genAllAttribs(masterDataFl,constraint,infoGainFlNm=None):
+def genAllAttribs(masterDataFl, constraint, infoGainFlNm=None):
     data = getMasterData(masterDataFl)
     if constraint == "sparse":
         ftrList = ['SPECIES','SEX','AGE','QUALITY','VIEW_POINT','INDIVIDUAL_NAME','CONTRIBUTOR','tags'] 
@@ -171,7 +171,7 @@ def genAllAttribs(masterDataFl,constraint,infoGainFlNm=None):
     return allAttribs
 
 
-def buildRegrMod(train_data_fl,allAttribs,trainTestSplit,methodName,kwargs=None):
+def buildRegrMod(train_data_fl, allAttribs, trainTestSplit, methodName, kwargs=None):
     train_data= getMasterData(train_data_fl)
     gidAttribDict = createDataFlDict(train_data,allAttribs,80,dataMode='regression')
 
@@ -199,3 +199,5 @@ def buildRegrMod(train_data_fl,allAttribs,trainTestSplit,methodName,kwargs=None)
     rgrObj = RgrClass.RegressionCapsule(rgr,methodName,trainTestSplit,train_x,train_y,test_x,test_y)
 
     return rgrObj
+
+

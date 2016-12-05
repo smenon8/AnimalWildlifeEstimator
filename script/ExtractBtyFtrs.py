@@ -1,9 +1,18 @@
+# python-3
+# Author name: Sreejith Menon (smenon8@uic.edu)
+# Creation date: December 01, 2016
+# This script contains method to generate all beauty related features from images. 
+# Very expensive when run serially.
+
 from skimage import io, color, feature, transform
 import numpy as np
 import time
 import json
 from BuildConsolidatedFeaturesFile import printCompltnPercent
 import math
+import pandas as pd
+from datetime import datetime
+
 
 final_ftr_obj = {}
 def calc_contrast(r, g, b):
@@ -61,6 +70,31 @@ def extr_beauty_ftrs(gid):
 	ftrs.update(get_spat_arrng_ftrs(grayImg))
 	final_ftr_obj[gid] = ftrs
 	
+	return None
+
+def createFtrFile(result_file, exif_file, out_fl):
+	with open(exif_file,"r") as inpJsonFl:
+		exifJsonObj = json.load(inpJsonFl)
+
+	resultsDf = pd.DataFrame.from_csv(result_file)
+	resultsDf = pd.DataFrame(resultsDf['Proportion']) 
+	resultsDict = resultsDf.to_dict(orient="index")
+
+	expt2Results = {}
+
+	for gid in resultsDict:
+	    expt2Results[str(gid)] = exifJsonObj[str(gid)]
+	    expt2Results[str(gid)].update(resultsDict[gid])
+
+	expt2ResultsDf = pd.DataFrame(expt2Results).transpose()
+
+	expt2ResultsDf['datetime'] = expt2ResultsDf['datetime'].apply(lambda x : datetime.strptime(x,'%Y-%m-%d %H:%M:%S'))
+	expt2ResultsDf['day'] = expt2ResultsDf.datetime.apply(lambda x : x.day)
+	expt2ResultsDf['hour'] = expt2ResultsDf.datetime.apply(lambda x : x.hour)
+	expt2ResultsDf.drop(['size','datetime'],1,inplace=True)
+	
+	expt2ResultsDf.to_csv(out_fl)
+
 	return None
 
 def __main__():

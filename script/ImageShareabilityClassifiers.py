@@ -28,6 +28,8 @@ General Description:
 """
 
 import ClassiferHelperAPI as CH
+import ClassifierCapsuleClass as CLF
+import RegressionCapsuleClass as RGR
 import importlib
 import numpy as np
 import pandas as pd
@@ -41,79 +43,114 @@ cf.go_online()
 
 minSplit = 0.2
 maxSplit = 0.6
-
-data= CH.getMasterData("../FinalResults/ImgShrRnkListWithTags.csv")  
 methods = ['dummy','bayesian','logistic','svm','dtree','random_forests','ada_boost']
 
 kwargsDict = {'dummy' : {'strategy' : 'most_frequent'},
-            'bayesian' : {'fit_prior' : True},
-            'logistic' : {'penalty' : 'l2'},
-            'svm' : {'kernel' : 'rbf','probability' : True},
-            'dtree' : {'criterion' : 'entropy'},
-            'random_forests' : {'n_estimators' : 10 },
-            'ada_boost' : {'n_estimators' : 50 }}
+                'bayesian' : {'fit_prior' : True},
+                'logistic' : {'penalty' : 'l2'},
+                'svm' : {'kernel' : 'rbf','probability' : True},
+                'dtree' : {'criterion' : 'entropy'},
+                'random_forests' : {'n_estimators' : 10 },
+                'ada_boost' : {'n_estimators' : 50 }}
 
-for attribsType in ['non_sparse','non_zero','abv_mean']:
-    print("Classifier training started for %s" %attribsType)  
+def eval_clf_perfs_bag_of_words():
+    minSplit = 0.2
+    maxSplit = 0.6
 
-    allAttribs = CH.genAllAttribs("../FinalResults/ImgShrRnkListWithTags.csv",attribsType,"../data/infoGainsExpt2.csv")
-    codes = []
-    classifiers = []
-    for i in np.arange(minSplit,maxSplit,0.1): # i is the test percent
-        clfForRoc = []
-        for method in methods:
-            clfObj = CH.buildBinClassifier(data,allAttribs,1-i,80,method,kwargsDict[method])
-            clfObj.runClf()
-            classifiers.append(clfObj)
-            clfForRoc.append(clfObj)
+    data= CH.getMasterData("../FinalResults/ImgShrRnkListWithTags.csv")  
 
-        # logic for roc curve:
-        traces = []
-        for clfObj in clfForRoc:
-            fpr,tpr,_ = clfObj.roccurve
+    
+    for attribsType in ['non_sparse','non_zero','abv_mean']:
+        print("Classifier training started for %s" %attribsType)  
 
-            trace = go.Scatter(
-                    x = fpr,
-                    y = tpr,
-                    name = clfObj.methodName
-                )
-            traces.append(trace)
-        layout = dict(
-                xaxis = dict(title='False Positive Rate'),
-                yaxis = dict(title='True Positive Rate'),
-                title = str('Train-Test Split Ratio: %f' %i)
-                )
-        fig = dict(data=traces,layout=layout)
-        codes.append(py.iplot(fig,filename="ROC_curve_%s_%i" %(attribsType,int(i*100))).embed_code)
+        allAttribs = CH.genAllAttribs("../FinalResults/ImgShrRnkListWithTags.csv",attribsType,"../data/infoGainsExpt2.csv")
+        codes = []
+        classifiers = []
+        for i in np.arange(minSplit,maxSplit,0.1): # i is the test percent
+            clfForRoc = []
+            for method in methods:
+                clfObj = CH.buildBinClassifier(data,allAttribs,1-i,80,method,kwargsDict[method])
+                clfObj.runClf()
+                classifiers.append(clfObj)
+                clfForRoc.append(clfObj)
 
-    flNm = "../ClassifierResults/ROC_curve_%s.html" %attribsType
-    with open(flNm,"w") as perf:
-        perf.write(HT.h1("ROC curves of Classifiers with %s Attributes." %attribsType))
-        for row in codes:
-            perf.write(HT.HTML(row))
+            # logic for roc curve:
+            traces = []
+            for clfObj in clfForRoc:
+                fpr,tpr,_ = clfObj.roccurve
 
+                trace = go.Scatter(
+                        x = fpr,
+                        y = tpr,
+                        name = clfObj.methodName
+                    )
+                traces.append(trace)
+            layout = dict(
+                    xaxis = dict(title='False Positive Rate'),
+                    yaxis = dict(title='True Positive Rate'),
+                    title = str('Train-Test Split Ratio: %f' %i)
+                    )
+            fig = dict(data=traces,layout=layout)
+            codes.append(py.iplot(fig,filename="ROC_curve_%s_%i" %(attribsType,int(i*100))).embed_code)
+
+        flNm = "../ClassifierResults/ROC_curve_%s.html" %attribsType
+        with open(flNm,"w") as perf:
+            perf.write(HT.h1("ROC curves of Classifiers with %s Attributes." %attribsType))
+            for row in codes:
+                perf.write(HT.HTML(row))
+        
+        gen_graphics_clf_perf(classifiers, attribsType)
+        
+        print("Classifier training complete for %s" %attribsType)
+    print()
+
+def gen_graphics_clf_perf(classifiers, suffix):
     printableClfs = []
     for clf in classifiers:
         printableClfs.append(dict(literal_eval(clf.__str__())))
-        
+                
     df = pd.DataFrame(printableClfs)
     df = df[['methodName','splitPercent','accScore','precision','recall','f1Score','auc','sqerr']]
     df.columns = ['Classifier','Train-Test Split','Accuracy','Precision','Recall','F1 score','AUC','Squared Error']
-    df.to_csv("../ClassifierResults/extrmClfMetrics_%s.csv" %attribsType,index=False)
+    df.to_csv("../ClassifierResults/extrmClfMetrics_%s.csv" %suffix,index=False)
 
     iFrameBlock = []
     for i in np.arange(minSplit,maxSplit,0.1):
         df1 = df[(df['Train-Test Split']==1-i)]
         df1.index = df1['Classifier']
         df1 = df1[['Accuracy','Precision','Recall','F1 score','AUC','Squared Error']].transpose()
-        fig = df1.iplot(kind='bar',filename=str('Train-Test_Split_Ratio %s %f' %(attribsType,i)),title=str('Train-Test Split Ratio: %f' %i))
+        fig = df1.iplot(kind='bar',filename=str('Train-Test_Split_Ratio %s %f' %(suffix,1-i)),title=str('Train-Test Split Ratio: %f' %i))
         iFrameBlock.append(fig.embed_code)
 
-    flNm = "../ClassifierResults/performanceComparison_%s.html" %attribsType
+    flNm = "../ClassifierResults/performanceComparison_%s.html" %suffix
     with open(flNm,"w") as perf:
-        perf.write(HT.h1("Performance Comparisons of Classifiers with %s Attributes." %attribsType))
+        perf.write(HT.h1("Performance Comparisons of Classifiers with %s Attributes." %suffix))
         for row in iFrameBlock:
             perf.write(HT.HTML(row))
-    
-    print("Classifier training complete for %s" %attribsType)
-    print()
+
+def eval_clf_perfs_classic():
+    inpData = pd.DataFrame.from_csv("../data/BeautyFtrVector_GZC.csv")
+
+    inpData = inpData[(inpData['Proportion'] >= 80.0) | (inpData['Proportion'] <= 20.0)]
+    inpData['TARGET'] = np.where(inpData['Proportion'] >= 80.0, 1, 0)
+    inpData.drop(['Proportion'],1,inplace=True)
+
+    y = inpData['TARGET']
+    inpData.drop(['TARGET'],1,inplace=True)
+    classifiers = []
+    for i in np.arange(minSplit,maxSplit,0.1): # i is the test percent
+        train_x, test_x, train_y, test_y = CH.train_test_split(inpData, y, test_size = i)
+
+        for method in methods:
+            clf = CH.getLearningAlgo(method, kwargsDict[method])
+            clfObj = CLF.ClassifierCapsule(clf,method,1-i,train_x,train_y,test_x,test_y)
+            clfObj.runClf()
+            classifiers.append(clfObj)
+
+    gen_graphics_clf_perf(classifiers, "beauty")
+
+def __main__():
+    eval_clf_perfs_classic()
+
+if __name__ == "__main__":
+    __main__()

@@ -5,7 +5,7 @@
 
 class BaseCapsule:
 	def __init__(self,clfObj,methodName,splitPercent,train_x,train_y,test_x,test_y):
-		self.clfObj = clfObjo
+		self.clfObj = clfObj
 		self.methodName = methodName
 		self.splitPercent = splitPercent
 		self.train_x = train_x

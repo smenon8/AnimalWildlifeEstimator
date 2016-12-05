@@ -24,7 +24,8 @@ class RegressionCapsule(BaseCapsule):
 		df = pd.DataFrame(predDict,index=['Predictions']).transpose()
 
 		self.test_x.drop(self.test_x.index[idxs], inplace=True)
-		if self.test_y != None:
+
+		if not self.test_y.empty:
 			self.test_y.drop(self.test_y.index[idxs], inplace=True)
 		df.drop(df.index[idxs], inplace=True)
 		
