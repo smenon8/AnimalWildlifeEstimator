@@ -14,24 +14,23 @@ The project broadly attempts to build a population estimation model of a particu
 * Completely automated the process for selection of images and creation of Amazon Mechanical Turk jobs.
 * Completely automated `deployment, approval and download` for all the mechanical turk jobs.
 * Completely automated `parsing of .results file` from the mechanical turk engine and return a python object/csv/json ready for processing.
-* API available for both single as well multiple feature extraction for an images or a list of images (can be specified as a csv).
-* API available to join features with the results and return python data-frames/csv/json for statistical calculation.
-* API available for generating `rank list of most shared pictures`.
-* API available for generating `rank list by share proportion based on ecological features` like species, sex, age, view_point of the animal.
-* API available for generating `rank lists for a specific feature` across all albums or individual albums (number of shares for zebra in a particular album versus number of shares for giraffes etc.)
-* API available to append the results from `Amazon Mechanical Turk` API with tags from Microsoft Image Tagging API and generate a rank list of most shared tags.
+* Methods available for both single as well multiple feature extraction for an images or a list of images (can be specified as a csv).
+* Methods available to join features with the results and return python data-frames/csv/json for statistical calculation.
+* Methods available for generating `rank list of most shared pictures`.
+* Methods available for generating `rank list by share proportion based on ecological features` like species, sex, age, view_point of the animal.
+* Methods available for generating `rank lists for a specific feature` across all albums or individual albums (number of shares for zebra in a particular album versus number of shares for giraffes etc.)
+* Methods available to append the results from `Amazon Mechanical Turk` API with tags from Microsoft Image Tagging API and generate a rank list of most shared tags.
 * Added functionality to generate reports of all statistics in HTML format with bar charts wherever necessary.
-* API available for data prepartion for applying classifiers using the `Bag-of-words` methodology.
-* API available for building learning models like `Logistic Regression`, `Support Vector Machines`, `Decision Trees` and `Random Forests` and returning the predictions as well as performance metrics for the classifier.
-* API available for visualizing the shared/not shared pictures on map and create `clusters` of share-no share homogenous region.
-* API available for generating `heat maps` of the region of shared photos and not shared photos
-* API available for applying mark-recapture and calculate the `Petersen-Lincoln Index` on the GZC data-set.
-* API available for applying mark-recapture and calculate the `Petersen-Lincoln Index` on the shared GZC data-set obtained from the `Mechanical Turk` experiments. 
-* API available for extracting images from Flickr when the tags and text are specified.
-* API available for parallel download of images from Flickr and concurrent execution of image detection tasks on IBEIS.
-* API available for directly predicting the share proportion using different regression techniques. Regression  methods used include `Linear`, `Ridge`, `Lasso`, `SVR` etc.
+* Methods available for data prepartion for applying classifiers using the `Bag-of-words` methodology.
+* Methods available for building learning models like `Logistic Regression`, `Support Vector Machines`, `Decision Trees` and `Random Forests` and returning the predictions as well as performance metrics for the classifier.
+* Methods available for visualizing the shared/not shared pictures on map and create `clusters` of share-no share homogenous region.
+* Methods available for generating `heat maps` of the region of shared photos and not shared photos
+* Methods available for applying mark-recapture and calculate the `Petersen-Lincoln Index` on the GZC data-set.
+* Methods available for applying mark-recapture and calculate the `Petersen-Lincoln Index` on the shared GZC data-set obtained from the `Mechanical Turk` experiments. 
+* Methods available for extracting images from Flickr when the tags and text are specified.
+* Methods available for parallel download of images from Flickr and concurrent execution of image detection tasks on IBEIS.
+* Methods available for extracting beauty features from images. *This is a image processing module currently being developed using scikit-image library.* 
+* Methods available for directly predicting the share proportion using different regression techniques. Regression  methods used include `Linear`, `Ridge`, `Lasso`, `Elastic Nets`, `SVR` etc.
 * Methods to estimate population using synthetic albums which are formed using the predicted shared data. Mark-Recapture models are then applied to this predicted data, to study effects of individual photographers in the population estimation steps. 
 * The syntenthic experiments use both probability scores generated from the classifiers as well as the likelihood of picture shared generated by regression algorithms to rank images. 
 * Synthetic experiments simulate population estimates when every contributor shares their top k images, bottom k images, random k images and image above a certain likelihood threshold. 
-
-
