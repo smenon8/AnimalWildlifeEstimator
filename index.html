@@ -56,6 +56,7 @@
       <li>Folium</li>
       <li>sklearn</li>
       <li>sklearn-metrics</li>
+      <li>sk-image</li>
       <li>Amazon Mechanical Turk</li>
       <li>Bash</li>
       <li>Windows Batch</li>
@@ -66,27 +67,33 @@
       <a id="project-overview" class="anchor" href="#project-overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Project Progress</a></h3>
 
       <ul>
-      <li>API available for extracting features of images and annotations from IBEIS.</li>
+      <li>Methods available for extracting features of images and annotations from IBEIS.</li>
       <li>Completely automated the process for selection of images and creation of Amazon Mechanical Turk jobs. </li>
       <li>Completely automated deployment, approval and download for all the mechanical turk jobs.</li>
       <li>Completely automated parsing of .results file from the mechanical turk engine and return a python object/csv/json ready for processing.</li>
-      <li>API available for both single as well multiple feature extraction for an images or a list of images (can be specified as a csv).</li>
-      <li>API available to join features with the results and return python data-frames/csv/json for statistical calculation.</li>
-      <li>API available for generating rank list of most shared pictures.</li>
-      <li>API available for generating rank list by share proportion based on ecological features like species, sex, age, view_point of the animal.</li>
-      <li>API available for generating rank lists for a specific feature across all albums or individual albums (number of shares for zebra in a particular album versus number of shares for giraffes etc.)</li>
-      <li>API available to append the results from Amazon Mechanical Turk API with tags from Microsoft Image Tagging API and generate a rank list of most shared tags.</li>
+      <li>Methods available for both single as well multiple feature extraction for an images or a list of images (can be specified as a csv).</li>
+      <li>Methods available to join features with the results and return python data-frames/csv/json for statistical calculation.</li>
+      <li>Methods available for generating rank list of most shared pictures.</li>
+      <li>Methods available for generating rank list by share proportion based on ecological features like species, sex, age, view_point of the animal.</li>
+      <li>Methods available for generating rank lists for a specific feature across all albums or individual albums (number of shares for zebra in a particular album versus number of shares for giraffes etc.)</li>
+      <li>Methods available to append the results from Amazon Mechanical Turk Methods with tags from Microsoft Image Tagging API and generate a rank list of most shared tags.</li>
       <li>Added functionality to generate reports of all statistics in HTML format with bar charts wherever necessary.</li>
-      <li>API available for data prepartion for applying classifiers using the Bag-of-words methodology. </li>
-      <li>API available for performing feature selection by calculating information gain of attributes with resepct to the target variable</li>
-      <li>API available for building learning models like Logistic Regression, Support Vector Machines, Decision Trees and Random Forests and returning the predictions as well as performance metrics for the classifier. </li>
-      <li>API available for visualizing the shared/not shared pictures on map and create clusters of share-no share homogenous region.</li>
-      <li>API available for generating heat maps of the region of shared photos and not shared photos</li>
-      <li>API available for applying mark-recapture and calculate the Petersen-Lincoln Index on the GZC data-set.</li>
-      <li>API available for applying mark-recapture and calculate the Petersen-Lincoln Index on the shared GZC data-set obtained from the Mechanical Turk experiments.</li>
-      <li>API available for extracting images from Flickr when the tags and text are specified.</li> 
-      <li>API available for parallel download of images from Flickr and concurrent execution of image detection tasks on IBEIS. </li>
+      <li>Methods available for data prepartion for applying classifiers using the Bag-of-words methodology. </li>
+      <li>Methods available for performing feature selection by calculating information gain of attributes with resepct to the target variable</li>
+      <li>Methods available for building learning models like Logistic Regression, Support Vector Machines, Decision Trees and Random Forests and returning the predictions as well as performance metrics for the classifier. </li>
+      <li>Methods available for visualizing the shared/not shared pictures on map and create clusters of share-no share homogenous region.</li>
+      <li>Methods available for generating heat maps of the region of shared photos and not shared photos</li>
+      <li>Methods available for applying mark-recapture and calculate the Petersen-Lincoln Index on the GZC data-set.</li>
+      <li>Methods available for applying mark-recapture and calculate the Petersen-Lincoln Index on the shared GZC data-set obtained from the Mechanical Turk experiments.</li>
+      <li>Methods available for extracting images from Flickr when the tags and text are specified.</li> 
+      <li>Methods available for parallel download of images from Flickr and concurrent execution of image detection tasks on IBEIS. </li>
+      <li>Methods available for extracting beauty features from images. This is a image processing module currently being developed using scikit-image library.</li>
+      <li>Methods available for directly predicting the share proportion using different regression techniques. Regression methods used include Linear, Ridge, Lasso, Elastic Nets, SVR etc.</li>
+      <li>Methods to estimate population using synthetic albums which are formed using the predicted shared data. Mark-Recapture models are then applied to this predicted data, to study effects of individual photographers in the population estimation steps. </li>
+      <li>The syntenthic experiments use both probability scores generated from the classifiers as well as the likelihood of picture shared generated by regression algorithms to rank images. </li>
+      <li>Synthetic experiments simulate population estimates when every contributor shares their top k images, bottom k images, random k images and image above a certain likelihood threshold. </li>
       </ul>
+      
       
       <h3>
       <a id="script-index" class="anchor" href="#script-index" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Available Scripts/Notebooks Index</a></h3>
