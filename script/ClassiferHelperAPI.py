@@ -121,6 +121,8 @@ def getLearningAlgo(methodName, kwargs):
         return Ridge(**kwargs)
     elif methodName == 'lasso':
         return Lasso(**kwargs)
+    elif methodName == 'elastic_net':
+        return ElasticNet(**kwargs)
     else:
         try:
             raise Exception('Exception : Classifier Method %s Unknown' %methodName)

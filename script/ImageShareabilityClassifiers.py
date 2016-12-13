@@ -149,6 +149,8 @@ def eval_clf_perfs_classic():
 
     gen_graphics_clf_perf(classifiers, "beauty")
 
+    print("Classifier training complete for beauty features.")
+
 def __main__():
     eval_clf_perfs_classic()
 

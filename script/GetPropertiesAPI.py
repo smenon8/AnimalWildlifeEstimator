@@ -95,5 +95,11 @@ def __main__():
     print(getExifData(1,'lon'))
 
 if __name__ == "__main__":
-   __main__()
-   #pass
+    # __main__()
+    #pass
+    # gidList = "6a92790b-1c2a-301c-6e7d-def645dca1f5"
+    gidList = 1
+    response = requests.get(baseurl + '/api/image/' + "imageset/uuid" +'/?gid_list='+ str(gidList))
+    jsonObj = response.json()
+
+    print(jsonObj)

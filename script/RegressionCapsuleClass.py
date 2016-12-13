@@ -9,10 +9,13 @@ import pandas as pd
 class RegressionCapsule(BaseCapsule):
 	def __init__(self,clfObj,methodName,splitPercent,train_x,train_y,test_x,test_y):
 		BaseCapsule.__init__(self,clfObj,methodName,splitPercent,train_x,train_y,test_x,test_y)
+		self.residues = None
 
 	def evalClassifierPerf(self):
 		self.abserr = mean_absolute_error(self.test_y,self.preds)
 		self.sqerr = mean_squared_error(self.test_y,self.preds)
+		if not self.test_y.empty:
+			self.residues = [list(self.test_y)[i] - self.preds[i] for i in range(len(self.preds))]
 
 	def removeOutliers(self):
 		idxs = [i for i in range(len(self.preds)) if self.preds[i] > 100 or self.preds[i] < 0]
