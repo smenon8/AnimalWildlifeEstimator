@@ -19,6 +19,9 @@ importlib.reload(CH)
 import htmltag as HT
 import random
 import argparse
+import numpy as np
+import ClassifierCapsuleClass as ClfCls
+import RegressionCapsuleClass as RgrCls
 
 inExifFl,inGidAidMapFl,inAidFtrFl = "../data/imgs_exif_data_full.json","../data/full_gid_aid_map.json","../data/full_aid_features.json"
 layout = go.Layout(
@@ -45,25 +48,53 @@ layout = go.Layout(
         )
     )
 
+def trainLearningObj(train_data_fl, test_data_fl, methodName, attribType, infoGainFl, methArgs, isClf = True):
+    if attribType == 'beauty':
+        train_x = pd.DataFrame.from_csv(train_data_fl)
+        
+        if isClf:
+            train_x = train_x[(train_x['Proportion'] >= 80.0) | (train_x['Proportion'] <= 20.0)]
+            train_x['TARGET'] = np.where(train_x['Proportion'] >= 80.0, 1, 0)
+
+            train_y = train_x['TARGET']
+            train_x.drop(['Proportion','TARGET'],1,inplace=True)        
+            clf = CH.getLearningAlgo(methodName,methArgs.get(methodName,None))
+            lObj = ClfCls.ClassifierCapsule(clf,methodName,0.0,train_x,train_y,None,None)
+        else:
+            train_y = train_x['Proportion']
+            train_x.drop(['Proportion'],1,inplace=True)
+
+            rgr = CH.getLearningAlgo(methodName,methArgs.get(methodName,None))
+            lObj = RgrCls.RegressionCapsule(rgr,methodName,0.0,train_x,train_y,None,None)
+        testDf = pd.DataFrame.from_csv(test_data_fl)
+    
+    else:
+        allAttribs = CH.genAllAttribs(train_data_fl,attribType,infoGainFl)
+        
+        # Create testing data
+        test_data= CH.getMasterData(test_data_fl)
+        testObj = CH.createDataFlDict(test_data,allAttribs,0.8,'Test')
+
+        testDf =  pd.DataFrame(testObj).transpose()
+
+        if isClf:
+            train_data= CH.getMasterData(train_data_fl)
+            # Build classifier
+            lObj = CH.buildBinClassifier(train_data,allAttribs,0.0,80,methodName,methArgs.get(methodName,None))
+        else:
+            lObj = CH.buildRegrMod(train_data_fl,allAttribs,0.0,methodName,kwargs=methArgs.get(methodName,None))
+        
+        # Set testing data and run classifier
+    testDataFeatures = testDf[lObj.train_x.columns]
+    lObj.setTestAttrib('test_x',testDataFeatures)
+    
+    return lObj
+
 # This method is a wrapper method to build and run classifiers using the training and the testing data respecitively. 
 # There are no checks to determine if there is any overlap between training and testing data files.
-def trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl=None,methArgs=None):
+def trainTestClf(train_data_fl, test_data_fl, clf, attribType, infoGainFl=None, methArgs=None):
     # Create training data
-    allAttribs = CH.genAllAttribs(train_data_fl,attribType,infoGainFl)
-    train_data= CH.getMasterData(train_data_fl)
-    
-    # Create testing data
-    test_data= CH.getMasterData(test_data_fl)
-    testObj = CH.createDataFlDict(test_data,allAttribs,0.8,'Test')
-
-    testDf =  pd.DataFrame(testObj).transpose()
-
-    # Build classifier
-    clfObj = CH.buildBinClassifier(train_data,allAttribs,0.0,80,clf,methArgs.get(clf,None))
-
-    # Set testing data and run classifier
-    testDataFeatures = testDf[clfObj.train_x.columns]
-    clfObj.setTestAttrib('test_x',testDataFeatures)
+    clfObj = trainLearningObj(train_data_fl, test_data_fl, clf, attribType, infoGainFl, methArgs, True)
     clfObj.runClf(computeMetrics=False)
 
     prediction_results = {list(clfObj.test_x.index)[i] : clfObj.preds[i] for i in range(len(clfObj.test_x.index))}    
@@ -76,21 +107,11 @@ def biasedCoinFlipper(p):
 
 # This method is a wrapper method to build and run regressors using the training and the testing data respecitively. 
 # There are no checks to determine if there is any overlap between training and testing data files.
-def trainTestRgrs(train_data_fl,test_data_fl,methodName,attribType,infoGainFl=None,methArgs=None):
-    allAttribs = CH.genAllAttribs(train_data_fl,attribType,infoGainFl)
-    
-    test_data= CH.getMasterData(test_data_fl)
-    testObj = CH.createDataFlDict(test_data,allAttribs,0.8,'Test')
-    
-    testDf =  pd.DataFrame(testObj).transpose()
-
-    rgrObj = CH.buildRegrMod(train_data_fl,allAttribs,0.0,methodName,kwargs=methArgs.get(methodName,None))
-
-    testDataFeatures = testDf[rgrObj.train_x.columns]
-    rgrObj.setTestAttrib('test_x',testDataFeatures)
+def trainTestRgrs(train_data_fl, test_data_fl, methodName, attribType, infoGainFl=None, methArgs=None):
+    rgrObj= trainLearningObj(train_data_fl, test_data_fl, methodName, attribType, infoGainFl, methArgs, False)
     rgrObj.runRgr(computeMetrics=False, removeOutliers=True)
     
-    prediction_results = {list(rgrObj.test_x.index)[i] : rgrObj.preds[i] for i in range(len(rgrObj.test_x.index))}    
+    prediction_results = {str(list(rgrObj.test_x.index)[i]) : rgrObj.preds[i] for i in range(len(rgrObj.test_x.index))}    
 
     return rgrObj, prediction_results
 
@@ -216,16 +237,24 @@ def shareAbvThreshold(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,thres
     return estimatePopulation(predictions_k,inExifFl,inGidAidMapFl,inAidFtrFl)
 
 def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs, thresholdMeth = False, randomShare = False):
+    if len(attribTypes) == 1 and attribTypes[0] == 'beauty':
+        train_fl = "../data/BeautyFtrVector_GZC_Expt2.csv"
+        test_fl = "../data/GZC_exifs_beauty_full.csv"
+    else:
+        train_fl = "../FinalResults/ImgShrRnkListWithTags.csv"
+        test_fl = "../data/full_gid_aid_ftr_agg.csv"
+
+    if isClf:
+        trainTestMeth = trainTestClf
+    else:
+        trainTestMeth = trainTestRgrs
+
     for meth in methTypes:
         for attrib in attribTypes:
-            print("Starting to run %s classifer on test data\nAttribute Selection Method : %s" %(meth,attrib))
-            if isClf:
-                trainTestMeth = trainTestClf
-            else:
-                trainTestMeth = trainTestRgrs
+            print("Starting to run %s on test data\nAttribute Selection Method : %s" %(meth,attrib))
 
-            methObj,predResults = trainTestMeth("../FinalResults/ImgShrRnkListWithTags.csv",
-                                "../data/full_gid_aid_ftr_agg.csv",
+            methObj,predResults = trainTestMeth(train_fl,
+                                test_fl,
                                 meth,
                                 attrib,
                                 infoGainFl="../data/infoGainsExpt2.csv",
@@ -297,26 +326,33 @@ def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs, threshold
             outputFile = open(str(flNm+".html"),"w")
             outputFile.write(fullFl)
             outputFile.close()
-            print("Classification testing complete %s : %s" %(meth,attrib))
+            print("Testing complete %s : %s" %(meth,attrib))
             print()
 
-def runSyntheticExptsRgr(inExifFl, inGidAidMapFl, inAidFtrFl, krange, thresholdMeth=False, randomShare=False):
-    rgrTypes = ['linear','ridge','lasso','svr','dtree_regressor']
-    attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
+def runSyntheticExptsRgr(inExifFl, inGidAidMapFl, inAidFtrFl, krange, thresholdMeth=False, randomShare=False, beautyFtrs = False):
+    # rgrTypes = ['linear','ridge','lasso','svr','dtree_regressor']
+    rgrTypes = ['elastic_net']
+    if beautyFtrs:
+        attribTypes = ['beauty']
+    else:
+        attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
 
     regrArgs = {'linear' : {'fit_intercept' : True},
             'ridge' : {'fit_intercept' : True},
             'lasso' : {'fit_intercept' : True},
+            'elastic_net' : {'fit_intercept' : True},
             'svr' : {'fit_intercept' : True},
             'dtree_regressor' : {'fit_intercept' : True}}
 
     runSyntheticExpts(False, rgrTypes, attribTypes, krange, regrArgs, thresholdMeth=thresholdMeth, randomShare=randomShare)
 
 
-def runSyntheticExptsClf(inExifFl, inGidAidMapFl, inAidFtrFl, krange, randomShare=False):
+def runSyntheticExptsClf(inExifFl, inGidAidMapFl, inAidFtrFl, krange, randomShare=False, beautyFtrs = False):
     clfTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
-    clfTypes = ['ada_boost']
-    attribTypes = ['non_sparse','non_zero','abv_mean']
+    if beautyFtrs:
+        attribTypes = ['beauty']
+    else:
+        attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
     methArgs = {'dummy' : {'strategy' : 'most_frequent'},
             'bayesian' : {'fit_prior' : True},
             'logistic' : {'penalty' : 'l2'},
@@ -331,8 +367,9 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
     if clfOrRgr == 'clf':
         algTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
     else:
-        algTypes = ['linear','ridge','lasso','svr','dtree_regressor']
-    attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
+        algTypes = ['linear','ridge','lasso','svr','dtree_regressor','elastic_net']
+    # attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
+    attribTypes = ['beauty']
     flNms = [str(alg + "_" + attrib) for alg in algTypes for attrib in attribTypes]
 
     if thresholdMeth:
@@ -351,11 +388,11 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
             else:
                 titleSuffix = "regressors random choices"
         else:
-            suffix = "_kSharesbottom.csv"
+            suffix = "_kShares.csv"
             if clfOrRgr == 'clf':
                 titleSuffix = "classifiers top k choices"
             else:
-                titleSuffix = "regressors bottom k choices"
+                titleSuffix = "regressors top k choices"
 
     df = pd.DataFrame.from_csv(str("../FinalResults/"+flNms[0]+suffix)).reset_index()
     df.columns = list(map(lambda x : str(x + "_" + flNms[0]) if x != hdr else x,list(df.columns)))
@@ -378,6 +415,7 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
     figs=[]
     errorCols = [col for col in df.columns if 'err' in col]
     df = df[errorCols]
+    return df, titleSuffix
 
     for alg in algTypes:
         algCol = [col for col in df.columns if alg in col]
@@ -389,7 +427,7 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
         attribCol = [col for col in df.columns if attrib in col]
         attribDf = df[attribCol]
         titleAttrib = "All %s %s" %(attrib,titleSuffix)
-        figs.append(algDf.iplot(kind='line',title=titleAttrib))
+        figs.append(attribDf.iplot(kind='line',title=titleAttrib))
 
     figCodes = [fig.embed_code for fig in figs]
     return figCodes
@@ -440,28 +478,35 @@ def __main__():
     parser.add_argument('-cr','--clfOrRgr', help='Classifier method or regressor to be used', required=True)
     parser.add_argument('-t','--threshold', help='Threshold method, if set will be used', required=False)
     parser.add_argument('-r','--random', help='Share any random images, if set will be used', required=False)
+    parser.add_argument('-b','--beauty', help='Use only the beauty features, if set will be used', required=False)
+
     args = vars(parser.parse_args())
+    if args["beauty"] != None:
+        beauty = True
+    else:
+        beauty = False
 
     if args["clfOrRgr"] == 'clf' and args["random"] != None:
         print("Running classifiers with random image selections")
-        runSyntheticExptsClf(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,75),randomShare=True)
+        runSyntheticExptsClf(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,75),randomShare=True,beautyFtrs=beauty)
 
     if args["clfOrRgr"] == 'clf' and args["random"] == None:
         print("Running classifiers with top k image selections")
-        runSyntheticExptsClf(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,75))
+        runSyntheticExptsClf(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,75),beautyFtrs=beauty)
 
     if args["clfOrRgr"] == 'rgr' and args["random"] != None:
         print("Running regressors with random image selections")
-        runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,75),randomShare = True)
+        runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,75),randomShare = True,beautyFtrs=beauty)
     
     if args["clfOrRgr"] == 'rgr' and args["random"] == None and args["threshold"] != None:
         print("Running regressors with top image above thresholds")
-        runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,range(40,90,5),thresholdMeth = True)
+        runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,range(40,90,5),thresholdMeth = True,beautyFtrs=beauty)
     
     if args["clfOrRgr"] == 'rgr' and args["random"] == None and args["threshold"] == None:
         print("Running regressors with top k image selections")
-        runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,75),thresholdMeth = False)
+        runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,range(2,75),thresholdMeth = False,beautyFtrs=beauty)
+
+
 
 if __name__ == "__main__":
-    # __main__()
-    pass
+    __main__()
