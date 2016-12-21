@@ -12,9 +12,9 @@ from BuildConsolidatedFeaturesFile import printCompltnPercent
 import math
 import pandas as pd
 from datetime import datetime
+import os
 
-
-final_ftr_obj = {}
+final_ftr_obj_global = {}
 def calc_contrast(r, g, b):
 	# y is the luminance
 	y = 0.299 * r + 0.587 * g + 0.114 * b
@@ -55,9 +55,16 @@ def get_arr(imgObj):
 
 	return (first, second, third)
 
-def extr_beauty_ftrs(gid):
-	imgFlNm = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/All_Zebra_Count_Images/%s.jpeg" %gid
+def extr_beauty_ftrs(imgFlNm):
+	# imgFlNm = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/All_Zebra_Count_Images/%s.jpeg" %gid
+	img = os.path.basename(imgFlNm)
+	
 	rgbImg = io.imread(imgFlNm)
+	if len(rgbImg.shape) != 3:
+		print("Invalid image.. Continuing..")
+		final_ftr_obj_global[img] = None
+		return None
+
 	hsvImg = color.rgb2hsv(rgbImg)
 	grayImg = color.rgb2gray(rgbImg)
 
@@ -68,7 +75,8 @@ def extr_beauty_ftrs(gid):
 	ftrs = calc_color_ftrs(hue, saturation, value)
 	ftrs['contrast'] = contrast
 	ftrs.update(get_spat_arrng_ftrs(grayImg))
-	final_ftr_obj[gid] = ftrs
+	
+	final_ftr_obj_global[img] = ftrs
 	
 	return None
 
@@ -98,17 +106,20 @@ def createFtrFile(result_file, exif_file, out_fl):
 	return None
 
 def __main__():
-	gids = [i for i in range(1,9407)]
+	path = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/"
+	with open("../data/fileURLS.dat","r") as urlListFl:
+		urlList = [url for url in urlListFl.read().split("\n")][1001:]
+
+	imgs = [path + os.path.basename(url) for url in urlList]
 
 	start = time.time()
-	for gid in gids:
-		extr_beauty_ftrs(gid)
-		percentComplete = gid * 100 / len(gids)
-		if math.floor(percentComplete) % 2 == 0:
-			printCompltnPercent(percentComplete)
+	for img in imgs:
+		print("Extraction started for %s" %img)
+		extr_beauty_ftrs(img)
+		
 
-	with open("../data/beautyFeatures_GZC.json", "w") as outFl:
-		json.dump(final_ftr_obj, outFl, indent = 4)
+	with open("../data/beautyFeatures_FlickrExtracts_1.json", "w") as outFl:
+		json.dump(final_ftr_obj_global, outFl, indent = 4)
 
 	end = time.time()
 

@@ -403,6 +403,7 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
 
     df.index = df[hdr]
     df.drop([hdr],1,inplace=True)
+    return df, titleSuffix
 
     for col in df.columns:
         if 'all' in col:
