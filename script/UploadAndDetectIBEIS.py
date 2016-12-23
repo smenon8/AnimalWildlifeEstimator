@@ -218,7 +218,7 @@ def run_detection_task(gid):
     # print('\nDeleted aid_list  = %r' % (aid_list, ))
 
 def __main__():
-    gidList = [i for i in range(1,1710)]
+    gidList = [i for i in range(1,201)]
 
     detect = partial(run_detection_task)
 
@@ -232,8 +232,11 @@ if __name__ == "__main__":
     #     flckrImgs = json.load(jsonObj)
 
     # imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/'
-    # gidFlNmDict = {upload(imgPath+img+'.jpg') : img for img in list(flckrImgs.keys())} 
+    # gidFlNmDict = {upload(imgPath+img+'.jpg') : img for img in list(flckrImgs.keys())}  
 
+    # with open("../data/flickr_imgs_gid_flnm_map.json","w") as jsonFl:
+    #     json.dump(gidFlNmDict, jsonFl, indent=4)
+    
     # data_dict = {
     #     'gid_list': [1725],
     # }

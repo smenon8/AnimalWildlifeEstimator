@@ -15,11 +15,13 @@ Functionaties:
 import requests
 import json
 import datetime
+import urllib
 
 ftrNms = {'SPECIES' : 'species_texts', 'AGE' : 'age_months_est', 'INDIVIDUAL_NAME' : 'nids' , 'SEX' : 'sex_texts',
              'EXEMPLAR_FLAG':'exemplar_flags', 'QUALITY' : 'quality_texts', 'VIEW_POINT' : 'yaw_texts'}
 
 baseurl = 'http://lev.cs.rpi.edu:8080/ggr/ia'
+ggr_base = 'http://lev.cs.rpi.edu:8080/ggr/ia'
 
 # Argument : GID of a single image
 # Returns : Corresponding Annotation ID of the GID
@@ -75,6 +77,15 @@ def getAgeFeatureReadableFmt(ageList):
 # Modified to take into consideration daylight saving changes (now uses utcfromtimestamp method)
 def getUnixTimeReadableFmt(unixtm):
     return datetime.datetime.utcfromtimestamp(int(unixtm)).strftime('%Y-%m-%d %H:%M:%S')
+
+# Method for executing GET request for the GGR dataset
+def ggr_get(passthru, arg):
+    url = ggr_base + '?passthru=' + passthru + '&arg' + arg
+    response = requests.get(url)
+
+    return response.json()
+
+ggr_form_arg = lambda x : urllib.parse.quote('annot_uuid_list=') + '[{' + urllib.parse.quote('"__UUID__"') + ':' + urllib.parse.quote('\"%s\"' %x) + '}]'
 
 def __main__():
     for i in range(1,2):
