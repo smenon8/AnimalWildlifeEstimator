@@ -4,6 +4,30 @@
 # Author: Sreejith Menon (smenon8@uic.edu)
 # Script creation date: Sept 30, 2016
 
+# Help for using the script via command line:
+# For running 
+# 1. Population estimation when top/bottom k scored images shared using classifiers with IBIES features: 
+#    python PopulationEstimatorAPI.py -cr clf 
+# 2. Population estimation when random k scored images shared using classifiers with IBIES features: 
+#    python PopulationEstimatorAPI.py -cr clf -r True
+# 3. Population estimation when top/bottom k scored images shared using regressions with IBIES features: 
+#    python PopulationEstimatorAPI.py -cr rgr 
+# 4. Population estimation when random k scored images shared using regressions with IBIES features: 
+#    python PopulationEstimatorAPI.py -cr rgr -r True
+
+# 5. Population estimation when top/bottom k scored images shared using classifiers with beauty features: 
+#    python PopulationEstimatorAPI.py -cr clf -b True
+# 6. Population estimation when random k scored images shared using classifiers with beauty features: 
+#    python PopulationEstimatorAPI.py -cr clf -r True -b True
+# 7. Population estimation when top/bottom k scored images shared using regressions with beauty features: 
+#    python PopulationEstimatorAPI.py -cr rgr -b True
+# 8. Population estimation when random k scored images shared using classifiers with beauty features: 
+#    python PopulationEstimatorAPI.py -cr rgr -r True -b True
+
+# 9. Population estimation when images above a certain threshold are shared using regressions with IBEIS features: 
+#    python PopulationEstimatorAPI.py -cr clf -t True
+# 10. Population estimation when images above a certain threshold are shared using regressions with beauty features: 
+#    python PopulationEstimatorAPI.py -cr clf -t True -b True
 
 import MarkRecapHelper as MR
 import pandas as pd
@@ -338,8 +362,7 @@ def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs, threshold
             print()
 
 def runSyntheticExptsRgr(inExifFl, inGidAidMapFl, inAidFtrFl, krange, thresholdMeth=False, randomShare=False, beautyFtrs = False):
-    # rgrTypes = ['linear','ridge','lasso','svr','dtree_regressor']
-    rgrTypes = ['elastic_net']
+    rgrTypes = ['linear', 'ridge', 'lasso', 'svr', 'dtree_regressor', 'elastic_net']
     if beautyFtrs:
         attribTypes = ['beauty']
     else:
@@ -356,11 +379,13 @@ def runSyntheticExptsRgr(inExifFl, inGidAidMapFl, inAidFtrFl, krange, thresholdM
 
 
 def runSyntheticExptsClf(inExifFl, inGidAidMapFl, inAidFtrFl, krange, randomShare=False, beautyFtrs = False):
-    clfTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
+    clfTypes = ['bayesian', 'logistic', 'svm', 'dtree', 'random_forests', 'ada_boost']
+
     if beautyFtrs:
         attribTypes = ['beauty']
     else:
         attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
+    
     methArgs = {'dummy' : {'strategy' : 'most_frequent'},
             'bayesian' : {'fit_prior' : True},
             'logistic' : {'penalty' : 'l2'},
@@ -376,8 +401,8 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
         algTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
     else:
         algTypes = ['linear','ridge','lasso','svr','dtree_regressor','elastic_net']
-    # attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
-    attribTypes = ['beauty']
+    attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
+    # attribTypes = ['beauty']
     flNms = [str(alg + "_" + attrib) for alg in algTypes for attrib in attribTypes]
 
     if thresholdMeth:
@@ -411,7 +436,7 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
 
     df.index = df[hdr]
     df.drop([hdr],1,inplace=True)
-    return df, titleSuffix
+    
 
     # calculate errors in estimation
     # % error = (predicted - actual) * 100 / actual
@@ -426,7 +451,6 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
     figs=[]
     errorCols = [col for col in df.columns if 'err' in col]
     df = df[errorCols]
-    return df, titleSuffix
 
     for alg in algTypes:
         algCol = [col for col in df.columns if alg in col]
