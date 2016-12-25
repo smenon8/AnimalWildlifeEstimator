@@ -47,6 +47,9 @@ layout = go.Layout(
         color='black')
         )
     )
+g_truth_population_z = 3468
+g_truth_population_g = 177
+g_truth_population_all = 3620
 
 def trainLearningObj(train_data_fl, test_data_fl, methodName, attribType, infoGainFl, methArgs, isClf = True):
     if attribType == 'beauty':
@@ -152,6 +155,11 @@ def estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
                     filterBySpecies='giraffe_masai',
                     shareData='classifier')
     marks_g,recaptures_g,population_g = MR.applyMarkRecap(nidMarkRecapSet)
+
+    # 0 recaptures using Lincoln-Petersen estimates essentially mean an infinite population and hence an approximation to 10x
+    population_z = 10 * g_truth_population_z if population_z == 0 else population_z
+    population_g = 10 * g_truth_population_g if population_g == 0 else population_g
+    population_all = 10 * g_truth_population_all if population_all == 0 else population_all
 
     return {'all' : population_all , 
             'zebras' : population_z , 'giraffes' : population_g}
@@ -405,13 +413,15 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
     df.drop([hdr],1,inplace=True)
     return df, titleSuffix
 
+    # calculate errors in estimation
+    # % error = (predicted - actual) * 100 / actual
     for col in df.columns:
         if 'all' in col:
-            df[str(col+'_err')] = (3620 - df[col]) / 36.20
+            df[str(col+'_err')] = (df[col] - 3620) / 36.20
         elif 'zebras' in col:
-            df[str(col+'_err')] = (3468 - df[col]) / 34.68
+            df[str(col+'_err')] = (df[col] - 3468) / 34.68
         elif 'giraffes' in col:
-            df[str(col+'_err')] = (177 - df[col]) / 1.77
+            df[str(col+'_err')] = (df[col] - 177) / 1.77
 
     figs=[]
     errorCols = [col for col in df.columns if 'err' in col]
