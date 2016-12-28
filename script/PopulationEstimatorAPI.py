@@ -201,7 +201,7 @@ def kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inA
 
     sdCardSorted = {}
     for contrib in sdCards.keys():
-        sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_results.get(x,0),reverse=False)
+        sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_results.get(x,0),reverse=True)
 
     if randomShare:
         for contrib in sdCardSorted.keys():
@@ -237,7 +237,7 @@ def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,g
 
     sdCardSorted = {}
     for contrib in sdCards.keys():
-        sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_probabs.get(x,0),reverse=False)
+        sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_probabs.get(x,0),reverse=True)
 
     if randomShare:
         for contrib in sdCardSorted.keys():
@@ -298,7 +298,7 @@ def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs, threshold
                 if randomShare:
                     flNm = str("../FinalResults/"+ meth + "_" + attrib + "_kSharesRandom")
                 else:
-                    flNm = str("../FinalResults/"+ meth + "_" + attrib + "_bottom_kShares")
+                    flNm = str("../FinalResults/"+ meth + "_" + attrib + "_kShares")
 
             if isClf:
                 predictions = {list(methObj.test_x.index)[i] : methObj.predProbabs[i] for i in range(len(methObj.test_x.index))}
@@ -316,7 +316,7 @@ def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs, threshold
                 if thresholdMeth:
                     hdr = "Population Estimates when contributors share all images above threshold using %s and attribute selection method %s" %(meth,attrib)
                 else:
-                    hdr = "Population Estimates with bottom k shares per contributor using %s and attribute selection method %s" %(meth,attrib)
+                    hdr = "Population Estimates with top k shares per contributor using %s and attribute selection method %s" %(meth,attrib)
 
             print("Starting population estimation experiments")
             
@@ -423,9 +423,9 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
         else:
             suffix = "_kShares.csv"
             if clfOrRgr == 'clf':
-                titleSuffix = "classifiers bottom k choices"
+                titleSuffix = "classifiers top k choices"
             else:
-                titleSuffix = "regressors bottom k choices"
+                titleSuffix = "regressors top k choices"
 
     df = pd.DataFrame.from_csv(str("../FinalResults/"+flNms[0]+suffix)).reset_index()
     df.columns = list(map(lambda x : str(x + "_" + flNms[0]) if x != hdr else x,list(df.columns)))
