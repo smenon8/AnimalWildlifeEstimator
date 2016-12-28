@@ -102,8 +102,8 @@
       <li><p><a href="#GetPropertiesAPI"> GetPropertiesAPI.py </a></p>
         <ul>
           <li><a href="#getAnnotID">getAnnotID(gid)</a></li>
-          <li><a href="#getImageFeature">getImageFeature(aid,feature)</a></li>
-          <li><a href="#getExifData">getExifData(gidList,exifFtr)</a></li>
+          <li><a href="#getImageFeature">getImageFeature(aid, feature)</a></li>
+          <li><a href="#getExifData">getExifData(gidList, exifFtr)</a></li>
           <li><a href="#getContributorGID">getContributorGID(cid)</a></li>
           <li><a href="#getAgeFeatureReadableFmt">getAgeFeatureReadableFmt(ageList)</a></li>
           <li><a href="#getUnixTimeReadableFmt">getUnixTimeReadableFmt(unixtm)</a></li>
@@ -112,25 +112,25 @@
       
       <li><p><a id="generate-mturk-file-api" href="#generate-mturk-file-api"> GenerateMTurkFileAPI.py </a></p>
         <ul>
-        <li><a href="#genRandomImg">genRandomImg(begin,end,oldList)</a></li>
-        <li><a href="#genImageList">genImageList(begin,stop,maxImgs)</a></li>
-        <li><a href="#generateMTurkFile">generateMTurkFile(startGID,endGID,outFile,maxImgs,prodFileWrite)</a></li>
+        <li><a href="#genRandomImg">genRandomImg(begin, end, oldList)</a></li>
+        <li><a href="#genImageList">genImageList(begin, stop, maxImgs)</a></li>
+        <li><a href="#generateMTurkFile">generateMTurkFile(startGID, endGID, outFile, maxImgs, prodFileWrite)</a></li>
         </ul>
       </li>
       
       <li><p><a href="#CreateTurkFilesBulk"> CreateTurkFilesBulk.py </a></p>
         <ul>
-          <li><a href="#createTurkFilesBulk">createTurkFilesBulk(flNm,jobMapName,noOfJobs,noOfImgsPerJob)</a></li> 
+          <li><a href="#createTurkFilesBulk">createTurkFilesBulk(flNm,jobMapName, noOfJobs, noOfImgsPerJob)</a></li> 
         </ul>
       </li>
       
       <li><p><a href="#BuildConsolidatedFeaturesFile.py"> BuildConsolidatedFeaturesFile.py </a></p>
       <ul> 
         <li><a href="#printCompltnPercent">printCompltnPercent(percentComplete)</a></li>
-        <li><a href="#writeCsvFromDict">writeCsvFromDict(header,inDict,outFL)</a></li>
-        <li><a href="#genJsonFromMSAIData">genJsonFromMSAIData(flName,outFlNm)</a></li>
-        <li><a href="#buildFeatureFl">buildFeatureFl(inp,outFL,isInpFl)</a></li>
-        <li><a href="#buildExifFeatureFl">buildExifFeatureFl(inp,outFL,isInpFl)</a></li>
+        <li><a href="#writeCsvFromDict">writeCsvFromDict(header, inDict, outFL)</a></li>
+        <li><a href="#genJsonFromMSAIData">genJsonFromMSAIData(flName, outFlNm)</a></li>
+        <li><a href="#buildFeatureFl">buildFeatureFl(inp, outFL, isInpFl)</a></li>
+        <li><a href="#buildExifFeatureFl">buildExifFeatureFl(inp, outFL, isInpFl)</a></li>
       </ul>
       </li>
 
@@ -145,29 +145,29 @@
         <li><a href="#genAidGidTupListFromMap">genAidGidTupListFromMap(mapFL)</a></li>
         <li><a href="#genAidFeatureDictList">genAidFeatureDictList(mapFL)</a></li>
         <li><a href="#genAidFeatureDictDict">genAidFeatureDictDict(mapFL)</a></li>
-        <li><a href="#extractImageFeaturesFromMap">extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature)</a></li>
-        <li><a href="#createResultDict">createResultDict(jobRangeStart,jobRangeEnd,workerData)</a></li>
-        <li><a href="#imgShareCountsPerAlbum">imgShareCountsPerAlbum(imgAlbumDict,results)</a></li>
-        <li><a href="#genMSAIDataHighConfidenceTags">genMSAIDataHighConfidenceTags(tagInpDataFl,threshold)</a></li>
-        <li><a href="#auditResMap">auditResMap(imgAlbumDict,resultList)</a></li>
+        <li><a href="#extractImageFeaturesFromMap">extractImageFeaturesFromMap(gidAidMapFl, aidFtrMapFl, feature)</a></li>
+        <li><a href="#createResultDict">createResultDict(jobRangeStart, jobRangeEnd, workerData)</a></li>
+        <li><a href="#imgShareCountsPerAlbum">imgShareCountsPerAlbum(imgAlbumDict, results)</a></li>
+        <li><a href="#genMSAIDataHighConfidenceTags">genMSAIDataHighConfidenceTags(tagInpDataFl, threshold)</a></li>
+        <li><a href="#auditResMap">auditResMap(imgAlbumDict, resultList)</a></li>
       </ul>
       </li>
 
       <li><p><a href="#DeriveFinalResultSet"> DeriveFinalResultSet.py </a></p>
       <ul>
-        <li><a href="#getPosShrProptn">getPosShrProptn(imgJobMap,resStart,resEnd)</a></li>
+        <li><a href="#getPosShrProptn">getPosShrProptn(imgJobMap, resStart, resEnd)</a></li>
         <li><a href="#genTotCnts">genTotCnts(ovrCnts)</a></li>
         <li><a href="#getShrProp">getShrProp(ovrAggCnts)</a></li>
-        <li><a href="#getCountingLogic">getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature,withNumInds)</a></li>
-        <li><a href="#genAlbmFtrs">genAlbmFtrs(gidAidMapFl,aidFeatureMapFl,imgJobMap,reqdFtrList)</a></li>
-        <li><a href="#getShrPropImgsAcrossAlbms">getShrPropImgsAcrossAlbms(imgJobMap,resSetStrt,resSetEnd,flNm)</a></li>
+        <li><a href="#getCountingLogic">getCountingLogic(gidAidMapFl, aidFeatureMapFl, feature, withNumInds)</a></li>
+        <li><a href="#genAlbmFtrs">genAlbmFtrs(gidAidMapFl, aidFeatureMapFl, imgJobMap, reqdFtrList)</a></li>
+        <li><a href="#getShrPropImgsAcrossAlbms">getShrPropImgsAcrossAlbms(imgJobMap, resSetStrt, resSetEnd, flNm)</a></li>
         <li><a href="#getFltrCondn">getFltrCondn(ftr)</a></li>
-        <li><a href="#genObjsForConsistency">genObjsForConsistency(gidAidMapFl,aidFeatureMapFl,ftr,imgJobMap,resSetStrt,resSetEnd)</a></li>
-        <li><a href="#getConsistencyDict">getConsistencyDict(filteredKeyArr,ftrAlbmDict,ftrAlbmShrPropDict,flNm)</a></li>
+        <li><a href="#genObjsForConsistency">genObjsForConsistency(gidAidMapFl, aidFeatureMapFl, ftr, imgJobMap, resSetStrt, resSetEnd)</a></li>
+        <li><a href="#getConsistencyDict">getConsistencyDict(filteredKeyArr, ftrAlbmDict, ftrAlbmShrPropDict, flNm)</a></li>
         <li><a href="#genVarStddevShrPropAcrsAlbms">genVarStddevShrPropAcrsAlbms(consistency)</a></li>
-        <li><a href="#ovrallShrCntsByFtr">ovrallShrCntsByFtr(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,resSetEnd)</a></li>
-        <li><a href="#shrCntsByFtrPrAlbm">shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,resSetEnd)</a></li>
-        <li><a href="#ovrallShrCntsByTwoFtrs">ovrallShrCntsByTwoFtrs(gidAidMapFl,aidFeatureMapFl,ftr1,ftr2,imgJobMap,resSetStrt,resSetEnd)</a></li>
+        <li><a href="#ovrallShrCntsByFtr">ovrallShrCntsByFtr(gidAidMapFl, aidFeatureMapFl, feature, imgJobMap, resSetStrt, resSetEnd)</a></li>
+        <li><a href="#shrCntsByFtrPrAlbm">shrCntsByFtrPrAlbm(gidAidMapFl, aidFeatureMapFl, feature, imgJobMap, resSetStrt, resSetEnd)</a></li>
+        <li><a href="#ovrallShrCntsByTwoFtrs">ovrallShrCntsByTwoFtrs(gidAidMapFl, aidFeatureMapFl, ftr1, ftr2, imgJobMap, resSetStrt, resSetEnd)</a></li>
         <li><a href="#genNumIndsRankList">genNumIndsRankList()</a></li> 
       </ul>
       </li>
@@ -176,7 +176,7 @@
       <ul>
         <li><a href="#CapsuleClassAttribs">Object Attributes</a></li>
         <li><a href="#runClf">runClf()</a></li>
-        <li><a href="#setTestAttrib">setTestAttrib(clsAttribStr,value):</a></li>
+        <li><a href="#setTestAttrib">setTestAttrib(clsAttribStr, value):</a></li>
       </ul>
       </li>
 	  
@@ -199,15 +199,15 @@
 
       <li><p><a href="#ClassifierHelperAPI"> ClassifierHelperAPI.py </a></p>
       <ul>
-        <li><a href="#genHead">genHead(dataDict,ftr)</a></li>
+        <li><a href="#genHead">genHead(dataDict, ftr)</a></li>
         <li><a href="#getMasterData">getMasterData(flNm)</a></li>
-        <li><a href="#genAttribsHead">genAttribsHead(data,ftrList)</a></li>
-        <li><a href="#createDataFlDict">createDataFlDict(data,allAttribs,threshold,dataMode,writeTempFiles)</a></li>
-        <li><a href="#getLearningAlgo">getLearningAlgo(methodName,kwargs)</a></li>
-        <li><a href="#trainTestSplitter">trainTestSplitter(gidAttribDict,allAttribs,trainTestSplit)</a></li>
-        <li><a href="#buildBinClassifier">buildBinClassifier(data,allAttribs,trainTestSplit,threshold,methodName,extremeClf)</a></li>
-        <li><a href="#genAllAttribs">genAllAttribs(masterDataFl,constraint,infoGainFlNm</a></li>
-		    <li><a href="#buildRegrMod">buildRegrMod(train_data_fl,allAttribs,trainTestSplit,methodName,kwargs)</li></a>
+        <li><a href="#genAttribsHead">genAttribsHead(data, ftrList)</a></li>
+        <li><a href="#createDataFlDict">createDataFlDict(data, allAttribs, threshold, dataMode, writeTempFiles)</a></li>
+        <li><a href="#getLearningAlgo">getLearningAlgo(methodName, kwargs)</a></li>
+        <li><a href="#trainTestSplitter">trainTestSplitter(gidAttribDict, allAttribs, trainTestSplit)</a></li>
+        <li><a href="#buildBinClassifier">buildBinClassifier(data, allAttribs, trainTestSplit, threshold, methodName, extremeClf)</a></li>
+        <li><a href="#genAllAttribs">genAllAttribs(masterDataFl, constraint, infoGainFlNm</a></li>
+		    <li><a href="#buildRegrMod">buildRegrMod(train_data_fl, allAttribs, trainTestSplit, methodName, kwargs)</li></a>
         
       </ul>
       </li>
@@ -216,7 +216,7 @@
       <ul>
         <li><a href="#dataEntropy">dataEntropy(attribute)</a></li>
         <li><a href="#getNextEle">getNextEle(attribList)</a></li>
-        <li><a href="#infoGain">infoGain(attribute,targetAttribute)</a></li>
+        <li><a href="#infoGain">infoGain(attribute, targetAttribute)</a></li>
       </ul>
       </li>
 
@@ -224,21 +224,23 @@
       <ul>
         <li><a href="#createFlickrObj">createFlickrObj(flickrKeyFl)</a></li>
         <li><a href="#applyMarkRecap">applyMarkRecap(nidMarkRecapSet)</a></li>
-        <li><a href="#genSharedGids">genSharedGids(gidList,gidPropMapFl)</a></li>
+        <li><a href="#genSharedGids">genSharedGids(gidList, gidPropMapFl)</a></li>
       </ul>
       </li>
 	  
-	  <li><p><a href="#PopulationEstimatorFromClf"> PopulationEstimatorFromClf.py</a></p>
+	  <li><p><a href="#PopulationEstimatorAPI"> PopulationEstimatorAPI.py</a></p>
       <ul>
-        <li><a href="#trainTestClf">trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl,clfArgs)</a></li>
-        <li><a href="#estimatePopulation">estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl)</a></li>
+        <li><a href="#trainLearningObj">trainLearningObj(train_data_fl, test_data_fl, clf, attribType, infoGainFl, methArgs,  isClf)</a></li>
+        <li><a href="#trainTestClf">trainTestClf(train_data_fl, test_data_fl, clf, attribType, infoGainFl, clfArgs)</a></li>
+        <li><a href="#estimatePopulation">estimatePopulation(prediction_results, inExifFl, inGidAidMapFl, inAidFtrFl)</a></li>
         <li><a href="#biasedCoinFlipper">biasedCoinFlipper(p)</a></li>
-        <li><a href="#trainTestRgrs">trainTestRgrs(train_data_fl,test_data_fl,methodName,attribType,infoGainFl,methArgs)</a></li>
-        <li><a href="#kSharesPerContributor">kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,genk)</a></li>
-        <li><a href="#kSharesPerContribAfterCoinFlip">kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl,genk)</a></li>
-		    <li><a href="#runSyntheticExpts">runSyntheticExpts(inExifFl,inGidAidMapFl,inAidFtrFl,krange)</a></li>
-        <li><a href="#runSyntheticExptsRgr">runSyntheticExptsRgr(inExifFl,inGidAidMapFl,inAidFtrFl,krange)</a></li>
-        <li><a href="#runSyntheticExptsClf">runSyntheticExptsClf(inExifFl,inGidAidMapFl,inAidFtrFl,krange)</a></li>
+        <li><a href="#trainTestRgrs">trainTestRgrs(train_data_fl, test_data_fl, methodName, attribType, infoGainFl, methArgs)</a></li>
+        <li><a href="#kSharesPerContributor">kSharesPerContributor(prediction_probabs, inExifFl, inGidAidMapFl, inAidFtrFl, genk)</a></li>
+        <li><a href="#kSharesPerContribAfterCoinFlip">kSharesPerContribAfterCoinFlip(prediction_results, inExifFl, inGidAidMapFl, inAidFtrFl, genk)</a></li>
+        <li><a href="#shareAbvThreshold">shareAbvThreshold(prediction_probabs, inExifFl, inGidAidMapFl, inAidFtrFl, threshold, randomShare)</a></li>
+		    <li><a href="#runSyntheticExpts">runSyntheticExpts(inExifFl, inGidAidMapFl, inAidFtrFl, krange)</a></li>
+        <li><a href="#runSyntheticExptsRgr">runSyntheticExptsRgr(inExifFl, inGidAidMapFl, inAidFtrFl, krange)</a></li>
+        <li><a href="#runSyntheticExptsClf">runSyntheticExptsClf(inExifFl, inGidAidMapFl, inAidFtrFl, krange)</a></li>
       </ul>
       </li>
 	  
@@ -246,7 +248,7 @@
       <li><p><a href="#SocialMediaImageExtracts"> SocialMediaImageExtracts.py</a></p>
       <ul>
         <li><a href="#createFlickrObj">createFlickrObj(flickrKeyFl)</a></li>
-        <li><a href="#searchInFlickr">searchInFlickr(flickrObj,tags,text)</a></li>
+        <li><a href="#searchInFlickr">searchInFlickr(flickrObj, tags, text)</a></li>
       </ul>
       </li>
 
@@ -281,7 +283,7 @@
               f.  Comments: Used to extract annotation IDs for a particular image GID <br>  
       </p>
 
-      <li><a id="getImageFeature" href="#getImageFeature">getImageFeature(aidList,feature)</a></li>
+      <li><a id="getImageFeature" href="#getImageFeature">getImageFeature(aidList, feature)</a></li>
       <p>
               a.  Arguments: List of Annotation IDs, Required Feature <br>
               b.  Argument data-type: Python list, str <br>
@@ -293,7 +295,7 @@
               f.  Comments: Used to extract features for a given list of annotation IDs. <br>
       </p>
       
-      <li><a id="getExifData" href="#getExifData">getExifData(gidList,exifFtr)</a></li>
+      <li><a id="getExifData" href="#getExifData">getExifData(gidList, exifFtr)</a></li>
       <p>
               a.  Arguments: List of GIDs, Required EXIF Feature <br>
               b.  Argument data-type: Python list, str <br>
@@ -348,7 +350,7 @@
       </p></div>    
       <div id="codeContent">
       <ul>
-      <li><a id="genRandomImg" href="#genRandomImg">genRandomImg(begin,end,oldList)</a></li>
+      <li><a id="genRandomImg" href="#genRandomImg">genRandomImg(begin, end, oldList)</a></li>
       <p>
               a.  Arguments: Start range, End Range and list in the same range <br>
               b.  Argument data-type: int, int, int <br>
@@ -360,7 +362,7 @@
               f.  Comments: This method is used when there arises a case when a particular image in the image album have to be replaced with another randomly selected image. <br>
       </p>
 
-      <li><a id="genImageList" href="#genImageList">genImageList(begin,stop,maxImgs=20)</a></li>
+      <li><a id="genImageList" href="#genImageList">genImageList(begin, stop, maxImgs=20)</a></li>
       <p>
               a.  Arguments: Start range, end range and number of images in photo album <br>
               b.  Argument data-type: int, int, int <br>
@@ -372,7 +374,7 @@
               e.  Comments: This method is used to generate a list of random images that will be further used as an input to the method that generates the photo album mechanical turk job. The list has no duplicates and has exactly maxImgs number of images. <br>
       </p>
 
-      <li><a id="generateMTurkFile" href="#generateMTurkFile">generateMTurkFile(startGID,endGID,outFile,maxImgs=20,prodFileWrite=False)</a></li>
+      <li><a id="generateMTurkFile" href="#generateMTurkFile">generateMTurkFile(startGID, endGID, outFile, maxImgs=20, prodFileWrite=False)</a></li>
       <p>
               a.  Arguments: Start GID, end GID, name of output file, number of images in photo album, a boolean to generate a m-turk job for production environment. <br>
               b.  Argument data-type: int, int, str, int, boolean <br>
@@ -397,7 +399,7 @@
 
       <div id="codeContent">
       <ul>
-      <li><a id="createTurkFilesBulk" href="#createTurkFilesBulk">createTurkFilesBulk(flNm,jobMapName,noOfJobs,noOfImgsPerJob = 20)</a></li>
+      <li><a id="createTurkFilesBulk" href="#createTurkFilesBulk">createTurkFilesBulk(flNm, jobMapName, noOfJobs, noOfImgsPerJob = 20)</a></li>
       <p>
               a.  Arguments: File Name prefix of the job files, File name of the map file of albums and the images in those albums, number of jobs needed, number of images needed per job. <br>
               b.  Argument data-type: str, str, int, int <br>
@@ -419,7 +421,7 @@
       These parameters are used by multiple methods within this script. <br></p></div>
       <div id="codeContent">
       <ul>
-      <li><a id="getPosShrProptn" href="#getPosShrProptn">getPosShrProptn(imgJobMap,resStart,resEnd)</a></li>
+      <li><a id="getPosShrProptn" href="#getPosShrProptn">getPosShrProptn(imgJobMap, resStart, resEnd)</a></li>
       <p>
               a.  Arguments: Image Job Map in CSV format, start of the results file, end of the results files. <br>
               b.  Argument data-type: str, int, int <br>
@@ -453,7 +455,7 @@
               e.  Comments: This method will be used to calculate the share proportion of a particular feature or an image. This dictionary answers the question, what percentage of this feature/image were shared. The share proportion is calculated as total_shares/(total_shares+total_not_shares). <br>
       </p>
  
-      <li><a id="getCountingLogic" href="#getCountingLogic">getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature,withNumInds=True)</a></li>
+      <li><a id="getCountingLogic" href="#getCountingLogic">getCountingLogic(gidAidMapFl, aidFeatureMapFl, feature, withNumInds=True)</a></li>
       <p>
               a.  Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), feature, number of individuals in the output required (defaulted to True) <br>
               b.  Arguments data-type: str, str, str, boolean <br>
@@ -464,7 +466,7 @@
               e.  Comments: This method defines the counting logic for a particular image for a given feature. The counting logic will return an optional number of individuals in the result dictionary if the aparamerter withNumInds is set to True. For instance, for the feature ‘SPECIES’, there might be images that contains both a zebra and a giraffe. In that case, the share counts have to be added to both zebra and giraffe. <br>
       </p>
 
-      <li><a id="genAlbmFtrs" href="#genAlbmFtrs">genAlbmFtrs(gidAidMapFl,aidFeatureMapFl,imgJobMap,reqdFtrList)</a></li>
+      <li><a id="genAlbmFtrs" href="#genAlbmFtrs">genAlbmFtrs(gidAidMapFl, aidFeatureMapFl, imgJobMap, reqdFtrList)</a></li>
       <p>
               a.  Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), Image GID-Album map file(CSV), required features list – a list of features for which the properties needs to be determined. <br>
               b.  Arguments data-type: str, str, str, Python List <br>
@@ -476,7 +478,7 @@
               e.  Comments: This method is used to generate the number of shares and not_shares per feature in a particular album. For instance, if the required features list contains ‘SPECIES’, then it tells the share and not_share count per album for each available/identifiable species. <br>
       </p>
 
-      <li><a id="getShrPropImgsAcrossAlbms" href="#getShrPropImgsAcrossAlbms">getShrPropImgsAcrossAlbms(imgJobMap,resSetStrt,resSetEnd,flNm)</a></li>
+      <li><a id="getShrPropImgsAcrossAlbms" href="#getShrPropImgsAcrossAlbms">getShrPropImgsAcrossAlbms(imgJobMap, resSetStrt, resSetEnd, flNm)</a></li>
       <p>
               a.  Arguments: Image Job Map in CSV format, start of the results file, end of the results files, output file name in json format. <br>
               b.  Arguments data-type: str, int, int, str <br>
@@ -497,7 +499,7 @@
        		  e. Comments: This method returns a lambda function or a logic in filtering all valid rows without the UNIDENTIFIED. A slight adjustment is needed depending on what feature is being filtered. <br>
       </p>
 
-     <li><a id="genObjsForConsistency" href="#genObjsForConsistency">genObjsForConsistency(gidAidMapFl,aidFeatureMapFl,ftr,imgJobMap,resSetStrt,resSetEnd)</a></li>
+     <li><a id="genObjsForConsistency" href="#genObjsForConsistency">genObjsForConsistency(gidAidMapFl, aidFeatureMapFl, ftr, imgJobMap, resSetStrt, resSetEnd)</a></li>
      <p>
       		  a. Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), Feature name, Image GID-Album map file(CSV), start of the results file, end of the results files.<br>
        		  b. Arguments data-type: str, str, str, str, int, int <br>
@@ -512,7 +514,7 @@
             &nbsp &nbsp iii. A dictionary object that contains the share proportion of feature per album. Ex. giraffes in album 1 were shared 70% of times etc. Format of the key: (feature, album)<br>
       </p>
 
-      <li><a id="getConsistencyDict" href="#getConsistencyDict">getConsistencyDict(filteredKeyArr,ftrAlbmDict,ftrAlbmShrPropDict,flNm)</a></li>
+      <li><a id="getConsistencyDict" href="#getConsistencyDict">getConsistencyDict(filteredKeyArr, ftrAlbmDict, ftrAlbmShrPropDict, flNm)</a></li>
       <p>
             a. Arguments: The filtered key array, Feature Album dictionary and feature album share proportion dictionary are direct outputs of <a href="#genObjsForConsistency">genObjsForConsistency()</a> <br>
             b. Arguments data-type: Python List Object, Python Dictionary Object, Python Dictionary object, str <br>
@@ -543,7 +545,7 @@
             e. Comments: This method generates the overall share statistic for every element of a particular feature. The logic involves simple counting for each element of the feature based on the counting logic (refer <a href="#getCountingLogic">getCountingLogic()</a>). This explicitly handles the images where there are multiple features and the counts are made in each of the feature. This method is ideal for getting share rate of a particular feature across the entire experiment, not limited by album. In other words, the result dict has share proportions calculated across albums. <br>
       </p>
 
-      <li><a id="shrCntsByFtrPrAlbm" href="#shrCntsByFtrPrAlbm">shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt,resSetEnd)</a></li>
+      <li><a id="shrCntsByFtrPrAlbm" href="#shrCntsByFtrPrAlbm">shrCntsByFtrPrAlbm(gidAidMapFl, aidFeatureMapFl, feature, imgJobMap, esSetStrt, resSetEnd)</a></li>
       <p>
             a. Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), Feature name, Image GID-Album map file(CSV), start of the results file, end of the results files.<br>
             b. Arguments data-type: str, str, str, str, int, int <br>
@@ -555,7 +557,7 @@
             e. Comments: This method generates the share statistic for every element of a particular feature for each album in which there are some instances with the said feature. The logic involves simple counting for each element of the feature based on the counting logic (refer <a href="#getCountingLogic">getCountingLogic()</a>). This explicitly handles the images where there are multiple features and the counts are made in each of the feature. This method is ideal for getting share rate of a particular feature across the entire experiment by album. In other words, this should used to calculate and compare the share rates of a particular feature and how it changes across different albums. As a sidenote, if the same feature is being shared differently across albums, then it means there is some contextual information from the album that is dominating this effect.<br>
       </p>
 
-      <li><a id="ovrallShrCntsByTwoFtrs" href="#ovrallShrCntsByTwoFtrs">ovrallShrCntsByTwoFtrs(gidAidMapFl,aidFeatureMapFl,ftr1,ftr2,imgJobMap,resSetStrt,resSetEnd)</a></li>
+      <li><a id="ovrallShrCntsByTwoFtrs" href="#ovrallShrCntsByTwoFtrs">ovrallShrCntsByTwoFtrs(gidAidMapFl, aidFeatureMapFl, ftr1, ftr2, imgJobMap, resSetStrt, resSetEnd)</a></li>
       <p>
             a. Arguments: GID-AID map file(JSON), AID-Feature map file(JSON), Feature name 1, Feature name 2, Image GID-Album map file(CSV), start of the results file, end of the results files.<br>
             b. Arguments data-type: str, str, str, str, int, int <br>
@@ -688,7 +690,7 @@
               e.  Comments: This method is used to generate a dictionary in the form { GID : [list of features instances in that image]}. This object will give us the capability to check what feature instances are present in a given image. <br>
       </p>
 
-      <li><a id="createResultDict" href="#createResultDict">createResultDict(jobRangeStart,jobRangeEnd,workerData)</a></li>
+      <li><a id="createResultDict" href="#createResultDict">createResultDict(jobRangeStart, jobRangeEnd, workerData)</a></li>
       <p>
               a.  Arguments: Start of the results file, end of the results files. <br>
               b.  Argument data-type: int, int<br>
@@ -697,7 +699,7 @@
               e.  Comments: Every album corresponds to a .result file which is extracted from the Amazon Mechanical Turk interface. This method parses the results file and generates a python object consisting of each response key with the actual response from the users. The dictionary is of the form: { photo_album_i : { Answer.GID : [ GID|'share' , 'GID'|'noShare'] }} All the results file from jobRangeStart to jobRangeEnd will be parsed and included in the output object. When the workerData parameter is set to True, turker ID's who worked on a particular album is included in the result object.<br>
       </p>
 
-      <li><a id="imgShareCountsPerAlbum" href="#imgShareCountsPerAlbum">imgShareCountsPerAlbum(imgAlbumDict,results)</a></li>
+      <li><a id="imgShareCountsPerAlbum" href="#imgShareCountsPerAlbum">imgShareCountsPerAlbum(imgAlbumDict, results)</a></li>
       <p>
               a.  Arguments: Image Job Map in CSV format, results is the direct output of the method <a href="#createResultDict">createResultDict()</a> <br>
               b.  Argument data-type: str, Python Dictionary object<br>
@@ -707,7 +709,7 @@
               e.  Comments: This method returns a Python list which gives us the capability to iterate through all the images, the number of times an image was shared or not shared in a particular album. This object will form the basis of all statistic computations in the project. The format of a tuple inside the list is of the form (GID, Album, Share count, Not Share count, Proportion). The other return object is the list of all (GID, albums) for which there was no valid response. (Form fields in certain albums in experiment 2 were not mandatory in the beginning, the bug was identified and corrected in a later stage.)<br>
       </p>
 
-      <li><a id="genMSAIDataHighConfidenceTags" href="#genMSAIDataHighConfidenceTags">genMSAIDataHighConfidenceTags(tagInpDataFl,threshold)</a></li>
+      <li><a id="genMSAIDataHighConfidenceTags" href="#genMSAIDataHighConfidenceTags">genMSAIDataHighConfidenceTags(tagInpDataFl, threshold)</a></li>
       <p>
               a.  Arguments: Tag input file in JSON format, confidence threshold (between 0 and 1)<br>
               b.  Argument data-type: str, float<br>
@@ -717,7 +719,7 @@
               e.  Comments: This method is used to generate the list of tags generated by Microsoft Image tagging API, thresholded by confindence. With each tag, there is an associated confidence which quantifies the confidence of the tag prediciting algorithm. For purpose of experiments, the threshold is defaulted to 0.5, any tags predicted with confidence greater than 0.5 is accepted and the rest is rejected.<br>
       </p>
 
-      <li><a id="auditResMap" href="#auditResMap">auditResMap(imgAlbumDict,resultList)</a></li>
+      <li><a id="auditResMap" href="#auditResMap">auditResMap(imgAlbumDict, resultList)</a></li>
       <p>
               a.  Arguments: Image Job Map in CSV format, results is the direct output of the method <a href="#imgShareCountsPerAlbum">imgShareCountsPerAlbum()</a> <br>
               b.  Argument data-type: str, Python list object<br>
@@ -740,7 +742,7 @@
       Description: Contains methods to run population estimation synthetic experiements.</p></div>
       <div id="codeContent">
       <ul>
-      <li><a id="trainTestClf" href="#trainTestClf">trainTestClf(train_data_fl,test_data_fl,clf,attribType,infoGainFl,methArgs)</a></li>
+      <li><a id="trainTestClf" href="#trainTestClf">trainTestClf(train_data_fl, test_data_fl, clf, attribType, infoGainFl, methArgs)</a></li>
       <p>
               a.  Argument: Training data in CSV format, Testing data in CSV format, Classifier method name, attribute selection method name, Information gain file in CSV format, keyword arguments for classifiers.  <br>
               b.  Argument data-type: str, str, str, str, str, dict <br>
@@ -762,9 +764,9 @@
               f.  Comments: As the name suggests, this is a biased coin flipper. Simulates flipping a biased coin with a bias of p. Heads mean 1 and tail mean 0. <br>
       </p>
       
-      <li><a id="trainTestRgrs" href="#trainTestRgrs">trainTestRgrs(train_data_fl,test_data_fl,clf,attribType,infoGainFl,methArgs)</a></li>
+      <li><a id="trainTestRgrs" href="#trainTestRgrs">trainTestRgrs(train_data_fl, test_data_fl, method name , attribType, infoGainFl, methArgs)</a></li>
       <p>
-              a.  Argument: Training data in CSV format, Testing data in CSV format, Classifier method name, attribute selection method name, Information gain file in CSV format, keyword arguments for classifiers.  <br>
+              a.  Argument: Training data in CSV format, Testing data in CSV format, Regression method name, attribute selection method name, Information gain file in CSV format, keyword arguments for classifiers.  <br>
               b.  Argument data-type: str, str, str, str, str, dict <br>
               c.  PRE-condition: <br>
               &nbsp &nbsp i.  Files should exist <br> 
@@ -773,7 +775,7 @@
               f.  Comments: This method is a wrapper method to build and run regressors using the training and the testing data respecitively. There are no checks to determine if there is any overlap between training and testing data files.<br>  
       </p>
 
-      <li><a id="estimatePopulation" href="#estimatePopulation">estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl)</a></li>
+      <li><a id="estimatePopulation" href="#estimatePopulation">estimatePopulation(prediction_results, inExifFl, inGidAidMapFl, inAidFtrFl)</a></li>
       <p>
               a.  Arguments: Prediction results, EXIF information of images in JSON, GID-AID map file(JSON), AID-Feature map file(JSON)<br>
               b.  Argument data-type: Python dict, str, str, str <br>
@@ -784,7 +786,7 @@
               f.  Comments: This method is used to actually estimate the population. This method utilizes methods from MarkRecapHelper to calculate the population of all animals, zebras and giraffes on the basis of the prediction results that are generated by the classifiers or regressor predictions.<br>
       </p>
 
-      <li><a id="kSharesPerContribAfterCoinFlip" href="#kSharesPerContribAfterCoinFlip">kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl,genk)</a></li>
+      <li><a id="kSharesPerContribAfterCoinFlip" href="#kSharesPerContribAfterCoinFlip">kSharesPerContribAfterCoinFlip(prediction_results, inExifFl, inGidAidMapFl, inAidFtrFl,genk)</a></li>
       <p>
               a.  Arguments: Prediction results, EXIF information of images in JSON, GID-AID map file(JSON), AID-Feature map file(JSON), function to generate the value of k<br>
               b.  Argument data-type: Python dict, str, str, str, Python function object <br>
@@ -795,7 +797,7 @@
               f.  Comments: This method is used to actually estimate the population when each contributor shares top k images. The images are ranked on the basis of the likelihood estimates obtained from the regression models. Since the regression outputs are a likelihood, to make a choice of whether or not each photo will be shared a coin with bias equal to likelihood of the picture being shared is flipped. <br>
       </p>
 
-      <li><a id="kSharesPerContributor" href="#kSharesPerContributor">kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,genk)</a></li>
+      <li><a id="kSharesPerContributor" href="#kSharesPerContributor">kSharesPerContributor(prediction_probabs, inExifFl, inGidAidMapFl, inAidFtrFl, genk)</a></li>
       <p>
               a.  Arguments: Prediction results, EXIF information of images in JSON, GID-AID map file(JSON), AID-Feature map file(JSON), function to generate the value of k<br>
               b.  Argument data-type: Python dict, str, str, str, Python function object <br>
