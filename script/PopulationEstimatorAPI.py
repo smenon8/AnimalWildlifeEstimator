@@ -401,8 +401,7 @@ def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
         algTypes = ['bayesian','logistic','svm','dtree','random_forests','ada_boost']
     else:
         algTypes = ['linear','ridge','lasso','svr','dtree_regressor','elastic_net']
-    attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
-    # attribTypes = ['beauty']
+    attribTypes = ['sparse','non_sparse','non_zero','abv_mean', 'beauty']
     flNms = [str(alg + "_" + attrib) for alg in algTypes for attrib in attribTypes]
 
     if thresholdMeth:
