@@ -27,7 +27,7 @@ def cnvrtDictToLstTup(dct):
 def getDateFromStr(dtStr,inpFmt,outFmt):
 	return datetime.strptime(dtStr,'%Y-%m-%d %H:%M:%S').date().strftime('%Y-%m-%d')
 
-def combineJson(fl1,fl2,outFlNm):
+def combineJSON(fl1,fl2,outFlNm):
 	with open(fl1,"r") as f1, open(fl2,"r") as f2:
 		jObj1 = json.load(f1)
 		jObj2 = json.load(f2)
@@ -39,6 +39,17 @@ def combineJson(fl1,fl2,outFlNm):
 			json.dump(jObj1,out,indent=4)
 
 	return None
+
+def appendJSON(*inpFl):
+	flObjs = []
+	for fl in inpFl:
+		with open(fl, "r") as jFl:
+			flObjs.append(json.load(jFl))
+
+	itemsList = [objs.items() for objs in flObjs]
+
+	return dict(itemsList)
+
 
 def flipKeyValue(dct):
 	outDct = {}

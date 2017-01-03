@@ -50,25 +50,52 @@ def multiProcMeth(methodName, arg, urlList):
 
 	print("Time elapsed: %f" %(time.time() - start_time))
 
+
 def _getExif(flickrObj, photo_id):
-	exifJson = json.loads(flickrObj.photos.geo.getLocation(photo_id = photo_id).decode('utf-8'))
-	if 'code' in exifJson:
-		lat = 0.0
-		long = 0.0
-	else:
-		lat = exifJson['photo']['location']['latitude']
-		long = exifJson['photo']['location']['longitude']
+	exifJson = json.loads(flickrObj.photos.getInfo(photo_id = photo_id).decode('utf-8'))
+	
+	lat = long = orientation = 0.0
+	date = '1900-01-01 00:00:00'
 
-	return dict (lat =  lat, long = long)
+	if exifJson['stat'] == 'ok':
+		if 'location' in exifJson['photo'].keys():
+			lat = exifJson['photo']['location']['latitude']
+			long = exifJson['photo']['location']['longitude']
+		if 'dates' in exifJson['photo']:
+			date = exifJson['photo']['dates']['taken']
+		if 'rotation' in exifJson['photo']:
+			orientation = exifJson['photo']['rotation']
 
-def getExif(flickrObj, urlList):
-	photo_ids = [re.findall(r'.*/(.*)_.*_b.jpg', url)[0] for url in urlList]
+	sizeJson = json.loads(flickrObj.photos.getSizes(photo_id = photo_id).decode('utf-8'))
+
+	width = height = 0
+
+	if sizeJson['stat'] == 'ok':
+		sizes = sizeJson['sizes']['size']
+		for size in sizes:
+			if size['label'] == 'Original':
+				width = size['width']
+				height = size['height']
+				break
+			if size['label'] == 'Large':
+				width = size['width']
+				height = size['height']
+	
+	return dict (lat =  float(lat), long = float(long), date = date, height = int(height), width = int(width), orientation = int(orientation))
+
+
+def getExif(flickrObj, outFl, urlList=None, fileList=None):
+	if urlList != None:
+		photo_ids = [re.findall(r'.*/(.*)_.*_b.jpg', url)[0] for url in urlList]
+	elif fileList != None:
+		photo_ids = [re.findall(r'([0-9]*)_.*',fl)[0] for fl in fileList]
 
 	fullExifData = {}
 	for photo in photo_ids:
+		print("Pull started for %s" %photo)
 		fullExifData[photo] = _getExif(flickrObj, photo)
-
-	with open("../data/Flickr_Location_data.json","w") as jsonFl:
+		time.sleep(1)
+	with open(outFl,"w") as jsonFl:
 		json.dump(fullExifData, jsonFl, indent = 4)
 
 	return None
@@ -105,11 +132,18 @@ def download_imgs(urlFlList = "../data/fileURLS.dat"):
 	multiProcDownload(download_link, download_dir, urlList[1800:len(urlList)-1])
 
 def __main__():
-	with open("../data/fileURLS.dat","r") as urlListFl:
-		urlList = [url for url in urlListFl.read().split("\n")]
+	# with open("../data/fileURLS.dat","r") as urlListFl:
+	# 	urlList = [url for url in urlListFl.read().split("\n")]
 
-	getExif(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"), urlList)
+	with open("../data/flickr_imgs_gid_flnm_map.json", "r") as flJson:
+		flListJson = json.load(flJson)
+	flList = list(flListJson.values())
 
+	for i in range(0,len(flList),150):
+		print("Extraction for %s to %s" %(i, min(i+150, len(flList))))
+		getExif(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"), "../data/Flickr_EXIF_%s.json" %i , fileList = flList[i:min(i+150, len(flList))])
+		time.sleep(5)
+	
 
 if __name__ == "__main__":
 	__main__()
