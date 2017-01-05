@@ -4,7 +4,7 @@ Creation date: 06/30/2016
 Author : Sreejith Menon (smenon8@uic.edu)
 '''
 # Methods for building regression models for tagged data
-import csv
+import csv, sys, importlib
 from ast import literal_eval
 import pandas as pd
 import json
@@ -14,10 +14,8 @@ from sklearn import svm,tree,naive_bayes
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.dummy import DummyClassifier
-import sys
 import numpy as np
 import ClassifierCapsuleClass as ClfClass
-import importlib
 import RegressionCapsuleClass as RgrClass
 importlib.reload(ClfClass)
 importlib.reload(RgrClass)
@@ -213,13 +211,13 @@ def trainLearningObj(train_data_fl, test_data_fl, methodName, attribType, infoGa
             train_y = train_x['TARGET']
             train_x.drop(['Proportion','TARGET'],1,inplace=True)        
             clf = getLearningAlgo(methodName,methArgs.get(methodName,None))
-            lObj = ClfCls.ClassifierCapsule(clf,methodName,0.0,train_x,train_y,None,None)
+            lObj = ClfClass.ClassifierCapsule(clf,methodName,0.0,train_x,train_y,None,None)
         else:
             train_y = train_x['Proportion']
             train_x.drop(['Proportion'],1,inplace=True)
 
             rgr = getLearningAlgo(methodName,methArgs.get(methodName,None))
-            lObj = RgrCls.RegressionCapsule(rgr,methodName,0.0,train_x,train_y,None,None)
+            lObj = RgrClass.RegressionCapsule(rgr,methodName,0.0,train_x,train_y,None,None)
         testDf = pd.DataFrame.from_csv(test_data_fl)
     
     else:

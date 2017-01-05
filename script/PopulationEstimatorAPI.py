@@ -31,18 +31,14 @@
 
 import MarkRecapHelper as MR
 import pandas as pd
-import json
+import json, importlib, sys, random, argparse
 import ClassiferHelperAPI as CH
 import DeriveFinalResultSet as DRS
-import importlib
-import sys
 import cufflinks as cf # this is necessary to link pandas to plotly
 cf.go_online()
 import plotly.graph_objs as go
 importlib.reload(CH)
 import htmltag as HT
-import random
-import argparse
 import numpy as np
 import ClassifierCapsuleClass as ClfCls
 import RegressionCapsuleClass as RgrCls
@@ -324,7 +320,7 @@ def runSyntheticExptsClf(inExifFl, inGidAidMapFl, inAidFtrFl, krange, randomShar
     else:
         attribTypes = ['sparse','non_sparse','non_zero','abv_mean']
     
-    methArgs = {'dummy' : {'strategy' : 'most_frequent'},
+    clfArgs = {'dummy' : {'strategy' : 'most_frequent'},
             'bayesian' : {'fit_prior' : True},
             'logistic' : {'penalty' : 'l2'},
             'svm' : {'kernel' : 'rbf','probability' : True},
@@ -332,7 +328,7 @@ def runSyntheticExptsClf(inExifFl, inGidAidMapFl, inAidFtrFl, krange, randomShar
             'random_forests' : {'n_estimators' : 10 },
             'ada_boost' : {'n_estimators' : 50 }}
 
-    runSyntheticExpts(True, clfTypes, attribTypes, krange, methArgs, randomShare=randomShare)
+    runSyntheticExpts(True, clfTypes, attribTypes, krange, clfArgs, randomShare=randomShare)
 
 def buildErrPlots(clfOrRgr, thresholdMeth=False, randomShare=False):
     if clfOrRgr == 'clf':
