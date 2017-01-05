@@ -46,9 +46,10 @@ def appendJSON(*inpFl):
 		with open(fl, "r") as jFl:
 			flObjs.append(json.load(jFl))
 
-	itemsList = [objs.items() for objs in flObjs]
+	for i in range(1,len(flObjs)):
+		flObjs[0].update(flObjs[i])
 
-	return dict(itemsList)
+	return flObjs[0]
 
 
 def flipKeyValue(dct):

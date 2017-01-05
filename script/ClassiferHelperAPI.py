@@ -202,4 +202,66 @@ def buildRegrMod(train_data_fl, allAttribs, trainTestSplit, methodName, kwargs=N
 
     return rgrObj
 
+def trainLearningObj(train_data_fl, test_data_fl, methodName, attribType, infoGainFl, methArgs, isClf = True):
+    if attribType == 'beauty':
+        train_x = pd.DataFrame.from_csv(train_data_fl)
+        
+        if isClf:
+            train_x = train_x[(train_x['Proportion'] >= 80.0) | (train_x['Proportion'] <= 20.0)]
+            train_x['TARGET'] = np.where(train_x['Proportion'] >= 80.0, 1, 0)
 
+            train_y = train_x['TARGET']
+            train_x.drop(['Proportion','TARGET'],1,inplace=True)        
+            clf = getLearningAlgo(methodName,methArgs.get(methodName,None))
+            lObj = ClfCls.ClassifierCapsule(clf,methodName,0.0,train_x,train_y,None,None)
+        else:
+            train_y = train_x['Proportion']
+            train_x.drop(['Proportion'],1,inplace=True)
+
+            rgr = getLearningAlgo(methodName,methArgs.get(methodName,None))
+            lObj = RgrCls.RegressionCapsule(rgr,methodName,0.0,train_x,train_y,None,None)
+        testDf = pd.DataFrame.from_csv(test_data_fl)
+    
+    else:
+        allAttribs = genAllAttribs(train_data_fl,attribType,infoGainFl)
+        
+        # Create testing data
+        test_data= getMasterData(test_data_fl)
+        testObj = createDataFlDict(test_data,allAttribs,0.8,'Test')
+
+        testDf =  pd.DataFrame(testObj).transpose()
+
+        if isClf:
+            train_data= getMasterData(train_data_fl)
+            # Build classifier
+            lObj = buildBinClassifier(train_data,allAttribs,0.0,80,methodName,methArgs.get(methodName,None))
+        else:
+            lObj = buildRegrMod(train_data_fl,allAttribs,0.0,methodName,kwargs=methArgs.get(methodName,None))
+        
+        # Set testing data and run classifier
+    testDataFeatures = testDf[lObj.train_x.columns]
+    lObj.setTestAttrib('test_x',testDataFeatures)
+    
+    return lObj
+
+# This method is a wrapper method to build and run classifiers using the training and the testing data respecitively. 
+# There are no checks to determine if there is any overlap between training and testing data files.
+def trainTestClf(train_data_fl, test_data_fl, clf, attribType, infoGainFl=None, methArgs=None):
+    # Create training data
+    clfObj = trainLearningObj(train_data_fl, test_data_fl, clf, attribType, infoGainFl, methArgs, True)
+    clfObj.runClf(computeMetrics=False)
+
+    prediction_results = {list(clfObj.test_x.index)[i] : clfObj.preds[i] for i in range(len(clfObj.test_x.index))}    
+
+    return clfObj, prediction_results
+
+
+# This method is a wrapper method to build and run regressors using the training and the testing data respecitively. 
+# There are no checks to determine if there is any overlap between training and testing data files.
+def trainTestRgrs(train_data_fl, test_data_fl, methodName, attribType, infoGainFl=None, methArgs=None):
+    rgrObj= trainLearningObj(train_data_fl, test_data_fl, methodName, attribType, infoGainFl, methArgs, False)
+    rgrObj.runRgr(computeMetrics=False, removeOutliers=True)
+    
+    prediction_results = {str(list(rgrObj.test_x.index)[i]) : rgrObj.preds[i] for i in range(len(rgrObj.test_x.index))}    
+
+    return rgrObj, prediction_results

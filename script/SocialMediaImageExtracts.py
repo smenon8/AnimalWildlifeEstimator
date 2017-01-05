@@ -11,6 +11,7 @@ from multiprocessing.pool import Pool
 import time
 import os
 import re
+import pandas as pd
 
 def download_link(directory, url):
     flName = str(directory + str(os.path.basename(url)))
