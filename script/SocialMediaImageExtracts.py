@@ -13,6 +13,15 @@ import os
 import re
 import pandas as pd
 
+# Ref: http://www.impulseadventure.com/photo/exif-orientation.html
+def rotation_to_orientation(theta):
+    if theta == 0:
+        return 1
+    elif theta == 90:
+        return 8
+    else:
+        return 6
+
 def download_link(directory, url):
     flName = str(directory + str(os.path.basename(url)))
     if not os.path.isfile(flName):
@@ -55,7 +64,7 @@ def multiProcMeth(methodName, arg, urlList):
 def _getExif(flickrObj, photo_id):
 	exifJson = json.loads(flickrObj.photos.getInfo(photo_id = photo_id).decode('utf-8'))
 	
-	lat = long = orientation = 0.0
+	lat = long = rotation = 0.0
 	date = '1900-01-01 00:00:00'
 
 	if exifJson['stat'] == 'ok':
@@ -65,7 +74,7 @@ def _getExif(flickrObj, photo_id):
 		if 'dates' in exifJson['photo']:
 			date = exifJson['photo']['dates']['taken']
 		if 'rotation' in exifJson['photo']:
-			orientation = exifJson['photo']['rotation']
+			rotation = exifJson['photo']['rotation']
 
 	sizeJson = json.loads(flickrObj.photos.getSizes(photo_id = photo_id).decode('utf-8'))
 
@@ -82,7 +91,7 @@ def _getExif(flickrObj, photo_id):
 				width = size['width']
 				height = size['height']
 	
-	return dict (lat =  float(lat), long = float(long), date = date, height = int(height), width = int(width), orientation = int(orientation))
+	return dict (lat =  float(lat), long = float(long), date = date, height = int(height), width = int(width), rotation = int(rotation))
 
 
 def getExif(flickrObj, outFl, urlList=None, fileList=None):

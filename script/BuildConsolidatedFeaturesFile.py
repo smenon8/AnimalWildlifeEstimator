@@ -37,7 +37,7 @@ import math
 import pandas as pd
 import DataStructsHelperAPI as DS
 from math import floor
-# importlib.reload(DS)
+importlib.reload(GP)
 
 def printCompltnPercent(percentComplete):
 	i = int(percentComplete)
@@ -277,13 +277,15 @@ def __main__():
 	DS.combineJson("../data/imgs_exif_data_full1.json","../data/imgs_exif_data_full2.json","../data/imgs_exif_data_full.json")
 
 if __name__ == "__main__":
+	gids = list(map(str, list(range(1,1702))))
+	buildFeatureFl(gids, "../data/Flickr_IBEIS_Ftrs.csv", False)
 	# __main__()	
 	# gidAidMapFl = "../data/full_gid_aid_map.json"
 	# getAdditionalAnnotFeatures(gidAidMapFl,'bbox',"../data/gid_bbox.json")
 
-	buildBeautyFtrFl("../data/beautyFeatures_GZC_R.csv",['GID','pleasure','arousal','dominance','y'],"../data/beautyFeatures_GZC")
+	# buildBeautyFtrFl("../data/beautyFeatures_GZC_R.csv",['GID','pleasure','arousal','dominance','y'],"../data/beautyFeatures_GZC")
 
-	DS.combineJson("../data/beautyFeatures_GZC.json","../data/imgs_exif_data_full.json","../data/GZC_exifs_beauty_full.json")
+	# DS.combineJson("../data/beautyFeatures_GZC.json","../data/imgs_exif_data_full.json","../data/GZC_exifs_beauty_full.json")
 
 
 

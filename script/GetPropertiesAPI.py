@@ -20,7 +20,7 @@ import urllib
 ftrNms = {'SPECIES' : 'species_texts', 'AGE' : 'age_months_est', 'INDIVIDUAL_NAME' : 'nids' , 'SEX' : 'sex_texts',
              'EXEMPLAR_FLAG':'exemplar_flags', 'QUALITY' : 'quality_texts', 'VIEW_POINT' : 'yaw_texts'}
 
-baseurl = 'http://lev.cs.rpi.edu:8080/ggr/ia'
+baseurl = 'http://pachy.cs.uic.edu:5001/'
 ggr_base = 'http://lev.cs.rpi.edu:8080/ggr/ia'
 
 # Argument : GID of a single image
@@ -106,13 +106,13 @@ def __main__():
     print(getExifData(1,'lon'))
 
 if __name__ == "__main__":
-    # __main__()
+    __main__()
     #pass
-    gidList = "6a92790b-1c2a-301c-6e7d-def645dca1f5"
+    # gidList = "6a92790b-1c2a-301c-6e7d-def645dca1f5"
     # gidList = 1
     # response = requests.get(baseurl + '/api/image/' + "imageset/uuid" +'/?gid_list='+ str(gidList))
-    response = requests.get(baseurl + '/api/annot/image/contributor/tag/json/' , 
-                        data = dict(annot_uuid_list=[{"__UUID__" : "8b595dc0-9c5a-4caf-9703-9f8ff017e824"}]))
-    jsonObj = response.json()
+    # response = requests.get(baseurl + '/api/annot/image/contributor/tag/json/' , 
+    #                     data = dict(annot_uuid_list=[{"__UUID__" : "8b595dc0-9c5a-4caf-9703-9f8ff017e824"}]))
+    # jsonObj = response.json()
 
-    print(jsonObj)
+    # print(jsonObj)
