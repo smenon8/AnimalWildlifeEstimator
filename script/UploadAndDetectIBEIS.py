@@ -1,6 +1,5 @@
 '''IBEIS IA REST API image upload, image metadata extraction, and detection.'''
 # Author : Jason Parham 
-# Email address : bluemellophone@gmail.com
 
 import requests
 import time
@@ -228,26 +227,26 @@ def __main__():
 if __name__ == "__main__":
     # __main__()
 
-    # with open("../data/beautyFeatures_FlickrExtracts_full.json", "r") as jsonObj:
-    #     flckrImgs = json.load(jsonObj)
-    # print("Staring upload!")
-    # imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/'
-    # gidFlNmDict = {upload(imgPath+img+'.jpg') : img for img in list(flckrImgs.keys())}  
+    with open("../data/beautyFeatures_FlickrExtracts_full.json", "r") as jsonObj:
+        flckrImgs = json.load(jsonObj)
+    print("Staring upload!")
+    imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/'
+    gidFlNmDict = {upload(imgPath+img+'.jpg') : img for img in list(flckrImgs.keys())}  
 
-    # with open("../data/flickr_imgs_gid_flnm_map.json","w") as jsonFl:
-    #     json.dump(gidFlNmDict, jsonFl, indent=4)
+    with open("../data/flickr_imgs_gid_flnm_map.json","w") as jsonFl:
+        json.dump(gidFlNmDict, jsonFl, indent=4)
     
-    data_dict = {
-        'gid_list': [1],
-    }
-    image_uuid_list = get('api/image/uuid', data_dict)
+    # data_dict = {
+    #     'gid_list': [1],
+    # }
+    # image_uuid_list = get('api/image/uuid', data_dict)
 
-    data_dict = {
-        'image_uuid_list': image_uuid_list,
-    }
-    jobid_str = post('api/engine/detect/cnn/yolo', data_dict)
+    # data_dict = {
+    #     'image_uuid_list': image_uuid_list,
+    # }
+    # jobid_str = post('api/engine/detect/cnn/yolo', data_dict)
 
-    print(jobid_str)
+    # print(jobid_str)
     # data_dict = {
     #     'gid_list': [1725],
     # }

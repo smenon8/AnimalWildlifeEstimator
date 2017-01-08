@@ -5,7 +5,7 @@ Created on Sun Mar 27 17:44:47 2016
 Author: Sreejith Menon (smenon8@uic.edu)
 
 Description: Contains methods to extract specific information from IBEIS database through REST-ful API calls
-Functionaties: 
+Functionalaties: 
     1. getAnnotID(<image gid>) : returns Annotation ID of the image gid
     2. getImageFeature(<annot_id>,<feature>) : returns the feature corresponding to the annotation ID
     3. getContributorGID(<contributor_id>) : returns a list of images (image gid) clicked by the contributor
@@ -20,13 +20,13 @@ import urllib
 ftrNms = {'SPECIES' : 'species_texts', 'AGE' : 'age_months_est', 'INDIVIDUAL_NAME' : 'nids' , 'SEX' : 'sex_texts',
              'EXEMPLAR_FLAG':'exemplar_flags', 'QUALITY' : 'quality_texts', 'VIEW_POINT' : 'yaw_texts'}
 
-baseurl = 'http://pachy.cs.uic.edu:5001/'
+baseurl = 'http://pachy.cs.uic.edu:5000/'
 ggr_base = 'http://lev.cs.rpi.edu:8080/ggr/ia'
 
 # Argument : GID of a single image
 # Returns : Corresponding Annotation ID of the GID
 def getAnnotID(gid):
-    response = requests.get(baseurl + '/api/image/annot/rowid/', data = dict(gid_list=[gid]))
+    response = requests.get(baseurl + 'api/image/annot/rowid/', data = dict(gid_list=[gid]))
     jsonObj = response.json()
 
     return jsonObj['response'][0] if len(jsonObj['response']) != 0 else None
@@ -35,7 +35,7 @@ def getAnnotID(gid):
 # Accepted Features: species_texts, age_months_est, exemplar_flags, sex_texts, yaw_texts, quality_texts,image_contributor_tag
 # Returns : Returns the feature
 def getImageFeature(aidList,feature):
-    response = requests.get(baseurl + '/api/annot/' + feature + '/?aid_list=' + str(aidList))
+    response = requests.get(baseurl + 'api/annot/' + feature + '/?aid_list=' + str(aidList))
     jsonObj = response.json()
 
     return jsonObj['response']
@@ -43,16 +43,16 @@ def getImageFeature(aidList,feature):
 # Arguments : GID of an image, required EXIF feature
 # This method should be used for extracting the exif information of a picture.
 def getExifData(gidList,exifFtr):
-    response = requests.get(baseurl + '/api/image/' + exifFtr +'/?gid_list='+ str(gidList))
+    response = requests.get(baseurl + 'api/image/' + exifFtr +'/?gid_list='+ str(gidList))
     jsonObj = response.json()
 
     return jsonObj['response']
 
 # Arguments : Contributor ID
 # Returns : A list of the images(image GID) contributed by the contributor
+
 def getContributorGID(cid):
-    url = "http://pachy.cs.uic.edu:5000/api/contributor/gids/?contrib_rowid_list=["+str(cid)+"]"
-    response = requests.get(baseurl + '/api/contributor/gids/', data = dict(contrib_rowid_list=[cid]))
+    response = requests.get(baseurl + 'api/contributor/image/rowid/', data = dict(contributor_rowid_list=[cid]))
     jsonObj = response.json()
 
     return jsonObj['response'][0]
@@ -107,6 +107,8 @@ def __main__():
 
 if __name__ == "__main__":
     __main__()
+
+
     #pass
     # gidList = "6a92790b-1c2a-301c-6e7d-def645dca1f5"
     # gidList = 1

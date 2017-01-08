@@ -49,18 +49,23 @@ def genImageList(begin,stop,maxImgs=20):
     start= begin
     end = stop
 
-    reader = csv.reader(open(excepFL,"r"))
-    humanImgs = []
-    for row in reader:
-        humanImgs.append(int(row[0]))
+    with open(excepFL,"r") as excpFl:
+        reader = csv.reader(excpFl)
+        humanImgs = []
+        for row in reader:
+            humanImgs.append(int(row[0]))
 
-    while count < maxImgs:
-        num = random.randrange(start,end)
-        if num in listNum or num in humanImgs: continue
-        listNum.append(num)
-        count += 1
+    listNum = list(range(begin, stop))
 
-    return listNum
+    finalGidList = [gid for gid in listNum if gid not in humanImgs] # remove all human images
+
+    # if len(finalGidList) > maxImgs: # if there are more than 100 (maxImgs) images, then shuffle and select the first 100 (maxImgs) images
+    #     random.shuffle(finalGidList)
+    #     finalGidList = finalGidList[:maxImgs]
+    # else: # otherwise select all images
+    #     random.shuffle(finalGidList)
+    random.shuffle(finalGidList)
+    return finalGidList
 
 # Arguments: Start GID, end GID, name of output file, number of images in photo album, a boolean to generate a m-turk job for production environment
 # Returns: A python list with randomly selected image GID’s that are in the photo album. 
@@ -70,11 +75,13 @@ def genImageList(begin,stop,maxImgs=20):
 # prodFileWrite is defaulted to False, so it will only generate a file for mechanical turk sandbox if this parameter is unspecified.
 def generateMTurkFile(startGID,endGID,outFile,maxImgs=20,prodFileWrite = False):
     imageIDList = genImageList(startGID,endGID,maxImgs)
-    links = ["https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/"+str(i)+".jpeg" for i in imageIDList[0:maxImgs]]
+    links = ["https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/"+str(i)+".jpeg" for i in imageIDList]
     imgTags = []
     radioShare = HT.input
     for url in links:
         imgTags.append(HT.img(src = url,alt = "Unavailable"))
+
+    maxImgs = len(imageIDList)  
 
     # logic to create the radio buttons and the hidden form fields
     shareRadio = []
@@ -82,16 +89,16 @@ def generateMTurkFile(startGID,endGID,outFile,maxImgs=20,prodFileWrite = False):
     hiddenField = []
     for i in range(maxImgs):
         hiddenField.append(HT.input(type='hidden',name=imageIDList[i],value=imageIDList[i]))
-        shareRadio.append(HT.input(type='radio',value='share',name=imageIDList[i]) + "Share")
-        notShareRadio.append(HT.input(type='radio',value='noShare',name=imageIDList[i]) + "Do Not Share")
+        shareRadio.append(HT.input(type='radio',value='share',required=True,name=imageIDList[i]) + "Share")
+        notShareRadio.append(HT.input(type='radio',value='noShare',required=True,name=imageIDList[i]) + "Do Not Share")
 
     tdTags = []
     for i in range(maxImgs):
         tdTags.append(HT.td(HT.center(HT.HTML(hiddenField[i]),HT.HTML(shareRadio[i]),HT.HTML(notShareRadio[i])),HT.HTML(imgTags[i])))
 
     trTags = []
-    for i in range(0,maxImgs,2):
-        trTags.append(HT.tr(HT.HTML(tdTags[i]),HT.HTML(tdTags[i+1])))
+    for i in range(1,maxImgs,2):
+        trTags.append(HT.tr(HT.HTML(tdTags[i-1]),HT.HTML(tdTags[i])))
 
     bodyTxt = HT.table(HT.HTML('\n'.join(trTags)),border="1")
 
@@ -128,11 +135,11 @@ def generateMTurkFile(startGID,endGID,outFile,maxImgs=20,prodFileWrite = False):
         headFile.close()
         tailFile.close()
         outputFile.close()
-
+    print("job generation complete!")
     return imageIDList
 
 def __main__():
-    generateMTurkFile(4856,4867,"files/sample.question",6)
+    generateMTurkFile(4856,5000,"files/sample",100)
 
 if __name__ == "__main__":
     __main__()

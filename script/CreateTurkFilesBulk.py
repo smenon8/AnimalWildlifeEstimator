@@ -40,12 +40,12 @@ def createTurkFilesBulk(flNm,jobMapName,noOfJobs,noOfImgsPerJob = 20):
     contributorImages.pop(32)
     contributorImages.pop(34)
     contributorImages.pop(41)
-
-    contributors = list(contributorImages.keys())
-
+    print(len(contributorImages.keys()))
+    contributors = list(filter(lambda x: len(contributorImages[x]) > 8, contributorImages.keys()))
+    print(len(contributors))
     selectedImgContributors = []
     for i in range(0,noOfJobs):
-        selectedImgContributors.append(contributors[random.randrange(0,50)])
+        selectedImgContributors.append(contributors[random.randrange(0,len(contributors))])
 
     argToAPI = []
     for index in selectedImgContributors:
@@ -73,7 +73,7 @@ def createTurkFilesBulk(flNm,jobMapName,noOfJobs,noOfImgsPerJob = 20):
 
         print("Successfully written : " + flName)
 
-    writeFL = open("jobMapName","w")
+    writeFL = open(jobMapName,"w")
     writer = csv.writer(writeFL)
     for key in jobImageMap:
         writer.writerow([key] + [jobImageMap[key]])
@@ -92,3 +92,4 @@ def __main__(args):
 
 if __name__ == "__main__":
     __main__(sys.argv)
+    # createTurkFilesBulk("/tmp/test", "/tmp/map_test.csv", 5, 100)
