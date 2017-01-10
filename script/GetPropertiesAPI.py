@@ -88,8 +88,8 @@ def ggr_get(passthru, arg):
 ggr_form_arg = lambda x : urllib.parse.quote('annot_uuid_list=') + '[{' + urllib.parse.quote('"__UUID__"') + ':' + urllib.parse.quote('\"%s\"' %x) + '}]'
 
 def __main__():
-    for i in range(1,2):
-        print(getImageFeature(getAnnotID(i),"age/months")) # age
+    for i in range(2,4):
+        print(getImageFeature(getAnnotID(i),"bbox")) # age
         print(getImageFeature(getAnnotID(i),"yaw/text")) # yaw_texts
         print(getImageFeature(getAnnotID(i),"exemplar")) # exemplar flag
         print(getImageFeature(getAnnotID(i),"quality/text")) # quality
