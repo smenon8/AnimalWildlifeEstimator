@@ -9,7 +9,7 @@ import os
 from functools import partial
 from multiprocessing.pool import Pool
 
-DOMAIN = 'http://pachy.cs.uic.edu:5001'
+DOMAIN = 'http://pachy.cs.uic.edu:5000'
 
 def upload(image_path, signature='api/upload/image'):
     url = '%s/%s/' % (DOMAIN, signature)

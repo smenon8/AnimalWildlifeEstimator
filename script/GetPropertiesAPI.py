@@ -12,10 +12,7 @@ Functionalaties:
     4. getAgeFeatureReadableFmt(<age from IBEIS API> : returns a human readable age)
 """
 
-import requests
-import json
-import datetime
-import urllib
+import requests, json, datetime, urllib
 
 ftrNms = {'SPECIES' : 'species_texts', 'AGE' : 'age_months_est', 'INDIVIDUAL_NAME' : 'nids' , 'SEX' : 'sex_texts',
              'EXEMPLAR_FLAG':'exemplar_flags', 'QUALITY' : 'quality_texts', 'VIEW_POINT' : 'yaw_texts'}

@@ -19,10 +19,12 @@ for i in range(1,101):
 #Python script for create hit command
 for i in range(1,101):
 	inputFL = "Expt3_" + str(i) + ".input"
-	questionFL ="Expt3_" + str(i) + ".question"
-	cmd = "call loadHITs -input %jobPath%\\" + inputFL + " -question  %jobPath%\\" + questionFL + " -properties %jobPath%\photo_album.properties -sandbox"
+	questionFL ="Expt3_" + str(i) + "_prod.question"
+	cmd = "call loadHITs -input %jobPath%\\" + inputFL + " -question %jobPath%\\" + questionFL + " -properties %jobPath%\photo_album.properties"
 	print(cmd)
 
 
 for i in range(1,101):
 	print("deleteHITs -successfile Exp3_%s.input.success -approve -expire -force" %i)
+
+
