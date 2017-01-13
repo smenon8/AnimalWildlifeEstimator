@@ -9,7 +9,7 @@ import os
 from functools import partial
 from multiprocessing.pool import Pool
 
-DOMAIN = 'http://pachy.cs.uic.edu:5000'
+DOMAIN = 'http://pachy.cs.uic.edu:5001'
 
 def upload(image_path, signature='api/upload/image'):
     url = '%s/%s/' % (DOMAIN, signature)
@@ -64,10 +64,12 @@ def check_annot_metadata(aid_list):
 
 def _request(function, signature, data_dict, skip_json=False):
     url = '%s/%s/' % (DOMAIN, signature)
+    print(url)
     if not skip_json:
         for key in data_dict:
             data_dict[key] = json.dumps(data_dict[key])
     response = function(url, data=data_dict)
+    print(response.json())
     try:
         assert response.ok
     except AssertionError:

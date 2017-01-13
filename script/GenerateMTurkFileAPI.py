@@ -55,7 +55,7 @@ def genImageList(begin,stop,maxImgs=20):
         for row in reader:
             humanImgs.append(int(row[0]))
 
-    listNum = list(range(begin, stop))
+    listNum = list(range(begin, stop+1))
 
     finalGidList = [gid for gid in listNum if gid not in humanImgs] # remove all human images
 
@@ -75,29 +75,28 @@ def genImageList(begin,stop,maxImgs=20):
 # prodFileWrite is defaulted to False, so it will only generate a file for mechanical turk sandbox if this parameter is unspecified.
 def generateMTurkFile(startGID,endGID,outFile,maxImgs=20,prodFileWrite = False):
     imageIDList = genImageList(startGID,endGID,maxImgs)
+
     links = ["https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/"+str(i)+".jpeg" for i in imageIDList]
     imgTags = []
     radioShare = HT.input
     for url in links:
         imgTags.append(HT.img(src = url,alt = "Unavailable"))
 
-    maxImgs = len(imageIDList)  
-
     # logic to create the radio buttons and the hidden form fields
     shareRadio = []
     notShareRadio = []
     hiddenField = []
-    for i in range(maxImgs):
+    for i in range(len(imageIDList)):
         hiddenField.append(HT.input(type='hidden',name=imageIDList[i],value=imageIDList[i]))
         shareRadio.append(HT.input(type='radio',value='share',required=True,name=imageIDList[i]) + "Share")
         notShareRadio.append(HT.input(type='radio',value='noShare',required=True,name=imageIDList[i]) + "Do Not Share")
 
     tdTags = []
-    for i in range(maxImgs):
+    for i in range(len(imageIDList)):
         tdTags.append(HT.td(HT.center(HT.HTML(hiddenField[i]),HT.HTML(shareRadio[i]),HT.HTML(notShareRadio[i])),HT.HTML(imgTags[i])))
 
     trTags = []
-    for i in range(1,maxImgs,2):
+    for i in range(1,len(imageIDList),2):
         trTags.append(HT.tr(HT.HTML(tdTags[i-1]),HT.HTML(tdTags[i])))
 
     bodyTxt = HT.table(HT.HTML('\n'.join(trTags)),border="1")

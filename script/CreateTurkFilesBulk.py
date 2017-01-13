@@ -40,9 +40,9 @@ def createTurkFilesBulk(flNm,jobMapName,noOfJobs,noOfImgsPerJob = 20):
     contributorImages.pop(32)
     contributorImages.pop(34)
     contributorImages.pop(41)
-    print(len(contributorImages.keys()))
+
     contributors = list(filter(lambda x: len(contributorImages[x]) > 8, contributorImages.keys()))
-    print(len(contributors))
+
     selectedImgContributors = []
     for i in range(0,noOfJobs):
         selectedImgContributors.append(contributors[random.randrange(0,len(contributors))])

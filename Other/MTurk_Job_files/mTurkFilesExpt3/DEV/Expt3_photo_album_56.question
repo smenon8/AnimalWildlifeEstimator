@@ -1,0 +1,127 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+  <HTMLContent><![CDATA[
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <script type='text/javascript'>
+				  /**
+				 * Gets a URL parameter from the query string
+				 */
+				function turkGetParam( name, defaultValue ) { 
+				   var regexS = "[\?&]"+name+"=([^&#]*)"; 
+				   var regex = new RegExp( regexS ); 
+				   var tmpURL = window.location.href; 
+				   var results = regex.exec( tmpURL ); 
+				   if( results == null ) { 
+					 return defaultValue; 
+				   } else { 
+					 return results[1];    
+				   } 
+				}
+
+				/**
+				 * URL decode a parameter
+				 */
+				function decode(strToDecode)
+				{
+				  var encoded = strToDecode;
+				  return unescape(encoded.replace(/\+/g,  " "));
+				}
+
+
+				/**
+				 * Returns the Mechanical Turk Site to post the HIT to (sandbox. prod)
+				 */
+				function turkGetSubmitToHost() {
+				  return decode(turkGetParam("turkSubmitTo", "https://www.mturk.com"));
+				}
+
+
+				/**
+				 * Sets the assignment ID in the form. Defaults to use mturk_form and submitButton
+				 */ 
+				function turkSetAssignmentID( form_name, button_name ) {
+
+				  if (form_name == null) {
+					form_name = "mturk_form";
+				  }
+
+				  if (button_name == null) {
+					button_name = "submitButton";
+				  }
+
+				  assignmentID = turkGetParam('assignmentId', "");
+				  document.getElementById('assignmentId').value = assignmentID;
+
+				  if (assignmentID == "ASSIGNMENT_ID_NOT_AVAILABLE") { 
+					// If we're previewing, disable the button and give it a helpful message
+					btn = document.getElementById(button_name);
+					if (btn) {
+					  btn.disabled = true; 
+					  btn.value = "You must ACCEPT the HIT before you can submit the results.";
+					} 
+				  }
+
+				  form = document.getElementById(form_name); 
+				}
+  </script>
+ </head>
+ <body>
+ <h3> Creating a photo album</h3>
+  <p><b>Background:</b></p>
+  <p> We are a research group working on a project to count and track threatened and endangered animals through publicly shared social media photos. </p> 
+  <p>Having accurate information about wildlife populations is critical to protecting them and conserving their habitats.</p>  
+  <p>Gathering accurate information from public social media reports would make it possible to collect up-to-date information about wildlife more broadly than otherwise possible and help conservation efforts.</p>
+  <p>As part of this research, we must understand what kinds of animal photos people are likely to share (and not share) with their friends.</p>
+  
+  <p><b>This HIT:</b></p> 
+  <p>In this HIT, we will show you a number of nature photos a person took while on vacation in Africa.</p> 
+  <p>Please imagine that these are <em>your own photos</em> that you have taken and tell us which of these photos you would share or not share on social media. </p>
+  <p> Thank you for your help</p>
+  
+  <form name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit'>
+  
+  <p><b>How frequently do you share <em>your own photographs</em> on social media?</b> (e.g., Facebook, WhatsApp, Snapchat, Instagram).</p>
+  <input type = 'radio' value = 'never' name = 'q1' id = 'q1,never'> Never
+  <input type = 'radio' value = 'infrequently' name = 'q1' id = 'q1,infrequent'/> Once a month or less
+  <input type = 'radio' value = 'sometimes' name = 'q1' id = 'q1,sometimes'/> About once a week
+  <input type = 'radio' value = 'regularly' name = 'q1' id = 'q1,regularly'/> Most days
+  <input type = 'radio' value = 'everyday' name = 'q1' id = 'q1,everyday'/> Every day
+  <br><br>
+  
+  <p><b>If you were to go on a once-in-a-lifetime vacation and take many photos, how many do you think you would share on social media</b> (either during the trip or afterwards)? </p>
+  <input type = 'radio' value = 'A' name = 'q2' id = 'q2,A'> None
+  <input type = 'radio' value = 'B' name = 'q2' id = 'q2,B'> 1 to 5
+  <input type = 'radio' value = 'C' name = 'q2' id = 'q2,C'> 5 to 10
+  <input type = 'radio' value = 'D' name = 'q2' id = 'q2,D'> 10 to 50
+  <input type = 'radio' value = 'E' name = 'q2' id = 'q2,E'> 50 or more
+  <br><br><table border="1"><tr><td><center><input type="hidden" name="2054" value="2054"><input required type="radio" name="2054" value="share">Share<input required type="radio" name="2054" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2054.jpeg"></td><td><center><input type="hidden" name="2060" value="2060"><input required type="radio" name="2060" value="share">Share<input required type="radio" name="2060" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2060.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2076" value="2076"><input required type="radio" name="2076" value="share">Share<input required type="radio" name="2076" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2076.jpeg"></td><td><center><input type="hidden" name="2053" value="2053"><input required type="radio" name="2053" value="share">Share<input required type="radio" name="2053" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2053.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2059" value="2059"><input required type="radio" name="2059" value="share">Share<input required type="radio" name="2059" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2059.jpeg"></td><td><center><input type="hidden" name="2063" value="2063"><input required type="radio" name="2063" value="share">Share<input required type="radio" name="2063" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2063.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2085" value="2085"><input required type="radio" name="2085" value="share">Share<input required type="radio" name="2085" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2085.jpeg"></td><td><center><input type="hidden" name="2084" value="2084"><input required type="radio" name="2084" value="share">Share<input required type="radio" name="2084" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2084.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2075" value="2075"><input required type="radio" name="2075" value="share">Share<input required type="radio" name="2075" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2075.jpeg"></td><td><center><input type="hidden" name="2052" value="2052"><input required type="radio" name="2052" value="share">Share<input required type="radio" name="2052" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2052.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2079" value="2079"><input required type="radio" name="2079" value="share">Share<input required type="radio" name="2079" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2079.jpeg"></td><td><center><input type="hidden" name="2071" value="2071"><input required type="radio" name="2071" value="share">Share<input required type="radio" name="2071" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2071.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2077" value="2077"><input required type="radio" name="2077" value="share">Share<input required type="radio" name="2077" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2077.jpeg"></td><td><center><input type="hidden" name="2062" value="2062"><input required type="radio" name="2062" value="share">Share<input required type="radio" name="2062" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2062.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2064" value="2064"><input required type="radio" name="2064" value="share">Share<input required type="radio" name="2064" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2064.jpeg"></td><td><center><input type="hidden" name="2080" value="2080"><input required type="radio" name="2080" value="share">Share<input required type="radio" name="2080" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2080.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2061" value="2061"><input required type="radio" name="2061" value="share">Share<input required type="radio" name="2061" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2061.jpeg"></td><td><center><input type="hidden" name="2058" value="2058"><input required type="radio" name="2058" value="share">Share<input required type="radio" name="2058" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2058.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2072" value="2072"><input required type="radio" name="2072" value="share">Share<input required type="radio" name="2072" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2072.jpeg"></td><td><center><input type="hidden" name="2055" value="2055"><input required type="radio" name="2055" value="share">Share<input required type="radio" name="2055" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2055.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2082" value="2082"><input required type="radio" name="2082" value="share">Share<input required type="radio" name="2082" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2082.jpeg"></td><td><center><input type="hidden" name="2069" value="2069"><input required type="radio" name="2069" value="share">Share<input required type="radio" name="2069" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2069.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2081" value="2081"><input required type="radio" name="2081" value="share">Share<input required type="radio" name="2081" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2081.jpeg"></td><td><center><input type="hidden" name="2083" value="2083"><input required type="radio" name="2083" value="share">Share<input required type="radio" name="2083" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2083.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2070" value="2070"><input required type="radio" name="2070" value="share">Share<input required type="radio" name="2070" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2070.jpeg"></td><td><center><input type="hidden" name="2078" value="2078"><input required type="radio" name="2078" value="share">Share<input required type="radio" name="2078" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2078.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2066" value="2066"><input required type="radio" name="2066" value="share">Share<input required type="radio" name="2066" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2066.jpeg"></td><td><center><input type="hidden" name="2065" value="2065"><input required type="radio" name="2065" value="share">Share<input required type="radio" name="2065" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2065.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2057" value="2057"><input required type="radio" name="2057" value="share">Share<input required type="radio" name="2057" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2057.jpeg"></td><td><center><input type="hidden" name="2067" value="2067"><input required type="radio" name="2067" value="share">Share<input required type="radio" name="2067" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2067.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2056" value="2056"><input required type="radio" name="2056" value="share">Share<input required type="radio" name="2056" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2056.jpeg"></td><td><center><input type="hidden" name="2068" value="2068"><input required type="radio" name="2068" value="share">Share<input required type="radio" name="2068" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2068.jpeg"></td></tr>
+<tr><td><center><input type="hidden" name="2051" value="2051"><input required type="radio" name="2051" value="share">Share<input required type="radio" name="2051" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2051.jpeg"></td><td><center><input type="hidden" name="2073" value="2073"><input required type="radio" name="2073" value="share">Share<input required type="radio" name="2073" value="noShare">Do Not Share</center><img alt="Unavailable" src="https://socialmediabias.blob.core.windows.net/wildlifephotos/All_Zebra_Count_Images/2073.jpeg"></td></tr></table>  <br>
+  <p>Please enter any general comments or feedback on the HIT [optional]</p>
+  <input type ="text" name="generalComments" id=comments>
+  <input type="hidden" name="assignmentId" id= assignmentId> 
+  <p><input type='submit' id='submitButton' name = 'submitButton' value='Submit' /></p></form>
+  
+  <script language='Javascript'>turkSetAssignmentID(mturk_form,submitButton);</script>
+ </body>
+</html>
+]]>
+  </HTMLContent>
+  <FrameHeight>500</FrameHeight>
+</HTMLQuestion>
