@@ -50,14 +50,12 @@ def genImageList(begin,stop,maxImgs=20):
     end = stop
 
     with open(excepFL,"r") as excpFl:
-        reader = csv.reader(excpFl)
-        humanImgs = []
-        for row in reader:
-            humanImgs.append(int(row[0]))
+        humanImgs = excpFl.read().split("\n")
 
     listNum = list(range(begin, stop+1))
 
-    finalGidList = [gid for gid in listNum if gid not in humanImgs] # remove all human images
+    humanImgs = list(map(int, humanImgs))
+    finalGidList = list(filter(lambda x : x not in humanImgs, listNum))
 
     # if len(finalGidList) > maxImgs: # if there are more than 100 (maxImgs) images, then shuffle and select the first 100 (maxImgs) images
     #     random.shuffle(finalGidList)
