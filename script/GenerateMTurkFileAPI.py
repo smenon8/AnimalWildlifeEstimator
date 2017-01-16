@@ -78,7 +78,7 @@ def generateMTurkFile(startGID,endGID,outFile,maxImgs=20,prodFileWrite = False):
     imgTags = []
     radioShare = HT.input
     for url in links:
-        imgTags.append(HT.img(src = url,alt = "Unavailable"))
+        imgTags.append(HT.img(src = url,alt = "Unavailable", width = "50%", height = "50%"))
 
     # logic to create the radio buttons and the hidden form fields
     shareRadio = []
