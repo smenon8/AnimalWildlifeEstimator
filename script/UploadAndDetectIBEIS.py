@@ -138,13 +138,33 @@ def run_id_pipeline(aid): # ID'ing task for each annotation
 
     result = get("api/engine/job/result", data_dict)['json_result']['inference_dict']['cluster_dict']
 
-    # check if there is a previously assigned name, if no name is assigned just assign the new_name_"n"
+    
     with open(aid_uuid_map_flickr.json, "r") as aid_uuid_map_json:
         aid_uuid_map = json.load(aid_uuid_map_json)
 
     with open(uuid_aid_map_flickr.json, "r") as uuid_aid_map_json:
         uuid_aid_map = json.load(uuid_aid_map_json)
 
+    # check if there is a previously assigned name, if no name is assigned just assign the new_name_"n"
+    name = None
+    for i in range(len(result['orig_name_list'])):
+        if 'NEW_NAME' not in result['orig_name_list'][i]:
+            # this i has been previously assigned a name
+            name = result['orig_name_list'][i]
+
+    if name == None:
+        name = re.findall(r'NEWNAME_(\d+)', result['new_name_list'][0])
+
+
+    # make the final assignment
+    for annot_uuid_dict in result['annot_uuid_list']:
+        aid = uuid_aid_map[annot_uuid_dict["__UUID__"]]
+
+        data_dict = {
+            "aid_list" : [aid],
+            "name_list" : [name]
+        }
+        r = put("api/annot/name", data_dict)
     return result
 
 def run_detection_task(gid):
