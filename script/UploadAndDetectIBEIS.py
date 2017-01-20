@@ -9,6 +9,7 @@ import os
 from functools import partial
 from multiprocessing.pool import Pool
 
+
 DOMAIN = 'http://pachy.cs.uic.edu:5001'
 
 def upload(image_path, signature='api/upload/image'):
@@ -64,12 +65,12 @@ def check_annot_metadata(aid_list):
 
 def _request(function, signature, data_dict, skip_json=False):
     url = '%s/%s/' % (DOMAIN, signature)
-    print(url)
+
     if not skip_json:
         for key in data_dict:
             data_dict[key] = json.dumps(data_dict[key])
     response = function(url, data=data_dict)
-    print(response.json())
+
     try:
         assert response.ok
     except AssertionError:
@@ -96,6 +97,55 @@ def post(*args, **kwargs):
 
 def delete(*args, **kwargs):
     return _request(requests.delete, *args, **kwargs)
+
+
+def run_id_pipeline(aid): # ID'ing task for each annotation
+    # step 1: get annot_uuid
+    data_dict = {
+        'aid_list': [aid],
+    }
+    annot_uuid_list = get('api/annot/uuid', data_dict)
+
+    # step 2: for the given annot UUID run the detection against all the available annots
+    data_dict = {
+        'query_annot_uuid_list' : json.dumps([annot_uuid_list[0]])
+    }
+    response = requests.request('POST', url, data=data_dict)
+
+    try:
+        assert response.json()['status']['success']
+    except AssertionError:
+        print("RUN_ID_PIPELINE failed for annotation_id %i" %aid)
+
+    jobid_str = response.json()['response']
+
+    error_time = 60
+    start = 0
+    while not check_job_status(jobid_str) and start < error_time:
+        print("Waiting..")
+        start += 0
+        time.sleep(5)
+
+    try:
+        assert check_job_status(jobid_str)
+    except AssertionError:
+        print("RUN_ID_PIPELINE failed for annotation_id %i" %aid)
+
+    # step 3: Job execution must have successfully completed at this point and now we extract the needed information
+    data_dict = {
+        'jobid' : jobid_str
+    }
+
+    result = get("api/engine/job/result", data_dict)['json_result']['inference_dict']['cluster_dict']
+
+    # check if there is a previously assigned name, if no name is assigned just assign the new_name_"n"
+    with open(aid_uuid_map_flickr.json, "r") as aid_uuid_map_json:
+        aid_uuid_map = json.load(aid_uuid_map_json)
+
+    with open(uuid_aid_map_flickr.json, "r") as uuid_aid_map_json:
+        uuid_aid_map = json.load(uuid_aid_map_json)
+
+    return result
 
 def run_detection_task(gid):
     data_dict = {

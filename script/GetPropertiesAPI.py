@@ -17,7 +17,7 @@ import requests, json, datetime, urllib
 ftrNms = {'SPECIES' : 'species_texts', 'AGE' : 'age_months_est', 'INDIVIDUAL_NAME' : 'nids' , 'SEX' : 'sex_texts',
              'EXEMPLAR_FLAG':'exemplar_flags', 'QUALITY' : 'quality_texts', 'VIEW_POINT' : 'yaw_texts'}
 
-baseurl = 'http://pachy.cs.uic.edu:5000/'
+baseurl = 'http://pachy.cs.uic.edu:5001/'
 ggr_base = 'http://lev.cs.rpi.edu:8080/ggr/ia'
 
 # Argument : GID of a single image
@@ -85,22 +85,24 @@ def ggr_get(passthru, arg):
 ggr_form_arg = lambda x : urllib.parse.quote('annot_uuid_list=') + '[{' + urllib.parse.quote('"__UUID__"') + ':' + urllib.parse.quote('\"%s\"' %x) + '}]'
 
 def __main__():
-    for i in range(2,4):
-        print(getImageFeature(getAnnotID(i),"bbox")) # age
-        print(getImageFeature(getAnnotID(i),"yaw/text")) # yaw_texts
-        print(getImageFeature(getAnnotID(i),"exemplar")) # exemplar flag
-        print(getImageFeature(getAnnotID(i),"quality/text")) # quality
-        print(getImageFeature(getAnnotID(i),"sex/text")) # sex
-        print(getImageFeature(getAnnotID(i),"species/text")) # species
+    for i in range(1,2):
+        print(getAnnotID(i))
+        # print(getImageFeature(getAnnotID(i),"bbox")) # age
+        # print(getImageFeature(getAnnotID(i),"yaw/text")) # yaw_texts
+        # print(getImageFeature(getAnnotID(i),"exemplar")) # exemplar flag
+        # print(getImageFeature(getAnnotID(i),"quality/text")) # quality
+        # print(getImageFeature(getAnnotID(i),"sex/text")) # sex
+        # print(getImageFeature(getAnnotID(i),"species/text")) # species
         print(getImageFeature(getAnnotID(i),"name/rowid")) # NID
         print(getImageFeature(getAnnotID(i),"name/text")) # Individual Name
-        print(getImageFeature(getAnnotID(i),"image/contributor/tag")) # Image contributor Tag
+        print(getImageFeature(getAnnotID(i),"uuid")) # annot UUID
+        #print(getImageFeature(getAnnotID(i),"image/contributor/tag")) # Image contributor Tag
 
-    print(getExifData([1,2,3],'unixtime'))
-    print(getExifData([1],'unixtime'))
-    print(getExifData([2,3],'unixtime'))
-    print(getExifData(1,'lat'))
-    print(getExifData(1,'lon'))
+    # print(getExifData([1,2,3],'unixtime'))
+    # print(getExifData([1],'unixtime'))
+    # print(getExifData([2,3],'unixtime'))
+    # print(getExifData(1,'lat'))
+    # print(getExifData(1,'lon'))
 
 if __name__ == "__main__":
     __main__()
