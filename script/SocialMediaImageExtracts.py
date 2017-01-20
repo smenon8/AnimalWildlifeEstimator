@@ -110,17 +110,16 @@ def getExif(flickrObj, outFl, urlList=None, fileList=None):
 
 	return None
 
-def scrape_flickr(page):
+def scrape_flickr(to_page):
 	urlListMaster = []
-	for i in range(1,page):
+	for i in range(1,to_page):
 		print("Scraping from page %d" %i)
-		urlList,photoIDList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["grevy's zebra"],None,i)
+		urlList,photoIDList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["zebra"],None,i)
 		print(len(urlList))
 		urlListMaster.extend(urlList)
 	
-	print(len(urlListMaster))
 	urlListMaster = list(set(urlListMaster))
-	print(len(urlListMaster))
+
 	with open("../data/fileURLS.dat","w") as urlListFl:
 		for url in urlListMaster:
 			urlListFl.write(url + "\n")
@@ -131,15 +130,14 @@ def download_imgs(urlFlList = "../data/fileURLS.dat"):
 
 	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/"
 
-	idxs = [i for i in range(1400,len(urlList),200)]
+	idxs = [i for i in range(0,len(urlList),200)]
 
 	for i in range(1,len(idxs)):
 		print("Downloading from range %i to %i" %(idxs[i-1],idxs[i]-1))
-		multiProcDownload(download_link, download_dir, urlList[idxs[i-1]:idxs[i]])
+		multiProcMeth(download_link, download_dir, urlList[idxs[i-1]:idxs[i]])
 
 	print("Downloading last chunk")
-	print(urlList[1800:])
-	multiProcDownload(download_link, download_dir, urlList[1800:len(urlList)-1])
+	multiProcMeth(download_link, download_dir, urlList[3800:len(urlList)-1])
 
 def __main__():
 	# with open("../data/fileURLS.dat","r") as urlListFl:
@@ -156,8 +154,10 @@ def __main__():
 	
 
 if __name__ == "__main__":
-	__main__()
+	# __main__()
+	# scrape_flickr(51)
 
+	download_imgs()
 
 
 

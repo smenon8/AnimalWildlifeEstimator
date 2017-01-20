@@ -1,5 +1,7 @@
 '''IBEIS IA REST API image upload, image metadata extraction, and detection.'''
-# Author : Jason Parham 
+# Author : Jason Parham  and Sreejith Menon (smenon8@uic.edu)
+
+# Added: New method for ID pipeline
 
 import requests
 import time
@@ -99,8 +101,8 @@ def delete(*args, **kwargs):
     return _request(requests.delete, *args, **kwargs)
 
 
-def run_id_pipeline(aid): # ID'ing task for each annotation
-    # step 1: get annot_uuid
+def run_id_detection(aid): # ID'ing task for each annotation
+    # step 1: get annot_uuid -- this can be done offline too
     data_dict = {
         'aid_list': [aid],
     }
@@ -111,6 +113,8 @@ def run_id_pipeline(aid): # ID'ing task for each annotation
         'query_annot_uuid_list' : json.dumps([annot_uuid_list[0]])
     }
     response = requests.request('POST', url, data=data_dict)
+
+    print("Query submitted..!")
 
     try:
         assert response.json()['status']['success']
@@ -131,6 +135,8 @@ def run_id_pipeline(aid): # ID'ing task for each annotation
     except AssertionError:
         print("RUN_ID_PIPELINE failed for annotation_id %i" %aid)
 
+    print("Query complete..!")
+
     # step 3: Job execution must have successfully completed at this point and now we extract the needed information
     data_dict = {
         'jobid' : jobid_str
@@ -138,11 +144,7 @@ def run_id_pipeline(aid): # ID'ing task for each annotation
 
     result = get("api/engine/job/result", data_dict)['json_result']['inference_dict']['cluster_dict']
 
-    
-    with open(aid_uuid_map_flickr.json, "r") as aid_uuid_map_json:
-        aid_uuid_map = json.load(aid_uuid_map_json)
-
-    with open(uuid_aid_map_flickr.json, "r") as uuid_aid_map_json:
+    with open("../data/Flick_UUID_AID_map.json", "r") as uuid_aid_map_json:
         uuid_aid_map = json.load(uuid_aid_map_json)
 
     # check if there is a previously assigned name, if no name is assigned just assign the new_name_"n"
@@ -155,7 +157,6 @@ def run_id_pipeline(aid): # ID'ing task for each annotation
     if name == None:
         name = re.findall(r'NEWNAME_(\d+)', result['new_name_list'][0])
 
-
     # make the final assignment
     for annot_uuid_dict in result['annot_uuid_list']:
         aid = uuid_aid_map[annot_uuid_dict["__UUID__"]]
@@ -164,8 +165,26 @@ def run_id_pipeline(aid): # ID'ing task for each annotation
             "aid_list" : [aid],
             "name_list" : [name]
         }
+
         r = put("api/annot/name", data_dict)
-    return result
+    
+    print("IDing complete for AID %s \n" %aid)
+    return
+
+
+def run_id_pipeline(gidRange):
+    gid_aid_map = {}
+
+    for gid in gidRange:
+        aid = GP.getAnnotID(int(gid))
+    gid_aid_map[gid] = [aid][0]
+
+    aid_list = [item for sublist in GidAidMap.values() for item in sublist if len(sublist) > 0] # flatten out the list of lists, exclude ones with no annotation
+
+    for aid in aid_list:
+        print("Running ID detection for aid %s" %aid)
+        run_id_detection(aid)
+
 
 def run_detection_task(gid):
     data_dict = {
@@ -289,24 +308,26 @@ def run_detection_task(gid):
     # print('\nDeleted aid_list  = %r' % (aid_list, ))
 
 def __main__():
-    gidList = [i for i in range(88,101)]
+    # gidList = [i for i in range(88,101)]
 
-    detect = partial(run_detection_task)
+    # detect = partial(run_detection_task)
 
-    with Pool(2) as p:
-        p.map(detect, gidList)
+    # with Pool(2) as p:
+    #     p.map(detect, gidList)
+
+    run_id_pipeline(range(1,1702))
 
 if __name__ == "__main__":
     # __main__()
 
-    with open("../data/beautyFeatures_FlickrExtracts_full.json", "r") as jsonObj:
-        flckrImgs = json.load(jsonObj)
-    print("Staring upload!")
-    imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/'
-    gidFlNmDict = {upload(imgPath+img+'.jpg') : img for img in list(flckrImgs.keys())}  
+    # with open("../data/beautyFeatures_FlickrExtracts_full.json", "r") as jsonObj:
+    #     flckrImgs = json.load(jsonObj)
+    # print("Staring upload!")
+    # imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/'
+    # gidFlNmDict = {upload(imgPath+img+'.jpg') : img for img in list(flckrImgs.keys())}  
 
-    with open("../data/flickr_imgs_gid_flnm_map.json","w") as jsonFl:
-        json.dump(gidFlNmDict, jsonFl, indent=4)
+    # with open("../data/flickr_imgs_gid_flnm_map.json","w") as jsonFl:
+        # json.dump(gidFlNmDict, jsonFl, indent=4)
     
     # data_dict = {
     #     'gid_list': [1],
