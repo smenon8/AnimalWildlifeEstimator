@@ -107,10 +107,14 @@ def createFtrFile(result_file, exif_file, out_fl):
 
 def __main__():
 	path = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/"
-	with open("../data/fileURLS.dat","r") as urlListFl:
-		urlList = [url for url in urlListFl.read().split("\n")][1001:]
+	# with open("../data/fileURLS.dat","r") as urlListFl:
+	# 	urlList = [url for url in urlListFl.read().split("\n")][1001:]
 
-	imgs = [path + os.path.basename(url) for url in urlList]
+	# imgs = [path + os.path.basename(url) for url in urlList]
+	with open("../data/new_flickr_extracts_fl_list.dat", "r") as fl_list_fl:
+		imgs = fl_list_fl.read().split("\n")[1500:2500]
+
+	imgs = [path + img for img in imgs]
 
 	start = time.time()
 	for img in imgs:
@@ -118,7 +122,7 @@ def __main__():
 		extr_beauty_ftrs(img)
 		
 
-	with open("../data/beautyFeatures_FlickrExtracts_1.json", "w") as outFl:
+	with open("../data/beautyFeatures_FlickrExtracts_new_4.json", "w") as outFl:
 		json.dump(final_ftr_obj_global, outFl, indent = 4)
 
 	end = time.time()

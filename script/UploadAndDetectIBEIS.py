@@ -7,10 +7,10 @@ import requests
 import time
 import uuid
 import json
-import os
+import os, re
 from functools import partial
 from multiprocessing.pool import Pool
-
+import GetPropertiesAPI as GP
 
 DOMAIN = 'http://pachy.cs.uic.edu:5001'
 
@@ -109,6 +109,7 @@ def run_id_detection(aid): # ID'ing task for each annotation
     annot_uuid_list = get('api/annot/uuid', data_dict)
 
     # step 2: for the given annot UUID run the detection against all the available annots
+    url = "http://pachy.cs.uic.edu:5001/api/engine/query/graph/"
     data_dict = {
         'query_annot_uuid_list' : json.dumps([annot_uuid_list[0]])
     }
@@ -122,12 +123,13 @@ def run_id_detection(aid): # ID'ing task for each annotation
         print("RUN_ID_PIPELINE failed for annotation_id %i" %aid)
 
     jobid_str = response.json()['response']
+    print("Job ID: %s" %jobid_str)
 
-    error_time = 60
+    error_time = 300
     start = 0
     while not check_job_status(jobid_str) and start < error_time:
-        print("Waiting..")
-        start += 0
+        print("Waiting for job completion..!")
+        start += 5
         time.sleep(5)
 
     try:
@@ -150,12 +152,15 @@ def run_id_detection(aid): # ID'ing task for each annotation
     # check if there is a previously assigned name, if no name is assigned just assign the new_name_"n"
     name = None
     for i in range(len(result['orig_name_list'])):
-        if 'NEW_NAME' not in result['orig_name_list'][i]:
+        if 'NEWNAME' not in result['orig_name_list'][i]:
             # this i has been previously assigned a name
             name = result['orig_name_list'][i]
 
+    if len(result['new_name_list']) == 1: # no matches, assign name as negative of nid simply
+        name = str(-1*int(aid))
+
     if name == None:
-        name = re.findall(r'NEWNAME_(\d+)', result['new_name_list'][0])
+        name = re.findall(r'NEWNAME_(\d+)', result['new_name_list'][0])[0]
 
     # make the final assignment
     for annot_uuid_dict in result['annot_uuid_list']:
@@ -169,7 +174,7 @@ def run_id_detection(aid): # ID'ing task for each annotation
         r = put("api/annot/name", data_dict)
     
     print("IDing complete for AID %s \n" %aid)
-    return
+    return 0
 
 
 def run_id_pipeline(gidRange):
@@ -177,9 +182,9 @@ def run_id_pipeline(gidRange):
 
     for gid in gidRange:
         aid = GP.getAnnotID(int(gid))
-    gid_aid_map[gid] = [aid][0]
+        gid_aid_map[gid] = [aid][0]
 
-    aid_list = [item for sublist in GidAidMap.values() for item in sublist if len(sublist) > 0] # flatten out the list of lists, exclude ones with no annotation
+    aid_list = [item for sublist in gid_aid_map.values() for item in sublist if len(sublist) > 0] # flatten out the list of lists, exclude ones with no annotation
 
     for aid in aid_list:
         print("Running ID detection for aid %s" %aid)
@@ -315,10 +320,10 @@ def __main__():
     # with Pool(2) as p:
     #     p.map(detect, gidList)
 
-    run_id_pipeline(range(1,1702))
+    run_id_pipeline(range(5,1702))
 
 if __name__ == "__main__":
-    # __main__()
+    __main__()
 
     # with open("../data/beautyFeatures_FlickrExtracts_full.json", "r") as jsonObj:
     #     flckrImgs = json.load(jsonObj)

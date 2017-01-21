@@ -86,8 +86,8 @@ def generateMTurkFile(startGID,endGID,outFile,maxImgs=20,prodFileWrite = False):
     hiddenField = []
     for i in range(len(imageIDList)):
         hiddenField.append(HT.input(type='hidden',name=imageIDList[i],value=imageIDList[i]))
-        shareRadio.append(HT.input(type='radio',value='share',required=True,name=imageIDList[i]) + "Share")
-        notShareRadio.append(HT.input(type='radio',value='noShare',required=True,name=imageIDList[i]) + "Do Not Share")
+        shareRadio.append(HT.input(type='radio',value='share',required=True,name=imageIDList[i],id="%i_share" %i) + '<label for="%i_share" class="radiostyle">Share</label>' %i)
+        notShareRadio.append(HT.input(type='radio',value='noShare',required=True,name=imageIDList[i],id="%i_noShare" %i) + '<label for="%i_noShare" class="radiostyle">Do Not Share</label>' %i)
 
     tdTags = []
     for i in range(len(imageIDList)):

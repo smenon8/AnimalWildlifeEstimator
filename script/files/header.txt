@@ -3,6 +3,19 @@
 <!DOCTYPE html>
 <html>
  <head>
+ <style type="text/css">
+.radiostyle {
+    background-color: #D3D3D3;
+    font-size: x-large;
+}
+
+input[type=radio]:checked+label  {
+/* Or `#a1:checked+label` if you only want it for that input */
+    background-color: lightblue;
+}  background-color: red;
+}
+
+</style>
   <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
   <script type='text/javascript'>
 				  /**
