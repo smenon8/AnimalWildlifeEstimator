@@ -112,7 +112,7 @@ def __main__():
 
 	# imgs = [path + os.path.basename(url) for url in urlList]
 	with open("../data/new_flickr_extracts_fl_list.dat", "r") as fl_list_fl:
-		imgs = fl_list_fl.read().split("\n")[1500:2500]
+		imgs = fl_list_fl.read().split("\n")[2500:]
 
 	imgs = [path + img for img in imgs]
 
@@ -122,7 +122,7 @@ def __main__():
 		extr_beauty_ftrs(img)
 		
 
-	with open("../data/beautyFeatures_FlickrExtracts_new_4.json", "w") as outFl:
+	with open("../data/beautyFeatures_FlickrExtracts_new_5.json", "w") as outFl:
 		json.dump(final_ftr_obj_global, outFl, indent = 4)
 
 	end = time.time()
