@@ -63,3 +63,18 @@ def flipKeyValue(dct):
 			outDct[dct[key]] = key
 
 	return outDct
+
+
+def __main__():
+	d = appendJSON("../data/beautyFeatures_FlickrExtracts_new_1.json", 
+          "../data/beautyFeatures_FlickrExtracts_new_2.json",
+          "../data/beautyFeatures_FlickrExtracts_new_3.json",
+          "../data/beautyFeatures_FlickrExtracts_new_4.json",
+          "../data/beautyFeatures_FlickrExtracts_new_5.json")
+
+
+	with open("../data/beautyFeatures_FlickrExtracts_new_full.json", "w") as fl:
+	    json.dump(d, fl, indent=4)
+
+if __name__ == "__main__":
+	__main__()

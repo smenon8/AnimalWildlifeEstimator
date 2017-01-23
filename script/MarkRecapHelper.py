@@ -39,7 +39,7 @@ def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,
 	for gid in gidsDayNum.keys(): # only iterate over the GIDs of interest
 		if gid in gidNid.keys(): # not all images with valid EXIF feature will have an annotation
 			for nid in gidNid[gid]:
-				if int(nid) > 0: # ignore all the false positives
+				if int(nid) > 0 and int(nid) != 45: # ignore all the false positives --and ignore NID 45
 					nidMarkRecap[nid] = nidMarkRecap.get(nid,[]) + [gidsDayNum[gid]]
 
 	nidMarkRecapSet = { nid : list(set(nidMarkRecap[nid])) for nid in nidMarkRecap.keys()}
