@@ -93,7 +93,7 @@ def __main__():
         # print(getImageFeature(getAnnotID(i),"quality/text")) # quality
         # print(getImageFeature(getAnnotID(i),"sex/text")) # sex
         # print(getImageFeature(getAnnotID(i),"species/text")) # species
-        print(getImageFeature(getAnnotID(i),"name/rowid")) # NID
+        print(getImageFeature(getAnnotID(i),"note")) # NID
         print(getImageFeature(getAnnotID(i),"name/text")) # Individual Name
         print(getImageFeature(getAnnotID(i),"uuid")) # annot UUID
         #print(getImageFeature(getAnnotID(i),"image/contributor/tag")) # Image contributor Tag
