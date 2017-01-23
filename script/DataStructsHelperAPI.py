@@ -25,7 +25,7 @@ def cnvrtDictToLstTup(dct):
 
 # Generate Date(String) in outFmt from TimeStamp(String) in inpFmt
 def getDateFromStr(dtStr,inpFmt,outFmt):
-	return datetime.strptime(dtStr,'%Y-%m-%d %H:%M:%S').date().strftime('%Y-%m-%d')
+	return datetime.strptime(dtStr,inpFmt).date().strftime(outFmt)
 
 def combineJSON(fl1,fl2,outFlNm):
 	with open(fl1,"r") as f1, open(fl2,"r") as f2:
@@ -56,7 +56,10 @@ def flipKeyValue(dct):
 	outDct = {}
 
 	for key in dct.keys():
-		for val in dct[key]:
-			outDct[val] = outDct.get(val,[]) + [key]
+		if type(dct[key]) in [list, tuple]:
+			for val in dct[key]:
+				outDct[val] = outDct.get(val,[]) + [key]
+		else:
+			outDct[dct[key]] = key
 
 	return outDct

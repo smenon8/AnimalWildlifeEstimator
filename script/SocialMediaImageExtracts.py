@@ -12,6 +12,7 @@ import time
 import os
 import re
 import pandas as pd
+import DataStructsHelperAPI as DS
 
 # Ref: http://www.impulseadventure.com/photo/exif-orientation.html
 def rotation_to_orientation(theta):
@@ -139,6 +140,30 @@ def download_imgs(urlFlList = "../data/fileURLS.dat"):
 	print("Downloading last chunk")
 	multiProcMeth(download_link, download_dir, urlList[3800:len(urlList)-1])
 
+''' 
+	Converting all that we have into a unified form
+	The main identifier should be GID and not file name
+	Below code will convert the EXIF file (and also beauty file) indexed by GID. 
+'''
+def convert_fl_gid_idx(inFl, outFl):
+	with open("../data/flickr_imgs_gid_flnm_map.json", "r") as gid_fl_nm_map_fl:
+		gid_flnm_map = json.load(gid_fl_nm_map_fl)
+
+	flnm_gid_map = DS.flipKeyValue(gid_flnm_map)
+	flnm_gid_map = {re.findall(r'([0-9]+)_.*', key)[0] : flnm_gid_map[key] for key in flnm_gid_map.keys()}
+
+	with open(inFl, "r") as in_fl_obj:
+		in_json_obj = json.load(in_fl_obj)
+
+	out_json_obj = {}
+	for key in in_json_obj.keys():
+		out_json_obj[flnm_gid_map[key]] = in_json_obj[key]
+
+	with open(outFl, "w") as out_fl_obj:
+		json.dump(out_json_obj, out_fl_obj, indent=4)
+
+	return 0
+
 def __main__():
 	# with open("../data/fileURLS.dat","r") as urlListFl:
 	# 	urlList = [url for url in urlListFl.read().split("\n")]
@@ -157,7 +182,19 @@ if __name__ == "__main__":
 	# __main__()
 	# scrape_flickr(51)
 
-	download_imgs()
+	#download_imgs()
+
+
+	''' 
+	Converting all that we have into a unified form
+	The main identifier should be GID and not file name
+	Below code will convert the EXIF file (and also beauty file) indexed by GID. 
+	'''
+	convert_fl_gid_idx("../data/Flickr_EXIF_full.json", "../data/Flickr_EXIF_full.json")
+
+
+
+
 
 
 
