@@ -168,7 +168,7 @@ def __main__():
 	# with open("../data/fileURLS.dat","r") as urlListFl:
 	# 	urlList = [url for url in urlListFl.read().split("\n")]
 
-	with open("../data/flickr_imgs_gid_flnm_map.json", "r") as flJson:
+	with open("../data/flickr_imgs_gid_flnm_map_new.json", "r") as flJson:
 		flListJson = json.load(flJson)
 	flList = list(flListJson.values())
 
@@ -176,10 +176,9 @@ def __main__():
 		print("Extraction for %s to %s" %(i, min(i+150, len(flList))))
 		getExif(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"), "../data/Flickr_EXIF_%s.json" %i , fileList = flList[i:min(i+150, len(flList))])
 		time.sleep(5)
-	
 
 if __name__ == "__main__":
-	# __main__()
+	__main__()
 	# scrape_flickr(51)
 
 	#download_imgs()
@@ -190,7 +189,7 @@ if __name__ == "__main__":
 	The main identifier should be GID and not file name
 	Below code will convert the EXIF file (and also beauty file) indexed by GID. 
 	'''
-	convert_fl_gid_idx("../data/Flickr_EXIF_full.json", "../data/Flickr_EXIF_full.json")
+	# convert_fl_gid_idx("../data/Flickr_EXIF_full.json", "../data/Flickr_EXIF_full.json")
 
 
 

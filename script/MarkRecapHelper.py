@@ -13,13 +13,16 @@ def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,
 	with open(inExifFl,"r") as inpFl:
 		jsonObj = json.load(inpFl)
 
+	# to preserve only images taken in wild - should be commented when not needed.
+	gids_loc = [gid for gid in jsonObj.keys() if jsonObj[gid]['lat'] >= -1.50278 and jsonObj[gid]['lat'] <= 1.504953 and jsonObj[gid]['long'] >= 35.174045 and jsonObj[gid]['long'] <= 38.192836 ]
 	# Extract only the date information for all the given images
 	# modify the date format as and when needed to match the requirements. 
 	imgDateDict = {gid : DS.getDateFromStr(jsonObj[gid]['date'],'%Y-%m-%d %H:%M:%S','%Y') for gid in jsonObj.keys()}
 
 	# filter out only the GIDs that were taken on either of the days specified in the days dictionary
 	filteredGid = list(filter(lambda x : imgDateDict[x] in daysDict.keys(),imgDateDict.keys()))
-	
+	filteredGid = [gid for gid in filteredGid if gid in gids_loc] # should be commented once done
+
 	# Logic to handle only the images that are shared
 	if shareData in {'proportion' , 'classifier' }:
 		filteredGid = genSharedGids(filteredGid,gidPropMapFl,shareData,probabThreshold)

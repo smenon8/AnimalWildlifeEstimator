@@ -18,7 +18,7 @@ ftrNms = {'SPECIES' : 'species_texts', 'AGE' : 'age_months_est', 'INDIVIDUAL_NAM
              'EXEMPLAR_FLAG':'exemplar_flags', 'QUALITY' : 'quality_texts', 'VIEW_POINT' : 'yaw_texts'}
 
 baseurl = 'http://pachy.cs.uic.edu:5001/'
-ggr_base = 'http://lev.cs.rpi.edu:8080/ggr/ia'
+ggr_base = 'http://lev.cs.rpi.edu:5002/ggr/ia'
 
 # Argument : GID of a single image
 # Returns : Corresponding Annotation ID of the GID
