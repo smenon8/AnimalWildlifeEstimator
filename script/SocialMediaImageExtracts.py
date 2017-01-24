@@ -26,7 +26,10 @@ def download_link(directory, url, fl_nm=None):
 		fl_nm = str(directory + fl_nm + '.jpeg')
 
 	if not os.path.isfile(fl_nm):
-		urlretrieve(url, fl_nm)
+		try:
+			urlretrieve(url, fl_nm)
+		except Exception as e:
+			return 
 
 def createFlickrObj(flickrKeyFl):
 	# creating Flickr Object
@@ -144,13 +147,9 @@ def download_imgs(urlFlList = "../data/fileURLS.dat"):
 
 def download_imgs_bing(img_id_url_dict):
 	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Bing_Scrape/"
-	fl_nm_list = []
-	url_list = []
-	for key in img_id_url_dict.keys():
-	    fl_nm_list.append(key)
-	    url_list.append(img_id_url_dict[key])
 
-	multiProcMeth(download_link, download_dir, url_list, fl_nm_list)
+	for key in img_id_url_dict.keys():
+		download_link(download_dir, img_id_url_dict[key], key)
 
 	return 
 
@@ -218,7 +217,7 @@ def convert_fl_gid_idx(inFl, outFl):
 
 def bing_search_pipeline():
 	next_offset = 0
-	for i in range(10):
+	for i in range(50):
 		search_results = get_search_results_bing("grevy's zebra", 150, 150*i + next_offset)
 		print(len(search_results['value']))
 		get_exif_bing(search_results['value'], "../data/bing_img_exif_%i.json" %i)
@@ -228,6 +227,7 @@ def bing_search_pipeline():
 		print("Download starting, Iteration %i..!" %(i+1))
 		download_imgs_bing(img_id_url_dict)
 		print()
+		time.sleep(5)
 
 	return 0
 
