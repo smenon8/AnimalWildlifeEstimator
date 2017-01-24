@@ -2,17 +2,13 @@
 # Author : Sreejith Menon
 # Email : smenon8@uic.edu
 
-import sys
-import json
 import flickrapi as f
 from urllib.request import urlretrieve
 from functools import partial
 from multiprocessing.pool import Pool
-import time
-import os
-import re
-import pandas as pd
+import os, re, pandas as pd, sys, json, time
 import DataStructsHelperAPI as DS
+import http.client, urllib.request, urllib.parse
 
 # Ref: http://www.impulseadventure.com/photo/exif-orientation.html
 def rotation_to_orientation(theta):
@@ -23,10 +19,14 @@ def rotation_to_orientation(theta):
     else:
         return 6
 
-def download_link(directory, url):
-    flName = str(directory + str(os.path.basename(url)))
-    if not os.path.isfile(flName):
-    	urlretrieve(url, flName)
+def download_link(directory, url, fl_nm=None):
+	if fl_nm == None:
+		fl_nm = str(directory + str(os.path.basename(url)))
+	else:
+		fl_nm = str(directory + fl_nm + '.jpeg')
+
+	if not os.path.isfile(fl_nm):
+		urlretrieve(url, fl_nm)
 
 def createFlickrObj(flickrKeyFl):
 	# creating Flickr Object
@@ -52,12 +52,12 @@ def searchInFlickr(flickrObj, tags=[], text=None, page=1):
 
 	return urlList, photoID
 
-def multiProcMeth(methodName, arg, urlList):
+def multiProcMeth(methodName, arg, urlList, flNmList):
 	start_time = time.time()
 
 	download = partial(methodName, arg)
-	with Pool(5) as p:
-		p.map(download, urlList)
+	with Pool(1) as p:
+		p.starmap(download, zip(urlList, flNmList))
 
 	print("Time elapsed: %f" %(time.time() - start_time))
 
@@ -140,6 +140,57 @@ def download_imgs(urlFlList = "../data/fileURLS.dat"):
 	print("Downloading last chunk")
 	multiProcMeth(download_link, download_dir, urlList[3800:len(urlList)-1])
 
+	return 
+
+def download_imgs_bing(img_id_url_dict):
+	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Bing_Scrape/"
+	fl_nm_list = []
+	url_list = []
+	for key in img_id_url_dict.keys():
+	    fl_nm_list.append(key)
+	    url_list.append(img_id_url_dict[key])
+
+	multiProcMeth(download_link, download_dir, url_list, fl_nm_list)
+
+	return 
+
+def get_exif_bing(search_result_value, out_fl_nm):
+	img_exif = {}
+
+	for result in search_result_value:
+		img_exif[result['imageId']] = dict(width=result['width'], height=result['height'], date=result['datePublished'])
+
+	with open(out_fl_nm, "w") as out_fl:
+		json.dump(img_exif, out_fl, indent=4)
+
+	return 
+
+def get_search_results_bing(query, count=10, offset=0):
+	with open("/Users/sreejithmenon/Google Drive/CodeBase/BingSearchAPI_key.dat", "r") as key_fl:
+		key = key_fl.read()
+
+	headers = {
+    	'Ocp-Apim-Subscription-Key': key
+	}
+	params = urllib.parse.urlencode({
+	    'q': query,
+	    'count': count,
+	    'offset': offset,
+	    'mkt': 'en-us',
+	    'safeSearch': 'Moderate'
+	})
+
+	try:
+	    conn = http.client.HTTPSConnection('api.cognitive.microsoft.com')
+	    conn.request("GET", "/bing/v5.0/images/search?%s" % params, "{body}", headers)
+	    response = conn.getresponse()
+	    data = response.read().decode('utf-8')
+	    conn.close()
+	except Exception as e:
+	    print("[Errno {0}] {1}".format(e.errno, e.strerror))
+
+	return json.loads(data)
+
 ''' 
 	Converting all that we have into a unified form
 	The main identifier should be GID and not file name
@@ -164,6 +215,22 @@ def convert_fl_gid_idx(inFl, outFl):
 
 	return 0
 
+
+def bing_search_pipeline():
+	next_offset = 0
+	for i in range(10):
+		search_results = get_search_results_bing("grevy's zebra", 150, 150*i + next_offset)
+		print(len(search_results['value']))
+		get_exif_bing(search_results['value'], "../data/bing_img_exif_%i.json" %i)
+		next_offset = search_results['nextOffsetAddCount']
+
+		img_id_url_dict = {result['imageId'] : result['contentUrl'] for result in search_results['value']}
+		print("Download starting, Iteration %i..!" %(i+1))
+		download_imgs_bing(img_id_url_dict)
+		print()
+
+	return 0
+
 def __main__():
 	# with open("../data/fileURLS.dat","r") as urlListFl:
 	# 	urlList = [url for url in urlListFl.read().split("\n")]
@@ -178,7 +245,7 @@ def __main__():
 		time.sleep(5)
 
 if __name__ == "__main__":
-	__main__()
+	# __main__()
 	# scrape_flickr(51)
 
 	#download_imgs()
@@ -191,9 +258,4 @@ if __name__ == "__main__":
 	'''
 	# convert_fl_gid_idx("../data/Flickr_EXIF_full.json", "../data/Flickr_EXIF_full.json")
 
-
-
-
-
-
-
+	bing_search_pipeline()
