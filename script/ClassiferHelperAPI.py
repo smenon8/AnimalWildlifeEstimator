@@ -249,7 +249,7 @@ def trainTestClf(train_data_fl, test_data_fl, clf, attribType, infoGainFl=None, 
     clfObj = trainLearningObj(train_data_fl, test_data_fl, clf, attribType, infoGainFl, methArgs, True)
     clfObj.runClf(computeMetrics=False)
 
-    prediction_results = {list(clfObj.test_x.index)[i] : clfObj.preds[i] for i in range(len(clfObj.test_x.index))}    
+    prediction_results = {list(clfObj.test_x.index)[i] : clfObj.predProbabs[i] for i in range(len(clfObj.test_x.index))}    
 
     return clfObj, prediction_results
 

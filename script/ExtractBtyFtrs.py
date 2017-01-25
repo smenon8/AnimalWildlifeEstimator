@@ -59,8 +59,13 @@ def extr_beauty_ftrs(imgFlNm):
 	# imgFlNm = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/All_Zebra_Count_Images/%s.jpeg" %gid
 	img = os.path.basename(imgFlNm)
 	
-	rgbImg = io.imread(imgFlNm)
-	if len(rgbImg.shape) != 3:
+	try:
+		rgbImg = io.imread(imgFlNm)
+	except Exception as e:
+		print("Invalid image")
+		return None
+		
+	if len(rgbImg.shape) != 3 or rgbImg.shape[2] !=3:
 		print("Invalid image.. Continuing..")
 		final_ftr_obj_global[img] = None
 		return None
@@ -106,13 +111,13 @@ def createFtrFile(result_file, exif_file, out_fl):
 	return None
 
 def __main__():
-	path = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/"
+	path = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Bing_Scrape/"
 	# with open("../data/fileURLS.dat","r") as urlListFl:
 	# 	urlList = [url for url in urlListFl.read().split("\n")][1001:]
 
 	# imgs = [path + os.path.basename(url) for url in urlList]
-	with open("../data/new_flickr_extracts_fl_list.dat", "r") as fl_list_fl:
-		imgs = fl_list_fl.read().split("\n")[2500:]
+	with open("../data/fl_list.dat", "r") as fl_list_fl:
+		imgs = fl_list_fl.read().split("\n")
 
 	imgs = [path + img for img in imgs]
 
@@ -122,18 +127,12 @@ def __main__():
 		extr_beauty_ftrs(img)
 		
 
-	with open("../data/beautyFeatures_FlickrExtracts_new_5.json", "w") as outFl:
+	with open("../data/beautyFeatures_Bing.json", "w") as outFl:
 		json.dump(final_ftr_obj_global, outFl, indent = 4)
 
 	end = time.time()
 
 	print("Time elapsed: %f" %(end-start))
-	# ftr_extract = partial(extr_beauty_ftrs, final_ftr_obj)
-	# with Pool(5) as p:
-	# 	p.map(ftr_extract, gids)
-
-	# print(final_ftr_obj)
-
 
 if __name__ == "__main__":
 	__main__()
