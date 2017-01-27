@@ -6,23 +6,47 @@ import importlib
 import pandas as pd
 import warnings
 import sys
-
 importlib.reload(DS)
+
+def gid_filter_logic(inExifFl, inGidAidMapFl, inAidFtrFl):
+	with open(inExifFl,"r") as inpFl:
+		jsonObj = json.load(inpFl)
+
+	# to preserve only images taken in wild - should be commented when not needed.
+	gids_nairobi = [gid for gid in jsonObj.keys() if jsonObj[gid]['lat'] >= -1.50278 and jsonObj[gid]['lat'] <= 1.504953 and jsonObj[gid]['long'] >= 35.174045 and jsonObj[gid]['long'] <= 38.192836 ]
+	gids_geo_tagged = [gid for gid in jsonObj.keys() if jsonObj[gid]['lat'] != 0 or jsonObj[gid]['long'] != 0]
+	gids_zoo = list(set(gids_geo_tagged) - set(gids_nairobi))
+
+	gid_nid = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,"NID",False)
+	nid_gid = DS.flipKeyValue(gid_nid)
+
+	nids_zoo = []
+	for gid in gid_nid.keys():
+		if gid in gids_zoo:
+			nids_zoo.extend(gid_nid[gid]) # this will take care of list of lists
+
+	nids_in_wild_gid_map = {nid: nid_gid[nid] for nid in nid_gid.keys() if nid not in nids_zoo}
+
+	# this contains all the images that have no animals that were even once identified in the zoo
+	gid_list = list({gid for sublist in list(nids_in_wild_gid_map.values()) for gid in sublist})
+
+	return gid_list
 
 def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,filterBySpecies=None,shareData='proportion',probabThreshold=1):
 	with open(inExifFl,"r") as inpFl:
 		jsonObj = json.load(inpFl)
 
-	# to preserve only images taken in wild - should be commented when not needed.
-	gids_loc = [gid for gid in jsonObj.keys() if jsonObj[gid]['lat'] >= -1.50278 and jsonObj[gid]['lat'] <= 1.504953 and jsonObj[gid]['long'] >= 35.174045 and jsonObj[gid]['long'] <= 38.192836 ]
 	# Extract only the date information for all the given images
 	# modify the date format as and when needed to match the requirements. 
 	imgDateDict = {gid : DS.getDateFromStr(jsonObj[gid]['date'],'%Y-%m-%d %H:%M:%S','%Y') for gid in jsonObj.keys()}
 
+	gid_list = gid_filter_logic(inExifFl, inGidAidMapFl, inAidFtrFl)
+
 	# filter out only the GIDs that were taken on either of the days specified in the days dictionary
 	filteredGid = list(filter(lambda x : imgDateDict[x] in daysDict.keys(),imgDateDict.keys()))
-	filteredGid = [gid for gid in filteredGid if gid in gids_loc] # should be commented once done
+	filteredGid = [gid for gid in filteredGid if gid in gid_list] # should be commented once done
 
+	print("Number of images used: %i" %len(filteredGid))
 	# Logic to handle only the images that are shared
 	if shareData in {'proportion' , 'classifier' }:
 		filteredGid = genSharedGids(filteredGid,gidPropMapFl,shareData,probabThreshold)

@@ -313,7 +313,7 @@ def runSyntheticExptsRgr(inExifFl, inGidAidMapFl, inAidFtrFl, krange, thresholdM
 
 
 def runSyntheticExptsClf(inExifFl, inGidAidMapFl, inAidFtrFl, krange, randomShare=False, beautyFtrs = False):
-    clfTypes = ['bayesian', 'logistic', 'svm', 'dtree', 'random_forests', 'ada_boost']
+    clfTypes = ['dummy', 'bayesian', 'logistic', 'svm', 'dtree', 'random_forests', 'ada_boost']
 
     if beautyFtrs:
         attribTypes = ['beauty']

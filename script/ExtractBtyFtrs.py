@@ -8,7 +8,6 @@ from skimage import io, color, feature, transform
 import numpy as np
 import time
 import json
-from BuildConsolidatedFeaturesFile import printCompltnPercent
 import math
 import pandas as pd
 from datetime import datetime
