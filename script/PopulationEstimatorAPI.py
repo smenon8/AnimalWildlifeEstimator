@@ -115,9 +115,9 @@ def estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
     marks_g,recaptures_g,population_g = MR.applyMarkRecap(nidMarkRecapSet)
 
     # 0 recaptures using Lincoln-Petersen estimates essentially mean an infinite population and hence an approximation to 10x
-    population_z = 10 * g_truth_population_z if population_z == 0 else population_z
-    population_g = 10 * g_truth_population_g if population_g == 0 else population_g
-    population_all = 10 * g_truth_population_all if population_all == 0 else population_all
+    population_z = None if population_z == 0 else population_z
+    population_g = None if population_g == 0 else population_g
+    population_all = None if population_all == 0 else population_all
 
     return {'all' : population_all , 
             'zebras' : population_z , 'giraffes' : population_g}
@@ -268,13 +268,15 @@ def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs, threshold
                 df.index = df['threshold']
                 df.drop(['threshold'],1,inplace=True)
 
-            df.to_csv(str(flNm+".csv"))
-            df_html = df.to_html(index=True)
+            # df.to_csv(str(flNm+".csv"))
+            # df_html = df.to_html(index=True)
             randomized = sharesMethod(predictions,inExifFl,inGidAidMapFl,inAidFtrFl,lambda : random.randint(min(krange),max(krange)))
             df['Randomized_all'] = randomized['all']
             df['Randomized_giraffe'] = randomized['giraffes']
             df['Randomized_zebras'] = randomized['zebras']
             
+            return df
+
             if thresholdMeth:
                 fig1 = df.iplot(kind='line',layout=layout,filename=str(meth + "_" + attrib + "_thresholded"))
             else:
@@ -309,7 +311,7 @@ def runSyntheticExptsRgr(inExifFl, inGidAidMapFl, inAidFtrFl, krange, thresholdM
             'svr' : {'fit_intercept' : True},
             'dtree_regressor' : {'fit_intercept' : True}}
 
-    runSyntheticExpts(False, rgrTypes, attribTypes, krange, regrArgs, thresholdMeth=thresholdMeth, randomShare=randomShare)
+    return runSyntheticExpts(False, rgrTypes, attribTypes, krange, regrArgs, thresholdMeth=thresholdMeth, randomShare=randomShare)
 
 
 def runSyntheticExptsClf(inExifFl, inGidAidMapFl, inAidFtrFl, krange, randomShare=False, beautyFtrs = False):

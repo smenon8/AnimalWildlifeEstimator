@@ -5,13 +5,9 @@
 # Very expensive when run serially.
 
 from skimage import io, color, feature, transform
-import numpy as np
-import time
-import json
-import math
-import pandas as pd
+import numpy as np, pandas as pd
+import time, json, argparse, math, os
 from datetime import datetime
-import os
 
 final_ftr_obj_global = {}
 def calc_contrast(r, g, b):
@@ -54,12 +50,17 @@ def get_arr(imgObj):
 
 	return (first, second, third)
 
+# logic to resize the image without affecting the aspect ratio
+def resize_img(imgObj, base_width=600):
+	newHeight = int(len(imgObj) * base_width / len(imgObj[0]))
+	return  transform.resize(imgObj, (newHeight,base_width))
+
 def extr_beauty_ftrs(imgFlNm):
 	# imgFlNm = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/All_Zebra_Count_Images/%s.jpeg" %gid
 	img = os.path.basename(imgFlNm)
 	
 	try:
-		rgbImg = io.imread(imgFlNm)
+		rgbImg = resize_img(io.imread(imgFlNm))
 	except Exception as e:
 		print("Invalid image")
 		return None
@@ -110,15 +111,26 @@ def createFtrFile(result_file, exif_file, out_fl):
 	return None
 
 def __main__():
-	path = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Bing_Scrape/"
-	# with open("../data/fileURLS.dat","r") as urlListFl:
-	# 	urlList = [url for url in urlListFl.read().split("\n")][1001:]
+	parser = argparse.ArgumentParser()
+	parser.add_argument('-img_lst_fp', '--img_file_list_full_path', help='Full path to the image file list containing images list with full path', required=False)
+	parser.add_argument('-path', '--img_file_folder_path', help='Path wehere all the image files are located', required=False)
+	parser.add_argument('-img_lst', '--img_file_list', help='Full path to the image file list containing images list with only filenames', required=False)
+	parser.add_argument('-out_fl', '--out_fl_nm', help='Full path to the output file', required=True)
+	
+	args = vars(parser.parse_args())
 
-	# imgs = [path + os.path.basename(url) for url in urlList]
-	with open("../data/fl_list.dat", "r") as fl_list_fl:
-		imgs = fl_list_fl.read().split("\n")
+	out_fl = args["out_fl_nm"]
 
-	imgs = [path + img for img in imgs]
+	if args["img_file_list_full_path"]:
+		img_file_list = args["img_file_list_full_path"]
+		with open(img_file_list, "r") as fl_list_fl:
+			imgs = fl_list_fl.read().split("\n")
+	elif args["img_file_folder_path"] and args["img_file_list"]:
+		path = args["img_file_folder_path"]
+		img_file_list = args["img_file_list"]
+		with open(img_file_list, "r") as fl_list_fl:
+			imgs = fl_list_fl.read().split("\n")
+			imgs = [path + img for img in imgs]
 
 	start = time.time()
 	for img in imgs:
@@ -126,7 +138,7 @@ def __main__():
 		extr_beauty_ftrs(img)
 		
 
-	with open("../data/beautyFeatures_Bing.json", "w") as outFl:
+	with open(out_fl, "w") as outFl:
 		json.dump(final_ftr_obj_global, outFl, indent = 4)
 
 	end = time.time()

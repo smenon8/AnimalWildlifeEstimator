@@ -38,7 +38,13 @@ def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,
 
 	# Extract only the date information for all the given images
 	# modify the date format as and when needed to match the requirements. 
-	imgDateDict = {gid : DS.getDateFromStr(jsonObj[gid]['date'],'%Y-%m-%d %H:%M:%S','%Y') for gid in jsonObj.keys()}
+
+	## for calculating year-wise mark recapture estimates
+	# imgDateDict = {gid : DS.getDateFromStr(jsonObj[gid]['date'],'%Y-%m-%d %H:%M:%S','%Y') for gid in jsonObj.keys()} 
+
+	## for calculating regular mark-recapture estimate
+	imgDateDict = {gid : DS.getDateFromStr(jsonObj[gid]['datetime'],'%Y-%m-%d %H:%M:%S','%Y-%m-%d') for gid in jsonObj.keys()} 
+
 
 	gid_list = gid_filter_logic(inExifFl, inGidAidMapFl, inAidFtrFl)
 
