@@ -27,17 +27,15 @@ File 3 : Image GID, annotation ID's and their features (csv)
 File 4 : Image GID, annotation ID's and their features (json)
 '''
 
-import csv
+from __future__ import print_function
 import GetPropertiesAPI as GP
-import importlib
-import json
+import importlib, json, re, sys, csv, time
 #importlib.reload(GP) # un-comment if there are any changes made to API
-import sys
-import math
 import pandas as pd
 import DataStructsHelperAPI as DS
 from math import floor
 importlib.reload(GP)
+from multiprocessing import Process
 
 def printCompltnPercent(percentComplete):
 	i = int(percentComplete)
@@ -247,6 +245,102 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 
 	print("Script completed.")
 
+# these APIs require encoded annot_uuid_list
+ggr_eco_ftr_api_map = {'age' : "/api/annot/age/months/json", 
+					'sex': "/api/annot/sex/text/json",
+					'bbox': "/api/annot/bbox/json", 
+					'nid':  "/api/annot/name/rowid/json", 
+					'exemplar': "/api/annot/exemplar/json"
+				}
+
+# these APIs takes in an encoded gid list
+ggr_otr_ftr_api_map = {'contributor' : "/api/image/note",
+				'lat' : "/api/image/lat",
+				'long' : "/api/image/lon",
+				'datetime' : "/api/image/unixtime"
+				}
+def check_time_elapsed(start_time):
+	if time.time() - start_time >= 1.0:
+		return True
+	else:
+		return False
+
+def build_feature_file_ggr(in_file, out_fl_head, start_count, end_count):
+	with open(in_file, "r") as in_fl: 
+		img_uuids = list(json.load(in_fl).keys())
+	img_uuids = [re.findall(r'(.*).jpg', uuid)[0] for uuid in img_uuids][start_count:end_count+1] # extract the filename without the extension
+
+	print("Starting extract: %i to %i" %(start_count, end_count))
+	start_time = time.time()
+	uuid_annot_uuid_map = {}
+	for img_uuid in img_uuids:
+		uuid_dict = GP.ggr_get("/api/image/annot/uuid/json", GP.ggr_image_form_arg(img_uuid))
+		if len(uuid_dict['results'][0]) == 0: # case 1: has no annotation
+			uuid_annot_uuid_map[img_uuid] = [None]
+		else: # case 2, has 1 or more annot
+			for annot_dict in uuid_dict['results'][0]:
+				uuid_annot_uuid_map[img_uuid] = uuid_annot_uuid_map.get(img_uuid, []) + [annot_dict["__UUID__"]]
+
+		# elapsed time check
+		if check_time_elapsed(start_time):
+			start_time = time.time()
+			print("100 seconds elapsed..!")
+	
+	print("Annotation UUIDs extracted")
+	# logic to flatten out the list of lists
+	aid_uuid_list = [item for sublist in list(uuid_annot_uuid_map.values()) for item in sublist if item]
+	
+	start_time = time.time()
+	aid_uuid_feature_map = {}
+	for aid in aid_uuid_list:
+		sex = GP.ggr_get(ggr_eco_ftr_api_map['sex'], GP.ggr_annot_form_arg(aid))['results'][0]
+		age = GP.getAgeFeatureReadableFmt(GP.ggr_get(ggr_eco_ftr_api_map['age'], GP.ggr_annot_form_arg(aid))['results'][0])
+		bbox = GP.ggr_get(ggr_eco_ftr_api_map['bbox'], GP.ggr_annot_form_arg(aid))['results'][0]
+		exemplar = GP.ggr_get(ggr_eco_ftr_api_map['exemplar'], GP.ggr_annot_form_arg(aid))['results'][0]
+		nid = GP.ggr_get(ggr_eco_ftr_api_map['nid'], GP.ggr_annot_form_arg(aid))['results'][0]
+
+		aid_uuid_feature_map[aid] = dict(sex=sex, age=age, bbox=bbox, exemplar=exemplar, nid=nid)	
+		if check_time_elapsed(start_time):
+			start_time = time.time()
+			print("100 seconds elapsed..!")
+
+	print("Feature extraction completed..!")
+
+	uuid_annot_uuid_map_fl_nm = out_fl_head + "_uuid_annot_uuid_map.json"
+	with open(uuid_annot_uuid_map_fl_nm, "w") as uuid_annot_uuid_map_fl:
+		json.dump(uuid_annot_uuid_map, uuid_annot_uuid_map_fl, indent=4)
+
+	annot_uuid_ftr_map_fl_nm = out_fl_head + "_annot_uuid_ftr_map.json"
+	with open(annot_uuid_ftr_map_fl_nm, "w") as annot_uuid_ftr_map_fl:
+		json.dump(aid_uuid_feature_map, annot_uuid_ftr_map_fl, indent=4)
+
+	return 0
+
+def build_exif_ftrs_fl_ggr(in_file_uuid_gid_map, in_file_uuid_list, out_fl, start, end):
+	with open(in_file_uuid_gid_map, "r") as in_map_fl:
+		uuid_gid_map = json.load(in_map_fl)
+
+	with open(in_file_uuid_list, "r") as in_list_fl:
+		uuid_list = in_list_fl.read().split("\n")[start:end+1]
+
+	start_time = time.time()
+	gid_uuid_exif_ftr_map = {}
+	for uuid in uuid_list:
+		gid = uuid_gid_map[uuid]
+		lat = GP.ggr_get(ggr_otr_ftr_api_map['lat'], GP.ggr_gid_form_arg(gid))['results'][0]
+		long = GP.ggr_get(ggr_otr_ftr_api_map['long'], GP.ggr_gid_form_arg(gid))['results'][0]
+		datetime = GP.getUnixTimeReadableFmt(GP.ggr_get(ggr_otr_ftr_api_map['datetime'], GP.ggr_gid_form_arg(gid))['results'][0])
+		contributor = GP.ggr_get(ggr_otr_ftr_api_map['contributor'], GP.ggr_gid_form_arg(gid))['results'][0]
+
+		gid_uuid_exif_ftr_map[uuid] = dict(lat=lat, long=long, datetime=datetime, contributor=contributor)
+		if check_time_elapsed(start_time):
+			start_time = time.time()
+			print("100 seconds elapsed..!")
+
+	with open(out_fl, "w") as uuid_exif_ftr_fl:
+		json.dump(gid_uuid_exif_ftr_map, uuid_exif_ftr_fl, indent=4)
+
+	return gid_uuid_exif_ftr_map
 
 def __main__():
 	allGidPart1 = list(map(str,list(range(1,5000))))
@@ -277,8 +371,8 @@ def __main__():
 	DS.combineJson("../data/imgs_exif_data_full1.json","../data/imgs_exif_data_full2.json","../data/imgs_exif_data_full.json")
 
 if __name__ == "__main__":
-	gids = list(map(str, list(range(1,1702))))
-	buildFeatureFl(gids, "../data/Flickr_IBEIS_Ftrs.csv", False)
+	# gids = list(map(str, list(range(1,1702))))
+	# buildFeatureFl(gids, "../data/Flickr_IBEIS_Ftrs.csv", False)
 	# __main__()	
 	# gidAidMapFl = "../data/full_gid_aid_map.json"
 	# getAdditionalAnnotFeatures(gidAidMapFl,'bbox',"../data/gid_bbox.json")
@@ -286,18 +380,20 @@ if __name__ == "__main__":
 	# buildBeautyFtrFl("../data/beautyFeatures_GZC_R.csv",['GID','pleasure','arousal','dominance','y'],"../data/beautyFeatures_GZC")
 
 	# DS.combineJson("../data/beautyFeatures_GZC.json","../data/imgs_exif_data_full.json","../data/GZC_exifs_beauty_full.json")
+	p1 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_1.json",1,5000))
+	p2 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_2.json",5001,10000))
+	p3 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_3.json",10001,15000))
+	p4 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_4.json",15001,20000))
+	p5 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_5.json",20001,25000))
+	p6 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_6.json",25001,30000))
+	p7 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_7.json",30001,35000))
+	p8 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_8.json",35001,37433))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	p1.start()
+	p2.start()
+	p3.start()
+	p4.start()
+	p5.start()
+	p6.start()
+	p7.start()
+	p8.start()

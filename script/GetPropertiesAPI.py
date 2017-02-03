@@ -18,7 +18,7 @@ ftrNms = {'SPECIES' : 'species_texts', 'AGE' : 'age_months_est', 'INDIVIDUAL_NAM
              'EXEMPLAR_FLAG':'exemplar_flags', 'QUALITY' : 'quality_texts', 'VIEW_POINT' : 'yaw_texts'}
 
 baseurl = 'http://pachy.cs.uic.edu:5001/'
-ggr_base = 'http://lev.cs.rpi.edu:5002/ggr/ia'
+ggr_base = 'http://lev.cs.rpi.edu:8080/ggr/ia'
 
 # Argument : GID of a single image
 # Returns : Corresponding Annotation ID of the GID
@@ -76,13 +76,19 @@ def getUnixTimeReadableFmt(unixtm):
     return datetime.datetime.utcfromtimestamp(int(unixtm)).strftime('%Y-%m-%d %H:%M:%S')
 
 # Method for executing GET request for the GGR dataset
-def ggr_get(passthru, arg):
-    url = ggr_base + '?passthru=' + passthru + '&arg' + arg
+def ggr_get(passthru, arg=None):
+    if arg:
+        url = ggr_base + "?passthru=" + passthru + "&arg=" + arg
+    else:
+        url = ggr_base + "?passthru=" + passthru
+
     response = requests.get(url)
 
     return response.json()
 
-ggr_form_arg = lambda x : urllib.parse.quote('annot_uuid_list=') + '[{' + urllib.parse.quote('"__UUID__"') + ':' + urllib.parse.quote('\"%s\"' %x) + '}]'
+ggr_annot_form_arg = lambda x : urllib.parse.quote('annot_uuid_list=') + '[{' + urllib.parse.quote('"__UUID__"') + ':' + urllib.parse.quote('\"%s\"' %x) + '}]'
+ggr_image_form_arg = lambda x : urllib.parse.quote('image_uuid_list=') + '[{' + urllib.parse.quote('"__UUID__"') + ':' + urllib.parse.quote('\"%s\"' %x) + '}]'
+ggr_gid_form_arg = lambda x : urllib.parse.quote('gid_list=') + '[' + urllib.parse.quote('\"%s\"' %x)  + ']'
 
 def __main__():
     for i in range(1,2):

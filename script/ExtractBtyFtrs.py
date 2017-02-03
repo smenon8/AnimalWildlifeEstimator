@@ -52,8 +52,11 @@ def get_arr(imgObj):
 
 # logic to resize the image without affecting the aspect ratio
 def resize_img(imgObj, base_width=600):
-	newHeight = int(len(imgObj) * base_width / len(imgObj[0]))
-	return  transform.resize(imgObj, (newHeight,base_width))
+	if len(imgObj[0]) > 600:
+		newHeight = int(len(imgObj) * base_width / len(imgObj[0]))
+		return  transform.resize(imgObj, (newHeight,base_width))
+	else: 
+		return imgObj
 
 def extr_beauty_ftrs(imgFlNm):
 	# imgFlNm = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/All_Zebra_Count_Images/%s.jpeg" %gid
@@ -132,11 +135,14 @@ def __main__():
 			imgs = fl_list_fl.read().split("\n")
 			imgs = [path + img for img in imgs]
 
-	start = time.time()
+	curr_start = start = time.time()
 	for img in imgs:
-		print("Extraction started for %s" %img)
+		# print("Processing image : %s" %img)
 		extr_beauty_ftrs(img)
-		
+		curr_time = time.time()
+		if curr_time - curr_start > 100:
+			curr_start = time.time()
+			print("100 secs elapsed, processing %s" %img)
 
 	with open(out_fl, "w") as outFl:
 		json.dump(final_ftr_obj_global, outFl, indent = 4)
