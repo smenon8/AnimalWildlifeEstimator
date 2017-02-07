@@ -66,34 +66,17 @@ def flipKeyValue(dct):
 
 
 def __main__():
-	d = appendJSON("../data/Flickr_EXIF_0.json",
-				"../data/Flickr_EXIF_150.json",
-				"../data/Flickr_EXIF_300.json",
-				"../data/Flickr_EXIF_450.json",
-				"../data/Flickr_EXIF_600.json",
-				"../data/Flickr_EXIF_750.json",
-				"../data/Flickr_EXIF_900.json",
-				"../data/Flickr_EXIF_1050.json",
-				"../data/Flickr_EXIF_1200.json",
-				"../data/Flickr_EXIF_1350.json",
-				"../data/Flickr_EXIF_1500.json",
-				"../data/Flickr_EXIF_1650.json",
-				"../data/Flickr_EXIF_1800.json",
-				"../data/Flickr_EXIF_1950.json",
-				"../data/Flickr_EXIF_2100.json",
-				"../data/Flickr_EXIF_2250.json",
-				"../data/Flickr_EXIF_2400.json",
-				"../data/Flickr_EXIF_2550.json",
-				"../data/Flickr_EXIF_2700.json",
-				"../data/Flickr_EXIF_2850.json",
-				"../data/Flickr_EXIF_3000.json",
-				"../data/Flickr_EXIF_3150.json",
-				"../data/Flickr_EXIF_3300.json",
-				"../data/Flickr_EXIF_3450.json",
-				"../data/Flickr_EXIF_3600.json")
+	d = appendJSON("../data/ggr_exif_extract_1.json",
+					"../data/ggr_exif_extract_3.json",
+					"../data/ggr_exif_extract_2.json",
+					"../data/ggr_exif_extract_5.json",
+					"../data/ggr_exif_extract_4.json",
+					"../data/ggr_exif_extract_7.json",
+					"../data/ggr_exif_extract_6.json",
+					"../data/ggr_exif_extract_8.json")
 
 
-	with open("../data/Flickr_EXIF_Full_new.json", "w") as fl:
+	with open("../data/ggr_gid_uuid_exif_ftr_map.json", "w") as fl:
 	    json.dump(d, fl, indent=4)
 
 if __name__ == "__main__":
