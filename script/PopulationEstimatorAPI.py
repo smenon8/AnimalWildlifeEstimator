@@ -42,7 +42,11 @@ import htmltag as HT
 import numpy as np
 import ClassifierCapsuleClass as ClfCls
 import RegressionCapsuleClass as RgrCls
-
+'''
+    There are mainly two modes defined, one for each dataset. The schema is slightly different for both the datasets.
+    This mainly applies to the SD card logic, GGR stores 
+'''
+MODE = 'GGR' 
 inExifFl,inGidAidMapFl,inAidFtrFl = "../data/imgs_exif_data_full.json","../data/full_gid_aid_map.json","../data/full_aid_features.json"
 layout = go.Layout(
     title="Number of images shared(k) versus estimated population",
@@ -114,7 +118,7 @@ def estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
                     shareData='classifier')
     marks_g,recaptures_g,population_g = MR.applyMarkRecap(nidMarkRecapSet)
 
-    # 0 recaptures using Lincoln-Petersen estimates essentially mean an infinite population and hence an approximation to 10x
+    # 0 recaptures using Lincoln-Petersen estimates essentially mean an infinite population and hence marked as NULL
     population_z = None if population_z == 0 else population_z
     population_g = None if population_g == 0 else population_g
     population_all = None if population_all == 0 else population_all
@@ -127,7 +131,12 @@ def estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
 # Since the regression outputs are a likelihood, to make a choice of whether or not each photo will be 
 # shared a coin with bias equal to likelihood of the picture being shared is flipped. 
 def kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl,genk,randomShare = False):
-    gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
+    if MODE == 'GGR':
+        with open(inExifFl, "r") as exif_fl:
+            exif_obj = json.load(exif_fl)
+        gidContribDct = {gid_uuid : [exif_obj[gid_uuid]['contributor']] for gid_uuid in exif_obj.keys()} # -- the ggr dataset stores the contributor information differently (unlike GZC)
+    else:  
+        gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
 
     sdCards = {}
     for key in gidContribDct.keys():
@@ -163,7 +172,12 @@ def kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inA
 # Since the regression outputs are a likelihood, to make a choice of whether or not each photo will be shared a coin 
 # with bias equal to likelihood of the picture being shared is flipped. 
 def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,genk, randomShare=False):
-    gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
+    if MODE == 'GGR':
+        with open(inExifFl, "r") as exif_fl:
+            exif_obj = json.load(exif_fl)
+        gidContribDct = {gid_uuid : [exif_obj[gid_uuid]['contributor']] for gid_uuid in exif_obj.keys()} # -- the ggr dataset stores the contributor information differently (unlike GZC)
+    else:  
+        gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
 
     sdCards = {}
     for key in gidContribDct.keys():
@@ -183,7 +197,12 @@ def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,g
     return estimatePopulation(predictions_k,inExifFl,inGidAidMapFl,inAidFtrFl)
 
 def shareAbvThreshold(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,threshold,randomShare=None):
-    gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
+    if MODE == 'GGR':
+        with open(inExifFl, "r") as exif_fl:
+            exif_obj = json.load(exif_fl)
+        gidContribDct = {gid_uuid : [exif_obj[gid_uuid]['contributor']] for gid_uuid in exif_obj.keys()} # -- the ggr dataset stores the contributor information differently (unlike GZC)
+    else:  
+        gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
 
     sdCards = {}
     for key in gidContribDct.keys():

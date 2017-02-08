@@ -46,11 +46,11 @@ def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,
 	imgDateDict = {gid : DS.getDateFromStr(jsonObj[gid]['datetime'],'%Y-%m-%d %H:%M:%S','%Y-%m-%d') for gid in jsonObj.keys()} 
 
 
-	gid_list = gid_filter_logic(inExifFl, inGidAidMapFl, inAidFtrFl)
+	gid_list = gid_filter_logic(inExifFl, inGidAidMapFl, inAidFtrFl) # -- not needed always
 
 	# filter out only the GIDs that were taken on either of the days specified in the days dictionary
 	filteredGid = list(filter(lambda x : imgDateDict[x] in daysDict.keys(),imgDateDict.keys()))
-	filteredGid = [gid for gid in filteredGid if gid in gid_list] # should be commented once done
+	filteredGid = [gid for gid in filteredGid if gid in gid_list] # should be commented once done -- not needed always
 
 	print("Number of images used: %i" %len(filteredGid))
 	# Logic to handle only the images that are shared
