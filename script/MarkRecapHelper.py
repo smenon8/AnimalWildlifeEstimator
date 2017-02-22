@@ -5,8 +5,9 @@ import DataStructsHelperAPI as DS
 import importlib
 import pandas as pd
 import warnings
-import sys
+import sys, math
 importlib.reload(DS)
+MODE = 'GZC'
 
 def gid_filter_logic(inExifFl, inGidAidMapFl, inAidFtrFl):
 	with open(inExifFl,"r") as inpFl:
@@ -46,13 +47,12 @@ def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,
 	imgDateDict = {gid : DS.getDateFromStr(jsonObj[gid]['datetime'],'%Y-%m-%d %H:%M:%S','%Y-%m-%d') for gid in jsonObj.keys()} 
 
 
-	gid_list = gid_filter_logic(inExifFl, inGidAidMapFl, inAidFtrFl) # -- not needed always
+	# gid_list = gid_filter_logic(inExifFl, inGidAidMapFl, inAidFtrFl) # -- not needed always
 
 	# filter out only the GIDs that were taken on either of the days specified in the days dictionary
 	filteredGid = list(filter(lambda x : imgDateDict[x] in daysDict.keys(),imgDateDict.keys()))
-	filteredGid = [gid for gid in filteredGid if gid in gid_list] # should be commented once done -- not needed always
+	# filteredGid = [gid for gid in filteredGid if gid in gid_list] # should be commented once done -- not needed always
 
-	print("Number of images used: %i" %len(filteredGid))
 	# Logic to handle only the images that are shared
 	if shareData in {'proportion' , 'classifier' }:
 		filteredGid = genSharedGids(filteredGid,gidPropMapFl,shareData,probabThreshold)
@@ -61,9 +61,9 @@ def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,
 	gidsDayNumFull = { gid : daysDict[imgDateDict[gid]] for gid in filteredGid } 
 
 	# Build map of images and the individuals in it. 
-	gidNid = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,"NID",False)
+	gidNid = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,"NID",False, MODE)
 	if filterBySpecies != None:
-		gidSpecies = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,"SPECIES",False)
+		gidSpecies = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,"SPECIES",False, MODE)
 		gidsDayNum = { gid : gidsDayNumFull[gid] for gid in gidsDayNumFull  if gid in gidSpecies.keys() and filterBySpecies in gidSpecies[gid]}
 	else:
 		gidsDayNum = gidsDayNumFull
@@ -86,14 +86,18 @@ def applyMarkRecap(nidMarkRecapSet):
 
 	marks = len(uniqueIndsDay1)
 	recaptures = len(uniqueIndsDay1 & uniqueIndsDay2)
+	day2_sights = len(uniqueIndsDay2)
 	try:
-		population = len(uniqueIndsDay2) * marks / recaptures
+		population =  day2_sights * marks / recaptures
+		confidence = 1.96 * math.sqrt(marks**2 * day2_sights * (day2_sights-recaptures) / recaptures**2)
 	except:
 		warnings.warn("There are no recaptures for this case.")
 		population = 0
+		confidence=0
+		print(recaptures)
 
 	
-	return marks,recaptures,population
+	return marks,recaptures,population,confidence
 
 def genSharedGids(gidList,gidPropMapFl,shareData='proportion',probabThreshold=1):
 	df = pd.DataFrame.from_csv(gidPropMapFl)

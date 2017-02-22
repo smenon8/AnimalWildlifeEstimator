@@ -165,17 +165,25 @@ def genGidAidFtrDf(gidAidMapFl,aidFtrMapFl,outFlNm="/tmp/genGidAidFtrDf.dump.csv
 # This object will give us the capability to check what feature instances are present in a given image. 
 def extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature, mode='GZC'):    
     gidAidDict = genGidAidDictFromMap(gidAidMapFl)
+
     if mode == "GZC":
         aidFeatureDict = genAidFeatureDictDict(aidFtrMapFl)
+
     else:
         with open(aidFtrMapFl, "r") as aidFtrFl:
             aidFeatureDict = json.load(aidFtrFl)
-
+            
     gidFtr = {}
-    for gid in gidAidDict:
-        if gidAidDict[gid]!= None:
-            for aid in gidAidDict[gid]:
-                gidFtr[gid] = gidFtr.get(gid,[]) + [aidFeatureDict[str(aid)][feature]]
+    if mode=="GGR":
+        for gid in gidAidDict:
+            if gidAidDict[gid]!= None:
+                for aid in gidAidDict[gid]:
+                    gidFtr[gid] = gidFtr.get(gid,[]) + [aidFeatureDict[str(aid)][feature]]
+    else:
+        for gid in gidAidDict.keys():
+            if len(gidAidDict[gid][0]):
+                for aid in gidAidDict[gid][0]:
+                    gidFtr[gid] = gidFtr.get(gid,[]) + [aidFeatureDict[str(aid)][feature]]
     
     return gidFtr
 
