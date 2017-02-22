@@ -32,9 +32,9 @@ import GetPropertiesAPI as GP
 import importlib, json, re, sys, csv, time
 #importlib.reload(GP) # un-comment if there are any changes made to API
 import pandas as pd
-import DataStructsHelperAPI as DS
+# import DataStructsHelperAPI as DS
 from math import floor
-importlib.reload(GP)
+# importlib.reload(GP)
 from multiprocessing import Process
 
 def printCompltnPercent(percentComplete):
@@ -196,9 +196,9 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 	yaw_texts = GP.getImageFeature(aidList,"yaw/text")
 	image_contrib_tags = GP.getImageFeature(aidList,"image/contributor/tag")
 
-	features = {aidList[i] : [nids[i],names[i],species_texts[i],sex_texts[i],
-				GP.getAgeFeatureReadableFmt(age_months[i]),str(exemplar_flags[i]),
-				quality_texts[i],yaw_texts[i],image_contrib_tags[i]] 
+	features = {aidList[i] : {'nid' : nids[i],"name" : names[i],"species" : species_texts[i],"sex" : sex_texts[i],
+				'age' : GP.getAgeFeatureReadableFmt(age_months[i]), 'exemplar': str(exemplar_flags[i]),
+				'quality' : quality_texts[i],'yaw' : yaw_texts[i],'contributor' : image_contrib_tags[i]}
 				for i in range(0,len(aidList))}
 	print()
 	print("All features extracted.")
@@ -250,15 +250,22 @@ ggr_eco_ftr_api_map = {'age' : "/api/annot/age/months/json",
 					'sex': "/api/annot/sex/text/json",
 					'bbox': "/api/annot/bbox/json", 
 					'nid':  "/api/annot/name/rowid/json", 
-					'exemplar': "/api/annot/exemplar/json"
+					'exemplar': "/api/annot/exemplar/json",
+					'species' : "/api/annot/species/json",
+					'quality' : "/api/annot/quality/text/json",
+					'view_point' : "/api/annot/yaw/text/json"
 				}
 
 # these APIs takes in an encoded gid list
 ggr_otr_ftr_api_map = {'contributor' : "/api/image/note",
 				'lat' : "/api/image/lat",
 				'long' : "/api/image/lon",
-				'datetime' : "/api/image/unixtime"
+				'datetime' : "/api/image/unixtime",
+				'width' : "/api/image/width",
+				'height' : "/api/image/height",
+				'orientation' : "/api/image/orientation"
 				}
+
 def check_time_elapsed(start_time):
 	if time.time() - start_time >= 1.0:
 		return True
@@ -268,7 +275,8 @@ def check_time_elapsed(start_time):
 def build_feature_file_ggr(in_file, out_fl_head, start_count, end_count):
 	with open(in_file, "r") as in_fl: 
 		img_uuids = list(json.load(in_fl).keys())
-	img_uuids = [re.findall(r'(.*).jpg', uuid)[0] for uuid in img_uuids][start_count:end_count+1] # extract the filename without the extension
+	# img_uuids = [re.findall(r'(.*).jpg', uuid)[0] for uuid in img_uuids][start_count:end_count+1] # extract the filename without the extension
+	img_uuids = [uuid for uuid in img_uuids][start_count:end_count+1] 
 
 	print("Starting extract: %i to %i" %(start_count, end_count))
 	start_time = time.time()
@@ -293,13 +301,16 @@ def build_feature_file_ggr(in_file, out_fl_head, start_count, end_count):
 	start_time = time.time()
 	aid_uuid_feature_map = {}
 	for aid in aid_uuid_list:
+		species = GP.ggr_get(ggr_eco_ftr_api_map['species'], GP.ggr_annot_form_arg(aid))['results'][0] 
 		sex = GP.ggr_get(ggr_eco_ftr_api_map['sex'], GP.ggr_annot_form_arg(aid))['results'][0]
 		age = GP.getAgeFeatureReadableFmt(GP.ggr_get(ggr_eco_ftr_api_map['age'], GP.ggr_annot_form_arg(aid))['results'][0])
 		bbox = GP.ggr_get(ggr_eco_ftr_api_map['bbox'], GP.ggr_annot_form_arg(aid))['results'][0]
 		exemplar = GP.ggr_get(ggr_eco_ftr_api_map['exemplar'], GP.ggr_annot_form_arg(aid))['results'][0]
 		nid = GP.ggr_get(ggr_eco_ftr_api_map['nid'], GP.ggr_annot_form_arg(aid))['results'][0]
+		quality = GP.ggr_get(ggr_eco_ftr_api_map['quality'], GP.ggr_annot_form_arg(aid))['results'][0]
+		view_point = GP.ggr_get(ggr_eco_ftr_api_map['view_point'], GP.ggr_annot_form_arg(aid))['results'][0]
 
-		aid_uuid_feature_map[aid] = dict(sex=sex, age=age, bbox=bbox, exemplar=exemplar, nid=nid)	
+		aid_uuid_feature_map[aid] = dict(sex=sex, age=age, bbox=bbox, exemplar=exemplar, nid=nid, species=species, view_point=view_point, quality=quality)	
 		if check_time_elapsed(start_time):
 			start_time = time.time()
 			print("100 seconds elapsed..!")
@@ -331,8 +342,11 @@ def build_exif_ftrs_fl_ggr(in_file_uuid_gid_map, in_file_uuid_list, out_fl, star
 		long = GP.ggr_get(ggr_otr_ftr_api_map['long'], GP.ggr_gid_form_arg(gid))['results'][0]
 		datetime = GP.getUnixTimeReadableFmt(GP.ggr_get(ggr_otr_ftr_api_map['datetime'], GP.ggr_gid_form_arg(gid))['results'][0])
 		contributor = GP.ggr_get(ggr_otr_ftr_api_map['contributor'], GP.ggr_gid_form_arg(gid))['results'][0]
+		height = GP.ggr_get(ggr_otr_ftr_api_map['height'], GP.ggr_gid_form_arg(gid))['results'][0]
+		width = GP.ggr_get(ggr_otr_ftr_api_map['width'], GP.ggr_gid_form_arg(gid))['results'][0]
+		orientation = GP.ggr_get(ggr_otr_ftr_api_map['orientation'], GP.ggr_gid_form_arg(gid))['results'][0]
 
-		gid_uuid_exif_ftr_map[uuid] = dict(lat=lat, long=long, datetime=datetime, contributor=contributor)
+		gid_uuid_exif_ftr_map[uuid] = dict(lat=lat, long=long, datetime=datetime, contributor=contributor, height=height, width=width, orientation=orientation)
 		if check_time_elapsed(start_time):
 			start_time = time.time()
 			print("100 seconds elapsed..!")
@@ -340,7 +354,7 @@ def build_exif_ftrs_fl_ggr(in_file_uuid_gid_map, in_file_uuid_list, out_fl, star
 	with open(out_fl, "w") as uuid_exif_ftr_fl:
 		json.dump(gid_uuid_exif_ftr_map, uuid_exif_ftr_fl, indent=4)
 
-	return gid_uuid_exif_ftr_map
+	return 0
 
 def __main__():
 	allGidPart1 = list(map(str,list(range(1,5000))))
@@ -370,6 +384,43 @@ def __main__():
 	DS.combineJson("../data/full1_aid_features.json","../data/full2_aid_features.json","../data/full_aid_features.json")
 	DS.combineJson("../data/imgs_exif_data_full1.json","../data/imgs_exif_data_full2.json","../data/imgs_exif_data_full.json")
 
+
+def test(start, end, out):
+	inExifFl,inGidAidMapFl,inAidFtrFl = "../data/ggr_gid_uuid_exif_ftr_map.json","../data/ggr_uuid_annot_uuid_map.json","../data/ggr_annot_uuid_ftr_map.json"
+	with open(inGidAidMapFl, "r") as fl:
+		obj = json.load(fl)
+
+
+	with open(inAidFtrFl, "r") as fl:
+	    obj2 = json.load(fl)
+
+	no_ftr_annots = []
+
+	for uuid in obj:
+	    if obj[uuid][0] != None: #there is atleast one aid
+	        for annot_id in obj[uuid]:
+	            # check if annot_id in ftr file
+	            if annot_id not in obj2.keys():
+	                no_ftr_annots.append(annot_id)
+
+	
+	print(len(no_ftr_annots))         
+	aid_uuid_feature_map = {}
+	for aid in no_ftr_annots[start:end]:
+		species = GP.ggr_get(ggr_eco_ftr_api_map['species'], GP.ggr_annot_form_arg(aid))['results'][0] 
+		sex = GP.ggr_get(ggr_eco_ftr_api_map['sex'], GP.ggr_annot_form_arg(aid))['results'][0]
+		age = GP.getAgeFeatureReadableFmt(GP.ggr_get(ggr_eco_ftr_api_map['age'], GP.ggr_annot_form_arg(aid))['results'][0])
+		bbox = GP.ggr_get(ggr_eco_ftr_api_map['bbox'], GP.ggr_annot_form_arg(aid))['results'][0]
+		exemplar = GP.ggr_get(ggr_eco_ftr_api_map['exemplar'], GP.ggr_annot_form_arg(aid))['results'][0]
+		nid = GP.ggr_get(ggr_eco_ftr_api_map['nid'], GP.ggr_annot_form_arg(aid))['results'][0]
+		quality = GP.ggr_get(ggr_eco_ftr_api_map['quality'], GP.ggr_annot_form_arg(aid))['results'][0]
+		view_point = GP.ggr_get(ggr_eco_ftr_api_map['view_point'], GP.ggr_annot_form_arg(aid))['results'][0]
+
+		aid_uuid_feature_map[aid] = dict(sex=sex, age=age, bbox=bbox, exemplar=exemplar, nid=nid, species=species, view_point=view_point, quality=quality)	
+
+	with open(out, "w") as fl:
+		json.dump(aid_uuid_feature_map, fl, indent=4)
+
 if __name__ == "__main__":
 	# gids = list(map(str, list(range(1,1702))))
 	# buildFeatureFl(gids, "../data/Flickr_IBEIS_Ftrs.csv", False)
@@ -380,14 +431,34 @@ if __name__ == "__main__":
 	# buildBeautyFtrFl("../data/beautyFeatures_GZC_R.csv",['GID','pleasure','arousal','dominance','y'],"../data/beautyFeatures_GZC")
 
 	# DS.combineJson("../data/beautyFeatures_GZC.json","../data/imgs_exif_data_full.json","../data/GZC_exifs_beauty_full.json")
-	p1 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_1.json",1,5000))
-	p2 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_2.json",5001,10000))
-	p3 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_3.json",10001,15000))
-	p4 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_4.json",15001,20000))
-	p5 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_5.json",20001,25000))
-	p6 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_6.json",25001,30000))
-	p7 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_7.json",30001,35000))
-	p8 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_8.json",35001,37433))
+	# p1 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_1.json",1,5000))
+	# p2 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_2.json",5001,10000))
+	# p3 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_3.json",10001,15000))
+	# p4 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_4.json",15001,20000))
+	# p5 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_5.json",20001,25000))
+	# p6 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_6.json",25001,30000))
+	# p7 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_7.json",30001,35000))
+	# p8 = Process(target=build_exif_ftrs_fl_ggr, args=("uuid_gid_map.json", "ggr_uuid_list.dat", "ggr_exif_extract_8.json",35001,37433))
+
+	# p9 = Process(target=build_feature_file_ggr, args=("uuid_gid_map.json", "ggr_ftr_extract_1",1,5000))
+	# p10 = Process(target=build_feature_file_ggr, args=("uuid_gid_map.json", "ggr_ftr_extract_2",5001,10000))
+	# p11 = Process(target=build_feature_file_ggr, args=("uuid_gid_map.json", "ggr_ftr_extract_3",10001,15000))
+	# p12 = Process(target=build_feature_file_ggr, args=("uuid_gid_map.json", "ggr_ftr_extract_4",15001,20000))
+	# p13 = Process(target=build_feature_file_ggr, args=("uuid_gid_map.json", "ggr_ftr_extract_5",20001,25000))
+	# p14 = Process(target=build_feature_file_ggr, args=("uuid_gid_map.json", "ggr_ftr_extract_6",25001,30000))
+	# p15 = Process(target=build_feature_file_ggr, args=("uuid_gid_map.json", "ggr_ftr_extract_7",30001,35000))
+	# p16 = Process(target=build_feature_file_ggr, args=("uuid_gid_map.json", "ggr_ftr_extract_8",35001,37433))
+
+	p1 = Process(target=test, args=(0, 400, "/tmp/test1.json"))
+	p2 = Process(target=test, args=(400, 800, "/tmp/test2.json"))
+	p3 = Process(target=test, args=(800, 1200, "/tmp/test3.json"))
+	p4 = Process(target=test, args=(1200, 1600, "/tmp/test4.json"))
+	p5 = Process(target=test, args=(1600, 2000, "/tmp/test5.json"))
+	p6 = Process(target=test, args=(2000, 2400, "/tmp/test6.json"))
+	p7 = Process(target=test, args=(2400, 2800, "/tmp/test7.json"))
+	p8 = Process(target=test, args=(2800, 3200, "/tmp/test8.json"))
+	p9 = Process(target=test, args=(3200, 3600, "/tmp/test9.json"))
+	p10 = Process(target=test, args=(3600, 4033, "/tmp/test10.json"))
 
 	p1.start()
 	p2.start()
@@ -397,3 +468,12 @@ if __name__ == "__main__":
 	p6.start()
 	p7.start()
 	p8.start()
+	p9.start()
+	p10.start()
+	# p11.start()
+	# p12.start()
+	# p13.start()
+	# p14.start()
+	# p15.start()
+	# p16.start()
+	

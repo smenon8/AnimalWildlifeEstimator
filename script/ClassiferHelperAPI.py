@@ -17,6 +17,7 @@ from sklearn.dummy import DummyClassifier
 import numpy as np
 import ClassifierCapsuleClass as ClfClass
 import RegressionCapsuleClass as RgrClass
+import DeriveFinalResultSet as DRS
 importlib.reload(ClfClass)
 importlib.reload(RgrClass)
 
@@ -263,3 +264,65 @@ def trainTestRgrs(train_data_fl, test_data_fl, methodName, attribType, infoGainF
     prediction_results = {str(list(rgrObj.test_x.index)[i]) : rgrObj.preds[i] for i in range(len(rgrObj.test_x.index))}    
 
     return rgrObj, prediction_results
+
+# This method is "one-shoe-fit-all" method that can be used to build a feature vector file for the given problem
+# Note: The idea is to be keep ready-files in the feature_file directory
+# Need: There could be cases, where the feature files have to be modified to add/drop features. 
+# This method should come in handy at that time.
+# Assumes : all the in files are indexed in a similar fashion
+def construct_feature_vctr_fl(in_exif_fl, in_bty_fl, in_gid_aid_fl, in_aid_ftr_fl, out_fl_nm, ftr_vctr_idx):
+    with open(in_exif_fl, "r") as exif_fl:
+        exif_obj = json.load(exif_fl)
+
+    df_exif = pd.DataFrame(exif_obj).transpose().reset_index()
+    if in_bty_fl:
+        with open(in_bty_fl, "r") as bty_fl:
+            bty_obj = json.load(bty_fl)
+
+        try:
+            assert len(exif_obj.keys()) == len(bty_obj.keys())
+        except AssertionError as e:
+            print("EXIF and BEAUTY file length mismatch.. Exiting")
+            sys.exit(2)
+
+        df_bty = pd.DataFrame(bty_obj).transpose().reset_index()
+        df_combined = pd.merge(df_exif, df_bty)
+
+        try:
+            assert len(exif_obj.keys()) == len(df_combined)
+        except AssertionError as e:
+            print("Input file and merge data-frame length mismatch.. Exiting")
+            sys.exit(2)
+    else:
+        df_combined = df_exif
+
+    df_combined['date'] = pd.to_datetime(df_combined['date'])
+    df_combined['day'] = df_combined['date'].dt.day
+    df_combined['hour'] = df_combined['date'].dt.hour
+ 
+    gid_animal_map = DRS.getCountingLogic(in_gid_aid_fl, in_aid_ftr_fl, 'species', False, mode="GGR")
+    gid_has_zebra_map = {}
+    for gid in gid_animal_map.keys():
+        if 'zebra_grevys' in gid_animal_map[gid] or 'zebra_plains' in gid_animal_map[gid]:
+            gid_has_zebra_map[gid] = 1
+        else:
+            gid_has_zebra_map[gid] = 0
+
+    df_has_zebra = pd.DataFrame(gid_has_zebra_map, index=['has_zebra']).transpose().reset_index()
+    df_combined = pd.merge(df_combined, df_has_zebra)
+    
+    try:
+        assert len(df_has_zebra) == len(df_combined)
+    except AssertionError as e:
+        print("has_zebra and merge data-frame length mismatch.. Exiting")
+        sys.exit(2)
+
+    df_combined.index = df_combined['index']
+    df_combined.drop(['index'], 1, inplace=True)
+    df_combined = df_combined[ftr_vctr_idx]
+
+    df_combined.to_csv(out_fl_nm)
+
+    return 0
+
+

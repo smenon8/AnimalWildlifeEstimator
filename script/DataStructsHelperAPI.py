@@ -66,17 +66,19 @@ def flipKeyValue(dct):
 
 
 def __main__():
-	d = appendJSON("../data/ggr_exif_extract_1.json",
-					"../data/ggr_exif_extract_3.json",
-					"../data/ggr_exif_extract_2.json",
-					"../data/ggr_exif_extract_5.json",
-					"../data/ggr_exif_extract_4.json",
-					"../data/ggr_exif_extract_7.json",
-					"../data/ggr_exif_extract_6.json",
-					"../data/ggr_exif_extract_8.json")
+	d = appendJSON("/tmp/test7.json",
+					"/tmp/test6.json",
+					"/tmp/test1.json",
+					"/tmp/test8.json",
+					"/tmp/test9.json",
+					"/tmp/test3.json",
+					"/tmp/test5.json",
+					"/tmp/test2.json",
+					"/tmp/test4.json",
+					"/tmp/test10.json")
 
 
-	with open("../data/ggr_gid_uuid_exif_ftr_map.json", "w") as fl:
+	with open("/tmp/extra_annots.json", "w") as fl:
 	    json.dump(d, fl, indent=4)
 
 if __name__ == "__main__":

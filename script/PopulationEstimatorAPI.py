@@ -39,7 +39,7 @@ cf.go_online()
 import plotly.graph_objs as go
 importlib.reload(CH)
 import htmltag as HT
-import numpy as np
+import numpy as np, re
 import ClassifierCapsuleClass as ClfCls
 import RegressionCapsuleClass as RgrCls
 '''
@@ -48,6 +48,10 @@ import RegressionCapsuleClass as RgrCls
 '''
 MODE = 'GGR' 
 inExifFl,inGidAidMapFl,inAidFtrFl = "../data/imgs_exif_data_full.json","../data/full_gid_aid_map.json","../data/full_aid_features.json"
+
+
+inExifFl,inGidAidMapFl,inAidFtrFl = "../data/ggr_gid_uuid_exif_ftr_map.json","../data/ggr_uuid_annot_uuid_map.json","../data/ggr_annot_uuid_ftr_map.json"
+
 layout = go.Layout(
     title="Number of images shared(k) versus estimated population",
     titlefont = dict(size=15),
@@ -126,6 +130,7 @@ def estimatePopulation(prediction_results,inExifFl,inGidAidMapFl,inAidFtrFl):
     return {'all' : population_all , 
             'zebras' : population_z , 'giraffes' : population_g}
 
+contrib_extractor = lambda x : re.findall(r'GGR,([0-9]+,[A-Z]+),.*', x)[0]
 # This method is used to actually estimate the population when each contributor shares top k images. 
 # The images are ranked on the basis of the likelihood estimates obtained from the regression models. 
 # Since the regression outputs are a likelihood, to make a choice of whether or not each photo will be 
@@ -134,7 +139,7 @@ def kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inA
     if MODE == 'GGR':
         with open(inExifFl, "r") as exif_fl:
             exif_obj = json.load(exif_fl)
-        gidContribDct = {gid_uuid : [exif_obj[gid_uuid]['contributor']] for gid_uuid in exif_obj.keys()} # -- the ggr dataset stores the contributor information differently (unlike GZC)
+        gidContribDct = {gid_uuid : [contrib_extractor(exif_obj[gid_uuid]['contributor'])] for gid_uuid in exif_obj.keys()} # -- the ggr dataset stores the contributor information differently (unlike GZC)
     else:  
         gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
 
@@ -175,7 +180,9 @@ def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,g
     if MODE == 'GGR':
         with open(inExifFl, "r") as exif_fl:
             exif_obj = json.load(exif_fl)
-        gidContribDct = {gid_uuid : [exif_obj[gid_uuid]['contributor']] for gid_uuid in exif_obj.keys()} # -- the ggr dataset stores the contributor information differently (unlike GZC)
+
+        print(exif_fl)
+        gidContribDct = {gid_uuid : [contrib_extractor(exif_obj[gid_uuid]['contributor'])] for gid_uuid in exif_obj.keys()} # -- the ggr dataset stores the contributor information differently (unlike GZC)
     else:  
         gidContribDct = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,'CONTRIBUTOR',False)
 
@@ -223,8 +230,8 @@ def shareAbvThreshold(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,thres
 
 def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs, thresholdMeth = False, randomShare = False):
     if len(attribTypes) == 1 and attribTypes[0] == 'beauty':
-        train_fl = "../data/BeautyFtrVector_GZC_Expt2.csv"
-        test_fl = "../data/GZC_exifs_beauty_full.csv"
+        train_fl = "../feature_files/EXPT2_FEATURE_VECTOR_TRAINING.csv"
+        test_fl = "../feature_files/GGR_FEATURE_VECTOR.csv"
     else:
         train_fl = "../FinalResults/ImgShrRnkListWithTags.csv"
         test_fl = "../data/full_gid_aid_ftr_agg.csv"
@@ -253,6 +260,8 @@ def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs, threshold
                 else:
                     flNm = str("../FinalResults/"+ meth + "_" + attrib + "_kShares")
 
+            flNm += MODE
+            
             if isClf:
                 predictions = {list(methObj.test_x.index)[i] : methObj.predProbabs[i] for i in range(len(methObj.test_x.index))}
                 sharesMethod = kSharesPerContributor
@@ -262,7 +271,6 @@ def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs, threshold
                     sharesMethod = shareAbvThreshold
                 else:
                     sharesMethod = kSharesPerContribAfterCoinFlip
-
             if randomShare:
                 hdr = "Population Estimates when contributor shares k random photos using %s and attribute selection method %s" %(meth,attrib)
             else:
@@ -277,7 +285,7 @@ def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs, threshold
             print("Population estimation experiments complete")
             
             df = pd.DataFrame(fixedK).transpose().reset_index()
-            
+            return df
             if not thresholdMeth:
                 df.columns = ['num_images','all','giraffes','zebras']
                 df.index = df['num_images']

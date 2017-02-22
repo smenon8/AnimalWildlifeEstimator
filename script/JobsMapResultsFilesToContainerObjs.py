@@ -79,7 +79,7 @@ def genGidAidDictFromMap(mapFL):
     gidAidDict = {}
     for gid in jsonObj:
         if jsonObj[gid][0] != None:
-            for aid in jsonObj[gid][0]:
+            for aid in jsonObj[gid]: # -- put a [0] for GZC dataset
                 gidAidDict[gid] = gidAidDict.get(gid,[]) + [aid]
         else:
             gidAidDict[gid] = None
@@ -163,10 +163,13 @@ def genGidAidFtrDf(gidAidMapFl,aidFtrMapFl,outFlNm="/tmp/genGidAidFtrDf.dump.csv
 # mapFL - json format (should be in the format {gid: {aid : features}})
 # This method is used to generate a dictionary in the form { GID : [list of features instances in that image]}. 
 # This object will give us the capability to check what feature instances are present in a given image. 
-def extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature):    
-    aidFeatureDict = genAidFeatureDictDict(aidFtrMapFl)
-    
+def extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature, mode='GZC'):    
     gidAidDict = genGidAidDictFromMap(gidAidMapFl)
+    if mode == "GZC":
+        aidFeatureDict = genAidFeatureDictDict(aidFtrMapFl)
+    else:
+        with open(aidFtrMapFl, "r") as aidFtrFl:
+            aidFeatureDict = json.load(aidFtrFl)
 
     gidFtr = {}
     for gid in gidAidDict:
