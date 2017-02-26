@@ -60,7 +60,7 @@ def getShrProp(ovrAggCnts) :
 # This method defines the counting logic for a particular image for a given feature. 
 # For instance, for the feature ‘SPECIES’, there might be images that contains both a zebra and a giraffe. 
 # In that case, the share counts have to be added to both zebra and giraffe. 
-def getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature,withNumInds=True, mode="GGR"):
+def getCountingLogic(gidAidMapFl,aidFeatureMapFl,feature,withNumInds=True, mode="GZC"):
     featuresPerImg = ImageMap.extractImageFeaturesFromMap(gidAidMapFl,aidFeatureMapFl,feature, mode=mode)
     
     countLogic = {}
