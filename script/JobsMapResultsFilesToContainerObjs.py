@@ -175,8 +175,8 @@ def extractImageFeaturesFromMap(gidAidMapFl,aidFtrMapFl,feature, mode='GGR'):
             
     gidFtr = {}
     if mode=="GGR":
-        for gid in gidAidDict:
-            if gidAidDict[gid]!= None:
+        for gid in gidAidDict.keys():
+            if gidAidDict[gid][0] != None:
                 for aid in gidAidDict[gid]:
                     gidFtr[gid] = gidFtr.get(gid,[]) + [aidFeatureDict[str(aid)][feature]]
     else:

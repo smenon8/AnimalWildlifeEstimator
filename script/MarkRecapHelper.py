@@ -7,7 +7,7 @@ import pandas as pd
 import warnings
 import sys, math
 importlib.reload(DS)
-MODE = 'GZC'
+MODE = 'GGR'
 
 def gid_filter_logic(inExifFl, inGidAidMapFl, inAidFtrFl):
 	with open(inExifFl,"r") as inpFl:
