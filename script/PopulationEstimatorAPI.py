@@ -165,7 +165,7 @@ def kSharesPerContribAfterCoinFlip(prediction_results,inExifFl,inGidAidMapFl,inA
 
     sdCardSorted = {}
     for contrib in sdCards.keys():
-        sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_results.get(x,0),reverse=True)
+        sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_results.get(x,0),reverse=False)
 
     if randomShare:
         for contrib in sdCardSorted.keys():
@@ -207,7 +207,7 @@ def kSharesPerContributor(prediction_probabs,inExifFl,inGidAidMapFl,inAidFtrFl,g
 
     sdCardSorted = {}
     for contrib in sdCards.keys():
-        sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_probabs.get(x,0),reverse=True)
+        sdCardSorted[contrib] = sorted(sdCards[contrib],key=lambda x : prediction_probabs.get(x,0),reverse=False)
 
     if randomShare:
         for contrib in sdCardSorted.keys():
@@ -273,7 +273,7 @@ def runSyntheticExpts(isClf, methTypes, attribTypes, krange, methArgs, threshold
                 if randomShare:
                     flNm = str("../FinalResults/"+ meth + "_" + attrib + "_kSharesRandom")
                 else:
-                    flNm = str("../FinalResults/"+ meth + "_" + attrib + "_kShares")
+                    flNm = str("../FinalResults/"+ meth + "_" + attrib + "_bottom_kShares")
 
             flNm += MODE
             print(flNm)
