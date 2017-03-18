@@ -93,7 +93,8 @@ def createDataFlDict(data, allAttribs, threshold, dataMode ='Train', writeTempFi
     return gidAttribDict
 
 
-def getLearningAlgo(methodName, kwargs):
+def getLearningAlgo(methodName, kwArgs):
+    kwargs = kwArgs[methodName]
     if methodName == 'logistic':
         return LogisticRegression(**kwargs)
     elif methodName == 'svm':
