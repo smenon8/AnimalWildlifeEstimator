@@ -114,17 +114,17 @@ def getExif(flickrObj, outFl, urlList=None, fileList=None):
 
 	return None
 
-def scrape_flickr(to_page):
+def scrape_flickr(to_page, out_fl_nm):
 	urlListMaster = []
 	for i in range(1,to_page):
 		print("Scraping from page %d" %i)
-		urlList,photoIDList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["zebra"],None,i)
+		urlList,photoIDList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["giraffe"],None,i)
 		print(len(urlList))
 		urlListMaster.extend(urlList)
 	
 	urlListMaster = list(set(urlListMaster))
 
-	with open("../data/fileURLS.dat","w") as urlListFl:
+	with open(out_fl_nm,"w") as urlListFl:
 		for url in urlListMaster:
 			urlListFl.write(url + "\n")
 
@@ -132,16 +132,16 @@ def download_imgs(urlFlList = "../data/fileURLS.dat"):
 	with open(urlFlList,"r") as urlListFl:
 		urlList = [url for url in urlListFl.read().split("\n")]
 
-	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/"
+	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape_Giraffes/"
 
 	idxs = [i for i in range(0,len(urlList),200)]
 
 	for i in range(1,len(idxs)):
 		print("Downloading from range %i to %i" %(idxs[i-1],idxs[i]-1))
-		multiProcMeth(download_link, download_dir, urlList[idxs[i-1]:idxs[i]])
+		multiProcMeth(download_link, download_dir, urlList[idxs[i-1]:idxs[i]], [None]*200)
 
 	print("Downloading last chunk")
-	multiProcMeth(download_link, download_dir, urlList[3800:len(urlList)-1])
+	multiProcMeth(download_link, download_dir, urlList[4400:len(urlList)-1], [None]*19)
 
 	return 
 
@@ -246,9 +246,9 @@ def __main__():
 
 if __name__ == "__main__":
 	# __main__()
-	# scrape_flickr(51)
+	# scrape_flickr(51, "../data/file_urls_giraffes.dat")
 
-	#download_imgs()
+	download_imgs("../data/file_urls_giraffes.dat")
 
 
 	''' 
@@ -258,4 +258,4 @@ if __name__ == "__main__":
 	'''
 	# convert_fl_gid_idx("../data/Flickr_EXIF_full.json", "../data/Flickr_EXIF_full.json")
 
-	bing_search_pipeline()
+	# bing_search_pipeline()

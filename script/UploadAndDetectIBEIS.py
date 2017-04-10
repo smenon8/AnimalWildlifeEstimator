@@ -326,13 +326,13 @@ def __main__():
 if __name__ == "__main__":
     # __main__()
 
-    with open("../data/beautyFeatures_FlickrExtracts_new_full.json", "r") as jsonObj:
+    with open("../data/Flickr_beauty_exif_combined.json", "r") as jsonObj:
         flckrImgs = json.load(jsonObj)
     print("Staring upload!")
     imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/'
     gidFlNmDict = {upload(imgPath+img) : img for img in list(flckrImgs.keys())}  
 
-    with open("../data/flickr_imgs_gid_flnm_map_new.json","w") as jsonFl:
+    with open("../data/Flickr_imgs_gid_flnm_map.json","w") as jsonFl:
         json.dump(gidFlNmDict, jsonFl, indent=4)
     
     # data_dict = {
