@@ -11,6 +11,7 @@ import os, re
 from functools import partial
 from multiprocessing.pool import Pool
 import GetPropertiesAPI as GP
+import subprocess
 
 DOMAIN = 'http://pachy.cs.uic.edu:5001'
 
@@ -102,7 +103,7 @@ def delete(*args, **kwargs):
     return _request(requests.delete, *args, **kwargs)
 
 
-def run_id_detection(aid): # ID'ing task for each annotation
+def run_annot_identification(aid): # ID'ing task for each annotation
     # step 1: get annot_uuid -- this can be done offline too
     data_dict = {
         'aid_list': [aid],
@@ -134,10 +135,13 @@ def run_id_detection(aid): # ID'ing task for each annotation
         time.sleep(5)
 
     try:
-        assert check_job_status(jobid_str)
+        assert check_job_status(jobid_str) and start > error_time
     except AssertionError:
         print("RUN_ID_PIPELINE failed for annotation_id %i" %aid)
-
+        command="""echo "RUN_ID_PIPELINE failed \n`date`" | mailx -s 'Msg from UploadAndDetectIBEIS' smenon8@uic.edu"""
+        process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+        output, error = process.communicate()
+    
     print("Query complete..!")
 
     # step 3: Job execution must have successfully completed at this point and now we extract the needed information
@@ -157,7 +161,7 @@ def run_id_detection(aid): # ID'ing task for each annotation
             # this i has been previously assigned a name
             name = result['orig_name_list'][i]
 
-    if len(result['new_name_list']) == 1: # no matches, assign name as negative of nid simply
+    if len(result['new_name_list']) == 1: # no matches, assign name as negative of aid simply
         name = str(-1*int(aid))
 
     if name == None:
@@ -189,7 +193,7 @@ def run_id_pipeline(gidRange):
 
     for aid in aid_list:
         print("Running ID detection for aid %s" %aid)
-        run_id_detection(aid)
+        run_annot_identification(aid)
 
 
 def run_detection_task(gid):
@@ -326,13 +330,14 @@ def __main__():
 if __name__ == "__main__":
     # __main__()
 
-    with open("../data/Flickr_beauty_exif_combined.json", "r") as jsonObj:
+    with open("../data/Flickr_Bty_Giraffe.json", "r") as jsonObj:
         flckrImgs = json.load(jsonObj)
+
     print("Staring upload!")
-    imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/'
+    imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape_Giraffes/'
     gidFlNmDict = {upload(imgPath+img) : img for img in list(flckrImgs.keys())}  
 
-    with open("../data/Flickr_imgs_gid_flnm_map.json","w") as jsonFl:
+    with open("../data/Flickr_Giraffes_imgs_gid_flnm_map.json","w") as jsonFl:
         json.dump(gidFlNmDict, jsonFl, indent=4)
     
     # data_dict = {

@@ -42,7 +42,7 @@ def createFlickrObj(flickrKeyFl):
 
 def searchInFlickr(flickrObj, tags=[], text=None, page=1):
 	print("Scraping from page %d" %page)
-	photosJson = json.loads(flickrObj.photos.search(tags=tags, text=text, privacy_filter=1, page=page, per_page=500).decode(encoding='utf-8'))
+	photosJson = json.loads(flickrObj.photos.search(tags=tags, text=text, privacy_filter=1, page=page, per_page=500, min_taken_date=1262304000).decode(encoding='utf-8'))
 
 	photos = photosJson['photos']['photo']
 	urlList = []
@@ -118,7 +118,7 @@ def scrape_flickr(to_page, out_fl_nm):
 	urlListMaster = []
 	for i in range(1,to_page):
 		print("Scraping from page %d" %i)
-		urlList,photoIDList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["giraffe"],None,i)
+		urlList,photoIDList = searchInFlickr(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"),["bottlenose dolphins"],None,i)
 		print(len(urlList))
 		urlListMaster.extend(urlList)
 	
@@ -132,7 +132,7 @@ def download_imgs(urlFlList = "../data/fileURLS.dat"):
 	with open(urlFlList,"r") as urlListFl:
 		urlList = [url for url in urlListFl.read().split("\n")]
 
-	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape_Giraffes/"
+	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape_Bottlenecks/"
 
 	idxs = [i for i in range(0,len(urlList),200)]
 
@@ -246,9 +246,9 @@ def __main__():
 
 if __name__ == "__main__":
 	# __main__()
-	# scrape_flickr(51, "../data/file_urls_giraffes.dat")
+	# scrape_flickr(51, "../data/file_urls_bottlenose_dolphins.dat")
 
-	download_imgs("../data/file_urls_giraffes.dat")
+	download_imgs("../data/file_urls_bottlenose_dolphins.dat")
 
 
 	''' 
