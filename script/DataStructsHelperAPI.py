@@ -46,8 +46,15 @@ def appendJSON(*inpFl):
 		with open(fl, "r") as jFl:
 			flObjs.append(json.load(jFl))
 
+	tot_keys = sum([len(list(flObj.keys())) for flObj in flObjs])
+
 	for i in range(1,len(flObjs)):
 		flObjs[0].update(flObjs[i])
+	print(len(list(flObjs[0].keys())))
+	try:
+		assert tot_keys == len(list(flObjs[0].keys()))
+	except AssertionError as e:
+		print("Length of input JSONs not equal to length of output Dict")
 
 	return flObjs[0]
 
@@ -66,19 +73,11 @@ def flipKeyValue(dct):
 
 
 def __main__():
-	d = appendJSON("/tmp/test7.json",
-					"/tmp/test6.json",
-					"/tmp/test1.json",
-					"/tmp/test8.json",
-					"/tmp/test9.json",
-					"/tmp/test3.json",
-					"/tmp/test5.json",
-					"/tmp/test2.json",
-					"/tmp/test4.json",
-					"/tmp/test10.json")
+	d = appendJSON("../data/Flickr_Humpbacks_imgs_gid_flnm_map.json",
+					"../data/Flickr_Humpbacks_imgs_gid_flnm_map_1.json")
 
 
-	with open("/tmp/extra_annots.json", "w") as fl:
+	with open("../data/Flickr_Humpbacks_imgs_gid_flnm_map_comb.json", "w") as fl:
 	    json.dump(d, fl, indent=4)
 
 if __name__ == "__main__":

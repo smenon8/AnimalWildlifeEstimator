@@ -330,14 +330,40 @@ def __main__():
 if __name__ == "__main__":
     # __main__()
 
-    with open("../data/Flickr_Bty_Giraffe.json", "r") as jsonObj:
-        flckrImgs = json.load(jsonObj)
+    # with open("../data/Flickr_Bty_Humpbacks.json", "r") as jsonObj:
+    #     flckrImgs = json.load(jsonObj)
 
-    print("Staring upload!")
-    imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape_Giraffes/'
-    gidFlNmDict = {upload(imgPath+img) : img for img in list(flckrImgs.keys())}  
+    imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape_Humpbacks/'
 
-    with open("../data/Flickr_Giraffes_imgs_gid_flnm_map.json","w") as jsonFl:
+
+    # imgs = list(flckrImgs.keys())
+
+    with open("/tmp/test.dat", "r") as fl:
+        imgs = fl.read().split("\n")
+
+    print("total number of images to be uploaded %d" %len(imgs))
+
+    fl_counter = 0
+    gidFlNmDict = {}
+    try:
+        print("Staring upload!")
+        for img in imgs:
+            gid = upload(imgPath+img)
+            gidFlNmDict[gid] = img
+            fl_counter += 1
+            if fl_counter == 99:
+                fl_counter = 0
+                with open("/tmp/fl_counter_upload.dat", "w") as fl:
+                    fl.write(img)
+    except Exception as e:
+        print(e)
+        with open("/tmp/fl_counter_upload.dat", "w") as fl:
+                    fl.write(img)
+        with open("../data/Flickr_Humpbacks_imgs_gid_flnm_map_tmp.json","w") as jsonFl:
+            json.dump(gidFlNmDict, jsonFl, indent=4) 
+
+
+    with open("../data/Flickr_Humpbacks_imgs_gid_flnm_map_2.json","w") as jsonFl:
         json.dump(gidFlNmDict, jsonFl, indent=4)
     
     # data_dict = {

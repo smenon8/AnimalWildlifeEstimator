@@ -235,20 +235,22 @@ def __main__():
 	# with open("../data/fileURLS.dat","r") as urlListFl:
 	# 	urlList = [url for url in urlListFl.read().split("\n")]
 
-	with open("../data/flickr_imgs_gid_flnm_map_new.json", "r") as flJson:
-		flListJson = json.load(flJson)
-	flList = list(flListJson.values())
+	# with open("../data/flickr_imgs_gid_flnm_map_new.json", "r") as flJson:
+	# 	flListJson = json.load(flJson)
+	# flList = list(flListJson.values())
+	with open("../data/fl_list_flickr_giraffe.dat", "r") as fl:
+		flList = fl.read().split("\n")
 
-	for i in range(0,len(flList),150):
+	for i in range(1650,len(flList),150):
 		print("Extraction for %s to %s" %(i, min(i+150, len(flList))))
-		getExif(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"), "../data/Flickr_EXIF_%s.json" %i , fileList = flList[i:min(i+150, len(flList))])
+		getExif(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"), "/tmp/Flickr_Giraffe_EXIF_%s.json" %i , fileList = flList[i:min(i+150, len(flList))])
 		time.sleep(5)
 
 if __name__ == "__main__":
-	# __main__()
+	__main__()
 	# scrape_flickr(51, "../data/file_urls_bottlenose_dolphins.dat")
 
-	download_imgs("../data/file_urls_bottlenose_dolphins.dat")
+	# download_imgs("../data/file_urls_bottlenose_dolphins.dat")
 
 
 	''' 
