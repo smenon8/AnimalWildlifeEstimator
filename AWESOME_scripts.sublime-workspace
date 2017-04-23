@@ -1,0 +1,1082 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"img",
+				"imgPath"
+			],
+			[
+				"skip",
+				"skip_fl"
+			],
+			[
+				"out",
+				"out_fl_nm"
+			],
+			[
+				"g_truth",
+				"g_truth_population_z"
+			],
+			[
+				"aidFtr",
+				"aidFtrMapFl"
+			],
+			[
+				"confidence",
+				"confidence_z"
+			],
+			[
+				"confi",
+				"confidence_all"
+			],
+			[
+				"zeb",
+				"zebra_spec"
+			],
+			[
+				"mode",
+				"MODE"
+			],
+			[
+				"min",
+				"min_diff"
+			],
+			[
+				"bigger",
+				"bigger_y"
+			],
+			[
+				"smaller",
+				"smaller_y"
+			],
+			[
+				"line",
+				"line_overlaps"
+			],
+			[
+				"nat",
+				"nat_sum_avg_n"
+			],
+			[
+				"sum",
+				"sum_arr_from_avg"
+			],
+			[
+				"sto",
+				"stock_prices"
+			],
+			[
+				"magic",
+				"_magic_index"
+			],
+			[
+				"child",
+				"child_sum"
+			],
+			[
+				"l",
+				"l_sum"
+			],
+			[
+				"new",
+				"new_sum"
+			],
+			[
+				"max",
+				"max_sum"
+			],
+			[
+				"adj",
+				"adj_idx"
+			],
+			[
+				"no",
+				"node_list"
+			],
+			[
+				"node",
+				"node_idx"
+			],
+			[
+				"get",
+				"get_index_node_list"
+			],
+			[
+				"is",
+				"is_BST_dups_allowed"
+			],
+			[
+				"_is",
+				"_is_BST_dups_allowed"
+			],
+			[
+				"_i",
+				"_is_BST_dups_allowed"
+			],
+			[
+				"height",
+				"height_r"
+			],
+			[
+				"de",
+				"dequeue"
+			],
+			[
+				"start",
+				"start_node"
+			],
+			[
+				"print",
+				"print_graph"
+			],
+			[
+				"add",
+				"add_adjacents"
+			],
+			[
+				"heap",
+				"heap_arr"
+			],
+			[
+				"m",
+				"myHeap"
+			],
+			[
+				"tree",
+				"tree_trimmer"
+			],
+			[
+				"in_",
+				"in_order_arr"
+			],
+			[
+				"inOrder",
+				"inOrderTraversal_list"
+			],
+			[
+				"curr",
+				"curr_lvl"
+			],
+			[
+				"check",
+				"check_time_elapsed"
+			],
+			[
+				"annot",
+				"annot_uuid_ftr_map_fl"
+			],
+			[
+				"annot_uui",
+				"annot_uuid_ftr_map_fl_nm"
+			],
+			[
+				"out_fl",
+				"out_fl_head"
+			],
+			[
+				"uuid_annot_",
+				"uuid_annot_uuid_map_fl"
+			],
+			[
+				"uuid",
+				"uuid_dict"
+			],
+			[
+				"build",
+				"build_feature_file_ggr"
+			],
+			[
+				"gid_",
+				"gid_uuid_exif_ftr_map"
+			],
+			[
+				"in_file",
+				"in_file_uuid_gid_map"
+			],
+			[
+				"in_f",
+				"in_file"
+			],
+			[
+				"aid_uuid",
+				"aid_uuid_feature_map"
+			],
+			[
+				"pre",
+				"pre_order_arr"
+			],
+			[
+				"in",
+				"in_order_arr"
+			],
+			[
+				"resi",
+				"resize_img"
+			],
+			[
+				"image",
+				"image_path"
+			],
+			[
+				"con",
+				"convert_fl_gid_idx"
+			],
+			[
+				"ou",
+				"outFl"
+			],
+			[
+				"fl",
+				"flnm_gid_map"
+			],
+			[
+				"gid",
+				"gid_flnm_map"
+			],
+			[
+				"job",
+				"jobid_str"
+			],
+			[
+				"run_",
+				"run_id_pipeline"
+			],
+			[
+				"ru",
+				"run_id_detection"
+			],
+			[
+				"l_",
+				"l_end"
+			],
+			[
+				"str",
+				"strng"
+			],
+			[
+				"arr",
+				"arr_2D"
+			],
+			[
+				"find",
+				"find_num_paths"
+			],
+			[
+				"pwr",
+				"pwr_set"
+			],
+			[
+				"pw",
+				"pwr_set"
+			],
+			[
+				"end",
+				"endGID"
+			],
+			[
+				"star",
+				"startGID"
+			],
+			[
+				"map",
+				"mapFlObj"
+			],
+			[
+				"isB",
+				"isBST_rec"
+			],
+			[
+				"rever",
+				"reverseLL_rec_util"
+			],
+			[
+				"flLi",
+				"flListJson"
+			],
+			[
+				"size",
+				"sizeJson"
+			],
+			[
+				"popua",
+				"population_z"
+			],
+			[
+				"popul",
+				"population_z"
+			],
+			[
+				"pass",
+				"passthru"
+			],
+			[
+				"calc",
+				"calc_gpa"
+			],
+			[
+				"grade",
+				"grade_list"
+			],
+			[
+				"be",
+				"beautyFtrs"
+			],
+			[
+				"attr",
+				"attribTypes"
+			],
+			[
+				"train",
+				"train_x"
+			],
+			[
+				"test",
+				"testDataFeatures"
+			],
+			[
+				"data",
+				"dataPrepIBIESFtrs"
+			],
+			[
+				"plot",
+				"plotResiduals"
+			],
+			[
+				"rgr",
+				"rgrAlgoTypes"
+			],
+			[
+				"em",
+				"embedCodes"
+			],
+			[
+				"eva",
+				"eval_clf_perfs_classic"
+			],
+			[
+				"clf",
+				"clfObj"
+			],
+			[
+				"gen",
+				"gen_graphics_clf_perf"
+			],
+			[
+				"ba",
+				"is_bag_of_wrds"
+			],
+			[
+				"tra",
+				"trainTestSplit"
+			],
+			[
+				"res",
+				"result_file"
+			],
+			[
+				"json",
+				"jsonFl"
+			],
+			[
+				"exi",
+				"exifJson"
+			],
+			[
+				"exif",
+				"exif_dict"
+			],
+			[
+				"flickr",
+				"flickrObj"
+			],
+			[
+				"fli",
+				"flickrObj"
+			],
+			[
+				"counts_",
+				"counts_hue"
+			],
+			[
+				"rgb",
+				"rgbImg"
+			],
+			[
+				"X_",
+				"X_test"
+			],
+			[
+				"farm1",
+				"farm1Urls"
+			],
+			[
+				"url",
+				"urlListMaster"
+			],
+			[
+				"urt",
+				"urlListMaster"
+			],
+			[
+				"download",
+				"download_dir"
+			],
+			[
+				"com",
+				"combineJson"
+			],
+			[
+				"inp",
+				"inpBeautyFl"
+			],
+			[
+				"outFl",
+				"outFlNm"
+			],
+			[
+				"thres",
+				"threshold"
+			],
+			[
+				"sha",
+				"shareAbvThreshold"
+			],
+			[
+				"thresh",
+				"thresholdMeth"
+			],
+			[
+				"pred",
+				"prediction_probabs"
+			],
+			[
+				"keys",
+				"keysOfInterest"
+			],
+			[
+				"run",
+				"runSyntheticExpts"
+			],
+			[
+				"meth",
+				"methTypes"
+			],
+			[
+				"att",
+				"attribTypes"
+			],
+			[
+				"sdCard",
+				"sdCardSorted"
+			],
+			[
+				"prediction",
+				"predictions_k"
+			],
+			[
+				"sd",
+				"sdCardSorted"
+			],
+			[
+				"predic",
+				"prediction_results"
+			],
+			[
+				"method",
+				"methodName"
+			],
+			[
+				"tes",
+				"testDf"
+			],
+			[
+				"all",
+				"allAttribs"
+			],
+			[
+				"kw",
+				"kwargsDict"
+			],
+			[
+				"sumTill",
+				"sumTillHere"
+			],
+			[
+				"ad",
+				"adjListL"
+			],
+			[
+				"choi",
+				"choice2"
+			],
+			[
+				"cos",
+				"costIndArr"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/sreejithmenon/Google Drive/CodeBase/NeighbourhoodInformant/Code/data_dump.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/UploadAndDetectIBEIS.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/DataStructsHelperAPI.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/SocialMediaImageExtracts.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/ExtractBtyFtrs.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/BuildConsolidatedFeaturesFile.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/GetPropertiesAPI.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/skip_files.dat",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/Flickr_Bty_Giraffe.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/Flickr_EXIF_full.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/UploadHelper.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/ClassifierCapsuleClass.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/ClassiferHelperAPI.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/PopulationEstimatorAPI.py",
+		"/Users/sreejithmenon/Downloads/synthetic_experiments_schematic.xml",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/MarkRecapHelper.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/JobsMapResultsFilesToContainerObjs.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/GZC_exifs_beauty_full.json",
+		"/private/tmp/test.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/KrippendorfAgreementScore.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/DeriveFinalResultSet.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AlgDataStruct_practice/data_structures/Graphs.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AlgDataStruct_practice/data_structures/BinarySearchTree.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AlgDataStruct_practice/data_structures/Heaps.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AlgDataStruct_practice/data_structures/Tree.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AlgDataStruct_practice/practice_problems/PracticeProbs.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AlgDataStruct_practice/data_structures/SearchNSort.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AlgDataStruct_practice/practice_problems/DynamicProgImp.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AlgDataStruct_practice/PracticeProbs.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/ggr_annot_uuid_ftr_map.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/ggr_gid_uuid_exif_ftr_map.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/ggr_gid_uuid_annot_uuid_map.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/ggr_beauty_features.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/uuid_gid_map.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/ggr_uuid_list.dat",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/full_gid_aid_map.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/full_aid_features.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/ggr_ftr_extract_1_annot_uuid_ftr_map.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/Flickr_Beauty_features.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/flickr_imgs_gid_flnm_map.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/GZC_beauty_features.json",
+		"/private/tmp/test_uuid_annot_uuid_map.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/experiment2_aid_features.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/ggr_ftr_extract_3_annot_uuid_ftr_map.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/bing_img_data.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/GZC_data_tagged.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/Flickr_Location_data.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/beautyFeatures_FlickrExtracts.json",
+		"/private/tmp/test_exif.json",
+		"/private/tmp/test_annot_uuid_ftr_map.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/GZC_exifs_beauty_full.csv",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/new_flickr_extracts_fl_list.dat",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/Other/windowsBatchFiles/ApproveWorkBatchExpt3_prod.txt",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/beautyFeatures_Bing.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/Plotly.keys",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/flickr_imgs_gid_flnm_map_new.json",
+		"/Users/sreejithmenon/Downloads/old.json",
+		"/Users/sreejithmenon/Downloads/new.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/beautyFeatures_FlickrExtracts_full.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/beautyFeatures_FlickrExtracts_new_full.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/Flickr_EXIF_Full_new.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/BingSearchAPI_key.dat",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/BingImageSearchAPI.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/beautyFeatures_FlickrExtracts_new_5.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/beautyFeatures_FlickrExtracts_new_4.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/beautyFeatures_FlickrExtracts_new_3.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/beautyFeatures_FlickrExtracts_new_2.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/beautyFeatures_FlickrExtracts_new_1.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/BuildHITCommands.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/Other/windowsBatchFiles/ApproveWorkBatchExpt3_prod.cmd",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/Other/windowsBatchFiles/LoadHITBatchExpt3_prod.cmd",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/CreateTurkFilesBulk.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/GenerateMTurkFileAPI.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/files/header_prod.txt",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/Other/MTurk_Job_files/mTurkFilesExpt3/Replace_Div_ele.sh",
+		"/Users/sreejithmenon/Downloads/test.html",
+		"/Library/aws-mturk-clt-1.3.3/bin/mturk.properties",
+		"/private/tmp/PROD/Expt3_photo_album_1_prod.question",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/Other/MTurk_Job_files/mTurkFilesExpt3/DEV/Expt3_photo_album_1.question",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AlgDataStruct_practice/DynamicProgImp.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/Other/MTurk_Job_files/mTurkFilesExpt3/replace_files.sh",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/HumanImagesException.csv",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/HumanImagesException2.csv",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/Expt3_job_gids_map_fl.csv",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/Other/windowsBatchFiles/GetResultsBatchExpt3_prod.cmd",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/Other/windowsBatchFiles/LoadHITBatchExpt3_dev.cmd",
+		"/Users/sreejithmenon/Downloads/test.csv",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AlgDataStruct_practice/data_structures/LinkedList.py",
+		"/Users/sreejithmenon/Desktop/UploadHelper.py",
+		"/Users/sreejithmenon/Downloads/test.sh",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/Other/MTurk_Job_files/mTurkFilesExpt2/prod/photo_album_1.input",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/Flickr_Predicted_Scores_distributions.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/Flickr_IBEIS_Ftrs_gid_aid_features.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/ResultsDashboard.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/ridge_beauty_kSharesRandom.csv",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/BeautyFtrVector_GZC_Expt2.csv",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/Flickr_FL_URL_map.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/Notebooks/Flickr_FL_URL_map.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/ImageShareabilityClassifiers.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/random_shares_errors_rgr.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/topk_shares_errors_clf.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/topk_shares_errors_rgr.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/random_shares_errors_clf.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/bottomk_shares_errors_clf.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/threshold_shares_errors_rgr.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/bottomk_shares_errors_rgr.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/test.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/test",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/topk_shares_errors_rgr.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/BaseCapsuleClass.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/topk_shares_clf_beauty.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/topk_shares_rgr_beauty.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/PopulationEstimatorFromClf.py",
+		"/Users/sreejithmenon/Desktop/GPA_calculator.py",
+		"/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/delete_files.sh",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/fileURLS.dat",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/kSharesMixMatch_Rgr_Beauty_thresholded.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/lasso_beauty_kShares.csv",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/RegressionCapsuleClass.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/ImageShareabilityRegressors.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/ClassifierResults/RegressionResults_BeautyGrouped.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/extractBtyFtrs.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/extractFtrsFrmImg.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/ExploratoryDataAnalysis.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/ExplaratoryDataAnalysis_Distributions.html",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/beautyFeatures_FlickrImgs.json",
+		"/Users/sreejithmenon/Downloads/api.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/gid_bbox.json"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"null",
+			"genNidMarkRecapDict",
+			"print",
+			"genGidAidDictFromMap",
+			"print",
+			"mode",
+			"diff",
+			"height",
+			"bal",
+			"660eb8ba-7711-1c01-e001-dfd81f596b0b",
+			"\"660eb8ba-7711-1c01-e001-dfd81f596b0b\"",
+			"\"1a39e23e-554c-d05d-1091-5c3bba2368b7\"",
+			"a047f5a7-e831-4821-a340-11836781bf23",
+			"[]",
+			"null",
+			"datetime",
+			"258377856_a05f5f3de3_b.jpg",
+			".jpg",
+			"0daedc57-4839-5b84-8ed3-89d6b14be50f",
+			"NaN",
+			".jpeg",
+			".json",
+			"..",
+			"6089112646",
+			"6089112646_98d87c8d04_b.jpg",
+			"6089112646_98d87c8d04_b",
+			"_b",
+			"30387263343",
+			"30817796540",
+			"2005-01",
+			"-01",
+			"$mturk_bin/",
+			"\"width:600px;height:600px;overflow:hidden;\"",
+			"\"1\"",
+			"height=\"600\"",
+			" ",
+			"uuid",
+			"level",
+			"orientation",
+			"reverse",
+			"top",
+			"5943100313_b29674bb5d_b.jpeg",
+			"5900898833_3d575a95e4_b.jpg",
+			"6220888100_2ac56d4d7b_b",
+			"4509676636_6b3e022de6_b.jpg",
+			"final_ftr_obj",
+			"lambda",
+			"delete",
+			"delete('api/annot', data_dict)",
+			"re",
+			"feature_gen",
+			"<td style=\"width:50%;\">",
+			"<td>",
+			"K",
+			"Threshold",
+			"bottom.html",
+			"kShares",
+			"res",
+			"masterList",
+			"print",
+			"clfArgs",
+			"clf",
+			"    ",
+			" ",
+			"'",
+			"\n\t",
+			"h3",
+			"rgrObj",
+			"x",
+			"agg",
+			"resultsFeaturesComb_expt2",
+			"col-sm-3",
+			"json",
+			"count",
+			"L",
+			"sort",
+			"minSupDict",
+			"&gt;",
+			"&lt;",
+			"{",
+			"}",
+			"{",
+			"    ",
+			"key",
+			") ",
+			"=",
+			"csv",
+			"getFltrCondn",
+			"isSparse",
+			"/Users/sreejithmenon/",
+			"a",
+			"pre",
+			"layin",
+			"genAidGidDictFromMap",
+			"json",
+			"width = \"350\"",
+			"&gt;",
+			"&lt;",
+			"<td>",
+			"td",
+			"&lt;",
+			"&gt;",
+			"&lt;",
+			"&gt;",
+			"&lt;",
+			"json",
+			"valign=\"top\"",
+			"<td><img",
+			"      <td></td>",
+			"&gt;",
+			"&lt;",
+			"<td></td>",
+			"&gt;",
+			"&lt;",
+			"&gt;",
+			"&lt;",
+			"valign=\"top\"",
+			"width=\"300\"",
+			"jpeg\"",
+			"href",
+			"jpeg",
+			"<td>https:",
+			"<td></td>",
+			"unidentified",
+			"other",
+			"\t ",
+			"1",
+			"font"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"null",
+			"[]",
+			"date",
+			"",
+			".json\",",
+			"\"..",
+			"_b.jpg",
+			"",
+			"\\\"width:600px;height:600px;overflow:hidden;\\\"",
+			"\\\"1\\\"",
+			"height=\"auto\"",
+			",",
+			"rotation",
+			"<td style=\"width:60%;\">",
+			"<td style=\"width:50%;\">",
+			"k",
+			"K",
+			"Random.html",
+			"thresholded",
+			"resultDict",
+			"reliabilityMatrx",
+			"methArgs",
+			"meth",
+			"",
+			",",
+			"",
+			"h2",
+			"X",
+			"L",
+			"M",
+			">",
+			"<",
+			"[",
+			"]",
+			"],",
+			"[",
+			"",
+			"hasSparse",
+			"<some path>",
+			"width = \"100\"",
+			"",
+			">",
+			"<",
+			"<td style=\"word-wrap: break-word\">",
+			"td style=\"word-wrap: break-word\"",
+			"<",
+			">",
+			"<",
+			">",
+			"<",
+			"valign=\"center\"",
+			"<td rowspan=2><img",
+			"",
+			">",
+			"<",
+			"",
+			">",
+			"<",
+			">",
+			"<",
+			"",
+			"valign=\"center\"",
+			"width=\"400\"",
+			"jpeg\" width=\"300\"",
+			"src",
+			"jpeg\"></img>",
+			"jpeg\"",
+			"<td rowspan=\"2\"><img href=\"https:",
+			"",
+			"UNIDENTIFIED",
+			"unidentified",
+			",",
+			"s.stdev",
+			"s.mean",
+			"",
+			"getResults ",
+			"getResults",
+			"965",
+			"5434",
+			"5657",
+			"7520",
+			"7519",
+			"5657",
+			"1292",
+			"GP",
+			"/Users/sreejithmenon/Google Drive/PythonCode/AnimalPhotoBias",
+			",",
+			"",
+			"300",
+			"",
+			"NULL",
+			"<location_of_file>\\",
+			"<location_of_file>",
+			"Friday 25th",
+			"Thursday 24th"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 223.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "AWESOME_scripts.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

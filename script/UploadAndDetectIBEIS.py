@@ -127,12 +127,12 @@ def run_annot_identification(aid): # ID'ing task for each annotation
     jobid_str = response.json()['response']
     print("Job ID: %s" %jobid_str)
 
-    error_time = 300
+    error_time = 30 * 60
     start = 0
     while not check_job_status(jobid_str) and start < error_time:
         print("Waiting for job completion..!")
-        start += 5
-        time.sleep(5)
+        start += 30
+        time.sleep(30)
 
     try:
         assert check_job_status(jobid_str) and start > error_time
@@ -216,7 +216,7 @@ def run_detection_task(gid):
     data_dict = {
         'gid_list': [gid],
     }
-
+    
     aids_list = get('api/detect/cnn/yolo', data_dict)
     aid_list = aids_list[0]
     print('\nAnnot aid_list    = %r' % (aid_list, ))
@@ -301,7 +301,7 @@ def run_detection_task(gid):
     print('\nNotes on aid_list = %r' % (aid_list, ))
     data_dict = {
         'aid_list': aid_list,
-        'notes_list': ['this is a test note'] * len(aid_list),
+        'notes_list': ['Flickr_Image'] * len(aid_list),
     }
     put('api/annot/note', data_dict)
     check_annot_metadata(aid_list)
