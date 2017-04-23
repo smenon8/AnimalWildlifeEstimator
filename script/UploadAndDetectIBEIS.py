@@ -103,7 +103,7 @@ def delete(*args, **kwargs):
     return _request(requests.delete, *args, **kwargs)
 
 
-def run_annot_identification(aid): # ID'ing task for each annotation
+def run_annot_identification(aid, daid_annot_list): # ID'ing task for each annotation
     # step 1: get annot_uuid -- this can be done offline too
     data_dict = {
         'aid_list': [aid],
@@ -113,7 +113,8 @@ def run_annot_identification(aid): # ID'ing task for each annotation
     # step 2: for the given annot UUID run the detection against all the available annots
     url = "http://pachy.cs.uic.edu:5001/api/engine/query/graph/"
     data_dict = {
-        'query_annot_uuid_list' : json.dumps([annot_uuid_list[0]])
+        'query_annot_uuid_list' : json.dumps([annot_uuid_list[0]]),
+        'database_annot_uuid_list' : json.dumps(daid_annot_list)
     }
     response = requests.request('POST', url, data=data_dict)
 
@@ -135,10 +136,10 @@ def run_annot_identification(aid): # ID'ing task for each annotation
         time.sleep(30)
 
     try:
-        assert check_job_status(jobid_str) and start > error_time
+        assert check_job_status(jobid_str)
     except AssertionError:
         print("RUN_ID_PIPELINE failed for annotation_id %i" %aid)
-        command="""echo "RUN_ID_PIPELINE failed \n`date`" | mailx -s 'Msg from UploadAndDetectIBEIS' smenon8@uic.edu"""
+        bashCommand="""echo "RUN_ID_PIPELINE failed \n`date`" | mailx -s 'Msg from UploadAndDetectIBEIS' smenon8@uic.edu"""
         process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
         output, error = process.communicate()
     
@@ -151,12 +152,14 @@ def run_annot_identification(aid): # ID'ing task for each annotation
 
     result = get("api/engine/job/result", data_dict)['json_result']['inference_dict']['cluster_dict']
 
-    with open("../data/Flick_UUID_AID_map.json", "r") as uuid_aid_map_json:
+    # hard coded value here
+    with open("Flickr_Giraffe_UUID_AID_map.json", "r") as uuid_aid_map_json:
         uuid_aid_map = json.load(uuid_aid_map_json)
 
     # check if there is a previously assigned name, if no name is assigned just assign the new_name_"n"
     name = None
-    for i in range(len(result['orig_name_list'])):
+    # this particular block ensures the names assigned (integers) are preserved
+    for i in range(len(result['orig_name_list'])): 
         if 'NEWNAME' not in result['orig_name_list'][i]:
             # this i has been previously assigned a name
             name = result['orig_name_list'][i]
@@ -176,13 +179,16 @@ def run_annot_identification(aid): # ID'ing task for each annotation
             "name_list" : [name]
         }
 
-        r = put("api/annot/name", data_dict)
+        put("api/annot/name", data_dict)
     
     print("IDing complete for AID %s \n" %aid)
     return 0
 
-
-def run_id_pipeline(gidRange):
+'''
+    Next modification : Once the ID pipeline runs for one iteration (100 images)
+    and we have a few images, then we make way for logic of exemplar flags
+'''
+def run_id_pipeline(gidRange, species):
     gid_aid_map = {}
 
     for gid in gidRange:
@@ -191,9 +197,22 @@ def run_id_pipeline(gidRange):
 
     aid_list = [item for sublist in gid_aid_map.values() for item in sublist if len(sublist) > 0] # flatten out the list of lists, exclude ones with no annotation
 
-    for aid in aid_list:
+    species_list = GP.getImageFeature(aid_list, "species/text")
+    aid_list_species_only = [aid_list[i] for i in range(len(aid_list)) if species_list[i] == species]
+
+    print("Extracting uuid for all annotations specified by GID range")
+    data_dict = {
+        'aid_list' : aid_list_species_only
+        }
+    daid_annot_list = get('api/annot/uuid', data_dict)
+
+    for aid in aid_list_species_only:
         print("Running ID detection for aid %s" %aid)
-        run_annot_identification(aid)
+        run_annot_identification(aid, daid_annot_list)
+
+    bashCommand="""echo "RUN_ID_PIPELINE Completed \n`date`" | mailx -s 'Msg from UploadAndDetectIBEIS' smenon8@uic.edu"""
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output, error = process.communicate()
 
 
 def run_detection_task(gid):
@@ -244,13 +263,13 @@ def run_detection_task(gid):
     # We immediately get a job engine ID, we need to query about the status of
     # the job periodically to check it's status and look for it to register as
     # completed
-    patience = 60 * 5
+    patience = 60 * 30
     while not check_job_status(jobid_str):
         print('\t Checking status...')
         if patience < 0:
             break
-        time.sleep(1)
-        patience -= 1
+        time.sleep(30)
+        patience -= 30
 
     # The detection job has completed and the result (detected aids) have been
     # given to the engine.  Go get the result, which should be cached from the
@@ -318,12 +337,12 @@ def run_detection_task(gid):
     # print('\nDeleted aid_list  = %r' % (aid_list, ))
 
 def __main__():
-    # gidList = [i for i in range(88,101)]
+    gidList = [i for i in range(88,101)]
 
-    # detect = partial(run_detection_task)
+    detect = partial(run_detection_task)
 
-    # with Pool(2) as p:
-    #     p.map(detect, gidList)
+    with Pool(2) as p:
+        p.map(detect, gidList)
 
     run_id_pipeline(range(5,1702))
 
