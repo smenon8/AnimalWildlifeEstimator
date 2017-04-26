@@ -7,7 +7,7 @@ import requests
 import time
 import uuid
 import json
-import os, re
+import os
 from functools import partial
 from multiprocessing.pool import Pool
 import GetPropertiesAPI as GP
@@ -132,8 +132,8 @@ def run_annot_identification(aid, daid_annot_list): # ID'ing task for each annot
     start = 0
     while not check_job_status(jobid_str) and start < error_time:
         print("Waiting for job completion..!")
-        start += 30
-        time.sleep(30)
+        start += 10
+        time.sleep(10)
 
     try:
         assert check_job_status(jobid_str)
@@ -152,43 +152,48 @@ def run_annot_identification(aid, daid_annot_list): # ID'ing task for each annot
 
     result = get("api/engine/job/result", data_dict)['json_result']['inference_dict']['cluster_dict']
 
-    # hard coded value here
-    with open("Flickr_Giraffe_UUID_AID_map.json", "r") as uuid_aid_map_json:
-        uuid_aid_map = json.load(uuid_aid_map_json)
+    name = handle_name_logic(result, aid)
 
-    # check if there is a previously assigned name, if no name is assigned just assign the new_name_"n"
-    name = None
-    # this particular block ensures the names assigned (integers) are preserved
-    for i in range(len(result['orig_name_list'])): 
-        if 'NEWNAME' not in result['orig_name_list'][i]:
-            # this i has been previously assigned a name
-            name = result['orig_name_list'][i]
-
-    if len(result['new_name_list']) == 1: # no matches, assign name as negative of aid simply
-        name = str(-1*int(aid))
-
-    if name == None:
-        name = re.findall(r'NEWNAME_(\d+)', result['new_name_list'][0])[0]
-
-    # make the final assignment
-    for annot_uuid_dict in result['annot_uuid_list']:
-        aid = uuid_aid_map[annot_uuid_dict["__UUID__"]]
-
-        data_dict = {
+    data_dict = {
             "aid_list" : [aid],
             "name_list" : [name]
-        }
+    }
 
-        put("api/annot/name", data_dict)
+    put("api/annot/name", data_dict)
     
     print("IDing complete for AID %s \n" %aid)
     return 0
+
+def handle_name_logic(cluster_dict, aid):
+    name = None
+    prev_match = False
+
+    # case 1: there is just 1 entry in the orig_name_list - no matches
+    if len(cluster_dict['orig_name_list']) == 1:
+        name = str(aid)
+    else:
+        # case 2: There are some matches
+        for i in range(len(cluster_dict['orig_name_list'])): 
+            if 'NEWNAME' not in cluster_dict['orig_name_list'][i]:
+                prev_match = True
+
+        if prev_match:
+            for orig_name in cluster_dict['orig_name_list']:
+                if 'NEWNAME' not in orig_name:
+                    name = orig_name
+        else:
+            # case 2b: But none of the matches have been previously been assigned a name
+            # This block will only work when the pipeline is being run for the first time on a dataset.
+            name = str(aid)
+    
+    return name
+
 
 '''
     Next modification : Once the ID pipeline runs for one iteration (100 images)
     and we have a few images, then we make way for logic of exemplar flags
 '''
-def run_id_pipeline(gidRange, species):
+def run_id_pipeline(gidRange, species, exemplar_logic=False):
     gid_aid_map = {}
 
     for gid in gidRange:
@@ -208,7 +213,15 @@ def run_id_pipeline(gidRange, species):
 
     for aid in aid_list_species_only:
         print("Running ID detection for aid %s" %aid)
+
+        if exemplar_logic:
+            # step 1: extract all exemplars flags for aid_list_species_only
+            # step 2: preserve only the exemplar annotations in daid_annot_list
+            pass
+
         run_annot_identification(aid, daid_annot_list)
+
+        # logic for refreshing all exemplars
 
     bashCommand="""echo "RUN_ID_PIPELINE Completed \n`date`" | mailx -s 'Msg from UploadAndDetectIBEIS' smenon8@uic.edu"""
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
@@ -268,8 +281,8 @@ def run_detection_task(gid):
         print('\t Checking status...')
         if patience < 0:
             break
-        time.sleep(30)
-        patience -= 30
+        time.sleep(10)
+        patience -= 10
 
     # The detection job has completed and the result (detected aids) have been
     # given to the engine.  Go get the result, which should be cached from the
@@ -337,53 +350,53 @@ def run_detection_task(gid):
     # print('\nDeleted aid_list  = %r' % (aid_list, ))
 
 def __main__():
-    gidList = [i for i in range(88,101)]
+    # gidList = [i for i in range(88,101)]
 
-    detect = partial(run_detection_task)
+    # detect = partial(run_detection_task)
 
-    with Pool(2) as p:
-        p.map(detect, gidList)
+    # with Pool(2) as p:
+    #     p.map(detect, gidList)
 
-    run_id_pipeline(range(5,1702))
+    run_id_pipeline(range(1,100))
 
 if __name__ == "__main__":
-    # __main__()
+    __main__()
 
     # with open("../data/Flickr_Bty_Humpbacks.json", "r") as jsonObj:
     #     flckrImgs = json.load(jsonObj)
 
-    imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape_Humpbacks/'
+    # imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape_Humpbacks/'
 
 
-    # imgs = list(flckrImgs.keys())
+    # # imgs = list(flckrImgs.keys())
 
-    with open("/tmp/test.dat", "r") as fl:
-        imgs = fl.read().split("\n")
+    # with open("/tmp/test.dat", "r") as fl:
+    #     imgs = fl.read().split("\n")
 
-    print("total number of images to be uploaded %d" %len(imgs))
+    # print("total number of images to be uploaded %d" %len(imgs))
 
-    fl_counter = 0
-    gidFlNmDict = {}
-    try:
-        print("Staring upload!")
-        for img in imgs:
-            gid = upload(imgPath+img)
-            gidFlNmDict[gid] = img
-            fl_counter += 1
-            if fl_counter == 99:
-                fl_counter = 0
-                with open("/tmp/fl_counter_upload.dat", "w") as fl:
-                    fl.write(img)
-    except Exception as e:
-        print(e)
-        with open("/tmp/fl_counter_upload.dat", "w") as fl:
-                    fl.write(img)
-        with open("../data/Flickr_Humpbacks_imgs_gid_flnm_map_tmp.json","w") as jsonFl:
-            json.dump(gidFlNmDict, jsonFl, indent=4) 
+    # fl_counter = 0
+    # gidFlNmDict = {}
+    # try:
+    #     print("Staring upload!")
+    #     for img in imgs:
+    #         gid = upload(imgPath+img)
+    #         gidFlNmDict[gid] = img
+    #         fl_counter += 1
+    #         if fl_counter == 99:
+    #             fl_counter = 0
+    #             with open("/tmp/fl_counter_upload.dat", "w") as fl:
+    #                 fl.write(img)
+    # except Exception as e:
+    #     print(e)
+    #     with open("/tmp/fl_counter_upload.dat", "w") as fl:
+    #                 fl.write(img)
+    #     with open("../data/Flickr_Humpbacks_imgs_gid_flnm_map_tmp.json","w") as jsonFl:
+    #         json.dump(gidFlNmDict, jsonFl, indent=4) 
 
 
-    with open("../data/Flickr_Humpbacks_imgs_gid_flnm_map_2.json","w") as jsonFl:
-        json.dump(gidFlNmDict, jsonFl, indent=4)
+    # with open("../data/Flickr_Humpbacks_imgs_gid_flnm_map_2.json","w") as jsonFl:
+    #     json.dump(gidFlNmDict, jsonFl, indent=4)
     
     # data_dict = {
     #     'gid_list': [1],
@@ -405,4 +418,4 @@ if __name__ == "__main__":
     #     urlList = urlListFl.read().split("\n")
     # for url in urlList:
     #     print("Uploading image : %s " %str(os.path.basename(url)))
-    #     upload("/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/",url)
+    #     upload("/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/",url)    
