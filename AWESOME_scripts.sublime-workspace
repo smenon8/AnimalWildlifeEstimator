@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"exemplar",
+				"exemplar_logic"
+			],
+			[
 				"aid",
 				"aid_list_species_only"
 			],
@@ -510,10 +514,6 @@
 			[
 				"all",
 				"allAttribs"
-			],
-			[
-				"kw",
-				"kwargsDict"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "script/UploadAndDetectIBEIS.py",
 			"settings":
 			{
-				"buffer_size": 13751,
+				"buffer_size": 14190,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -532,15 +532,8 @@
 			"file": "script/GetPropertiesAPI.py",
 			"settings":
 			{
-				"buffer_size": 5442,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "data/Flickr_UUID_AID_map.json",
-			"settings":
-			{
-				"buffer_size": 101254,
+				"buffer_size": 5436,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -605,6 +598,7 @@
 	],
 	"file_history":
 	[
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/Flickr_UUID_AID_map.json",
 		"/Users/sreejithmenon/UploadAndDetectIBEIS.py",
 		"/Users/sreejithmenon/Google Drive/CodeBase/NeighbourhoodInformant/Code/data_dump.json",
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/UploadAndDetectIBEIS.py",
@@ -731,8 +725,7 @@
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/extractFtrsFrmImg.py",
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/ExploratoryDataAnalysis.html",
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/ExplaratoryDataAnalysis_Distributions.html",
-		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/beautyFeatures_FlickrImgs.json",
-		"/Users/sreejithmenon/Downloads/api.py"
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/beautyFeatures_FlickrImgs.json"
 	],
 	"find":
 	{
@@ -750,6 +743,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"    ",
 			"run_id_pipeline",
 			"null",
 			"genNidMarkRecapDict",
@@ -876,8 +870,7 @@
 			"<td></td>",
 			"unidentified",
 			"other",
-			"\t ",
-			"1"
+			"\t "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -885,6 +878,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"null",
 			"[]",
 			"date",
@@ -999,15 +993,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13751,
+						"buffer_size": 14190,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5058,
-								5058
+								6850,
+								6850
 							]
 						],
 						"settings":
@@ -1017,7 +1011,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1638.0,
+						"translation.y": 2407.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1026,18 +1020,18 @@
 				{
 					"buffer": 1,
 					"file": "script/GetPropertiesAPI.py",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5442,
+						"buffer_size": 5436,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1484,
-								1499
+								623,
+								623
 							]
 						],
 						"settings":
@@ -1051,36 +1045,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "data/Flickr_UUID_AID_map.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 101254,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1129,7 +1093,7 @@
 	"project": "AWESOME_scripts.sublime-project",
 	"replace":
 	{
-		"height": 40.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -188,12 +188,34 @@ def handle_name_logic(cluster_dict, aid):
     
     return name
 
+def refresh_exemplars(data_dict={}):
+    return post("api/annot/exemplar", data_dict)
 
-'''
-    Next modification : Once the ID pipeline runs for one iteration (100 images)
-    and we have a few images, then we make way for logic of exemplar flags
-'''
-def run_id_pipeline(gidRange, species, exemplar_logic=False):
+def get_database_annots(aid_list):
+    print("Method for extracting database annotations running..!")
+
+    db_annot_list = []
+    
+    # get all exemplars
+    data_dict = {
+        'aid_list' : aid_list
+    }
+    exemplars = refresh_exemplars(data_dict)
+
+    if sum(exemplars):
+        for i in range(len(aid_list)):
+            if exemplars[i]:
+                db_annot_list.append(aid_list[i])
+    else: # no exemplars
+        db_annot_list = aid_list
+    
+
+    return db_annot_list
+
+
+def run_id_pipeline(end_gid, species):
+    gidRange = range(1,end_gid+1)
+
     gid_aid_map = {}
 
     for gid in gidRange:
@@ -202,30 +224,28 @@ def run_id_pipeline(gidRange, species, exemplar_logic=False):
 
     aid_list = [item for sublist in gid_aid_map.values() for item in sublist if len(sublist) > 0] # flatten out the list of lists, exclude ones with no annotation
 
+    name_list = GP.getImageFeature(aid_list, "name/text")
+    name_dict = {aid_list[i] : name_list[i] for i in range(len(aid_list))}
+
     species_list = GP.getImageFeature(aid_list, "species/text")
-    aid_list_species_only = [aid_list[i] for i in range(len(aid_list)) if species_list[i] == species]
+    species_dict = {aid_list[i] : species_list[i] for i in range(len(aid_list))}
 
-    print("Extracting uuid for all annotations specified by GID range")
-    data_dict = {
-        'aid_list' : aid_list_species_only
-        }
-    daid_annot_list = get('api/annot/uuid', data_dict)
+    # ignore all the annotations which already have a name associated and limit matching to only <species>
+    qaid_list_species_only = list(filter(lambda aid : species_dict[aid] == species and name_dict[aid] == "____", aid_list))   
+    daid_list_species_only = list(filter(lambda aid : species_dict[aid] == species, aid_list))
+    
 
-    for aid in aid_list_species_only:
+    for aid in qaid_list_species_only:
         print("Running ID detection for aid %s" %aid)
 
-        if exemplar_logic:
-            # step 1: extract all exemplars flags for aid_list_species_only
-            # step 2: preserve only the exemplar annotations in daid_annot_list
-            pass
+        daid_annot_list = get_database_annots(daid_list_species_only)
+        data_dict = {
+            'aid_list' : daid_annot_list
+        }
+        daid_annot_uuid_list = get('api/annot/uuid', data_dict)
 
-        run_annot_identification(aid, daid_annot_list)
-
-        # logic for refreshing all exemplars
-
-    bashCommand="""echo "RUN_ID_PIPELINE Completed \n`date`" | mailx -s 'Msg from UploadAndDetectIBEIS' smenon8@uic.edu"""
-    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-    output, error = process.communicate()
+        print("Running ID detection of aid %s against %d annotations" %(aid,len(daid_annot_uuid_list)))
+        run_annot_identification(aid, daid_annot_uuid_list)
 
 
 def run_detection_task(gid):
@@ -357,7 +377,7 @@ def __main__():
     # with Pool(2) as p:
     #     p.map(detect, gidList)
 
-    run_id_pipeline(range(1,100))
+    run_id_pipeline(150, 'giraffe_reticulated')
 
 if __name__ == "__main__":
     __main__()
