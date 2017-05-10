@@ -36,7 +36,7 @@ import pandas as pd
 from math import floor
 # importlib.reload(GP)
 from multiprocessing import Process
-
+import DataStructsHelperAPI as DS
 def printCompltnPercent(percentComplete):
 	i = int(percentComplete)
 	sys.stdout.write('\r')
@@ -149,9 +149,10 @@ def getAdditionalAnnotFeatures(gidAidMap, ftrName, outFlNm='/tmp/getAdditionalAn
 		json.dump(additionalFtrDct, outFlObj, indent=4)
 
 	return None
-
-# Logic for reading data from the consolidatedHITResults file - changed
-# The input for the below method will be a csv file/list with all the image GID's for which the features have to be extracted.
+'''
+Logic for reading data from the consolidatedHITResults file - changed
+The input for the below method will be a csv file/list with all the image GID's for which the features have to be extracted.
+'''
 def buildFeatureFl(inp,outFL,isInpFl = True):
 	allGID = []
 
@@ -353,6 +354,11 @@ def build_exif_ftrs_fl_ggr(in_file_uuid_gid_map, in_file_uuid_list, out_fl, star
 
 	with open(out_fl, "w") as uuid_exif_ftr_fl:
 		json.dump(gid_uuid_exif_ftr_map, uuid_exif_ftr_fl, indent=4)
+
+	return 0
+
+def build_reqd_ftrs():
+
 
 	return 0
 

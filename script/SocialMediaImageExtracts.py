@@ -6,7 +6,7 @@ import flickrapi as f
 from urllib.request import urlretrieve
 from functools import partial
 from multiprocessing.pool import Pool
-import os, re, pandas as pd, sys, json, time
+import os, re, json, time
 import DataStructsHelperAPI as DS
 import http.client, urllib.request, urllib.parse
 
@@ -29,7 +29,7 @@ def download_link(directory, url, fl_nm=None):
 		try:
 			urlretrieve(url, fl_nm)
 		except Exception as e:
-			return 
+			return e
 
 def createFlickrObj(flickrKeyFl):
 	# creating Flickr Object
@@ -146,7 +146,7 @@ def download_imgs(urlFlList = "../data/fileURLS.dat"):
 	return 
 
 def download_imgs_bing(img_id_url_dict):
-	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Bing_Scrape/"
+	download_dir = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Bing_Scrape_Giraffe/"
 
 	for key in img_id_url_dict.keys():
 		download_link(download_dir, img_id_url_dict[key], key)
@@ -218,9 +218,9 @@ def convert_fl_gid_idx(inFl, outFl):
 def bing_search_pipeline():
 	next_offset = 0
 	for i in range(50):
-		search_results = get_search_results_bing("grevy's zebra", 150, 150*i + next_offset)
+		search_results = get_search_results_bing("giraffe", 150, 150*i + next_offset)
 		print(len(search_results['value']))
-		get_exif_bing(search_results['value'], "../data/bing_img_exif_%i.json" %i)
+		get_exif_bing(search_results['value'], "../data/bing_img_exif_giraffe_%i.json" %i)
 		next_offset = search_results['nextOffsetAddCount']
 
 		img_id_url_dict = {result['imageId'] : result['contentUrl'] for result in search_results['value']}
@@ -241,13 +241,16 @@ def __main__():
 	with open("../data/fl_list_flickr_giraffe.dat", "r") as fl:
 		flList = fl.read().split("\n")
 
-	for i in range(1650,len(flList),150):
-		print("Extraction for %s to %s" %(i, min(i+150, len(flList))))
-		getExif(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"), "/tmp/Flickr_Giraffe_EXIF_%s.json" %i , fileList = flList[i:min(i+150, len(flList))])
+		# 2331
+	for i in range(2050,len(flList),50):
+		print("Extraction for %s to %s" %(i, min(i+50, len(flList))))
+		getExif(createFlickrObj("/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"), "/tmp/Flickr_Giraffe_EXIF_%s.json" %i , fileList = flList[i:min(i+50, len(flList))])
 		time.sleep(5)
 
 if __name__ == "__main__":
 	__main__()
+
+	#bing_search_pipeline()
 	# scrape_flickr(51, "../data/file_urls_bottlenose_dolphins.dat")
 
 	# download_imgs("../data/file_urls_bottlenose_dolphins.dat")

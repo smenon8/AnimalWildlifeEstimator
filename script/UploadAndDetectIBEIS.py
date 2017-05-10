@@ -12,6 +12,7 @@ from functools import partial
 from multiprocessing.pool import Pool
 import GetPropertiesAPI as GP
 import subprocess
+from contextlib import closing
 
 DOMAIN = 'http://pachy.cs.uic.edu:5001'
 
@@ -188,6 +189,7 @@ def handle_name_logic(cluster_dict, aid):
     
     return name
 
+# returns list of all exemplars if data_dict is not specified. 
 def refresh_exemplars(data_dict={}):
     return post("api/annot/exemplar", data_dict)
 
@@ -202,7 +204,9 @@ def get_database_annots(aid_list):
     }
     exemplars = refresh_exemplars(data_dict)
 
-    if sum(exemplars):
+    # sum of exemplars will be 0 if there are no exemplars
+    # This generally will be the case when the ID pipe is being run for the first time.
+    if sum(exemplars): 
         for i in range(len(aid_list)):
             if exemplars[i]:
                 db_annot_list.append(aid_list[i])
@@ -353,7 +357,7 @@ def run_detection_task(gid):
     print('\nNotes on aid_list = %r' % (aid_list, ))
     data_dict = {
         'aid_list': aid_list,
-        'notes_list': ['Flickr_Image'] * len(aid_list),
+        'notes_list': ['Bing_Image'] * len(aid_list),
     }
     put('api/annot/note', data_dict)
     check_annot_metadata(aid_list)
@@ -370,25 +374,26 @@ def run_detection_task(gid):
     # print('\nDeleted aid_list  = %r' % (aid_list, ))
 
 def __main__():
-    # gidList = [i for i in range(88,101)]
+    gidList = [i for i in range(2327,2329)]
 
-    # detect = partial(run_detection_task)
+    detect = partial(run_detection_task)
 
-    # with Pool(2) as p:
-    #     p.map(detect, gidList)
+    with closing(Pool(processes=2)) as p:
+        p.map(detect, gidList)
+        p.terminate()
 
-    run_id_pipeline(150, 'giraffe_reticulated')
+    # run_id_pipeline(150, 'giraffe_reticulated')
 
 if __name__ == "__main__":
     __main__()
 
-    # with open("../data/Flickr_Bty_Humpbacks.json", "r") as jsonObj:
+    # with open("../data/Bing_Bty_Giraffe.json", "r") as jsonObj:
     #     flckrImgs = json.load(jsonObj)
 
-    # imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape_Humpbacks/'
+    # imgPath = '/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Bing_Scrape_Giraffe/'
 
 
-    # # imgs = list(flckrImgs.keys())
+    # imgs = list(flckrImgs.keys())
 
     # with open("/tmp/test.dat", "r") as fl:
     #     imgs = fl.read().split("\n")
@@ -411,8 +416,9 @@ if __name__ == "__main__":
     #     print(e)
     #     with open("/tmp/fl_counter_upload.dat", "w") as fl:
     #                 fl.write(img)
-    #     with open("../data/Flickr_Humpbacks_imgs_gid_flnm_map_tmp.json","w") as jsonFl:
-    #         json.dump(gidFlNmDict, jsonFl, indent=4) 
+    
+    # with open("../data/Bing_Giraffes_imgs_gid_flnm_map.json","w") as jsonFl:
+    #     json.dump(gidFlNmDict, jsonFl, indent=4) 
 
 
     # with open("../data/Flickr_Humpbacks_imgs_gid_flnm_map_2.json","w") as jsonFl:

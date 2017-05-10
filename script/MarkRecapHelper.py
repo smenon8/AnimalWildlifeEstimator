@@ -8,6 +8,13 @@ import warnings
 import sys, math
 importlib.reload(DS)
 MODE = 'GGR'
+'''
+
+add logic to handle zoo animals in a different function
+handle_zoo_animals(bottom_left_lat, bottom_left_long, top_right_lat, top_right_long)
+should return animals that are found within this rectangular area in the map
+Issue #15
+'''
 
 def gid_filter_logic(inExifFl, inGidAidMapFl, inAidFtrFl):
 	with open(inExifFl,"r") as inpFl:

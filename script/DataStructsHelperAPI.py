@@ -50,10 +50,10 @@ def appendJSON(*inpFl):
 
 	for i in range(1,len(flObjs)):
 		flObjs[0].update(flObjs[i])
-	print(len(list(flObjs[0].keys())))
+
 	try:
 		assert tot_keys == len(list(flObjs[0].keys()))
-	except AssertionError as e:
+	except AssertionError:
 		print("Length of input JSONs not equal to length of output Dict")
 
 	return flObjs[0]

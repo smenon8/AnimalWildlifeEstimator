@@ -60,14 +60,15 @@ def resize_img(imgObj, base_width=600):
 		return imgObj
 
 def extr_beauty_ftrs(imgFlNm):
-	# imgFlNm = "/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/All_Zebra_Count_Images/%s.jpeg" %gid
 	img = os.path.basename(imgFlNm)
 	
+	print("Extracting beauty features for %s" %imgFlNm)
+
 	try:
 		rgbImg = resize_img(io.imread(imgFlNm))
 	except Exception as e:
 		print("Invalid image")
-		return None
+		return e
 		
 	if len(rgbImg.shape) != 3 or rgbImg.shape[2] !=3:
 		print("Invalid image.. Continuing..")
@@ -88,7 +89,7 @@ def extr_beauty_ftrs(imgFlNm):
 	
 	final_ftr_obj_global[img] = ftrs
 	
-	return None
+	return final_ftr_obj_global
 
 def createFtrFile(result_file, exif_file, out_fl):
 	with open(exif_file,"r") as inpJsonFl:
