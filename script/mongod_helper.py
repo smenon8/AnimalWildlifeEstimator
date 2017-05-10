@@ -2,22 +2,31 @@
 Author: Sreejith Menon (smenon8@uic.edu)
 Date: May 10, 2017
 
-	* Script for setting up mongodb instance with all the files
-	* Below is the list of required files (will be updated as and when new files are added)
-
-List of files required (generally stored under ../data/)
+	* Methods to interface with an instance of mongod database
+	* Can be modified to connect to any mongod instance and perform basic operations
+	* Methods to drop table, modify database etc. planned to be written in the future.
 '''
 
-from pymongo import MongoClient
-import json
+from pymongo import MongoClient, errors
 
 # added for future
 params = {
 	'db_name' : 'AWESOME_DS',
+	'maxSevSelDelay' : 1
 }
 
+def check_mongod_running(conn_cfg=params):
+	client = MongoClient(serverSelectionTimeoutMS=conn_cfg.get('maxSevSelDelay', 1))
+	try:
+		client.server_info()
+	except errors.ServerSelectionTimeoutError as err:
+		print("MongoDB instance has not started or is dead..!")
+		client = err
+
+	return client
+
 def get_mongod_db(conn_cfg=params):
-	client = MongoClient()
+	client = check_mongod_running()
 	return client[conn_cfg.get('db_name')]
 
 '''
@@ -47,7 +56,7 @@ def create_table(db_obj, doc, tbl_nm):
 Expects MongoD table object and a query in dict/BSON format
 Returns a cursor which is an iterable
 '''
-def query_tab(tbl_obj, query):
+def query_tab(tbl_obj, query=None):
 	
 	return tbl_obj.find(query)
 
