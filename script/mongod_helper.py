@@ -8,55 +8,88 @@ Date: May 10, 2017
 '''
 
 from pymongo import MongoClient, errors
-
+import sys
 # added for future
+
 params = {
 	'db_name' : 'AWESOME_DS',
 	'maxSevSelDelay' : 1
 }
 
-def check_mongod_running(conn_cfg=params):
-	client = MongoClient(serverSelectionTimeoutMS=conn_cfg.get('maxSevSelDelay', 1))
-	try:
-		client.server_info()
-	except errors.ServerSelectionTimeoutError as err:
-		print("MongoDB instance has not started or is dead..!")
-		client = err
+class mongod_instance:
+	def __init__(self, conn_cfg=params):
+		self.client = MongoClient(serverSelectionTimeoutMS=conn_cfg.get('maxSevSelDelay', 1))
+		self.check_mongod_running()
+		self.db = self.client[conn_cfg.get("db_name")]
 
-	return client
+	def check_mongod_running(self, conn_cfg=params):
+		try:
+			self.client.server_info()
+		except errors.ServerSelectionTimeoutError as err:
+			print("MongoDB instance has not started or is dead..!")
+			self.client = err
+			sys.exit(-2)
+		return self.client
 
-def get_mongod_db(conn_cfg=params):
-	client = check_mongod_running()
-	return client[conn_cfg.get('db_name')]
+	def get_mongod_db(self, conn_cfg=params):
+		return self.db
 
-'''
-Expects MongoD database object and table name tbl_nm as a string
-'''
-def get_mongodb_tab(db_obj, tbl_nm):
-	return db_obj.get_collection(tbl_nm)
+	def is_alive(self):
+		self.check_mongod_running()
+		return True
 
 
-'''
-Creates works only when the table tbl_nm does not exist
-Once created, it adds the document specified by doc(JSON expected) to the table
-'''
-def create_table(db_obj, doc, tbl_nm):
-	tbl = db_obj[tbl_nm]
+class mongod_table:
+	'''
+		Expects MongoD database object and table name tbl_nm as a string
+	'''
+	def __init__(self, mongod_obj, tbl_nm):
+		if mongod_obj.is_alive():
+			self.db_obj = mongod_obj.get_mongod_db()
+			self.tbl = self.db_obj.get_collection(tbl_nm)
+			self.tbl_str = tbl_nm
 
-	try:
-		for key in doc.keys():
-			tbl.insert(doc.get(key))
-	except Exception as e:
-		print("Insert failure..!")
-		return e
+	def get_table(self):
+		return self.tbl
 
-	return 0
+	def __str__(self):
+		return self.tbl_str
 
-'''
-Expects MongoD table object and a query in dict/BSON format
-Returns a cursor which is an iterable
-'''
-def query_tab(tbl_obj, query=None):
-	
-	return tbl_obj.find(query)
+	'''
+		Creates works only when the table tbl_nm does not exist
+		Once created, it adds the document specified by doc(JSON expected) to the table
+	'''
+	def add_data(self, doc):
+		try:
+			for key in doc.keys():
+				self.tbl.insert(doc.get(key))
+		except Exception as e:
+			print("Insert failure..!")
+			return e
 
+		print("Data added successfully")
+		return 0
+
+	'''
+		Expects MongoD table object and a query in dict/BSON format
+		Returns a cursor which is an iterable
+	'''
+	def query(self, query_obj=None):
+		if self.check_tbl_exist():
+			return self.tbl.find(query_obj)
+		else:
+			print("Table does not exist in the database")
+			sys.exit(-2)
+
+	def check_tbl_exist(self):
+		if self.tbl_str in self.db_obj.collection_names():
+			return True
+		else:
+			return False
+
+	def drop_table(self):
+		if self.check_tbl_exist():
+			self.tbl.drop()
+		else:
+			print("Table does not exist in the database")
+			sys.exit(-2)
