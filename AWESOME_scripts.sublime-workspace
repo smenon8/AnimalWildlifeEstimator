@@ -4,16 +4,80 @@
 		"selected_items":
 		[
 			[
-				"conn",
-				"conn_cfg"
+				"collec",
+				"collection_names"
+			],
+			[
+				"doc",
+				"doc_ld_rdy"
+			],
+			[
+				"ex",
+				"exif_tbl_obj"
+			],
+			[
+				"map",
+				"map_fl_nm〔argument〕"
+			],
+			[
+				"i",
+				"inner_dct"
+			],
+			[
+				"da",
+				"data_dct〔variable〕"
+			],
+			[
+				"ma",
+				"map_obj〔variable〕"
+			],
+			[
+				"cre",
+				"create_data〔function〕"
+			],
+			[
+				"json",
+				"json_loader〔function〕"
+			],
+			[
+				"j",
+				"json_loader"
+			],
+			[
+				"check",
+				"check_tbl_exist"
 			],
 			[
 				"tbl",
-				"tbl_obj"
+				"tbl_str"
 			],
 			[
 				"db",
 				"db_obj"
+			],
+			[
+				"query",
+				"query_str〔argument〕"
+			],
+			[
+				"db_",
+				"db_obj〔argument〕"
+			],
+			[
+				"mongod",
+				"mongod_obj"
+			],
+			[
+				"get",
+				"get_mongod_db"
+			],
+			[
+				"add",
+				"add_exif_data〔function〕"
+			],
+			[
+				"conn",
+				"conn_cfg"
 			],
 			[
 				"img",
@@ -46,10 +110,6 @@
 			[
 				"aid",
 				"aid_list_species_only"
-			],
-			[
-				"da",
-				"daid_annot_list"
 			],
 			[
 				"req",
@@ -152,10 +212,6 @@
 				"node_idx"
 			],
 			[
-				"get",
-				"get_index_node_list"
-			],
-			[
 				"is",
 				"is_BST_dups_allowed"
 			],
@@ -184,10 +240,6 @@
 				"print_graph"
 			],
 			[
-				"add",
-				"add_adjacents"
-			],
-			[
 				"heap",
 				"heap_arr"
 			],
@@ -210,10 +262,6 @@
 			[
 				"curr",
 				"curr_lvl"
-			],
-			[
-				"check",
-				"check_time_elapsed"
 			],
 			[
 				"annot",
@@ -332,10 +380,6 @@
 				"startGID"
 			],
 			[
-				"map",
-				"mapFlObj"
-			],
-			[
 				"isB",
 				"isBST_rec"
 			],
@@ -424,10 +468,6 @@
 				"result_file"
 			],
 			[
-				"json",
-				"jsonFl"
-			],
-			[
 				"exi",
 				"exifJson"
 			],
@@ -474,46 +514,6 @@
 			[
 				"com",
 				"combineJson"
-			],
-			[
-				"inp",
-				"inpBeautyFl"
-			],
-			[
-				"outFl",
-				"outFlNm"
-			],
-			[
-				"thres",
-				"threshold"
-			],
-			[
-				"sha",
-				"shareAbvThreshold"
-			],
-			[
-				"thresh",
-				"thresholdMeth"
-			],
-			[
-				"pred",
-				"prediction_probabs"
-			],
-			[
-				"keys",
-				"keysOfInterest"
-			],
-			[
-				"run",
-				"runSyntheticExpts"
-			],
-			[
-				"meth",
-				"methTypes"
-			],
-			[
-				"att",
-				"attribTypes"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "script/mongod_helper.py",
 			"settings":
 			{
-				"buffer_size": 1488,
+				"buffer_size": 2459,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -532,8 +532,7 @@
 			"file": "script/DB_Setup.py",
 			"settings":
 			{
-				"buffer_size": 105,
-				"encoding": "UTF-8",
+				"buffer_size": 2004,
 				"line_ending": "Unix"
 			}
 		},
@@ -583,7 +582,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 485.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -603,10 +602,14 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script"
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data"
 	],
 	"file_history":
 	[
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/Flickr_Beauty_features.json",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/DB_Setup.py",
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/Flickr_Giraffe_EXIF.json",
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/UploadAndDetectIBEIS.py",
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/DataStructsHelperAPI.py",
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/mongod_setup.py",
@@ -653,7 +656,6 @@
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/full_gid_aid_map.json",
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/full_aid_features.json",
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/ggr_ftr_extract_1_annot_uuid_ftr_map.json",
-		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/Flickr_Beauty_features.json",
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/flickr_imgs_gid_flnm_map.json",
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/GZC_beauty_features.json",
 		"/private/tmp/test_uuid_annot_uuid_map.json",
@@ -732,9 +734,7 @@
 		"/Users/sreejithmenon/Dropbox/Social_Media_Wildlife_Census/Flickr_Scrape/delete_files.sh",
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/data/fileURLS.dat",
 		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/kSharesMixMatch_Rgr_Beauty_thresholded.html",
-		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/lasso_beauty_kShares.csv",
-		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/RegressionCapsuleClass.py",
-		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/script/ImageShareabilityRegressors.py"
+		"/Users/sreejithmenon/Google Drive/CodeBase/AWESOME/FinalResults/lasso_beauty_kShares.csv"
 	],
 	"find":
 	{
@@ -989,13 +989,13 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1004,19 +1004,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1488,
+						"buffer_size": 2459,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								692,
-								692
+								1733,
+								1733
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
 							"syntax": "Packages/Python/Python.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
@@ -1024,35 +1025,37 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
 					"file": "script/DB_Setup.py",
-					"semi_transient": false,
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 105,
+						"buffer_size": 2004,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								63,
-								63
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{

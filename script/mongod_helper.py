@@ -38,6 +38,10 @@ class mongod_instance:
 		self.check_mongod_running()
 		return True
 
+	def reset(self):
+		for collection in self.db.collection_names():
+			tbl = self.db[collection]
+			tbl.drop()
 
 class mongod_table:
 	'''
@@ -65,7 +69,10 @@ class mongod_table:
 				self.tbl.insert(doc.get(key))
 		except Exception as e:
 			print("Insert failure..!")
-			return e
+			print(e)
+			print(key)
+			sys.exit(-2)
+
 
 		print("Data added successfully")
 		return 0
