@@ -67,6 +67,7 @@ def add_exif_data(client, map_fl_nm, doc_nm, source):
 
 def add_ibeis_data(client, map_fl_nm, doc_nm, source):
     ibeis_tbl_obj = md.mongod_table(client, 'ibeis_tab')
+    return ibeis_tbl_obj
 
 def __main__():
     client = md.mongod_instance()
@@ -94,14 +95,23 @@ def __main__():
 
 
 
-    # Load GZC beauty features
+    # Load GZC features
     add_bty_data(client, None, 
                 "../data/GZC_beauty_features.json",
                 "GZC")
 
-    # Load GGR beauty features
+    add_exif_data(client, None, 
+                "../data/GZC_EXIF.json",
+                "GZC")
+
+    # Load GGR features
     add_bty_data(client, None, 
                 "../data/ggr_beauty_features.json",
+                "GGR")
+
+
+    add_exif_data(client, None,
+                "../data/GGR_EXIF.json",
                 "GGR")
 
 if __name__ == "__main__":
