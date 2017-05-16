@@ -9,6 +9,10 @@ import csv
 from datetime import datetime
 import json
 
+def json_loader(doc_nm):
+	with open(doc_nm, "r") as doc:
+		return json.load(doc)
+
 # Generate list of tuples from csv
 def genlstTupFrmCsv(flNm,headerExists=True):
 	with open(flNm,'r') as inFl:
@@ -43,8 +47,7 @@ def combineJSON(fl1,fl2,outFlNm):
 def appendJSON(*inpFl):
 	flObjs = []
 	for fl in inpFl:
-		with open(fl, "r") as jFl:
-			flObjs.append(json.load(jFl))
+		flObjs.append(json_loader(fl))
 
 	tot_keys = sum([len(list(flObj.keys())) for flObj in flObjs])
 

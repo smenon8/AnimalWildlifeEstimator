@@ -7,11 +7,34 @@ Methods to load data into the IBEIS datastore on the local mongoD instance
 '''
 
 import mongod_helper as md
-import json, DataStructsHelperAPI as DS
+import DataStructsHelperAPI as DS, importlib, json
+importlib.reload(md) 
+importlib.reload(DS) 
 
+'''
+    This decorator is designed to take care of the GZC and GGR dataset.
+    GZC and GGR we don't really need to know the file names, but UNIFORM representation sake
+'''
+def create_data_decorator(create_data_fnc):
+    def wrapper(*args, **kwargs):
+        if not args[0]:
+            print("No map file found")
+            doc = DS.json_loader(args[1])
+            tmp_map = {key : key for key in doc.keys()}
+            tmp_fl_nm = "/tmp/map_fl.tmp.json"
+            with open(tmp_fl_nm, "w") as tmp_fl:
+                json.dump(tmp_map, tmp_fl, indent=4)
+
+            return create_data_fnc(tmp_fl_nm, args[1], args[2])
+        else:
+            return create_data_fnc(*args)
+
+    return wrapper
+
+@create_data_decorator
 def create_data(map_fl_nm, doc_nm, source):
-    map_obj = DS.flipKeyValue(json_loader(map_fl_nm))
-    data_dct = json_loader(doc_nm)
+    map_obj = DS.flipKeyValue(DS.json_loader(map_fl_nm))
+    data_dct = DS.json_loader(doc_nm)
 
     ld_rdy_doc = {}
     for key in map_obj.keys():
@@ -24,9 +47,7 @@ def create_data(map_fl_nm, doc_nm, source):
 
     return ld_rdy_doc
 
-def json_loader(doc_nm):
-	with open(doc_nm, "r") as doc:
-		return json.load(doc)
+
 
 def add_bty_data(client, map_fl_nm, doc_nm, source):
 	bty_tbl_obj = md.mongod_table(client, 'beauty_tab')
@@ -62,6 +83,7 @@ def __main__():
                 "flickr_giraffe")
 
 
+    # Load all zebra flickr data
     add_bty_data(client, "../data/flickr_imgs_gid_flnm_map.json",
                 "../data/Flickr_Beauty_features.json",
                 "flickr_zebra")
@@ -69,6 +91,18 @@ def __main__():
     add_exif_data(client, "../data/flickr_imgs_gid_flnm_map.json",
                 "../data/Flickr_EXIF_full.json",
                 "flickr_zebra")
+
+
+
+    # Load GZC beauty features
+    add_bty_data(client, None, 
+                "../data/GZC_beauty_features.json",
+                "GZC")
+
+    # Load GGR beauty features
+    add_bty_data(client, None, 
+                "../data/ggr_beauty_features.json",
+                "GGR")
 
 if __name__ == "__main__":
 	__main__()

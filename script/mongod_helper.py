@@ -8,12 +8,13 @@ Date: May 10, 2017
 '''
 
 from pymongo import MongoClient, errors
-import sys
+import sys, datetime
 # added for future
 
 params = {
 	'db_name' : 'AWESOME_DS',
-	'maxSevSelDelay' : 1
+	'maxSevSelDelay' : 1,
+	'log_fl' : "/tmp/mongo_instance.live.log"
 }
 
 class mongod_instance:
@@ -21,6 +22,10 @@ class mongod_instance:
 		self.client = MongoClient(serverSelectionTimeoutMS=conn_cfg.get('maxSevSelDelay', 1))
 		self.check_mongod_running()
 		self.db = self.client[conn_cfg.get("db_name")]
+		self.log_fl = conn_cfg.get("log_fl")
+
+		with open(self.log_fl, "a") as log_fl:
+			log_fl.write("New instance created at %s\n" %str(datetime.datetime.now()))
 
 	def check_mongod_running(self, conn_cfg=params):
 		try:
@@ -52,6 +57,7 @@ class mongod_table:
 			self.db_obj = mongod_obj.get_mongod_db()
 			self.tbl = self.db_obj.get_collection(tbl_nm)
 			self.tbl_str = tbl_nm
+			self.log_fl = mongod_obj.log_fl
 
 	def get_table(self):
 		return self.tbl
@@ -62,19 +68,25 @@ class mongod_table:
 	'''
 		Creates works only when the table tbl_nm does not exist
 		Once created, it adds the document specified by doc(JSON expected) to the table
+		Caution: Exception handling done per row, does not stop if there is a bad record. 
 	'''
 	def add_data(self, doc):
-		try:
-			for key in doc.keys():
+		
+		fail_count = 0
+		failed_keys = []
+		for key in doc.keys():
+			try:
 				self.tbl.insert(doc.get(key))
-		except Exception as e:
-			print("Insert failure..!")
-			print(e)
-			print(key)
-			sys.exit(-2)
+			except Exception:
+				fail_count += 1
+				failed_keys.append(key)
+				
+		failed_keys.append("\n")
+		print("Data added successfully with %d insert failures" %fail_count)
 
-
-		print("Data added successfully")
+		if fail_count:
+			with open(self.log_fl, "a") as log:
+				log.write("\n".join(failed_keys))
 		return 0
 
 	'''
