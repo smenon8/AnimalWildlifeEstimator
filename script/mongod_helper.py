@@ -112,3 +112,11 @@ class mongod_table:
 		else:
 			print("Table does not exist in the database")
 			sys.exit(-2)
+
+def __main__():
+	client = mongod_instance()
+
+	print(client.is_alive())
+
+if __name__ == "__main__":
+    __main__()

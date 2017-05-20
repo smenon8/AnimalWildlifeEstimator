@@ -7,7 +7,7 @@ import pandas as pd
 import warnings
 import sys, math
 importlib.reload(DS)
-MODE = 'GGR'
+MODE = 'GZC'
 '''
 
 add logic to handle zoo animals in a different function
@@ -48,10 +48,10 @@ def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,
 	# modify the date format as and when needed to match the requirements. 
 
 	## for calculating year-wise mark recapture estimates
-	# imgDateDict = {gid : DS.getDateFromStr(jsonObj[gid]['date'],'%Y-%m-%d %H:%M:%S','%Y') for gid in jsonObj.keys()} 
+	imgDateDict = {gid : DS.getDateFromStr(jsonObj[gid]['date'],'%Y-%m-%d %H:%M:%S','%Y') for gid in jsonObj.keys()} 
 
 	## for calculating regular mark-recapture estimate
-	imgDateDict = {gid : DS.getDateFromStr(jsonObj[gid]['datetime'],'%Y-%m-%d %H:%M:%S','%Y-%m-%d') for gid in jsonObj.keys()} 
+	# imgDateDict = {gid : DS.getDateFromStr(jsonObj[gid]['datetime'],'%Y-%m-%d %H:%M:%S','%Y-%m-%d') for gid in jsonObj.keys()} 
 
 
 	# gid_list = gid_filter_logic(inExifFl, inGidAidMapFl, inAidFtrFl) # -- not needed always
@@ -72,14 +72,15 @@ def genNidMarkRecapDict(inExifFl,inGidAidMapFl,inAidFtrFl,gidPropMapFl,daysDict,
 	if filterBySpecies != None:
 		gidSpecies = DRS.getCountingLogic(inGidAidMapFl,inAidFtrFl,"SPECIES",False, MODE)
 		gidsDayNum = { gid : gidsDayNumFull[gid] for gid in gidsDayNumFull  if gid in gidSpecies.keys() and filterBySpecies in gidSpecies[gid]}
+		# return gidsDayNumFull, gidSpecies
 	else:
 		gidsDayNum = gidsDayNumFull
-
+	
 	nidMarkRecap = {}
 	for gid in gidsDayNum.keys(): # only iterate over the GIDs of interest
 		if gid in gidNid.keys(): # not all images with valid EXIF feature will have an annotation
 			for nid in gidNid[gid]:
-				if int(nid) > 0 and int(nid) != 45: # ignore all the false positives --and ignore NID 45
+				if int(nid) > 0: # and int(nid) != 45: # ignore all the false positives --and ignore NID 45
 					nidMarkRecap[nid] = nidMarkRecap.get(nid,[]) + [gidsDayNum[gid]]
 
 	nidMarkRecapSet = { nid : list(set(nidMarkRecap[nid])) for nid in nidMarkRecap.keys()}
@@ -100,8 +101,7 @@ def applyMarkRecap(nidMarkRecapSet):
 	except:
 		warnings.warn("There are no recaptures for this case.")
 		population = 0
-		confidence=0
-		print(recaptures)
+		confidence=0 
 
 	
 	return marks,recaptures,population,confidence

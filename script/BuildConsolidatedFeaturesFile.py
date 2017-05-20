@@ -29,7 +29,7 @@ File 4 : Image GID, annotation ID's and their features (json)
 
 from __future__ import print_function
 import GetPropertiesAPI as GP
-import importlib, json, re, sys, csv, time
+import importlib, json, re, sys, csv, time, math
 #importlib.reload(GP) # un-comment if there are any changes made to API
 import pandas as pd
 # import DataStructsHelperAPI as DS
@@ -223,14 +223,14 @@ def buildFeatureFl(inp,outFL,isInpFl = True):
 	writeFLGidAidFeatureFl = writeFLTitle + "_gid_aid_features." + writeFLExt
 
 	# Snippet for writing image GID - annotation ID map to a csv file
-	head = ['GID','ANNOTATION_ID']
-	writeCsvFromDict(head,GidAidMap,writeFLGidAidFl)
+	# head = ['GID','ANNOTATION_ID']
+	# writeCsvFromDict(head,GidAidMap,writeFLGidAidFl)
 
-	head = ['ANNOTATION_ID','NID','NAME','SPECIES','SEX','AGE_MONTHS','EXEMPLAR_FLAG','IMAGE_QUALITY','IMAGE_YAW']
-	writeCsvFromDict(head,features,writeFLAidFeatureFl)
+	# head = ['ANNOTATION_ID','NID','NAME','SPECIES','SEX','AGE_MONTHS','EXEMPLAR_FLAG','IMAGE_QUALITY','IMAGE_YAW']
+	# writeCsvFromDict(head,features,writeFLAidFeatureFl)
 
-	head = ['GID','ANNOTATION_ID','FEATURES']
-	writeCsvFromDict(head,GidAidFeatures,writeFLGidAidFeatureFl) 
+	# head = ['GID','ANNOTATION_ID','FEATURES']
+	# writeCsvFromDict(head,GidAidFeatures,writeFLGidAidFeatureFl) 
 
 	outFL = open((writeFLTitle + "_gid_aid_map.json"),"w")
 	json.dump(GidAidMap,outFL,indent=4)
@@ -428,8 +428,8 @@ def test(start, end, out):
 		json.dump(aid_uuid_feature_map, fl, indent=4)
 
 if __name__ == "__main__":
-	# gids = list(map(str, list(range(1,1702))))
-	# buildFeatureFl(gids, "../data/Flickr_IBEIS_Ftrs.csv", False)
+	gids = list(map(str, list(range(1,1862))))
+	buildFeatureFl(gids, "../data/Flickr_IBEIS_Giraffe_Ftrs.csv", False)
 	# __main__()	
 	# gidAidMapFl = "../data/full_gid_aid_map.json"
 	# getAdditionalAnnotFeatures(gidAidMapFl,'bbox',"../data/gid_bbox.json")
@@ -455,31 +455,31 @@ if __name__ == "__main__":
 	# p15 = Process(target=build_feature_file_ggr, args=("uuid_gid_map.json", "ggr_ftr_extract_7",30001,35000))
 	# p16 = Process(target=build_feature_file_ggr, args=("uuid_gid_map.json", "ggr_ftr_extract_8",35001,37433))
 
-	p1 = Process(target=test, args=(0, 400, "/tmp/test1.json"))
-	p2 = Process(target=test, args=(400, 800, "/tmp/test2.json"))
-	p3 = Process(target=test, args=(800, 1200, "/tmp/test3.json"))
-	p4 = Process(target=test, args=(1200, 1600, "/tmp/test4.json"))
-	p5 = Process(target=test, args=(1600, 2000, "/tmp/test5.json"))
-	p6 = Process(target=test, args=(2000, 2400, "/tmp/test6.json"))
-	p7 = Process(target=test, args=(2400, 2800, "/tmp/test7.json"))
-	p8 = Process(target=test, args=(2800, 3200, "/tmp/test8.json"))
-	p9 = Process(target=test, args=(3200, 3600, "/tmp/test9.json"))
-	p10 = Process(target=test, args=(3600, 4033, "/tmp/test10.json"))
+	# p1 = Process(target=test, args=(0, 400, "/tmp/test1.json"))
+	# p2 = Process(target=test, args=(400, 800, "/tmp/test2.json"))
+	# p3 = Process(target=test, args=(800, 1200, "/tmp/test3.json"))
+	# p4 = Process(target=test, args=(1200, 1600, "/tmp/test4.json"))
+	# p5 = Process(target=test, args=(1600, 2000, "/tmp/test5.json"))
+	# p6 = Process(target=test, args=(2000, 2400, "/tmp/test6.json"))
+	# p7 = Process(target=test, args=(2400, 2800, "/tmp/test7.json"))
+	# p8 = Process(target=test, args=(2800, 3200, "/tmp/test8.json"))
+	# p9 = Process(target=test, args=(3200, 3600, "/tmp/test9.json"))
+	# p10 = Process(target=test, args=(3600, 4033, "/tmp/test10.json"))
 
-	p1.start()
-	p2.start()
-	p3.start()
-	p4.start()
-	p5.start()
-	p6.start()
-	p7.start()
-	p8.start()
-	p9.start()
-	p10.start()
-	# p11.start()
-	# p12.start()
-	# p13.start()
-	# p14.start()
-	# p15.start()
-	# p16.start()
+	# p1.start()
+	# p2.start()
+	# p3.start()
+	# p4.start()
+	# p5.start()
+	# p6.start()
+	# p7.start()
+	# p8.start()
+	# p9.start()
+	# p10.start()
+	# # p11.start()
+	# # p12.start()
+	# # p13.start()
+	# # p14.start()
+	# # p15.start()
+	# # p16.start()
 	
