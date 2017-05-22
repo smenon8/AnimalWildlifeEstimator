@@ -72,9 +72,14 @@ def add_exif_data(client, map_fl_nm, doc_nm, source):
 
     return 0
 
-
+'''
+    map_fl will be stored seperately in a different table (this is basically gid : annotation) - retrieval might be a challenge
+    The original table will use annotation id as the key
+'''
 def add_ibeis_data(client, map_fl_nm, doc_nm, source):
-    ibeis_tbl_obj = md.mongod_table(client, 'ibeis_tab', source)
+    ibeis_annot_ftr_tbl_obj = md.mongod_table(client, 'ibeis_annot_ftr_tab', source)
+
+    add_data_tab(ibeis_annot_ftr_tbl_obj, map_fl_nm, doc_nm, source)
     return ibeis_tbl_obj
 
 
@@ -119,4 +124,10 @@ def __main__():
 
 
 if __name__ == "__main__":
-    __main__()
+    # __main__()
+    client = md.mongod_instance()
+
+    add_ibeis_data(client, None,
+                   "../data/GZC_aid_ftrs.json",
+                   "GZC"
+                   )
