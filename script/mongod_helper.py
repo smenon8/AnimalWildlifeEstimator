@@ -100,11 +100,16 @@ class mongod_table:
         Returns a cursor which is an iterable
     '''
 
-    def query(self, query_obj=None):
+    def query(self, query_obj=None, cols = []):
         if query_obj:
             query_obj.update({'source' : self.source})
         else:
             query_obj = {'source' : self.source}
+
+        col_dict = {}
+        if len(cols):
+            for col in cols:
+                col_dict[col] = 1
 
         try:
             assert(self.check_tbl_exist())
@@ -113,7 +118,7 @@ class mongod_table:
             print(e)
             sys.exit(-2)
 
-        return self.tbl.find(query_obj)
+        return self.tbl.find(query_obj, col_dict)
 
     def check_tbl_exist(self):
         if self.tbl_str in self.db_obj.collection_names():
@@ -156,7 +161,7 @@ def __main__():
     print(client.is_alive())
     exif_tbl_obj = mongod_table(client, 'exif_tab', 'flickr_giraffe')
 
-    cursor = exif_tbl_obj.query()
+    cursor = exif_tbl_obj.query(query_obj=None, cols=['long', 'lat'])
 
     print(cursor.count())
     print(result_iterator(cursor))
@@ -164,6 +169,6 @@ def __main__():
 
 
 if __name__ == "__main__":
-    # __main__()
-    client = mongod_instance()
-    client.reset()
+    __main__()
+    # client = mongod_instance()
+    # client.reset()

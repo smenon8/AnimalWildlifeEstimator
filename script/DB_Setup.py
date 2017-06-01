@@ -26,7 +26,7 @@ def create_data_decorator(create_data_fnc):
             with open(tmp_fl_nm, "w") as tmp_fl:
                 json.dump(tmp_map, tmp_fl, indent=4)
 
-            return create_data_fnc(tmp_fl_nm, args[1], args[2])
+            return create_data_fnc(tmp_fl_nm, args[1], args[2], args[3])
         else:
             return create_data_fnc(*args)
 
@@ -38,37 +38,38 @@ def create_data_decorator(create_data_fnc):
 '''
 
 @create_data_decorator
-def create_data(map_fl_nm, doc_nm, source):
+def create_data(map_fl_nm, doc_nm, key_str, source):
     map_obj = DS.flipKeyValue(DS.json_loader(map_fl_nm))
     data_dct = DS.json_loader(doc_nm)
 
     ld_rdy_doc = {}
     for key in map_obj.keys():
         inner_dct = data_dct.get(key)
-        inner_dct.update({"_id": key})
-        inner_dct.update({"gid": map_obj[key]})
-        inner_dct.update({"source": source})
+        if inner_dct:
+            inner_dct.update({"_id": key})
+            inner_dct.update({key_str: map_obj[key]})
+            inner_dct.update({"source": source})
 
         ld_rdy_doc[key] = inner_dct
 
     return ld_rdy_doc
 
-def add_data_tab(tbl_obj, map_fl_nm, doc_nm, source):
-    doc_ld_rdy = create_data(map_fl_nm, doc_nm, source)
+def add_data_tab(tbl_obj, map_fl_nm, doc_nm, key_str, source):
+    doc_ld_rdy = create_data(map_fl_nm, doc_nm, key_str, source)
     tbl_obj.add_data(doc_ld_rdy)
 
     return 0
 
 def add_bty_data(client, map_fl_nm, doc_nm, source):
     bty_tbl_obj = md.mongod_table(client, 'beauty_tab', source)
-    add_data_tab(bty_tbl_obj, map_fl_nm, doc_nm, source)
+    add_data_tab(bty_tbl_obj, map_fl_nm, doc_nm, "gid", source)
 
     return 0
 
 
 def add_exif_data(client, map_fl_nm, doc_nm, source):
     exif_tbl_obj = md.mongod_table(client, 'exif_tab', source)
-    add_data_tab(exif_tbl_obj, map_fl_nm, doc_nm, source)
+    add_data_tab(exif_tbl_obj, map_fl_nm, doc_nm, "gid", source)
 
     return 0
 
@@ -76,11 +77,15 @@ def add_exif_data(client, map_fl_nm, doc_nm, source):
     map_fl will be stored seperately in a different table (this is basically gid : annotation) - retrieval might be a challenge
     The original table will use annotation id as the key
 '''
-def add_ibeis_data(client, map_fl_nm, doc_nm, source):
+def add_ibeis_data(client, map_fl_nm, map_doc_nm, doc_nm, source):
     ibeis_annot_ftr_tbl_obj = md.mongod_table(client, 'ibeis_annot_ftr_tab', source)
 
-    add_data_tab(ibeis_annot_ftr_tbl_obj, map_fl_nm, doc_nm, source)
-    return ibeis_tbl_obj
+    add_data_tab(ibeis_annot_ftr_tbl_obj, map_fl_nm, doc_nm, "aid", source)
+
+    ibeis_gid_annot_tbl_obj = md.mongod_table(client, 'ibeis_gid_annot_tab', source)
+    add_data_tab(ibeis_gid_annot_tbl_obj, map_fl_nm, map_doc_nm, "gid" , source)
+
+    return 0
 
 
 def __main__():
@@ -122,12 +127,12 @@ def __main__():
                   "../data/GGR_EXIF.json",
                   "GGR")
 
-
-if __name__ == "__main__":
-    # __main__()
-    client = md.mongod_instance()
-
-    add_ibeis_data(client, None,
-                   "../data/GZC_aid_ftrs.json",
+    add_ibeis_data(client, None, "../data/GZC_gid_aid.json",
+                                 "../data/GZC_aid_ftrs.json",
                    "GZC"
                    )
+
+if __name__ == "__main__":
+    __main__()
+    # client = md.mongod_instance()
+    # client.reset()
