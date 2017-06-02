@@ -1,6 +1,6 @@
 # Mark Recapture Helper Scripts
 import json
-import DeriveFinalResultSet as DRS
+import DeriveFinalResultSet as DRS, mongod_helper as mh
 import DataStructsHelperAPI as DS
 import importlib
 import pandas as pd
@@ -44,7 +44,31 @@ def gid_filter_logic(inExifFl, inGidAidMapFl, inAidFtrFl):
     return gid_list
 
 
-def genNidMarkRecapDict(inExifFl, inGidAidMapFl, inAidFtrFl, gidPropMapFl, daysDict, filterBySpecies=None,
+def genNidMarkRecapDict(mongo_client, source, days_dict):
+    exif_tab_obj = mh.mongod_table(mongo_client, "exif_tab", source)
+
+    img_dt_dict = mh.key_val_converter(exif_tab_obj.query(cols=['date']), 'date')
+
+    # population estimation using GGR and GZC datasets are done using dates
+    if source in ["GZC", "GGR"]:
+        img_dt_dict = {gid: DS.getDateFromStr(img_dt_dict[gid], '%Y-%m-%d %H:%M:%S', '%Y-%m-%d') for gid in img_dt_dict.keys()}
+    else:
+        ''' 
+        generally, for population estimation using Flickr/Bing images, the images were divided into annual epochs,
+        this could change and in that case the below line should be modified
+        '''
+        img_dt_dict = {gid: DS.getDateFromStr(img_dt_dict[gid], '%Y-%m-%d %H:%M:%S', '%Y') for gid in img_dt_dict.keys()}
+
+    # Retain only the gids for the dates in the days_dict
+    filtered_gid = list(filter(lambda x: img_dt_dict[x] in days_dict.keys(), img_dt_dict.keys()))
+    gid_days_num = {gid: days_dict[img_dt_dict[gid]] for gid in filtered_gid}
+
+
+    return img_dt_dict
+
+
+
+def genNidMarkRecapDict2(inExifFl, inGidAidMapFl, inAidFtrFl, gidPropMapFl, daysDict, filterBySpecies=None,
                         shareData='proportion', probabThreshold=1):
     with open(inExifFl, "r") as inpFl:
         jsonObj = json.load(inpFl)
@@ -128,6 +152,6 @@ def genSharedGids(gidList, gidPropMapFl, shareData='proportion', probabThreshold
 
 def runMarkRecap(inExifFl, inGidAidMapFl, inAidFtrFl, gidPropMapFl, daysDict, filterBySpecies=None,
                  shareData='proportion', probabThreshold=1):
-    nidMarkRecapSet = genNidMarkRecapDict(inExifFl, inGidAidMapFl, inAidFtrFl, gidPropMapFl, daysDict, filterBySpecies,
+    nidMarkRecapSet = genNidMarkRecapDict2(inExifFl, inGidAidMapFl, inAidFtrFl, gidPropMapFl, daysDict, filterBySpecies,
                                           shareData, probabThreshold)
     return applyMarkRecap(nidMarkRecapSet)

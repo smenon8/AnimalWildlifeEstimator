@@ -118,7 +118,10 @@ class mongod_table:
             print(e)
             sys.exit(-2)
 
-        return self.tbl.find(query_obj, col_dict)
+        if col_dict:
+            return self.tbl.find(query_obj, col_dict)
+        else:
+            return self.tbl.find(query_obj)
 
     def check_tbl_exist(self):
         if self.tbl_str in self.db_obj.collection_names():
@@ -144,16 +147,26 @@ def result_iterator(cursor_obj):
         sys.exit(-2)
 
     result_obj = {}
-    for obj in cursor_obj:
-        inner_dct = {}
+    while cursor_obj.alive:
+        obj = cursor_obj.next()
         key = obj.get("_id")
-        for ftr in obj:
-            if ftr != "_id":
-                inner_dct[ftr] = obj.get(ftr)
+        obj.pop("_id")
 
-        result_obj[key] = inner_dct
+        result_obj[key] = obj
 
     return result_obj
+
+'''
+    Easy access method to return result in the form of gid : column 
+'''
+def key_val_converter(cursor_obj, col_nm):
+    result = {}
+    while cursor_obj.alive:
+        next_obj = cursor_obj.next()
+
+        result[next_obj.get("_id")] = next_obj.get(col_nm)
+
+    return result
 
 def __main__():
     client = mongod_instance()
