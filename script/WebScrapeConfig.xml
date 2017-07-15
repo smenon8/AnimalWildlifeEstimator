@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<scrape_configs>
+
+<flickr_config>
+    <flickr_api_key_file location="/Users/sreejithmenon/Google Drive/CodeBase/flickr_key.json"></flickr_api_key_file>
+    <flickr_download_dir dir="/tmp/"></flickr_download_dir> <!-- directory where you want to store your downloaded images-->
+</flickr_config>
+
+<bing_config>
+    <bing_api_key_file location="/Users/sreejithmenon/Google Drive/CodeBase/BingSearchAPI_key.dat"> </bing_api_key_file>
+    <bing_download_dir dir="/tmp/"></bing_download_dir> <!-- directory where you want to store your downloaded images-->
+    <bing_exif_prefix prefix="../data/bing_img_exif_giraffe_"></bing_exif_prefix>
+</bing_config>
+
+</scrape_configs>
