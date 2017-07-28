@@ -58,7 +58,7 @@ def getShrProp(ovrAggCnts) :
 # In that case, the share counts have to be added to both zebra and giraffe.
 def getCountingLogic(*args, **kwargs):
     if len(kwargs.keys()):
-        client, feature, source, withNumInds = args[0], args[1], args[2], args[3]
+        client, feature, source, withNumInds = args[0], args[1].lower(), args[2], args[3]
         featuresPerImg = IB_h.extractImageFeaturesFromMap(client, feature, source=source)
     else:
         gidAidMapFl, aidFeatureMapFl, feature, withNumInds = args[0], args[1], args[2], args[3]
@@ -273,8 +273,8 @@ def shrCntsByFtrPrAlbm(gidAidMapFl,aidFeatureMapFl,feature,imgJobMap,resSetStrt=
 # Even features are defined as when the number of instances of feature 1 and feature 2 are identical. 
 # Uneven features on the other hand are when the number of instances of feature 1 and feature 2 are not identical. 
 # Uneven features are handled differently for 1-many, many-1 and many-many.
-def ovrallShrCntsByTwoFtrs(gidAidMapFl,aidFeatureMapFl,ftr1,ftr2,imgJobMap,resSetStrt,resSetEnd):
-    countLogic1 = getCountingLogic(gidAidMapFl,aidFeatureMapFl,ftr1)
+def ovrallShrCntsByTwoFtrs(getCountingLogicgidAidMapFl,aidFeatureMapFl,ftr1,ftr2,imgJobMap,resSetStrt,resSetEnd):
+    countLogic1 = (gidAidMapFl,aidFeatureMapFl,ftr1)
     countLogic2 = getCountingLogic(gidAidMapFl,aidFeatureMapFl,ftr2)
 
     imgAlbumDict = ImageMap.genImgAlbumDictFromMap(imgJobMap)
