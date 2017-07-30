@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Python Flask Bucket List App</title>
+
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="../static/estimation.css" rel="stylesheet">
+    <script src="../static/js/estimate.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="main">Home</a></li>
+            <li role="presentation"><a href="#">Sign In</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">AWESOME Web App</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h2>Estimate population</h2>
+        <form class="form-signin" action="results.html" method="post">
+            <label for="inputSpeciesName" class="sr-only">Species Name</label>
+            <input type="name" name="inputSpeciesName" id="inputSpeciesName" class="form-control" placeholder="Species Name (zebra_plains, zebra_grevys)" required autofocus>
+            <br />
+
+            <label for="inputDataSourceName" class="sr-only">Species Name</label>
+            <input type="name" name="inputDataSourceName" id="inputDataSourceName" class="form-control" placeholder="Data Source Name (Flickr, Bing, GGR, GZC)" required autofocus>
+
+            <br />
+
+            <button id="btnEstimate" class="btn btn-lg btn-primary btn-block" type="button" href="estimation">Estimate</button>
+
+        </form>
+      </div>
+
+
+    <div class="jumbotron" id=result></div>
+
+
+      <footer class="footer">
+        <p>&copy; Sreejith Menon</p>
+      </footer>
+
+    </div>
+  </body>
+</html>

@@ -14,7 +14,9 @@ importlib.reload(DS)
 def genNidMarkRecapDict(mongo_client, source, days_dict, filter_species=None):
     exif_tab_obj = mh.mongod_table(mongo_client, "exif_tab", source)
 
-    img_dt_dict = mh.key_val_converter(exif_tab_obj.query(cols=['date']), 'date')
+    cursor = exif_tab_obj.query(cols=['date'])
+
+    img_dt_dict = mh.key_val_converter(cursor, 'date')
 
     # population estimation using GGR and GZC datasets are done using dates
     if source in ["GZC", "GGR"]:
@@ -34,7 +36,13 @@ def genNidMarkRecapDict(mongo_client, source, days_dict, filter_species=None):
 
 
     if filter_species != None:
-        gid_species = DRS.getCountingLogic(mongo_client, "species", source, False, mongo=True)
+        try:
+            gid_species = DRS.getCountingLogic(mongo_client, "species", source, False, mongo=True)
+        except Exception as e:
+            print("Exception occured at counting logic step")
+            print(e)
+            return
+
         gid_days_num = {gid: gid_days_num[gid] for gid in gid_days_num if
                       gid in gid_species.keys() and filter_species in gid_species[gid]}
 
@@ -83,8 +91,14 @@ def genSharedGids(gidList, gidPropMapFl, shareData='proportion', probabThreshold
     return list(set(gidList) & highSharedGids)
 
 
-def runMarkRecap(inExifFl, inGidAidMapFl, inAidFtrFl, gidPropMapFl, daysDict, filterBySpecies=None,
-                 shareData='proportion', probabThreshold=1):
-    nidMarkRecapSet = genNidMarkRecapDict2(inExifFl, inGidAidMapFl, inAidFtrFl, gidPropMapFl, daysDict, filterBySpecies,
-                                          shareData, probabThreshold)
-    return applyMarkRecap(nidMarkRecapSet)
+def runMarkRecap(source, days_dict, filter_species=None):
+    client = mh.mongod_instance()
+
+    return applyMarkRecap(genNidMarkRecapDict(client, source, days_dict, filter_species=filter_species))
+
+if __name__ == "__main__":
+
+
+
+    days_dict = {'2015-03-01' : 1, "2015-03-02" : 2}
+
