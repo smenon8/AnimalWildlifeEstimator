@@ -31,7 +31,10 @@ def upload():
     mapFile = request.files['MapFile']
 
     source_name = request.form['inputSourceName']
-
+    ''
+    if exifFile.filename == '' or mapFile.filename == '':
+        return render_template("upload_json.html",
+                               msg="File(s) not specified")
 
     exifFile.save(os.path.join(app.config['UPLOAD_FOLDER'], exifFile.filename))
     print("File %s uploaded" %exifFile.filename)
@@ -40,7 +43,8 @@ def upload():
     print("File %s uploaded" % mapFile.filename)
 
 
-    return render_template("upload_json.html", msg=exifFile.filename + " & "  + mapFile.filename)
+    return render_template("upload_json.html",
+                           msg="Upload for " + exifFile.filename + " & "  + mapFile.filename + " successful! ")
 
 @app.route("/estimation", methods=["POST", "GET"])
 def estimation():
