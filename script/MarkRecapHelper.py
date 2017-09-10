@@ -96,9 +96,4 @@ def runMarkRecap(source, days_dict, filter_species=None):
 
     return applyMarkRecap(genNidMarkRecapDict(client, source, days_dict, filter_species=filter_species))
 
-if __name__ == "__main__":
-
-
-
-    days_dict = {'2015-03-01' : 1, "2015-03-02" : 2}
 
