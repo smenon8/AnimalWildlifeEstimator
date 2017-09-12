@@ -74,16 +74,17 @@ def add_exif_data(client, map_fl_nm, doc_nm, source):
     return 0
 
 '''
-    map_fl will be stored seperately in a different table (this is basically gid : annotation) - retrieval might be a challenge
+    map_fl will be stored separately in a different table (this is basically gid : annotation) - retrieval might be a challenge
     The original table will use annotation id as the key
 '''
 def add_ibeis_data(client, map_fl_nm, map_doc_nm, doc_nm, source):
+    # add aid feature mapping
     ibeis_annot_ftr_tbl_obj = md.mongod_table(client, 'ibeis_annot_ftr_tab', source)
-
     add_data_tab(ibeis_annot_ftr_tbl_obj, map_fl_nm, doc_nm, "aid", source)
 
+    # add gid aid mapping
     ibeis_gid_annot_tbl_obj = md.mongod_table(client, 'ibeis_gid_annot_tab', source)
-    add_data_tab(ibeis_gid_annot_tbl_obj, map_fl_nm, map_doc_nm, "gid" , source)
+    add_data_tab(ibeis_gid_annot_tbl_obj, map_fl_nm, map_doc_nm, "gid", source)
 
     return 0
 
@@ -135,4 +136,14 @@ def __main__():
 if __name__ == "__main__":
     __main__()
     # client = md.mongod_instance()
-    # client.reset()
+    # # client.reset()
+    #
+    # add_ibeis_data(client, None, "../data/GZC_gid_aid.json",
+    #                "../data/GZC_aid_ftrs.json",
+    #                "GZC"
+    #                )
+    #
+    # add_ibeis_data(client,
+    #                "../data/Flickr_Giraffes_imgs_gid_flnm_map.json",
+    #                "../data/Flickr_IBEIS_Giraffe_Ftrs_gid_aid_map.json",
+    #                "../data/Flickr_IBEIS_Giraffe_Ftrs_aid_features.json", "Flickr_giraffe")

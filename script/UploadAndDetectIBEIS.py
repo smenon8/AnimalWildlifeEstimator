@@ -14,7 +14,7 @@ import GetPropertiesAPI as GP
 import subprocess
 from contextlib import closing
 
-DOMAIN = 'http://pachy.cs.uic.edu:5001'
+DOMAIN = 'http://pachy.cs.uic.edu:5000'
 
 def upload(image_path, signature='api/upload/image'):
     print("Uploading %s" %str(os.path.basename(image_path)))
@@ -111,8 +111,10 @@ def run_annot_identification(aid, daid_annot_list): # ID'ing task for each annot
     }
     annot_uuid_list = get('api/annot/uuid', data_dict)
 
+    print(annot_uuid_list)
+
     # step 2: for the given annot UUID run the detection against all the available annots
-    url = "http://pachy.cs.uic.edu:5001/api/engine/query/graph/"
+    url = "http://pachy.cs.uic.edu:5000/api/engine/query/graph/"
     data_dict = {
         'query_annot_uuid_list' : json.dumps([annot_uuid_list[0]]),
         'database_annot_uuid_list' : json.dumps(daid_annot_list)
@@ -374,15 +376,15 @@ def run_detection_task(gid):
     # print('\nDeleted aid_list  = %r' % (aid_list, ))
 
 def __main__():
-    gidList = [i for i in range(2327,2329)]
+    # gidList = [i for i in range(1,3)]
+    #
+    # detect = partial(run_detection_task)
+    #
+    # with closing(Pool(processes=2)) as p:
+    #     p.map(detect, gidList)
+    #     p.terminate()
 
-    detect = partial(run_detection_task)
-
-    with closing(Pool(processes=2)) as p:
-        p.map(detect, gidList)
-        p.terminate()
-
-    # run_id_pipeline(150, 'giraffe_reticulated')
+    run_id_pipeline(150, 'giraffe_reticulated')
 
 if __name__ == "__main__":
     __main__()

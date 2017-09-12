@@ -1,41 +1,41 @@
 import math
 
-def dataEntropy(attribute):
-    import math
-    frequencyEle = {}
-    dataEntropy = 0
+def calc_data_entropy(attribute):
+
+    frequency_ele = {}
+    data_entropy = 0
 
     for ele in attribute:
-        frequencyEle[ele] = frequencyEle.get(ele,0) + 1
+        frequency_ele[ele] = frequency_ele.get(ele, 0) + 1
 
-    for freq in frequencyEle.values():
-        dataEntropy += (-freq/len(attribute)) * math.log(freq/len(attribute), 2) 
+    for freq in frequency_ele.values():
+        data_entropy += (-freq/len(attribute)) * math.log(freq/len(attribute), 2) 
 
-    return dataEntropy
+    return data_entropy
 
-def getNextEle(attribList):
-    for ele in attribList:
+def get_next_ele(attrib_list):
+    for ele in attrib_list:
         yield ele
 
-def infoGain(attribute,targetAttribute):
-    frequencyEle = {}
-    subsetEntropy = 0.0
-    nextVal = getNextEle(attribute)
+def info_gain(attribute, target_attribute):
+    frequency_ele = {}
+    subset_entropy = 0.0
+    next_val = get_next_ele(attribute)
     for i in range(len(attribute)):
-        ele = next(nextVal)
-        frequencyEle[ele] = frequencyEle.get(ele,0) + 1
-    
+        ele = next(next_val)
+        frequency_ele[ele] = frequency_ele.get(ele, 0) + 1
 
-    for element in frequencyEle.keys():
+
+    for element in frequency_ele.keys():
         subset = []
-        weight = frequencyEle[element] / sum(frequencyEle.values())
-        
-        # Partition the target attribute on the basis of attribute groups
-        nextVal = getNextEle(attribute)
-        for i in range(len(attribute)):
-            if next(nextVal) == element:
-                subset.append(targetAttribute[i])
+        weight = frequency_ele[element] / sum(frequency_ele.values())
 
-        subsetEntropy += dataEntropy(subset) * weight
-        
-    return (dataEntropy(targetAttribute) - subsetEntropy)
+        # Partition the target attribute on the basis of attribute groups
+        next_val = get_next_ele(attribute)
+        for i in range(len(attribute)):
+            if next(next_val) == element:
+                subset.append(target_attribute[i])
+
+        subset_entropy += calc_data_entropy(subset) * weight
+
+    return (calc_data_entropy(target_attribute) - subset_entropy)
