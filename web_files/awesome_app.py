@@ -57,7 +57,7 @@ def upload_exif():
     logging.debug("File %s uploaded" % mapFile.filename)
 
     db.add_exif_data(mh.mongod_instance(),
-                     os.path.join(app.config['UPLOAD_FOLDER'], mapFile.filename),
+                     None, # os.path.join(app.config['UPLOAD_FOLDER'], mapFile.filename),
                      os.path.join(app.config['UPLOAD_FOLDER'], exifFile.filename),
                      source_name)
 
@@ -88,7 +88,7 @@ def upload_ibeis_data():
     logging.debug("File %s uploaded" % mapFile.filename)
 
     db.add_ibeis_data(mh.mongod_instance(),
-                     os.path.join(app.config['UPLOAD_FOLDER'], mapFile.filename),
+                     None, # os.path.join(app.config['UPLOAD_FOLDER'], mapFile.filename),
                      os.path.join(app.config['UPLOAD_FOLDER'], gidAidFile.filename),
                      os.path.join(app.config['UPLOAD_FOLDER'], aidFtrFile.filename),
                      source_name)
@@ -106,7 +106,7 @@ def estimation():
     logging.debug(species_name)
     logging.debug(source_name)
 
-    days_dict = {'2015-03-01': 1, "2015-03-02": 2}
+    days_dict = {'2015':1, "2016" : 2} #{'2015-03-01': 1, "2015-03-02": 2}
     estimate = mark.runMarkRecap(source_name, days_dict, filter_species=species_name)
 
     logging.debug(estimate)

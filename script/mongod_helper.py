@@ -165,6 +165,7 @@ def key_val_converter(cursor_obj, col_nm):
         next_obj = cursor_obj.next()
 
         result[next_obj.get("_id")] = next_obj.get(col_nm)
+        # result[next_obj.get("gid")] = next_obj.get(col_nm)
 
     return result
 
