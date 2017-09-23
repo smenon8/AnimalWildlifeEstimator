@@ -1,4 +1,8 @@
 import mongod_helper as mh
+import json
+
+def PRINT(jsonLike):
+    print(json.dumps(jsonLike, indent=4))
 
 
 # This method is used to generate the gid:aid map
@@ -14,12 +18,13 @@ def extractImageFeaturesFromMap(client, feature, source="GZC"):
     aid_ftr_tbl_obj = mh.mongod_table(client, "ibeis_annot_ftr_tab", source)
     res_obj = mh.result_iterator(aid_ftr_tbl_obj.query({}, [feature]))
 
-
     gid_aid_map = genGidAidDictFromDB(client, source)
+
     gid_ftr = {}
     for gid in gid_aid_map.keys():
         if gid_aid_map[gid][0] != None:
-            for aid in gid_aid_map[gid]:
+            for aid in gid_aid_map[gid][0]:
                 gid_ftr[gid] = gid_ftr.get(gid, []) + [res_obj[str(aid)][feature]]
 
+    # PRINT(res_obj)
     return gid_ftr

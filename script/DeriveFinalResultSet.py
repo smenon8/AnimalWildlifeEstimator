@@ -23,6 +23,10 @@ gidAidMapFl = "../data/experiment2_gid_aid_map.json"
 aidFeatureMapFl = "../data/experiment2_aid_features.json"
 imgJobMap = "../data/imageGID_job_map_expt2_corrected.csv"
  
+
+def PRINT(jsonLike):
+    print(json.dumps(jsonLike, indent=4))
+
 # This method is a simplification of adding up the share/no share counts of a particular image. 
 # For example, for a particular image which appeared in 5 different albums, the share rates were 9,5,9,10,10. 
 # This method will return gid:sum([9,5,9,10,10]).
@@ -58,7 +62,7 @@ def getShrProp(ovrAggCnts) :
 # In that case, the share counts have to be added to both zebra and giraffe.
 def getCountingLogic(*args, **kwargs):
     if len(kwargs.keys()):
-        client, feature, source, withNumInds = args[0], args[1].lower(), args[2], args[3]
+        client, feature, source, withNumInds = args[0], args[1], args[2], args[3]
         featuresPerImg = IB_h.extractImageFeaturesFromMap(client, feature, source=source)
     else:
         gidAidMapFl, aidFeatureMapFl, feature, withNumInds = args[0], args[1], args[2], args[3]
