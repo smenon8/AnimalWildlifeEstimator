@@ -102,11 +102,16 @@ def upload_ibeis_data():
 def estimation():
     species_name = request.form['inputSpeciesName']
     source_name = request.form['inputDataSourceName']
+    dateStart = request.form['inputFromDate']
+    dateEnd = request.form['inputToDate']
+
+    # converting from string to date format - currently not required
+
 
     logging.debug(species_name)
     logging.debug(source_name)
 
-    days_dict = {'2015':1, "2016" : 2} #{'2015-03-01': 1, "2015-03-02": 2}
+    days_dict = {dateStart:1, dateEnd : 2} #{'2015-03-01': 1, "2015-03-02": 2}
     estimate = mark.runMarkRecap(source_name, days_dict, filter_species=species_name)
 
     logging.debug(estimate)
