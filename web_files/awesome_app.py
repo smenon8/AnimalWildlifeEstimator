@@ -41,20 +41,16 @@ def showUploader_ibeis():
 @app.route("/upload_exif", methods=["POST", "GET"])
 def upload_exif():
     exifFile = request.files['ExifFile']
-    mapFile = request.files['MapFile']
 
     source_name = request.form['inputSourceName']
-    ''
-    if exifFile.filename == '' or mapFile.filename == '':
+
+    if exifFile.filename == '':
         return render_template("upload_exif.html",
                                msg="File(s) not specified")
 
     exifFile.save(os.path.join(app.config['UPLOAD_FOLDER'], exifFile.filename))
 
     logging.debug("File %s uploaded" %exifFile.filename)
-
-    mapFile.save(os.path.join(app.config['UPLOAD_FOLDER'], mapFile.filename))
-    logging.debug("File %s uploaded" % mapFile.filename)
 
     db.add_exif_data(mh.mongod_instance(),
                      None, # os.path.join(app.config['UPLOAD_FOLDER'], mapFile.filename),
@@ -64,17 +60,17 @@ def upload_exif():
     logging.info("Upload to mongod complete")
 
     return render_template("upload_exif.html",
-                           msg="Upload for " + exifFile.filename + " & "  + mapFile.filename + " successful! ")
+                           msg="Upload for " + exifFile.filename + " successful! ")
 
 @app.route("/upload_ibeis_data", methods=["POST", "GET"])
 def upload_ibeis_data():
     aidFtrFile = request.files['AidFtrMapFile']
     gidAidFile = request.files['GidAidMapFile']
-    mapFile = request.files['MapFile'] # fileNm map
+    # mapFile = request.files['MapFile'] # fileNm map
 
     source_name = request.form['inputSourceName']
     ''
-    if aidFtrFile.filename == '' or mapFile.filename == '' or gidAidFile.filename == '':
+    if aidFtrFile.filename == '' or gidAidFile.filename == '':
         return render_template("upload_ibeis_data.html",
                                msg="File(s) not specified")
 
@@ -84,8 +80,6 @@ def upload_ibeis_data():
     gidAidFile.save(os.path.join(app.config['UPLOAD_FOLDER'], gidAidFile.filename))
     logging.debug("File %s uploaded" % gidAidFile.filename)
 
-    mapFile.save(os.path.join(app.config['UPLOAD_FOLDER'], mapFile.filename))
-    logging.debug("File %s uploaded" % mapFile.filename)
 
     db.add_ibeis_data(mh.mongod_instance(),
                      None, # os.path.join(app.config['UPLOAD_FOLDER'], mapFile.filename),
@@ -96,7 +90,7 @@ def upload_ibeis_data():
     logging.info("Upload to mongod complete")
 
     return render_template("upload_ibeis_data.html",
-                           msg="Upload for " + gidAidFile.filename + ", " + aidFtrFile.filename + " & "  + mapFile.filename + " successful! ")
+                           msg="Upload for " + gidAidFile.filename + ", " + aidFtrFile.filename +  " successful! ")
 
 @app.route("/estimation", methods=["POST", "GET"])
 def estimation():
