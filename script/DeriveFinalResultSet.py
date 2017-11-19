@@ -16,7 +16,7 @@ import IBEIS_mongo_helper as IB_h
 import JobsMapResultsFilesToContainerObjs as ImageMap
 
 importlib.reload(ImageMap)
-importlib.reload(GP)
+importlib.reload(IB_h)
 
 # Global variables for the scope of this script
 gidAidMapFl = "../data/experiment2_gid_aid_map.json"
