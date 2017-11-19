@@ -274,3 +274,100 @@ if __name__ == "__main__":
 
 ### Notes:
 * GID is nothing but the an ID assigned by the Wildbook to each individual image. A GID uniquely identifies an image. 
+
+## Running Population Estimation using Web UI
+A very simple UI was created to help estimate population of species using images scraped from social media platforms. 
+
+#### Features:
+* Connects to a local `mongod` instance and based on input from user (species name, source, date-range), estimate the population. 
+* A user can also upload EXIF and IBEIS files directly using the UI, these files are uploaded to the locally running `mongod` instance, and this can be used for population estimation. 
+
+#### Requirements:
+* Python-3
+* Latest version of mongod.
+* A GUI to access mongod (I recommend using RoboMongo - very friendly UI).
+
+### Population Estimation:
+Enter all the required fields.
+![Population Estimation Home page](Other/screengrab/pop-est-start.png)
+
+Final Output
+![Population Estimation Home page](Other/screengrab/pop-est-end.png)
+
+### Uploading files for Population Estimation
+There are 3 main files, that are required for being able to perform population estimation using simple Mark-Recapture formula. 
+* EXIF files
+Sample record: 
+```JSON
+{
+"509": {
+        "long": -81.643459,
+        "orientation": 1,
+        "height": 4608,
+        "lat": 30.404526,
+        "date": "2014-10-29 13:21:13",
+        "width": 3456
+    },
+...
+}
+```
+* Mapping between GID-AID
+```JSON
+{
+"385": [
+        [
+            525
+        ]
+    ],
+"1449": [
+        [
+            2030,
+            2031
+        ]
+    ],
+...
+}
+```
+* Mapping between AID-Features
+```JSON
+{
+"1": {
+        "sex": "UNKNOWN SEX",
+        "name": "1",
+        "yaw": null,
+        "age": "infant",
+        "quality": "UNKNOWN",
+        "NID": 1,
+        "SPECIES": "giraffe_reticulated",
+        "exemplar": "1",
+        "contributor": null
+    },
+...
+}
+```
+
+**The important thing to note here is that, all the files are indexed by GID and not by file names.**
+This has been deliberately manipuated for ease of calculation. While there is some logic which can handle mismatching indexes, it is currently disabled for the sake of simplicity. 
+The EXIF file you have primarily will be indexed by the actual file name and while you upload your images to an active IBEIS/WB instance, you must have gotten back a mapping between the actual file names and GIDs. 
+You can manipulate your EXIF file by using a code similar to:
+```python
+import json
+import DataStructsHelperAPI as DS       # This helper has a lot of helpful methods
+                                        # for JSON manipulation etc. 
+                                        # located inside the scripts folder
+
+if __name__ == "__main__":
+    fl_nm_gid_map = DS.flipKeyValue(DS.json_loader( "gid-filename-map.json")) 
+    
+    exif_map = DS.json_loader( "exif-file.json")
+     
+    corrected_exif = { fl_nm_gid_map[fl_nm] : exif_map[fl_nm] for fl_nm in exif_map.keys() }
+
+    with open("corrected-exif-json-fl.json", "w") as corrected_json:
+        json.dump(corrected_exif, corrected_json, indent=4) 
+```
+
+The web instance can be triggered by running    
+`python awesome_app.py`
+
+All the files relating to the WEB-UI are located inside the repo/web_files
