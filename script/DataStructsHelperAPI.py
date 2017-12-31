@@ -16,7 +16,7 @@ def json_loader(doc_nm):
 def json_dumper(json_like, doc_nm, indent=4):
 	with open(doc_nm, "w") as doc:
 		json.dump(json_like, doc, indent=indent)
-		
+
 # Generate list of tuples from csv
 def genlstTupFrmCsv(flNm,headerExists=True):
 	with open(flNm,'r') as inFl:
